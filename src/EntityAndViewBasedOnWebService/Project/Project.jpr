@@ -1,0 +1,255 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.adf.dt.migration.ProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.jsf.addin.JSFProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.struts.addin.db.ADFStrutsProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.struts.addin.StrutsProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.bm.commonIde.ProjectUpgrader" v="10.1.3.0.4"/>
+      <value n="oracle.ide.model.Project" v="10.1.3.0.4"/>
+      <value n="oracle.ide.model.ResourcePathsMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jbo.dt.jclient.migrator.JCProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jbo.dt.jdevx.ui.appnav.APProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jdeveloper.dbmodeler.migration.ProjectMigratorHelper" v="10.1.3.0.4"/>
+      <value n="oracle.jdeveloper.offlinedb.migration.OfflineDBProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.jsp.JspMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.runner.RunConfigurationsMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.webservices.WebServicesMigratorHelper" v="10.1.3.0.4"/>
+      <value n="oracle.toplink.addin.migration.TopLinkProjectMigrator" v="10.1.3.0.4"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
+      <string v="oracle.toplink.addin.TopLinkProjectSettings/toplinkContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+   </list>
+   <value n="defaultPackage" v="test"/>
+   <value n="jbo.JboProject" v="Project"/>
+   <value n="JboProject" v="true"/>
+   <hash n="oracle.bm.commonIde.data.project.ModelerProjectSettings">
+      <hash n="modelersContentSet">
+         <list n="url-path">
+            <url path="model/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".gif"/>
+         <string v=".jpg"/>
+         <string v=".jpeg"/>
+         <string v=".png"/>
+         <string v=".properties"/>
+         <string v=".xml"/>
+         <string v="-apf.xml"/>
+         <string v=".ejx"/>
+         <string v=".xcfg"/>
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".wsdl"/>
+         <string v=".ini"/>
+         <string v=".tld"/>
+         <string v=".tag"/>
+         <string v=".jpx"/>
+      </list>
+      <value n="internalEncoding" v="Cp1252"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="EntityAndViewBasedOnWebService-Project-webapp"/>
+      <value n="j2eeWebContextRoot" v="EntityAndViewBasedOnWebService-Project-context-root"/>
+      <hash n="webContentSet">
+         <list n="url-path">
+            <url path="public_html/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings">
+      <hash n="offlineDBContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="database/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+         </hash>
+      </hash>
+      <list n="runConfigurationList">
+         <string v="Default"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Tester"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="J2EE"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-RPC Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.3"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Tester"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle XML Parser v2"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="J2EE"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-RPC Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.3"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="classes/"/>
+   </hash>
+   <hash n="oracle.toplink.addin.TopLinkProjectSettings">
+      <hash n="toplinkContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="toplink/"/>
+         </list>
+      </hash>
+   </hash>
+   <list n="ownerMap">
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/entities/Dept.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/entities/Emp.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/entities/entities.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/entities/WorksInDeptAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/HRModule.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/queries/DeptView.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/queries/EmpView.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/queries/queries.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/queries/WorksInDeptLink.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/test/test.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.ui.JdxXcfgNode"/><url n="nodeURL" path="src/test/common/bc4j.xcfg"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/DeleteDepartmentByDeptno.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/DeleteDepartmentByDeptnoResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/DeptService_PortType.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/DeptService_Service.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/DeptServiceSoapHttpPortClient.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/EstimateCount.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/EstimateCountResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/FindDepartmentByDeptno.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/FindDepartmentByDeptnoResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/InsertDepartment.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/InsertDepartmentResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/MergeDepartment.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/MergeDepartmentResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/RetrieveDepartmentData.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/RetrieveDepartmentDataResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeleteDepartmentByDeptno_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeleteDepartmentByDeptnoResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeptService_Service_Impl.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeptService_Service_SerializerRegistry.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeptService_Service_SerializerRegistry12.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/DeptServiceSoapHttp_Stub.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/EstimateCount_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/EstimateCountResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/FindDepartmentByDeptno_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/FindDepartmentByDeptnoResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/InsertDepartment_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/InsertDepartmentResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/MergeDepartment_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/MergeDepartmentResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/RetrieveDepartmentData_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/RetrieveDepartmentDataResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/UpdateDepartment_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/runtime/UpdateDepartmentResponse_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/types/deptws/server/webservice/types/Department.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/types/deptws/server/webservice/types/runtime/Department_LiteralSerializer.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/UpdateDepartment.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/remoteservices/UpdateDepartmentResponse.java"/><value n="ownerClass" v="oracle.jdeveloper.webservices.model.WebServiceProxyNode"/><url n="ownerURL" path="src/remoteservices/DeptServiceProxy.proxy"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/test/entities/DeptImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/test/entities/EmpImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/test/HRModuleImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/test/queries/DeptViewImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/test/queries/EmpViewImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/Project.jpx"/></hash>
+   </list>
+</jpr:project>

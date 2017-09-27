@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="DeptService_Service.java"/>
+      <url path="runtime/DeptService_Service_Impl.java"/>
+      <url path="DeptService_PortType.java"/>
+      <url path="DeleteDepartmentByDeptno.java"/>
+      <url path="DeleteDepartmentByDeptnoResponse.java"/>
+      <url path="EstimateCount.java"/>
+      <url path="EstimateCountResponse.java"/>
+      <url path="FindDepartmentByDeptno.java"/>
+      <url path="FindDepartmentByDeptnoResponse.java"/>
+      <url path="types/deptws/server/webservice/types/Department.java"/>
+      <url path="InsertDepartment.java"/>
+      <url path="InsertDepartmentResponse.java"/>
+      <url path="MergeDepartment.java"/>
+      <url path="MergeDepartmentResponse.java"/>
+      <url path="RetrieveDepartmentData.java"/>
+      <url path="RetrieveDepartmentDataResponse.java"/>
+      <url path="UpdateDepartment.java"/>
+      <url path="UpdateDepartmentResponse.java"/>
+      <url path="runtime/DeleteDepartmentByDeptno_LiteralSerializer.java"/>
+      <url path="runtime/DeleteDepartmentByDeptnoResponse_LiteralSerializer.java"/>
+      <url path="runtime/EstimateCount_LiteralSerializer.java"/>
+      <url path="runtime/EstimateCountResponse_LiteralSerializer.java"/>
+      <url path="runtime/FindDepartmentByDeptno_LiteralSerializer.java"/>
+      <url path="types/deptws/server/webservice/types/runtime/Department_LiteralSerializer.java"/>
+      <url path="runtime/FindDepartmentByDeptnoResponse_LiteralSerializer.java"/>
+      <url path="runtime/InsertDepartment_LiteralSerializer.java"/>
+      <url path="runtime/InsertDepartmentResponse_LiteralSerializer.java"/>
+      <url path="runtime/MergeDepartment_LiteralSerializer.java"/>
+      <url path="runtime/MergeDepartmentResponse_LiteralSerializer.java"/>
+      <url path="runtime/RetrieveDepartmentData_LiteralSerializer.java"/>
+      <url path="runtime/RetrieveDepartmentDataResponse_LiteralSerializer.java"/>
+      <url path="runtime/UpdateDepartment_LiteralSerializer.java"/>
+      <url path="runtime/UpdateDepartmentResponse_LiteralSerializer.java"/>
+      <url path="runtime/DeptServiceSoapHttp_Stub.java"/>
+      <url path="runtime/DeptService_Service_SerializerRegistry.java"/>
+      <url path="runtime/DeptService_Service_SerializerRegistry12.java"/>
+      <url path="DeptServiceSoapHttpPortClient.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="remoteservices"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="remoteservices.types"/>
+         </hash>
+      </hash>
+      <value n="PROXY_MAPPING_URL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="DeptServiceSoapHttpPort">
+            <value n="CLASS_NAME" v="remoteservices.DeptService_PortType"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="DeptServiceSoapHttpPort"/>
+            <hash n="OPERATIONS">
+               <hash n="deleteDepartmentByDeptno">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="estimateCount">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="findDepartmentByDeptno">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="insertDepartment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="mergeDepartment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="retrieveDepartmentData">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="updateDepartment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="localhost" port="8888" path="/DepartmentServices/DeptServiceSoapHttpPort"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="DeptService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="urn:DeptService-example"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../Project.jpr"/>
+      <url n="PROXY_WSDL_URL" protocol="http" host="localhost" port="8888" path="/DepartmentServices/DeptServiceSoapHttpPort" query="WSDL"/>
+   </hash>
+</jdevws:WebServiceProxy>
