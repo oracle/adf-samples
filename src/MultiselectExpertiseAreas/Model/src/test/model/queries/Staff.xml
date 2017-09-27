@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="Staff"
+   SelectList="User1.USER_ID, 
+       User1.USER_ROLE, 
+       User1.EMAIL, 
+       User1.FIRST_NAME, 
+       User1.LAST_NAME, 
+       User1.STREET_ADDRESS, 
+       User1.CITY, 
+       User1.STATE_PROVINCE, 
+       User1.POSTAL_CODE, 
+       User1.COUNTRY_ID"
+   FromList="USERS User1"
+   Where="user_role in (&#39;technician&#39;,&#39;manager&#39;)"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.model.queries.StaffImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="User1"
+      Entity="test.model.entities.User" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryWhere" Value="user_role in (&#39;technician&#39;,&#39;manager&#39;)" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="UserId"
+      IsNotNull="true"
+      EntityAttrName="UserId"
+      EntityUsage="User1"
+      AliasName="USER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UserRole"
+      IsNotNull="true"
+      EntityAttrName="UserRole"
+      EntityUsage="User1"
+      AliasName="USER_ROLE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Email"
+      IsUnique="true"
+      IsNotNull="true"
+      EntityAttrName="Email"
+      EntityUsage="User1"
+      AliasName="EMAIL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FirstName"
+      IsNotNull="true"
+      EntityAttrName="FirstName"
+      EntityUsage="User1"
+      AliasName="FIRST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastName"
+      IsNotNull="true"
+      EntityAttrName="LastName"
+      EntityUsage="User1"
+      AliasName="LAST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StreetAddress"
+      IsNotNull="true"
+      EntityAttrName="StreetAddress"
+      EntityUsage="User1"
+      AliasName="STREET_ADDRESS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="City"
+      IsNotNull="true"
+      EntityAttrName="City"
+      EntityUsage="User1"
+      AliasName="CITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StateProvince"
+      EntityAttrName="StateProvince"
+      EntityUsage="User1"
+      AliasName="STATE_PROVINCE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PostalCode"
+      EntityAttrName="PostalCode"
+      EntityUsage="User1"
+      AliasName="POSTAL_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CountryId"
+      EntityAttrName="CountryId"
+      EntityUsage="User1"
+      AliasName="COUNTRY_ID" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="ProductExpertiseAreas"
+      ViewLink="test.model.queries.viewlinks.ProductExpertiseForUser"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

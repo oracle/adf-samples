@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Product"
+   DBObjectType="table"
+   DBObjectName="PRODUCTS"
+   AliasName="Product"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.entities.ProductImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="ProdId"
+      IsNotNull="true"
+      Precision="8"
+      Scale="0"
+      ColumnName="PROD_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="PRODUCTS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Name"
+      IsNotNull="true"
+      Precision="50"
+      ColumnName="NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PRODUCTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Image"
+      Precision="4000"
+      ColumnName="IMAGE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PRODUCTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="4000" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Description"
+      IsNotNull="true"
+      Precision="4000"
+      ColumnName="DESCRIPTION"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PRODUCTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="4000" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="ExpertiseArea"
+      Association="test.model.entities.associations.ExaPrdFkAssoc"
+      AssociationEnd="test.model.entities.associations.ExaPrdFkAssoc.ExpertiseArea"
+      AssociationOtherEnd="test.model.entities.associations.ExaPrdFkAssoc.Product"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="PrdPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.Product.ProdId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="PRD_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007522" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.Product.ProdId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PROD_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007522" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007523" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.Product.Name" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;NAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007523" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007524" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.Product.Description" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;DESCRIPTION&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007524" />
+      </DesignTime>
+   </Key>
+</Entity>

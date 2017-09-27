@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="SRService"
+   ComponentClass="test.model.services.SRServiceImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="StaffList"
+      ViewObjectName="test.model.queries.Staff" >
+   </ViewUsage>
+   <ViewUsage
+      Name="StaffExpertiseAreas"
+      ViewObjectName="test.model.queries.ProductExpertiseAreas" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="ProductExpertiseForUser1"
+      ViewLinkObjectName="test.model.queries.viewlinks.ProductExpertiseForUser"
+      SrcViewUsageName="test.model.services.SRService.StaffList"
+      DstViewUsageName="test.model.services.SRService.StaffExpertiseAreas" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

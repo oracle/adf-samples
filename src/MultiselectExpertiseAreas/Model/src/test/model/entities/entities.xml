@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="entities"
+   SeparateXMLFiles="true"
+   PackageName="test.model.entities" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="ExpertiseArea"
+      FullName="test.model.entities.ExpertiseArea"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="Product"
+      FullName="test.model.entities.Product"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="User"
+      FullName="test.model.entities.User"
+      ObjectType="Entity" >
+   </Containee>
+</JboPackage>

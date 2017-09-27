@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ManageProductExpertiseAssignments">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm rows="3">
+            <af:panelLabelAndMessage label="#{bindings.UserId.label}">
+              <af:outputText value="#{bindings.UserId.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.UserId.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.UserRole.label}">
+              <af:outputText value="#{bindings.UserRole.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Email.label}">
+              <af:outputText value="#{bindings.Email.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.FirstName.label}">
+              <af:outputText value="#{bindings.FirstName.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.LastName.label}">
+              <af:outputText value="#{bindings.LastName.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.StreetAddress.label}">
+              <af:outputText value="#{bindings.StreetAddress.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.City.label}">
+              <af:outputText value="#{bindings.City.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.StateProvince.label}">
+              <af:outputText value="#{bindings.StateProvince.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.PostalCode.label}">
+              <af:outputText value="#{bindings.PostalCode.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.CountryId.label}">
+              <af:outputText value="#{bindings.CountryId.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+          <af:table value="#{bindings.StaffListStaffExpertiseAreas.collectionModel}"
+                    var="row"
+                    rows="#{bindings.StaffListStaffExpertiseAreas.rangeSize}"
+                    first="#{bindings.StaffListStaffExpertiseAreas.rangeStart}"
+                    emptyText="#{bindings.StaffListStaffExpertiseAreas.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column headerText="#{bindings.StaffListStaffExpertiseAreas.labels.HasExpertise}"
+                       sortProperty="HasExpertise" sortable="false">
+              <af:selectBooleanCheckbox
+                                        label="Label 1"
+                                        value="#{row.HasExpertise}"/>
+            </af:column>
+            <af:column headerText="#{bindings.StaffListStaffExpertiseAreas.labels.Name}"
+                       sortProperty="Name" sortable="false">
+              <af:outputText value="#{row.Name}"/>
+            </af:column>
+          </af:table>
+          <af:commandButton actionListener="#{bindings.Commit.execute}"
+                            text="Commit"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback"
+                            immediate="true">
+            <af:resetActionListener/>
+          </af:commandButton>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

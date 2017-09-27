@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="User"
+   DBObjectType="table"
+   DBObjectName="USERS"
+   AliasName="User1"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.entities.UserImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="UserId"
+      IsNotNull="true"
+      Precision="8"
+      Scale="0"
+      ColumnName="USER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="USERS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="UserRole"
+      IsNotNull="true"
+      Precision="10"
+      ColumnName="USER_ROLE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Email"
+      IsUnique="true"
+      IsNotNull="true"
+      Precision="50"
+      ColumnName="EMAIL"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="FirstName"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="FIRST_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastName"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="LAST_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="StreetAddress"
+      IsNotNull="true"
+      Precision="40"
+      ColumnName="STREET_ADDRESS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="City"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="StateProvince"
+      Precision="25"
+      ColumnName="STATE_PROVINCE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PostalCode"
+      Precision="12"
+      ColumnName="POSTAL_CODE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USERS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="12" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CountryId"
+      Precision="2"
+      ColumnName="COUNTRY_ID"
+      Type="java.lang.String"
+      ColumnType="CHAR"
+      SQLType="CHAR"
+      TableName="USERS"
+      RetrievedOnUpdate="true"
+      RetrievedOnInsert="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="ExpertiseArea"
+      Association="test.model.entities.associations.ExaUsrFkAssoc"
+      AssociationEnd="test.model.entities.associations.ExaUsrFkAssoc.ExpertiseArea"
+      AssociationOtherEnd="test.model.entities.associations.ExaUsrFkAssoc.User"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="SysC007534" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007534" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007535" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.UserRole" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USER_ROLE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007535" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007536" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.Email" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;EMAIL&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007536" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007537" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.FirstName" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;FIRST_NAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007537" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007538" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.LastName" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_NAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007538" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007539" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.StreetAddress" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;STREET_ADDRESS&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007539" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007540" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.City" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007540" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="UserRoleChk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.UserRole" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="USER_ROLE IN (&#39;manager&#39;,&#39;technician&#39;,&#39;user&#39;)" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="USER_ROLE_CHK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="UsrPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="USR_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="UsrUk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.User.Email" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUnique" Value="true" />
+         <Attr Name="_DBObjectName" Value="USR_UK" />
+      </DesignTime>
+   </Key>
+</Entity>

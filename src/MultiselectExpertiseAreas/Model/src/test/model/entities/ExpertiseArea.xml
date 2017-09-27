@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="ExpertiseArea"
+   DBObjectType="table"
+   DBObjectName="EXPERTISE_AREAS"
+   AliasName="ExpertiseArea"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.entities.ExpertiseAreaImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="ProdId"
+      IsNotNull="true"
+      Precision="8"
+      Scale="0"
+      ColumnName="PROD_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EXPERTISE_AREAS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="UserId"
+      IsNotNull="true"
+      Precision="8"
+      Scale="0"
+      ColumnName="USER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EXPERTISE_AREAS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ExpertiseLevel"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="EXPERTISE_LEVEL"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="EXPERTISE_AREAS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Notes"
+      Precision="4000"
+      ColumnName="NOTES"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="EXPERTISE_AREAS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="4000" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Product"
+      Association="test.model.entities.associations.ExaPrdFkAssoc"
+      AssociationEnd="test.model.entities.associations.ExaPrdFkAssoc.Product"
+      AssociationOtherEnd="test.model.entities.associations.ExaPrdFkAssoc.ExpertiseArea"
+      Type="test.model.entities.ProductImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="User"
+      Association="test.model.entities.associations.ExaUsrFkAssoc"
+      AssociationEnd="test.model.entities.associations.ExaUsrFkAssoc.User"
+      AssociationOtherEnd="test.model.entities.associations.ExaUsrFkAssoc.ExpertiseArea"
+      Type="test.model.entities.UserImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="ExaPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.ProdId" />
+         <Item Value="test.model.entities.ExpertiseArea.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="EXA_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ExpertiseLevelChk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.ExpertiseLevel" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="EXPERTISE_LEVEL IN (&#39;Expert&#39;,&#39;Qualified&#39;,&#39;Apprentice&#39;)" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="EXPERTISE_LEVEL_CHK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007525" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.ProdId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PROD_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007525" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007526" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007526" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC007527" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.ExpertiseLevel" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;EXPERTISE_LEVEL&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007527" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ExaPrdFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.ProdId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="PRD_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="EXA_PRD_FK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ExaUsrFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.entities.ExpertiseArea.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="USR_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="EXA_USR_FK" />
+      </DesignTime>
+   </Key>
+</Entity>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ProductExpertiseAreas"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="test.model.queries.ProductExpertiseAreasRowImpl"
+   ComponentClass="test.model.queries.ProductExpertiseAreasImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <Variable
+      Name="Bind_UserId"
+      Kind="where"
+      Type="oracle.jbo.domain.Number" >
+   </Variable>
+   <SQLQuery><![CDATA[
+SELECT product.prod_id,
+  product.name,
+  expertisearea.expertise_level,
+  expertisearea.prod_id AS prod_id1,
+  expertisearea.user_id
+FROM products product,
+     users users,
+  expertise_areas expertisearea
+WHERE product.prod_id = expertisearea.prod_id  (+)
+AND :Bind_UserId = users.user_id 
+AND expertisearea.user_id (+) = :Bind_UserId 
+order by product.name
+   ]]></SQLQuery>
+   <EntityUsage
+      Name="Product"
+      Entity="test.model.entities.Product" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryWhere" Value="Product.PROD_ID (+) = ExpertiseArea.PROD_ID" />
+      </DesignTime>
+   </EntityUsage>
+   <EntityUsage
+      Name="ExpertiseArea"
+      Entity="test.model.entities.ExpertiseArea"
+      Association="test.model.entities.associations.ExaPrdFkAssoc"
+      AssociationEnd="test.model.entities.associations.ExaPrdFkAssoc.ExpertiseArea"
+      SourceUsage="test.model.queries.ProductExpertiseAreas.Product"
+      ReadOnly="true"
+      Reference="true" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+         <AttrArray Name="_dstAttributes">
+            <Item Value="test.model.entities.ExpertiseArea.ProdId" />
+         </AttrArray>
+         <AttrArray Name="_srcAttributes">
+            <Item Value="test.model.entities.Product.ProdId" />
+         </AttrArray>
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="ProdId"
+      IsNotNull="true"
+      EntityAttrName="ProdId"
+      EntityUsage="Product"
+      AliasName="PROD_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      IsNotNull="true"
+      EntityAttrName="Name"
+      EntityUsage="Product"
+      AliasName="NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ExpertiseLevel"
+      IsUpdateable="false"
+      IsNotNull="true"
+      EntityAttrName="ExpertiseLevel"
+      EntityUsage="ExpertiseArea"
+      AliasName="EXPERTISE_LEVEL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ProdId1"
+      IsUpdateable="false"
+      IsNotNull="true"
+      EntityAttrName="ProdId"
+      EntityUsage="ExpertiseArea"
+      AliasName="PROD_ID1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UserId"
+      IsUpdateable="false"
+      IsNotNull="true"
+      EntityAttrName="UserId"
+      EntityUsage="ExpertiseArea"
+      AliasName="USER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="HasExpertise"
+      IsSelected="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <AttrArray Name="KeyAttributes">
+      <Item Value="ProdId" />
+   </AttrArray>
+</ViewObject>
