@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="Model"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="scott" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_jprName" Value="../Model.jpr" />
+      <Attr Name="_appModuleNames1" Value="com.yourcompany.yourapp.YourService" />
+      <Attr Name="_appModuleNames0" Value="test.model.service.ExampleModule" />
+   </DesignTime>
+   <Containee
+      Name="fwkext"
+      FullName="com.yourcompany.fwkext.fwkext"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="yourapp"
+      FullName="com.yourcompany.yourapp.yourapp"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="data"
+      FullName="test.model.data.data"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="service"
+      FullName="test.model.service.service"
+      ObjectType="JboPackage" >
+   </Containee>
+</JboProject>

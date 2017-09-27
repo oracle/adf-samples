@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.17.96"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="JClient" >
+   <Contents >
+      <DataControl
+         id="ExampleModuleDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="test.model.service"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="ExampleModuleLocal" >
+      </DataControl>
+      <Containee
+         id="PanelNonDatabaseBlockViewUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.PanelNonDatabaseBlockViewUIModel" >
+      </Containee>
+   </Contents>
+</JboProject>
