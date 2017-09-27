@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * This code is distributed under the MIT License (MIT)
+ *
+ * Copyright (c) 2012 Duncan Mills
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a 
+ * copy of this software and associated documentation files (the "Software"), 
+ * to deal in the Software without restriction, including without limitation 
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+ * and/or sell copies of the Software, and to permit persons to whom the Software 
+ * is furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all 
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+ * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+ * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+ * DEALINGS IN THE SOFTWARE.
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ -->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+    
+      <!-- Register the resize listener when the page loads -->
+      <af:clientListener method="registerWindowResizeListener" type="load"/>
+      <!-- Optional interval to flood control notifications during a window 
+           resize. Default is 200 ms -->
+      <af:clientAttribute name="NOTIFICATION_INTERVAL" value="400"/>
+      
+      <!-- Callback from the client which will notify you of the new size info -->
+      <af:serverListener type="windowResizeEvent"
+                         method="#{homePageHandler.windowResizeClientEventHandler}"/>
+                         
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1" layout="horizontal">
+              <af:spacer id="s1" styleClass="AFBrandingBarLogo"/>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:outputText value="How Big is My Window?" id="ot1"
+                             styleClass="AFBrandingBarTitle"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelGroupLayout id="pgl2" layout="vertical">
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:panelBox text="Window Size Information" id="pb1"
+                           showDisclosure="false">
+                <af:panelFormLayout maxColumns="2" rows="1" id="pfl1"
+                                    binding="#{homePageHandler.infoForm}">
+                  <af:panelLabelAndMessage label="Width:" id="plam1">
+                    <af:outputText value="#{uiManager.windowWidth}" id="ot2"/>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="Height:" id="plam2">
+                    <af:outputText value="#{uiManager.windowHeight}" id="ot3"/>
+                  </af:panelLabelAndMessage>
+                </af:panelFormLayout>
+              </af:panelBox>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+      <f:facet name="metaContainer">
+        <af:resource type="javascript" source="/resources/js/windowUtils.js"/>
+      </f:facet>
+    </af:document>
+  </f:view>
+</jsp:root>

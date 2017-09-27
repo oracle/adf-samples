@@ -15,4 +15,5 @@ Each sample is also available in downloadable form in the zips directory.
 * AddMessageWhenNoRowsFound
 * ADFBCAppWithNoDatabaseConnection
 * ADFBCDTObjectsSample
+* ADFDetectWindowResize
 
