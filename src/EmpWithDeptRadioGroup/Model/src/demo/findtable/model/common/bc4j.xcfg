@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="HRModuleLocal">
+         <AppModuleJndiName>demo.findtable.model.HRModule</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <ApplicationName>demo.findtable.model.HRModule</ApplicationName>
+         <jbo.project>Model</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="scott"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05ED12D01E0EDEF98A57B8A5227C6114D5]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="EmpTableWithRadioGroup">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.EmpView.collectionModel}" var="row"
+                    rows="#{bindings.EmpView.rangeSize}"
+                    first="#{bindings.EmpView.rangeStart}"
+                    emptyText="#{bindings.EmpView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.EmpView.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.EmpView.collectionModel.makeCurrent}"
+                    id="MyTable">
+<!--
+ <af:column headerText="SrvyQuestId" sortable="true" noWrap="true"
+sortProperty="AsnwrFld1" formatType="number">
+<af:selectOneRadio layout="horizontal" id="SrvyQuestId"
+value="#{row.SrvyQuestId}"
+required="#{bindings.SrvyQuestId.mandatory}">
+<af:forEach var="row2"
+items="#{bindings.srvyqstndesc.rangeSet}">
+<af:selectItem label="#{row2.AsnwrFld1}"
+value="#{row2.SrvyQuestId}"/>
+</af:forEach>
+</af:selectOneRadio>
+</af:column> 
+-->
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Empno}">
+              <af:outputText value="#{row.Empno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Empno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Ename}">
+              <af:outputText value="#{row.Ename}"/>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Deptno}"
+                       sortProperty="Deptno" sortable="false">
+
+              <af:selectOneRadio layout="horizontal" id="Deptno"
+              value="#{row.Deptno}"
+              required="#{bindings.Deptno.mandatory}">
+              <af:selectItem label="&lt;None>" value="#{null}"/>
+              <af:forEach var="row2"
+              items="#{bindings.DepartmentList.rangeSet}">
+                <af:selectItem label="#{row2.Dname}" value="#{row2.Deptno}"/>
+              </af:forEach>
+              </af:selectOneRadio>
+
+
+
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and" autoSubmit="true">
+                <af:commandButton text="Submit"/>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+          <af:objectSeparator/>
+          <af:panelBox text="Current Row Radio Group Dropped from Data Control Palette" partialTriggers="MyTable">
+            <af:selectOneRadio value="#{bindings.EmpViewDeptno.inputValue}"
+                               label="#{bindings.EmpViewDeptno.label}">
+              <f:selectItems value="#{bindings.EmpViewDeptno.items}"/>
+            </af:selectOneRadio>
+          </af:panelBox>
+          <af:objectSeparator/>
+          <af:commandButton actionListener="#{bindings.Commit.execute}"
+                            text="Commit" disabled="false"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback"
+                            disabled="#{!bindings.Rollback.enabled}"
+                            immediate="true">
+            <af:resetActionListener/>
+          </af:commandButton>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

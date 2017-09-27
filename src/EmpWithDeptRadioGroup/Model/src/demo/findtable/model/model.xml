@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="demo.findtable.model" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="DepartmentList"
+      FullName="demo.findtable.model.DepartmentList"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="Emp"
+      FullName="demo.findtable.model.Emp"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="demo.findtable.model.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="HRModule"
+      FullName="demo.findtable.model.HRModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>
