@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="home">
+    <page>/home.jspx</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name id="__4">pageHandler</managed-bean-name>
+    <managed-bean-class id="__2">oracle.demo.view.DemoPageEventHandler</managed-bean-class>
+    <managed-bean-scope id="__3">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name id="__8">messagesController</managed-bean-name>
+    <managed-bean-class id="__7">oracle.demo.view.MessagePrioritizationController</managed-bean-class>
+    <managed-bean-scope id="__6">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelGridLayout id="pgl1">
+          <af:gridRow height="70px" id="gr2">
+            <af:gridCell width="160px" halign="stretch" valign="stretch" id="gc7" styleClass="AFBrandingBar">
+              <af:spacer styleClass="AFBrandingBarLogo" id="s_logo"/>
+            </af:gridCell>
+            <af:gridCell columnSpan="2" halign="stretch" valign="stretch" id="gc1" styleClass="AFBrandingBar">
+              <af:panelGroupLayout layout="horizontal" valign="middle" inlineStyle="height:70px;">
+                <af:outputText value="Message Prioritization Demo" styleClass="AFBrandingBarTitle" id="ot_title"/>
+              </af:panelGroupLayout>
+            </af:gridCell>
+          </af:gridRow>
+          <af:gridRow height="80px" id="gr3">
+            <af:gridCell columnSpan="3" id="gc12">
+              <af:spacer id="s2"/>
+            </af:gridCell>
+          </af:gridRow>
+          <af:gridRow height="auto" id="gr4">
+            <af:gridCell width="160px" id="gc10"/>
+            <af:gridCell width="80%" id="gc8">
+              <af:outputText value="In this simple demo press one of the buttons below, depending on the severity, the message will either appear in a popup or in-line"/>
+            </af:gridCell>
+            <af:gridCell width="20%" id="gc15"/>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" height="auto" id="gr5">
+            <af:gridCell width="160px" id="gc5"/>
+            <af:gridCell width="80%" halign="stretch" valign="stretch" id="gc14">
+              <af:panelGroupLayout layout="vertical" id="pgl2">
+                <af:messages id="msgs" inline="#{messagesController.inlineMessage}"
+                             partialTriggers="cb1 cb2 cb3 cb4 cb5"/>
+                <af:commandButton text="Raise an Error Message" partialSubmit="true"
+                                  action="#{pageHandler.raiseErrorMessage}" id="cb1"/>
+                <af:commandButton text="Raise an Informational Message" partialSubmit="true"
+                                  action="#{pageHandler.raiseInformationalMessage}" id="cb2"/>
+                <af:commandButton text="Raise a Warning Message" partialSubmit="true" 
+                                  action="#{pageHandler.raiseWarningMessage}" id="cb3"/>
+                <af:commandButton text="Raise a Fatal Error Message" partialSubmit="true" 
+                                  action="#{pageHandler.raiseFatalMessage}" id="cb4"/>
+                <af:commandButton text="Raise Several Messages including an Error" partialSubmit="true" 
+                                  action="#{pageHandler.raiseSeveralMessages}" id="cb5"/>                                  
+                <f:facet name="separator">
+                  <af:spacer height="20" id="s3"/>
+                </f:facet>
+              </af:panelGroupLayout>
+            </af:gridCell>
+            <af:gridCell width="20%" id="gc6"/>
+          </af:gridRow>
+          <af:gridRow height="40px" id="gr1">
+            <af:gridCell columnSpan="3" id="gc3">
+              <af:spacer id="s1"/>
+            </af:gridCell>
+          </af:gridRow>
+        </af:panelGridLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
