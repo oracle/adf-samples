@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="TestModule"
+   ComponentClass="demo.model.TestModuleImpl"
+   ComponentInterface="demo.model.common.TestModule"
+   ClientProxyName="demo.model.client.TestModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="EmpView"
+      ViewObjectName="demo.model.EmpView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpViewMetadata"
+      ViewObjectName="demo.model.EmpViewMetadata" >
+   </ViewUsage>
+</AppModule>
