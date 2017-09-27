@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config" xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:ads="http://xmlns.oracle.com/adf/activedata/config"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults changeEventPolicy="ppr" useBindVarsForViewCriteriaLiterals="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID" value="DataPushSample-6863"/>
+  </adf:adf-properties-child>
+  <ads:adf-activedata-config xmlns=
+                            "http://xmlns.oracle.com/adf/activedata/config">
+    <transport>long-polling</transport>
+    <latency-threshold>5000</latency-threshold>
+    <keep-alive-interval>10000</keep-alive-interval>
+    <max-reconnect-attempt-time>90000</max-reconnect-attempt-time>
+    <reconnect-wait-time>8000</reconnect-wait-time>
+    <polling-interval>1000</polling-interval>
+</ads:adf-activedata-config>
+</adf-config>

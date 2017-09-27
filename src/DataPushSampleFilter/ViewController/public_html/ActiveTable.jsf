@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="ActiveTable.jsf" id="d1">
+    <af:form id="f1">
+      <af:panelHeader text="Select Departments for Change Notifications" id="ph2">
+        <af:selectManyShuttle value="#{DepartmentActiveCollectionModel.selectedIds}"
+        leadingHeader="Available Departments" trailingHeader="Selected Departments" id="sms1">
+          <f:selectItems value="#{DepartmentActiveCollectionModel.allDepartments}" id="si1"/>
+        </af:selectManyShuttle>
+        <af:selectBooleanCheckbox value="#{DepartmentActiveCollectionModel.showNewDepartments}" label="Show New Departments?" id="sbc1"/>
+        <af:commandButton text="Change Selection" disabled="#{!DepartmentActiveCollectionModel.changeStreamStarted}" actionListener="#{DepartmentActiveCollectionModel.changeSelection}"/>
+        <af:commandButton text="Start Updates" disabled="#{DepartmentActiveCollectionModel.changeStreamStarted}" actionListener="#{DepartmentActiveCollectionModel.startListening}"/>       
+      </af:panelHeader>
+      <af:panelHeader text="Table Refreshed using Oracle Active Data Service" id="ph1">
+        <f:facet name="context"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:outputText value="Names of first three departments will be changed multiple times, and 5 new departmemts will be added in between, at the end the first three departments are removed"/>
+                <af:table value="#{DepartmentActiveCollectionModel}" var="row"
+                           id="t2" rows="20" width="500">
+<!-- For ADS to work each column can only contain a single af:outputText! -->
+                  <af:column sortProperty="id" sortable="false" headerText="id"
+                             id="c11">
+                    <af:outputText value="#{row.id}" id="it3"/>
+                  </af:column>
+                  <af:column sortProperty="name" sortable="false" width="300"
+                             headerText="name" id="c21">
+                    <af:outputText value="#{row.name}" id="it4"/>
+                  </af:column>
+                </af:table>
+      </af:panelHeader>
+    </af:form>
+  </af:document>
+</f:view>
