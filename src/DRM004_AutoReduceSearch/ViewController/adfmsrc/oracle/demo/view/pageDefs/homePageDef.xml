@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.92" id="homePageDef"
+                Package="oracle.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AutoReduceAMDataControl"
+                     Binds="AllObjectsResultsQueryForTable.variablesMap.searchTerm"
+                     Name="ExecuteWithParams_searchTerm" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="AllObjectsResultsQueryForTable" RangeSize="25"
+              DataControl="AutoReduceAMDataControl"
+              id="AllObjectsResultsQueryForTableIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AllObjectsResultsQueryForTableIterator"
+          id="AllObjectsResultsQueryForTable">
+      <nodeDefinition DefName="oracle.demo.model.queries.AllObjectsResultsQuery"
+                      Name="AllObjectsResultsQueryForTable0">
+        <AttrNames>
+          <Item Value="ObjectName"/>
+          <Item Value="ObjectId"/>
+          <Item Value="ObjectType"/>
+          <Item Value="Owner"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AllObjectsResultsQueryForTableIterator"
+            id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="searchTerm"
+                 NDValue="${bindings.ExecuteWithParams_searchTerm}"
+                 NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="searchTerm">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_searchTerm"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="autoSuggestCandidates" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="autoSuggestCandidates"
+                  IsViewObjectMethod="false"
+                  DataControl="AutoReduceAMDataControl"
+                  InstanceName="AutoReduceAMDataControl.dataProvider"
+                  ReturnName="data.AutoReduceAMDataControl.methodResults.autoSuggestCandidates_AutoReduceAMDataControl_dataProvider_autoSuggestCandidates_result">
+      <NamedData NDName="searchTerm" NDType="java.lang.String"/>
+      <NamedData NDName="returnCount" NDType="int"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

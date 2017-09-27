@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AutoReduceAM"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  ComponentClass="oracle.demo.model.AutoReduceAMImpl"
+  ComponentInterface="oracle.demo.model.common.AutoReduceAM"
+  ClientProxyName="oracle.demo.model.client.AutoReduceAMClient"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="AllObjectsResultsQueryForTable"
+    ViewObjectName="oracle.demo.model.queries.AllObjectsResultsQuery"
+    FetchSize="25"
+    RangeSize="25">
+    <ViewCriteriaUsage
+      Name="AllObjectsResultsQueryCriteria"
+      FullName="oracle.demo.model.queries.AllObjectsResultsQuery.AllObjectsResultsQueryCriteria"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="AutoSuggestList"
+    ViewObjectName="oracle.demo.model.queries.AllObjectsResultsQuery"
+    FetchSize="10"
+    RangeSize="10">
+    <ViewCriteriaUsage
+      Name="AutoSuggestStartsWith"
+      FullName="oracle.demo.model.queries.AllObjectsResultsQuery.AutoSuggestStartsWith"/>
+  </ViewUsage>
+  <ClientInterface>
+    <Method
+      Name="autoSuggestCandidates">
+      <Return
+        Type="java.util.List">
+        <Element
+          Type="java.lang.String"/>
+      </Return>
+      <Parameter
+        Name="searchTerm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="returnCount"
+        Type="int"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

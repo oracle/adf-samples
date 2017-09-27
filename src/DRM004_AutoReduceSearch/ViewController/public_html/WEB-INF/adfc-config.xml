@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="home">
+    <page>/home.jspx</page>
+  </view>
+  <managed-bean id="__3">
+    <managed-bean-name id="__2">typeImages</managed-bean-name>
+    <managed-bean-class id="__1">java.util.HashMap</managed-bean-class>
+    <managed-bean-scope id="__4">application</managed-bean-scope>
+    <map-entries>
+      <map-entry>
+        <key>EDITION</key>
+        <value>/images/edition.png</value>
+      </map-entry>
+      <map-entry>
+        <key>TABLE</key>
+        <value>/images/table.png</value>
+      </map-entry>
+      <map-entry>
+        <key>SYNONYM</key>
+        <value>/images/synonym.png</value>
+      </map-entry>
+      <map-entry>
+        <key>VIEW</key>
+        <value>/images/view.png</value>
+      </map-entry>
+      <map-entry>
+        <key>PACKAGE</key>
+        <value>/images/plsql_package.png</value>
+      </map-entry>
+      <map-entry>
+        <key>TYPE</key>
+        <value>/images/type.png</value>
+      </map-entry>
+      <map-entry>
+        <key>OPERATOR</key>
+        <value>/images/operator.png</value>
+      </map-entry> 
+      <map-entry>
+        <key>PROCEDURE</key>
+        <value>/images/sqlprocedure.png</value>
+      </map-entry>
+      <map-entry>
+        <key>INDEXTYPE</key>
+        <value>/images/index.png</value>
+      </map-entry>    
+      <map-entry>
+        <key>XML SCHEMA</key>
+        <value>/images/xmlSchema.png</value>
+      </map-entry>
+      <map-entry>
+        <key>SEQUENCE</key>
+        <value>/images/sequence.png</value>
+      </map-entry>   
+      <map-entry>
+        <key>FUNCTION</key>
+        <value>/images/plsql_func.png</value>
+      </map-entry>      
+    </map-entries>
+  </managed-bean>
+    <managed-bean id="__16">
+    <managed-bean-name id="__17">typeImageOffsets</managed-bean-name>
+    <managed-bean-class id="__18">java.util.HashMap</managed-bean-class>
+    <managed-bean-scope id="__19">application</managed-bean-scope>
+    <map-entries>
+      <map-entry>
+        <key>EDITION</key>
+        <value>0</value>
+      </map-entry>
+      <map-entry>
+        <key>TABLE</key>
+        <value>-96</value>
+      </map-entry>
+      <map-entry>
+        <key>SYNONYM</key>
+        <value>-112</value>
+      </map-entry>
+      <map-entry>
+        <key>VIEW</key>
+        <value>-64</value>
+      </map-entry>
+      <map-entry>
+        <key>PACKAGE</key>
+        <value>-160</value>
+      </map-entry>
+      <map-entry>
+        <key>TYPE</key>
+        <value>-80</value>
+      </map-entry>
+      <map-entry>
+        <key>OPERATOR</key>
+        <value>-16</value>
+      </map-entry> 
+      <map-entry>
+        <key>PROCEDURE</key>
+        <value>-128</value>
+      </map-entry>
+      <map-entry>
+        <key>INDEXTYPE</key>
+        <value>-32</value>
+      </map-entry>    
+      <map-entry>
+        <key>XML SCHEMA</key>
+        <value>-48</value>
+      </map-entry>
+      <map-entry>
+        <key>SEQUENCE</key>
+        <value>-144</value>
+      </map-entry>   
+      <map-entry>
+        <key>FUNCTION</key>
+        <value>-176</value>
+      </map-entry>      
+    </map-entries>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name id="__5">uiManager</managed-bean-name>
+    <managed-bean-class id="__8">oracle.demo.view.UIManager</managed-bean-class>
+    <managed-bean-scope id="__7">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name id="__12">searchManager</managed-bean-name>
+    <managed-bean-class id="__9">oracle.demo.view.SearchScreenManager</managed-bean-class>
+    <managed-bean-scope id="__11">request</managed-bean-scope>
+    <managed-property id="__15">
+      <property-name id="__14">uiManager</property-name>
+      <property-class>oracle.demo.view.UIManager</property-class>
+      <value id="__13">#{uiManager}</value>
+    </managed-property>
+  </managed-bean>
+</adfc-config>

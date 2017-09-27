@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" maximized="true" initialFocusId="pt1:search"
+                 title="Search Demo">
+      <af:messages id="m1"/>
+      <af:form id="f1" defaultCommand="pt1:searchExecute">
+        <af:pageTemplate viewId="/templates/FixedWidthCenteredTemplate.jspx"
+                         id="pt1">
+          <f:facet name="content">
+            <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth"
+                                   dimensionsFrom="children">
+              <f:facet name="center">
+                <af:panelGroupLayout id="pgl9" layout="vertical"
+                                     partialTriggers="search searchExecute">
+                  <af:switcher defaultFacet="hits"
+                               facetName="#{(bindings.AllObjectsResultsQueryForTableIterator.estimatedRowCount == 0) ? 'empty' : 'hits'}"
+                               id="s5">
+                    <f:facet name="empty">
+                      <af:panelGroupLayout layout="horizontal" valign="middle"
+                                           halign="center" id="pgl4">
+                        <af:outputText value="No Hits"
+                                       styleClass="AFDataTextDisabled"
+                                       inlineStyle="font-size:large;" id="ot5"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="hits">
+                      <af:panelGroupLayout id="tileRowScroll" layout="scroll"
+                                           clientComponent="true"
+                                           inlineStyle="min-height:200px;">
+                        <af:panelGroupLayout layout="vertical" halign="end"
+                                             id="pgl5">
+                          <af:panelGroupLayout layout="horizontal" id="pgl6">
+                            <af:toolbar id="t1">
+                              <af:commandToolbarButton partialSubmit="true"
+                                                       selected="#{uiManager.searchResultsRowView}"
+                                                       shortDesc="Row view"
+                                                       icon="/images/listview_ena.png"
+                                                       depressedIcon="/images/listview_dwn.png"
+                                                       disabledIcon="/images/listview_dis.png"
+                                                       hoverIcon="/images/listview_ovr.png"
+                                                       id="rowCtb"
+                                                       partialTriggers="tileCtb">
+                                <af:setPropertyListener from="0"
+                                                        to="#{uiManager.searchResultsViewMode}"
+                                                        type="action"/>
+                                <af:clientListener type="action"
+                                                   method="handleTileRowToggle"/>
+                                <af:clientAttribute name="tileView" value="no"/>
+                              </af:commandToolbarButton>
+                              <af:commandToolbarButton partialSubmit="true"
+                                                       selected="#{uiManager.searchResultsTileView}"
+                                                       shortDesc="Tile view"
+                                                       icon="/images/detailcolumnview_ena.png"
+                                                       depressedIcon="/images/detailcolumnview_ena.png"
+                                                       disabledIcon="/images/detailcolumnview_dis.png"
+                                                       hoverIcon="/images/detailcolumnview_ovr.png"
+                                                       id="tileCtb"
+                                                       partialTriggers="rowCtb">
+                                <af:setPropertyListener from="1"
+                                                        to="#{uiManager.searchResultsViewMode}"
+                                                        type="action"/>
+                                <af:clientListener type="action"
+                                                   method="handleTileRowToggle"/>
+                                <af:clientAttribute name="tileView"
+                                                    value="yes"/>
+                              </af:commandToolbarButton>
+                            </af:toolbar>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical" id="rowView"
+                                             inlineStyle="min-height:200px;"
+                                             clientComponent="true"
+                                             visible="#{uiManager.searchResultsRowView}"
+                                             binding="#{searchManager.rowViewGroup}"
+                                             partialTriggers="i_pgn:cl_pgn resCountSel search searchExecute pg_nxt_cil pg_prv_cil">
+                          <af:iterator value="#{bindings.AllObjectsResultsQueryForTable.collectionModel}"
+                                       var="row"
+                                       rows="#{uiManager.searchDisplaySetSize}"
+                                       first="#{uiManager.searchIndex}" id="i1">
+                            <af:panelStretchLayout bottomHeight="10"
+                                                   topHeight="10"
+                                                   startWidth="80"
+                                                   endWidth="200"
+                                                   dimensionsFrom="children"
+                                                   styleClass="AFStretchWidth"
+                                                   id="psl2">
+                              <f:facet name="top">
+                                <af:spacer height="1" id="s6"/>
+                              </f:facet>
+                              <f:facet name="start">
+                                <af:panelGroupLayout layout="horizontal"
+                                                     halign="center" id="pgl8">
+                                  <!-- In this view I'm using the sprite technique
+                                       see the tile view for the image source technique--> 
+                                  <af:spacer styleClass="iconStripBase" inlineStyle="background-position:#{typeImageOffsets[row.ObjectType]}px;"
+                                             id="s7"/>                                            
+                                </af:panelGroupLayout>
+                              </f:facet>
+                              <f:facet name="center">
+                                <af:panelGroupLayout layout="horizontal"
+                                                     id="pgl7">
+                                  <af:outputText value="#{row.ObjectName}"
+                                                 id="ot2"/>
+                                </af:panelGroupLayout>
+                              </f:facet>
+                              <f:facet name="end">
+                                <af:panelGroupLayout layout="horizontal"
+                                                     id="pgl2">
+                                  <af:panelLabelAndMessage label="Owner"
+                                                           id="plam1">
+                                    <af:outputText value="#{row.Owner}" id="ot3"
+                                                   styleClass="AFDataTextDisabled"/>
+                                  </af:panelLabelAndMessage>
+                                  <af:panelLabelAndMessage label="Status"
+                                                           id="plam2">
+                                    <af:outputText value="#{row.Status}"
+                                                   id="ot4"
+                                                   styleClass="AFDataTextDisabled"/>
+                                  </af:panelLabelAndMessage>
+                                  <f:facet name="separator">
+                                    <af:spacer width="10" id="s2"/>
+                                  </f:facet>
+                                </af:panelGroupLayout>
+                              </f:facet>
+                              <f:facet name="bottom">
+                                <af:separator id="s3"/>
+                              </f:facet>
+                            </af:panelStretchLayout>
+                          </af:iterator>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="tileView" layout="default"
+                                             visible="#{uiManager.searchResultsTileView}"
+                                             partialTriggers="search searchExecute resCountSel i_pgn:cl_pgn pg_nxt_cil pg_prv_cil"
+                                             clientComponent="true"
+                                             binding="#{searchManager.tileViewGroup}">
+                          <af:iterator value="#{bindings.AllObjectsResultsQueryForTable.collectionModel}"
+                                       var="tile" id="i2"
+                                       rows="#{uiManager.searchDisplaySetSize}"
+                                       first="#{uiManager.searchIndex}">
+                            <af:panelGroupLayout layout="vertical"
+                                                 halign="center"
+                                                 inlineStyle="width:20em;display:inline-block; padding:10px;"
+                                                 id="pgl3">
+                             <!-- In this view I'm using the image source technique
+                                  see the row view for the sprite technique--> 
+                              <af:image source="#{typeImages[tile.ObjectType]}"
+                                        shortDesc="#{tile.ObjectType}" id="i3"/>
+                              <af:outputText value="#{tile.Owner}.#{tile.ObjectName}"
+                                             id="ot1"/>
+                            </af:panelGroupLayout>
+                          </af:iterator>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical"
+                                             inlineStyle="padding-top:8px;"
+                                             id="navFooter">
+                          <af:panelStretchLayout startWidth="auto"
+                                                 endWidth="144"
+                                                 dimensionsFrom="auto"
+                                                 partialTriggers="search searchExecute resCountSel i_pgn:cl_pgn pg_nxt_cil pg_prv_cil"
+                                                 rendered="#{bindings.AllObjectsResultsQueryForTableIterator.estimatedRowCount > 0}"
+                                                 binding="#{searchManager.navigationBar}"
+                                                 id="psl3">
+                            <f:facet name="start">
+                              <af:outputFormatted id="cpnbRowsFound"
+                                                  inlineStyle="padding-left:4px;"
+                                                  value="Displaying &lt;b>#{1 + uiManager.searchIndex}-#{searchManager.searchLastIndex}&lt;/b> of &lt;b>#{bindings.AllObjectsResultsQueryForTableIterator.estimatedRowCount}&lt;/b> results found"
+                                                  styleUsage="instruction"/>
+                            </f:facet>
+                            <f:facet name="center">
+                              <af:panelGroupLayout id="paginator"
+                                                   layout="vertical"
+                                                   halign="center"
+                                                   partialTriggers="search searchExecute resCountSel i_pgn:cl_pgn pg_nxt_cil pg_prv_cil"
+                                                   styleClass="AFStretchWidth">
+                                <af:panelGroupLayout id="pg_nxt_prv"
+                                                     layout="horizontal">
+                                  <af:commandImageLink id="pg_prv_cil"
+                                                       shortDesc="Previous page"
+                                                       icon="/images/previousitem_ena.png"
+                                                       hoverIcon="/images/previousitem_ovr.png"
+                                                       depressedIcon="/images/previousitem_dwn.png"
+                                                       disabledIcon="/images/previousitem_dis.png"
+                                                       disabled="#{searchManager.searchResultsFirstPage}">
+                                    <af:setActionListener from="#{uiManager.searchResultsCurrentPage - 1}"
+                                                          to="#{uiManager.searchResultsCurrentPage}"/>
+                                  </af:commandImageLink>
+                                  <af:panelGroupLayout id="pg_pagestamp"
+                                                       layout="horizontal">
+                                    <f:facet name="separator">
+                                      <af:outputText value="|"
+                                                     inlineStyle="padding-left:8px;padding-right:8px"
+                                                     id="ot6"/>
+                                    </f:facet>
+                                    <af:iterator id="i_pgn" var="page"
+                                                 value="#{searchManager.pageNumbers}">
+                                      <af:commandLink id="cl_pgn" text="#{page}"
+                                                      partialSubmit="true"
+                                                      rendered="#{page != 0 and uiManager.searchResultsCurrentPage != page}">
+                                        <af:setActionListener from="#{page}"
+                                                              to="#{uiManager.searchResultsCurrentPage}"/>
+                                      </af:commandLink>
+                                      <af:outputText id="thmRowPgCur"
+                                                     value="#{page}"
+                                                     inlineStyle="font-weight:bold"
+                                                     rendered="#{uiManager.searchResultsCurrentPage == page}"/>
+                                      <af:outputText id="thmRowMore" value="..."
+                                                     rendered="#{page == 0}"/>
+                                    </af:iterator>
+                                  </af:panelGroupLayout>
+                                  <af:commandImageLink id="pg_nxt_cil"
+                                                       shortDesc="Previous page"
+                                                       icon="/images/nextitem_ena.png"
+                                                       hoverIcon="/images/nextitem_ovr.png"
+                                                       depressedIcon="/images/nextitem_dwn.png"
+                                                       disabledIcon="/images/nextitem_dis.png"
+                                                       disabled="#{searchManager.searchResultsLastPage}">
+                                    <af:setActionListener from="#{uiManager.searchResultsCurrentPage + 1}"
+                                                          to="#{uiManager.searchResultsCurrentPage}"/>
+                                  </af:commandImageLink>
+                                  <f:facet name="separator">
+                                    <af:spacer width="4" id="s4"/>
+                                  </f:facet>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="end">
+                              <af:selectOneChoice id="resCountSel"
+                                                  label="Items per page"
+                                                  autoSubmit="true"
+                                                  value="#{uiManager.searchDisplaySetSize}">
+                                <f:selectItems id="thmRowItems"
+                                               value="#{searchManager.pageSizes}"/>
+                              </af:selectOneChoice>
+                            </f:facet>
+                          </af:panelStretchLayout>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:switcher>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelGroupLayout id="pgl1" layout="horizontal"
+                                     valign="middle" halign="left">
+                  <af:inputText label="#{bindings.searchTerm.hints.label}"
+                                id="search"
+                                columns="#{bindings.searchTerm.hints.displayWidth}"
+                                value="#{bindings.searchTerm.inputValue}"
+                                required="false"
+                                maximumLength="#{bindings.searchTerm.hints.precision}"
+                                autoSubmit="false">
+                    <!-- Just in case you want to contrast with autosuggest you can uncomment the tag below 
+                         The autosuggest uses a slighly different ViewCrtitera and only uses a trailing wildcard 
+                         match -->
+                    
+                    <!--af:autoSuggestBehavior maxSuggestedItems="#{uiManager.autoSuggestSuggestionCount}"
+                                            suggestItems="#{searchManager.autoSuggestHandler}"/-->
+                    <af:clientListener method="invokeAutoSearch"
+                                       type="keyUp"/>
+                    <af:clientAttribute name="autoCompleteDelay" value="0.5"/>                   
+                    <af:serverListener type="clientPushQueryEvent"
+                                       method="#{searchManager.clientPushQueryHandler}"/>
+                    <af:showPopupBehavior triggerType="mouseOver" popupId="searchInfoP"/>
+                  </af:inputText>
+                  <af:spacer width="10" height="10" id="s1"/>
+                  <af:commandImageLink actionListener="#{searchManager.searchHander}"
+                                       id="searchExecute"
+                                       icon="/images/search_qualifier.png"/>
+
+                  <af:popup id="searchInfoP" contentDelivery="lazy">
+                    <af:noteWindow autoDismissalTimeout="10" id="nw1">
+                      <af:outputText value="This sample seach does a LIKE comparison with leading and trailing wildcards on the Oracle ALL_OBJECTS view"
+                                     id="ot7"/>
+                    
+                    </af:noteWindow>
+                  </af:popup>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:attribute name="pageTitle"
+                       value="Auto-Reduce Search &amp; Pagingation Sample"/>
+        </af:pageTemplate>
+      </af:form>
+      <f:facet name="metaContainer">
+        <af:resource type="javascript" source="/js/AutoReduceSearch.js"/>
+        <af:resource type="css" source="/css/icons.css"/>       
+      </f:facet>
+    </af:document>
+  </f:view>
+</jsp:root>

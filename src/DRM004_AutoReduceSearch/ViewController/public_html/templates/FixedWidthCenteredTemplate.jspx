@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelStretchLayout id="pt_psl1" dimensionsFrom="auto"
+                           inlineStyle="min-width:960px;">
+      <f:facet name="center">
+        <af:panelGroupLayout layout="vertical" id="pt_pgl1">
+          <af:panelGroupLayout layout="horizontal"
+                               inlineStyle="width:960px;background-color:#FFFFFF"
+                               id="pt_pgl2" halign="center" valign="top">
+            <af:panelStretchLayout id="pt_psl2" topHeight="60" dimensionsFrom="auto">
+              <f:facet name="top">
+                <af:panelGroupLayout id="pt_pgl3" layout="horizontal">
+                  <af:goLink destination="/">
+                    <af:spacer id="pt_logo" styleClass="AFBrandingBarLogo"/>
+                  </af:goLink>
+                  <af:spacer width="10" height="10" id="pt_s1"/>
+                  <af:outputText value="#{attrs.pageTitle}" id="pt_title"
+                                 styleClass="AFBrandingBarTitle"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="center">
+                <af:facetRef facetName="content"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:panelStretchLayout>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>FixedWidthCenteredTemplate</display-name>
+        <facet>
+          <description>Main fixed width area</description>
+          <facet-name>content</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>pageTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

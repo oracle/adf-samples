@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.demo.model.AutoReduceAM">
+      <AppModuleConfig name="AutoReduceAMLocal" DeployPlatform="LOCAL" JDBCName="hr" jbo.project="oracle.demo.model.Model" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" ApplicationName="oracle.demo.model.AutoReduceAM">
+         <Security AppModuleJndiName="oracle.demo.model.AutoReduceAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AutoReduceAMShared" DeployPlatform="LOCAL" JDBCName="hr" jbo.project="oracle.demo.model.Model" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" ApplicationName="oracle.demo.model.AutoReduceAM">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>
+         <Security AppModuleJndiName="oracle.demo.model.AutoReduceAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="Model"
+   Version="11.1.1.61.92"
+   SeparateXMLFiles="true"
+   PackageName="oracle.demo.model" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../Model.jpr" />
+      <Attr Name="_appModuleNames0" Value="oracle.demo.model.AutoReduceAM" />
+      <Attr Name="_NamedConnection" Value="hr" />
+   </DesignTime>
+   <Containee
+      Name="entities"
+      ObjectType="JboPackage"
+      PackageName="oracle.demo.model.entities" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="model"
+      ObjectType="JboPackage"
+      PackageName="oracle.demo.model" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="queries"
+      ObjectType="JboPackage"
+      PackageName="oracle.demo.model.queries" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+</JboProject>

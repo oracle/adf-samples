@@ -1,0 +1,11 @@
+ /** CSS used to manage the icons used for each database object type by 
+     pulling each one out of a single "filmstrip" file 
+*/
+
+/* base */
+.iconStripBase {
+  display: block;
+  width: 16px;
+  height:16px;
+  background-image: url("../images/object_type_icon_strip.png");
+}
