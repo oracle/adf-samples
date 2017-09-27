@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="First">
+    <page>/First.jspx</page>
+  </view>
+  <view id="Second">
+    <page>/Second.jspx</page>
+  </view>
+  <view id="Third">
+    <page>/Third.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">First</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">third</from-outcome>
+      <to-activity-id id="__4">Third</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__20">
+      <from-outcome id="__21">second</from-outcome>
+      <to-activity-id id="__19">Second</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">Third</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome id="__10">second</from-outcome>
+      <to-activity-id id="__8">Second</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__17">
+      <from-outcome id="__18">first</from-outcome>
+      <to-activity-id id="__16">First</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__11">
+    <from-activity-id id="__12">Second</from-activity-id>
+    <control-flow-case id="__13">
+      <from-outcome id="__15">first</from-outcome>
+      <to-activity-id id="__14">First</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome id="__24">third</from-outcome>
+      <to-activity-id id="__23">Third</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__26">
+    <managed-bean-name id="__25">launcher</managed-bean-name>
+    <managed-bean-class id="__28">test.view.Launcher</managed-bean-class>
+    <managed-bean-scope id="__27">backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

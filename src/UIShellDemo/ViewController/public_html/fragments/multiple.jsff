@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1">
+    <af:outputText value="This is a new activity!" id="ot1"
+                   inlineStyle="color:Red; font-size:x-large; font-weight:bold;"/>
+  </af:panelGroupLayout>
+  <af:panelAccordion id="pa1">
+    <af:showDetailItem text="First Steps" id="sdi1">
+      <af:panelList id="pl1">
+        <af:outputText value="Step 1: Do something" id="ot2"/>
+        <af:outputText value="Step 2: And then something else" id="ot3"/>
+        <af:outputText value="Step 3: Be happy" id="ot4"/>
+      </af:panelList>
+    </af:showDetailItem>
+    <af:showDetailItem text="Second Steps" id="sdi2">
+      <af:panelList id="pl2">
+        <af:outputText value="Step 4: Make something cool" id="ot5"/>
+        <af:outputText value="Step 5: Get somebody to buy it" id="ot6"/>
+        <af:outputText value="Step 6: Prosper" id="ot7"/>
+      </af:panelList>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</jsp:root>

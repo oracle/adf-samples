@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Third Page">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="copyright"/>
+          <f:facet name="about"/>
+          <f:facet name="navigation"/>
+          <f:facet name="globalLinks"/>
+          <f:facet name="status"/>
+          <f:facet name="globalToolbar"/>
+          <f:facet name="globalSearch"/>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="First" id="cni1" action="first"/>
+              <af:commandNavigationItem text="Second" id="cni2" action="second"/>
+              <af:commandNavigationItem text="Third" id="cni3" selected="true"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="welcome"/>
+          <f:facet name="innerToolbar">
+            <af:panelGroupLayout layout="vertical">
+                          <af:toolbox>
+                <af:group>
+                  <af:menuBar>
+                    <af:menu text="Action">
+                      <af:commandMenuItem text="First Activity" id="cmi1" actionListener="#{backingBeanScope.launcher.launchFirstReplaceInPlace}"/>
+                      <af:commandMenuItem text="Second Activity" id="cmi2" actionListener="#{backingBeanScope.launcher.launchSecondReplaceInPlace}"/>
+                      <af:commandMenuItem text="Close" id="cmi4" actionListener="#{backingBeanScope.launcher.closeCurrentActivity}" disabled="#{viewScope.tabContext.selectedTabIndex &lt; 0}"/>
+                    </af:menu>
+                  </af:menuBar>
+                </af:group>
+              </af:toolbox>
+
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

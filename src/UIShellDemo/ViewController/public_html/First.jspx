@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="First Page">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="copyright"/>
+          <f:facet name="about"/>
+          <f:facet name="navigation">
+            <af:panelGroupLayout layout="vertical">
+              <af:outputText value="Choose your activity" inlineStyle="font-size:large;font-weight:bold;"/>
+              <af:panelList>
+                <af:commandLink text="Start first activity" actionListener="#{backingBeanScope.launcher.launchFirstActivity}" partialSubmit="true"/>
+                <af:commandLink text="Start next thing" actionListener="#{backingBeanScope.launcher.launchSecondActivity}" partialSubmit="true"/>
+                <af:commandLink text="Execute third task" actionListener="#{backingBeanScope.launcher.launchThirdActivity}" partialSubmit="true"/>
+              </af:panelList>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="globalLinks"/>
+          <f:facet name="status"/>
+          <f:facet name="globalToolbar"/>
+          <f:facet name="globalSearch"/>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="First"
+                                        id="cni1" selected="true"/>
+              <af:commandNavigationItem text="Second"
+                                        id="cni2" action="second"/>
+              <af:commandNavigationItem text="Third"
+                                        id="cni3" action="third"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="welcome"/>
+          <f:facet name="innerToolbar"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

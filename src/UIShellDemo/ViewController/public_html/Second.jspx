@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Second Page">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="copyright"/>
+          <f:facet name="about"/>
+          <f:facet name="navigation"/>
+          <f:facet name="globalLinks"/>
+          <f:facet name="status"/>
+          <f:facet name="globalToolbar"/>
+          <f:facet name="globalSearch"/>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="First" id="cni1" action="first" />
+              <af:commandNavigationItem text="Second" id="cni2" selected="true"/>
+              <af:commandNavigationItem text="Third" id="cni3" action="third"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="welcome"/>
+          <f:facet name="innerToolbar">
+            <af:panelGroupLayout layout="vertical">
+              <af:toolbox>
+                <af:group>
+                  <af:menuBar>
+                    <af:menu text="Action">
+                      <af:commandMenuItem text="New Activity" id="cmi1" actionListener="#{backingBeanScope.launcher.multipleInstanceActivity}"/>
+                      <af:commandMenuItem text="Next Activity" id="cmi2" actionListener="#{backingBeanScope.launcher.launchSecondActivity}"/>
+                      <af:commandMenuItem text="Final Task" id="cmi3" actionListener="#{backingBeanScope.launcher.launchThirdActivity}"/>
+                      <af:commandMenuItem text="Close" id="cmi4" actionListener="#{backingBeanScope.launcher.closeCurrentActivity}" disabled="#{viewScope.tabContext.selectedTabIndex &lt; 0}"/>
+                    </af:menu>
+                  </af:menuBar>
+                  <af:toolbar>
+                    <af:commandToolbarButton  actionListener="#{backingBeanScope.launcher.multipleInstanceActivity}"
+                                             icon="/icons/1.png"
+                                             hoverIcon="/icons/1.png"
+                                             depressedIcon="/icons/1.png"
+                                             disabledIcon="/icons/1.png"/>
+                    <af:commandToolbarButton  actionListener="#{backingBeanScope.launcher.currentTabDirty}" rendered="#{viewScope.tabContext.selectedTabIndex >= 0}"
+                                             icon="/icons/2.png"
+                                             hoverIcon="/icons/2.png"
+                                             depressedIcon="/icons/2.png"
+                                             disabledIcon="/icons/2.png"/>
+                    <af:commandToolbarButton  actionListener="#{backingBeanScope.launcher.currentTabClean}" rendered="#{viewScope.tabContext.selectedTabIndex >= 0}"
+                                             icon="/icons/3.png"
+                                             hoverIcon="/icons/3.png"
+                                             depressedIcon="/icons/3.png"
+                                             disabledIcon="/icons/3.png"/>
+                  </af:toolbar>
+                   <af:spacer/>
+                </af:group>
+              </af:toolbox>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

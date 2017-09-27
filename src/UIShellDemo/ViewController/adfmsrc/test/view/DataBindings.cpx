@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.55.13" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <pageMap>
+    <page path="/First.jspx" usageId="test_view_FirstPageDef"/>
+    <page path="/Second.jspx" usageId="test_view_SecondPageDef"/>
+    <page path="/Third.jspx" usageId="test_view_ThirdPageDef"/>
+    <page path="/fragments/multiple.jsff" usageId="test_view_multiplePageDef"/>
+    <page path="/fragments/one.jsff" usageId="test_view_onePageDef"/>
+    <page path="/fragments/two.jsff" usageId="test_view_twoPageDef"/>
+    <page path="/fragments/three.jsff" usageId="test_view_threePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_FirstPageDef" path="test.view.pageDefs.FirstPageDef"/>
+    <page id="test_view_SecondPageDef" path="test.view.pageDefs.SecondPageDef"/>
+    <page id="test_view_ThirdPageDef" path="test.view.pageDefs.ThirdPageDef"/>
+    <page id="test_view_multiplePageDef" path="fragments.multiplePageDef"/>
+    <page id="test_view_onePageDef" path="fragments.onePageDef"/>
+    <page id="test_view_twoPageDef" path="fragments.twoPageDef"/>
+    <page id="test_view_threePageDef" path="fragments.threePageDef"/>
+  </pageDefinitionUsages>
+</Application>

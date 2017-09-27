@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1" layout="vertical">
+    <af:outputText value="This is the Third Activity" id="ot1"
+                   inlineStyle="color:Blue; font-size:x-large; font-weight:bold;"/>
+    <af:spacer width="10" height="10" id="s1"/>
+    <af:commandButton text="Finish this Activity" id="cb1" actionListener="#{backingBeanScope.launcher.closeCurrentActivity}"/>
+  </af:panelGroupLayout>
+</jsp:root>
