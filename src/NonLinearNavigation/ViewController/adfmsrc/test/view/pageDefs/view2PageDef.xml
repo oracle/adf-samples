@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.99" id="view2PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DetailEmployeesView" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="DetailEmployeesViewIterator" Refresh="never"/>
+    <iterator Binds="SummaryEmployeesView" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SummaryEmployeesViewIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="PhoneNumber">
+      <AttrNames>
+        <Item Value="PhoneNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="JobId">
+      <AttrNames>
+        <Item Value="JobId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator" id="Salary">
+      <AttrNames>
+        <Item Value="Salary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator"
+                     id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <navigationlist IterBinding="SummaryEmployeesViewIterator"
+                    ListOperMode="navigation"
+                    ListIter="SummaryEmployeesViewIterator"
+                    id="SummaryEmployeesView" DTSupportsMRU="false">
+      <AttrNames>
+        <Item Value="FirstName"/>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </navigationlist>
+    <action IterBinding="DetailEmployeesViewIterator" id="RequeryDetail"
+            InstanceName="AppModuleDataControl.DetailEmployeesView"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="Bind_EmployeeId"
+                 NDValue="#{bindings.SummaryEmployeeId.inputValue}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+    <attributeValues IterBinding="SummaryEmployeesViewIterator"
+                     id="SummaryEmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DetailEmployeesViewIterator"
+                     id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

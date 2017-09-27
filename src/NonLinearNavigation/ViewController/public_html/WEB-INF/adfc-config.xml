@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/view1.jspx</page>
+  </view>
+  <view id="view2">
+    <page>/view2.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">view1</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">detail</from-outcome>
+      <to-activity-id id="__4">view2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id id="__7">view2</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome id="__10">summary</from-outcome>
+      <to-activity-id id="__8">view1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__13">
+    <managed-bean-name id="__11">View2</managed-bean-name>
+    <managed-bean-class id="__12">test.view.backing.View2</managed-bean-class>
+    <managed-bean-scope id="__14">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employee-search-and-details">
+    <default-activity id="__13">view1</default-activity>
+    <view id="view1">
+      <page>/view1.jsff</page>
+    </view>
+    <task-flow-call id="employee-details">
+      <task-flow-reference>
+        <document>/WEB-INF/employee-details.xml</document>
+        <id>employee-details</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">view1</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">detail</from-outcome>
+        <to-activity-id id="__4">employee-details</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

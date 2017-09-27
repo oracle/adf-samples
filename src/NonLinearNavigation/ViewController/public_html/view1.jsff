@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Employees" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.EmployeesSearchQuery.queryDescriptor}"
+                    model="#{bindings.EmployeesSearchQuery.queryModel}"
+                    queryListener="#{bindings.EmployeesSearchQuery.processQuery}"
+                    queryOperationListener="#{bindings.EmployeesSearchQuery.processQueryOperation}"
+                    resultComponentId="::resId1"/>
+        </af:panelHeader>
+        <af:table value="#{bindings.SummaryEmployeesView.collectionModel}"
+                  var="row" rows="#{bindings.SummaryEmployeesView.rangeSize}"
+                  emptyText="#{bindings.SummaryEmployeesView.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.SummaryEmployeesView.rangeSize}"
+                  rowBandingInterval="0" id="resId1"
+                  selectedRowKeys="#{bindings.SummaryEmployeesView.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.SummaryEmployeesView.collectionModel.makeCurrent}"
+                  rowSelection="single" styleClass="AFStretchWidth"
+                  columnStretching="last">
+          <af:column sortProperty="#{bindings.SummaryEmployeesView.hints.EmployeeId.name}"
+                     sortable="true"
+                     headerText="#{bindings.SummaryEmployeesView.hints.EmployeeId.label}"
+                     id="resId1c1">
+            <af:outputText value="#{row.EmployeeId}" id="ot1">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.SummaryEmployeesView.hints.EmployeeId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.SummaryEmployeesView.hints.FirstName.name}"
+                     sortable="true"
+                     headerText="#{bindings.SummaryEmployeesView.hints.FirstName.label}"
+                     id="resId1c2">
+            <af:outputText value="#{row.FirstName}" id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.SummaryEmployeesView.hints.LastName.name}"
+                     sortable="true"
+                     headerText="#{bindings.SummaryEmployeesView.hints.LastName.label}"
+                     id="resId1c3">
+            <af:outputText value="#{row.LastName}" id="ot3"/>
+          </af:column>
+        </af:table>
+        <af:commandButton text="Details" id="cb1" action="detail"/>
+      </af:panelGroupLayout>
+      <!-- id="af_one_column_stretched"   -->
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

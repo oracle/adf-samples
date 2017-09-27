@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.65.99" id="view1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SummaryEmployeesView" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="SummaryEmployeesViewIterator"/>
+    <searchRegion Criteria="EmployeesSearch"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SummaryEmployeesViewIterator"
+                  id="EmployeesSearchQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SummaryEmployeesViewIterator" id="SummaryEmployeesView">
+      <nodeDefinition DefName="test.EmployeesView" Name="SummaryEmployeesView0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

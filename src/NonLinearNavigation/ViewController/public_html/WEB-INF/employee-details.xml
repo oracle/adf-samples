@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employee-details">
+    <default-activity id="__1">Execute</default-activity>
+    <view id="view2">
+      <page>/view2.jsff</page>
+    </view>
+    <task-flow-return id="return">
+      <outcome id="__2">
+        <name>return</name>
+      </outcome>
+    </task-flow-return>
+    <method-call id="Execute">
+      <method>#{bindings.RequeryDetail.execute}</method>
+      <outcome id="__8">
+        <fixed-outcome>Go</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">view2</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__7">summary</from-outcome>
+        <to-activity-id id="__6">return</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">Execute</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">Go</from-outcome>
+        <to-activity-id id="__11">view2</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

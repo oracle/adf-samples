@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">view1</property>
+      <property
+         name="page">/view1.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">170.64355</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">295.5</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">employee-details</property>
+      <property
+         name="activityId">employee-details</property>
+      <property
+         name="documentReference">/WEB-INF/employee-details.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employee-details&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">169.69531</property>
+      <property
+         name="x">512.3574</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">detail</property>
+      <property
+         name="sdm:polyPoints">R50,336.5,170.29297,471.35742,169.34473,L50</property>
+   </ControlFlowCase>
+</SDM>
