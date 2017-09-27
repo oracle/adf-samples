@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">jobs</property>
+      <property
+         name="page">/jobs.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>jobs&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">155.9375</property>
+      <property
+         name="x">110.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">builds</property>
+      <property
+         name="page">/builds.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>builds&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">228.67188</property>
+      <property
+         name="x">588.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">Feedback</property>
+      <property
+         name="page">/Feedback.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Feedback&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">5.4023438</property>
+      <property
+         name="x">391.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">toFeedback</property>
+      <property
+         name="sdm:polyPoints">R46,151.0,152.3711,350.0,5.3359375,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View2">
+      <property
+         name="fromOutcome">refresh</property>
+      <property
+         name="sdm:polyPoints">T44,106.5,101.87109,113.5,101.87109,T56</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall7">
+      <property
+         name="activityId">getJobDetail</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>getJobDetail&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">218.4336</property>
+      <property
+         name="x">313.51953</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="MethodCall7">
+      <property
+         name="fromOutcome">detail</property>
+      <property
+         name="sdm:polyPoints">R54,151.0,159.3711,272.51953,218.36719,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="MethodCall7"
+      to="View3">
+      <property
+         name="fromOutcome">toBuilds</property>
+      <property
+         name="sdm:polyPoints">R50,354.51953,218.36719,547.0,228.60547,L50</property>
+   </ControlFlowCase>
+   <note
+      id="note10">
+      <property
+         name="sdm:nodeHeight">130.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">Before you deploy this: </font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" color="#000000" size="3">Check the LocalHudson 
+      connection in ApplicationResources.  I've reset this to use the 
+      Hudson-ci build server on hudson-ci.org but you can change the URL to 
+      point to your own server</font>
+    </p>
+  </body>
+</html>
+]]>
+      </property>
+      <property
+         name="y">381.0</property>
+      <property
+         name="sdm:nodeWidth">492.0</property>
+      <property
+         name="x">319.0</property>
+   </note>
+</SDM>

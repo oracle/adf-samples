@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="main_task_flow_main_task_flow_getJobDetailPageDef" Package="org.hudsonci.mobile.mobile.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="Catalog" id="CatalogIterator"/>
+    <accessorIterator MasterBinding="CatalogIterator" Binds="registeredInstance" RangeSize="25" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Instance" id="registeredInstanceIterator"/>
+  </executables>
+  <bindings>
+    <methodAction IterBinding="registeredInstanceIterator" id="getJobDetail" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getJobDetail" IsViewObjectMethod="false" DataControl="Catalog"
+                  InstanceName="bindings.registeredInstanceIterator.currentRow.dataProvider"
+                  IsLocalObjectReference="true">
+      <NamedData NDName="key" NDValue="#{pageFlowScope.jobKey}" NDType="int"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

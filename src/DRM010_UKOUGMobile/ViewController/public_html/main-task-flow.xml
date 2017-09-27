@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="main-task-flow">
+    <default-activity>jobs</default-activity>
+    <finalizer></finalizer>
+    <managed-bean id="__4">
+      <managed-bean-name>jobKey</managed-bean-name>
+      <managed-bean-class>java.lang.String</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="jobs">
+      <page>/jobs.amx</page>
+    </view>
+    <view id="builds">
+      <page>/builds.amx</page>
+    </view>
+    <view id="Feedback">
+      <page>/Feedback.amx</page>
+    </view>
+    <method-call id="getJobDetail">
+      <method>#{bindings.getJobDetail.execute}</method>
+      <outcome>
+        <fixed-outcome>toBuilds</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>jobs</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toFeedback</from-outcome>
+        <to-activity-id>Feedback</to-activity-id>
+        <transition>flipUp</transition>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>jobs</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>detail</from-outcome>
+        <to-activity-id>getJobDetail</to-activity-id>
+        <transition>slideLeft</transition>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>getJobDetail</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>toBuilds</from-outcome>
+        <to-activity-id>builds</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

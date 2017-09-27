@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="FeedbackPageDef"
+                Package="org.hudsonci.mobile.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="sendEmail_to" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_cc" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_subject" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_body" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_bcc" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_attachments" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="sendEmail_mimeTypes" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="sendEmail" RequiresUpdateModel="true" Action="invokeMethod" MethodName="sendEmail"
+                  IsViewObjectMethod="false" DataControl="DeviceFeatures"
+                  InstanceName="data.DeviceFeatures.dataProvider">
+      <NamedData NDName="to" NDValue="your_mail@example.com" NDType="java.lang.String"/>
+      <NamedData NDName="cc" NDValue="${bindings.sendEmail_cc}" NDType="java.lang.String"/>
+      <NamedData NDName="subject" NDValue="Feedback from UKOUG Demo App" NDType="java.lang.String"/>
+      <NamedData NDName="body" NDValue="${bindings.sendEmail_body}" NDType="java.lang.String"/>
+      <NamedData NDName="bcc" NDValue="${bindings.sendEmail_bcc}" NDType="java.lang.String"/>
+      <NamedData NDName="attachments" NDValue="${bindings.sendEmail_attachments}" NDType="java.lang.String"/>
+      <NamedData NDName="mimeTypes" NDValue="${bindings.sendEmail_mimeTypes}" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="to">
+      <AttrNames>
+        <Item Value="sendEmail_to"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="cc">
+      <AttrNames>
+        <Item Value="sendEmail_cc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="subject">
+      <AttrNames>
+        <Item Value="sendEmail_subject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="body">
+      <AttrNames>
+        <Item Value="sendEmail_body"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="bcc">
+      <AttrNames>
+        <Item Value="sendEmail_bcc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="attachments">
+      <AttrNames>
+        <Item Value="sendEmail_attachments"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="mimeTypes">
+      <AttrNames>
+        <Item Value="sendEmail_mimeTypes"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

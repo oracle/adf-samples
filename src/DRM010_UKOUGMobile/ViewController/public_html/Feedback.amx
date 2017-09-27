@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Feedback" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Back" action="__back"/>
+    </amx:facet>
+    <amx:panelFormLayout id="pfl1">
+      <amx:inputText value="#{bindings.body.inputValue}" label="Your Feedback" id="it7" rows="6"/>
+    </amx:panelFormLayout>
+    <amx:commandButton actionListener="#{bindings.sendEmail.execute}" text="sendEmail"
+                       disabled="#{!bindings.sendEmail.enabled}" id="cb2"/>
+  </amx:panelPage>
+</amx:view>

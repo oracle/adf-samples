@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="org.hudsonci.mobile.mobile">
+  <AdapterDataControl id="Catalog" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="org.hudsonci.mobile.model.Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Catalog" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="org.hudsonci.mobile.model.Instance"/>
+      <TypeInfo FullName="org.hudsonci.mobile.model.Catalog"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="org.hudsonci.mobile.model.Catalog" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

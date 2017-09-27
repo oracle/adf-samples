@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="buildsPageDef"
+                Package="org.hudsonci.mobile.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Catalog" id="CatalogIterator"/>
+    <accessorIterator MasterBinding="CatalogIterator" Binds="registeredInstance" RangeSize="25" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Instance" id="registeredInstanceIterator"/>
+    <accessorIterator MasterBinding="registeredInstanceIterator" Binds="jobs" RangeSize="25" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Job" id="jobsIterator"/>
+    <accessorIterator MasterBinding="jobsIterator" Binds="builds" RangeSize="-1" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Build" id="buildsIterator"/>
+    <invokeAction id="focusRow" Binds="setCurrentRowWithKey"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="jobsIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="buildsIterator" id="builds">
+      <nodeDefinition DefName="org.hudsonci.mobile.model.Build" Name="builds0">
+        <AttrNames>
+          <Item Value="duration"/>
+          <Item Value="number"/>
+          <Item Value="result"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="jobsIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="jobsIterator" id="healthIcon">
+      <AttrNames>
+        <Item Value="healthIcon"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="jobsIterator" id="setCurrentRowWithKey" InstanceName="org.hudsonci.mobile.model.Instance.jobs"
+            DataControl="Catalog" RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{pageFlowScope.jobKey}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="#{bindings.name.inputValue}" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" action="__back" text="Jobs"/>
+    </amx:facet>
+    <amx:panelGroupLayout layout="vertical" styleClass="amx-style-groupbox">
+      <amx:outputText value="#{bindings.name.inputValue}" id="ot2"/>
+      <amx:image source="/images/#{bindings.healthIcon.inputValue}" id="i1"/>
+      <amx:outputText value="#{bindings.description.inputValue}" id="ot3"/>
+      <dvtm:barChart var="row" value="#{bindings.builds.collectionModel}" id="bc1">
+        <amx:facet name="dataStamp">
+          <dvtm:chartDataItem group="#{row.number}" value="#{row.duration}" color="#{row.result eq 'FAILURE'?'yellow':'green'}"
+                              series="#{bindings.builds.hints.duration.label}" id="cdi1"/>
+        </amx:facet>
+        <dvtm:legend rendered="false" id="l1"/>
+      </dvtm:barChart>
+    </amx:panelGroupLayout>
+  </amx:panelPage>
+</amx:view>

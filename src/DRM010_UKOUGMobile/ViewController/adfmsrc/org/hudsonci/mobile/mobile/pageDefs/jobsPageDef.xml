@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="jobsPageDef"
+                Package="org.hudsonci.mobile.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="Catalog" id="CatalogIterator"/>
+    <accessorIterator MasterBinding="CatalogIterator" Binds="registeredInstance" RangeSize="25" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Instance" id="registeredInstanceIterator"/>
+    <accessorIterator MasterBinding="registeredInstanceIterator" Binds="jobs" RangeSize="25" DataControl="Catalog"
+                      BeanClass="org.hudsonci.mobile.model.Job" id="jobsIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="registeredInstanceIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="jobsIterator" id="jobs">
+      <nodeDefinition DefName="org.hudsonci.mobile.model.Job" Name="jobs0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="color"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="refresh" RequiresUpdateModel="true" Action="invokeMethod" MethodName="refresh"
+                  IsViewObjectMethod="false" DataControl="Catalog" InstanceName="data.Catalog.dataProvider"/>
+  </bindings>
+</pageDefinition>

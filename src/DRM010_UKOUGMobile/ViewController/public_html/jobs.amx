@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Jobs" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="primary">
+      <amx:commandButton id="cb1" text="Feedback" action="toFeedback"/>
+    </amx:facet>
+    <amx:facet name="secondary">
+      <amx:commandButton actionListener="#{bindings.refresh.execute}" icon="/images/refresh2.png" action="refresh"
+                         id="cb3"/>
+    </amx:facet>
+    <amx:outputText value="#{bindings.description.inputValue}" id="ot2"/>
+    <amx:listView var="row" value="#{bindings.jobs.collectionModel}" fetchSize="#{bindings.jobs.rangeSize}" id="lv1">
+      <amx:listItem id="li1" action="detail">
+        <amx:tableLayout width="100%" id="tl1">
+          <amx:rowLayout id="rl1">
+            <amx:cellFormat width="40px" halign="center" id="cf1">
+              <amx:image source="/images/#{row.color}.png" id="i1"/>
+            </amx:cellFormat>
+            <amx:cellFormat width="100%" height="43px" id="cf2">
+              <amx:outputText value="#{row.name}" id="ot3"/>
+            </amx:cellFormat>
+          </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:setPropertyListener from="#{row.rowKey}" to="#{pageFlowScope.jobKey}" type="action"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>

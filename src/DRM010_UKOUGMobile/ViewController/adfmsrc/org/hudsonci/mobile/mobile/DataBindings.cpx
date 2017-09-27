@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="org.hudsonci.mobile.mobile" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/jobs.amx" usageId="org_hudsonci_mobile_mobile_jobsPageDef"/>
+    <page path="/main-task-flow.xml#main-task-flow@getJobDetail"
+          usageId="org_hudsonci_mobile_mobile_main_task_flow_main_task_flow_getJobDetailPageDef"/>
+    <page path="/builds.amx" usageId="org_hudsonci_mobile_mobile_buildsPageDef"/>
+    <page path="/Feedback.amx" usageId="org_hudsonci_mobile_mobile_FeedbackPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="org_hudsonci_mobile_mobile_jobsPageDef" path="org.hudsonci.mobile.mobile.pageDefs.jobsPageDef"/>
+    <page id="org_hudsonci_mobile_mobile_main_task_flow_main_task_flow_getJobDetailPageDef"
+          path="org.hudsonci.mobile.mobile.pageDefs.main_task_flow_main_task_flow_getJobDetailPageDef"/>
+    <page id="org_hudsonci_mobile_mobile_buildsPageDef" path="org.hudsonci.mobile.mobile.pageDefs.buildsPageDef"/>
+    <page id="org_hudsonci_mobile_mobile_FeedbackPageDef" path="org.hudsonci.mobile.mobile.pageDefs.FeedbackPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DeviceFeatures" path="org.hudsonci.mobile.application.DeviceFeatures"/>
+    <dc id="Catalog" path="org.hudsonci.mobile.mobile.Catalog"/>
+  </dataControlUsages>
+</Application>
