@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="ListBasedOnTableFunction"
+      FullName="test.model.ListBasedOnTableFunction"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ListForMasterRow"
+      FullName="test.model.ListForMasterRow"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="MasterView"
+      FullName="test.model.MasterView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TestModule"
+      FullName="test.model.TestModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>
