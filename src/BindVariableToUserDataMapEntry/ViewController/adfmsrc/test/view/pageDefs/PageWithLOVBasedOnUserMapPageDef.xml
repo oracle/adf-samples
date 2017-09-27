@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.76" id="PageWithLOVBasedOnUserMapPageDef"
+                Package="test.view.pageDefs" EnableTokenValidation="false">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmpView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmpView1Iterator"/>
+    <searchRegion Criteria="SearchVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmpView1Iterator" id="SearchVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmpView1Iterator" id="EmpView1">
+      <nodeDefinition DefName="test.model.EmpView">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Sal"/>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

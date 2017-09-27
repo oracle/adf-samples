@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config">
+  <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+  </sec:adf-security-child>
+</adf-config>

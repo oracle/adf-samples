@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.76" id="SetUserMapValuePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="setUserMapValue_key"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="setUserMapValue_value"
+                IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="AnotherInstanceOfQueryWithBindVarValue" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="AnotherInstanceOfQueryWithBindVarValueIterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <methodAction id="setUserMapValue" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setUserMapValue"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="key" NDType="java.lang.String"
+                 NDValue="${bindings.setUserMapValue_key}"/>
+      <NamedData NDName="value" NDType="java.lang.String"
+                 NDValue="${bindings.setUserMapValue_value}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="key">
+      <AttrNames>
+        <Item Value="setUserMapValue_key"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="value">
+      <AttrNames>
+        <Item Value="setUserMapValue_value"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AnotherInstanceOfQueryWithBindVarValueIterator"
+          id="AnotherInstanceOfQueryWithBindVarValue">
+      <nodeDefinition DefName="test.model.QueryWithBindVarValue">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AnotherInstanceOfQueryWithBindVarValueIterator"
+            id="Execute"
+            InstanceName="AppModuleDataControl.AnotherInstanceOfQueryWithBindVarValue"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

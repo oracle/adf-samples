@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:panelGroupLayout layout="vertical">
+          <af:commandButton text="Back to Page to Set Session Value"
+                            action="Back"/>
+          <af:panelHeader text="Emp">
+            <af:query id="searchVCQueryId" headerText="Search" disclosed="true"
+                      value="#{bindings.SearchVCQuery.queryDescriptor}"
+                      model="#{bindings.SearchVCQuery.queryModel}"
+                      queryListener="#{bindings.SearchVCQuery.processQuery}"
+                      queryOperationListener="#{bindings.SearchVCQuery.processQueryOperation}"
+                      resultComponentId="::searchVCQueryResultId"/>
+          </af:panelHeader>
+          <af:separator/>
+          <af:panelGroupLayout>          
+          <af:outputText value="Current value of userData map's NameFilter key = "/>
+          <af:outputText value="#{bindings.EmpView1.viewObject.rootApplicationModule.session.userData.NameFilter}"/>
+          </af:panelGroupLayout>
+          <af:separator/>
+          <af:table value="#{bindings.EmpView1.collectionModel}" var="row"
+                    rows="#{bindings.EmpView1.rangeSize}"
+                    emptyText="#{bindings.EmpView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.EmpView1.rangeSize}"
+                    selectedRowKeys="#{bindings.EmpView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.EmpView1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="searchVCQueryResultId">
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Empno.label}">
+              <af:outputText value="#{row.Empno}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Empno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Ename.label}">
+              <af:outputText value="#{row.Ename}"/>
+            </af:column>
+            <af:column sortProperty="Job" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Job.label}">
+              <af:outputText value="#{row.Job}"/>
+            </af:column>
+            <af:column sortProperty="Mgr" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Mgr.label}">
+              <af:outputText value="#{row.Mgr}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Mgr.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Hiredate" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Hiredate.label}">
+              <af:outputText value="#{row.Hiredate}">
+                <af:convertDateTime pattern="#{bindings.EmpView1.hints.Hiredate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Sal" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Sal.label}">
+              <af:outputText value="#{row.Sal}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Sal.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Comm" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Comm.label}">
+              <af:outputText value="#{row.Comm}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Comm.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Deptno.label}">
+              <af:outputText value="#{row.Deptno}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Deptno.format}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

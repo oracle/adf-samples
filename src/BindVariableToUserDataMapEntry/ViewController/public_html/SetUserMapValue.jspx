@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:outputText value="Set the value of the userData map with key 'NameFilter' to a value to be used by the query bind variable expression to filter employee list..."/>
+        <af:separator/>
+        <af:panelFormLayout>
+          <af:inputText value="#{bindings.key.inputValue}"
+                        label="#{bindings.key.hints.label}"
+                        required="#{bindings.key.hints.mandatory}"
+                        columns="#{bindings.key.hints.displayWidth}"
+                        maximumLength="#{bindings.key.hints.precision}"
+                        shortDesc="#{bindings.key.hints.tooltip}">
+            <f:validator binding="#{bindings.key.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.value.inputValue}"
+                        label="#{bindings.value.hints.label}"
+                        required="#{bindings.value.hints.mandatory}"
+                        columns="#{bindings.value.hints.displayWidth}"
+                        maximumLength="#{bindings.value.hints.precision}"
+                        shortDesc="#{bindings.value.hints.tooltip}">
+            <f:validator binding="#{bindings.value.validator}"/>
+          </af:inputText>
+          <af:panelGroupLayout>
+            <af:commandButton
+                              text="setUserMapValue"
+                              disabled="#{!bindings.setUserMapValue.enabled}"
+                              id="setUserMapButton"
+                              action="#{SetUserMapValue.onClickSetUserMapButton}"/>
+            <af:commandButton text="Goto Page Referencing Session Value in LOV Bind Var"
+                              action="Go"/>
+          </af:panelGroupLayout>
+        </af:panelFormLayout>
+          <af:separator/>
+          <af:panelGroupLayout>
+          <af:outputText value="Current value of userData map's NameFilter key = "/>
+          <af:outputText partialTriggers="setUserMapButton" value="#{bindings.AnotherInstanceOfQueryWithBindVarValue.viewObject.rootApplicationModule.session.userData.NameFilter}"/>
+          </af:panelGroupLayout>
+          <af:separator/>        
+        <af:table value="#{bindings.AnotherInstanceOfQueryWithBindVarValue.collectionModel}"
+                  var="row"
+                  rows="#{bindings.AnotherInstanceOfQueryWithBindVarValue.rangeSize}"
+                  emptyText="#{bindings.AnotherInstanceOfQueryWithBindVarValue.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.AnotherInstanceOfQueryWithBindVarValue.rangeSize}">
+          <af:column sortProperty="Empno" sortable="false"
+                     headerText="#{bindings.AnotherInstanceOfQueryWithBindVarValue.hints.Empno.label}">
+            <af:outputText value="#{row.Empno}">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.AnotherInstanceOfQueryWithBindVarValue.hints.Empno.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Ename" sortable="false"
+                     headerText="#{bindings.AnotherInstanceOfQueryWithBindVarValue.hints.Ename.label}">
+            <af:outputText value="#{row.Ename}"/>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">SetUserMapValue</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - SetUserMapValue&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - SetUserMapValue</property>
+      <property
+         name="y">117.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">131.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">PageWithLOVBasedOnUserMap</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - PageWithLOVBasedOnUserMap&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - PageWithLOVBasedOnUserMap</property>
+      <property
+         name="y">115.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">478.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">Go</property>
+      <property
+         name="id">ControlFlowCase7</property>
+      <property
+         name="sdm:polyPoints">R50,172.0,117.0,437.0,115.0,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">Back</property>
+      <property
+         name="sdm:polyPoints">L54,437.0,118.5,172.02641,120.5,R54</property>
+   </ControlFlowCase>
+</SDM>

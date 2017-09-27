@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.50.76" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <pageMap>
+    <page path="/SetUserMapValue.jspx"
+          usageId="test_view_SetUserMapValuePageDef"/>
+    <page path="/PageWithLOVBasedOnUserMap.jspx"
+          usageId="test_view_PageWithLOVBasedOnUserMapPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_SetUserMapValuePageDef"
+          path="test.view.pageDefs.SetUserMapValuePageDef"/>
+    <page id="test_view_PageWithLOVBasedOnUserMapPageDef"
+          path="test.view.pageDefs.PageWithLOVBasedOnUserMapPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
