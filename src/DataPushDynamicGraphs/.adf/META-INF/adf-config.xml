@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config"
+            xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+              xmlns:ads="http://xmlns.oracle.com/adf/activedata/config"
+            xmlns:mdsC="http://xmlns.oracle.com/adf/mds/config"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults useBindVarsForViewCriteriaLiterals="true"
+              useBindValuesInFindByKey="true" executeEmptyOnException="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID" value="DataPushDynamicGraphs-1970"/>
+  </adf:adf-properties-child>
+  <adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+    <JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
+                         jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
+                         authorizationEnforce="true"
+                         authenticationRequire="true"/>
+  </adf-security-child>
+  <adf-faces-config xmlns="http://xmlns.oracle.com/adf/faces/config">
+    <taglib-config>
+      <taglib uri="http://xmlns.oracle.com/adf/faces/rich">
+        <tag name="table">
+          <attribute name="filterVisible">
+            <persist-changes>
+              false
+            </persist-changes>
+          </attribute>
+        </tag>
+        <tag name="column">
+          <attribute name="displayIndex">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+          <attribute name="frozen">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+          <attribute name="noWrap">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+          <attribute name="selected">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+          <attribute name="visible">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+          <attribute name="width">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+        </tag>
+        <tag name="panelBox">
+          <attribute name="disclosed">
+            <persist-changes>
+              true
+            </persist-changes>
+          </attribute>
+        </tag>
+      </taglib>
+    </taglib-config>
+  </adf-faces-config>
+  <mdsC:adf-mds-config version="11.1.1.000">
+    <mds-config xmlns="http://xmlns.oracle.com/mds/config">
+      <persistence-config>
+        <metadata-store-usages>
+          <metadata-store-usage id="AvayaMetadataStore" 
+                                default-cust-store="true" deploy-target="true">
+
+          </metadata-store-usage>
+        </metadata-store-usages>
+        <retry-connection enabled="true"/>
+      </persistence-config>
+      <cust-config>
+<!--
+        <match path="/oracle/webcenter/siteresources/scopedMD/"/>
+        <match path="/oracle/webcenter/quicklinks/scopedMD/"/>
+-->
+        <match>
+          <customization-class name="oracle.adf.share.config.SiteCC"/>
+          <customization-class name="oracle.adf.share.config.UserCC"/>
+        </match>
+      </cust-config>
+      <cache-config>
+        <max-size-kb>100000</max-size-kb>
+      </cache-config>
+    </mds-config>
+  </mdsC:adf-mds-config>
+<!--
+ <ads:adf-activedata-config xmlns=
+                            "http://xmlns.oracle.com/adf/activedata/config">
+    <transport>long-polling</transport>
+    <latency-threshold>5000</latency-threshold>
+    <keep-alive-interval>10000</keep-alive-interval>
+    <max-reconnect-attempt-time>90000</max-reconnect-attempt-time>
+    <reconnect-wait-time>8000</reconnect-wait-time>
+    <polling-interval>1000</polling-interval>
+</ads:adf-activedata-config>
+-->
+</adf-config>

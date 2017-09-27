@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="QueueState" Package="model" BeanClass="model.QueueState"
+          isJavaBased="true">
+  <Attribute Name="state" Type="java.lang.String"/>
+  <Attribute Name="queue" Type="java.lang.String"/>
+  <Attribute Name="count" Type="int"/>
+  <Attribute Name="percent" Type="java.math.BigDecimal"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="getAttributeValue" ReturnNodeName="Return">
+    <ParameterInfo id="attrName" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="model.QueueState"
+                     BeanClass="model.QueueState" id="QueueState">
+    <ParameterInfo id="queue" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="state" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="count" Type="int" isStructured="false"/>
+    <ParameterInfo id="percent" Type="java.math.BigDecimal"
+                   isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="model.QueueState"
+                     BeanClass="model.QueueState" id="QueueState"/>
+</JavaBean>

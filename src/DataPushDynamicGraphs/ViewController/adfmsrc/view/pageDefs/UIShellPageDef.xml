@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="UIShellPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="starttf1" taskFlowId="/WEB-INF/start-tf.xml#start-tf"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="graphdashboardtf1" RefreshCondition="#{RefreshDashboard}" Refresh="ifNeeded"
+              taskFlowId="/WEB-INF/graph-dashboard-tf.xml#graph-dashboard-tf"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

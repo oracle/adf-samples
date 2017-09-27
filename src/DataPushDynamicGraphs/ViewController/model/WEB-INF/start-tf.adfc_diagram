@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Start</property>
+      <property
+         name="page">/Start.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Start&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">312.5459</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">155.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">graph-dashboard-tf</property>
+      <property
+         name="activityId">graph-dashboard-tf</property>
+      <property
+         name="documentReference">/WEB-INF/graph-dashboard-tf.xml</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>graph-dashboard-tf&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">313.79883</property>
+      <property
+         name="x">398.24023</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">go</property>
+      <property
+         name="sdm:polyPoints">R50,196.0,312.1953,357.24023,313.44824,L50</property>
+   </ControlFlowCase>
+</SDM>

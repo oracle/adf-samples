@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.64.93" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/ADSDynamicGraph.jsff" usageId="view_ADSDynamicGraphPageDef"/>
+    <page path="/UIShell.jspx" usageId="view_UIShellPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_ADSDynamicGraphPageDef"
+          path="view.pageDefs.ADSDynamicGraphPageDef"/>
+    <page id="view_UIShellPageDef" path="view.pageDefs.UIShellPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ActiveDataObjectService" path="model.ActiveDataObjectService"/>
+  </dataControlUsages>
+</Application>

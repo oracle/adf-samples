@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<mds:customization version="11.1.1.64.93" xmlns:mds="http://xmlns.oracle.com/mds" motype_local_name="pageDefinition" motype_nsuri="http://xmlns.oracle.com/adfm/uimodel">
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:executables" position="last">
+      <iterator id="ActiveDataObjectServiceIterator" Binds="root" DataControl="ActiveDataObjectService" RangeSize="25" xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:executables" position="last">
+      <accessorIterator id="agentPerformancesIterator" MasterBinding="ActiveDataObjectServiceIterator" Binds="agentPerformances" DataControl="ActiveDataObjectService" RangeSize="-1" BeanClass="model.AgentPerformance" xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings" position="last">
+      <graph IterBinding="agentPerformancesIterator" id="agentPerformancesBar" xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_STACK">
+         <graphDataMap leafOnly="true">
+            <series>
+               <data>
+                  <item value="todayHeldContacts"/>
+                  <item value="todayRedirects"/>
+                  <item value="todayTransfers"/>
+               </data>
+            </series>
+            <groups>
+               <item value="agentName"/>
+            </groups>
+         </graphDataMap>
+      </graph>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings" position="last">
+      <graph IterBinding="agentPerformancesIterator" id="agentPerformancesLine" xmlns="http://xmlns.oracle.com/adfm/dvt" type="LINE_VERT_ABS">
+         <graphDataMap leafOnly="true">
+            <series>
+               <data>
+                  <item value="todayHeldContacts"/>
+                  <item value="todayRedirects"/>
+                  <item value="todayTransfers"/>
+               </data>
+            </series>
+            <groups>
+               <item value="agentName"/>
+            </groups>
+         </graphDataMap>
+      </graph>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings" position="last">
+      <tree IterBinding="agentPerformancesIterator" id="agentPerformancesTable" xmlns="http://xmlns.oracle.com/adfm/uimodel">
+         <nodeDefinition DefName="model.AgentPerformance" Name="agentPerformances0">
+            <AttrNames>
+               <Item Value="agentName"/>
+               <Item Value="todayHeldContacts"/>
+               <Item Value="todayRedirects"/>
+               <Item Value="todayTransfers"/>
+            </AttrNames>
+         </nodeDefinition>
+      </tree>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:executables" position="last">
+      <accessorIterator id="queueStatesIterator" MasterBinding="ActiveDataObjectServiceIterator" Binds="queueStates" DataControl="ActiveDataObjectService" RangeSize="-1" BeanClass="model.QueueState" xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings" position="last">
+      <gauge IterBinding="queueStatesIterator" id="queueStatesGauge" xmlns="http://xmlns.oracle.com/adfm/dvt" type="DIAL">
+         <gaugeDataMap>
+            <thresholds>
+               <item value="3" valueType="literal"/>
+               <item value="6" valueType="literal"/>
+            </thresholds>
+            <item value="count" type="metric"/>
+            <item value="state" type="topLabel"/>
+            <item value="queue" type="bottomLabel"/>
+            <item value="0" valueType="literal" type="minimum"/>
+            <item value="10" valueType="literal" type="maximum"/>
+         </gaugeDataMap>
+      </gauge>
+   </mds:insert>
+   <mds:insert parent="ADSDynamicGraphPageDef(xmlns(mds_ns1=http://xmlns.oracle.com/adfm/uimodel))/mds_ns1:bindings" position="last">
+      <tree IterBinding="queueStatesIterator" id="queueStatesTable" xmlns="http://xmlns.oracle.com/adfm/uimodel">
+         <nodeDefinition DefName="model.QueueState" Name="queueStates0">
+            <AttrNames>
+               <Item Value="queue"/>
+               <Item Value="state"/>
+               <Item Value="count"/>
+            </AttrNames>
+         </nodeDefinition>
+      </tree>
+   </mds:insert>
+</mds:customization>

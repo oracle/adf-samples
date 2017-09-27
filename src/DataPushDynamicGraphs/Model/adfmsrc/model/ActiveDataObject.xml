@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="ActiveDataObject" Package="model"
+          BeanClass="model.ActiveDataObject" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="getAttributeValue" ReturnNodeName="Return">
+    <ParameterInfo id="attrName" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="model.ActiveDataObject"
+                     BeanClass="model.ActiveDataObject" id="ActiveDataObject"/>
+</JavaBean>

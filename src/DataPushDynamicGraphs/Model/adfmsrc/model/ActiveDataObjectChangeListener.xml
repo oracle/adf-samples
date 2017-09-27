@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="ActiveDataObjectChangeListener" Package="model"
+          BeanClass="model.ActiveDataObjectChangeListener" isJavaBased="true">
+  <Attribute Name="dataObjectName" IsUpdateable="0" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="void" id="onNew"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="rowKey" Type="java.lang.Integer" isStructured="false"/>
+    <ParameterInfo id="event" Type="model.ActiveDataObject"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="onUpdate"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="rowKey" Type="java.lang.Integer" isStructured="false"/>
+    <ParameterInfo id="event" Type="model.ActiveDataObject"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="onRemove"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="rowKey" Type="java.lang.Integer" isStructured="false"/>
+    <ParameterInfo id="event" Type="model.ActiveDataObject"
+                   isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

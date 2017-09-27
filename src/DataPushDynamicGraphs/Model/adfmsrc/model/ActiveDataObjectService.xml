@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="ActiveDataObjectService" Package="model"
+          BeanClass="model.ActiveDataObjectService" isJavaBased="true">
+  <AccessorAttribute id="queueStates" IsCollection="true"
+                     BeanClass="model.QueueState"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="agentPerformances" IsCollection="true"
+                     BeanClass="model.AgentPerformance"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="void" id="addChangeListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="listener" Type="model.ActiveDataObjectChangeListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeChangeListener"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="listener" Type="model.ActiveDataObjectChangeListener"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="model.ActiveDataObjectService"
+                     BeanClass="model.ActiveDataObjectService"
+                     id="ActiveDataObjectService"/>
+</JavaBean>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View4">
+      <property
+         name="activityId">ADSDynamicGraph</property>
+      <property
+         name="page">/ADSDynamicGraph.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ADSDynamicGraph&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">147.38477</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">110.3584</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">149.49414</property>
+      <property
+         name="x">352.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View4"
+      to="TaskFlowReturn4">
+      <property
+         name="fromOutcome">done</property>
+      <property
+         name="sdm:polyPoints">R50,151.3584,147.03418,311.0,149.14355,L50</property>
+   </ControlFlowCase>
+</SDM>

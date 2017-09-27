@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<mds:customization version="11.1.1.64.93" xmlns:mds="http://xmlns.oracle.com/mds" motype_local_name="root" motype_nsuri="http://java.sun.com/JSP/Page">
+   <mds:insert parent="pb1" position="last">
+      <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesBarPglCont" layout="scroll">
+         <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesBarPglDel" layout="horizontal" halign="end" rendered="#{pageFlowScope.ActiveDataModelProvider.editMode}">
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesBarMeasureLink" icon="/images/editRow.png" shortDesc="Edit Report Measures" actionListener="#{pageFlowScope.DynamicGraphBean.showMeasuresPopup}">
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="AgentPerformance" to="#{pageFlowScope.DynamicGraphBean.editReportId}"/>
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="agentPerformancesBar" to="#{pageFlowScope.DynamicGraphBean.editReportBindingId}"/>
+            </af:commandImageLink>
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesBarDelLink" icon="/images/deleteRow.png" shortDesc="Remove Report" actionListener="#{pageFlowScope.DynamicGraphBean.removeReport}"/>
+         </af:panelGroupLayout>
+         <dvt:barGraph xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" id="agentPerformancesBar" value="#{pageFlowScope.ActiveDataModelProvider.graphMap['AgentPerformance:agentPerformancesBar']}" subType="BAR_VERT_STACK">
+            <dvt:background xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+               <dvt:specialEffects xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            </dvt:background>
+            <dvt:graphPlotArea xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:seriesSet xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+               <dvt:series xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            </dvt:seriesSet>
+            <dvt:o1Axis xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:y1Axis xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:legendArea xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" automaticPlacement="AP_NEVER"/>
+         </dvt:barGraph>
+      </af:panelGroupLayout>
+   </mds:insert>
+   <mds:insert parent="pb2" position="last">
+      <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTablePglCont" layout="scroll">
+         <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTablePglDel" layout="horizontal" halign="end" rendered="#{pageFlowScope.ActiveDataModelProvider.editMode}">
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTableMeasureLink" icon="/images/editRow.png" shortDesc="Edit Report Measures" actionListener="#{pageFlowScope.DynamicGraphBean.showMeasuresPopup}">
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="AgentPerformance" to="#{pageFlowScope.DynamicGraphBean.editReportId}"/>
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="agentPerformancesTable" to="#{pageFlowScope.DynamicGraphBean.editReportBindingId}"/>
+            </af:commandImageLink>
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTableDelLink" icon="/images/deleteRow.png" shortDesc="Remove Report" actionListener="#{pageFlowScope.DynamicGraphBean.removeReport}"/>
+         </af:panelGroupLayout>
+         <af:panelCollection xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTablePc">
+            <af:table xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentPerformancesTableTab" value="#{pageFlowScope.ActiveDataModelProvider.collectionMap['AgentPerformance:agentPerformancesTable']}" var="row" rows="10" fetchSize="10">
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentName" headerText="Agent Name" displayIndex="0">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="agentNameValue" value="#{row.agentName}"/>
+               </af:column>
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayHeldContacts" headerText="Today Held Contacts" displayIndex="2">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayHeldContactsValue" value="#{row.todayHeldContacts}"/>
+               </af:column>
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayRedirects" headerText="Today Redirects" displayIndex="1">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayRedirectsValue" value="#{row.todayRedirects}"/>
+               </af:column>
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayTransfers" headerText="Today Transfers" visible="false">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="todayTransfersValue" value="#{row.todayTransfers}"/>
+               </af:column>
+            </af:table>
+         </af:panelCollection>
+      </af:panelGroupLayout>
+   </mds:insert>
+   <mds:insert parent="pb4" position="last">
+      <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesGaugePglCont" layout="scroll">
+         <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesGaugePglDel" layout="horizontal" halign="end" rendered="#{pageFlowScope.ActiveDataModelProvider.editMode}">
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesGaugeMeasureLink" icon="/images/editRow.png" shortDesc="Edit Report Measures" actionListener="#{pageFlowScope.DynamicGraphBean.showMeasuresPopup}">
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="QueueStates" to="#{pageFlowScope.DynamicGraphBean.editReportId}"/>
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="queueStatesGauge" to="#{pageFlowScope.DynamicGraphBean.editReportBindingId}"/>
+            </af:commandImageLink>
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesGaugeDelLink" icon="/images/deleteRow.png" shortDesc="Remove Report" actionListener="#{pageFlowScope.DynamicGraphBean.removeReport}"/>
+         </af:panelGroupLayout>
+         <dvt:gauge xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" id="queueStatesGauge" value="#{pageFlowScope.ActiveDataModelProvider.gaugeMap['QueueStates:queueStatesGauge']}" gaugeType="DIAL" gaugeSetDirection="GSD_ACROSS" gaugeSetColumnCount="2" inlineStyle="height:1600px;width:800px">
+            <dvt:gaugeBackground xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+               <dvt:specialEffects xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            </dvt:gaugeBackground>
+            <dvt:thresholdSet xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+               <dvt:threshold xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" text="Low" fillColor="#d62800"/>
+               <dvt:threshold xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" text="Medium" fillColor="#ffcf21"/>
+               <dvt:threshold xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" text="High" fillColor="#84ae31"/>
+            </dvt:thresholdSet>
+            <dvt:gaugeFrame xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:indicator xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:indicatorBase xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:gaugePlotArea xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:tickLabel xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:tickMark xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:topLabel xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:bottomLabel xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"/>
+            <dvt:metricLabel xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" position="LP_WITH_BOTTOM_LABEL"/>
+         </dvt:gauge>
+      </af:panelGroupLayout>
+   </mds:insert>
+   <mds:insert parent="pb3" position="last">
+      <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTablePglCont" layout="scroll">
+         <af:panelGroupLayout xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTablePglDel" layout="horizontal" halign="end" rendered="#{pageFlowScope.ActiveDataModelProvider.editMode}">
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTableMeasureLink" icon="/images/editRow.png" shortDesc="Edit Report Measures" actionListener="#{pageFlowScope.DynamicGraphBean.showMeasuresPopup}">
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="QueueStates" to="#{pageFlowScope.DynamicGraphBean.editReportId}"/>
+               <af:setPropertyListener xmlns:af="http://xmlns.oracle.com/adf/faces/rich" type="action" from="queueStatesTable" to="#{pageFlowScope.DynamicGraphBean.editReportBindingId}"/>
+            </af:commandImageLink>
+            <af:commandImageLink xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTableDelLink" icon="/images/deleteRow.png" shortDesc="Remove Report" actionListener="#{pageFlowScope.DynamicGraphBean.removeReport}"/>
+         </af:panelGroupLayout>
+         <af:panelCollection xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTablePc">
+            <af:table xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueStatesTableTab" value="#{pageFlowScope.ActiveDataModelProvider.collectionMap['QueueStates:queueStatesTable']}" var="row" rows="10" fetchSize="10">
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queue" headerText="Queue">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="queueValue" value="#{row.queue}"/>
+               </af:column>
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="state" headerText="State">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="stateValue" value="#{row.state}"/>
+               </af:column>
+               <af:column xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="count" headerText="Count">
+                  <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="countValue" value="#{row.count}"/>
+               </af:column>
+            </af:table>
+         </af:panelCollection>
+      </af:panelGroupLayout>
+   </mds:insert>
+   <mds:modify element="pb1">
+      <mds:attribute name="text" value="Agent Performance Stacked Bar Chart"/>
+   </mds:modify>
+   <mds:modify element="pb2">
+      <mds:attribute name="text" value="Agent Performance Table"/>
+   </mds:modify>
+   <mds:modify element="pb4">
+      <mds:attribute name="text" value="Queue States Gauge"/>
+   </mds:modify>
+   <mds:modify element="pb3">
+      <mds:attribute name="text" value="Queue States Table"/>
+   </mds:modify>
+</mds:customization>

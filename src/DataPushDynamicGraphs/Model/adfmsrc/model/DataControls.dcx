@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.64.93" id="DataControls" Package="model">
+  <AdapterDataControl id="ActiveDataObjectService"
+                      FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="model.ActiveDataObjectService"
+                      BeanClass="model.ActiveDataObjectService"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="model.AgentState"/>
+      <TypeInfo FullName="model.ActiveDataObjectService"/>
+      <TypeInfo FullName="model.QueueState"/>
+      <TypeInfo FullName="model.ActiveDataObject"/>
+      <TypeInfo FullName="model.AgentPerformance"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="model.ActiveDataObjectService"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

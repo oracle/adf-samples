@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="graph-dashboard-tf">
+    <default-activity id="__1">ADSDynamicGraph</default-activity>
+    <data-control-scope id="__15">
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__4">
+    <managed-bean-name id="__3">DynamicGraphBean</managed-bean-name>
+    <managed-bean-class id="__2">adsdemo.beans.DynamicGraphControllerBean</managed-bean-class>
+    <managed-bean-scope id="__100">pageFlow</managed-bean-scope>
+  </managed-bean>
+    <managed-bean id="__26">
+      <managed-bean-name id="__21">ActiveDataModelProvider</managed-bean-name>
+      <managed-bean-class id="__27">adsdemo.beans.ActiveDataModelProvider</managed-bean-class>
+      <managed-bean-scope id="__20">pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="ADSDynamicGraph">
+      <page id="__16">/ADSDynamicGraph.jsff</page>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome id="__22">
+        <name id="__19">taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__17">
+      <from-activity-id id="__18">ADSDynamicGraph</from-activity-id>
+      <control-flow-case id="__24">
+        <from-outcome id="__25">done</from-outcome>
+        <to-activity-id id="__23">taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

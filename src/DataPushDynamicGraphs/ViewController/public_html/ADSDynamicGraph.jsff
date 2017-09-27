@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelStretchLayout id="psl1" topHeight="auto">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelDashboard id="pd1" columns="2" rowHeight="400px">
+        <af:panelBox text="Drag and drop a graph inside this box" id="pb1">
+          <af:dropTarget dropListener="#{pageFlowScope.DynamicGraphBean.graphDropped}"
+                         actions="MOVE">
+            <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+          </af:dropTarget>
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+        <af:panelBox text="Drag and drop a graph inside this box" id="pb2">
+            <af:dropTarget dropListener="#{pageFlowScope.DynamicGraphBean.graphDropped}"
+                           actions="MOVE">
+              <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+            </af:dropTarget>
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+        <af:panelBox text="Drag and drop a graph inside this box" id="pb3">
+            <af:dropTarget dropListener="#{pageFlowScope.DynamicGraphBean.graphDropped}"
+                           actions="MOVE">
+              <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+            </af:dropTarget>
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+        <af:panelBox text="Drag and drop a graph inside this box" id="pb4">
+            <af:dropTarget dropListener="#{pageFlowScope.DynamicGraphBean.graphDropped}"
+                           actions="MOVE">
+              <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+            </af:dropTarget>
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:panelDashboard>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelHeader text="Call Center Real-Time Monitoring Dashboard" id="ph1">
+        <f:facet name="context"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:commandButton text="Start Editing" id="cb43e3"
+                          rendered="#{!pageFlowScope.ActiveDataModelProvider.editMode}">
+          <af:setPropertyListener type="action" from="#{true}"
+                                  to="#{pageFlowScope.ActiveDataModelProvider.editMode}"/>
+        </af:commandButton>
+        <af:panelGroupLayout id="pgl1" layout="horizontal"
+                             rendered="#{pageFlowScope.ActiveDataModelProvider.editMode}">
+          <af:selectOneChoice label="Report" id="soc1" autoSubmit="true" value="#{pageFlowScope.DynamicGraphBean.currentReportId}">
+            <af:forEach var="row" items="#{pageFlowScope.DynamicGraphBean.reports}">
+               <f:selectItem itemValue="#{row.id}" itemLabel="#{row.name}" id="si1"/>
+            </af:forEach>
+          </af:selectOneChoice>
+          <af:image source="/images/stackedbargraph_ena.png"
+                    id="stackedBarChart" shortDesc="Stacked Bar Chart">
+            <af:componentDragSource/>
+          </af:image>
+          <af:image source="/images/3dpiegraph_ena.png" id="pieChart" shortDesc="Pie Graph">
+            <af:componentDragSource/>
+          </af:image>
+          <af:image source="/images/line_graph.png" id="lineChart" shortDesc="Line Graph">
+            <af:componentDragSource/>
+          </af:image>
+          <af:image source="/images/gauge.png" id="gauge" shortDesc="Gauge">
+            <af:componentDragSource/>
+          </af:image>
+          <af:image source="/images/table.png" id="table" shortDesc="Table">
+            <af:componentDragSource/>
+          </af:image>
+          <af:commandButton text="Refresh Headers" id="cb3"
+                            actionListener="#{pageFlowScope.DynamicGraphBean.refresh}"/>
+          <!--
+                <af:commandButton text="Create Stacked Bar Chart" id="cb2"
+                                  actionListener="#{pageFlowScope.DynamicGraphBean.addBarChart}"/>
+                <af:commandButton text="Remove Stacked Bar Chart" id="cb32"
+                                  actionListener="#{pageFlowScope.DynamicGraphBean.removeBarChart}"/>
+                <af:commandButton text="Create Multi-Pie Chart" id="cb3"
+                                  actionListener="#{pageFlowScope.DynamicGraphBean.addMultiPieChart}"/>
+          <af:commandButton text="Fix Pie" id="cb33"
+                            actionListener="#{pageFlowScope.DynamicGraphBean.pie}"/>
+-->
+          <af:commandButton text="Done Editing" id="cb3e3">
+            <af:setPropertyListener type="action" from="#{false}"
+                                    to="#{pageFlowScope.ActiveDataModelProvider.editMode}"/>
+          </af:commandButton>
+          <f:facet name="separator">
+            <af:spacer width="10" height="10" id="s1"/>
+          </f:facet>
+          <af:popup id="measurePopup" childCreation="deferred" contentDelivery="lazyUncached" >
+            <af:dialog id="d1" title="Set Measures" type="okCancel" modal="true" resize="on"
+                       dialogListener="#{pageFlowScope.DynamicGraphBean.measureDialogListener}">
+              <af:panelGroupLayout id="pgl2" layout="scroll">
+                <af:selectManyShuttle value="#{pageFlowScope.DynamicGraphBean.editReportSelectedMeasureIds}"
+                                      leadingHeader="Available Measures"
+                                      trailingHeader="Selected Measures"
+                                      id="sms1">
+                  <f:selectItems value="#{pageFlowScope.DynamicGraphBean.editReportMeasures}"
+                                 id="si31"/>
+                </af:selectManyShuttle>
+              </af:panelGroupLayout>
+            </af:dialog>
+          </af:popup>
+        </af:panelGroupLayout>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

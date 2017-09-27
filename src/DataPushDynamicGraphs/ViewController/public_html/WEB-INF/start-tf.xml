@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="start-tf">
+    <default-activity id="__1">Start</default-activity>
+    <view id="Start">
+      <page id="__7">/Start.jsff</page>
+    </view>
+    <task-flow-call id="graph-dashboard-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/graph-dashboard-tf.xml</document>
+        <id>graph-dashboard-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">Start</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__6">go</from-outcome>
+        <to-activity-id id="__5">graph-dashboard-tf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="AgentPerformance" Package="model"
+          BeanClass="model.AgentPerformance" isJavaBased="true">
+  <Attribute Name="agentName" Type="java.lang.String"/>
+  <Attribute Name="todayHeldContacts" Type="int"/>
+  <Attribute Name="todayRedirects" Type="int"/>
+  <Attribute Name="todayTransfers" Type="int"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="getAttributeValue" ReturnNodeName="Return">
+    <ParameterInfo id="attrName" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="model.AgentPerformance"
+                     BeanClass="model.AgentPerformance" id="AgentPerformance">
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="todayHeldContacts" Type="int" isStructured="false"/>
+    <ParameterInfo id="todayRedirects" Type="int" isStructured="false"/>
+    <ParameterInfo id="todayTransfers" Type="int" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="model.AgentPerformance"
+                     BeanClass="model.AgentPerformance" id="AgentPerformance"/>
+</JavaBean>
