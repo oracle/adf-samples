@@ -1,0 +1,15 @@
+.amx-listView.invisible {
+   border-style:none; 
+   background-color:transparent;
+   border-bottom:none;
+}
+
+.amx-listView.invisible .amx-listItem {
+  border-bottom: none;
+  border-style:none; 
+}
+
+.amx-listView.invisible .amx-listItem.amx-listItem-selected {
+  background-color:transparent;
+  border-bottom: none;
+}

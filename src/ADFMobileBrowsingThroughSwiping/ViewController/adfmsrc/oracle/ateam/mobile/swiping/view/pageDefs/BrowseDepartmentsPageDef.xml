@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="BrowseDepartmentsPageDef"
+                Package="oracle.ateam.mobile.swiping.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="DepartmentService" id="DepartmentServiceIterator"
+              ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="DepartmentServiceIterator" Binds="departments" RangeSize="25"
+                      DataControl="DepartmentService" BeanClass="oracle.ateam.mobile.swiping.model.Department"
+                      id="departmentsIterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="departmentsIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="departmentsIterator" id="location">
+      <AttrNames>
+        <Item Value="location"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="departmentsIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="departmentsIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+  </bindings>
+</pageDefinition>

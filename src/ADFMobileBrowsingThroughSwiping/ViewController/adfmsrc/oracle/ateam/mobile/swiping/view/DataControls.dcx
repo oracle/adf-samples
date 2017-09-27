@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="oracle.ateam.mobile.swiping.view">
+  <AdapterDataControl id="DepartmentService" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="oracle.ateam.mobile.swiping.model.DepartmentService"
+                      BeanClass="oracle.ateam.mobile.swiping.model.DepartmentService"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="oracle.ateam.mobile.swiping.model.Department"/>
+      <TypeInfo FullName="oracle.ateam.mobile.swiping.model.DepartmentService"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="oracle.ateam.mobile.swiping.model.DepartmentService"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

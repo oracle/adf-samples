@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.ateam.mobile.swiping.view" ClientType="Generic">
+  <pageMap>
+    <page path="/BrowseDepartments.amx" usageId="oracle_ateam_mobile_swiping_view_BrowseDepartmentsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_ateam_mobile_swiping_view_BrowseDepartmentsPageDef"
+          path="oracle.ateam.mobile.swiping.view.pageDefs.BrowseDepartmentsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DepartmentService" path="oracle.ateam.mobile.swiping.view.DepartmentService"/>
+  </dataControlUsages>
+</Application>
