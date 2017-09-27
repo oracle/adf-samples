@@ -1,0 +1,53 @@
+<wsdl:definitions
+     name="AppModuleService"
+     targetNamespace="/test/model/common/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="/test/model/common/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="/test/model/common/types/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="classpath:/META-INF/wsdl/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="/test/model/common/types/" schemaLocation="AppModuleService.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="AppModuleService_findEmpView1">
+        <wsdl:part name="parameters" element="types:findEmpView1"/>
+    </wsdl:message>
+    <wsdl:message name="AppModuleService_findEmpView1Response">
+        <wsdl:part name="parameters" element="types:findEmpView1Response"/>
+    </wsdl:message>
+    <wsdl:portType name="AppModuleService">
+        <wsdl:documentation>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="EmpView1" SDOName="tns:EmpViewSDO"
+                 FindOpName="findEmpView1"/>
+        </wsdl:documentation>
+        <wsdl:operation name="findEmpView1">
+            <wsdl:input message="tns:AppModuleService_findEmpView1"/>
+            <wsdl:output message="tns:AppModuleService_findEmpView1Response"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AppModuleServiceSoapHttp" type="tns:AppModuleService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="findEmpView1">
+            <soap:operation soapAction="/test/model/common/findEmpView1"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal" encodingStyle=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AppModuleService">
+        <wsdl:port name="AppModuleServiceSoapHttpPort" binding="tns:AppModuleServiceSoapHttp">
+            <soap:address location="http://localhost:7101/RequireAtLeastThreeCharactersInSelectivelyRequiredFieldWithStartsWithOper-Model-context-root/AppModuleService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

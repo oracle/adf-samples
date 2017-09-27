@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="scott_qa" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="scott_qa" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="sid">
+            <Contents>adt1010</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>smuench</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>adt-scaler1.us.oracle.com</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="DeployPassword">
+            <Contents>true</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="{/test/model/common/}AppModuleService" className="oracle.jbo.client.svc.Service" xmlns="">
+      <Factory className="oracle.jbo.client.svc.ServiceFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="serviceInterfaceName">
+            <Contents>test.model.common.serviceinterface.AppModuleService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceEndpointProvider">
+            <Contents>ADFBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="jndiName">
+            <Contents>AppModuleServiceBean#test.model.common.serviceinterface.AppModuleService</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaName">
+            <Contents>AppModuleService.xsd</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceSchemaLocation">
+            <Contents>test/model/common/serviceinterface/</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

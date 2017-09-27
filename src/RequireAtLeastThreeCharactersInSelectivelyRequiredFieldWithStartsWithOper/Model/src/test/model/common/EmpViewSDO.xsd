@@ -1,0 +1,27 @@
+<xsd:schema targetNamespace="/test/model/common/" xmlns="/test/model/common/" elementFormDefault="qualified"
+     sdoJava:package="test.model.common" xmlns:sdoJava="commonj.sdo/java" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoXML="commonj.sdo/xml">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+    <xsd:complexType name="EmpViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Empno</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Empno" type="xsd:int" minOccurs="0" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="Ename" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Job" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Mgr" type="xsd:int" minOccurs="0" nillable="true" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="Hiredate" type="ns0:dateTime-Timestamp" minOccurs="0" nillable="true"/>
+            <xsd:element name="Sal" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Comm" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="Deptno" type="xsd:int" minOccurs="0" nillable="true" sdoXML:dataType="sdoJava:IntObject"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="empViewSDO" type="EmpViewSDO"/>
+</xsd:schema>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+          <af:panelHeader text="Emp" id="ph1">
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.EmpViewCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.EmpViewCriteriaQuery.queryModel}"
+                      queryListener="#{bindings.EmpViewCriteriaQuery.processQuery}"
+                      queryOperationListener="#{bindings.EmpViewCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::resId1"/>
+          </af:panelHeader>
+          <af:table value="#{bindings.EmpView1.collectionModel}" var="row"
+                    rows="#{bindings.EmpView1.rangeSize}"
+                    emptyText="#{bindings.EmpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.EmpView1.rangeSize}"
+                    rowBandingInterval="0" id="resId1">
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Empno.label}"
+                       id="resId1c1">
+              <af:outputText value="#{row.Empno}" id="ot6">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Empno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Ename.label}"
+                       id="resId1c2">
+              <af:outputText value="#{row.Ename}" id="ot5"/>
+            </af:column>
+            <af:column sortProperty="Job" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Job.label}"
+                       id="resId1c3">
+              <af:outputText value="#{row.Job}" id="ot4"/>
+            </af:column>
+            <af:column sortProperty="Mgr" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Mgr.label}"
+                       id="resId1c4">
+              <af:outputText value="#{row.Mgr}" id="ot2">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Mgr.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Hiredate" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Hiredate.label}"
+                       id="resId1c5">
+              <af:outputText value="#{row.Hiredate}" id="ot3">
+                <af:convertDateTime pattern="#{bindings.EmpView1.hints.Hiredate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Sal" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Sal.label}"
+                       id="resId1c6">
+              <af:outputText value="#{row.Sal}" id="ot1">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Sal.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Comm" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Comm.label}"
+                       id="resId1c7">
+              <af:outputText value="#{row.Comm}" id="ot8">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Comm.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Deptno.label}"
+                       id="resId1c8">
+              <af:outputText value="#{row.Deptno}" id="ot7">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Deptno.format}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

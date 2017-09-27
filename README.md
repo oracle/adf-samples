@@ -151,6 +151,7 @@ Each sample is also available in downloadable form in the zips directory.
 * RefreshCollectionTest
 * ReleaseReservedMode
 * ReportJboWarningToJSF
+* RequireAtLeastThreeCharactersInSelectivelyRequiredFieldWithStartsWithOper
 
 
 

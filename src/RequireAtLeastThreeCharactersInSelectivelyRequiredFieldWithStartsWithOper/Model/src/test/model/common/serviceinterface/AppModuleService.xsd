@@ -1,0 +1,21 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/test/model/common/types/"
+     xmlns:tns="/test/model/common/types/" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/"
+     xmlns:ns1="/test/model/common/">
+    <import namespace="/test/model/common/" schemaLocation="../EmpViewSDO.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <element name="findEmpView1">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns0:FindCriteria"/>
+                <element name="findControl" type="ns0:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findEmpView1Response">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:EmpViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
