@@ -1,0 +1,186 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<templates>
+  <template id="oracle.jdeveloper.adflogger.lgdef" shortcut="lgdef"
+            description="Define new class logger" hidden="false" reformat="true"
+            surround-with="true">
+    <text>
+      <![CDATA[private static ADFLogger $logger$ = ADFLogger.createADFLogger($clazz$.class);]]>
+    </text>
+    <context-id>java-type-members</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="tabStop" parameter=""
+              default-value="_logger" editable="true"/>
+    <variable name="clazz" processor-id="cur-class" parameter=""
+              default-value="clazz" editable="false"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgdefr" shortcut="lgdefr"
+            description="Define new class logger with resource bundle"
+            hidden="false" reformat="true" surround-with="true">
+    <text>
+      <![CDATA[private static ADFLogger $logger$ = ADFLogger.createADFLogger($clazz$.class,"$pack$.$bundle$");]]>
+    </text>
+    <context-id>java-type-members</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="tabStop" parameter=""
+              default-value="_logger" editable="true"/>
+    <variable name="clazz" processor-id="cur-class" parameter=""
+              default-value="" editable="false"/>
+    <variable name="pack" processor-id="cur-package" parameter=""
+              default-value="" editable="false"/>
+    <variable name="bundle" processor-id="tabStop" parameter=""
+              default-value="LoggingResourceBundle" editable="true"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgdefp" shortcut="lgdefp"
+            description="Define new package level logger" hidden="false"
+            reformat="true" surround-with="true">
+    <text>
+      <![CDATA[ADFLogger $logger$ = ADFLogger.createADFLogger(Package.getPackage("$package$"));]]>
+    </text>
+    <context-id>java-type-members</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="tabStop" parameter=""
+              default-value="_packageLogger" editable="true"/>
+    <variable name="package" processor-id="cur-package" parameter=""
+              default-value="package" editable="false"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgi" shortcut="lgi"
+            description="Log an informational message" hidden="false"
+            reformat="true" surround-with="true">
+    <text>
+      <![CDATA[$logger$.info("$msg$");]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Information" editable="true"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgc" shortcut="lgc"
+            description="Log a configuration message" hidden="false"
+            reformat="true" surround-with="true">
+    <text>
+      <![CDATA[$logger$.config("$msg$");]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Config:" editable="true"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgw" shortcut="lgw"
+            description="Log a warning message" hidden="false"
+            reformat="true" surround-with="true">
+    <text>
+      <![CDATA[$logger$.warning("$msg$");]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Warning" editable="true"/>
+  </template>  
+  <template id="oracle.jdeveloper.adflogger.lgs" shortcut="lgs"
+            description="Log an error message" hidden="false"
+            reformat="true" surround-with="true">
+    <text>
+      <![CDATA[$logger$.severe("$msg$");]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Error" editable="true"/>
+  </template>    
+  <template id="oracle.jdeveloper.adflogger.lgig" shortcut="lgig"
+            description="Log an informational message with guard condition"
+            hidden="false" reformat="true" surround-with="true">
+    <text>
+      <![CDATA[if ($logger$.isLoggable(Level.INFO)) {
+  StringBuilder $sbName$ = new StringBuilder("$msg$");
+
+  $logger$.info($sbName$.toString());
+}]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>java.util.logging.Level</import>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="sbName" processor-id="tabStop" parameter=""
+              default-value="logMsg" editable="true"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Information" editable="true"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgcg" shortcut="lgcg"
+            description="Log a configuration message with guard condition"
+            hidden="false" reformat="true" surround-with="true">
+    <text>
+      <![CDATA[if ($logger$.isLoggable(Level.CONFIG)) {
+  StringBuilder $sbName$ = new StringBuilder("$msg$");
+
+  $logger$.config($sbName$.toString());
+}]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>java.util.logging.Level</import>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="sbName" processor-id="tabStop" parameter=""
+              default-value="configMsg" editable="true"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Config:" editable="true"/>
+  </template>
+  <template id="oracle.jdeveloper.adflogger.lgwg" shortcut="lgwg"
+            description="Log a warning message with guard condition"
+            hidden="false" reformat="true" surround-with="true">
+    <text>
+      <![CDATA[if ($logger$.isLoggable(Level.WARNING)) {
+  StringBuilder $sbName$ = new StringBuilder("$msg$");
+
+  $logger$.warning($sbName$.toString());
+}]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>java.util.logging.Level</import>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="sbName" processor-id="tabStop" parameter=""
+              default-value="warningMsg" editable="true"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Warning" editable="true"/>
+  </template>  
+  <template id="oracle.jdeveloper.adflogger.lgsg" shortcut="lgsg"
+            description="Log an errror message with guard condition"
+            hidden="false" reformat="true" surround-with="true">
+    <text>
+      <![CDATA[if ($logger$.isLoggable(Level.SEVERE)) {
+  StringBuilder $sbName$ = new StringBuilder("$msg$");
+
+  $logger$.severe($sbName$.toString());
+}]]>
+    </text>
+    <context-id>java-statement</context-id>
+    <import>java.util.logging.Level</import>
+    <import>oracle.adf.share.logging.ADFLogger</import>
+    <variable name="logger" processor-id="variables"
+              parameter="oracle.adf.share.logging.ADFLogger"
+              default-value="_logger" editable="false"/>
+    <variable name="sbName" processor-id="tabStop" parameter=""
+              default-value="errorMsg" editable="true"/>
+    <variable name="msg" processor-id="tabStop" parameter=""
+              default-value="Error" editable="true"/>
+  </template>    
+</templates>
