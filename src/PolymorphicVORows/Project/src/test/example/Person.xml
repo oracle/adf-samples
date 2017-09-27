@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Person"
+   DBObjectType="table"
+   DBObjectName="PERSON"
+   AliasName="Person"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="test.example.PersonImpl"
+   DefClass="test.fwkext.CustomEntityDefImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_defSuperClass" Value="test.fwkext.CustomEntityDefImpl" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      IsNotNull="true"
+      ColumnName="ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="PERSON"
+      PrimaryKey="true" >
+   </Attribute>
+   <Attribute
+      Name="Name"
+      Precision="30"
+      ColumnName="NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PERSON" >
+   </Attribute>
+   <Attribute
+      Name="Sex"
+      DiscrColumn="true"
+      Precision="1"
+      ColumnName="SEX"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PERSON" >
+   </Attribute>
+   <Key
+      Name="PersonIdCheck" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.example.Person.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_isNotNull" Value="true" />
+         <Attr Name="_DBObjectName" Value="PERSON_ID_CHECK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="PersonPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.example.Person.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="PERSON_PRIMARY_KEY" />
+      </DesignTime>
+   </Key>
+</Entity>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Woman"
+   Extends="test.example.Person"
+   DBObjectType="table"
+   DBObjectName="PERSON"
+   AliasName="Woman"
+   BindingStyle="JDBC"
+   UseGlueCode="false"
+   RowClass="test.example.WomanImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Sex"
+      DiscrColumn="true"
+      DefaultValue="W"
+      Precision="1"
+      ColumnName="SEX"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PERSON" >
+      <DesignTime>
+         <Attr Name="_OverrideAttr" Value="true" />
+         <Attr Name="_DisplaySize" Value="255" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="WomanAttr"
+      Precision="20"
+      ColumnName="WOMAN_ATTR"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PERSON" >
+   </Attribute>
+</Entity>

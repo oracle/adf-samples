@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="People"
+   SelectList="Person.ID, 
+       Person.NAME, 
+       Person.SEX"
+   FromList="PERSON Person"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="test.example.PeopleRowImpl"
+   ComponentClass="test.example.PeopleImpl"
+   RowInterface="test.example.common.PeopleRow"
+   ClientRowProxyName="test.example.client.PeopleRowClient"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="Person"
+      Entity="test.example.Person" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <AttrArray Name="EntityImports">
+      <Item Value="test.example.Woman" />
+      <Item Value="test.example.Man" />
+   </AttrArray>
+   <ViewAttribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="Person"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      EntityAttrName="Name"
+      EntityUsage="Person"
+      AliasName="NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sex"
+      DiscrColumn="true"
+      EntityAttrName="Sex"
+      EntityUsage="Person"
+      AliasName="SEX" >
+   </ViewAttribute>
+</ViewObject>

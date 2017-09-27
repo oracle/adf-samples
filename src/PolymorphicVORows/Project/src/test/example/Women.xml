@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="Women"
+   Extends="test.example.People"
+   SelectList="Person.ID, 
+       Person.NAME, 
+       Person.SEX, 
+       Person.WOMAN_ATTR"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="test.example.WomenRowImpl"
+   ComponentClass="test.example.WomenImpl"
+   RowInterface="test.example.common.WomenRow"
+   ClientRowProxyName="test.example.client.WomenRowClient"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="Person"
+      Entity="test.example.Woman" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="Person"
+      AliasName="ID" >
+      <DesignTime>
+         <Attr Name="_OverrideAttr" Value="true" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sex"
+      DiscrColumn="true"
+      DefaultValue="W"
+      EntityAttrName="Sex"
+      EntityUsage="Person"
+      AliasName="SEX" >
+      <DesignTime>
+         <Attr Name="_OverrideAttr" Value="true" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      EntityAttrName="Name"
+      EntityUsage="Person"
+      AliasName="NAME" >
+      <DesignTime>
+         <Attr Name="_OverrideAttr" Value="true" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="WomanAttr"
+      EntityAttrName="WomanAttr"
+      EntityUsage="Person"
+      AliasName="WOMAN_ATTR" >
+   </ViewAttribute>
+</ViewObject>
