@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptView"
+  Version="11.1.1.53.15"
+  SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+  FromList="DEPT Dept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  AutoRefresh="true"
+  OrderBy="deptno desc"
+  ComponentClass="test.model.DeptViewImpl"
+  FetchMode="FETCH_AS_NEEDED"
+  RangeSize="20"
+  ComponentInterface="test.model.common.DeptView"
+  ClientProxyName="test.model.client.DeptViewClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Dept"
+    Entity="test.model.Dept"/>
+  <ViewAttribute
+    Name="Deptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Dept"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="Dept"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="Dept"
+    AliasName="LOC"/>
+  <ClientInterface>
+    <Method
+      Name="getLastRequery">
+      <Return
+        Type="long"/>
+    </Method>
+  </ClientInterface>
+</ViewObject>

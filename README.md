@@ -190,6 +190,7 @@ Each sample is also available in downloadable form in the zips directory.
 * UploadedFileToBlob
 * UploadedFileToClob
 * UploadTextFile
+* UseSharedAMForUITest
 
 
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="DepartmentsPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DeptView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DeptView1Iterator"
+              ChangeEventPolicy="none"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptView1Iterator" id="DeptView1">
+      <nodeDefinition DefName="test.model.DeptView" Name="DeptView10">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction IterBinding="DeptView1Iterator" id="getLastRequery"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getLastRequery" IsViewObjectMethod="true"
+                  DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.DeptView1"
+                  ReturnName="AppModuleDataControl.methodResults.getLastRequery_AppModuleDataControl_DeptView1_getLastRequery_result"/>
+  </bindings>
+</pageDefinition>

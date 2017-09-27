@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                  rows="#{bindings.DeptView1.rangeSize}"
+                  emptyText="#{bindings.DeptView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.DeptView1.rangeSize}"
+                  rowBandingInterval="0" id="t1"
+                  contentDelivery="immediate" width="350"
+                  columnStretching="last" binding="#{DepartmentsPage.table}"
+                  columnSelection="none" rowSelection="none">
+          <af:column sortProperty="Deptno" sortable="false"
+                     headerText="#{bindings.DeptView1.hints.Deptno.label}"
+                     id="c2">
+            <af:outputText value="#{row.Deptno}" id="ot2"
+                           
+                           >
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DeptView1.hints.Deptno.format}"/>
+            </af:outputText>
+          </af:column><af:column sortProperty="Dname" sortable="false"
+                                 headerText="#{bindings.DeptView1.hints.Dname.label}"
+                                 id="c3">
+            <af:outputText value="#{row.Dname}" id="ot3"
+                           
+                           />
+          </af:column><af:column sortProperty="Loc" sortable="false"
+                                 headerText="#{bindings.DeptView1.hints.Loc.label}"
+                                 id="c1">
+            <af:outputText value="#{row.Loc}" id="ot1"
+                           
+                           />
+          </af:column>
+        </af:table>
+        <af:poll id="pollTimer"
+                 pollListener="#{DepartmentsPage.onPollTimerExpired}"
+                 interval="15000"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
