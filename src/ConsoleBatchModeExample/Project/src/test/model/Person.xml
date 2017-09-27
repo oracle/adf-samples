@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" id="Person"
+          BeanClass="test.model.Person" isJavaBased="true"
+          version="10.1.3.41.57">
+   <Attribute Name="age" IsUpdateable="2" AttrLoad="Each" IsQueriable="false"
+              IsVisible="true" IsPersistent="false" IsUnique="false"
+              IsNotNull="false" PrecisionRule="true" DiscrColumn="false"
+              SourceName="age" Type="int"
+              xmlns="http://xmlns.oracle.com/adfm/beanmodel"/>
+   <Attribute Name="name" IsUpdateable="2" AttrLoad="Each" IsQueriable="false"
+              IsVisible="true" IsPersistent="false" IsUnique="false"
+              IsNotNull="false" PrecisionRule="true" DiscrColumn="false"
+              SourceName="name" Type="java.lang.String"
+              xmlns="http://xmlns.oracle.com/adfm/beanmodel"/>
+</JavaBean>

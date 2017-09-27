@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DataControlConfigs
+   id="DataControls"
+   xmlns="http://xmlns.oracle.com/adfm" >
+   <Contents >
+      <DataControl
+         id="PeopleServiceDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.PeopleService"
+         BeanClass="test.model.PeopleService" >
+      </DataControl>
+   </Contents>
+</DataControlConfigs>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                id="TestClientUIModel" Package="test.model" FindMode="false"
+                EnableTokenValidation="true">
+   <executables>
+      <iterator id="DeptViewIter" Binds="DeptView1" RangeSize="10"
+                DataControl="MyServiceDataControl"/>
+      <accessorIterator id="PeopleIter" Binds="people" RangeSize="10"
+                        MasterBinding="PeopleServiceDataControl_rootIter"
+                        BeanClass="test.model.Person"/>
+      <iterator id="PeopleServiceDataControl_rootIter" Binds="root"
+                RangeSize="10" DataControl="PeopleServiceDataControl"/>
+   </executables>
+   <bindings>
+      <table xmlns="http://xmlns.oracle.com/adfm/uimodel" id="Departments"
+             IterBinding="DeptViewIter" ApplyValidation="false"
+             isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Deptno"/>
+            <Item Value="Dname"/>
+         </AttrNames>
+      </table>
+      <table xmlns="http://xmlns.oracle.com/adfm/uimodel" id="People"
+             IterBinding="PeopleIter" ApplyValidation="false" isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="age"/>
+            <Item Value="name"/>
+         </AttrNames>
+      </table>
+   </bindings>
+</pageDefinition>

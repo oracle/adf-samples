@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" id="PeopleService"
+          BeanClass="test.model.PeopleService" isJavaBased="true"
+          version="10.1.3.41.57">
+   <AccessorAttribute id="people" BeanClass="test.model.Person"
+                      IsCollection="true" Type="java.util.Collection"
+                      xmlns="http://xmlns.oracle.com/adfm/beanmodel"/>
+   <MethodAccessor id="getPerson" BeanClass="test.model.Person"
+                   Type="test.model.Person" IsCollection="false"
+                   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+                   ReturnNodeName="return">
+      <ParameterInfo id="param0" Type="int"/>
+   </MethodAccessor>
+</JavaBean>

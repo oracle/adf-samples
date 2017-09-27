@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" id="DataBindings"
+             Package="" SeparateXMLFiles="false" ClientType="Generic">
+   <pageMap/>
+   <pageDefinitionUsages>
+      <page id="TestClientUIModel" path="test.model.TestClientUIModel"/>
+   </pageDefinitionUsages>
+   <dataControlUsages>
+      <BC4JDataControl Configuration="MyServiceLocal" Package="test.model"
+                       xmlns="http://xmlns.oracle.com/adfm/datacontrol"
+                       id="MyServiceDataControl"
+                       FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                       syncMode="Batch">
+         <Parameters/>
+      </BC4JDataControl>
+      <JavaBeanDataControl SupportsFindMode="false" SupportsTransactions="false"
+                           Definition="test.model.PeopleService"
+                           BeanClass="test.model.PeopleService"
+                           xmlns="http://xmlns.oracle.com/adfm/datacontrol"
+                           id="PeopleServiceDataControl"
+                           FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl">
+         <Parameters/>
+      </JavaBeanDataControl>
+   </dataControlUsages>
+</Application>
