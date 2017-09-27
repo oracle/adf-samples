@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+    <web-module id="CustomSetJDBCURL" path="file:/H:/examples/jdev/CustomSetJDBCURL/ViewController/public_html/"/>
+    <web-module id="CustomSetJDBCURLNoController" path="file:/H:/examples/jdev/CustomSetJDBCURL/ViewNoController/public_html/"/>
+  <log>
+        <file path="CustomSetJDBCURL-oc4j-app.log"/>
+    </log>
+  <jazn provider="XML" location="CustomSetJDBCURL-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="CustomSetJDBCURL-data-sources.xml"/>
+</orion-application>

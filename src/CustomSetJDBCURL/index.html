@@ -1,0 +1,2003 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Building Applications with Oracle JHeadstart for ADF - Beta 1 Draft</title>
+      <META name="description" content="Over the past year, analysts like Gartner Group coined the term &#34;J2EZ&#34; for a class of tools and frameworks that make J2EE application development easy. These so-called &#34;J2EZ&#34; tools target developers for whom time to market, low implementation costs, and productivity are driving factors, by providing a visual, declarative, and highly productive environment. This document provides step-by-step instructions to evaluate the state of the art in Oracle's J2EE tools offering in this &#34;J2EZ&#34; space: JDeveloper 10g, the Oracle Application Development Framework (ADF), and the Oracle JHeadstart 10g Application Generator for Oracle ADF.By following this tutorial, you'll experience first-hand how Oracle JHeadstart turbo-charges your developer productivity for Oracle ADF-based web applications. You will build an attractive, consistent, interactive, and skinnable web application with browse, search, insert, update, and delete functionality against six related database tables from the Oracle HR sample schema. Your application will feature single- and multi-row editing, page-by-page scrolling, master/detail handling, dropdown lists, a pop-up LOV, a shuttle picker, and a tree control. Since no Java coding is required to implement the tutorial, even developers with minimal Java skills can follow along. This is possible because Oracle ADF-powered J2EE applications only require custom code to add application-specific business logic or to augment default framework behavior.">
+      <META name="keywords" content="J2EZ, Struts, Spring, tutorial, AJAX, Asynchronous Javascript, getting started, lightweight container, inversion of control, design patterns, persistence, EJB 3.0, JSF, dependency injection, simplest way to build J2EE applications, Model, developer productivity, application development framework, View, ADF, Oracle ADF, Controller, Model View Controller, J2EE, J2EE framework, data access objects, BC4J, Business Components for Java, Oracle, JDeveloper, Java, BMP, EJB, CMP, XML, business logic, application architecture">
+      <link rel="stylesheet" type="text/css" href="otn_new.css">
+   </head>
+   <body>
+      <p><span class="topstoryhead">Building
+            Applications with Oracle JHeadstart for ADF</span></p>
+      <p><span class="boldbodycopy">An End-to-End
+            Tutorial on How to Be Effective Immediately with J2EE Application
+            Development</span></p>
+      <h3>Beta 1 Draft</h3><span class="bodycopy">Author: Steve Muench, Oracle ADF Development Team</span><br><span class="bodycopy">Contributions from Steven Davelaar &amp; Sandra Muller, JHeadstart
+         Team</span><p></p><span class="bodycopy">Date: April 11, 2005</span>
+      <!-- Revision 10.1.2--><p><span class="parahead1">Abstract</span></p>
+      <p class="bodycopy">Over the past year, analysts like Gartner Group coined the
+         term "J2EZ" for a class of tools and frameworks that make J2EE application
+         development easy. These so-called "J2EZ" tools target developers for whom time
+         to market, low implementation costs, and productivity are driving factors, by
+         providing a visual, declarative, and highly productive environment. This
+         document provides step-by-step instructions to evaluate the state of the art in
+         Oracle's J2EE tools offering in this "J2EZ" space: JDeveloper 10g, the Oracle
+         Application Development Framework (ADF), and the Oracle JHeadstart 10g
+         Application Generator for Oracle ADF.
+      </p>
+      <p class="bodycopy">By following this tutorial,
+         you'll experience first-hand how Oracle JHeadstart turbo-charges your developer
+         productivity for Oracle ADF-based web applications. You will build an
+         attractive, consistent, interactive, and skinnable web application with browse,
+         search, insert, update, and delete functionality against six related database
+         tables from the Oracle HR sample schema. Your application will feature single-
+         and multi-row editing, page-by-page scrolling, master/detail handling, dropdown
+         lists, a pop-up LOV, a shuttle picker, and a tree control. Since no Java coding
+         is required to implement the tutorial, even developers with minimal Java skills
+         can follow along. This is possible because Oracle ADF-powered J2EE applications
+         only require custom code to add application-specific business logic or to
+         augment default framework behavior.
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">While we've tested that this
+                     document should print fine in Internet Explorer, if you prefer, a
+                     <a href="http://otn.oracle.com/products/jdev/tips/muench/jhsstep_pdf.zip" class="bodylink">zipped,
+                        PDF version of this paper</a> is also available. Other browsers like
+                     Firefox might split figures across page breaks when printing.
+                  </p></span></td>
+         </tr>
+      </table><br><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">While the installation instructions and screenshots in this
+                     document are for Microsoft Windows XP, JDeveloper 10g and Oracle JHeadstart 10g
+                     work on any platform where JDeveloper 10g is supported, including Windows
+                     NT/2000/XP, Linux, Mac OSX, Solaris, and HP-UX. The installation steps are
+                     virtually identical on the other platforms.
+                  </p></span></td>
+         </tr>
+      </table><br><p><span class="parahead1">Contents</span></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#overview">Overview of Oracle ADF and Oracle JHeadstart 10g</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#setup">Step
+         0: Setup</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#createdefaultapp">Step 1: Create Default Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#newworkspace">Step
+         1a: Create and Configure a New Workspace</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#defaultbusinesscomponents">Step 1b: Create Default ADF
+         Business Tier Components</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#defaultwebtierjhs">Step 1c: Generate
+         Default Web Tier with JHeadstart</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#genandrunfirsttime">Step 1d: Run the Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#observedefaultfunc">Step 1e: Observe Default Application
+         Functionality</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelayoutstyles">Step 2: Change Layout Styles and Query
+         Behavior</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelayoutstylesemps">Step 2a: Change How Employees Group
+         Gets Generated</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelayoutstylesdepts">Step 2b: Change How the Departments
+         Group Gets Generated</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelayoutstylesjobs">Step 2c: Change How the Jobs Group
+         Gets Generated</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelayoutstylesregions">Step 2d: Change How the Regions
+         Group Gets Generated</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#regenandrun">Step 2e: Regenerate and Run the
+         Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#createlov">Step 3: Create Department Manager List of Values
+         (LOV) </a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#addmanagername">Step 3a: Add Manager Name to Departments
+         Query</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#changelookupdef">Step 3b: Change the EmployeesLookup
+         Definition to an LOV</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#genandrunagain">Step 3c: Regenerate and Run the
+         Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#buildshuttle">Step 4: Shuttle Employees Between
+         Departments</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#createnewviewobject">Step 4a: Create View Object to Query
+         Available Employees</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#setuptheshuttle">Step 4b: Setting Up the Parent
+         Shuttle</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#genandrunagain2">Step 4c: Generate and Run the
+         Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#customtemplates">Step 5: Template Customization (Tabbed Child
+         Groups)</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#customtemplatesetup">Step 5a: Indicate Where Custom Templates
+         Should Be Used</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#genandrun3">Step 5b: Generate and Run the Application</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#conditionallydependentfields">Step 6: Conditionally Dependent
+         Fields </a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#databinddisabledproperty">Step 6a: Add Expression to Field's Disabled Property</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#enabledynamically">Step 6b: Make Field React to Live Data
+         Changes</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#protectfromgeneration">Step 6d: Protect the Customized Page
+         From Regeneration</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#customskins">Step 7:
+         Applying Custom Skins to Change Look and Feel</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#blafandminimal">Step 7a: Changing Between Supplied
+         Skins</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#exploringcustomskins">Step 7b: Exploring Custom Skins</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="bodylink" href="#conclusion">Conclusion</a><br><a name="overview"></a><p><span class="parahead1">Overview of Oracle ADF and Oracle JHeadstart 10g</span></p>
+      <p class="bodycopy">On their
+         own, the Oracle Application Development Framework (ADF) together with the
+         Oracle JDeveloper 10g IDE give developers a productive, visual environment for
+         building richly functional J2EE applications without having to focus on J2EE
+         design patterns and low-level plumbing code. As its name implies, Oracle
+         JHeadstart 10g offers a significant additional productivity advantage in
+         creating sophisticated web-based, J2EE business applications. Standing squarely
+         on the shoulders of the base Oracle ADF framework, Oracle JHeadstart adds an
+         additional capability for generating fully-working ADF UIX or JSP view and
+         controller layers on top of the data model exposed by your ADF application
+         module. The ADF web applications you generate with JHeadstart can easily
+         support multi-row editing, LOV's with validation, tree and shuttle displays,
+         and consistent search pages, among many other features that you select
+         declaratively.
+      </p>
+      <p class="bodycopy"> JHeadstart automates creating and iteratively
+         evolving the web tier of your ADF application based on a declarative
+         application structure definition. Once you've allowed JHeadstart to generate
+         the bulk of your application interface, you can spend your time using
+         JDeveloper's productive environment to tailor the results or to concentrate
+         your effort on real showcase pages that need special attention.
+      </p>
+      <p class="bodycopy"> As
+         we'll see in this step-by-step demo, the JHeadstart Application Generator does
+         not generate any Java code. Instead, it generates web pages, ADF databinding
+         metadata for those pages, Struts controller metadata to define the page flow,
+         and translatable message bundle files. We'll also see that all of the basic
+         functionality provided by the underlying Oracle ADF framework components in the
+         demo do not require any generated Java code either. We hope that you'll walk
+         away quite impressed by what you can do without writing a single line of Java
+         code using this powerful combination of J2EE tools and frameworks from Oracle.
+         Any lines of code that you would eventually write in a real application would
+         be squarely focused on enhancing all of the built-in functionality provided
+         with your own custom business application logic.
+      </p><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+         <tr>
+            <td><span class="boldbodycopy">TIP:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">After you've
+                     followed the demo steps yourself, the same steps work well as a scripted demo
+                     you can show to others to spread the good word about the many powerful features
+                     provided by the combination of Oracle JDeveloper 10g, Oracle ADF, and Oracle
+                     JHeadstart working together.
+                  </p></span></td>
+         </tr>
+      </table><br><a name="setup"></a><p><span class="parahead1">Step
+            0: Setup</span></p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Start with JDeveloper 10g, Release 10.1.2</u></b></i></p>
+            <p class="bodycopy">The demo steps require Oracle JDeveloper 10g, release 10.1.2. If you have
+               a version of Oracle JDeveloper installed, you can verify what version it is by
+               selecting the <b><i>Help | About</i></b> option from the main
+               menu.
+            </p>
+            <p class="bodycopy">If you need to download JDeveloper 10g, Release 10.1.2, look
+               for the correct 10.1.2 version on this
+               <a href="http://www.oracle.com/technology/software/products/jdev/index.html" class="bodylink">JDeveloper
+                  Downloads</a> page. (Hint: It might not be the first one in the
+               list!)
+            </p>
+            <p class="bodycopy">To install JDeveloper, create a convenient directory (e.g.
+               <code>C:\jdev1012</code>) and extract the <code>jdev1012.zip</code>
+               file into this directory using the standard Java <code>jar</code>
+               utility, WinZip, or other zip-compatible tool you prefer.
+            </p>
+            <p class="bodycopy">To run
+               JDeveloper, double-click on <code>jdevw.exe</code> in the
+               <code>C:\jdev1012\jdev\bin</code> folder. 
+            </p><a name=""></a><center><img src="images/launchjdev.gif" title="Launching JDeveloper 10g on Windows" alt="Launching JDeveloper 10g on Windows"><br><b class="boldbodycopy">Figure 1: Launching
+                  JDeveloper 10g on Windows</b></center><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+               <tr>
+                  <td><span class="boldbodycopy">NOTE:</span></td>
+                  <td valign="top"><span class="bodycopy">On Unix-based platforms,
+                        run the <code>./jdev/bin/jdev</code> shell script to launch JDeveloper
+                        10g.</span></td>
+               </tr>
+            </table><br><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Download and Install
+                        Oracle JHeadstart 10g for ADF, Release 10.1.2</u></b></i></p>
+            <p class="bodycopy">Oracle
+               JHeadstart is an Oracle JDeveloper extension (a.k.a "plug-in") that you install
+               into the JDeveloper 10g IDE. To install the JHeadstart 10g extension into your
+               JDeveloper 10g 10.1.2 environment, perform the steps below.
+            </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+               <tr>
+                  <td><span class="boldbodycopy">NOTE:</span></td>
+                  <td valign="top"><span class="bodycopy">
+                        These instructions assume you've installed JDeveloper 10g into the
+                        <code>C:\jdev1012</code> directory. Substitute your own JDeveloper home
+                        directory for <code>C:\jdev1012</code> if you already had JDeveloper
+                        10.1.2 installed.</span></td>
+               </tr>
+            </table><br><ul class="bodycopy">
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Download the JHeadstart 10g extension for JDeveloper
+                              10g</u></b></i></p>
+                  <p class="bodycopy"> You find it under the
+                     <b><i>Downloads</i></b> heading on the
+                     <a href="http://www.oracle.com/technology/consulting/9iServices/JHeadstart.html" class="bodylink">JHeadstart
+                        10g Product Center</a> on OTN. The file will be named
+                     <code>jhs1012.zip</code>.
+                  </p><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Exit
+                              from JDeveloper 10.1.2 Before Installing the JHeadstart
+                              Extension</u></b></i></p>
+                  <p class="bodycopy">Make sure JDeveloper 10.1.2 is not currently
+                     running.
+                  </p><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Extract the JHeadstart
+                              Distribution</u></b></i></p>
+                  <p class="bodycopy">Create a directory to contain the
+                     JHeadstart installation (e.g. <code>C:\JHeadstart</code>) and unzip the
+                     downloaded <code>jhs1012.zip</code> file into this directory, preserving
+                     directory structure.
+                  </p><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Copy JHeadstart
+                              Extension Files Under JDeveloper Extensions Directory</u></b></i></p>
+                  <p class="bodycopy">First, create a subdirectory named <code>jheadstart</code> under
+                     the directory for JDeveloper extensions
+                     (<code>C:\jdev1012\jdev\lib\ext\jheadstart</code>).
+                  </p>
+                  <p class="bodycopy">Then,
+                     copy the JHeadstart extension JAR files
+                     (<code>C:\JHeadstart\config\jdevaddins\*.jar</code>) to the
+                     <code>C:\jdev1012\jdev\lib\ext\jheadstart</code>
+                     directory.
+                  </p><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Set the JHeadstart
+                              Installation Home Preference in JDeveloper</u></b></i></p>
+                  <p class="bodycopy">After
+                     starting JDeveloper 10.1.2, select <b><i>Tools |
+                           Preferences...</i></b> from the main menu. Select the
+                     <b><i>JHeadstart Settings</i></b> category, and enter
+                     <code>C:\JHeadstart</code> for the value of the <b><i>JHeadstart
+                           Home</i></b> property.
+                  </p>
+                  <p class="bodycopy">When the value of the JHeadstart Home
+                     corresponds to a correct installation directory for JHeadstart, you'll see the
+                     JHeadstart build number reflected in the preference panel as shown in
+                     <a href="#successfuljhsinstall" class="bodylink"><span style="white-space: nowrap">Figure 2</span></a>. 
+                  </p><a name="successfuljhsinstall"></a><center><img src="images/successfuljhsinstall.gif" title="JHeadstart Build Number Displays When Correctly Installed" alt="JHeadstart Build Number Displays When Correctly Installed"><br><b class="boldbodycopy">Figure 2: JHeadstart Build Number Displays When
+                        Correctly Installed</b></center>
+                  <p class="bodycopy">Click
+                     <b><i>(OK)</i></b> to close the Preferences
+                     dialog.
+                  </p><br><br></li>
+            </ul><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Setup the Oracle HR Schema</u></b></i></p>
+            <p class="bodycopy">The demo
+               steps are based on the standard Oracle sample <code>HR</code> schema of
+               human resources information. To proceed with the demo we need the sample HR
+               tables to be installed, and a database connection named "<code>hr</code>"
+               to exist in the JDeveloper 10g environment.
+            </p>
+            <p class="bodycopy">To set up the HR schema
+               and a JDeveloper connection to work with the tables it contains, follow the
+               steps in the JDeveloper tutorial
+               <a href="http://www.oracle.com/technology/obe/obe_as_1012/j2ee/common/obeconnection.htm" class="bodylink">Installing
+                  the Sample Schemas and Establishing a Database Connection</a>. 
+            </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+               <tr>
+                  <td><span class="boldbodycopy">NOTE:</span></td>
+                  <td valign="top"><span class="bodycopy">When following the instructions above, instead of using the
+                        suggested JDeveloper connection name of
+                        <code>tutorial_jdbc_connection</code>, use the name <code>hr</code>
+                        instead. This way your environment will correspond to the screen shots in this
+                        document.</span></td>
+               </tr>
+            </table><br><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Set ADF Business
+                        Components Java Generation Preferences</u></b></i></p>
+            <p class="bodycopy">In order to
+               better understand what ADF application functionality requires Java code and
+               what does not, it's useful to set the ADF Business Components Java generation
+               preferences at the IDE level so that the wizards and editors create no custom
+               Java classes by default. By doing this, at the end of the demo we can see what
+               Java classes actually are part of our working, finished application to get a
+               better understanding of what combined, built-in functionality Oracle ADF and
+               Oracle JHeadstart 10g provide.
+            </p>
+            <p class="bodycopy">To change this preference, select
+               <b><i>Tools | Preferences...</i></b> from the JDeveloper main
+               menu, and click on the <b><i>Business Components</i></b> category.
+               <i>Uncheck</i> any of the checked boxes in the panel at the right
+               as shown in <a href="#nodefaultjava" class="bodylink"><span style="white-space: nowrap">Figure 3</span></a>, then click
+               <b><i>(OK)</i></b>. 
+            </p><a name="nodefaultjava"></a><center><img src="images/nocodeadfbc.gif" title="Setting ADF Business Components to Generate No Java By Default" alt="Setting ADF Business Components to Generate No Java By Default"><br><b class="boldbodycopy">Figure 3: Setting
+                  ADF Business Components to Generate No Java By Default</b></center><br><br></li>
+      </ol><a name="createdefaultapp"></a><p><span class="parahead1">Step 1: Create Default Application</span></p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">For details about these features, see Chapters 3 and 5 in the
+                     <a href="http://download.oracle.com/consulting/jhsdevguide.pdf" class="bodylink">JHeadstart
+                        Developer's Guide</a>.
+                  </p></span></td>
+         </tr>
+      </table><br><a name="newworkspace"></a><p><span class="parahead1" style="font-size:95%">Step
+            1a: Create and Configure a New Workspace</span></p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Create a new Application
+                        Workspace</u></b></i></p>
+            <p class="bodycopy"> Select <b><i>File &gt;
+                     New...</i></b> and pick <b><i>Application Workspace</i></b>. Use
+               the template named <b><i>Web Application [default]</i></b> as shown in
+               <a href="#newappworkspace" class="bodylink"><span style="white-space: nowrap">Figure 4</span></a></p><a name="newappworkspace"></a><center><img src="images/createws.gif" title="Creating a New Application Workspace" alt="Creating a New Application Workspace"><br><b class="boldbodycopy">Figure 4: Creating a New Application Workspace</b></center>
+            <p class="bodycopy">This results in creating
+               your new <code>MyDemo</code> workspace that will contain two (initially
+               empty) projects named <code>Model</code> and
+               <code>ViewController</code>. 
+            </p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Give Your Web Application a Meaningful Context Root
+                        Name</u></b></i></p>
+            <p class="bodycopy">With the <code>ViewController</code> project
+               still selected in the navigator, select <b><i>Project
+                     Properties...</i></b> from the right-mouse menu. Visit the
+               <b><i>J2EE</i></b> category and set the <b><i>J2EE Web Context
+                     Root</i></b> to &#8220;<code>MyDemo</code>&#8221;. Technically, this step is
+               optional, but it gives your application a nicer-looking runtime URL and it's
+               nice to know where you would change it for your own
+               applications.
+            </p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Simplify Running the
+                        Application By Tweaking a Project Setting</u></b></i></p>
+            <p class="bodycopy">While still in
+               the Project Properties dialog, to make it easier to quickly run the
+               application, select the <b><i>Runner</i></b> category, and uncheck the
+               checkbox <b><i>Attempt to Run the Active File before
+                     Default</i></b>.
+            </p><br><br></li>
+      </ol><a name="defaultbusinesscomponents"></a><p><span class="parahead1" style="font-size:95%">Step 1b: Create Default ADF
+            Business Tier Components</span></p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Create Default Business Components for Tables in HR
+                        Schema</u></b></i></p>
+            <ul class="bodycopy">
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Run the Business Components from Tables
+                              Wizard</u></b></i></p>
+                  <p class="bodycopy">Select your <code>Model</code> project and
+                     choose <b><i>New...</i></b> from the right-mouse menu. In the New
+                     Gallery, expand the <b><i>Business Tier</i></b> node, select the
+                     <b><i>Business Components</i></b> category, and choose
+                     <b><i>Business Components from Tables</i></b>.
+                  </p><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Set the Database Connection to Use</u></b></i></p>
+                  <p class="bodycopy">When the <b><i>Business Components Project Initialization</i></b>
+                     dialog appears, select the name of the <code>HR</code> connection you
+                     defined above as shown in <a href="#hrconn" class="bodylink"><span style="white-space: nowrap">Figure 5</span></a>.
+                  </p><a name="hrconn"></a><center><img src="images/hrconn.gif" title="Selecting the HR Connection to Work With" alt="Selecting the HR Connection to Work With"><br><b class="boldbodycopy">Figure 5: Selecting the HR Connection to Work With</b></center><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Create Entity Objects for Selected HR Tables</u></b></i></p>
+                  <p class="bodycopy"> On the <b><i>Step 1 of 4: Entity Objects from Tables</i></b> page
+                     of the wizard, as shown in <a href="#selecttables" class="bodylink"><span style="white-space: nowrap">Figure 6</span></a> shuttle the six
+                     tables <code>COUNTRIES</code>, <code>DEPARTMENTS</code>,
+                     <code>EMPLOYEES</code>, <code>JOBS</code>,
+                     <code>LOCATIONS</code>, and <code>REGIONS</code> tables into the
+                     <b><i>Selected</i></b> list.
+                  </p><a name="selecttables"></a><center><img src="images/selecttables.gif" title="Selecting Tables for Which to Create Entity Objects" alt="Selecting Tables for Which to Create Entity Objects"><br><b class="boldbodycopy">Figure 6: Selecting Tables for Which to Create Entity Objects</b></center><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Create Updateable View Objects for All Entity
+                              Objects</u></b></i></p>
+                  <p class="bodycopy">On the <b><i>Step 2 of 4: Updateable View
+                           Objects from Entity Objects</i></b> page of the wizard, as shown in
+                     <a href="#defaultviewobjects" class="bodylink"><span style="white-space: nowrap">Figure 7</span></a> shuttle all of the available entity object
+                     names into the <b><i>Selected</i></b> list in order to create default
+                     view objects for them.
+                  </p><a name="defaultviewobjects"></a><center><img src="images/defaultviewobjects.gif" title="Creating Updateable View Objects for All Entity Objects" alt="Creating Updateable View Objects for All Entity Objects"><br><b class="boldbodycopy">Figure 7: Creating
+                        Updateable View Objects for All Entity Objects</b></center><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Skip Past the Read-Only View Objects
+                              Panel</u></b></i></p>
+                  <p class="bodycopy">As shown in <a href="#skipreadonlyvos" class="bodylink"><span style="white-space: nowrap">Figure 8</span></a>,
+                     just skip past the <b><i>Step 3 of 4: Read-Only View Objects from
+                           Tables</i></b> page of the wizard since we don't need any read-only view
+                     objects for this demo.
+                  </p><a name="skipreadonlyvos"></a><center><img src="images/skipreadonlyvos.gif" title="Skipping the Read-Only View Objects Panel" alt="Skipping the Read-Only View Objects Panel"><br><b class="boldbodycopy">Figure 8: Skipping the
+                        Read-Only View Objects Panel</b></center><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Give Your Application Module Component a Meaningful
+                              Name</u></b></i></p>
+                  <p class="bodycopy">On the <b><i>Step 4 of 4: Application
+                           Module</i></b> page of the wizard, as shown in <a href="#appmodule" class="bodylink"><span style="white-space: nowrap">Figure 9</span></a>
+                     choose a meaning name for your application module like
+                     <code>HRModule</code>. 
+                  </p><a name="appmodule"></a><center><img src="images/appmodule.gif" title="Naming the Application Module" alt="Naming the Application Module"><br><b class="boldbodycopy">Figure 9: Naming the
+                        Application Module</b></center><br><br></li>
+               <li type="disc">
+                  <p class="bodycopy"><i><b><u>Review the Components to Generate, and Finish</u></b></i></p>
+                  <p class="bodycopy">Click <b><i>(Next)</i></b> to review the business components that
+                     you've selected to generate and you'll see the Finish page as shown in
+                     <a href="#finishpage" class="bodylink"><span style="white-space: nowrap">Figure 10</span></a>. Then, click <b><i>(Finish)</i></b> to
+                     create all of your business components.
+                  </p><a name="finishpage"></a><center><img src="images/finishpage.gif" title="Reviewing the Business Components To Create" alt="Reviewing the Business Components To Create"><br><b class="boldbodycopy">Figure 10: Reviewing the Business Components To Create</b></center><br><br></li>
+            </ul><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+               <tr>
+                  <td><span class="boldbodycopy">NOTE:</span></td>
+                  <td valign="top"><span class="bodycopy">For a more detailed explanation of this step, see the "Setting Up
+                        the Business Components Package" section in <b><i>Chapter 2. Getting
+                              Started</i></b> from the
+                        <a href="http://download.oracle.com/consulting/jhsdevguide.pdf" class="bodylink">JHeadstart
+                           Developer's Guide</a>.</span></td>
+               </tr>
+            </table><br><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Add Five-level Master/Detail to the Application Module's Data
+                        Model</u></b></i></p>
+            <p class="bodycopy">Edit the newly created <code>HRModule</code>
+               Application Module, and add nested view object usages to get a 5-level deep
+               nesting of region - country - location - department - employee. When finished
+               adding the three extra levels, your application module's data model will look
+               like this<a href="#datamodel" class="bodylink"><span style="white-space: nowrap">Figure 11</span></a> in the Application Module editor. For
+               example, to add a <code>LocationsView</code> view object instance as a
+               detail of <code>CountriesView2</code>, do the following:
+            </p>
+            <ul class="bodycopy">
+               <li type="disc">In the <b><i>Data
+                        Model</i></b> tree control, select the existing view instance
+                  <code>CountriesView2</code> that will become the new master (for the
+                  next-level detail we're about to add).<br><br></li>
+               <li type="disc">Expand
+                  the <code>CountriesView</code> view object in the <b><i>Available
+                        View Objects</i></b> list<br><br></li>
+               <li type="disc">Select the
+                  <code>LocationsView</code> view object that is indented under
+                  <b><i>CountriesView</i></b> in the <b><i>Available View
+                        Objects</i></b> list. This indenting means that it is an
+                  <i>available</i> detail view for any instance of a
+                  <code>CountriesView</code> master in the data model.<br><br></li>
+               <li type="disc">Click the <b><i>(&gt;)</i></b> button to shuttle a new
+                  <code>LocationsView3</code> instance into the data model as detail of the
+                  existing, selected
+                  <code>CountriesView2</code>.<br><br></li>
+            </ul>
+            <p class="bodycopy">Repeat
+               the process to add an instance of <code>DepartmentsView</code> as a
+               detail of the <code>LocationsView3</code>, and then again to add an
+               instance of <code>EmployeesView</code> as a detail of the
+               <code>DepartmentsView4</code>.
+            </p><a name="datamodel"></a><center><img src="images/datamodel.gif" title="Default Application Module Modified to Have Five-Level Master/Detail" alt="Default Application Module Modified to Have Five-Level Master/Detail"><br><b class="boldbodycopy">Figure 11: Default Application Module Modified to Have Five-Level
+                  Master/Detail</b></center><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+               <tr>
+                  <td><span class="boldbodycopy">NOTE:</span></td>
+                  <td valign="top"><span class="bodycopy"> This is also explained in more detail in the abovementioned section of
+                        the <a href="http://download.oracle.com/consulting/jhsdevguide.pdf" class="bodylink">JHeadstart
+                           Developer's Guide</a>.</span></td>
+               </tr>
+            </table><br><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Optimize Your Configuration Settings for a Web
+                        Application</u></b></i></p>
+            <p class="bodycopy">To use the recommended row-locking mode for
+               web applications, set the <code>jbo.locking.mode</code> configuration
+               property to <code>optimistic</code>. In addition, to avoid unnecessary
+               runtime overhead on a single-server configuration, you can disable the ADF
+               failover behavior in your Application Module configuration. For detailed
+               instructions, see the JHeadstart weblog entry
+               <a href="http://www.orablogs.com/jheadstart/archives/000936.html" class="bodylink">Essential
+                  Changes to ADF BC Application Module Configurations</a>.
+            </p><br><br></li>
+      </ol><a name="defaultwebtierjhs"></a><p><span class="parahead1" style="font-size:95%">Step 1c: Generate
+            Default Web Tier with JHeadstart</span></p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Enable JHeadstart on the ViewController
+                        Project</u></b></i></p>
+            <p class="bodycopy">Select the <code>ViewController</code>
+               project in the navigator and choose <b><i>Enable JHeadstart on this
+                     Project</i></b> from the right-mouse menu. Click
+               <b><i>(Next&gt;)</i></b>, then allow the wizard to
+               <b><i>(Finish)</i></b></p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Create the Default JHeadstart Application Structure
+                        File</u></b></i></p>
+            <p class="bodycopy">Select the <code>ViewController</code>
+               project in the navigator, and choose the <b><i>New JHeadstart
+                     Application Structure File</i></b> item from the right-mouse menu. Click
+               <b><i>(Next&gt;)</i></b>, then allow the wizard to
+               <b><i>(Finish)</i></b>.
+            </p><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+               <tr>
+                  <td><span class="boldbodycopy">TIP:</span></td>
+                  <td valign="top"><span class="bodycopy">Check the <b><i>Specify the
+                              name of the Application Structure file</i></b> checkbox to override the
+                        default structure file name to name it
+                        <code>ApplicationStructure.xml</code> instead so that it shows up
+                        alphabetically at the start of the <b><i>Miscellaneous Files</i></b>
+                        folder in the <b><i>Application Navigator</i></b>. This makes the file
+                        easier to find later. If you prefer using the System Navigator and enable its
+                        <b><i>Show Categories</i></b> mode, the file will show under the node
+                        <b><i>JHeadstart Design Files</i></b></span></td>
+               </tr>
+            </table><br><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Observe the Default Application Structure</u></b></i></p>
+            <p class="bodycopy">Notice that the structure of the application module's data model has been
+               used to create the default application structure for the web tier. Of course in
+               practice you will end up iteratively changing the default application
+               structure, but having a nice default structure to start with is a big plus as
+               we'll see.
+            </p>
+            <p class="bodycopy">By selecting the
+               <code>ApplicationStructure.xml</code> file in the navigator, and choosing
+               <b><i>Edit Application Structure File</i></b> from the right-mouse
+               menu, you will see the 5-level nesting of the view object instances for
+               regions, countries, locations, departments, employees as shown in
+               <a href="#defaultappstructure" class="bodylink"><span style="white-space: nowrap">Figure 12</span></a>. You also notice that the
+               <b><i>JHeadstart New Application Structure File</i></b> wizard has
+               created you a rich set of default lookup definitions where foreign key
+               relationships exist in the base business components. These lookup definitions
+               are leveraged by the JHeadstart Application Generator to generate drop-down
+               lists or text fields with pop-up List-of-Values (LOV) windows. We'll see both
+               kinds of these in the course of this demo.
+            </p><a name="defaultappstructure"></a><center><img src="images/defaultappstructure.gif" title="Application Structure Editor Showing Default Structure" alt="Application Structure Editor Showing Default Structure"><br><b class="boldbodycopy">Figure 12: Application Structure Editor Showing
+                  Default Structure</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Generate the Application</u></b></i></p>
+            <p class="bodycopy">Right-click the
+               Application Structure File and choose <b><i>Run JHeadstart Application
+                     Generator</i></b> from the right-mouse menu. When the generation is
+               completed, an alert will appear letting you know the process completed
+               ok.
+            </p><br><br></li>
+      </ol><a name="genandrunfirsttime"></a><p><span class="parahead1" style="font-size:95%">Step 1d: Run the Application</span></p>
+      <p class="bodycopy">Run the
+         <code>ViewController</code> project by selecting it in the application
+         navigator and then pressing <kbd>F11</kbd> (or
+         clicking on the toolbar run icon). JDeveloper will launch your default browser,
+         startup the embedded OC4J container with your web application deployed, and
+         show you the generated "launch page" that JHeadstart creates for you as you see
+         in <a href="#launchpage" class="bodylink"><span style="white-space: nowrap">Figure 13</span></a>. Just click on the <b><i>Start
+               HRModule</i></b> link to run the main application home page.
+      </p><a name="launchpage"></a><center><img src="images/runpage.gif" title="JHeadstart Application Launch Page" alt="JHeadstart Application Launch Page"><br><b class="boldbodycopy">Figure 13: JHeadstart Application Launch Page</b></center><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+         <tr>
+            <td><span class="boldbodycopy">TIP:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">If
+                     <i>instead</i> of seeing the application start page you see some
+                     kind of timeout error in your browser as shown in
+                     <a href="#gatewaytimeout" class="bodylink"><span style="white-space: nowrap">Figure 14</span></a>, then you'll need to change a configuration
+                     property of JDeveloper's embedded J2EE container (OC4J) to avoid this
+                     problem.
+                  </p><a name="gatewaytimeout"></a><center><img src="images/gatewaytimeout.gif" title="Running Web App in JDeveloper Times Out in Browser" alt="Running Web App in JDeveloper Times Out in Browser"><br><b class="boldbodycopy">Figure 14: Running Web App in JDeveloper
+                        Times Out in Browser</b></center>
+                  <p class="bodycopy">Before changing the
+                     necessary setting, terminate the currently running embedded server by selecting
+                     the <b><i>Run | Terminate &gt; Embedded OC4J Server</i></b>.
+                     
+                  </p>
+                  <p class="bodycopy">Next, select the <b><i>Tools | Embedded OC4J Server
+                           Preferences...</i></b> main menu item in JDeveloper, and change the
+                     <b><i>Host Name of IP Address Used to Refer to Embedded OC4J</i></b>
+                     setting to <b><i>Specify Host Hame</i></b>, and enter a hostname of
+                     <code>localhost</code> as shown in <a href="#localhostsetting" class="bodylink"><span style="white-space: nowrap">Figure 15</span></a>.
+                     Then, try rerunning the application and it should work this time. 
+                  </p><a name="localhostsetting"></a><center><img src="images/oc4jrunnerconfig.gif" title="Changing IDE Preference for Embedded OC4J Host Name" alt="Changing IDE Preference for Embedded OC4J Host Name"><br><b class="boldbodycopy">Figure 15: Changing IDE Preference for Embedded OC4J
+                        Host Name</b></center></span></td>
+         </tr>
+      </table><br><p class="bodycopy">When the
+         application starts, you'll see your initial JHeadstart-generated web
+         application that will look like what you see in <a href="#firstcut" class="bodylink"><span style="white-space: nowrap">Figure 16</span></a>.
+      </p><a name="firstcut"></a><center><img src="images/firstcut.gif" title="Initial JHeadstart-Generated Web Application" alt="Initial JHeadstart-Generated Web Application"><br><b class="boldbodycopy">Figure 16: Initial
+            JHeadstart-Generated Web Application</b></center><a name="observedefaultfunc"></a><p><span class="parahead1" style="font-size:95%">Step 1e: Observe Default Application
+            Functionality</span></p>
+      <p class="bodycopy">By playing with the default application yourself,
+         you can experience some of the built-in features that Oracle ADF and JHeadstart
+         support by default, and which the Oracle JHeadstart Application Generator
+         generates for you based on your declarative application structure file.
+      </p>
+      <p class="bodycopy">Highlights of these features include:</p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Tabs Represent Each
+                        Top-Level Group in the Application Structure</u></b></i></p><br><img src="images/tabs.gif" title="" alt=""><br><br></li>
+         <li type="disc"><i><b><u>Browse Data and Drill-Down to Details or Related
+                     Information</u></b></i><br><img src="images/selectandeditordrill.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Create and Edit All Data Out of the
+                        Box</u></b></i></p><br><img src="images/editforms.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Insert, Update, and Delete Multiple Rows on a Page</u></b></i></p><br><img src="images/multiroweditruntime.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Select Related Data from Automatically Created
+                        Lookups</u></b></i></p><br><img src="images/smartlookups.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Scroll Through Data Without Refreshing Entire
+                        Page</u></b></i></p><br><img src="images/tablerangescrolling.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Rapidly Find Data Using Quick Search
+                        Region</u></b></i></p><br><img src="images/quicksearch.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Search More Precisely Using Advanced Search
+                        Region</u></b></i></p><br><img src="images/advancedsearchshot.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Easily Set Optional Fields to Null Using Drop-Down
+                        Lists</u></b></i></p><br><img src="images/blankentry.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Warning Switching Top-Level Application Function with
+                        Pending Changes</u></b></i></p><br><img src="images/warningunposteddata.gif" title="" alt=""><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Positive User Feedback on Saving
+                        Changes</u></b></i></p><br><img src="images/positivefeedback.gif" title="" alt=""><br><br></li>
+      </ul><a name="changelayoutstyles"></a><p><span class="parahead1">Step 2: Change Layout Styles and Query
+            Behavior</span></p>
+      <p class="bodycopy">In this step of the demo, we'll change a number of
+         declarative application structure properties about the
+         <code>Employees</code>, <code>Departments</code>,
+         <code>Jobs</code>, and <code>Regions</code> groups to effect how
+         the JHeadstart Application Generator creates their respective view and
+         controller layer artifacts. We'll wait until making them all before re-running
+         the application generator.
+      </p>
+      <p class="bodycopy">To make the changes described here, make
+         sure you have the <b><i>JHeadstart Application Structure File
+               Editor</i></b> dialog open. If you don't, just locate the
+         <code>ApplicationStructure.xml</code> file in your
+         <code>ViewController</code> project and select <b><i>Edit
+               Application Structure File</i></b> from the right-mouse menu.
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">Since the <b><i>JHeadstart Application Structure File
+                           Editor</i></b> dialog is modeless, you can keep it open and
+                     <kbd>Alt</kbd>+<kbd>Tab</kbd> between it and
+                     the main JDeveloper IDE window. 
+                  </p></span></td>
+         </tr>
+      </table><br><a name="changelayoutstylesemps"></a><p><span class="parahead1" style="font-size:95%">Step 2a: Change How Employees Group
+            Gets Generated</span></p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Use "Detail Disclosure" to Hide Less Common Employees
+                        Fields</u></b></i></p>
+            <p class="bodycopy">As shown in <a href="#empdetaildisclosure" class="bodylink"><span style="white-space: nowrap">Figure 17</span></a>, in the <code>Employees</code> group,
+               check the <b><i>Detail Disclosure</i></b> checkbox (in the
+               <b><i>Table Layout</i></b> property category).
+            </p><a name="empdetaildisclosure"></a><center><img src="images/detaildisclosure.gif" title="Selecting Detail Disclosure for Employees Group" alt="Selecting Detail Disclosure for Employees Group"><br><b class="boldbodycopy">Figure 17: Selecting Detail Disclosure for
+                  Employees Group</b></center><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+               <tr>
+                  <td><span class="boldbodycopy">TIP:</span></td>
+                  <td valign="top"><span class="bodycopy">If you have trouble
+                        finding a property, you can click on the "Searchlight" find icon in the
+                        <b><i>JHeadstart Application Structure File Editor</i></b> and type in
+                        some characters of the name you're looking for. </span></td>
+               </tr>
+            </table><br><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+               <tr>
+                  <td><span class="boldbodycopy">TIP:</span></td>
+                  <td valign="top"><span class="bodycopy">
+                        <p class="bodycopy">Every
+                           property in the JHeadstart editors is documented with a helpful usage message
+                           in the help zone below the property table as shown in <a href="#helpzone" class="bodylink"><span style="white-space: nowrap">Figure 18</span></a>.
+                        </p><a name="helpzone"></a><center><img src="images/propertyhelp.gif" title="Detailed Usage Information for Every Property" alt="Detailed Usage Information for Every Property"><br><b class="boldbodycopy">Figure 18: Detailed Usage
+                              Information for Every Property</b></center></span></td>
+               </tr>
+            </table><br><p class="bodycopy">Next, we need
+               to indicate which attributes should be hidden when displayed in a table like
+               this. Since these are attribute-specific properties, we edit them on the view
+               object level for the view object related to our <code>Employees</code>
+               group. To accomplish this, select the <code>Employees</code> group, and
+               click the button with the View Object icon as shown in
+               <a href="#editbcvo" class="bodylink"><span style="white-space: nowrap">Figure 19</span></a> to open the <b><i>JHeadstart ADF BC Properties
+                     Editor</i></b> dialog (also a modeless dialog).
+            </p><a name="editbcvo"></a><center><img src="images/voeditorbutton.gif" title="Opening the JHeadstart View Object Editor Dialog" alt="Opening the JHeadstart View Object Editor Dialog"><br><b class="boldbodycopy">Figure 19: Opening the JHeadstart View Object Editor Dialog</b></center>
+            <p class="bodycopy">In the
+               <b><i>JHeadstart ADF BC Properties Editor</i></b>, set the
+               <b><i>Display in Tables</i></b> property to <code>false</code> for
+               all attributes <i>except</i>: <code>EmployeeId</code>,
+               <code>FirstName</code>, <code>LastName</code>,
+               <code>Email</code> and <code>Salary</code>. As shown in
+               <a href="#multisetting" class="bodylink"><span style="white-space: nowrap">Figure 20</span></a>, we can can multi-select attributes using the
+               Shift and/or Control keys, then set the desired property.
+            </p><a name="multisetting"></a><center><img src="images/multisettingprops.gif" title="Quickly Setting a Property for Multiple Attributes" alt="Quickly Setting a Property for Multiple Attributes"><br><b class="boldbodycopy">Figure 20: Quickly Setting a Property for Multiple
+                  Attributes</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Set the Prompt of DepartmentId to be More
+                        User-Friendly</u></b></i></p>
+            <p class="bodycopy">While still in the <b><i>JHeadstart
+                     ADF BC Properties Editor</i></b> for <code>EmployeesView</code>, in
+               the <b><i>Display Settings</i></b> category, as shown in
+               <a href="#deptprompt" class="bodylink"><span style="white-space: nowrap">Figure 21</span></a> set the <b><i>Prompt</i></b> property of
+               <code>DepartmentId</code> to be the more user-friendly string
+               &#8220;<code>Department</code>&#8221;. This will make more sense to the user since
+               what they see at runtime is a dropdown list of department names for this
+               field.
+            </p><a name="deptprompt"></a><center><img src="images/deptprompt.gif" title="Making DepartmentId Prompt More User-Friendly" alt="Making DepartmentId Prompt More User-Friendly"><br><b class="boldbodycopy">Figure 21: Making DepartmentId Prompt More
+                  User-Friendly</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Allow End-User to Choose Query Operator for
+                        LastName</u></b></i></p>
+            <p class="bodycopy">Set the <b><i>Query Operator</i></b>
+               property of the <code>LastName</code> attribute to
+               &#8220;<code>setByUser</code>&#8221; as shown in <a href="#setbyuser" class="bodylink"><span style="white-space: nowrap">Figure 22</span></a>. This
+               property is in the <b><i>Query Settings</i></b> category.
+            </p><a name="setbyuser"></a><center><img src="images/setbyuser.gif" title="Allowing User to Choose LastName Query Operator" alt="Allowing User to Choose LastName Query Operator"><br><b class="boldbodycopy">Figure 22: Allowing User to Choose LastName Query
+                  Operator</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Allow End-User to Perform "Between" Search on
+                        Salary</u></b></i></p>
+            <p class="bodycopy">Set the <b><i>Query Operator</i></b>
+               property of the <code>Salary</code> attribute to
+               &#8220;<code>between</code>&#8221; as shown in <a href="#between" class="bodylink"><span style="white-space: nowrap">Figure 23</span></a>.
+            </p><a name="between"></a><center><img src="images/between.gif" title="Allowing User to Search on Salary Range" alt="Allowing User to Search on Salary Range"><br><b class="boldbodycopy">Figure 23: Allowing User to Search on Salary Range</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Make the Table Display for Employees be
+                        Browse-Only</u></b></i></p>
+            <p class="bodycopy">Back in the <b><i>JHeadstart Application
+                     Structure File Editor</i></b>, with the <code>Employees</code> group
+               still selected, as shown in <a href="#multibrowse" class="bodylink"><span style="white-space: nowrap">Figure 24</span></a> uncheck the
+               <b><i>Multi-Row Insert Allowed</i></b>, <b><i>Multi-Row Update
+                     Allowed</i></b> and <b><i>Multi-row Delete Allowed</i></b> checkboxes
+               for the <code>Employees</code> group. These properties are in the
+               <b><i>Operations</i></b> category.
+            </p><a name="multibrowse"></a><center><img src="images/multiroweditoff.gif" title="Making the Table Display for Employees Browse-Only" alt="Making the Table Display for Employees Browse-Only"><br><b class="boldbodycopy">Figure 24: Making the Table Display for Employees Browse-Only</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Force User to Find Employees Instead of Auto-Querying
+                        Them</u></b></i></p>
+            <p class="bodycopy">Uncheck the <b><i>Auto Query</i></b>
+               checkbox in the <b><i>Search Settings</i></b> category, as shown in
+               <a href="#nonautofig" class="bodylink"><span style="white-space: nowrap">Figure 25</span></a>.
+            </p><a name="nonautofig"></a><center><img src="images/nonautoquery.gif" title="Avoiding an Automatic Employees Query" alt="Avoiding an Automatic Employees Query"><br><b class="boldbodycopy">Figure 25: Avoiding an Automatic Employees Query</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Force the User to Refine Criteria if Search Hits Over
+                        50</u></b></i></p>
+            <p class="bodycopy">As shown in <a href="#maxhits" class="bodylink"><span style="white-space: nowrap">Figure 26</span></a>, set the
+               <b><i>Maximum Number of Search Hits</i></b> to <code>50</code>.
+               This property is also in the <b><i>Search Settings</i></b>
+               category.
+            </p><a name="maxhits"></a><center><img src="images/maxhits.gif" title="Limiting the Maximum Number of Employees Search Hits" alt="Limiting the Maximum Number of Employees Search Hits"><br><b class="boldbodycopy">Figure 26: Limiting the Maximum Number of
+                  Employees Search Hits</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Change Tab Name and Display Titles of Child
+                        Groups</u></b></i></p>
+            <p class="bodycopy">Expand the top-level <code>Employees</code>
+               group and set the <b><i>Tabname</i></b>, <b><i>Display Title
+                     (Plural)</i></b>, and <b><i>Display Title (Singular)</i></b>
+               properties (in the <b><i>Labels</i></b> category) as shown in
+               <a href="#childtitles" class="bodylink"><span style="white-space: nowrap">Figure 27</span></a> for the <code>Employees2</code> child
+               group. Since this group represents employees managed by the current employee in
+               the <code>Employees</code> group, we choose a more understandable name
+               like "Subordinates".
+            </p><a name="childtitles"></a><center><img src="images/subordinates.gif" title="Changing Tab and Display Titles for Employees2 Child Group" alt="Changing Tab and Display Titles for Employees2 Child Group"><br><b class="boldbodycopy">Figure 27: Changing Tab and
+                  Display Titles for Employees2 Child Group</b></center>
+            <p class="bodycopy">Repeat the same
+               steps to change the <b><i>Tabname</i></b>, <b><i>Display Title
+                     (Plural)</i></b>, and <b><i>Display Title (Singular)</i></b>
+               properties of the <code>Departments2</code> group to be "Managed
+               Departments" as shown in <a href="#manageddepts" class="bodylink"><span style="white-space: nowrap">Figure 28</span></a>.
+            </p><a name="manageddepts"></a><center><img src="images/manageddepts.gif" title="Changing Tab and Display Titles for Departments2 Child Group" alt="Changing Tab and Display Titles for Departments2 Child Group"><br><b class="boldbodycopy">Figure 28: Changing Tab and Display Titles for
+                  Departments2 Child Group</b></center><br><br></li>
+      </ul><a name="changelayoutstylesdepts"></a><p><span class="parahead1" style="font-size:95%">Step 2b: Change How the Departments
+            Group Gets Generated</span></p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Allow End-User to Sort Columns on the Departments
+                        Page</u></b></i></p>
+            <p class="bodycopy">After selecting the <code>Departments</code>
+               top-level group in the <b><i>JHeadstart Application Structure File
+                     Editor</i></b>, check the <b><i>Sortable</i></b> checkbox in the
+               <b><i>Table Layout</i></b> category as shown in
+               <a href="#sortable" class="bodylink"><span style="white-space: nowrap">Figure 29</span></a>.
+            </p><a name="sortable"></a><center><img src="images/sortable.gif" title="Making the Table Columns Sortable in the Departments Group" alt="Making the Table Columns Sortable in the Departments Group"><br><b class="boldbodycopy">Figure 29: Making the
+                  Table Columns Sortable in the Departments Group</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Display Employees in Department on Same Page</u></b></i></p>
+            <p class="bodycopy">In child group <code>Employees3</code> check the <b><i>Same
+                     Page</i></b> checkbox in the <b><i>Group Layout</i></b> category as
+               shown in <a href="#samepage" class="bodylink"><span style="white-space: nowrap">Figure 30</span></a>.
+            </p><a name="samepage"></a><center><img src="images/samepage.gif" title="Showing a Child Group's Information on Same Page as Parent" alt="Showing a Child Group's Information on Same Page as Parent"><br><b class="boldbodycopy">Figure 30: Showing
+                  a Child Group's Information on Same Page as Parent</b></center><br><br></li>
+      </ul><a name="changelayoutstylesjobs"></a><p><span class="parahead1" style="font-size:95%">Step 2c: Change How the Jobs Group
+            Gets Generated</span></p>
+      <p class="bodycopy">To apply the changes in this section, make sure
+         you've selected the <code>Jobs</code> top-level group in the
+         <b><i>JHeadstart Application Structure File Editor</i></b>.
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Allow End-User to
+                        Select Job to Edit Using a List Display</u></b></i></p>
+            <p class="bodycopy">As shown in
+               <a href="#selectform" class="bodylink"><span style="white-space: nowrap">Figure 31</span></a>, select the <code>Jobs</code> group and set
+               its Layout Style property to <code>select-form</code>.
+            </p><a name="selectform"></a><center><img src="images/selectform.gif" title="Using a List to Select the Current Job to Edit" alt="Using a List to Select the Current Job to Edit"><br><b class="boldbodycopy">Figure 31: Using a List to Select the Current Job to
+                  Edit</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Disable Advanced Search for Jobs</u></b></i></p>
+            <p class="bodycopy">As shown in <a href="#advancedsearch" class="bodylink"><span style="white-space: nowrap">Figure 32</span></a>, set the <b><i>Advanced
+                     Search?</i></b> property of the Jobs group to <code>none</code>. The
+               property is in the <b><i>Search Settings</i></b> category.
+            </p><a name="advancedsearch"></a><center><img src="images/advancedsearch.gif" title="Disabling Advanced Search for Jobs Page" alt="Disabling Advanced Search for Jobs Page"><br><b class="boldbodycopy">Figure 32: Disabling Advanced Search for Jobs
+                  Page</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Limit Quick Search Feature to the JobTitle
+                        Field</u></b></i></p>
+            <p class="bodycopy">First, set the <b><i>Quick Search?</i></b>
+               property of the <code>Jobs</code> group to
+               <code>singleSearchField</code> as shown in
+               <a href="#singlesearchfield" class="bodylink"><span style="white-space: nowrap">Figure 33</span></a>. 
+            </p><a name="singlesearchfield"></a><center><img src="images/singlesearchfield.gif" title="Limiting Quick Search for Jobs to a Single Field" alt="Limiting Quick Search for Jobs to a Single Field"><br><b class="boldbodycopy">Figure 33: Limiting Quick Search for Jobs to a Single Field</b></center>
+            <p class="bodycopy">Then, set the
+               <b><i>Single Search Attribute</i></b> property to
+               <code>JobTitle</code> as shown in <a href="#singlesearchattribute" class="bodylink"><span style="white-space: nowrap">Figure 34</span></a>.
+            </p><a name="singlesearchattribute"></a><center><img src="images/singlesearchattribute.gif" title="Specifying Attribute to Use for Single-Field Quick Search" alt="Specifying Attribute to Use for Single-Field Quick Search"><br><b class="boldbodycopy">Figure 34: Specifying Attribute to Use for Single-Field Quick Search</b></center>
+            <p class="bodycopy">These
+               properties are also in the <b><i>Search Settings</i></b>
+               category.
+            </p><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Define JobTitle as the
+                        Descriptor Attribute for the List</u></b></i></p>
+            <p class="bodycopy">For each group you can
+               specify the attribute JHeadstart will use to show context information. This
+               attribute is called the Descriptor Attribute. The <b><i>New Application
+                     Structure File Wizard</i></b> derives a default <b><i>Descriptor
+                     Attribute</i></b> for each Group based on its underlying view object. If you
+               want to use a different attribute, just set the Descriptor Attribute property
+               yourself to the attribute you prefer.
+            </p>
+            <p class="bodycopy">As shown in
+               <a href="#descriptorattributejobtitle" class="bodylink"><span style="white-space: nowrap">Figure 35</span></a>, set the <b><i>Descriptor
+                     Attribute</i></b> property of the <code>Jobs</code> group to
+               <code>JobTitle</code>.
+            </p><a name="descriptorattributejobtitle"></a><center><img src="images/descriptorattributejobtitle.gif" title="Changing the Descriptor Attribute" alt="Changing the Descriptor Attribute"><br><b class="boldbodycopy">Figure 35: Changing the Descriptor Attribute</b></center><br><br></li>
+      </ul><a name="changelayoutstylesregions"></a><p><span class="parahead1" style="font-size:95%">Step 2d: Change How the Regions
+            Group Gets Generated</span></p>
+      <p class="bodycopy">We're going to change the
+         <code>Regions</code> group, and its four child groups, to display as a
+         tree with multi-level form editing by doing the following steps...
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Make Regions Edit
+                        Fields Layout in a Single Column</u></b></i></p>
+            <p class="bodycopy">As shown in
+               <a href="#formlayoutcolumns" class="bodylink"><span style="white-space: nowrap">Figure 36</span></a>, set the <b><i>Columns</i></b>
+               property of the <code>Regions</code> group to <code>1</code> in the
+               <b><i>Form Layout</i></b> category.
+            </p><a name="formlayoutcolumns"></a><center><img src="images/formlayoutcolumns.gif" title="Setting Edit Form Fields to Layout in Single Column" alt="Setting Edit Form Fields to Layout in Single Column"><br><b class="boldbodycopy">Figure 36: Setting Edit Form Fields to Layout in Single
+                  Column</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><b><i>Disable Searching on Regions Group</i></b></p>
+            <p class="bodycopy">The
+               user will see all the regions in the tree so searching won't be that useful in
+               this case. We'll disable both Quick Search and Advanced Search for the
+               <code>Regions</code> group by setting the <b><i>Quick
+                     Search</i></b> and <b><i>Advanced Search</i></b> properties both to
+               <code>none</code> as shown in <a href="#disablesearch" class="bodylink"><span style="white-space: nowrap">Figure 37</span></a>.
+            </p><a name="disablesearch"></a><center><img src="images/disablesearch.gif" title="Disabling Search for Regions Group" alt="Disabling Search for Regions Group"><br><b class="boldbodycopy">Figure 37: Disabling Search for Regions Group</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><b><i>Shorten Display Width of RegionId</i></b></p>
+            <p class="bodycopy">Click
+               on the "SQL" toolbar icon to bring up the <b><i>JHeadstart ADF BC
+                     Properties Editor</i></b> for the group's <code>RegionsView</code>
+               view object. Then set the <b><i>Width</i></b> property in the
+               <b><i>Display Settings</i></b> category for the
+               <code>RegionId</code> attribute to <code>5</code> as shown in
+               <a href="#displaywidth" class="bodylink"><span style="white-space: nowrap">Figure 38</span></a>.
+            </p><a name="displaywidth"></a><center><img src="images/displaywidth.gif" title="Setting the Display Width of an Attribute" alt="Setting the Display Width of an Attribute"><br><b class="boldbodycopy">Figure 38: Setting
+                  the Display Width of an Attribute</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Change Regions Group to Display as a Tree with Edit
+                        Form</u></b></i></p>
+            <p class="bodycopy">First we set the <b><i>Descriptor
+                     Attribute</i></b> of the group to use the <code>RegionName</code> as
+               shown in <a href="#regionname" class="bodylink"><span style="white-space: nowrap">Figure 39</span></a>.
+            </p><a name="regionname"></a><center><img src="images/regionname.gif" title="Setting RegionName as Descriptor Attribute" alt="Setting RegionName as Descriptor Attribute"><br><b class="boldbodycopy">Figure 39: Setting RegionName as Descriptor Attribute</b></center>
+            <p class="bodycopy">Then as shown in
+               <a href="#makeregionstree" class="bodylink"><span style="white-space: nowrap">Figure 40</span></a> we set the Layout Style property to
+               <code>tree-form</code>, set the View Object Usage (to be used for
+               editing) to <code>RegionsViewLookup</code>, and set the Tree View Object
+               Usage to <code>RegionsView1</code>.
+            </p><a name="makeregionstree"></a><center><img src="images/makeregionstree.gif" title="Setting Up Regions to Display as a Tree" alt="Setting Up Regions to Display as a Tree"><br><b class="boldbodycopy">Figure 40: Setting Up Regions to Display as a Tree</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Change Countries2 Group to Display as a Tree with Edit
+                        Form</u></b></i></p>
+            <p class="bodycopy">Next we setup the <code>Countries2</code>
+               child group to also display as a tree by setting the four properties as shown
+               in <a href="#countriestree" class="bodylink"><span style="white-space: nowrap">Figure 41</span></a>. Specifically, we set the <b><i>Layout
+                     Style</i></b> to <code>tree-form</code>, the <b><i>View Object
+                     Usage</i></b> to <code>CountriesViewLookup</code>, the <b><i>Tree
+                     View Object Usage</i></b> to <code>CountriesView2</code>, and the
+               <b><i>Descriptor Attribute</i></b> to
+               <code>CountryName</code></p><a name="countriestree"></a><center><img src="images/countriestree.gif" title="Setting up Countries2 Group as a Tree" alt="Setting up Countries2 Group as a Tree"><br><b class="boldbodycopy">Figure 41: Setting
+                  up Countries2 Group as a Tree</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Repeat to Change Remaining Child Groups to
+                        Tree</u></b></i></p>
+            <p class="bodycopy">After selecting the 3rd-level child group
+               <code>Locations3</code>, we set its <b><i>Layout Style</i></b> to
+               <code>tree-form</code>, its <b><i>View Object Usage</i></b> to
+               <code>LocationsViewLookup</code>, the <b><i>Tree View Object
+                     Usage</i></b> to <code>LocationsView3</code>. The <b><i>Descriptor
+                     Attribute</i></b> is already defaulted to <code>City</code>, so we
+               don't need to change it.
+            </p>
+            <p class="bodycopy">Next, after selecting the 4th-level child
+               group <code>Departments4</code>, we set the <b><i>Layout
+                     Style</i></b> to <code>tree-form</code>, the <b><i>View Object
+                     Usage</i></b> to <code>DepartmentsViewLookup</code>, the
+               <b><i>Tree View Object Usage</i></b> to
+               <code>DepartmentsView4</code>. The <b><i>Descriptor
+                     Attribute</i></b> is already defaulted to <code>DepartmentName</code>,
+               so we don't need to change it.
+            </p>
+            <p class="bodycopy">Lastly, after selecting the
+               5th-level <code>Employees5</code> child group, we set the
+               <b><i>Layout Style</i></b> to <code>tree-form</code>, the
+               <b><i>View Object Usage</i></b> to
+               <code>EmployeesViewLookup</code>, the <b><i>Tree View Object
+                     Usage</i></b> to <code>EmployeesView5</code>. The <b><i>Descriptor
+                     Attribute</i></b> is already defaulted to <code>LastName</code>, so we
+               don't need to change it.
+            </p><br><br></li>
+      </ul><a name="regenandrun"></a><p><span class="parahead1" style="font-size:95%">Step 2e: Regenerate and Run the
+            Application</span></p>
+      <p class="bodycopy">At this point we're done making our goodly number of
+         iterative, declarative changes to the application structure, so all that's left
+         is to regenerate the application using the JHeadstart Application Generator,
+         and running it to see the effects of our changes.
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Regenerate the
+                        Application</u></b></i></p>
+            <p class="bodycopy">Right-click the Application Structure File
+               and choose <b><i>Run JHeadstart Application Generator</i></b> from
+               the right-mouse menu. When the generation is completed, an alert will appear
+               letting know the process completed ok.
+            </p><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Run the Application</u></b></i></p>
+            <p class="bodycopy">Run the
+               <code>ViewController</code> project by selecting it in the application
+               navigator and then pressing <kbd>F11</kbd> (or
+               clicking on the toolbar run icon).
+            </p><br><br></li>
+      </ul>
+      <p class="bodycopy">After
+         regenerating, once the application is running in your default browser, we can
+         try the following things to see how our changes to the application structure
+         were realized in the generated pages...
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Needs to Search for Desired
+                        Employees</u></b></i></p>
+            <p class="bodycopy">On the initial <code>Employees</code>
+               group (tab), notice that employees no longer are auto-queried, as shown in
+               <a href="#nonautoqueryruntime" class="bodylink"><span style="white-space: nowrap">Figure 42</span></a>.
+            </p><a name="nonautoqueryruntime"></a><center><img src="images/nonautoqueryruntime.gif" title="User Needs to Search for Desired Employees" alt="User Needs to Search for Desired Employees"><br><b class="boldbodycopy">Figure 42: User Needs to Search for Desired Employees</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Warned to Refine Employees Search
+                        Criteria</u></b></i></p>
+            <p class="bodycopy">Using the Quick Search region for Employees,
+               press the <b><i>(Go)</i></b> button without entering any search
+               criteria. This would cause 108 rows to be queried, and since that is greater
+               than our limit of 50, you get an error as shown in
+               <a href="#maxfiftyqueryruntime" class="bodylink"><span style="white-space: nowrap">Figure 43</span></a>.
+            </p><a name="maxfiftyqueryruntime"></a><center><img src="images/maxfiftyqueryruntime.gif" title="User Warned to Refine Employees Search Criteria" alt="User Warned to Refine Employees Search Criteria"><br><b class="boldbodycopy">Figure 43: User Warned to Refine Employees Search
+                  Criteria</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Employee Table is Browse-Only with Detail
+                        Disclosure</u></b></i></p>
+            <p class="bodycopy"> Set the <b><i>Filter By</i></b> field
+               to <code>LastName</code> name, enter a search criteria of
+               &#8220;<code>p</code>&#8221;, and press <b><i>(Go)</i></b>. As shown in
+               <a href="#employeesresults" class="bodylink"><span style="white-space: nowrap">Figure 44</span></a>, the Employees table is now browse-only and
+               supports a <b><i>Hide</i></b>/<b><i>Show</i></b> button in each
+               row to expand or collapse the visibility of the less frequently used detail
+               information. 
+            </p>
+            <p class="bodycopy">Also note in the expanded detail information for
+               Joshua Patel that the prompt for the <code>DepartmentId</code> field is
+               now <b><i>Department</i></b> as we set above, as well as the custom
+               names <b><i>Subordinates</i></b> and <b><i>Managed
+                     Departments</i></b> for the buttons that will drill-down to detail
+               information.
+            </p><a name="employeesresults"></a><center><img src="images/employeesresults.gif" title="Employee Table is Browse-Only with Detail Disclosure" alt="Employee Table is Browse-Only with Detail Disclosure"><br><b class="boldbodycopy">Figure 44: Employee Table is
+                  Browse-Only with Detail Disclosure</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Can Perform Advanced Search With Custom Criteria
+                        Treatment</u></b></i></p>
+            <p class="bodycopy">Click the <b><i>Advanced Search</i></b>
+               button next to the Quick Search area to see the advanced search criteria for
+               Employees. Notice as shown in <a href="#advancedcriteriaruntime" class="bodylink"><span style="white-space: nowrap">Figure 45</span></a> that we
+               can set the query operator for <code>LastName</code> to
+               "<b><i>contains</i></b>" and enter a criteria like
+               "<code>ta</code>" to find any last name that contains those consecutive
+               letters. We can enter low and high values to perform a between search on
+               Salary.
+            </p><a name="advancedcriteriaruntime"></a><center><img src="images/advancedsearchruntime.gif" title="Advanced Search with Custom Criteria Treatment" alt="Advanced Search with Custom Criteria Treatment"><br><b class="boldbodycopy">Figure 45: Advanced Search with
+                  Custom Criteria Treatment</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Can Sort on Any Column in Departments
+                        Table</u></b></i></p>
+            <p class="bodycopy">Click on the <b><i>Departments</i></b> tab,
+               set the <b><i>Filter By</i></b> field to
+               <code>DepartmentName</code> and enter a criteria of
+               "<code>%es%</code>", then click <b><i>(Go)</i></b>. You can now
+               click on any of the column headings in the table, like the DepartmentName
+               column for example, and sort the table by that column value as shown in
+               <a href="#sortabletable" class="bodylink"><span style="white-space: nowrap">Figure 46</span></a>.
+            </p><a name="sortabletable"></a><center><img src="images/sortabledepartments.gif" title="User Can Sort on Any Column in Departments Table" alt="User Can Sort on Any Column in Departments Table"><br><b class="boldbodycopy">Figure 46: User
+                  Can Sort on Any Column in Departments Table</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Works with Employees in Department on Same
+                        Page</u></b></i></p>
+            <p class="bodycopy">Still on the <b><i>Departments</i></b> tab,
+               select a department, then click on the <b><i>Details</i></b> button.
+               This now shows the department details, along with the relevant employees
+               details on the same page.
+            </p><a name="empsdeptsamepage"></a><center><img src="images/empsdeptssamepage.gif" title="User Works with Employees in Department on Same Page" alt="User Works with Employees in Department on Same Page"><br><b class="boldbodycopy">Figure 47: User Works
+                  with Employees in Department on Same Page</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Selects Job to Edit from Simple List</u></b></i></p>
+            <p class="bodycopy">Click on the <b><i>Job</i></b> tab and notice that instead of the
+               default table display to browse and select a Job to edit, the user now just
+               selects the job name to edit from a simple list. Clicking on the
+               <b><i>(Edit)</i></b> button brings you to the edit page for that
+               job.
+            </p><a name=""></a><center><img src="images/selectformruntime.gif" title="User Selects Job to Edit from Simple List" alt="User Selects Job to Edit from Simple List"><br><b class="boldbodycopy">Figure 48: User Selects Job to Edit from Simple List</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>User Navigates Five-Level Hierarchy Using Tree
+                        Display</u></b></i></p>
+            <p class="bodycopy">Click the <b><i>Regions</i></b> tab, and
+               you can drill down to find employees in departments in locations in countries
+               in those regions. At any level, you can edit the data.
+            </p><a name=""></a><center><img src="images/treeruntime.gif" title="User Navigates Five-Level Hierarchy Using Tree Display" alt="User Navigates Five-Level Hierarchy Using Tree Display"><br><b class="boldbodycopy">Figure 49: User Navigates Five-Level Hierarchy Using Tree Display</b></center><br><br></li>
+      </ul><a name="createlov"></a><p><span class="parahead1">Step 3: Create Department Manager List of Values
+            (LOV) </span></p>
+      <p class="bodycopy">In this step, we are going to change the lookup definition
+         for the manager of a department so that it behaves as a popup LOV window
+         instead of as a dropdown list. When valid choices for a foreign key value are
+         large in number, this kind of LOV window is more appropriate than a dropdown
+         list. Specifically, we want to change the <b><i>ManagerId</i></b>
+         dropdown list shown in <a href="#manageridtobelov" class="bodylink"><span style="white-space: nowrap">Figure 50</span></a> to be a text field
+         with a popup LOV instead.
+      </p><a name="manageridtobelov"></a><center><img src="images/manageridtobelov.gif" title="EmployeeList Lookup as Dropdown List for Setting ManagerId" alt="EmployeeList Lookup as Dropdown List for Setting ManagerId"><br><b class="boldbodycopy">Figure 50: EmployeeList Lookup as Dropdown List for Setting ManagerId</b></center>
+      <p class="bodycopy">If we choose to
+         show the <code>ManagerId</code> as a text field, the value that the user
+         will see will be the numeric id of the manager which is not exactly what we
+         want. It would be a whole lot nicer for our end-users to show the manager's
+         <i>last name</i> in the text field, and hide the numeric
+         <code>ManagerId</code> value altogether. Then the user will see the last
+         name, and popup the LOV to select last names from list. This will provide a lot
+         better usability for our application. The following sections lead you through
+         the few steps required with JHeadstart to accomplish this.
+      </p><a name="addmanagername"></a><p><span class="parahead1" style="font-size:95%">Step 3a: Add Manager Name to Departments
+            Query</span></p>
+      <p class="bodycopy">If we're going to show the name of a department's
+         <i>manager</i>, we need to edit the definition of our
+         <code>DepartmentsView</code> view object &#8212; back in our
+         <code>Model</code> project &#8212; to include that bit of information.
+      </p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Add Employees Entity
+                        Object to the DepartmentsView View Object</u></b></i></p>
+            <p class="bodycopy">Select the
+               <code>mydemo.model.DepartmentsView</code> view object in the application
+               navigator, and double-click it to launch the View Object Editor. On the
+               <b><i>Entity Objects</i></b> panel of the editor, notice that the
+               Departments entity object is already in use in this query. To add the
+               <code>Employees</code> entity object as a second entity usage, select it
+               in the <b><i>Available</i></b> list, and press
+               <b><i>(&gt;)</i></b> to shuttle it into the
+               <b><i>Selected</i></b> list.
+            </p><a name="deptvoafteraddingemps"></a><center><img src="images/deptvoafteraddingemps.gif" title="Adding Employees Entity to DepartmentsView" alt="Adding Employees Entity to DepartmentsView"><br><b class="boldbodycopy">Figure 51: Adding Employees Entity to DepartmentsView</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Add LastName Attribute to the Attributes
+                        List</u></b></i></p>
+            <p class="bodycopy">On the <b><i>Attributes</i></b> panel of the
+               editor, select the <code>Employees</code> entity's
+               <code>LastName</code> attribute in the <b><i>Available</i></b>
+               list, and press <b><i>(&gt;)</i></b> to shuttle it into the
+               <b><i>Selected</i></b> list as shown in
+               <a href="#addinglastnameattr" class="bodylink"><span style="white-space: nowrap">Figure 52</span></a>.
+            </p><a name="addinglastnameattr"></a><center><img src="images/addinglastnameattr.gif" title="Adding the Employees.LastName Attribute to the List" alt="Adding the Employees.LastName Attribute to the List"><br><b class="boldbodycopy">Figure 52: Adding the Employees.LastName Attribute to the List</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Rename the LastName Attribute to
+                        ManagerName</u></b></i></p>
+            <p class="bodycopy">To make it clearer that this employee last
+               name is playing the role of the <i>manager</i> name in this
+               particular view object, we can rename the attribute from
+               <code>LastName</code> to <code>ManagerName</code>. To do this,
+               select the <b><i>LastName</i></b> attribute name indented under the
+               <b><i>Attributes</i></b> node in the tree at the left, and type the new
+               name attribute name into the <b><i>Name</i></b> field as shown in
+               <a href="#renameattribute" class="bodylink"><span style="white-space: nowrap">Figure 53</span></a>.
+            </p><a name="renameattribute"></a><center><img src="images/renameattribute.gif" title="Renaming the LastName Attribute to ManagerName" alt="Renaming the LastName Attribute to ManagerName"><br><b class="boldbodycopy">Figure 53: Renaming the LastName Attribute to ManagerName</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Change SQL Query to Outer Join to EMPLOYEES
+                        Table</u></b></i></p>
+            <p class="bodycopy">Since departments are allowed to have no manager,
+               their <code>ManagerId</code> foreign key attribute value might be
+               <code>null</code>. To insure that we query all departments, whether or
+               not they have a corresponding employee as their manager, we need to change the
+               SQL query for this <code>DepartmentsView</code> to be an outer
+               join.
+            </p>
+            <p class="bodycopy">To accomplish this, visit the <b><i>Query</i></b>
+               panel of the editor, and type a "<code>(+)</code>" after the
+               <code>EMPLOYEE_ID</code> column name the <b><i>Where</i></b>
+               clause box as shown in <a href="#outerjoin" class="bodylink"><span style="white-space: nowrap">Figure 54</span></a>. Make sure there is a space
+               between <code>EMPLOYEE_ID</code> and the "<code>(+)</code>"
+               characters.
+            </p><a name="outerjoin"></a><center><img src="images/outerjoin.gif" title="Changing the DepartmentsView to an Outer Join" alt="Changing the DepartmentsView to an Outer Join"><br><b class="boldbodycopy">Figure 54: Changing the DepartmentsView to
+                  an Outer Join</b></center>
+            <p class="bodycopy">Finally, click <b><i>(OK)</i></b> to accept all your changes to
+               the <code>DepartmentsView</code> view object definition. When prompted to
+               check your SQL statement's syntax, click
+               <b><i>(Yes)</i></b>.
+            </p><br><br></li>
+      </ol><a name="changelookupdef"></a><p><span class="parahead1" style="font-size:95%">Step 3b: Change the EmployeesLookup
+            Definition to an LOV</span></p>
+      <p class="bodycopy">With our view object modified to include the
+         ManagerName attribute, we're ready to change the
+         <code>EmployeesLookup</code> defintion to flip the style from
+         <b><i>choice</i></b> to <b><i>LOV</i></b> to get our list of
+         values.
+      </p>
+      <p class="bodycopy">Back in the <b><i>Application Structure File
+               Editor</i></b>, select the <code>EmployeesLookup</code> that is a
+         child of the <code>Departments</code> group as shown in
+         <a href="#threesettingsforlov" class="bodylink"><span style="white-space: nowrap">Figure 55</span></a>. Then, make the following three
+         changes:
+      </p>
+      <ol class="bodycopy">
+         <li>Change the
+            <b><i>displayType</i></b> to <code>lov</code>.
+         </li>
+         <li>Change the <b><i>Base Display Attribute</i></b> to
+            <code>ManagerName</code>.
+         </li>
+         <li>Check the
+            <b><i>Use LOV for Validation?</i></b>
+            checkbox.
+         </li>
+      </ol><a name="threesettingsforlov"></a><center><img src="images/threelovsettings.gif" title="Changing the Lookup Style to LOV" alt="Changing the Lookup Style to LOV"><br><b class="boldbodycopy">Figure 55: Changing the Lookup Style to LOV</b></center>
+      <p class="bodycopy">In order to
+         completely hide the numeric <code>ManagerId</code> and
+         <code>EmployeeId</code> fields in the <code>DepartmentView</code>,
+         we just need to set their <b><i>Display</i></b> property to false. We
+         can do this easily by performing the following steps:
+      </p>
+      <ol class="bodycopy">
+         <li>Select the top-level <code>Departments</code>
+            group
+         </li>
+         <li>Click the "SQL" icon in the
+            <b><i>Application Structure File Editor</i></b> toolbar to launch the
+            <b><i>JHeadstart ADF BC Properties Editor</i></b> for the related
+            <code>DepartmentsView</code> view object.
+         </li>
+         <li>
+            <p class="bodycopy">Select both the <code>ManagerId</code> and
+               <code>EmployeeId</code> attributes (by holding the [Ctrl] key while
+               clicking) and set their <b><i>Display</i></b> property to
+               <code>false</code> as shown in <a href="#hideidattributes" class="bodylink"><span style="white-space: nowrap">Figure 56</span></a>.
+               
+            </p><a name="hideidattributes"></a><center><img src="images/hideidattributes.gif" title="Hiding the Numeric Id Attribute in DepartmentsView" alt="Hiding the Numeric Id Attribute in DepartmentsView"><br><b class="boldbodycopy">Figure 56: Hiding the Numeric Id Attribute in
+                  DepartmentsView</b></center>
+         </li>
+      </ol><a name="genandrunagain"></a><p><span class="parahead1" style="font-size:95%">Step 3c: Regenerate and Run the
+            Application</span></p>
+      <p class="bodycopy">We're done setting up our LOV lookup field, so let's
+         regenerate the application and run it. So far we've run the JHeadstart
+         Application Generator from the right-mouse menu of the application structure
+         file in the application navigator. As shown in <a href="#gearbutton" class="bodylink"><span style="white-space: nowrap">Figure 57</span></a>,
+         you can perform the same task by clicking on the <b><i>Run the JHeadstart
+               Generator</i></b> button in the <b><i>Application Structure File
+               Editor</i></b> toolbar.
+      </p><a name="gearbutton"></a><center><img src="images/gearbutton.gif" title="Running the JHeadstart Application Generator" alt="Running the JHeadstart Application Generator"><br><b class="boldbodycopy">Figure 57: Running the
+            JHeadstart Application Generator</b></center>
+      <p class="bodycopy">When generation
+         finishes, run the application again by clicking on the
+         <code>ViewController</code> project in the application navigator and
+         press <kbd>F11</kbd>.
+      </p>
+      <p class="bodycopy"><a href="#lovinbrowsepage" class="bodylink"><span style="white-space: nowrap">Figure 58</span></a> shows what the <b><i>Departments</i></b> tab
+         looks like after we've used the Quick Search to find only departments whose
+         <code>DepartmentName</code> contains "<code>es</code>".
+      </p><a name="lovinbrowsepage"></a><center><img src="images/lovsinbrowsepage.gif" title="ManagerName LOV Lookup in Departments Browse Page" alt="ManagerName LOV Lookup in Departments Browse Page"><br><b class="boldbodycopy">Figure 58: ManagerName LOV Lookup in Departments
+            Browse Page</b></center>
+      <p class="bodycopy">The changes we made to the <code>EmployeesLookup</code> lookup
+         definition above show up in the browse page with a
+         <b><i>ManagerName</i></b> LOV field in every row. We can see that our
+         outer join is working correctly, since the "Shareholder Services" department
+         has no manager and it was included in the query results.
+      </p>
+      <p class="bodycopy"> If you
+         try typing a letter "<code>p</code>" in the
+         <code>ManagerName</code> field for the "Shareholder Service" department &#8212;
+         or alternatively, changing one of the existing manager names in a different
+         department to the letter "<code>p</code>" &#8212; and then pressing
+         <kbd>Tab</kbd> to leave the field, you'll see the
+         LOV window pop-up automatically showing the filtered list of choices that start
+         with the letter "<code>p</code>" as shown in <a href="#filteredlov" class="bodylink"><span style="white-space: nowrap">Figure 59</span></a>.
+      </p><a name="filteredlov"></a><center><img src="images/narrowedlov.gif" title="LOV Window Showing Filtered List of Matches" alt="LOV Window Showing Filtered List of Matches"><br><b class="boldbodycopy">Figure 59: LOV Window
+            Showing Filtered List of Matches</b></center>
+      <p class="bodycopy">Back on the
+         <b><i>Departments</i></b> browse page, if instead of typing
+         <i>just</i> the letter "<code>p</code>" in one of the
+         <code>ManagerName</code> fields, you type "ph" instead and
+         <kbd>Tab</kbd> out of the field, you'll see another
+         treat. Without bringing up the LOV window at all, the manager named Philtanker
+         is automatically filled in. This is the "<b><i>Use LOV for
+               Validation</i></b>" behavior we selected back in the JHeadstart lookup
+         definition properties at work at runtime. Of course, you can also just click on
+         the "searchlight" icon and pop-up the LOV window for you to filter and select
+         the choice yourself. 
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">Although a roundtrip to the application
+                     server is made to check the number of matching rows, only the
+                     <code>ManagerName</code> field is actually refreshed on the page. This is
+                     accomplished through an ADF UIX feature called Partial Page Rendering (PPR)
+                     that we will expore in more detail in
+                     <a href="#conditionallydependentfields" class="bodylink">Step 6: Conditionally Dependent
+                        Fields </a>.
+                  </p></span></td>
+         </tr>
+      </table><br><p class="bodycopy">If we
+         drill-down to edit the details for a department, as shown in
+         <a href="#lovineditpage" class="bodylink"><span style="white-space: nowrap">Figure 60</span></a> the same <code>EmployeesLookup</code>
+         changes we made above also result in showing a <code>ManagerName</code>
+         LOV field in the <b><i>Edit Departments</i></b> form.
+      </p><a name="lovineditpage"></a><center><img src="images/lovineditpage.gif" title="EmployeeLookup LOV Also Available in Edit Forms" alt="EmployeeLookup LOV Also Available in Edit Forms"><br><b class="boldbodycopy">Figure 60: EmployeeLookup LOV Also Available in Edit
+            Forms</b></center><a name="buildshuttle"></a><p><span class="parahead1">Step 4: Shuttle Employees Between
+            Departments</span></p>
+      <p class="bodycopy">In this step, we will generate a so-called
+         &#8220;parent-shuttle&#8221; control to allow the user to easily move employees from one
+         department to another by selecting them in an <b><i>Available</i></b>
+         list and shuttling them into a <b><i>Selected</i></b> list for the
+         current department. 
+      </p><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+         <tr>
+            <td><span class="boldbodycopy">TIP:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">The <code>UPDATE_JOB_HISTORY</code>
+                     trigger on the JOB_HISTORY table in the HR sample schema does not allow
+                     multiple department changes to an employee on the same day. You may need to
+                     disable or drop that trigger to avoid runtime errors while trying this part of
+                     the demo. You can drop the trigger from inside JDeveloper by:
+                  </p>
+                  <ul class="bodycopy">
+                     <li type="disc">Select <b><i>View | Connection
+                              Navigator</i></b> from the main menu
+                     </li>
+                     <li type="disc">Expand the <b><i>Database</i></b> category
+                     </li>
+                     <li type="disc">Expand the <code>hr</code> connection
+                        definition
+                     </li>
+                     <li type="disc">Expand the
+                        <b><i>Triggers</i></b> category under that
+                     </li>
+                     <li type="disc">Select the <code>UPDATE_JOB_HISTORY</code>
+                        trigger
+                     </li>
+                     <li type="disc">Pick <b><i>Drop</i></b>
+                        from the right-mouse menu.
+                     </li>
+                  </ul></span></td>
+         </tr>
+      </table><br><a name="createnewviewobject"></a><p><span class="parahead1" style="font-size:95%">Step 4a: Create View Object to Query
+            Available Employees</span></p>
+      <p class="bodycopy">To be able to generate the shuttle, we first
+         need to create an ADF view object that queries all employees who do
+         <i>not</i> belong to a given department. We'll supply
+         <i>which</i> department we mean by including a bind variable in
+         the query and setting a property in the JHeadstart application structure to set
+         its value to the current department automatically. This will provide the data
+         to display in the <b><i>Available</i></b> list in the shuttle for the
+         current department.
+      </p>
+      <ol class="bodycopy" start="doublespace">
+         <li>
+            <p class="bodycopy"><i><b><u>Create a new View Object</u></b></i></p>
+            <p class="bodycopy">In your
+               <code>Model</code> project in application navigator, select the
+               <code>mydemo.model</code> package (under the <b><i>Application
+                     Sources</i></b> folder) and pick <b><i>New View
+                     Object...</i></b> from the right-mouse menu. If the wizard's welcome page
+               appears, click <b><i>(Next&gt;)</i></b>.
+            </p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Give the New View Object a Meaningful Name</u></b></i></p>
+            <p class="bodycopy">On the <b><i>Step 1 of 6: Name</i></b> page of the wizard, set the
+               name of the new view object to <code>EmpsNotInDept</code>. As shown in
+               <a href="#newviewobject" class="bodylink"><span style="white-space: nowrap">Figure 61</span></a>, leave the defaults selected for the
+               <b><i>What kind of data do you need this View Object to manage?</i></b>
+               radio group.
+            </p><a name="newviewobject"></a><center><img src="images/newviewobject.gif" title="Assigning a Name to Our New View Object" alt="Assigning a Name to Our New View Object"><br><b class="boldbodycopy">Figure 61: Assigning a Name to Our
+                  New View Object</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Select the Employees Entity Object to Use in the
+                        Query</u></b></i></p>
+            <p class="bodycopy">On the <b><i>Step 2 of 6: Entity
+                     Objects</i></b> panel of the wizard, as shown in
+               <a href="#pickentityusage" class="bodylink"><span style="white-space: nowrap">Figure 62</span></a> select the <code>Employees</code>
+               entity object in the <b><i>Available</i></b> list and press
+               <b><i>(&gt;)</i></b> to shuttle it into the
+               <b><i>Selected</i></b> list.
+            </p><a name="pickentityusage"></a><center><img src="images/pickentityusage.gif" title="Selecting the Employees Entity Object for New View Object" alt="Selecting the Employees Entity Object for New View Object"><br><b class="boldbodycopy">Figure 62: Selecting the Employees Entity Object for New View Object</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Include the Necessary Attributes in the Query</u></b></i></p>
+            <p class="bodycopy">On the <b><i>Step 3 of 6: Attributes</i></b> panel of the wizard,
+               as shown in <a href="#pickeoattributes" class="bodylink"><span style="white-space: nowrap">Figure 63</span></a> hold the
+               <kbd>Ctrl</kbd> key down while you click the
+               <code>EmployeeId</code>, <code>LastName</code>, and
+               <code>DepartmentId</code> attributes, then press
+               <b><i>(&gt;)</i></b> to shuttle them into the
+               <b><i>Selected</i></b> list.
+            </p><a name="pickeoattributes"></a><center><img src="images/pickeoattributes.gif" title="Picking the Attribute We Need in the Query" alt="Picking the Attribute We Need in the Query"><br><b class="boldbodycopy">Figure 63: Picking the Attribute We Need in the Query</b></center><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Skip the Attribute Settings Page</u></b></i></p>
+            <p class="bodycopy">On the
+               <b><i>Step 4 of 6: Attribute Settings</i></b> panel, just click
+               <b><i>(Next&gt;)</i></b> to get to the next panel. We don't have any
+               attribute settings that we need to change.
+            </p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Set a Custom Where Clause to to Filter
+                        Employees</u></b></i></p>
+            <p class="bodycopy">On the <b><i>Step 5 of 6:
+                     Query</i></b> panel of the wizard, as shown in <a href="#whereclause" class="bodylink"><span style="white-space: nowrap">Figure 64</span></a>
+               specify the following custom <b><i>Where</i></b> clause that will
+               include only employees with a NULL department_id value, or employees that are
+               not in the given department.
+            </p>
+            <blockquote style="font-size:90%"><code>(department_id&nbsp;is&nbsp;null&nbsp;or&nbsp;department_id&nbsp;!=&nbsp;:1)</code></blockquote><a name="whereclause"></a><center><img src="images/whereclause.gif" title="Setting a Custom Where Clause" alt="Setting a Custom Where Clause"><br><b class="boldbodycopy">Figure 64: Setting a Custom Where
+                  Clause</b></center>
+            <p class="bodycopy">The
+               <code>:1</code> represents a SQL bind variable whose value we'll be
+               assigning at runtime via an expression that represents the current deparment
+               number value. We'll set up that aspect in just a second...
+            </p>
+            <p class="bodycopy">Click
+               <b><i>(Finish)</i></b> to end the <b><i>Create View
+                     Object</i></b> wizard, answer <b><i>(Yes)</i></b> when prompted to
+               check the SQL statement for correctness, and click <b><i>(OK)</i></b> in
+               the alert that confirms the query is valid.
+            </p><br><br></li>
+         <li>
+            <p class="bodycopy"><i><b><u>Include Instance of EmpsNotInDept View Object in
+                        HRModule</u></b></i></p>
+            <p class="bodycopy">For clients to work with the data this new view
+               object provides, we need to include an instance of it in the data model of our
+               <code>HRModule</code> application module component. To do this:
+            </p>
+            <ol class="bodycopy">
+               <li>Select the <code>HRModule</code> component
+                  in the application navigator, and double-click to edit it.
+               </li>
+               <li>On the <b><i>Data Model</i></b> panel of the editor,
+                  select the <code>EmpsNotInDept</code> view object in the
+                  <b><i>Available View Objects</i></b> list.
+               </li>
+               <li>Press <b><i>(&gt;)</i></b> to shuttle an instance of this view
+                  object, which by default will be named <code>EmpsNotInDept1</code>, into
+                  the application module's data model.
+               </li>
+            </ol>
+            <p class="bodycopy">Then
+               click <b><i>(OK)</i></b> to save the changes to the
+               <code>HRModule</code>. Finally, select <b><i>File | Save
+                     All</i></b> from the main menu (or click the "Save All" toolbar button),
+               and we're ready to go modify the JHeadstart application structure to use this
+               new view object as part of a shuttle.
+            </p><br><br></li>
+      </ol><a name="setuptheshuttle"></a><p><span class="parahead1" style="font-size:95%">Step 4b: Setting Up the Parent
+            Shuttle</span></p>
+      <p class="bodycopy">Back in the <b><i>JHeadstart Application Structure
+               File Editor</i></b>, we need to perform two setup steps for the shuttle: one
+         for the <code>Employees3</code> group, and one for its nested
+         <code>EmployeesLookup</code>.
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Setup the Employees3 Group as a
+                        Parent-Shuttle</u></b></i></p>
+            <p class="bodycopy"> Select the <code>Employees3</code>
+               group that is a child of the top-level Departments group and as shown in
+               <a href="#settingupshuttle" class="bodylink"><span style="white-space: nowrap">Figure 65</span></a>, perform the following four steps:
+            </p>
+            <ol class="bodycopy" start="doublespace">
+               <li>Set the <b><i>Layout
+                        Style</i></b> to <code>parent-shuttle</code><br><br></li>
+               <li>Set the <b><i>Tab Name</i></b> to "Assign Employees to
+                  Department"<br><br></li>
+               <li>Set the <b><i>Display Title
+                        (Plural)</i></b> to "Assigned"<br><br></li>
+               <li>Uncheck the
+                  <b><i>Use Table Range</i></b> checkbox<br><br></li>
+            </ol><a name="settingupshuttle"></a><center><img src="images/settingupshuttle.gif" title="Setting Employees3 Detail Group to be Parent-Shuttle" alt="Setting Employees3 Detail Group to be Parent-Shuttle"><br><b class="boldbodycopy">Figure 65: Setting Employees3 Detail Group to be
+                  Parent-Shuttle</b></center><br><br></li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Setup the Nested EmployeesLookup for the
+                        Shuttle</u></b></i></p>
+            <p class="bodycopy">Select the <code>EmployeesLookup</code>
+               that is <i>indented</i> under the <code>Employees3</code>
+               child group &#8212; <i>not</i> the one that's at the same level as
+               Employees3 &#8212; and as shown in <a href="#finishingthejob" class="bodylink"><span style="white-space: nowrap">Figure 66</span></a>, perform the
+               following five steps:
+            </p>
+            <ol class="bodycopy" start="doublespace">
+               <li>Set
+                  the <b><i>View Object Usage</i></b> to
+                  <code>EmpsNotInDept1</code><br><br></li>
+               <li>
+                  <p class="bodycopy">Set
+                     <b><i>Query Bind Parameters</i></b> to the expression:
+                  </p>
+                  <blockquote style="font-size:90%"><code>${bindings.DepartmentsDepartmentId}</code></blockquote>
+                  <p class="bodycopy">This is the standard J2EE expression language syntax
+                     that declaratively represents the value of the current
+                     <code>DepartmentId</code> on the <b><i>Departments</i></b> page at
+                     runtime.
+                  </p><br><br></li>
+               <li>Set the <b><i>title</i></b>
+                  property to "Unassigned"<br><br></li>
+               <li>Set
+                  <b><i>Advanced Search?</i></b> to
+                  <code>none</code><br><br></li>
+               <li>Set <b><i>Quick
+                        Search?</i></b> to <code>none</code><br><br></li>
+            </ol><a name="finishingthejob"></a><center><img src="images/finishingthejob.gif" title="Setting Up the EmployeesLookup for the Shuttle" alt="Setting Up the EmployeesLookup for the Shuttle"><br><b class="boldbodycopy">Figure 66: Setting Up the EmployeesLookup for the
+                  Shuttle</b></center><br><br></li>
+      </ul><a name="genandrunagain2"></a><p><span class="parahead1" style="font-size:95%">Step 4c: Generate and Run the
+            Application</span></p>
+      <p class="bodycopy">Click on the <b><i>Run the JHeadstart
+               Generator</i></b> button in the <b><i>Application Structure File
+               Editor</i></b> toolbar to get JHeadstart to regenerate the web tier of the
+         application now that we've completed the shuttle setup steps. When generation
+         finishes, run the application again by clicking on the
+         <code>ViewController</code> project in the application navigator and
+         press <kbd>F11</kbd>.
+      </p>
+      <p class="bodycopy"> At runtime, to
+         see the shuttle control shown in <a href="#shuttleatruntime" class="bodylink"><span style="white-space: nowrap">Figure 67</span></a>, do the
+         following:
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">Click on the top-level
+            <b><i>Departments</i></b> tab
+         </li>
+         <li type="disc">Select a
+            department by clicking in the <b><i>Select</i></b> radio group next to
+            the desired one
+         </li>
+         <li type="disc">Click the
+            <b><i>(Details)</i></b> button to drill-down to the <b><i>Edit
+                  Departments</i></b> page.
+         </li>
+      </ul>
+      <p class="bodycopy">On the Edit
+         Departments page, you can navigate back and forth between departments, and for
+         each department the shuttle will show you the <b><i>Unassigned</i></b>
+         and <b><i>Assigned</i></b> employees in that department. You can shuttle
+         employees into or out of the department using the shuttle. Clicking the
+         <b><i>(Save)</i></b> button will save your changes permanently.
+      </p><a name="shuttleatruntime"></a><center><img src="images/shuttleatruntime.gif" title="Parent Shuttle Control at Runtime" alt="Parent Shuttle Control at Runtime"><br><b class="boldbodycopy">Figure 67: Parent Shuttle Control at Runtime</b></center><a name="customtemplates"></a><p><span class="parahead1">Step 5: Template Customization (Tabbed Child
+            Groups)</span></p>
+      <p class="bodycopy">In this step, we will use some customized JHeadstart
+         Application Generator templates to illustrate the power of customization
+         through generator templates. JHeadstart ships with some sample templates to
+         illustrate some of the tokens you can use in these templates and the
+         documentation covers all of the available tokens. The sample templates are
+         called:
+      </p>
+      <ul class="bodycopy">
+         <li type="disc"><code>dataPageTabbedChildren.jut</code></li>
+         <li type="disc"><code>childGroupTabs.jut</code></li>
+         <li type="disc"><code>tabbedTableChildGroup.jut</code></li>
+      </ul>
+      <p class="bodycopy">Together, these sample templates implement the generation of tabbed child
+         groups. In other words, with these templates in effect, all child groups
+         displayed on the same page as the parent group will show on in-page tabs, with
+         only one child group visible at the time.
+      </p>
+      <p class="bodycopy">To indicate a set of
+         templates to get used together during generation, you create a JHeadstart
+         custom template properties file (<code>*.jtp</code>) that indicates which
+         templates should be used for which of the standard page types. To use the
+         sample templates above and generate tabbed child groups, you can use the sample
+         custom template property file named
+         <code>JhsTabbedChildrenTemplates.jtp</code> that JHeadstart will copy
+         into the <code>./properties</code> subdirectory of your project when you
+         use the <b><i>Create New JHeadstart Application Structure File</i></b>
+         wizard for that project. 
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">If you're curious to see the
+                     contents of a <code>*.jtp</code> file, find the
+                     <code>JhsTabbedChildrenTemplates.jtp</code> file under the
+                     <b><i>Miscellaneous Files</i></b> folder in the application navigator
+                     and double-click on it to see it in the code editor.
+                  </p></span></td>
+         </tr>
+      </table><br><p class="bodycopy">Let's
+         put these custom templates to work in order to generate a page for the
+         <code>Employees</code> group that has its two child groups &#8212;
+         <code>Employees2</code> and <code>Departments2</code> &#8212; appearing
+         on the same page as their parent and organized into tabs.
+      </p><a name="customtemplatesetup"></a><p><span class="parahead1" style="font-size:95%">Step 5a: Indicate Where Custom Templates
+            Should Be Used</span></p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Set Custom
+                        Template File to Use for Employees Group</u></b></i></p>
+            <p class="bodycopy">In the
+               <b><i>JHeadstart Application Structure File Editor</i></b>, select the
+               top-level <code>Employees</code> group, and find the <b><i>Template
+                     Properties File</i></b> property in the <b><i>Generation
+                     Settings</i></b> category. As shown in <a href="#customtemplatesfig" class="bodylink"><span style="white-space: nowrap">Figure 68</span></a>
+               &#8212; see the tooltip for the full file name &#8212; set the property to the
+               fully-qualfied path to the <code>JhsTabbedChildrenTemplates.jtp</code>
+               file. The easiest way to do this is to click into the <b><i>Template
+                     Properties File</i></b> field, and press the <b><i>(...)</i></b>
+               button to pick the file using a file browser.
+            </p><a name="customtemplatesfig"></a><center><img src="images/settingcustomtemplate.gif" title="Setting Custom Template File for Employees Group" alt="Setting Custom Template File for Employees Group"><br><b class="boldbodycopy">Figure 68: Setting Custom Template File for
+                  Employees Group</b></center>
+         </li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Make Child Groups of Employees Appear on Same
+                        Page</u></b></i></p>
+            <p class="bodycopy">Select the <code>Employees2</code> child
+               group under the top-level Employees group, and check its <b><i>Same
+                     Page?</i></b> checkbox (in the Group Layout category).
+            </p>
+            <p class="bodycopy">Repeat
+               the same setting for the <code>Departments2</code> child group at the
+               same level under
+               <code>Employees</code>.
+            </p>
+         </li>
+      </ul><a name="genandrun3"></a><p><span class="parahead1" style="font-size:95%">Step 5b: Generate and Run the Application</span></p>
+      <p class="bodycopy">Click on the <b><i>Run the JHeadstart Generator</i></b> button in
+         the <b><i>Application Structure File Editor</i></b> toolbar to get
+         JHeadstart to regenerate the web tier of the application now that we've
+         completed the custom template setup steps. When generation finishes, run the
+         application again by clicking on the <code>ViewController</code> project
+         in the application navigator and press
+         <kbd>F11</kbd>.
+      </p>
+      <p class="bodycopy"> At runtime, to see the
+         effect of the custom template as shown in
+         <a href="#tabbedchildrenonsamepage" class="bodylink"><span style="white-space: nowrap">Figure 69</span></a>, do the following:
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">On the <b><i>Employees</i></b> tab, set
+            the <b><i>Filter By</i></b> quick search field to
+            <code>LastName</code>, enter a last-name search criteria of
+            "<code>part</code>", and click <b><i>(Go)</i></b> to find
+            <b><i>Karen Partner</i></b>.
+         </li>
+         <li type="disc">Click the
+            <b><i>(Details)</i></b> button to drill-down to the Edit Employees
+            page
+         </li>
+         <li type="disc">Click on the <b><i>Managed
+                  Departments</i></b> or the <b><i>Subordinate</i></b> tabs in the page
+            to switch between the different detail information for the current
+            employee.
+         </li>
+      </ul><a name="tabbedchildrenonsamepage"></a><center><img src="images/empswithtabbeddetails.gif" title="Custom Templates Produce Same-Page Details Tabs" alt="Custom Templates Produce Same-Page Details Tabs"><br><b class="boldbodycopy">Figure 69: Custom Templates Produce Same-Page Details
+            Tabs</b></center><a name="conditionallydependentfields"></a><p><span class="parahead1">Step 6: Conditionally Dependent
+            Fields </span></p>
+      <p class="bodycopy">In this step, we will <i>not</i> use
+         JHeadstart. This step illustrates how you can enhance your generated
+         application using the visual ADF design time facilities, adding features that
+         you currently cannot generate. As a post-generation feature, we will implement
+         a conditionally dependent field on the page.
+      </p>
+      <p class="bodycopy"> For example, let's
+         assume that an employee's commission percentage can only be entered when the
+         employee is an Account Manager (<code>JobId</code> =
+         "<code>AC_MGR</code>"). We want the <code>CommissionPct</code>
+         field to be disabled for employees with other values for their
+         <code>JobId</code> field. So let's get to work on making it
+         happen...
+      </p><a name="databinddisabledproperty"></a><p><span class="parahead1" style="font-size:95%">Step 6a: Add Expression to Field's Disabled Property</span></p>
+      <ul class="bodycopy">
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Open Employees.uix Page in the Visual
+                        Designer</u></b></i></p>
+            <p class="bodycopy">In your <code>ViewController</code>
+               project, expand the <b><i>Web Content</i></b> folder and the
+               <code>WEB-INF/page</code> subdirectory. Find
+               <code>Employees.uix</code> in the list of pages, and double-click it to
+               open it in the visual designer. 
+            </p>
+         </li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Bind Disabled Property of CommissionPct Field</u></b></i></p>
+            <p class="bodycopy">In the visual page designer, select the <code>CommissionPct</code>
+               field and find the field's <b><i>disabled</i></b> property in the
+               Property Inspector. Click into the row of the property table for the
+               <b><i>disabled</i></b> property to select it.
+            </p><br><table border="0" style="border-width: 1px; border-style: dotted; border-color: #606060" cellspacing="0" cellpadding="4">
+               <tr>
+                  <td><span class="boldbodycopy">TIP:</span></td>
+                  <td valign="top"><span class="bodycopy">You can
+                        do <b><i>View | Property Inspector</i></b> from the main menu if
+                        it's not currently visible.</span></td>
+               </tr>
+            </table><br><p class="bodycopy">Notice the current value of
+               <b><i>disabled</i></b> is <code>false</code>. To make the
+               <b><i>disabled</i></b> property' value dynamic &#8212; based on evaluating an
+               expression at runtime &#8212; click the "<b><i>Bind to Data</i></b>" toolbar
+               icon as shown in <a href="#databindingcommission" class="bodylink"><span style="white-space: nowrap">Figure 70</span></a>.
+            </p><a name="databindingcommission"></a><center><img src="images/databindingcommission.gif" title="Binding Disabled Property of CommissionPct Field" alt="Binding Disabled Property of CommissionPct Field"><br><b class="boldbodycopy">Figure 70: Binding Disabled Property of
+                  CommissionPct Field</b></center>
+            <p class="bodycopy">When you do this, a small "database-can"
+               icon appears next to the name of the <b><i>disabled</i></b> property in
+               the inspector to indicate that its value is bound to an expression.
+               Additionally, the value of the <b><i>disabled</i></b> property will
+               change from a fixed <code>false</code> setting to an equivalent
+               expression of <code>${'false'}</code>.
+            </p>
+         </li>
+         <li type="disc">
+            <p class="bodycopy"><i><b><u>Enter Expression Determining When Commission is
+                        Disabled</u></b></i></p>
+            <ol class="bodycopy" start="doublespace">
+               <li>
+                  <p class="bodycopy">Click
+                     into the area showing the <b><i>disabled</i></b> property's value of
+                     <code>${'false'}</code> and notice that a <b><i>(...)</i></b>
+                     button appears.
+                  </p>
+                  <p class="bodycopy"></p><br><br></li>
+               <li> Click this <b><i>(...)</i></b> button and a helpful
+                  binding picker dialog appears to assist in formulating the
+                  expression.<br><br></li>
+               <li>
+                  <p class="bodycopy"> As shown in
+                     <a href="#bindingpicker" class="bodylink"><span style="white-space: nowrap">Figure 71</span></a>, expand the <b><i>bindings</i></b> node
+                     to find the element representing the <code>EmployeesJobId</code> data
+                     item, and select it. 
+                  </p>
+                  <p class="bodycopy">This will update the
+                     <b><i>Expression</i></b> field to reflect the expression for the current
+                     employee's <code>JobId</code> value of
+                     <code>${bindings.EmployeesJobId}</code>.
+                  </p><a name="bindingpicker"></a><center><img src="images/disabledexpression.gif" title="Using the Binding Picker to Help Create Expression" alt="Using the Binding Picker to Help Create Expression"><br><b class="boldbodycopy">Figure 71: Using the Binding Picker to Help Create
+                        Expression</b></center><br><br></li>
+               <li>
+                  <p class="bodycopy">Edit the <b><i>Expression</i></b> to add the not-equals comparison
+                     to the literal value <code>'AC_MGR'</code> as shown in
+                     <a href="#bindingpicker" class="bodylink"><span style="white-space: nowrap">Figure 71</span></a>.
+                  </p>
+                  <p class="bodycopy">This is an expression that returns
+                     a boolean <code>true</code> when the value of the current employee's
+                     <code>JobId</code> does not equal <code>AC_MGR</code>. Since this
+                     is the expression for the value of the disabled property, that means at runtime
+                     we'll effectively have <b><i>disabled</i></b> = true when the
+                     <code>JobId</code> value is different from <code>AC_MGR</code>, and
+                     <b><i>disabled</i></b> = false (in other words,
+                     <i>enabled</i>) when <code>JobId</code> equals
+                     <code>AC_MGR</code>. 
+                  </p><br><br></li>
+            </ol>
+         </li>
+         <li type="disc">Click <b><i>(OK)</i></b> to save the
+            expression
+         </li>
+      </ul>
+      <p class="bodycopy">Finally, do a <b><i>File |
+               Save All</i></b> in the JDeveloper main menu, and we're ready to try out the
+         changes. 
+      </p>
+      <p class="bodycopy">If your application is still running on the JDeveloper
+         embedded container, then you can just continue to work with it to verify the
+         new functionality we've just added. If it's not running, just click on your
+         ViewController project and press <kbd>F11</kbd> to
+         get it running again.
+      </p>
+      <p class="bodycopy">Try these steps:</p>
+      <ul class="bodycopy">
+         <li type="disc">Click on the <b><i>Employees</i></b> top-level
+            tab
+         </li>
+         <li type="disc">Click on the <b><i>(Advanced
+                  Search)</i></b> button
+         </li>
+         <li type="disc">Select "Accounting"
+            from the <b><i>Department</i></b> dropdown list
+         </li>
+         <li type="disc">Click <b><i>(Find)</i></b> to perform the
+            search
+         </li>
+         <li type="disc">Click <b><i>(Details)</i></b> to
+            drill-down to show employee details
+         </li>
+         <li type="disc">Try
+            scrolling back and forth between employees with <b><i>(&lt;)</i></b> and
+            <b><i>(&gt;)</i></b> buttons
+         </li>
+      </ul>
+      <p class="bodycopy">Notice that on an employee like Shelly Higgins, who's
+         <code>JobId</code> is <code>AC_MGR</code>, the
+         <code>CommissionPct</code> field is enabled. On employees who have a
+         different <code>JobId</code>, the <code>CommissionPct</code> is
+         disabled. Excellent!
+      </p>
+      <p class="bodycopy">However, we still have a problem...</p>
+      <p class="bodycopy">If you update an employee's <code>JobId</code> to be
+         <code>AC_MGR</code> when it currently was <i>not</i> that
+         value, the <code>CommissionPct</code> field does not correctly enable
+         immediately as we (and the end user!) might expect. If we navigate away to a
+         different employee and back to the one we changed, the
+         <code>CommissionPct</code> field is correctly enabled, but it would nice
+         to have it get enabled instantly, when appropriate.
+      </p><a name="enabledynamically"></a><p><span class="parahead1" style="font-size:95%">Step 6b: Make Field React to Live Data
+            Changes</span></p>
+      <p class="bodycopy">The ADF UIX technology that the JHeadstart Application
+         Generator uses by default for your web tier pages cleverly combines
+         Asynchronous JavaScript, XML, and Dynamic HTML to deliver a much more
+         interactive web client interface for your business applications. In ADF UIX,
+         the feature is known as partial page rendering because it allows selective
+         parts of a page to be re-<i>rendered</i> to reflect server-side
+         updates to data, without having to redraw the entire page. This combination of
+         web technologies for delivering more interactive clients is gaining momentum in
+         2005 under the newly-coined acronym
+         <a href="http://en.wikipedia.org/wiki/AJAX" class="bodylink">AJAX</a>. ADF UIX has
+         supported it for several years already, and luckily, leveraging its power
+         requires just a few declarative property changes in your page. 
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">JHeadstart also supports generating a JSP-based web tier instead of ADF
+                     UIX, but the JSP pages don't support partial page rendering or some of the more
+                     advanced UI features the ADF UIX components offer.
+                  </p></span></td>
+         </tr>
+      </table><br><p class="bodycopy">We'll
+         leverage the ADF UIX partial page rendering technology to cause the
+         <code>CommisionPct</code> field to enable or disable dynamically in
+         response to changes made in the current page to the JobId dropdown list. Here's
+         what you need to do... 
+      </p>
+      <p class="bodycopy"> Go back to the visual designer for the
+         <code>Employees.uix</code> page and select the <code>JobId</code>
+         dropdown field. In the property inspector, select the
+         <b><i>PrimaryClientAction</i></b> property, then click the
+         <b><i>(...)</i></b> button to launch the
+         <b><i>primaryClientAction</i></b> editor dialog.
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy">Developers familiar with our Oracle Forms tool might recognize the
+                     <code>primaryClientAction</code> event for a dropdown list in ADF UIX to
+                     be similar to a <code>WHEN-LIST-CHANGED</code> trigger in Forms.
+                     
+                  </p></span></td>
+         </tr>
+      </table><br><p class="bodycopy"> Fill out the dialog as shown in
+         <a href="#partialtargets" class="bodylink"><span style="white-space: nowrap">Figure 72</span></a>. The name of the ActionEvent is arbitrary, so
+         we just pick a name that makes sense like <code>whenJobChanged</code>. We
+         configure the action to submit the form, but not to validate the form on
+         submission. Finally, we enable the firing of partial page rendering targets and
+         select the id in the list corresponding to the <code>CommissionPct</code>
+         field. 
+      </p><a name="partialtargets"></a><center><img src="images/partialtargets.gif" title="Configuring JobId Dropdown List to Update CommissionPct" alt="Configuring JobId Dropdown List to Update CommissionPct"><br><b class="boldbodycopy">Figure 72: Configuring JobId Dropdown
+            List to Update CommissionPct</b></center>
+      <p class="bodycopy">Partial targets
+         are components on the page that will be refreshed without needing to refresh
+         the entire page. In this case whenver the <code>JobId</code> is changed,
+         we're setting up the action to update the <code>CommissionPct</code>
+         field in reaction to that change as well.
+      </p>
+      <p class="bodycopy">Save the page, then go
+         back to the still-running application to see the effect of our last change.
+         First, browse to a different employee to activate the new version of the
+         <code>Employees.uix</code> page we just saved. Once you've done that,
+         you'll now notice that changing an employee's <code>JobId</code> to
+         <code>AC_MGR</code> immediately enables the
+         <code>CommissionPct</code> field.
+      </p><a name="protectfromgeneration"></a><p><span class="parahead1" style="font-size:95%">Step 6d: Protect the Customized Page
+            From Regeneration</span></p>
+      <p class="bodycopy">To preserve this post-generation change that
+         we've made manually to the <code>Employees.uix</code> page using the ADF
+         design-time tools, select the <code>Employees</code> group in the
+         <b><i>JHeadstart Application Structure File Editor</i></b> and uncheck
+         the <b><i>Generate View (UIX or JSP)</i></b> checkbox. You'll find the
+         property in the <b><i>Generation Settings</i></b>
+         category.
+      </p><a name="customskins"></a><p><span class="parahead1">Step 7:
+            Applying Custom Skins to Change Look and Feel</span></p>
+      <p class="bodycopy">You have undoubtedly
+         noticed that the ADF web application we've built in this tutorial has a
+         consistent look and feel on all the pages. This consistency is an important
+         ingredient in delivering the attractive and easy-to-use experience that every
+         application developer wants for their end users. You might have also noticed
+         that the pages we've built resemble those in the Oracle e-Business Suite
+         self-service applications. By default, ADF UIX pages are configured to have
+         this <a href="http://www.oracle.com/technology/tech/blaf/index.html" class="bodylink">Oracle
+            Browser Look and Feel</a>...and with good reason. Over 2000 developers
+         inside Oracle who implement and enhance the e-Business Suite use the ADF
+         Business Components and ADF UIX technologies to build these self-service web
+         applications.
+      </p>
+      <p class="bodycopy">But if it's not your style to have your application
+         look like the Oracle e-Business Suite, no worries. The ADF UIX technology
+         supports changing the look and feel of all your pages in a consistent way by
+         applying a "<a href="http://en.wikipedia.org/wiki/Skin_(computing)" class="bodylink">skin</a>". As we'll
+         see, applying a skin does not require any changes to the application pages that
+         you've built. It's just a configuration setting.
+      </p><a name="blafandminimal"></a><p><span class="parahead1" style="font-size:95%">Step 7a: Changing Between Supplied
+            Skins</span></p>
+      <p class="bodycopy">ADF UIX comes with two built-in skins,
+         <code>blaf</code> and <code>minimal</code>. The
+         <code>blaf</code> skin is the default, and its name comes from the
+         acronym for the Oracle "Browser Look and Feel" we discussed above. The
+         <code>minimal</code> skin provides an alternative look that is simpler
+         and which tries to minimize the use of downloaded images.
+      </p>
+      <p class="bodycopy">To change
+         the look and feel of our tutorial application...
+      </p>
+      <ul class="bodycopy">
+         <li type="disc">Find the <code>uix-config.xml</code> file under the
+            <code>WEB-INF</code> directory of your <code>ViewController</code>
+            project's <b><i>Web Content</i></b> folder.
+         </li>
+         <li type="disc"> Double-click the <code>uix-config.xml</code> file in the
+            application navigator to view it in the code editor. 
+         </li>
+         <li type="disc">
+            <p class="bodycopy">Find the <code><span style="white-space: nowrap">&lt;look-and-feel&gt;</span></code> tag in this XML
+               configuration file and notice that it looks like this:
+            </p>
+            <blockquote style="font-size:90%"><code>&lt;configurations&nbsp;xmlns="http://xmlns.oracle.com/uix/config"&gt;<br>
+                  &nbsp;&nbsp;:<br>
+                  &nbsp;&nbsp;&lt;default-configuration&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;look-and-feel&gt;blaf&lt;/look-and-feel&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;!--<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;look-and-feel&gt;minimal&lt;/look-and-feel&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;--&gt;<br>
+                  &nbsp;&nbsp;&lt;/default-configuration&gt;<br>
+                  &lt;/configurations&gt;</code></blockquote>
+         </li>
+         <li type="disc">
+            <p class="bodycopy">To change to use the
+               <code>minimal</code> look and feel, comment-out the
+               <code>blaf</code> entry, and uncomment the <code>minimal</code>
+               entry so that your <code>uix-config.xml</code> file looks like
+               this:
+            </p>
+            <blockquote style="font-size:90%"><code>&lt;configurations&nbsp;xmlns="http://xmlns.oracle.com/uix/config"&gt;<br>
+                  &nbsp;&nbsp;:<br>
+                  &nbsp;&nbsp;&lt;default-configuration&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;!--<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;look-and-feel&gt;blaf&lt;/look-and-feel&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;--&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;look-and-feel&gt;minimal&lt;/look-and-feel&gt;<br>
+                  &nbsp;&nbsp;&lt;/default-configuration&gt;<br>
+                  &lt;/configurations&gt;</code></blockquote>
+         </li>
+         <li type="disc">Then save the
+            file
+         </li>
+      </ul>
+      <p class="bodycopy">The first thing we notice is that,
+         as shown in <a href="#minimalskinindesigner" class="bodylink"><span style="white-space: nowrap">Figure 73</span></a>, the JDeveloper visual
+         designer for the <code>Employees.uix</code> page changes to show the page
+         in the minimal look and feel. This underscores how the visual page designer
+         really does offer a true "What You See Is What You Get" (WYSIWYG)
+         environment.
+      </p><a name="minimalskinindesigner"></a><center><img src="images/minimalskinindesigner.gif" title="Visual Designer Updates to Reflect Custom Skin" alt="Visual Designer Updates to Reflect Custom Skin"><br><b class="boldbodycopy">Figure 73: Visual Designer
+            Updates to Reflect Custom Skin</b></center>
+      <p class="bodycopy">By refreshing your browser, or rerunning the
+         application if you don't still have it running, as shown in
+         <a href="#minimalskinruntime" class="bodylink"><span style="white-space: nowrap">Figure 74</span></a> you can experience the effect of changing
+         to the minimal skin at runtime as well. All of our application's functionality
+         works the same as it did before, but the look and feel has been consistently
+         modified with one edit to a configuration file.
+      </p><a name="minimalskinruntime"></a><center><img src="images/tutorialappminimalskin.gif" title="Tutorial Application Running with &#34;Minimal&#34; Skin" alt="Tutorial Application Running with &#34;Minimal&#34; Skin"><br><b class="boldbodycopy">Figure 74: Tutorial Application Running with
+            "Minimal" Skin</b></center><a name="exploringcustomskins"></a><p><span class="parahead1" style="font-size:95%">Step 7b: Exploring Custom Skins</span></p>
+      <p class="bodycopy">If neither of the two built-in skins suit your fancy, you can also create
+         your own custom ADF UIX skins. By visiting the OraBlogs website at
+         <a href="http://www.orablogs.com" class="bodylink">http://www.orablogs.com</a>, as shown
+         in <a href="#orablogs" class="bodylink"><span style="white-space: nowrap">Figure 75</span></a> you can experiment with dynamically changing
+         between six different skins. Our blaf and minimal are in the list as expected,
+         but then there are four custom skins to try experiment with as well. They are
+         designed to "clone" the look and feel of four popular online destinations you
+         might be familiar with. For more technical information on creating your own ADF
+         UIX skins, see Jonas Jacobi's
+         <a href="http://www.oracle.com/technology/products/jdev/howtos/10g/adf_uix_laf_ht/index.html" class="bodylink">How
+            to Create a Custom Skin for ADF UIX</a> article on OTN.
+      </p><a name="orablogs"></a><center><img src="images/orablogs.gif" title="Online Example of Using Other Custom ADF UIX Skins" alt="Online Example of Using Other Custom ADF UIX Skins"><br><b class="boldbodycopy">Figure 75: Online Example of Using Other Custom ADF UIX
+            Skins</b></center><a name="conclusion"></a><p><span class="parahead1">Conclusion</span></p>
+      <p class="bodycopy">In this end-to-end
+         tutorial we've experienced first-hand how Oracle JHeadstart 10g turbo-charges
+         developer productivity for Oracle ADF-based web applications. Using a
+         JDeveloper wizard to generate the back-end ADF Business Components that handle
+         database interaction, and using the declarative JHeadstart Application
+         Generator to iteratively generate the entire web front end, we built an
+         attractive, consistent, interactive, and skinnable web application with browse,
+         search, insert, update, and delete functionality against six related database
+         tables from the Oracle HR sample schema. The application featured single- and
+         multi-row editing, page-by-page scrolling, master/detail handling, dropdown
+         lists, a pop-up LOV, a shuttle picker, and a tree control. We saw an example of
+         how the JHeadstart Application Generator can be customized using a powerful
+         templating mechanism to locally (or globally) change the basic structure of the
+         pages it generates. We also saw that since JHeadstart is generating standard
+         ADF artifacts and metadata, we can use the standard tools that JDeveloper
+         provides to customize the generated pages where needed.
+      </p><br><table border="0" cellspacing="0" cellpadding="4" style="border-width: 1px; border-style: dotted; border-color: #606060">
+         <tr>
+            <td><span class="boldbodycopy">NOTE:</span></td>
+            <td valign="top"><span class="bodycopy">
+                  <p class="bodycopy"> For
+                     customers working today with
+                     <a href="http://www.oracle.com/technology/products/designer/index.html" class="bodylink">Oracle
+                        Designer</a> &#8212; used to model-driven, repository-based generation of
+                     complete applications &#8212; JHeadstart offers the one-two productivity "punch" that
+                     combines an enhanced generation of ADF Business Components from a Designer
+                     module component, as well as a fully-working UIX or JSP web application
+                     generated on top of them. This means that you can generate both the back-end
+                     and the front-end of your web application off the Designer repository using
+                     JHeadstart.
+                  </p></span></td>
+         </tr>
+      </table><br><p class="bodycopy">We claimed at the outset that no Java code was
+         required to build the demo, and in fact none of the steps we followed above
+         required our writing any Java code. But you must be thinking, "Surely
+         JHeadstart or JDeveloper itself must have generated <i>some</i>
+         Java code to make all of that functionality work, right?" You might be
+         surprised.
+      </p>
+      <p class="bodycopy"><a href="#nocode" class="bodylink"><span style="white-space: nowrap">Figure 76</span></a> shows the result of opening a
+         command shell, changing directories to the <code>C:\MyDemo</code> root
+         directory where we've been working on the tutorial, and doing a recursive
+         directory search for any <code>*.java</code> files. The executive
+         summary: <code>File Not Found</code>. While a search for
+         <code>*.uix</code> files, <code>*.properties</code>, or
+         <code>*.xml</code> files will produce a number of hits, no Java code was
+         needed to build this demo. All of the base functionality to support the
+         features we have employed lives in the base ADF framework library components,
+         and some standard framework extension libraries that JHeadstart provides to
+         complement its declarative application generation.
+      </p><a name="nocode"></a><center><img src="images/nocode.gif" title="No Written or Generated Java Code Required For This Tutorial" alt="No Written or Generated Java Code Required For This Tutorial"><br><b class="boldbodycopy">Figure 76: No Written or Generated Java Code Required For This Tutorial</b></center>
+      <p class="bodycopy">This does not imply that
+         building your <i>own</i> business applications with Oracle ADF
+         and JHeadstart 10g Application Generator won't require any Java code. They
+         undoubtedly will. However, what we're illustrating here in the tutorial is that
+         Java code is not required for a huge amount of the basic functionality every
+         business application needs. The code you'll end up writing will be code that is
+         specific to your business application functionality, and not to making the
+         basics of screen management, data management, or business rules enforcement
+         work correctly.
+      </p>
+      <p class="bodycopy">Another interesting point to note in closing is
+         that while we've been testing the tutorial application on the embedded Oracle
+         Containers for J2EE (OC4J) server inside JDeveloper, the same ADF-based web
+         application can run inside any J2EE application server. As shown in
+         <a href="#adfruntimeinstaller" class="bodylink"><span style="white-space: nowrap">Figure 77</span></a>, in addition to support Oracle's J2EE
+         server, JDeveloper offers automated installation of the ADF Runtime libraries
+         on a number of other popular J2EE servers as well. For servers not included in
+         this automated list, JDeveloper can prepare a standard J2EE EAR file to be
+         deployed using the deployment tool provided by that application server.
+      </p><a name="adfruntimeinstaller"></a><center><img src="images/adfruntimeinstaller.gif" title="ADF Runtime Installer Automated Installation Options" alt="ADF Runtime Installer Automated Installation Options"><br><b class="boldbodycopy">Figure 77: ADF Runtime Installer Automated
+            Installation Options</b></center>
+      <p class="bodycopy">So, in hoping that
+         this tutorial has been both educational and eye-opening for you, we close with
+         a few links to where you can find additional information, samples, and
+         tutorials about JDeveloper 10g, Oracle ADF, and Oracle JHeadstart.
+      </p>
+      <ul class="bodycopy">
+         <li type="disc"><a href="http://www.oracle.com/technology/consulting/9iServices/JHeadstart.html" class="bodylink">JHeadstart
+               Product Center on OTN</a></li>
+         <li type="disc"><a href="http://www.oracle.com/technology/products/jdev/index.html" class="bodylink">JDeveloper
+               Product Center on OTN</a></li>
+         <li type="disc"><a href="http://www.oracle.com/technology/products/jdev/tips/muench/requiredreading/index.html" class="bodylink">Recommended
+               Reading List on Oracle ADF</a></li>
+         <li type="disc"><a href="http://www.orablogs.com" class="bodylink">Oracle Community Weblogs
+               (OraBlogs)</a></li>
+      </ul>
+      <p class="bodycopy">If you have any
+         questions on JHeadstart or ADF in general that are not answered with the above
+         links, you can post them on the
+         <a href="http://forums.oracle.com/forums/forum.jsp?forum=38" class="bodylink">JHeadstart
+            Discussion Forum</a> or
+         <a href="http://forums.oracle.com/forums/forum.jsp?forum=83" class="bodylink">JDeveloper
+            Discussion Forum</a>.
+      </p>
+   </body>
+</html>

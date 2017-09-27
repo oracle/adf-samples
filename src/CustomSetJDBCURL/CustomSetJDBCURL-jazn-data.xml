@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252' standalone = 'yes'?>
+<!DOCTYPE jazn-data PUBLIC "JAZN-XML Data" "http://xmlns.oracle.com/ias/dtds/jazn-data.dtd">
+<jazn-data>
+    <jazn-realm>
+        <realm>
+            <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>DataBase_User__v981HsvWXF_dm084Gwh8FYYN_PLuZK8</name>
+                    <credentials>{903}/v981HsvWXF/dm084Gwh8FYYN/PLuZK8</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_xnjBeewRSve1MhFi3kwh2ob3D0FpHkW2</name>
+                    <credentials>{903}xnjBeewRSve1MhFi3kwh2ob3D0FpHkW2</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_RiQm6Ry3U6XBXSSqG61Ub7uwYRBKY3cF</name>
+                    <credentials>{903}RiQm6Ry3U6XBXSSqG61Ub7uwYRBKY3cF</credentials>
+                </user>
+            </users>
+            <roles/>
+        </realm>
+    </jazn-realm>
+</jazn-data>
