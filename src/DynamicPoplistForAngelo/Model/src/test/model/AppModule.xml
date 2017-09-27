@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="AppModule"
+   ComponentClass="test.model.AppModuleImpl"
+   ComponentInterface="test.model.common.AppModule"
+   ClientProxyName="test.model.client.AppModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="Regions"
+      ViewObjectName="test.model.RegionsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Countries"
+      ViewObjectName="test.model.CountriesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="LocationsView"
+      ViewObjectName="test.model.LocationsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RegionsList"
+      ViewObjectName="test.model.RegionsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="CountriesListForRegion"
+      ViewObjectName="test.model.CountriesViewForRegion" >
+   </ViewUsage>
+   <ViewUsage
+      Name="CitiesView"
+      ViewObjectName="test.model.CitiesView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="CountrRegFkLink1"
+      ViewLinkObjectName="test.model.CountrRegFkLink"
+      SrcViewUsageName="test.model.AppModule.Regions"
+      DstViewUsageName="test.model.AppModule.Countries" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.40.66" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

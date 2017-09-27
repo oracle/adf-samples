@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="CountriesViewForRegion"
+   SelectList="Countries.COUNTRY_ID, 
+       Countries.COUNTRY_NAME, 
+       Countries.REGION_ID"
+   FromList="COUNTRIES Countries"
+   Where="region_id = :TheRegionId"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   FetchMode="FETCH_AS_NEEDED"
+   FetchSize="50"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_objectSuperClassName" Value="oracle.jbo.server.ViewObjectImpl" />
+      <Attr Name="_codeGenFlag2" Value="Access|VarAccess" />
+   </DesignTime>
+   <Variable
+      Name="TheRegionId"
+      Kind="where"
+      Type="oracle.jbo.domain.Number" >
+   </Variable>
+   <EntityUsage
+      Name="Countries"
+      Entity="test.model.Countries" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryWhere" Value="region_id = :TheRegionId" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="CountryId"
+      IsNotNull="true"
+      EntityAttrName="CountryId"
+      EntityUsage="Countries"
+      AliasName="COUNTRY_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CountryName"
+      EntityAttrName="CountryName"
+      EntityUsage="Countries"
+      AliasName="COUNTRY_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RegionId"
+      EntityAttrName="RegionId"
+      EntityUsage="Countries"
+      AliasName="REGION_ID" >
+   </ViewAttribute>
+</ViewObject>

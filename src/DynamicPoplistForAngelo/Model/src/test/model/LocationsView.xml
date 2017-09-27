@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="LocationsView"
+   SelectList="Locations.LOCATION_ID, 
+       Locations.STREET_ADDRESS, 
+       Locations.POSTAL_CODE, 
+       Locations.CITY, 
+       Locations.STATE_PROVINCE, 
+       Locations.COUNTRY_ID"
+   FromList="LOCATIONS Locations"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="test.model.LocationsViewRowImpl"
+   ComponentClass="test.model.LocationsViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Locations"
+      Entity="test.model.Locations" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="LocationId"
+      IsNotNull="true"
+      EntityAttrName="LocationId"
+      EntityUsage="Locations"
+      AliasName="LOCATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StreetAddress"
+      EntityAttrName="StreetAddress"
+      EntityUsage="Locations"
+      AliasName="STREET_ADDRESS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PostalCode"
+      EntityAttrName="PostalCode"
+      EntityUsage="Locations"
+      AliasName="POSTAL_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="City"
+      IsNotNull="true"
+      EntityAttrName="City"
+      EntityUsage="Locations"
+      AliasName="CITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StateProvince"
+      EntityAttrName="StateProvince"
+      EntityUsage="Locations"
+      AliasName="STATE_PROVINCE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CountryId"
+      EntityAttrName="CountryId"
+      EntityUsage="Locations"
+      AliasName="COUNTRY_ID" >
+   </ViewAttribute>
+</ViewObject>

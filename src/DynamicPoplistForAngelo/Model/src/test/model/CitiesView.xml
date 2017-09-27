@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="CitiesView"
+   SelectList="Cities.CITY_ID, 
+       Cities.NAME, 
+       Cities.REGION_ID, 
+       Cities.COUNTRY_ID, 
+       Cities.NOTES"
+   FromList="CITIES Cities"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.model.CitiesViewImpl"
+   ComponentInterface="test.model.common.CitiesView"
+   ClientProxyName="test.model.client.CitiesViewClient"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Cities"
+      Entity="test.model.Cities" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="CityId"
+      IsNotNull="true"
+      EntityAttrName="CityId"
+      EntityUsage="Cities"
+      AliasName="CITY_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      IsNotNull="true"
+      EntityAttrName="Name"
+      EntityUsage="Cities"
+      AliasName="NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RegionId"
+      IsNotNull="true"
+      EntityAttrName="RegionId"
+      EntityUsage="Cities"
+      AliasName="REGION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CountryId"
+      IsNotNull="true"
+      EntityAttrName="CountryId"
+      EntityUsage="Cities"
+      AliasName="COUNTRY_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Notes"
+      EntityAttrName="Notes"
+      EntityUsage="Cities"
+      AliasName="NOTES" >
+   </ViewAttribute>
+</ViewObject>

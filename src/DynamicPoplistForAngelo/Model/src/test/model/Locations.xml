@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Locations"
+   DBObjectType="table"
+   DBObjectName="LOCATIONS"
+   AliasName="Locations"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.LocationsImpl"
+   MsgBundleClass="test.model.common.LocationsImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+   </DesignTime>
+   <Attribute
+      Name="LocationId"
+      IsNotNull="true"
+      Precision="4"
+      Scale="0"
+      ColumnName="LOCATION_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="LOCATIONS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="StreetAddress"
+      Precision="40"
+      ColumnName="STREET_ADDRESS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="LOCATIONS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PostalCode"
+      Precision="12"
+      ColumnName="POSTAL_CODE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="LOCATIONS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="12" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="City"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="LOCATIONS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="StateProvince"
+      Precision="25"
+      ColumnName="STATE_PROVINCE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="LOCATIONS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CountryId"
+      IsNotNull="true"
+      Precision="2"
+      ColumnName="COUNTRY_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="CHAR"
+      TableName="LOCATIONS"
+      RetrievedOnUpdate="true"
+      RetrievedOnInsert="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Countries"
+      Association="test.model.LocCIdFkAssoc"
+      AssociationEnd="test.model.LocCIdFkAssoc.Countries"
+      AssociationOtherEnd="test.model.LocCIdFkAssoc.Locations"
+      Type="test.model.CountriesImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="LocCityNn" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Locations.City" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="LOC_CITY_NN" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="LocIdPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Locations.LocationId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="LOC_ID_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="LocationsCountryIdCheck" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Locations.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;COUNTRY_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_isNotNull" Value="true" />
+         <Attr Name="_DBObjectName" Value="LOCATIONS_COUNTRY_ID_CHECK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="LocCIdFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Locations.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="COUNTRY_C_ID_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="LOC_C_ID_FK" />
+      </DesignTime>
+   </Key>
+</Entity>

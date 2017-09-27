@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="CascadingListsUsingTwoListBindings">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelGroup>
+            <af:panelHeader text="Edit Cities" partialTriggers="navList2"/>
+          </af:panelGroup>
+          <af:outputText value="This counter will update when the page refreshes and stay fixed when PPR happens on a sub-part of this page:  [ #{PPRDemo.counter} ]"/>
+          <af:panelForm>
+            <af:panelLabelAndMessage label="#{bindings.CityId.label}">
+              <af:outputText value="#{bindings.CityId.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.CityId.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:inputText value="#{bindings.Name.inputValue}"
+                          label="#{bindings.Name.label}"
+                          showRequired="#{bindings.Name.mandatory}"
+                          columns="#{bindings.Name.displayWidth}">
+              <af:validator binding="#{bindings.Name.validator}"/>
+            </af:inputText>
+            <af:selectOneChoice value="#{bindings.RegionId.inputValue}"
+                                label="#{bindings.RegionId.label}"
+                                showRequired="true"
+                                valueChangeListener="#{CascadingListsUsingTwoListBindings.onRegionListChanged}"
+                                autoSubmit="true" id="RegionList">
+              <f:selectItems value="#{bindings.RegionId.items}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.CountryId.inputValue}"
+                                label="#{bindings.CountryId.label}"
+                                showRequired="true"
+                                valueChangeListener="#{CascadingListsUsingTwoListBindings.onCountryChanged}"
+                                autoSubmit="true" partialTriggers="RegionList">
+              <f:selectItems value="#{bindings.CountryId.items}"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.Notes.inputValue}"
+                          label="#{bindings.Notes.label}"
+                          required="#{bindings.Notes.mandatory}"
+                          columns="#{bindings.Notes.displayWidth}">
+              <af:validator binding="#{bindings.Notes.validator}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit"
+                                  disabled="false"/>
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Rollback"
+                                  disabled="false"
+                                  immediate="true">
+                  <af:resetActionListener/>
+                </af:commandButton>
+                <af:commandButton actionListener="#{bindings.Create.execute}"
+                                  text="Create"
+                                  disabled="#{!bindings.Create.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Delete.execute}"
+                                  text="Delete"
+                                  disabled="#{!bindings.Delete.enabled}"
+                                  immediate="true"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

@@ -86,6 +86,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DumpPoolStatisticsExample
 * DynamicCredentials1013
 * DynamicParameterForm
+* DynamicPoplistForAngelo
 
 
 

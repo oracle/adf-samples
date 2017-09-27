@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+   </DesignTime>
+   <Containee
+      Name="AppModule"
+      FullName="test.model.AppModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="Cities"
+      FullName="test.model.Cities"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="CitiesView"
+      FullName="test.model.CitiesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="Countries"
+      FullName="test.model.Countries"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="CountriesView"
+      FullName="test.model.CountriesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="CountriesViewForRegion"
+      FullName="test.model.CountriesViewForRegion"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkAssoc"
+      FullName="test.model.CountrRegFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkLink"
+      FullName="test.model.CountrRegFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="CountryForCityAssoc"
+      FullName="test.model.CountryForCityAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Locations"
+      FullName="test.model.Locations"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="LocationsView"
+      FullName="test.model.LocationsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="LocCIdFkAssoc"
+      FullName="test.model.LocCIdFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="RegionForCityAssoc"
+      FullName="test.model.RegionForCityAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Regions"
+      FullName="test.model.Regions"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="RegionsView"
+      FullName="test.model.RegionsView"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

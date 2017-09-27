@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Cities"
+   DBObjectType="table"
+   DBObjectName="CITIES"
+   AliasName="Cities"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.CitiesImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="CityId"
+      IsNotNull="true"
+      ColumnName="CITY_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="CITIES"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Name"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="CITIES" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RegionId"
+      IsNotNull="true"
+      ColumnName="REGION_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="CITIES" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CountryId"
+      IsNotNull="true"
+      Precision="2"
+      ColumnName="COUNTRY_ID"
+      Type="java.lang.String"
+      ColumnType="CHAR"
+      SQLType="CHAR"
+      TableName="CITIES"
+      RetrievedOnUpdate="true"
+      RetrievedOnInsert="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Notes"
+      Precision="50"
+      ColumnName="NOTES"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="CITIES" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Regions"
+      Association="test.model.RegionForCityAssoc"
+      AssociationEnd="test.model.RegionForCityAssoc.Regions"
+      AssociationOtherEnd="test.model.RegionForCityAssoc.Cities"
+      Type="test.model.RegionsImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Countries"
+      Association="test.model.CountryForCityAssoc"
+      AssociationEnd="test.model.CountryForCityAssoc.Countries"
+      AssociationOtherEnd="test.model.CountryForCityAssoc.Cities"
+      Type="test.model.CountriesImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="SysC0010512" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.Name" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;NAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C0010512" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC0010513" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.RegionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REGION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C0010513" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC0010514" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;COUNTRY_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C0010514" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC0010515" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.CityId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C0010515" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="CountryForCity" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="COUNTRY_C_ID_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="COUNTRY_FOR_CITY" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="RegionForCity" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Cities.RegionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="REG_ID_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="REGION_FOR_CITY" />
+      </DesignTime>
+   </Key>
+</Entity>

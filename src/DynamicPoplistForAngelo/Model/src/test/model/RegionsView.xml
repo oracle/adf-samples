@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="RegionsView"
+   SelectList="Regions.REGION_ID, 
+       Regions.REGION_NAME"
+   FromList="REGIONS Regions"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.model.RegionsViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   FetchSize="10"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Regions"
+      Entity="test.model.Regions" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="RegionId"
+      IsNotNull="true"
+      EntityAttrName="RegionId"
+      EntityUsage="Regions"
+      AliasName="REGION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RegionName"
+      EntityAttrName="RegionName"
+      EntityUsage="Regions"
+      AliasName="REGION_NAME" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="CountriesView"
+      ViewLink="test.model.CountrRegFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>
