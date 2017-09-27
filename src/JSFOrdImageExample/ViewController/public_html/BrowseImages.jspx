@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="BrowseImages">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:panelLabelAndMessage label="#{bindings.Id.label}">
+              <af:outputText value="#{bindings.Id.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Id.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Description.label}">
+              <af:outputText value="#{bindings.Description.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Image.label}">             
+             <af:objectMedia source="#{bindings.Image.inputValue.source}"
+                  contentType="#{bindings.Image.inputValue.media.mimeType}"/>
+                  
+<!--
+                  Working around bug# 6210130
+
+<af:objectMedia source="#{BrowseImages.source}"
+                                contentType="#{bindings.Image.inputValue.media.mimeType}"/>
+-->
+
+            </af:panelLabelAndMessage>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton text="Edit" action="edit"/>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

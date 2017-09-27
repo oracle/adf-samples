@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Image"
+   DBObjectType="table"
+   DBObjectName="IMAGE_TABLE"
+   AliasName="Image"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="demo.model.ImageImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsNotNull="true"
+      ColumnName="ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="IMAGE_TABLE"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Description"
+      Precision="40"
+      ColumnName="DESCRIPTION"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="IMAGE_TABLE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Image"
+      IsQueriable="false"
+      ColumnName="IMAGE"
+      Type="oracle.ord.im.OrdImageDomain"
+      ColumnType="ORDSYS.ORDIMAGE"
+      SQLType="STRUCT"
+      TableName="IMAGE_TABLE" >
+   </Attribute>
+   <Key
+      Name="SysC005811" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.Image.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C005811" />
+      </DesignTime>
+   </Key>
+</Entity>

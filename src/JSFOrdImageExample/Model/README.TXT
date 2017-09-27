@@ -1,0 +1,1 @@
+Run CreateTable.sql to create the IMAGE_TABLE table.

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="EditImage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <!--
+          SPM: Added enctype="multipart/form-data" attribute
+               for the ORDImage support.
+        -->
+        <h:form enctype="multipart/form-data">
+          <af:panelForm>
+            <af:commandLink text="Browse Page" action="browse"/>
+            <af:panelButtonBar>
+              <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                text="Commit"/>
+              <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                text="Rollback"
+                                disabled="#{!bindings.Rollback.enabled}"
+                                immediate="true">
+                <af:resetActionListener/>
+              </af:commandButton>
+              <af:commandButton actionListener="#{bindings.Create.execute}"
+                                text="Create"
+                                disabled="#{!bindings.Create.enabled}"/>
+            </af:panelButtonBar>
+            <af:inputText value="#{bindings.Id.inputValue}"
+                          label="#{bindings.Id.label}"
+                          required="#{bindings.Id.mandatory}"
+                          columns="#{bindings.Id.displayWidth}">
+              <af:validator binding="#{bindings.Id.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Id.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Description.inputValue}"
+                          label="#{bindings.Description.label}"
+                          required="#{bindings.Description.mandatory}"
+                          columns="#{bindings.Description.displayWidth}">
+              <af:validator binding="#{bindings.Description.validator}"/>
+            </af:inputText>
+            <!--
+            <af:inputText value="#{bindings.Image.inputValue}"
+                          label="#{bindings.Image.label}"
+                          required="#{bindings.Image.mandatory}"
+                          columns="#{bindings.Image.displayWidth}">
+              <af:validator binding="#{bindings.Image.validator}"/>
+            </af:inputText>
+            -->
+            <af:panelLabelAndMessage>
+              <af:inputFile value="#{bindings.Image.inputValue}" simple="true">
+                <af:validator binding="#{bindings.Image.validator}"/>
+              </af:inputFile>
+              <af:objectMedia source="#{bindings.Image.inputValue.source}"
+                              contentType="#{bindings.Image.inputValue.media.mimeType}"/>              
+              
+<!--
+<af:objectMedia source="#{BrowseImages.source}"
+                              contentType="#{bindings.Image.inputValue.media.mimeType}"/>
+-->
+            </af:panelLabelAndMessage> 
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

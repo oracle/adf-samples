@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="Images"
+   SelectList="ImageEntity.ID, 
+       ImageEntity.DESCRIPTION, 
+       ImageEntity.IMAGE"
+   FromList="IMAGE_TABLE ImageEntity"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="demo.model.ImagesImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="ImageEntity"
+      Entity="demo.model.Image" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="ImageEntity"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Description"
+      EntityAttrName="Description"
+      EntityUsage="ImageEntity"
+      AliasName="DESCRIPTION" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Image"
+      IsQueriable="false"
+      EntityAttrName="Image"
+      EntityUsage="ImageEntity"
+      AliasName="IMAGE" >
+   </ViewAttribute>
+</ViewObject>
