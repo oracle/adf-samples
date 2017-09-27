@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.70" id="view1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="currentSelectedValue1" Type="java.lang.String"/>
+       <variable Name="currentSelectedValue2" Type="java.lang.String"/>
+    </variableIterator>
+    <iterator Binds="DeptView1" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="DeptView1Iterator"/>
+    <iterator Binds="EmpView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="EmpView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptView1Iterator" id="DeptView1">
+      <nodeDefinition DefName="test.model.DeptView" Name="DeptView10">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="variables" id="currentSelectedValue1Binding">
+      <AttrNames>
+        <Item Value="currentSelectedValue1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="currentSelectedValue2Binding">
+      <AttrNames>
+        <Item Value="currentSelectedValue2"/>
+      </AttrNames>
+    </attributeValues>    
+    <tree IterBinding="EmpView1Iterator" id="EmpView1">
+      <nodeDefinition DefName="test.model.EmpView">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Sal"/>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

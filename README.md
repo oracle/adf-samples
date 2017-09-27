@@ -159,6 +159,7 @@ Each sample is also available in downloadable form in the zips directory.
 * RouterDataAction
 * RowCurrencyJBO35007
 * RowSelectionButtonTestJSF
+* SelectBooleanRadioBasedOnIterator
 
 
 

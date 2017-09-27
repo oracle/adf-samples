@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:inputText readOnly="true"
+                      value="Transaction dirty? #{bindings.DeptView1.transaction.dirty}"
+                      id="it3"/>
+        <af:separator/>
+        <af:inputText readOnly="true"
+                      value="Selected row index in radio deptGroup is #{View1.selectedControl1.selectedIndex} and value of Loc from selected row = [#{bindings.currentSelectedValue1Binding.inputValue}]"
+                      id="it1"/>
+        <af:iterator value="#{bindings.DeptView1.collectionModel}" var="row"
+                     varStatus="status">
+          <af:selectBooleanRadio valueChangeListener="#{View1.onSelectBoolean1RadioChanged}"
+                                 autoSubmit="true" id="sbr1" group="deptGroup"
+                                 value="#{View1.selectedControl1.map[status.index]}"
+                                 text="#{row.Dname}"></af:selectBooleanRadio>
+        </af:iterator>
+        <af:separator/>
+        <af:inputText readOnly="true"
+                      value="Selected row index in radio empGroup #{View1.selectedControl2.selectedIndex} and value of Empno from selected row = [#{bindings.currentSelectedValue2Binding.inputValue}]"
+                      id="it2"/>
+        <af:iterator value="#{bindings.EmpView1.collectionModel}" var="row"
+                     varStatus="status">
+          <af:selectBooleanRadio valueChangeListener="#{View1.onSelectBoolean2RadioChanged}"
+                                 autoSubmit="true" id="sbr3" group="empGroup"
+                                 value="#{View1.selectedControl2.map[status.index]}"
+                                 text="#{row.Ename}"></af:selectBooleanRadio>
+        </af:iterator>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
