@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ExampleCallingStoredProcedure">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:inputText value="#{bindings.v.inputValue}"
+                          label="#{bindings.v.label}"
+                          required="#{bindings.v.mandatory}"
+                          columns="#{bindings.v.displayWidth}">
+              <af:validator binding="#{bindings.v.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.n.inputValue}"
+                          label="#{bindings.n.label}"
+                          required="#{bindings.n.mandatory}"
+                          columns="#{bindings.n.displayWidth}">
+              <af:validator binding="#{bindings.n.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.n.format}"/>
+            </af:inputText>
+            <af:selectInputDate value="#{bindings.d.inputValue}"
+                                label="#{bindings.d.label}"
+                                required="#{bindings.d.mandatory}">
+              <af:validator binding="#{bindings.d.validator}"/>
+              <f:convertDateTime pattern="#{bindings.d.format}"/>
+            </af:selectInputDate>
+            <af:commandButton actionListener="#{bindings.collectDataUsingStoredProcedure.execute}"
+                              text="collectDataUsingStoredProcedure"
+                              disabled="#{!bindings.collectDataUsingStoredProcedure.enabled}"
+                              action="Redirect"/>
+          </af:panelForm>
+          <af:panelHeader text="Data in Example Pkg Table"/>
+          <af:table value="#{bindings.ExamplePkgTable.collectionModel}"
+                    var="row" rows="#{bindings.ExamplePkgTable.rangeSize}"
+                    first="#{bindings.ExamplePkgTable.rangeStart}"
+                    emptyText="#{bindings.ExamplePkgTable.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column sortProperty="V" sortable="false"
+                       headerText="#{bindings.ExamplePkgTable.labels.V}">
+              <af:outputText value="#{row.V}"/>
+            </af:column>
+            <af:column sortProperty="D" sortable="false"
+                       headerText="#{bindings.ExamplePkgTable.labels.D}">
+              <af:outputText value="#{row.D}">
+                <f:convertDateTime pattern="#{bindings.ExamplePkgTable.formats.D}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="N" sortable="false"
+                       headerText="#{bindings.ExamplePkgTable.labels.N}">
+              <af:outputText value="#{row.N}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.ExamplePkgTable.formats.N}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

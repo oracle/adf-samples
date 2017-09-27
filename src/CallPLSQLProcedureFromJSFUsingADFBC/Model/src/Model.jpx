@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="Model"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="scott" />
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_jprName" Value="../Model.jpr" />
+      <Attr Name="_appModuleNames0" Value="example.ExampleModule" />
+   </DesignTime>
+   <Containee
+      Name="example"
+      FullName="example.example"
+      ObjectType="JboPackage" >
+   </Containee>
+</JboProject>
