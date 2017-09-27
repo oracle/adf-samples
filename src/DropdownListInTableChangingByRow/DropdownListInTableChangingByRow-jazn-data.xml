@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'windows-1252' standalone = 'yes'?>
+<jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data-10_0.xsd" filepath="" OC4J_INSTANCE_ID="">
+  <jazn-realm>
+    <realm>
+      <name>jazn.com</name>
+      <users>
+                <user>
+                    <name>DataBase_User_OyvtnkX4a7W0dix5tYK2AHhXTwm--vAO</name>
+                    <credentials>{903}OyvtnkX4a7W0dix5tYK2AHhXTwm++vAO</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_a6nuv_C5y9QQXfqzwnfEN7W7tBLESKhd</name>
+                    <credentials>{903}a6nuv/C5y9QQXfqzwnfEN7W7tBLESKhd</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User__9kXeH6OVjq4SaEX-MD0D_mSvzPrNrMo</name>
+                    <credentials>{903}/9kXeH6OVjq4SaEX+MD0D/mSvzPrNrMo</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_jKosytsajXeq3OCnQwHKjdCTXfVKEfM8</name>
+                    <credentials>{903}jKosytsajXeq3OCnQwHKjdCTXfVKEfM8</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_jbJkRqM8aRn1NfP6neejvXbrNHrVJCRB</name>
+                    <credentials>{903}jbJkRqM8aRn1NfP6neejvXbrNHrVJCRB</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_ktEjA0A5hgCDBZadqztl_Xh__iSgc7x2</name>
+                    <credentials>{903}ktEjA0A5hgCDBZadqztl/Xh//iSgc7x2</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_geGxT85tbQQ_kGoWneEFrgqRsocqTH5l</name>
+                    <credentials>{903}geGxT85tbQQ/kGoWneEFrgqRsocqTH5l</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_59UeM0ugxrR6UaFLWw1TGzJNPB02bQYf</name>
+                    <credentials>{903}59UeM0ugxrR6UaFLWw1TGzJNPB02bQYf</credentials>
+                </user>
+            </users>
+      <roles/>
+    </realm>
+  </jazn-realm>
+</jazn-data>

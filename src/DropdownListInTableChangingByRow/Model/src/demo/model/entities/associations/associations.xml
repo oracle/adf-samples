@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="associations"
+   SeparateXMLFiles="true"
+   PackageName="demo.model.entities.associations" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="DeptMgrFkAssoc"
+      FullName="demo.model.entities.associations.DeptMgrFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmpDeptFkAssoc"
+      FullName="demo.model.entities.associations.EmpDeptFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmpManagerFkAssoc"
+      FullName="demo.model.entities.associations.EmpManagerFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+</JboPackage>

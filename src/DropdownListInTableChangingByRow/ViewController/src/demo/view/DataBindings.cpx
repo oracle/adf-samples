@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.36.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="demo.view" ClientType="Generic">
+  <pageMap>
+    <page path="/DropdownListInTableChangingByRow.jspx"
+          usageId="DropdownListInTableChangingByRowPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="DropdownListInTableChangingByRowPageDef"
+          path="demo.view.pageDefs.DropdownListInTableChangingByRowPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRModuleDataControl" Package="demo.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRModuleLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

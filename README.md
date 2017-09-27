@@ -82,6 +82,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DRM010_UKOUGMobile
 * DRM011_MessagePrioritization
 * DRM012_DeploymentPlan
+* DropdownListInTableChangingByRow
 
 
 

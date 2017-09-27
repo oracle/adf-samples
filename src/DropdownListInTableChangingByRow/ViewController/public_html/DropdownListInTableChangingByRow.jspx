@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="DropdownListInTableChangingByRow">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelPage title="Editable Table with Dropdown List Different per Row">
+            <f:facet name="menu1"/>
+            <f:facet name="menuGlobal">
+              <h:panelGroup>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit"/>
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Rollback"
+                                  immediate="true">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </h:panelGroup>
+            </f:facet>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <af:panelHorizontal valign="top">
+              <af:commandButton actionListener="#{bindings.refreshLovEmps.execute}"
+                                text="refreshLovEmps"
+                                disabled="#{!bindings.refreshLovEmps.enabled}"
+                                id="RefreshLOVButton"/>
+              <af:panelTip>
+                <af:outputText value="Clicking this button calls a custom application module method to refresh the cached LOV rows. This would, for example, refresh the list to include a new employee added to the database via some other application."/>
+              </af:panelTip>
+            </af:panelHorizontal>
+            <af:objectSeparator/>
+            <af:panelHorizontal valign="top">
+              <af:table value="#{bindings.Departments.collectionModel}"
+                        var="row" rows="#{bindings.Departments.rangeSize}"
+                        first="#{bindings.Departments.rangeStart}"
+                        emptyText="#{bindings.Departments.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        partialTriggers="RefreshLOVButton EmployeesTable EmployeeFirstName EmployeeLastName EmployeeDepartmentId SubmitButton">
+                <af:column headerText="#{bindings.Departments.labels.DepartmentId}"
+                           sortProperty="DepartmentId" sortable="false">
+                  <af:outputText value="#{row.DepartmentId}">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.Departments.formats.DepartmentId}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Departments.labels.DepartmentName}"
+                           sortProperty="DepartmentName" sortable="false">
+                  <af:outputText value="#{row.DepartmentName}"/>
+                  <af:panelTip>
+                    <af:outputText value="Notice that when the LOV uses an entity-based view object for the list, that pending changes to employee first name, last name, or department id are reflected immediately during the pending transaction in the LOV list. An LOV based on a read-only view object is appropriate if there's no change its data might be changing during the current multi-page unit of work."
+                                   inlineStyle="font-size:small;"/>
+                  </af:panelTip>
+                </af:column>
+                <af:column headerText="#{bindings.Departments.labels.ManagerId}"
+                           sortProperty="ManagerId" sortable="false">
+                  <af:selectOneChoice value="#{row.ManagerId}">
+                    <f:selectItems value="#{DropdownListInTableChangingByRow.lovList[row.DepartmentId]}"/>
+                  </af:selectOneChoice>
+                </af:column>
+              </af:table>
+              <af:objectSpacer width="10" height="10"/>
+              <af:panelGroup>
+                <af:outputText value="LOV View Object to Use..."
+                               inlineStyle="font-weight:bold;"/>
+                <af:selectOneRadio autoSubmit="true"
+                                   value="#{DropdownListInTableChangingByRow.lovStyleToUse}">
+                  <af:selectItem label="Entity-Based" value="1"/>
+                  <af:selectItem label="Read-Only" value="2"/>
+                </af:selectOneRadio>
+                <af:panelTip/>
+              </af:panelGroup>
+            </af:panelHorizontal>
+            <af:panelHeader text="Editable Table to Update Employee Information">
+              <af:commandButton text="Submit" disabled="false"
+                                id="SubmitButton"/>
+              <af:table value="#{bindings.Employees.collectionModel}" var="row"
+                        rows="#{bindings.Employees.rangeSize}"
+                        first="#{bindings.Employees.rangeStart}"
+                        emptyText="#{bindings.Employees.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        id="EmployeesTable">
+                <af:column headerText="#{bindings.Employees.labels.EmployeeId}"
+                           sortProperty="EmployeeId" sortable="true">
+                  <af:outputText value="#{row.EmployeeId}">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.Employees.formats.EmployeeId}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Employees.labels.FirstName}"
+                           sortProperty="FirstName" sortable="true">
+                  <af:inputText value="#{row.FirstName}" simple="true"
+                                required="#{bindings.Employees.attrDefs.FirstName.mandatory}"
+                                columns="#{bindings.Employees.attrHints.FirstName.displayWidth}"
+                                autoSubmit="true" id="EmployeeFirstName"/>
+                </af:column>
+                <af:column headerText="#{bindings.Employees.labels.LastName}"
+                           sortProperty="LastName" sortable="true">
+                  <af:inputText value="#{row.LastName}" simple="true"
+                                required="#{bindings.Employees.attrDefs.LastName.mandatory}"
+                                columns="#{bindings.Employees.attrHints.LastName.displayWidth}"
+                                autoSubmit="true" id="EmployeeLastName"/>
+                </af:column>
+                <af:column headerText="#{bindings.Employees.labels.DepartmentId}"
+                           sortProperty="DepartmentId" sortable="true">
+                  <af:inputText value="#{row.DepartmentId}"
+                                required="#{bindings.Employees.attrDefs.DepartmentId.mandatory}"
+                                columns="#{bindings.Employees.attrHints.DepartmentId.displayWidth}"
+                                autoSubmit="true" id="EmployeeDepartmentId">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.Employees.formats.DepartmentId}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:panelHeader>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

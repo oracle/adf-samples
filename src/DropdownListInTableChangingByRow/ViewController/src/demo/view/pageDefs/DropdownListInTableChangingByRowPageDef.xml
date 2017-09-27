@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73"
+                id="DropdownListInTableChangingByRowPageDef"
+                Package="demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="DepartmentsIterator" RangeSize="3" Binds="Departments"
+              DataControl="HRModuleDataControl"/>
+    <iterator id="EmployeesIterator" RangeSize="4" Binds="Employees"
+              DataControl="HRModuleDataControl"/>
+  </executables>
+  <bindings>
+    <table id="Departments" IterBinding="DepartmentsIterator">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+        <Item Value="DepartmentName"/>
+        <Item Value="ManagerId"/>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </table>
+    <methodAction id="refreshLovEmps"
+                  InstanceName="HRModuleDataControl.dataProvider"
+                  DataControl="HRModuleDataControl" MethodName="refreshLovEmps"
+                  RequiresUpdateModel="true" Action="999"/>
+    <action id="Commit" InstanceName="HRModuleDataControl"
+            DataControl="HRModuleDataControl" RequiresUpdateModel="true"
+            Action="100"/>
+    <action id="Rollback" InstanceName="HRModuleDataControl"
+            DataControl="HRModuleDataControl" RequiresUpdateModel="false"
+            Action="101"/>
+    <table id="Employees" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+        <Item Value="FirstName"/>
+        <Item Value="LastName"/>
+        <Item Value="Email"/>
+        <Item Value="PhoneNumber"/>
+        <Item Value="HireDate"/>
+        <Item Value="JobId"/>
+        <Item Value="Salary"/>
+        <Item Value="CommissionPct"/>
+        <Item Value="ManagerId"/>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </table>
+  </bindings>
+</pageDefinition>

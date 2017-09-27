@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmployeesList"
+   SelectList="Employee.EMPLOYEE_ID, 
+       Employee.DEPARTMENT_ID, 
+       Employee.FIRST_NAME, 
+       Employee.LAST_NAME"
+   FromList="EMPLOYEES Employee"
+   OrderBy="last_name, first_name"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="demo.model.queries.EmployeesListRowImpl"
+   FetchMode="FETCH_ALL"
+   FetchSize="150"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Employee"
+      Entity="demo.model.entities.Employee" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryOrderBy" Value="last_name, first_name" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Value"
+      IsNotNull="true"
+      EntityAttrName="EmployeeId"
+      EntityUsage="Employee"
+      AliasName="EMPLOYEE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Label"
+      IsUpdateable="false"
+      IsSelected="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Filter"
+      EntityAttrName="DepartmentId"
+      EntityUsage="Employee"
+      AliasName="DEPARTMENT_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FirstName"
+      EntityAttrName="FirstName"
+      EntityUsage="Employee"
+      AliasName="FIRST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastName"
+      IsNotNull="true"
+      EntityAttrName="LastName"
+      EntityUsage="Employee"
+      AliasName="LAST_NAME" >
+   </ViewAttribute>
+</ViewObject>

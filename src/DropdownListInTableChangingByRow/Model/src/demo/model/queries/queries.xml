@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="queries"
+   SeparateXMLFiles="true"
+   PackageName="demo.model.queries" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="Departments"
+      FullName="demo.model.queries.Departments"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="Employees"
+      FullName="demo.model.queries.Employees"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmployeesList"
+      FullName="demo.model.queries.EmployeesList"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ReadOnlyEmployeesList"
+      FullName="demo.model.queries.ReadOnlyEmployeesList"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>
