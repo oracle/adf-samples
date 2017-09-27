@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Dept"
+   DBObjectType="table"
+   DBObjectName="DEPT"
+   AliasName="Dept"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="demo.model.businessobjects.DeptImpl"
+   DefClass="demo.model.businessobjects.DeptDefImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_codeGenFlag2" Value="Access|Def" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Deptno"
+      IsNotNull="true"
+      Precision="2"
+      Scale="0"
+      ColumnName="DEPTNO"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="DEPT"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Dname"
+      Precision="14"
+      ColumnName="DNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="DEPT" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="14" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Loc"
+      Precision="13"
+      ColumnName="LOC"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="DEPT" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="13" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Emp"
+      Association="demo.model.businessobjects.WorksInDeptAssoc"
+      AssociationEnd="demo.model.businessobjects.WorksInDeptAssoc.Emp"
+      AssociationOtherEnd="demo.model.businessobjects.WorksInDeptAssoc.Dept"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="DeptPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.businessobjects.Dept.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="DEPT_PK" />
+         <Attr Name="_isPrimary" Value="true" />
+      </DesignTime>
+   </Key>
+</Entity>
