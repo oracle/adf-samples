@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">FilteredTreeShowingInterimNodes</property>
+      <property
+         name="page">/FilteredTreeShowingInterimNodes.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - FilteredTreeShowingInterimNodes&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - FilteredTreeShowingInterimNodes</property>
+      <property
+         name="y">151.0</property>
+      <property
+         name="x">285.0</property>
+   </View>
+</SDM>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.varEname.inputValue}"
+                        label="#{bindings.varEname.hints.label}"
+                        required="#{bindings.varEname.hints.mandatory}"
+                        columns="#{bindings.varEname.hints.displayWidth}"
+                        maximumLength="#{bindings.varEname.hints.precision}"
+                        shortDesc="#{bindings.varEname.hints.tooltip}" id="it1">
+            <f:validator binding="#{bindings.varEname.validator}"/>
+          </af:inputText>
+          <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                            text="ExecuteWithParams"
+                            disabled="#{!bindings.ExecuteWithParams.enabled}"
+                            id="cb1" partialTriggers="t1"/>
+        </af:panelFormLayout>
+        <af:tree value="#{bindings.EmpView1.treeModel}" var="node"
+                 selectionListener="#{bindings.EmpView1.treeModel.makeCurrent}"
+                 rowSelection="single" id="t1">
+          <f:facet name="nodeStamp">
+            <af:outputText value="#{node}" id="ot1"/>
+          </f:facet>
+        </af:tree>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

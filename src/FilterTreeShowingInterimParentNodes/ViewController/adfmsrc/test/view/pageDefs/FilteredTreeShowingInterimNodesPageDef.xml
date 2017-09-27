@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7"
+                id="FilteredTreeShowingInterimNodesPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AppModuleDataControl"
+                     Binds="EmpView1.variablesMap.varEname"
+                     Name="ExecuteWithParams_varEname" IsQueriable="false">
+        <Properties xmlns="http://xmlns.oracle.com/adfm/beanmodel">
+          <SchemaBasedProperties>
+            <LABEL ResId="ExecuteWithParams_varEname_LABEL"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </variableUsage>
+    </variableIterator>
+    <iterator Binds="EmpView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmpView1Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmpView1Iterator" id="EmpView1">
+      <nodeDefinition DefName="test.model.EmpView" Name="EmpView1.0">
+        <AttrNames>
+          <Item Value="Ename"/>
+          <Item Value="Empno"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmpView_2"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmpView1Iterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="varEname" NDType="java.lang.String"
+                 NDValue="${bindings.ExecuteWithParams_varEname}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="varEname">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_varEname"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="test.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>
