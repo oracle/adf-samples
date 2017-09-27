@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Project"
+  SeparateXMLFiles="true"
+  PackageName="oracle.fod">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../Project.jpr"/>
+    <Attr Name="_version" Value="11.1.1.46.66"/>
+    <Attr Name="_NamedConnection" Value="scott"/>
+    <Attr Name="_appModuleNames0" Value="oracle.fod.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="fod"
+    FullName="oracle.fod.fod"
+    ObjectType="JboPackage"/>
+</JboProject>

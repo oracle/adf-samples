@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ns2:References xmlns:ns2="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="scott" credentialStoreKey="scott" className="oracle.jdeveloper.db.adapter.DatabaseProvider">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>adt1010</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>adt-scaler1.us.oracle.com</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>smuench</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="DeployPassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</ns2:References>

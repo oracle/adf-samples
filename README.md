@@ -28,5 +28,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ADFRichMultiSelectProcess
 * ADFToyStoreJSF
 * ADFWebAppWithComponentSubstitution
+* ArrayOfStringDomain
+* ArrayOfStringDomain11g
 
 
