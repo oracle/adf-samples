@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <web-module id="AddMessageWhenNoRowsFound-ViewController-webapp" path="file:/D:/jdev/home/mywork/AddMessageWhenNoRowsFound/ViewController/public_html/"/>
+    <log>
+        <file path="AddMessageWhenNoRowsFound-oc4j-app.log"/>
+    </log>
+    <jazn provider="XML" location="AddMessageWhenNoRowsFound-jazn-data.xml" default-realm="jazn.com"/>
+    <data-sources path="AddMessageWhenNoRowsFound-data-sources.xml"/>
+</orion-application>
