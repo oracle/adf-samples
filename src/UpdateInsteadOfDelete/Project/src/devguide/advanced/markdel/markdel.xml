@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="markdel"
+   SeparateXMLFiles="true"
+   PackageName="devguide.advanced.markdel" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.18.73" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Emp"
+      FullName="devguide.advanced.markdel.Emp"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="devguide.advanced.markdel.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ExampleModule"
+      FullName="devguide.advanced.markdel.ExampleModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>

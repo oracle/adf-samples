@@ -186,6 +186,7 @@ Each sample is also available in downloadable form in the zips directory.
 * UIShellDemo
 * UIXRefreshExample
 * UpdateCommitRollbackButtonsOnDataChange
+* UpdateInsteadOfDelete
 
 
 

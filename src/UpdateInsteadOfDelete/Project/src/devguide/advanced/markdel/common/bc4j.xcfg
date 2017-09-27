@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="ExampleModuleLocal">
+         <AppModuleJndiName>devguide.advanced.markdel.ExampleModule</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <ApplicationName>devguide.advanced.markdel.ExampleModule</ApplicationName>
+         <jbo.project>Project</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="scott"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="XE"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.driver.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}058B1FB51F2F81B7433A3E5E14A99377D1]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>
