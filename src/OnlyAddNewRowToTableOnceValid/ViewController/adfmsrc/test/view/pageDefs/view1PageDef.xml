@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="view1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="CreateDeptViewIterator" Binds="CreateDeptView"
+              DataControl="AppModuleDataControl" RangeSize="25"/>
+    <iterator Binds="DeptView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DeptView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CreateDeptViewIterator" id="Deptno">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateDeptViewIterator" id="Dname">
+      <AttrNames>
+        <Item Value="Dname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CreateDeptViewIterator" id="Loc">
+      <AttrNames>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CreateDeptViewIterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="CreateDeptViewIterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"
+            InstanceName="AppModuleDataControl.CreateDeptView"
+            DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="DeptView1Iterator" id="DeptView1">
+      <nodeDefinition DefName="test.model.DeptView" Name="DeptView10">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DeptView1Iterator" id="removeRowWithKey"
+            InstanceName="AppModuleDataControl.DeptView1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false"
+            Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

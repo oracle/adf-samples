@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" maximized="false">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl1">
+          <af:commandButton text="Create"
+                            disabled="#{viewScope.createFormVisible}"
+                            id="cb1"
+                            actionListener="#{bindings.Create.execute}">
+            <af:setActionListener from="#{true}"
+                                  to="#{viewScope.createFormVisible}"/>
+          </af:commandButton>
+          <af:commandButton actionListener="#{bindings.Commit.execute}"
+                            text="Commit" id="cb2"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback" immediate="true" id="cb4">
+            <af:resetActionListener/>
+          </af:commandButton>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pgl3" partialTriggers="cb1"
+                             layout="vertical">
+          <af:panelBox text="Enter information for new department" id="pb1" showDisclosure="false"
+                       type="flow"
+                       visible="#{viewScope.createFormVisible}"
+                       inlineStyle="width:350px;">
+            <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl1"
+                                visible="true">
+              <af:inputText value="#{bindings.Deptno.inputValue}"
+                            label="#{bindings.Deptno.hints.label}"
+                            required="#{bindings.Deptno.hints.mandatory}"
+                            columns="#{bindings.Deptno.hints.displayWidth}"
+                            maximumLength="#{bindings.Deptno.hints.precision}"
+                            shortDesc="#{bindings.Deptno.hints.tooltip}"
+                            id="it99" autoSubmit="true">
+                <f:validator binding="#{bindings.Deptno.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Deptno.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Dname.inputValue}"
+                            label="#{bindings.Dname.hints.label}"
+                            required="#{bindings.Dname.hints.mandatory}"
+                            columns="#{bindings.Dname.hints.displayWidth}"
+                            maximumLength="#{bindings.Dname.hints.precision}"
+                            shortDesc="#{bindings.Dname.hints.tooltip}" id="it2"
+                            autoSubmit="true">
+                <f:validator binding="#{bindings.Dname.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Loc.inputValue}"
+                            label="#{bindings.Loc.hints.label}"
+                            required="#{bindings.Loc.hints.mandatory}"
+                            columns="#{bindings.Loc.hints.displayWidth}"
+                            maximumLength="#{bindings.Loc.hints.precision}"
+                            shortDesc="#{bindings.Loc.hints.tooltip}" id="it3"
+                            autoSubmit="true">
+                <f:validator binding="#{bindings.Loc.validator}"/>
+              </af:inputText>
+              <f:facet name="footer">
+                <af:panelGroupLayout id="pgl2" visible="true">
+                  <af:commandButton text="OK" id="cb3">
+                    <af:setActionListener from="#{false}"
+                                          to="#{viewScope.createFormVisible}"/>
+                  </af:commandButton>
+                  <af:commandButton
+                                    text="Cancel"
+                                    disabled="#{!bindings.Delete.enabled}"
+                                    id="cb5" partialTriggers="t1"
+                                    immediate="true"
+                                    actionListener="#{bindings.Delete.execute}">
+                    <af:setActionListener from="#{false}"
+                                          to="#{viewScope.createFormVisible}"/>
+                    <af:resetActionListener/>
+                  </af:commandButton>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelFormLayout>
+          </af:panelBox>
+          <!--
+                    selectionListener="#{bindings.DeptView1.collectionModel.makeCurrent}"
+                    selectedRowKeys="#{bindings.DeptView1.collectionModel.selectedRow}"
+                    rowSelection="single"
+          -->
+          <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                    rows="#{bindings.DeptView1.rangeSize}"
+                    emptyText="#{bindings.DeptView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.DeptView1.rangeSize}"
+                    rowBandingInterval="0"
+                    id="t1" columnStretching="column:c1"
+                    inlineStyle="width:350px;" editingMode="clickToEdit"
+                    contentDelivery="immediate" autoHeightRows="10">
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.DeptView1.hints.Deptno.label}"
+                       id="c2">
+              <af:outputText value="#{row.Deptno}" id="ot1">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DeptView1.hints.Deptno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="false"
+                       headerText="#{bindings.DeptView1.hints.Dname.label}"
+                       id="c3">
+              <af:inputText value="#{row.bindings.Dname.inputValue}"
+                            label="#{bindings.DeptView1.hints.Dname.label}"
+                            required="#{bindings.DeptView1.hints.Dname.mandatory}"
+                            columns="#{bindings.DeptView1.hints.Dname.displayWidth}"
+                            maximumLength="#{bindings.DeptView1.hints.Dname.precision}"
+                            shortDesc="#{bindings.DeptView1.hints.Dname.tooltip}"
+                            id="it4" readOnly="#{viewScope.createFormVisible}">
+                <f:validator binding="#{row.bindings.Dname.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="false"
+                       headerText="#{bindings.DeptView1.hints.Loc.label}"
+                       id="c1">
+              <af:inputText value="#{row.bindings.Loc.inputValue}"
+                            label="#{bindings.DeptView1.hints.Loc.label}"
+                            required="#{bindings.DeptView1.hints.Loc.mandatory}"
+                            columns="#{bindings.DeptView1.hints.Loc.displayWidth}"
+                            maximumLength="#{bindings.DeptView1.hints.Loc.precision}"
+                            shortDesc="#{bindings.DeptView1.hints.Loc.tooltip}"
+                            readOnly="#{viewScope.createFormVisible}"
+                            id="it1">
+                <f:validator binding="#{row.bindings.Loc.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column id="c4" minimumWidth="16" width="18">
+              <af:commandImageLink icon="/images/removexicon.jpg"
+                                   actionListener="#{bindings.removeRowWithKey.execute}"/>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

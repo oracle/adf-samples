@@ -131,6 +131,7 @@ Each sample is also available in downloadable form in the zips directory.
 * NestedTransactionExample
 * NestedViewLink
 * NonLinearNavigation
+* OnlyAddNewRowToTableOnceValid
 
 
 
