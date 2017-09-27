@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandButton text="Try TestPageTwo.jspx" action="overToTwo"/>
+          <af:objectSeparator/>
+          <af:panelBox width="100%" text="Overview">
+            <af:outputText value="This page illustrates using a view object with a design-time-supplied bind variable, whose query returns all rows when the bind variable value is null."/>
+            <af:objectSpacer width="10" height="10"/>
+            <af:outputText value="URL parameter 'dname' is #{empty param.dname ? 'not supplied' : 'equal to '} #{param.dname}"/>
+            <af:objectSpacer width="10" height="10"/>
+            <af:panelTip>
+              <af:outputText value="Use the asterisk character in the 'dname' parameter value for a search wildcard instead of the '%' character."/>
+            </af:panelTip>
+          </af:panelBox>
+          <af:switcher defaultFacet="multiple"
+                       facetName="#{bindings.DeptViewWithBindVariable.estimatedRowCount > 1 ? 'multiple' : bindings.DeptViewWithBindVariable.estimatedRowCount == 0 ? 'zero' : 'one' }">
+            <f:facet name="one">
+              <af:panelForm>
+                <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+                  <af:outputText value="#{bindings.Deptno.inputValue}">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.Deptno.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+                  <af:outputText value="#{bindings.Dname.inputValue}"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+                  <af:outputText value="#{bindings.Loc.inputValue}"/>
+                </af:panelLabelAndMessage>
+              </af:panelForm>
+            </f:facet>
+            <f:facet name="multiple">
+              <af:table value="#{bindings.DeptViewWithBindVariable.collectionModel}" var="row"
+                        rows="#{bindings.DeptViewWithBindVariable.rangeSize}"
+                        first="#{bindings.DeptViewWithBindVariable.rangeStart}"
+                        emptyText="#{bindings.DeptViewWithBindVariable.viewable ? 'No rows yet.' : 'Access Denied.'}">
+                <af:column headerText="#{bindings.DeptViewWithBindVariable.labels.Deptno}"
+                           sortProperty="Deptno" sortable="false">
+                  <af:outputText value="#{row.Deptno}">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.DeptViewWithBindVariable.formats.Deptno}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.DeptViewWithBindVariable.labels.Dname}"
+                           sortProperty="Dname" sortable="false">
+                  <af:outputText value="#{row.Dname}"/>
+                </af:column>
+                <af:column headerText="#{bindings.DeptViewWithBindVariable.labels.Loc}"
+                           sortProperty="Loc" sortable="false">
+                  <af:outputText value="#{row.Loc}"/>
+                </af:column>
+              </af:table>
+            </f:facet>
+            <f:facet name="zero">
+              <af:outputText value="No Departments Identified"/>
+            </f:facet>
+          </af:switcher>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
