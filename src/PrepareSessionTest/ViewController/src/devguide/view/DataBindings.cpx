@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.36.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="devguide.view" ClientType="Generic">
+  <pageMap>
+    <page path="/untitled1.jsp" usageId="untitled1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="untitled1PageDef" path="devguide.view.pageDefs.untitled1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="devguide.model"
+                     FactoryClass="devguide.view.MyDataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
