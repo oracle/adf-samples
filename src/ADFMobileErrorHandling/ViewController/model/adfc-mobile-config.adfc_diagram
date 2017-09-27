@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ShowErrors</property>
+      <property
+         name="page">/ShowErrors.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ShowErrors&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">270.79883</property>
+      <property
+         name="x">218.3418</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">ShowErrorsClean</property>
+      <property
+         name="page">/ShowErrorsClean.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ShowErrorsClean&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">271.09766</property>
+      <property
+         name="x">461.01855</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">go</property>
+      <property
+         name="sdm:polyPoints">R50,259.3418,270.44824,420.01855,270.74707,L50</property>
+   </ControlFlowCase>
+</SDM>

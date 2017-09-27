@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="MessageUtils Demo" id="ot1"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:commandButton text="AdfException" id="cb1" actionListener="#{viewScope.ErrorBeanClean.throwExInPrimaryThread}"/>
+      <amx:commandButton text="AdfException in Background" id="cb2" actionListener="#{viewScope.ErrorBeanClean.throwExInBackgroundThread}"/>
+      <amx:commandButton text="ResourceBundle AdfException" id="cb4" actionListener="#{viewScope.ErrorBeanClean.throwRBExInPrimaryThread}"/>
+      <amx:commandButton text="ResourceBundle AdfException in Background" id="cb5" actionListener="#{viewScope.ErrorBeanClean.throwRBExInBackgroundThread}"/>
+    </amx:panelGroupLayout>
+    <amx:facet name="primary">
+      <amx:commandButton text="Back" action="__back" id="cb3"/>
+    </amx:facet>
+  </amx:panelPage>
+</amx:view>

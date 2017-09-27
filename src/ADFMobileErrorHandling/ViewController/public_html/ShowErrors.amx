@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:loadBundle basename="oracle.ateam.errorhandling.demo.mobile.ViewControllerBundle" var="viewcontrollerBundle"
+                  id="lb1"/>
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Error Demo" id="ot1"/>
+    </amx:facet>
+    <amx:panelGroupLayout id="pgl1" layout="vertical">
+      <amx:commandButton text="AdfException" id="cb1" actionListener="#{viewScope.ErrorBean.throwExInPrimaryThread}"/>
+      <amx:commandButton text="AdfException in Background" id="cb2" actionListener="#{viewScope.ErrorBean.throwExInBackgroundThread}"/>
+      <amx:commandButton text="JavaScript addMessage in Background" id="cb3" actionListener="#{viewScope.ErrorBean.addJSMessageInBackgroundThread}"/>
+      <amx:commandButton text="ResourceBundle AdfException" id="cb4" actionListener="#{viewScope.ErrorBean.throwRBExInPrimaryThread}"/>
+      <amx:commandButton text="ResourceBundle JavaScript addMessage in Background" id="cb5" actionListener="#{viewScope.ErrorBean.addRBJSMessageInBackgroundThread}"/>
+      <amx:outputText value="#{viewcontrollerBundle.INFO_MESSAGE}" id="ot2"/>
+    </amx:panelGroupLayout>
+    <amx:facet name="secondary">
+      <amx:commandButton text="MessageUtils" action="go" id="cb6"/>
+    </amx:facet>
+  </amx:panelPage>
+</amx:view>

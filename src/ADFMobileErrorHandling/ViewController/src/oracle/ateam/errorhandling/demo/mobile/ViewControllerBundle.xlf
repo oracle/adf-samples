@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file source-language="en" original="oracle.ateam.errorhandling.demo.mobile.ViewControllerBundle"
+        datatype="x-oracle-adf">
+    <body>
+      <trans-unit id="MY_ERROR_MESSAGE">
+        <source>Mijn Foutmelding</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="MY_ERROR_MESSAGE_BG">
+        <source>Mijn Foutmelding in achtergrond</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="INFO_MESSAGE">
+        <source>Message coming from ViewControllerBundle.xlf</source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
