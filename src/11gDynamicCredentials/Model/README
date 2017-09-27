@@ -1,0 +1,6 @@
+This project has JDBC connection pooling disabled by setting the configuration
+parameter jbo.maxpoolsize=0 as a Java VM command line parameter.
+
+It also has the jbo.server.internal_connection configuration
+property to a JDBC URL connection string that will be used for state
+management persistent storage.

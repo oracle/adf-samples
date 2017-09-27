@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">main</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - main&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - main</property>
+      <property
+         name="y">83.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">227.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">login</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - login&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - login</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">84.5</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">69.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">main</property>
+      <property
+         name="sdm:polyPoints">R50,110.5,84.5,186.0,83.0,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">anotherPage</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - anotherPage&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - anotherPage</property>
+      <property
+         name="y">80.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">394.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View5">
+      <property
+         name="fromOutcome">TryAnother</property>
+      <property
+         name="sdm:polyPoints">R50,268.0,83.0,353.0,80.0,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View5"
+      to="View2">
+      <property
+         name="fromOutcome">BackToMain</property>
+      <property
+         name="sdm:polyPoints">L54,353.0,83.5,268.1235,86.5,R54</property>
+   </ControlFlowCase>
+</SDM>

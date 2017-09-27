@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                id="browseDepartmentsUIModel" Package="test.view"
+                version="11.1.1.50.40" FindMode="false"
+                EnableTokenValidation="true"
+                ControllerClass="test.MainPageController">
+   <parameters/>
+   <executables>
+      <iterator id="DeptViewIterator" Binds="DeptView" RangeSize="10"
+                DataControl="TestModuleDataControl"/>
+   </executables>
+   <bindings>
+      <table xmlns="http://xmlns.oracle.com/adfm/uimodel" id="DeptView"
+             IterBinding="DeptViewIterator" ApplyValidation="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Deptno"/>
+            <Item Value="Dname"/>
+            <Item Value="Loc"/>
+         </AttrNames>
+      </table>
+   </bindings>
+</pageDefinition>

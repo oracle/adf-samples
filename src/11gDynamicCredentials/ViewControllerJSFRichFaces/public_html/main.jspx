@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:commandButton text="Logout" action="#{Main.onLogoutButtonPressed}"/>
+        <af:commandButton text="Try Another Page" action="TryAnother"/>
+        <af:commandButton actionListener="#{bindings.Execute.execute}"
+                          text="Refresh Data in Table"
+                          disabled="#{!bindings.Execute.enabled}"
+                          partialTriggers="table1"/>
+        <af:table value="#{bindings.DeptView.collectionModel}" var="row"
+                  rows="#{bindings.DeptView.rangeSize}"
+                  emptyText="#{bindings.DeptView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.DeptView.rangeSize}" id="table1">
+          <af:column sortProperty="Deptno" sortable="false"
+                     headerText="#{bindings.DeptView.hints.Deptno.label}">
+            <af:outputText value="#{row.Deptno}">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DeptView.hints.Deptno.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Dname" sortable="false"
+                     headerText="#{bindings.DeptView.hints.Dname.label}">
+            <af:outputText value="#{row.Dname}"/>
+          </af:column>
+          <af:column sortProperty="Loc" sortable="false"
+                     headerText="#{bindings.DeptView.hints.Loc.label}">
+            <af:outputText value="#{row.Loc}"/>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:Main-->
+</jsp:root>

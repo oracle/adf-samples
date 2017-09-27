@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.44" id="loginPageDef"
+                Package="viewjsfrich.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="username_var" Type="java.lang.String"/>
+      <variable Name="password_var" Type="java.lang.String"/>
+      <variable Name="jdbcurl_var" Type="java.lang.String"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="username">
+      <AttrNames>
+        <Item Value="username_var"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="password">
+      <AttrNames>
+        <Item Value="password_var"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="jdbcurl">
+      <AttrNames>
+        <Item Value="jdbcurl_var"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

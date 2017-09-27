@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" id="DataBindings"
+             Package="mypackage1" version="9.0.5.16.0" SeparateXMLFiles="false"
+             ClientType="Generic"
+             ErrorHandlerClass="test.DynamicJDBCDCErrorHandlerImpl">
+   <pageMap>
+      <page path="/main.jsp" usageId="mainPageDef"/>
+   </pageMap>
+   <pageDefinitionUsages>
+      <page id="mainPageDef" path="mypackage1.mainPageDef"/>      
+   </pageDefinitionUsages>
+   <dataControlUsages>
+      <BC4JDataControl Configuration="TestModuleLocal" Package="test.model"
+                       xmlns="http://xmlns.oracle.com/adfm/datacontrol"
+                       id="TestModuleDataControl"
+                       FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                       syncMode="Immediate">
+         <Parameters/>
+      </BC4JDataControl>
+   </dataControlUsages>
+</Application>

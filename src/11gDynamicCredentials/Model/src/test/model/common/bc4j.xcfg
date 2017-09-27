@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.0">
+   <AppModuleConfigBag ApplicationName="test.model.TestModule">
+      <AppModuleConfig jbo.project="Model" DeployPlatform="LOCAL" JDBCName="scott" name="TestModuleLocal" ApplicationName="test.model.TestModule">
+         <AM-Pooling jbo.ampool.maxinactiveage="60000" jbo.poolmonitorsleepinterval="60000" jbo.poolmaxinactiveage="60000" jbo.locking.mode="optimistic" jbo.maxpoolsize="0" jbo.ampool.sessioncookiefactoryclass="test.DynamicJDBCSessionCookieFactory" jbo.poolminavailablesize="0" jbo.ampool.minavailablesize="0" jbo.ampool.monitorsleepinterval="60000"/>
+         <Database jbo.server.internal_connection="jdbc:oracle:thin:scott2/tiger2@localhost:1521:ORCL"/>
+         <Security AppModuleJndiName="test.model.TestModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="TestModuleShared" ApplicationName="test.model.TestModule" DeployPlatform="LOCAL" JDBCName="scott" jbo.project="Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="test.model.TestModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

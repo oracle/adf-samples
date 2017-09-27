@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <Page
+      id="Page1">
+      <property
+         name="wildcard">false</property>
+      <property
+         name="y">184.5</property>
+      <property
+         name="x">379.5</property>
+      <property
+         name="jspName">/login.jsp</property>
+      <property
+         name="realized">false</property>
+   </Page>
+   <Page
+      id="Page2">
+      <property
+         name="wildcard">false</property>
+      <property
+         name="y">184.5</property>
+      <property
+         name="x">489.5</property>
+      <property
+         name="jspName">/main.jsp</property>
+      <property
+         name="realized">false</property>
+   </Page>
+   <OverallProperties
+      id="OverallProperties4"/>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase5"
+      from="Page1"
+      to="Page2">
+      <property
+         name="fromOutcome">main</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">Navigation Case&lt;/p>&lt;/html></property>
+      <property
+         name="label">main</property>
+      <property
+         name="rawDescription">Navigation Case</property>
+   </NavigationCase>
+</SDM>

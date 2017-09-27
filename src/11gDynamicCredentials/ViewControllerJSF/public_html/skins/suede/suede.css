@@ -1,0 +1,1625 @@
+/*
+ *  Licensed to the Apache Software Foundation (ASF) under one
+ *  or more contributor license agreements.  See the NOTICE file
+ *  distributed with this work for additional information
+ *  regarding copyright ownership.  The ASF licenses this file
+ *  to you under the Apache License, Version 2.0 (the
+ *  "License"); you may not use this file except in compliance
+ *  with the License.  You may obtain a copy of the License at
+ * 
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Unless required by applicable law or agreed to in writing,
+ *  software distributed under the License is distributed on an
+ *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ *  KIND, either express or implied.  See the License for the
+ *  specific language governing permissions and limitations
+ *  under the License.
+ */
+ 
+/*
+     Global Color Styles:  oracle-desktop inherits most of the named
+     color styles from base-desktop, but needs to override some of
+     the styles to change the color ramps from green/grey to blue/tan.
+ */
+
+.AFDefaultFontFamily:alias {
+    font-family: Arial,Helvetica,Geneva,sans-serif;
+}
+.AFDefaultFont:alias {
+    -tr-rule-ref:selector(".AFDefaultFontFamily:alias");
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.AFSelectedTextForeground:alias{
+    color:#FFFFFF;
+}
+
+.AFDefaultBoldFont:alias{
+     -tr-rule-ref:selector(".AFDefaultFontFamily:alias");
+     font-weight: bold;
+}
+
+
+.TableCellHeaderBorderColor:alias{
+    border-color:#F7F7E7;
+}
+
+.AFLightAccentBorder:alias{
+    border-style:inset;
+    border-width:2px;
+}
+
+
+
+
+/*  Change the accent color ramp to tan */
+.AFDarkAccentBackground:alias {
+    background-color: #d2d8b0;  /* tan */
+}
+
+.AFDarkAccentBorder:alias{
+   border-color:#CCCCCC;
+}
+
+/* Change core color ramp to blue */
+.AFDarkBackground:alias {
+    background-color: #336699; /* blue */
+}
+.AFLightAccentBackground:alias {
+    background-color: #F7F7E7;  /* light tan */
+}
+.AFMediumAccentBackground:alias {
+    background-color: #FFFFE3;  /* cream */
+}  
+.AFMediumBackground:alias {
+    background-color: #F7F7E7;  /* light tan */
+}
+.AFDarkBorder:alias {
+    background-color: #6699CC;  /* dark blue */
+}
+
+.AFInstructionText:alias {
+  color: #000000;  /* black */
+}
+.AFInstructionTextDisabled:alias {
+  color: #999999;  /* dark grey */
+}
+.AFTextForeground:alias {
+  color: #000000;  /* black */
+}
+
+.AFCenterTextAlign:alias{
+    text-align:center;
+}
+
+.DarkShadowAccentBackground:alias {
+    background-color: #666633;  /* dark olive */
+}  
+.TextForegroundDarkBackground:alias {
+    color: #336699;  /* blue */
+}
+
+.AFTableCellDataText:alias{
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFTextForeground:alias");
+}
+
+.VeryDarkShadowAccentBackground:alias {
+    background-color: #333300; /* very dark brown */
+} 
+
+
+/* Link colors */
+.AFLinkForeground:alias {
+    color: #663300;  /* dark brown */
+}  
+
+.AFActiveLinkForeground:alias {
+    color: #ff6600;  /* orange */
+}  
+
+.AFVisitedLinkForeground:alias {
+    color: #996633;  /* light brown */
+}  
+
+.AFDisabledLinkForeground:alias {
+    color: #999966; /* dark tan */
+}
+
+/* Icon for discloesd and undisclosed states */
+.AFDetailDisclosedIcon:alias {
+ content:url('/skins/suede/images/hsd.gif');
+}
+
+.AFDetailUndisclosedIcon:alias {
+ content:url('/skins/suede/images/hsu.gif');
+}
+
+/* Icon */
+.AFErrorIcon:alias {
+    content: url("images/err.gif");
+    height: 16px;width: 16px;
+}
+.AFInfoIcon:alias {
+    content: url("images/info.gif");
+    height: 16px;width: 16px;
+}
+.AFWarningIcon:alias {
+    content: url("images/warn.gif");
+    height: 16px;width: 16px;
+}
+
+.AFRequiredIconStyle {
+    color: #336699;
+}
+
+.AFPath{
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+    -tr-rule-ref:selector(".AFLinkForeground:alias"); 
+}
+
+.AFPathStep{
+    -tr-rule-ref:selector(".AFLinkForeground:alias");
+    font-size:75%;
+}
+
+.AFPathSelectedStep{
+ -tr-rule-ref:selector(".AFTextForeground");
+}
+
+.OraHGridLocatorHeader{
+   -tr-rule-ref:selector(".AFDarkAccentBorder:alias"); 
+}
+
+
+/* Not sure about these yet */
+/* 
+.OraMessageBoxList {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.OraMessageBoxLink {
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+}
+
+.OraMessageBoxParagraph {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+    margin-top: 5px;
+}
+
+.OraMessageBoxErrorList {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFErrorTextForeground:alias");
+    margin-bottom: 0px;
+}
+
+.OraMessageBoxErrorLink {
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    -tr-rule-ref:selector(".AFErrorTextForeground:alias");
+}
+
+.OraMessageBoxErrorParagraph {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFErrorTextForeground:alias");
+    margin-top: 5px;
+}
+
+.OraMessageBoxText {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFTextForeground:alias");
+}*/
+
+
+
+/* used in tree but subject to elimination in Trinidad */
+.OraTableBorder1101{
+    border-style:solid;
+    border-width:1px 1px 0px;
+}
+
+
+/* Used for images in standards mode 
+.p_OraDisplayBlock {
+    display: block;
+}
+.p_OraMenuListText {
+    -tr-rule-ref:selector(".InstructionText:alias");
+}
+.p_OraQuickSearchBox {
+    padding: 2pt 5pt;
+    border-width: 0px 1px 1px 1px;
+}
+.p_OraSelected {
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    -tr-rule-ref:selector(".AFDarkBackground:alias");
+    -tr-rule-ref:selector(".AFSelectedTextForeground:alias");
+    text-decoration: none;
+}
+.p_OraRequired {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    font-family: Courier,sans-serif;
+    color: #3366cc;
+}
+*/
+
+/* for buttons */
+af|commandButton {
+ -tr-rule-ref: selector(".AFDefaultFont:alias");
+ -tr-rule-ref: selector(".AFLightAccentBackground:alias");
+ -tr-rule-ref: selector(".AFTextForeground:alias");
+}
+af|commandButton:disabled {
+  color:#9fa57d;
+}
+
+/* breadCrumbs */
+
+af|breadCrumbs {
+-tr-show-last-item:false
+}
+af|breadCrumbs,
+af|breadCrumbs a {
+  -tr-rule-ref: selector(".AFLinkForeground:alias");
+}
+
+/*  inputColor */
+
+af|inputColor::swatch-overlay-icon {
+    content:url(/skins/suede/images/cfso.gif); 
+    width: 12; height: 12;
+    left: -7px;
+    position: relative;
+    top: 5px;
+}
+af|inputColor::swatch-overlay-icon:rtl {
+    content:url(/skins/suede/images/cfsortl.gif);
+    width: 12; height: 12;
+    left:-7px;
+    position:relative;
+    right:-7px;
+    top:5px;
+}
+af|inputColor:disabled::content{
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/*  chooseDate */
+af|chooseDate::content {
+    -tr-rule-ref:selector(".AFSmallFont:alias");
+    -tr-rule-ref:selector(".AFLightAccentBackground:alias");
+/*    <includeProperty selector="af|chooseDate::header"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>   */   
+    line-height: 1.5;
+    border-color: #D2D8B0; 
+}
+af|chooseDate::content-link {
+    -tr-rule-ref:selector(".AFSmallFont:alias");
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+    text-decoration: none;
+}
+af|chooseDate::disabled {
+    -tr-rule-ref:selector(".AFSmallFont:alias");
+}
+af|chooseDate::header {
+    -tr-rule-ref:selector(".AFSmallFont:alias");
+    -tr-rule-ref:selector(".AFDarkAccentBackground:alias");
+    font-weight: ;
+}
+af|chooseDate::title {
+    -tr-rule-ref:selector(".AFMediumFont:alias");
+    font-weight: bold;
+}
+af|chooseDate::prev-icon {
+    content:url(/skins/suede/images/tnavp.gif);
+    width: 14; height: 14;
+}
+af|chooseDate::prev-disabled-icon {
+    content:url(/skins/suede/images/tnavpd.gif);
+    width: 14; height: 14;
+}
+af|chooseDate::next-icon {
+    content:url(/skins/suede/images/tnavn.gif);
+    width: 14; height: 14;
+}
+af|chooseDate::next-disabled-icon {
+    content:url(/skins/suede/images/tnavnd.gif);
+    width: 14; height: 14;
+}
+
+/*  inputDate */
+
+af|inputDate::content-link {
+    -tr-rule-ref:selector(".AFDarkForeground";
+    text-decoration: none;
+}
+af|inputDate::header {
+    -tr-rule-ref:selector(".AFDarkAccentBackground:alias");
+}
+af|inputDate::launch-icon {
+    content:url(/skins/suede/images/dp.gif);
+    width: 19; height: 24;
+}
+af|inputDate::launch-icon:rtl {
+    content:url(/skins/suede/images/dprtl.gif);
+    width: 19; height: 24;
+}
+af|inputDate::selected {
+    -tr-rule-ref:selector(".AFVeryDarkAccentBackground";
+    -tr-rule-ref:selector(".AFSelectedTextForeground";
+    padding: 2px;
+}
+af|inputDate:disabled::content{
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/*  inputFile */
+af|inputFile:disabled::content{
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/*  inputListOfValues */
+
+af|inputListOfValues::button-icon {
+    content:url(/skins/suede/images/lovi.gif); 
+    width: 24; height: 24;
+}
+af|inputListOfValues::button-icon:rtl {
+    content:url("images/lovirtl.gif");
+}
+af|inputListOfValues:disabled::content {
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* this isn't working because bug in Trinidad */
+/*Log bug not to use camel case for readOnly.  Make backword compatible*/
+af|inputListOfValues:readOnly:disabled::content {
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/*  inputNumberSpinbox */
+af|inputNumberSpinbox:disabled::content {
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/*  inputText */
+af|inputText:disabled::content {
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+/* this isn't working because bug in Trinidad */
+/*Log bug not to use camel case for readOnly.  Make backword compatible*/
+af|inputText:readOnly:disabled::content {
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+af|inputText.AFFieldTextMarker::content {
+        font-weight: bold;
+}
+
+/* legend */
+.OraTipText{
+    color: #336699;
+    -tr-rule-ref:selector(".AFDefaultFont:alias");    
+}
+/* messages */
+af|messages::top-start-icon {
+    content:url(/skins/suede/images/errorl.gif);     
+    width: 18px; height: 18px;
+}
+af|messages::top-icon {
+    content:url(/skins/suede/images/errorl.gif); 
+    width: 18px; height: 18px;
+}
+af|messages::start-icon {
+    content:url(/skins/suede/images/errorl.gif); 
+    width: 18px; height: 18px;
+}
+af|messages::error-icon {
+    content:url(/skins/suede/images/errorl.gif); 
+    width: 18px; height: 18px;
+}
+af|messages::body{
+    background-color: #D2D8B0;
+}
+af|messages::list{
+    color: #CC0000;
+}
+af|messages::error{
+    font-weight: bold;
+    padding-left: 3px;
+}
+af|messages::header{
+    padding-left: 11px;
+}
+
+/* navigationPane::bar*/
+/*start navPane bar */
+af|navigationPane::bar {
+ -tr-rule-ref: selector(".AFDarkBackground:alias");
+ padding-left: 11px;
+ padding-right: 11px;
+}
+af|navigationPane::bar-active-enabled af|navigationPane::bar-content a ,
+af|navigationPane::bar-inactive-enabled af|navigationPane::bar-content,
+af|navigationPane::bar-inactive-enabled af|navigationPane::bar-content a,
+af|navigationPane::bar-active-enabled af|navigationPane::bar-content {
+  color:#ffffff;
+}
+
+af|navigationPane::bar-inactive-disabled af|navigationPane::bar-content,
+af|navigationPane::bar-active-disabled af|navigationPane::bar-content {
+  -tr-rule-ref: selector(".AFMediumForeground:alias");
+}
+
+af|navigationPane::bar-active-enabled af|navigationPane::bar-content a:hover,
+af|navigationPane::bar-inactive-enabled af|navigationPane::bar-content a:hover {
+  text-decoration:none;  
+}
+
+af|navigationPane::bar-separator {
+-tr-rule-ref: selector(".AFLightForeground:alias");
+}
+/* end navPane bar*/
+
+
+/* start navPane choice */
+af|navigationPane::choice-button {
+  -tr-rule-ref: selector("af|commandButton");
+}
+
+af|navigationPane::choice-label {
+  -tr-rule-ref: selector(".AFVerySmallFont:alias");
+}
+/* end navPane choice */
+
+/*start navPane buttons */
+af|navigationPane::buttons-active-enabled af|navigationPane::buttons-content a {
+  -tr-rule-ref: selector(".AFLinkForeground:alias");
+  -tr-rule-ref: selector(".AFDarkForeground:alias");
+}
+
+af|navigationPane::buttons-active-enabled af|navigationPane::buttons-content,
+af|navigationPane::buttons-active-disabled af|navigationPane::buttons-content {
+  font-weight: normal;
+}
+
+af|navigationPane::buttons-inactive-enabled af|navigationPane::buttons-content a  {
+  -tr-rule-ref: selector(".AFLinkForeground:alias");
+}
+af|navigationPane::buttons-inactive-disabled af|navigationPane::buttons-content {
+  -tr-rule-ref: selector(".AFVeryDarkAccentForeground:alias");
+}
+af|navigationPane::buttons-content {
+  -tr-rule-ref: selector(".AFVerySmallFont:alias");
+}
+/* end navPane buttons */
+
+/* navigationPane::list*/
+af|navigationPane::list-bullet {
+  background-image:url("/skins/suede/images/bltdscn.gif");
+}
+
+af|navigationPane::list-active-enabled af|navigationPane::list-bullet {
+  background-image:url("/skins/suede/images/bltdscs.gif");
+}
+
+af|navigationPane::list {
+  margin:4px;
+}
+af|navigationPane::list-active-enabled {
+  -tr-rule-ref:selector(".AFDarkBackground:alias");
+  width:100%;
+}
+af|navigationPane::list-active-enabled a {
+  -tr-rule-ref:selector("AFSelectedTextForeground:alias");
+  -tr-rule-ref:selector(".AFDefaultFont:alias");
+}
+
+af|navigationPane::list-inactive-enabled a {
+  -tr-rule-ref:selector("AFTextForeground:alias");
+  -tr-rule-ref:selector(".AFDefaultFont:alias");
+}
+
+/* navigationPane::tabs */
+
+/* make the disabled black instead of the default gray color */
+
+af|navigationPane::tabs-active:disabled af|navigationPane::tabs-mid{
+  color: black;
+}
+
+af|navigationPane::tabs-inactive:disabled af|navigationPane::tabs-mid {
+  color: black;
+}
+
+af|navigationPane::tabs-active af|navigationPane::tabs-mid A {
+  color: white;
+}
+
+
+/* GROUP together all the Tabs Start */
+/* FIRST TAB */
+/* The start 1/3 of an active tab that is the FIRST tab. It's the ramp-up image that is dark blue */
+af|navigationPane::tabs-active af|navigationPane::tabs-start {
+  background-image: url('/skins/beach/images/tabbeach-start-selected.gif');
+}
+/* FIRST TAB */
+/* The start 1/3 of an inactive tab that is the FIRST tab. 
+It's the ramp-up image that is our 'light' accent color */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-start {
+  background-image: url('/skins/beach/images/tabbeach-start-deselected.gif');
+}
+
+
+
+/* NOT THE FIRST TAB AND NOT THE LAST TAB */
+/* This styles the start of a selected tab when the previous tab is unselected. It contains an image
+that depicts the end of the unselected tab image (light accent color)
+and the start of a selected tab (dark blue color) where the
+start of the selected tab overlaps in front of the end of the unselected tab. */
+af|navigationPane::tabs-active af|navigationPane::tabs-start-join {
+  background-image: url('/skins/beach/images/tabbeach-start-join-selected.gif');
+}
+
+/* NOT THE FIRST TAB but the other tabs. */
+/* This is the start 1/3 of a tab that is inactive but is coming from an active tab.
+This is the same as the start-deselected image, only not as wide. It is only 14 pixels wide. */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-start-join-from-active {
+  background-image: url('/skins/beach/images/tabbeach-start-join-selected-to-deselected.gif');
+}
+
+/* This is the start 1/3 of a tab that is inactive, but coming from an inactive tab.
+Just use the selected-to-deselcted image since it is the same */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-start-join-from-inactive {
+/* background-image: url('/skins/beach/images/tabbeach-start-join-deselected-to-deselected.gif'); */
+  background-image: url('/skins/beach/images/tabbeach-start-join-selected-to-deselected.gif');
+
+}
+
+/* START BOTTOM BITS */
+
+/* ::tabs-bottom-start, when inside of an active tab,
+is the bottom bit, start 1/3 of an active tab, regardless of its position 
+(first tab, middle, or last tab). The strange thing is if the inactive tab is the first tab,
+then ::tabs-bottom-start is ONLY the first tab. Otherwise the first 1/3 of an inactive tab is
+::tabs-bottom-end. */
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-start {
+ /* background-image: url('/skins/beach/images/tabbeach-bot-mid-selected.gif'); */
+ -tr-inhibit: background-image;
+  background-color: #336699;
+}
+
+/* The bottom bit, start 1/3 of an active tab, regardless of its position (first tab, middle, or last tab) */
+/* ::tabs-bottom-start-content is the div inside of the td which is ::tabs-bottom-start;
+so there is nothing to do here except inhibit the background-image */
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-start-content {
+/*
+  background-image: url('/skins/beach/images/tabbeach-bot-start-selected.gif');
+  */
+-tr-inhibit: background-image;
+  /* The color gets picked up from ::tabs-bottom-start */
+}
+
+/* The FIRST tab, when it is inactive, the bottom bit, first 1/3.*/
+/* background-color instead of background-image works just fine */
+/* See ::tabs-bottom-end for the first 1/3 of an inactive tab when it isn't the first tab */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-bottom-start {
+  /*
+  background-image: url('/skins/beach/images/tabbeach-bot-deselected.gif');
+  */
+  -tr-inhibit: background-image;
+   background-color: #9FA57D;  
+}
+
+/* ::tabs-bottom-end is the bottom bit, start 1/3 a tab as long as it isn't the FIRST tab.
+(not sure why it is named tabs-bottom-end). It's the end for the last tab.
+Ok to use background-color instead of background-image */ 
+af|navigationPane::tabs-inactive af|navigationPane::tabs-bottom-end {
+ /* background-image: url('/skins/beach/images/tabbeach-bot-deselected.gif'); */
+  -tr-inhibit: background-image;
+  background-color: #9FA57D; 
+}
+
+
+/* END the Tabs Start */
+
+/* GROUP together all the Tabs Mid */
+/* This is the middle of the tab when it is active */
+/* You could use an image, or simply use a background-color.
+   I added extra padding around the active tab. */
+af|navigationPane::tabs-active af|navigationPane::tabs-mid {
+  background-color: #336699;
+  -tr-inhibit: background-image;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* background-image: url('/skins/beach/images/tabbeach-mid-selected.gif'); */
+}  
+
+
+/* This is the middle of the tab when it is inactive */
+/* You could use an image, or simply use a background-color */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-mid {
+/*
+  background-image: url('/skins/beach/images/tabbeach-mid-deselected.gif');
+  */
+  -tr-inhibit: background-image;  
+  background-color: #D2D8B0;
+}
+
+/* The bottom bit, middle portion, of an active tab, regardless of position of tab.  */
+/* You could use an image, or simply use a background-color */
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-mid {
+  background-color: #336699;
+ /* background-image: url('/skins/beach/images/tabbeach-bot-mid-selected.gif'); */
+ -tr-inhibit: background-image;
+}
+
+/* Bottom bit, middle portion, of an inactive tab, regardless of position of tab. */
+/* You could use an image, or simply use a background-color */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-bottom-mid {
+ /* background-image: url('/skins/beach/images/tabbeach-bot-deselected.gif'); */
+ -tr-inhibit: background-image;
+ background-color: #9FA57D;
+}
+  
+/* END the Tabs Mid */
+
+  
+   
+/* GROUP together all the Tabs End */
+
+/* Styles the end of the last tab if it is active */
+/* This is the LAST tab, not just the end of any tab */
+/* There are different selectors for the 'end' piece of tabs that are not the last tab.
+   For example, the end piece of the active tab that comes before an inactive tab
+   has pseudo-element ::tabs-end-join-to-inactive */
+   /* This has a dark blue ramp down image */
+af|navigationPane::tabs-active af|navigationPane::tabs-end {
+  background-image: url('/skins/beach/images/tabbeach-end-selected.gif');
+}
+
+/* This has an accent color ramp down image. ::tabs-end is for the LAST tab in all the tabs and
+it is the end 1/3 of that last tab. */  
+af|navigationPane::tabs-inactive af|navigationPane::tabs-end {
+ background-image: url('/skins/beach/images/tabbeach-end-deselected.gif');
+}
+
+/* ::tabs-end-join-to-inactive is the last 1/3 of a tab that isn't the LAST tab */
+af|navigationPane::tabs-active af|navigationPane::tabs-end-join-to-inactive {
+/* background-image: url('/skins/beach/images/tabbeach-end-join-selected-to-deselected.gif'); */
+   background-image: url('/skins/beach/images/tabbeach-end-selected.gif');
+} 
+   
+/* ::tabs-end-join-to-inactive is the last 1/3 of a tab that isn't the LAST tab */
+/* This is the image of the last 1/3 of an inactive tab */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-end-join-to-inactive {
+  background-image: url('/skins/beach/images/tabbeach-end-join-deselected-to-deselected.gif');
+} 
+
+
+/* Selected tab that isn't the LAST tab. The bottom bit, last 1/3. Ok to use  color and not an image. */  
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-end-join {
+/*
+  background-image: url('/skins/beach/images/tabbeach-bot-deselected.gif');
+  */
+  -tr-inhibit: background-image;
+  background-color: #336699;
+}
+  
+/* The very LAST tab, when it is selected. The bottom bit, last 1/3. Ok to use  color and not an image. */  
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-end {
+  /* background-image: url('/skins/beach/images/tabbeach-bot-end-selected.gif'); */
+  -tr-inhibit: background-image;
+  background-color: #336699;
+}
+/* This is inside tabs-bottom-end, so just inhibit the image */
+af|navigationPane::tabs-active af|navigationPane::tabs-bottom-end-content {
+  -tr-inhibit: background-image;
+}
+
+  
+/* Bottom bit, end 1/3, when joining to another inactive tab (therefore it can't be the LAST tab) */
+af|navigationPane::tabs-inactive af|navigationPane::tabs-bottom-end-join {
+/*  background-image: url('/skins/beach/images/tabbeach-bot-deselected.gif'); */
+ -tr-inhibit: background-image;
+ background-color: #9FA57D; 
+}
+
+/* END the Tabs End */
+
+/* panelAccordion */
+af|panelAccordion {   
+    border-style: solid;
+    border-color: #6699CC;
+    border-width: 0px 1px 1px;
+}
+af|panelAccordion::title-link {
+    color: #336699;
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    text-decoration: none;
+    display: block;
+    padding-top: 2px;
+}
+/* Typo in Trinidad Skins.  This should be title-disabled-link, not title-diabledlink */
+af|panelAccordion::title-disabled-link {   
+    color: #FFFFCC;
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    text-decoration: none;
+    display: block;
+    padding-top: 2px;
+    padding-left: 15px;
+}
+af|panelAccordion::header-expanded {   
+    border-style: solid;
+    background: #CCCC93 none repeat scroll 0%;
+    white-space: nowrap;
+    border-color: #6699CC;
+    border-width: 1px 0px;
+    padding-left 2px;
+    padding-right 5px;
+    height: 21px;
+}
+af|panelAccordion::header-collapsed, af|panelAccordion::header-disabled {   
+    border-style: solid;
+    background: #CCCC93 none repeat scroll 0%;
+    white-space: nowrap;
+    border-color: #6699CC;
+    border-width: 1px 0px 0px;
+    padding-left 2px;
+    padding-right 5px;
+    height: 21px;
+} 
+
+
+
+/* panelBox */
+
+af|panelBox::light af|panelBox::body {
+    background-color: #F7F7F7;
+    border-color: #D2D8B0; 
+}
+af|panelBox::medium af|panelBox::body {
+    background-color: #FFFFE3;
+    border-color: #D2D8B0;    
+}
+af|panelBox::dark af|panelBox::body {
+    background-color: #6699CC;
+    border-color: #336699;
+}
+af|panelBox::transparent af|panelBox::body {
+    border-color: #336699;   
+} 
+af|panelBox::dark af|panelBox::header {
+    font-weight: bold;
+    color: #FFFFFF;  
+} 
+af|panelBox::header {
+    font-weight: bold;
+    color: #336699;  
+} 
+af|panelBox::content {
+    padding-left: 20px;
+} 
+af|panelBox::body {
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-top: 0px;
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+}
+af|panelBox::start {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #D2D8B0;
+}
+af|panelBox::light af|panelBox::start {
+    background-image: url('/skins/suede/images/ccclts.gif'); 
+    width: 11px;
+    height: 11px;
+}
+af|panelBox::medium af|panelBox::start {
+    background-image: url('/skins/suede/images/cccmts.gif'); 
+    width: 11px;
+    height: 11px;
+}
+af|panelBox::dark af|panelBox::start {
+    background-image: url('/skins/suede/images/cccdts.gif'); 
+    width: 11px;
+    height: 11px;
+    border-color: #336699;
+}
+af|panelBox::transparent af|panelBox::start {
+    background-image: url('/skins/suede/images/ccctts.gif'); 
+    width: 11px;
+    height: 11px;
+    border-color: #336699;    
+}
+af|panelBox::body img {
+    vertical-align: top;
+    padding-right: 5px;
+}
+
+/* panelFormLayout */
+
+af|panelFormLayout::cell {
+    padding: 1px 0px;
+}
+
+/* panelHeader */
+.AFHeaderText:alias {
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+af|panelHeader {
+    border-bottom: 1px solid #D2D8B0;
+}
+
+
+/* panelPage */
+/* this isn't quite right. */
+.p_OraFooter {
+    -tr-inhibit: text-align;
+}
+af|panelPage::copyright {
+    text-align: left;
+}
+af|panelPage::privacy {
+    text-align: right;
+    position: absolute;
+    right: 200px;
+}
+af|panelPage::privacy:rtl {
+    text-align: left;
+    position: absolute;
+    left: 200px;
+}
+
+ af|panelPage::privacy-link {
+    -tr-rule-ref:selector(".AFEndTextAlign:alias");
+} 
+af|panelPage::about af|panelPage::about-link{
+    -tr-rule-ref:selector(".AFEndTextAlign:alias");
+}
+.p_InContextBrandingText {
+    display: block;
+    margin-top: 10px;
+}
+.p_OraContentFooterRule {
+    color: #D2D8B0;
+    background-color: #D2D8B0;    
+}
+/* This is for the panelPage demo to make the Help icons not wrap */
+af|panelGroupLayout af|navigationPane{
+    white-space: nowrap;
+}
+
+/* panelSideBar */
+
+af|panelSideBar {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFTextForeground:alias");
+}
+af|panelSideBar af|panelList A:link {
+    -tr-rule-ref:selector(".AFInstructionText:alias");
+}
+af|panelSideBar af|panelList A {
+    -tr-rule-ref:selector(".AFLinkForeground:alias");
+}
+af|panelSideBar::body {
+    -tr-rule-ref:selector(".AFDarkAccentBackground:alias");
+}
+af|panelSideBar::bottom-start-icon {
+    content:url(/skins/suede/images/csnbld.gif); 
+    width: 30px; height: 22px;
+}
+af|panelSideBar::bottom-background-icon {
+    content:url(/skins/suede/images/csnb.gif); 
+    background-repeat:repeat-x;
+}
+af|panelSideBar::bottom-end-icon {
+    content:url(/skins/suede/images/csnbr.gif); 
+    width: 20px; height: 22px;
+}
+af|panelSideBar::top-start-icon {
+    content:url(/skins/suede/images/t.gif); 
+    width: 9px; height: 1px;
+}
+
+/* panelTabbed */ 
+
+af|panelTabbed::orientation-bottom af|panelTabbed::tab-selected {
+    border-top: medium none;
+    border-bottom: 1pt solid #9FA57D;
+}
+af|panelTabbed::orientation-bottom af|panelTabbed::cell-end {
+    border-top: 1pt solid #9FA57D;
+}
+af|panelTabbed::orientation-bottom af|panelTabbed::cell-start {
+    border-top: 1pt solid #9FA57D;
+}
+af|panelTabbed::orientation-top af|panelTabbed::cell-end {
+    border-top: 1pt solid #9FA57D;
+}
+af|panelTabbed::orientation-bottom af|panelTabbed::cell-start {
+    border-top: 1pt solid #9FA57D;
+}
+af|panelTabbed::orientation-top af|panelTabbed::tab-selected {
+    border-top: 1pt solid #9FA57D;
+}
+af|panelTabbed::tab {
+    background-color: #F7F7E7;
+    padding: 1pt 8pt;
+    border-top: 1pt solid #9FA57D;
+    border-bottom: 1pt solid #9FA57D;
+} 
+af|panelTabbed::separator-before-selected {
+    border-left: 1pt solid #9FA57D;
+}
+af|panelTabbed::separator-after-selected {
+    border-right: 1pt solid #9FA57D;
+}
+af|panelTabbed::cell-start {
+    background-color: #F7F7E7;
+    border-bottom: 1pt solid #9FA57D;
+    border-color: #9FA57D;
+}
+af|panelTabbed::cell-end {
+    background-color: #F7F7E7;
+    width: 100%;
+    border-bottom: 1pt solid #9FA57D;
+    border-color: #9FA57D;
+}
+
+/* progressIndicator states */
+af|progressIndicator::indeterminate-icon {
+  content:url(/skins/suede/images/pgsIndAnm.gif);
+}
+af|progressIndicator::zero-percent-icon {
+  content:url(/skins/suede/images/pgsInd0.gif);
+}
+af|progressIndicator::five-percent-icon {
+  content:url(/skins/suede/images/pgsInd5.gif);
+}
+af|progressIndicator::five-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd5rtl.gif);
+}
+af|progressIndicator::ten-percent-icon {
+  content:url(/skins/suede/images/pgsInd10.gif);
+}
+af|progressIndicator::ten-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd10rtl.gif);
+}
+af|progressIndicator::fifteen-percent-icon {
+  content:url(/skins/suede/images/pgsInd15.gif);
+}
+af|progressIndicator::fifteen-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd15rtl.gif);
+}
+af|progressIndicator::twenty-percent-icon {
+  content:url(/skins/suede/images/pgsInd20.gif);
+}
+af|progressIndicator::twenty-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd20rtl.gif);
+}
+af|progressIndicator::twenty-five-percent-icon {
+  content:url(/skins/suede/images/pgsInd25.gif);
+}
+af|progressIndicator::twenty-five-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd25rtl.gif);
+}
+af|progressIndicator::thirty-percent-icon {
+  content:url(/skins/suede/images/pgsInd30.gif);
+}
+af|progressIndicator::thirty-percent-icon:rtl {
+  content:url(/skins/suede/images/pgsInd30rtl.gif);
+}
+af|progressIndicator::thirty-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd35.gif);
+}
+af|progressIndicator::thirty-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd35rtl.gif);
+}
+af|progressIndicator::forty-percent-icon {
+   content:url(/skins/suede/images/pgsInd40.gif);
+}
+af|progressIndicator::forty-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd40rtl.gif);
+}
+af|progressIndicator::forty-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd45.gif);
+}
+af|progressIndicator::forty-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd45rtl.gif);
+}
+af|progressIndicator::fifty-percent-icon {
+   content:url(/skins/suede/images/pgsInd50.gif);
+}
+af|progressIndicator::fifty-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd50rtl.gif);
+}
+af|progressIndicator::fifty-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd55.gif);
+}
+af|progressIndicator::fifty-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd55rtl.gif);
+}
+af|progressIndicator::sixty-percent-icon {
+   content:url(/skins/suede/images/pgsInd60.gif);
+}
+af|progressIndicator::sixty-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd60rtl.gif);
+}
+af|progressIndicator::sixty-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd65.gif);
+}
+af|progressIndicator::sixty-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd65rtl.gif);
+}
+af|progressIndicator::seventy-percent-icon {
+   content:url(/skins/suede/images/pgsInd70.gif);
+}
+af|progressIndicator::seventy-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd70rtl.gif);
+}
+af|progressIndicator::seventy-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd75.gif);
+}
+af|progressIndicator::seventy-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd75rtl.gif);
+}
+af|progressIndicator::eighty-percent-icon {
+   content:url(/skins/suede/images/pgsInd80.gif);
+}
+af|progressIndicator::eighty-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd80rtl.gif);
+}
+af|progressIndicator::eighty-five-percent-icon {
+   content:url(/skins/suede/images/pgsInd85.gif);
+}
+af|progressIndicator::eighty-five-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd85rtl.gif);
+}
+af|progressIndicator::ninety-percent-icon {
+   content:url(/skins/suede/images/pgsInd90.gif);
+}
+af|progressIndicator::ninety-percent-icon:rtl {
+   content:url(/skins/suede/images/pgsInd90rtl.gif);
+}
+af|progressIndicator::ninety-five-percent-icon {
+    content:url(/skins/suede/images/pgsInd95.gif);
+}
+af|progressIndicator::ninety-five-percent-icon:rtl {
+    content:url(/skins/suede/images/pgsInd95rtl.gif);
+}
+af|progressIndicator::one-hundred-percent-icon {
+  content:url(/skins/suede/images/pgsInd100.gif);
+}
+
+
+/* selectBooleanCheckbox */     
+
+af|selectBooleanCheckbox::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+}
+
+af|selectBooleanCheckbox:disabled::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* selectBooleanRadio */     
+
+af|selectBooleanRadio::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+}
+af|selectBooleanRadio:disabled::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* selectManyShuttle */
+
+.AFShuttleMoveIcon:alias {
+    content:url(/skins/suede/images/smv.gif); 
+    width: 18; height: 18;
+    display: block;
+}
+.AFShuttleMoveAllIcon:alias {
+    content:url(/skins/suede/images/smvall.gif); 
+    width: 18; height: 18;
+    display: block;
+}
+.AFShuttleRemoveIcon:alias {
+    content:url(/skins/suede/images/srmv.gif); 
+    width: 18; height: 18;
+    display: block;
+}
+.AFShuttleRemoveAllIcon:alias {
+    content:url(/skins/suede/images/srmvall.gif); 
+    width: 18; height: 18;
+    display: block;
+}
+af|selectManyShuttle::box-content textarea {
+    background-color: white;
+}
+af|selectManyShuttle:disabled::box-content textarea {
+    background-color: #E8E8E8;
+    border-color: #336699;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+af|selectManyShuttle:readOnly::box-content textarea {
+    background-color: #E8E8E8;
+    border-color: #336699;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+.AFShuttleBoxContent:alias {
+    -tr-rule-ref:selector(".AFLightAccentBackground:alias");
+    border-color: #D2E8B0;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    padding-bottom: 5px;
+    padding-left: 15x;
+    padding-right: 10px;
+    padding-top: 10px;
+}    
+.OraShuttleHeader {
+    -tr-rule-ref:selector("AFMediumFont:alias");
+    font-weight: bold;
+    padding: 0px;
+}
+
+
+
+/* selectOneChoice */     
+
+af|selectOneChoice:disabled::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* selectOneListbox */     
+
+af|selectOneListbox:disabled::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* selectOneRadio */     
+
+af|selectOneRadio:disabled::content {
+    -tr-rule-ref:selector(".AFDefaultFont:alias");
+    -tr-rule-ref:selector(".AFInstructionTextDisabled:alias");
+}
+
+/* selectOrderShuttle */ 
+af|selectOrderShuttle::reorder-top-icon {
+    content:url(/skins/suede/images/srt.gif); width: 12; height: 12;
+}
+af|selectOrderShuttle::reorder-up-icon {
+    content:url(/skins/suede/images/sru.gif); width: 12; height: 12;
+}
+af|selectOrderShuttle::reorder-down-icon {
+    content:url(/skins/suede/images/srd.gif); width: 12; height: 12;
+}
+af|selectOrderShuttle::reorder-bottom-icon {
+    content:url(/skins/suede/images/srb.gif); width: 12; height: 12;
+}
+
+
+/* selectRangeChoiceBar */ 
+
+af|selectRangeChoiceBar::next-icon {
+    content:url(/skins/suede/images/tnavn.gif); width: 14; height: 14;
+}  
+af|selectRangeChoiceBar::prev-icon {
+    content:url(/skins/suede/images/tnavp.gif); width: 14; height: 14;
+}
+af|selectRangeChoiceBar::next-disabled-icon {
+    content:url(/skins/suede/images/tnavnd.gif); width: 14; height: 14;
+}  
+af|selectRangeChoiceBar::prev-disabled-icon {
+    content:url(/skins/suede/images/tnavpd.gif); width: 14; height: 14;
+}
+
+/* separator */
+af|separator{
+    background-image: url('/skins/suede/images/cseparator.gif'); 
+    border: 0px;
+    height: 11px;
+}
+/* IE7 puts a border around the HR even though border:0px is specified. This
+trick comes from http://dero.name/weblog/styling-horizontal-rule-hr-background */
+@agent ie {
+af|separator{
+  background-image: url('/skins/suede/images/cseparator4x.gif');
+  height: 44px;
+  zoom: 25%;}
+}
+
+/* showDetailHeader */ 
+af|showDetailHeader {
+    border-bottom: 1px #D2D8B0 solid;      
+}
+
+
+/* showOnePanel */ 
+
+af|showOnePanel::container {
+    border-left: 1px #6699CC solid;
+    border-right: 1px #6699CC solid;
+    border-bottom: 1px #6699CC solid;    
+}
+af|showOnePanel::content {
+    background: #FFFFFF;
+    empty-cells: hide;
+}
+af|showOnePanel::header-collapsed {
+    background: #CCCC93;
+    cursor: pointer;
+    border-top: 1px #6699CC solid;
+    padding-left: 5px;
+}
+af|showOnePanel::header-disabled {
+    background: #C9CA95;
+    border-top: 1px #6699CC solid;
+    padding-left: 21px;
+}
+af|showOnePanel::header-expanded {
+    background: #CCCC93;
+    border-top: 1px #6699CC solid;
+    border-bottom: 1px #6699CC solid;    
+    padding-left: 2px;
+}
+af|showOnePanel::title-disabled-link {
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    color: #FFFFCC;
+}
+af|showOnePanel::title-link {
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    color: #336699;
+}
+
+/*train */
+af|train::stop:selected-icon {
+  content:url('/skins/suede/images/trVisStop.png');
+}
+af|train::join:unvisited,
+af|train::join:disabled,
+af|train::join-overflow {
+  background-image:url('/skins/suede/images/ctruj.gif');
+  
+}
+
+af|train::stop:unvisited-icon {
+  content:url('/skins/suede/images/trUnVisStop.png');
+}
+
+af|train::link {
+  -tr-rule-ref:selector(".AFDefaultFont:alias");
+  padding:0px 4px;
+}
+af|train::stop-content:selected a,
+af|train::stop-content:read-only a,
+af|train::overflow-end a {
+  -tr-rule-ref:selector(".TextForegroundDarkBackground:alias");
+}
+
+af|train::overflow-end:unvisited-icon {
+ content:url('/skins/suede/images/ctrumore.gif');
+}
+
+af|train {
+  -tr-render-parent-train:true
+}
+af|train::join:Visited,
+af|train::join-overflow:Visited {
+  background-image:url('/skins/suede/images/trvj.gif');
+}
+af|train::stop:visited-icon {
+  content:url('/skins/suede/images/trVisStopA.png');
+}
+af|train::overflow-end:visited-icon {
+ content:url('/skins/suede/images/trvmore.gif');
+}
+af|train::overflow-start:visited-icon {
+ content:url('/skins/suede/images/trprev.gif');
+}
+af|train::parent-start-icon {
+  content:url('/skins/suede/images/trsubl.gif');
+}
+
+af|train::parent-end-icon {
+  content:url('/skins/suede/images/trsubr.gif');
+}
+
+/*train */
+/*Navigation tree */
+af|navigationTree::disclosed-icon {
+  -tr-rule-ref:selector(".AFDetailDisclosedIcon:alias");
+}
+
+af|navigationTree::undisclosed-icon {
+  -tr-rule-ref:selector(".AFDetailUndisclosedIcon:alias");
+}
+/*Navigation Tree */
+
+
+
+.AFTableCellDataBorderColor:alias{
+    -tr-rule-ref:selector(".AFDarkAccentBorder:alias");
+}
+
+
+.AFTableCellDataBackgroundColor:alias{
+        -tr-rule-ref:selector(".AFLightAccentBackground:alias");
+}
+
+.AFTableCellDataBandedBackgroundColor:alias{
+    background-color: #FFFFFF;
+}
+
+.AFTableCellDataVerticalAlign:alias{
+    vertical-align: baseline;
+}
+
+.AFDetailDisclosedIcon:alias{   
+    content:url('/skins/suede/images/hsd.gif');
+}
+
+.AFDetailUndisclosedIcon:alias{
+    content:url('/skins/suede/images/hsu.gif');
+}
+
+af|table::column-footer .AFLabelText{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+}
+
+af|table::column-footer{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+}
+
+af|table::sub-control-bar{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+    padding:0pt;
+}
+
+af|table::control-bar-top{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+    border-color: #D2D8B0;
+    border-style: solid ;
+    border-width: 1px 1px 0px;    
+    padding:1px 2px;
+}
+
+af|table::control-bar-bottom{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+    padding:0pt;
+}
+
+af|table::content{
+    border-collapse: collapse;
+}
+
+af|table::detail{
+    background-color:#FFFFFF;
+  -tr-rule-ref:selector(".AFDarkAccentBorder:alias");
+  -tr-rule-ref:selector(".AFDefaultFontFamily:alias");
+}
+
+af|table::prev-icon {content:url('/skins/suede/images/tnavp.gif');}
+af|table::next-icon {content:url('/skins/suede/images/tnavn.gif');}
+af|table::prev-disabled-icon {content:url('/skins/suede/images/tnavpd.gif');}
+af|table::next-disabled-icon {content:url('/skins/suede/images/tnavnd.gif');}
+af|table::disclosed-icon     {content:url('/skins/suede/images/hsd.gif');}
+af|table::undisclosed-icon   {content:url('/skins/suede/images/hsu.gif');}
+
+/* table */
+
+af|column::cell-text-band{
+    -tr-rule-ref:selector(".AFTableCellDataBandedBackgroundColor:alias");
+}
+
+af|column::cell-text{
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+    color:#000000;
+}
+
+af|column::header-text{
+    -tr-rule-ref:selector(".TableCellHeaderBorderColor:alias");
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");
+    -tr-rule-ref:selector(".AFStartTextAlign:alias");
+    -tr-rule-ref:selector(".AFDarkAccentBackground:alias");
+    -tr-rule-ref:selector(".AFDarkForeground:alias");
+    vertical-align:bottom;
+    color: #336699;
+}
+
+af|column::sortable-header-text{
+    -tr-rule-ref:selector(".AFDarkAccentBackground:alias"); 
+    -tr-rule-ref:selector(".AFLightAccentBorder:alias"); 
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");    
+    color:#336699;    
+    cursor:pointer;
+    text-align:left;
+    vertical-align:bottom;
+}
+
+
+
+af|column::header-icon-format{
+    background-color:#D2D8B0;
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias"); 
+    color:#336699;    
+    text-align:left;
+    vertical-align:bottom;
+}
+
+af|column::sort-ascend-icon {content:url('/skins/suede/images/asort.gif');}
+af|column::sort-descend-icon {content:url('/skins/suede/images/dsort.gif');}
+
+af|column::cell-icon-format{
+    -tr-rule-ref:selector(".AFTableCellDataText:alias");
+    -tr-rule-ref:selector(".AFTableCellDataVerticalAlign:alias");
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias");
+    -tr-rule-ref:selector(".AFTableCellDataBorderColor:alias");
+    -tr-rule-ref:selector(".AFCenterTextAlign:alias"); 
+}
+
+af|column::cell-icon-format-band{
+    -tr-rule-ref:selector(".AFTableCellDataText:alias");
+    -tr-rule-ref:selector(".AFTableCellDataVerticalAlign:alias");
+    -tr-rule-ref:selector(".AFTableCellDataBandedBackgroundColor:alias");
+    -tr-rule-ref:selector(".AFTableCellDataBorderColor:alias");
+    -tr-rule-ref:selector(".AFCenterTextAlign:alias"); 
+}
+
+/* columns */
+
+/* tableSelectMany / tableSelectOne */
+
+af|tableSelectMany::cell-icon-format-band {
+    -tr-rule-ref:selector("af|column::cell-icon-format-band");
+}
+af|tableSelectMany::cell-icon-format{
+    -tr-rule-ref:selector("af|column::cell-icon-format");
+}
+
+af|tableSelectOne::cell-icon-format{
+    -tr-rule-ref:selector("af|column::cell-icon-format");
+}
+
+af|tableSelectOne::cell-icon-format-band {
+    -tr-rule-ref:selector("af|column::cell-icon-format-band");
+}
+
+/* tableSelectMany / tableSelectOne*/
+
+
+/* tree */
+.p_OraTreeIcon {
+    vertical-align: top;
+    content:url('/skins/suede/images/tfold.gif');
+}
+
+.p_OraTreeRow {
+    color:#003366;
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+}
+.p_OraTreeNodeAdjust{padding-bottom:2px;}
+
+.p_OraTreeRowSelected{
+    -tr-rule-ref:selector(".AFDarkBackground:alias"); 
+    -tr-rule-ref:selector(".AFDefaultBoldFont:alias");    
+    -tr-rule-ref:selector(".AFSelectedTextForeground:alias"); 
+}
+
+SPAN.p_OraTreeRow A:link{ 
+    -tr-rule-ref:selector(".AFLinkForeground:alias");
+}
+
+SPAN.p_OraTreeRow A:visited{ 
+    -tr-rule-ref:selector(".AFLinkForeground:alias");
+}
+
+af|tree::expanded-icon {content:url('/skins/suede/images/tminusa.gif');}
+af|tree::collapsed-icon {content:url('/skins/suede/images/tplusa.gif');}
+af|tree::line-icon {background-image:url('/skins/suede/images/tline.gif');}
+
+af|tree::node-icon:folder{
+    content:url('/skins/suede/images/tfold.gif');
+}
+
+af|treeTable::node-icon:document{
+   content:url('/skins/suede/images/tfold.gif');
+}
+
+af|navigationTree::disclosed-icon{
+    content:url('/skins/suede/images/tminusa.gif');
+}
+af|navigationTree::undisclosed-icon{
+    content:url('/skins/suede/images/tplusa.gif');
+}
+
+af|tree{
+    -tr-show-lines:true;
+}
+
+
+/* tree */
+
+/* treeTable */
+af|treeTable::content{
+    border-collapse:collapse;
+}
+
+af|treeTable::control-bar-bottom{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias"); 
+    -tr-rule-ref:selector(".AFTableCellDataBorderColor:alias"); 
+     border-style:solid; 
+     border-width:1px 1px 0px;
+     padding:1px 2px;    
+}
+
+af|treeTable::control-bar-top{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias"); 
+    -tr-rule-ref:selector(".AFTableCellDataBorderColor:alias"); 
+     border-style:solid; 
+     border-width:1px 1px 0px;
+     padding:1px 2px;    
+}
+af|treeTable::expansion{ 
+    -tr-rule-ref:selector(".AFDarkForeground:alias");     
+    left:-16px;
+}
+af|treeTable::focus{
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+    -tr-rule-ref:selector(".AFVeryDarkAccentForeground:alias"); 
+    font-family:monospace;
+
+}
+af|treeTable::locator{
+    -tr-rule-ref:selector(".AFDefaultFont:alias"); 
+    -tr-rule-ref:selector(".AFDarkForeground:alias"); 
+    font-family:monospace;
+}
+af|treeTable::path-selected-step{
+    -tr-rule-ref:selector(".AFPathSelectedStep"); 
+}
+af|treeTable::path-step{
+    -tr-rule-ref:selector(".AFPathStep"); 
+}
+af|treeTable::path{
+    -tr-rule-ref:selector(".AFPath"); 
+}
+af|treeTable::sub-control-bar{
+    -tr-rule-ref:selector(".AFTableCellDataBackgroundColor:alias"); 
+    -tr-rule-ref:selector(".AFTableCellDataBorderColor:alias"); 
+     border-style:solid; 
+     border-width:1px 1px 0px;
+     padding:1px 2px;    
+}
+
+af|treeTable::expanded-icon {content:url('/skins/suede/images/hsd.gif');}
+af|treeTable::collapsed-icon {content:url('/skins/suede/images/hsu.gif');}
+af|treeTable::focus-icon{
+    content:url('/skins/suede/images/focus.gif');
+}
+
+af|treeTable::prev-icon {content:url('/skins/suede/images/tnavp.gif');}
+af|treeTable::next-icon {content:url('/skins/suede/images/tnavn.gif');}
+af|treeTable::prev-disabled-icon {content:url('/skins/suede/images/tnavpd.gif');}
+af|treeTable::next-disabled-icon {content:url('/skins/suede/images/tnavnd.gif');}
+
+/* treeTable*/

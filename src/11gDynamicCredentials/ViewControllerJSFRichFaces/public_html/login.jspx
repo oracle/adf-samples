@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:tr="http://myfaces.apache.org/trinidad"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:form id="form">
+        <af:messages/>
+        <af:panelBox text="Failed Login" rendered="#{not empty param.failed}"
+                     showDisclosure="false" background="light" ramp="highlight">
+          <af:outputText value="Invalid username/password...Try again."/>
+        </af:panelBox>
+        <af:panelFormLayout id="form2">
+          <f:facet name="footer">
+            <af:commandButton text="Login" action="main"/>
+          </f:facet>
+          <af:inputText id="username" label="Username"
+                        value="#{bindings.username.inputValue}"/>
+          <af:inputText id="password" label="Password" secret="true"
+                        value="#{bindings.password.inputValue}"/>
+          <af:inputText id="jdbcurl" label="JDBC URL"
+                        value="#{bindings.jdbcurl.inputValue}"/>
+          <af:panelLabelAndMessage>
+            <af:outputText value="(e.g. jdbc:oracle:thin:@localhost:1521:ORCL )"/>
+          </af:panelLabelAndMessage>
+          <tr:inputHidden id="_loginpage" value="true"/>
+        </af:panelFormLayout>
+        <af:separator/>
+        <af:panelBox ramp="highlight" background="medium">
+          <af:outputText value="If you leave the JDBC URL field blank, it will use the one configured in the application module's configuration."/>
+          <af:spacer height="10"/>
+          <af:outputText value="To avoid allowing the JDBC URL to be supplied by the user, remove the JDBC URL inputText component in this page and comment out line 95 in DynamicJDBCBindingFilter.java in the FwkExtensions project."/>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

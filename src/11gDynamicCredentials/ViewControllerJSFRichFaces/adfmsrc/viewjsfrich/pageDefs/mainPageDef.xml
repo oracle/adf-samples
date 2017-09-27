@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.44" id="mainPageDef"
+                Package="viewjsfrich.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="DeptView" RangeSize="25"
+              DataControl="TestModuleDataControl" id="DeptViewIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptViewIterator" id="DeptView">
+      <nodeDefinition DefName="test.model.DeptView">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DeptViewIterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

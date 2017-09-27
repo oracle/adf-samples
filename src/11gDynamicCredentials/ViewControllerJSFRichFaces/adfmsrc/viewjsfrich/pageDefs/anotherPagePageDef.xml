@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="anotherPagePageDef"
+                Package="viewjsfrich.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="DeptView" RangeSize="25"
+              DataControl="TestModuleDataControl" id="DeptViewIterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DeptViewIterator" id="Deptno">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DeptViewIterator" id="Dname">
+      <AttrNames>
+        <Item Value="Dname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DeptViewIterator" id="Loc">
+      <AttrNames>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DeptViewIterator" id="First" RequiresUpdateModel="true"
+            Action="first"/>
+    <action IterBinding="DeptViewIterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DeptViewIterator" id="Next" RequiresUpdateModel="true"
+            Action="next"/>
+    <action IterBinding="DeptViewIterator" id="Last" RequiresUpdateModel="true"
+            Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="TestModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="TestModuleDataControl"/>
+    <action IterBinding="DeptViewIterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="DataForm" type="oracle.adf.controller.v2.struts.forms.BindingContainerActionForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/login" forward="/login.jsp"/>
+    <action path="/main"
+            className="oracle.adf.controller.v2.struts.actions.DataActionMapping"
+            type="oracle.adf.controller.v2.struts.actions.DataForwardAction"
+            name="DataForm" parameter="/main.jsp" unknown="true">
+      <forward name="Logout" path="/login.do"/>
+    </action>
+  </action-mappings>
+  <message-resources parameter="test.view.ApplicationResources"/>
+</struts-config>

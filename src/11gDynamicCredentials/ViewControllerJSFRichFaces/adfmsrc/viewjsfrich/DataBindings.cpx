@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.50.44" id="DataBindings" SeparateXMLFiles="false"
+             Package="viewjsfrich" ClientType="Generic"
+             ErrorHandlerClass="test.DynamicJDBCDCErrorHandlerImpl">
+  <pageMap>
+    <page path="/main.jspx" usageId="viewjsfrich_mainPageDef"/>
+    <page path="/login.jspx" usageId="viewjsfrich_loginPageDef"/>
+    <page path="/anotherPage.jspx" usageId="viewjsfrich_anotherPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="viewjsfrich_mainPageDef" path="viewjsfrich.pageDefs.mainPageDef"/>
+    <page id="viewjsfrich_loginPageDef"
+          path="viewjsfrich.pageDefs.loginPageDef"/>
+    <page id="viewjsfrich_anotherPagePageDef"
+          path="viewjsfrich.pageDefs.anotherPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="TestModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="TestModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

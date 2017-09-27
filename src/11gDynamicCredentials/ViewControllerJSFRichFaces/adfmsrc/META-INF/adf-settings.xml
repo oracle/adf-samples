@@ -1,0 +1,10 @@
+<adf-settings xmlns="http://xmlns.oracle.com/adf/settings">
+  <adfc-controller-config xmlns="http://xmlns.oracle.com/adf/controller/config">
+    <lifecycle>
+      <phase-listener>
+        <listener-id>DynamicJDBCPagePhaseListener</listener-id>
+        <class>test.DynamicJDBCPagePhaseListener</class>
+      </phase-listener>
+    </lifecycle>
+  </adfc-controller-config>
+</adf-settings>

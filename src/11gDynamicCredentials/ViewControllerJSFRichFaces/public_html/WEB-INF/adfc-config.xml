@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="main">
+    <page>/main.jspx</page>
+  </view>
+  <view id="login">
+    <page>/login.jspx</page>
+  </view>
+  <view id="anotherPage">
+    <page>/anotherPage.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case>
+      <from-outcome>main</from-outcome>
+      <to-activity-id>main</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>main</from-activity-id>
+    <control-flow-case>
+      <from-outcome>TryAnother</from-outcome>
+      <to-activity-id>anotherPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>anotherPage</from-activity-id>
+    <control-flow-case>
+      <from-outcome>BackToMain</from-outcome>
+      <to-activity-id>main</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>Main</managed-bean-name>
+    <managed-bean-class>viewjsfrich.backing.Main</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>AnotherPage</managed-bean-name>
+    <managed-bean-class>viewjsfrich.backing.AnotherPage</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>  
+</adfc-config>

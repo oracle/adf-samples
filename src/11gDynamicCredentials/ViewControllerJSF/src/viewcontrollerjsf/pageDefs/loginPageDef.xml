@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.40" id="loginPageDef"
+                Package="viewcontrollerjsf.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables" Refresh="ifNeeded">
+      <variable Name="username_var" Type="java.lang.String"/>
+      <variable Name="password_var" Type="java.lang.String"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="username">
+      <AttrNames>
+        <Item Value="username_var"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="password">
+      <AttrNames>
+        <Item Value="password_var"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
