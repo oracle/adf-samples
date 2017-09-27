@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="TestTaskFlow">
+    <page>/TestTaskFlow.jspx</page>
+  </view>
+  <task-flow-call id="show-employees-for-dept">
+    <task-flow-reference>
+      <document>/WEB-INF/show-employees-for-dept.xml</document>
+      <id>show-employees-for-dept</id>
+    </task-flow-reference>
+    <input-parameter>
+      <name>p_deptno</name>
+      <value>#{requestScope.p_deptno}</value>
+    </input-parameter>
+  </task-flow-call>
+  <control-flow-rule>
+    <from-activity-id>TestTaskFlow</from-activity-id>
+    <control-flow-case>
+      <from-outcome>ShowEmployees</from-outcome>
+      <to-activity-id>show-employees-for-dept</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

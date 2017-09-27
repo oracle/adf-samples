@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">TestTaskFlow</property>
+      <property
+         name="page">/TestTaskFlow.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - TestTaskFlow&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - TestTaskFlow</property>
+      <property
+         name="y">82.0</property>
+      <property
+         name="x">95.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">show-employees-for-dept</property>
+      <property
+         name="activityId">show-employees-for-dept</property>
+      <property
+         name="documentReference">/WEB-INF/show-employees-for-dept.xml</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-call - show-employees-for-dept&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">task-flow-call - show-employees-for-dept</property>
+      <property
+         name="y">81.5</property>
+      <property
+         name="x">368.6963</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">ShowEmployees</property>
+      <property
+         name="sdm:polyPoints">R50,136.0,82.0,327.6963,81.5,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelHeader text="Employees in Department #{pageFlowScope.p_deptno}" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:table value="#{bindings.EmployeesByDepartment.collectionModel}"
+                    var="row" rows="#{bindings.EmployeesByDepartment.rangeSize}"
+                    emptyText="#{bindings.EmployeesByDepartment.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.EmployeesByDepartment.rangeSize}"
+                    rowBandingInterval="0"
+                    filterModel="#{bindings.EmployeesByDepartmentQuery.queryDescriptor}"
+                    filterVisible="true" varStatus="vs"
+                    selectedRowKeys="#{bindings.EmployeesByDepartment.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.EmployeesByDepartment.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t1">
+            <af:column sortProperty="Empno" filterable="false" sortable="true"
+                       headerText="#{bindings.EmployeesByDepartment.hints.Empno.label}"
+                       id="c1">
+              <af:outputText value="#{row.Empno}" id="ot1">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmployeesByDepartment.hints.Empno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" filterable="false" sortable="true"
+                       headerText="#{bindings.EmployeesByDepartment.hints.Ename.label}"
+                       id="c2">
+              <af:outputText value="#{row.Ename}" id="ot2"/>
+            </af:column>
+          </af:table>
+        </af:panelHeader>
+        <af:commandButton text="Done" id="cb1" action="Done"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7"
+                id="show_employees_for_dept_show_employees_for_dept_ExecuteWithParamsPageDef"
+                Package="test.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesByDepartment" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="EmployeesByDepartmentIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesByDepartmentIterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="varDeptno" NDValue="#{pageFlowScope.p_deptno}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+  </bindings>
+</pageDefinition>

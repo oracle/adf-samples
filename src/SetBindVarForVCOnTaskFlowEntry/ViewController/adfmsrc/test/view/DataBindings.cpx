@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.54.7" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/show-employees-for-dept.xml#show-employees-for-dept@ExecuteWithParams"
+          usageId="test_view_show_employees_for_dept_show_employees_for_dept_ExecuteWithParamsPageDef"/>
+    <page path="/EmployeesByDeparment.jspx"
+          usageId="test_view_EmployeesByDeparmentPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_show_employees_for_dept_show_employees_for_dept_ExecuteWithParamsPageDef"
+          path="test.view.pageDefs.show_employees_for_dept_show_employees_for_dept_ExecuteWithParamsPageDef"/>
+    <page id="test_view_EmployeesByDeparmentPageDef"
+          path="test.view.pageDefs.EmployeesByDeparmentPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

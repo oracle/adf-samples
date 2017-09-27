@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="show-employees-for-dept">
+    <default-activity>ExecuteWithParams</default-activity>
+    <input-parameter-definition>
+      <name>p_deptno</name>
+      <value>#{pageFlowScope.p_deptno}</value>
+      <class>java.lang.Long</class>
+      <required/>
+    </input-parameter-definition>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="EmployeesByDeparment">
+      <page>/EmployeesByDeparment.jspx</page>
+    </view>
+    <task-flow-return id="Done">
+      <outcome>
+        <name>Done</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>EmployeesByDeparment</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Done</from-outcome>
+        <to-activity-id>Done</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case>
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>EmployeesByDeparment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

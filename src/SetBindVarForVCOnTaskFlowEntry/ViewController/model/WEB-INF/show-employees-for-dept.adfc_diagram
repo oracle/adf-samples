@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">method-call - ExecuteWithParams&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">method-call - ExecuteWithParams</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">196.5</property>
+      <property
+         name="x">163.35156</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">EmployeesByDeparment</property>
+      <property
+         name="page">/EmployeesByDeparment.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - EmployeesByDeparment&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - EmployeesByDeparment</property>
+      <property
+         name="y">196.0</property>
+      <property
+         name="x">428.0</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">Done</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Done&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Done</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">194.0</property>
+      <property
+         name="x">676.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="TaskFlowReturn4">
+      <property
+         name="fromOutcome">Done</property>
+      <property
+         name="sdm:polyPoints">R50,469.0,196.0,635.0,194.0,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,204.35156,196.5,387.0,196.0,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="EmployeesByDeparmentPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesByDepartment" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="EmployeesByDepartmentIterator"/>
+    <searchRegion Binds="EmployeesByDepartmentIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="EmployeesByDepartmentQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesByDepartmentIterator"
+          id="EmployeesByDepartment">
+      <nodeDefinition DefName="test.model.EmpView"
+                      Name="EmployeesByDepartment0">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
