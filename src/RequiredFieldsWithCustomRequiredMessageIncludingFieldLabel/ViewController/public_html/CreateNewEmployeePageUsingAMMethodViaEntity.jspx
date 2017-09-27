@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="CreateNewEmployeePageUsingAMMethodViaEntity">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:inputText value="#{bindings.Ename.inputValue}"
+                          label="#{bindings.Ename.label}"
+                          showRequired="#{bindings.Ename.mandatory}"
+                          columns="#{bindings.Ename.displayWidth}">
+              <af:validator binding="#{bindings.Ename.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Job.inputValue}"
+                          label="#{bindings.Job.label}"
+                          showRequired="#{bindings.Job.mandatory}"
+                          columns="#{bindings.Job.displayWidth}">
+              <af:validator binding="#{bindings.Job.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Mgr.inputValue}"
+                          label="#{bindings.Mgr.label}"
+                          showRequired="#{bindings.Mgr.mandatory}"
+                          columns="#{bindings.Mgr.displayWidth}">
+              <af:validator binding="#{bindings.Mgr.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Mgr.format}"/>
+            </af:inputText>
+            <af:selectInputDate value="#{bindings.Hiredate.inputValue}"
+                                label="#{bindings.Hiredate.label}"
+                                showRequired="#{bindings.Hiredate.mandatory}">
+              <af:validator binding="#{bindings.Hiredate.validator}"/>
+              <f:convertDateTime pattern="#{bindings.Hiredate.format}"/>
+            </af:selectInputDate>
+            <af:inputText value="#{bindings.Sal.inputValue}"
+                          label="#{bindings.Sal.label}"
+                          showRequired="#{bindings.Sal.mandatory}"
+                          columns="#{bindings.Sal.displayWidth}">
+              <af:validator binding="#{bindings.Sal.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Sal.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Comm.inputValue}"
+                          label="#{bindings.Comm.label}"
+                          showRequired="#{bindings.Comm.mandatory}"
+                          columns="#{bindings.Comm.displayWidth}">
+              <af:validator binding="#{bindings.Comm.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Comm.format}"/>
+            </af:inputText>
+            <af:selectOneChoice  showRequired="true" value="#{bindings.Deptno.inputValue}"
+                                label="#{bindings.Deptno.label}">
+              <f:selectItems value="#{bindings.Deptno.items}"/>
+            </af:selectOneChoice>
+            <f:facet name="footer">
+              <h:panelGroup>
+                <af:commandButton text="createNewEmployee"
+                                  disabled="#{!bindings.createNewEmployee.enabled}"
+                                  action="#{CreateNewEmployeePageUsingAMMethodViaEntity.onCreateNewEmployee}"/>
+                <af:commandButton text="Cancel" action="back"/>
+              </h:panelGroup>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

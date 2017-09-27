@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="TestModuleLocal">
+         <AppModuleJndiName>sample.TestModule</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <ApplicationName>sample.TestModule</ApplicationName>
+         <jbo.project>Model</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="adt-scaler1.us.oracle.com"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="smuench"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="adt1010"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05DCEAD933D80F7B777554B8BCF87CCB32]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

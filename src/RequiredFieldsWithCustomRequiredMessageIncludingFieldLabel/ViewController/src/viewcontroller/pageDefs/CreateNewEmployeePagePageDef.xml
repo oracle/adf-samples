@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.40.66" id="CreateNewEmployeePagePageDef"
+                Package="viewcontroller.pageDefs"
+                MsgBundleClass="viewcontroller.pageDefs.CreateNewEmployeePagePageDefMsgBundle">
+  <parameters/>
+  <executables>
+    <invokeAction id="createBlankRow" Binds="Create" Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.postback == false}"/>
+    <iterator id="EmployeesIterator" RangeSize="10" Binds="Employees"
+              DataControl="TestModuleDataControl"/>
+    <iterator id="DepartmentListIterator" RangeSize="-1" Binds="DepartmentList"
+              DataControl="TestModuleDataControl"/>
+  </executables>
+  <bindings>
+    <attributeValues id="Empno" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Empno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Ename" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Ename"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Job" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Job"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Mgr" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Mgr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Hiredate" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Hiredate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Sal" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Sal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Comm" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Comm"/>
+      </AttrNames>
+    </attributeValues>
+    <list id="Deptno" IterBinding="EmployeesIterator" StaticList="false"
+          ListOperMode="0" ListIter="DepartmentListIterator" NullValueFlag="1"
+          NullValueId="Deptno_null">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Deptno"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Dname"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action id="Commit" InstanceName="TestModuleDataControl"
+            DataControl="TestModuleDataControl" RequiresUpdateModel="true"
+            Action="100"/>
+    <action id="Rollback" InstanceName="TestModuleDataControl"
+            DataControl="TestModuleDataControl" RequiresUpdateModel="false"
+            Action="101"/>
+    <action IterBinding="EmployeesIterator" id="Create"
+            InstanceName="TestModuleDataControl.Employees"
+            DataControl="TestModuleDataControl" RequiresUpdateModel="true"
+            Action="41"/>
+  </bindings>
+</pageDefinition>
