@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.70" id="view1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="AllEmployees" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AllEmployeesIterator"/>
+    <iterator Binds="EmployeeHierarchy" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="EmployeeHierarchyIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AllEmployeesIterator" id="AllEmployees">
+      <nodeDefinition DefName="test.model.EmpView" Name="AllEmployees0">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Sal"/>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="processSelectedEmployeesForTable"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="processSelectedEmployees"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="s" NDType="java.util.Set"
+                 NDValue="${View1.selectedAdfRowKeys['myTable']}"/>
+    </methodAction>
+    <methodAction id="processSelectedEmployeesForTreeTable"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="processSelectedEmployees"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="s" NDType="java.util.Set"
+                 NDValue="${View1.selectedAdfRowKeys['myTreeTable']}"/>
+    </methodAction>
+    <methodAction id="processSelectedEmployeesForTree"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="processSelectedEmployees"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="s" NDType="java.util.Set"
+                 NDValue="${View1.selectedAdfRowKeys['myTree']}"/>
+    </methodAction>
+    <tree IterBinding="EmployeeHierarchyIterator" id="EmployeeHierarchy">
+      <nodeDefinition DefName="test.model.EmpView" Name="EmployeeHierarchy0">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Sal"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="DirectReports"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EmployeeHierarchyIterator" id="EmployeeHierarchy1">
+      <nodeDefinition DefName="test.model.EmpView" Name="EmployeeHierarchy10">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="DirectReports"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

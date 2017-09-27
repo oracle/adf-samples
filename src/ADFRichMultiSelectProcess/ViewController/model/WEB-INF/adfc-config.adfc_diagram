@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">view1</property>
+      <property
+         name="page">/view1.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - view1</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">104.0</property>
+      <property
+         name="x">111.0</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">view2</property>
+      <property
+         name="page">/view2.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>view2&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - view2</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">102.0</property>
+      <property
+         name="x">312.0</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">TryView2</property>
+      <property
+         name="sdm:polyPoints">R46,152.0,100.149414,270.94116,98.149414,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">TryView1</property>
+      <property
+         name="sdm:polyPoints">L54,271.0,105.149414,152.05882,107.149414,R54</property>
+   </ControlFlowCase>
+</SDM>

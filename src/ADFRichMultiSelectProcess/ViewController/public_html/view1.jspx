@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <!--
+           NOTE: After setting rowSelection="multiple" you need to remove these
+                 two attributes from the table to enable multi-select:
+                 
+                 selectedRowKeys="#{bindings.AllEmployees.collectionModel.selectedRow}"
+                 selectionListener="#{bindings.AllEmployees.collectionModel.makeCurrent}"
+        -->
+        <af:panelSplitter orientation="vertical" id="ps1">
+          <f:facet name="first">
+            <af:decorativeBox theme="medium" id="db1">
+              <f:facet name="center">
+                <af:table value="#{bindings.AllEmployees.collectionModel}"
+                          var="row" rows="#{bindings.AllEmployees.rangeSize}"
+                          emptyText="#{bindings.AllEmployees.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.AllEmployees.rangeSize}"
+                          rowSelection="multiple" 
+                          id="myTable">
+                  <af:column sortProperty="Empno" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Empno.label}"
+                             id="c1">
+                    <af:outputText value="#{row.Empno}" id="ot1">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AllEmployees.hints.Empno.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Ename" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Ename.label}"
+                             id="c2">
+                    <af:outputText value="#{row.Ename}" id="ot2"/>
+                  </af:column>
+                  <af:column sortProperty="Job" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Job.label}"
+                             id="c3">
+                    <af:outputText value="#{row.Job}" id="ot3"/>
+                  </af:column>
+                  <af:column sortProperty="Mgr" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Mgr.label}"
+                             id="c4">
+                    <af:outputText value="#{row.Mgr}" id="ot4">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AllEmployees.hints.Mgr.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Hiredate" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Hiredate.label}"
+                             id="c5">
+                    <af:outputText value="#{row.Hiredate}" id="ot5">
+                      <af:convertDateTime pattern="#{bindings.AllEmployees.hints.Hiredate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Sal" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Sal.label}"
+                             id="c6">
+                    <af:outputText value="#{row.Sal}" id="ot6">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AllEmployees.hints.Sal.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Comm" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Comm.label}"
+                             id="c7">
+                    <af:outputText value="#{row.Comm}" id="ot7">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AllEmployees.hints.Comm.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Deptno" sortable="false"
+                             headerText="#{bindings.AllEmployees.hints.Deptno.label}"
+                             id="c8">
+                    <af:outputText value="#{row.Deptno}" id="ot8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.AllEmployees.hints.Deptno.format}"/>
+                    </af:outputText>
+                  </af:column>
+                </af:table>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelGroupLayout id="pgl1">
+                  <af:commandButton actionListener="#{bindings.processSelectedEmployeesForTable.execute}"
+                                    text="processSelectedEmployees"
+                                    disabled="#{!bindings.processSelectedEmployeesForTable.enabled}"
+                                    id="cb1"/>
+                  <af:spacer width="30" height="10" id="s1"/>
+                  <af:commandLink text="Try a page with a table of Departments"
+                                  action="TryView2" id="cl1"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelStretchLayout id="psl1">
+              <f:facet name="center">
+                <af:panelSplitter splitterPosition="400" id="ps2">
+                  <f:facet name="first">
+                    <af:decorativeBox theme="medium" id="db2">
+                      <f:facet name="center">
+                        <!--
+                           NOTE: After setting rowSelection="multiple" you need to remove these
+                                 two attributes from the table to enable multi-select:
+                                 
+                                 selectedRowKeys="..." (if present)
+                                 selectionListener="#{bindings.AllEmployees.collectionModel.makeCurrent}"
+                        -->                      
+                        <af:treeTable value="#{bindings.EmployeeHierarchy.treeModel}"
+                                      var="node"                                      
+                                      rowSelection="multiple"
+                                       id="myTreeTable">
+                          <f:facet name="nodeStamp">
+                            <af:column headerText="#{bindings.EmployeeHierarchy.hints.Ename.label}"
+                                       id="c9">
+                              <af:outputText value="#{node.Ename}" id="ot9"/>
+                            </af:column>
+                          </f:facet>
+                          <f:facet name="pathStamp">
+                            <af:outputText value="#{node}" id="ot10"/>
+                          </f:facet>
+                          <af:column headerText="#{bindings.EmployeeHierarchy.hints.Empno.label}"
+                                     id="c10">
+                            <af:outputText value="#{node.Empno}" id="ot11"/>
+                          </af:column>
+                          <af:column headerText="#{bindings.EmployeeHierarchy.hints.Sal.label}"
+                                     id="c11">
+                            <af:outputText value="#{node.Sal}" id="ot12"/>
+                          </af:column>
+                        </af:treeTable>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelGroupLayout id="pgl2">
+                          <af:commandButton actionListener="#{bindings.processSelectedEmployeesForTreeTable.execute}"
+                                                text="processSelectedEmployees"
+                                            disabled="#{!bindings.processSelectedEmployeesForTreeTable.enabled}"
+                                            id="cb2"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:decorativeBox>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:decorativeBox theme="medium" id="db3">
+                      <f:facet name="center">
+                        <af:panelStretchLayout inlineStyle="background-color:White;"
+                                               startWidth="0" endWidth="0"
+                                               topHeight="0" bottomHeight="0"
+                                               id="psl2">
+                          <f:facet name="bottom"/>
+                          <f:facet name="center">
+                            <!--
+                               NOTE: After setting rowSelection="multiple" you need to remove these
+                                     two attributes from the table to enable multi-select:
+                                     
+                                     selectedRowKeys="..." (if present)
+                                     selectionListener="#{bindings.AllEmployees.collectionModel.makeCurrent}"
+                            -->                                                
+                            <af:tree value="#{bindings.EmployeeHierarchy1.treeModel}"
+                                     var="node"                                     
+                                     rowSelection="multiple"
+                                      id="myTree">
+                              <f:facet name="nodeStamp">
+                                <af:outputText value="#{node}" id="ot13"/>
+                              </f:facet>
+                            </af:tree>
+                          </f:facet>
+                          <f:facet name="start"/>
+                          <f:facet name="end"/>
+                          <f:facet name="top"/>
+                        </af:panelStretchLayout>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelGroupLayout id="pgl3">
+                          <af:commandButton actionListener="#{bindings.processSelectedEmployeesForTree.execute}"
+                                            text="processSelectedEmployees"
+                                            disabled="#{!bindings.processSelectedEmployeesForTree.enabled}"
+                                            id="cb3"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:decorativeBox>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+        </af:panelSplitter>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

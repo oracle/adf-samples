@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Manages"
+  Version="11.1.1.51.56"
+  EntityAssociation="test.model.assocs.Manages">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="EmpView"
+    Cardinality="1"
+    Owner="test.model.EmpView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmpView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmpView.Empno"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DirectReports"
+    Cardinality="-1"
+    Owner="test.model.EmpView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DirectReports"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmpView.Mgr"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="Model"
+   Version="11.1.1.61.70"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../Model.jpr" />
+      <Attr Name="_appModuleNames0" Value="test.model.AppModule" />
+      <Attr Name="_NamedConnection" Value="scott_local" />
+   </DesignTime>
+   <Containee
+      Name="assocs"
+      ObjectType="JboPackage"
+      PackageName="test.model.assocs" >
+      <DesignTime>
+         <Attr Name="_AS" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="links"
+      ObjectType="JboPackage"
+      PackageName="test.model.links" >
+      <DesignTime>
+         <Attr Name="_VL" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="model"
+      ObjectType="JboPackage"
+      PackageName="test.model" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+         <Attr Name="_VO" Value="true" />
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+</JboProject>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.70" id="view2PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Departments" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DepartmentsIterator"/>
+    <searchRegion Binds="DepartmentsIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="DepartmentsQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsIterator" id="Departments">
+      <nodeDefinition DefName="test.model.DeptView" Name="Departments0">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="processSelectedDepartments" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="processSelectedDepartments"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="s" NDValue="${View2.selectedAdfRowKeys['myTable']}"
+                 NDType="java.util.Set"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

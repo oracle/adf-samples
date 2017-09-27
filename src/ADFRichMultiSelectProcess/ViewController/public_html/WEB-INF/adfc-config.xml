@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/view1.jspx</page>
+  </view>
+  <view id="view2">
+    <page>/view2.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>view1</from-activity-id>
+    <control-flow-case>
+      <from-outcome>TryView2</from-outcome>
+      <to-activity-id>view2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>view2</from-activity-id>
+    <control-flow-case>
+      <from-outcome>TryView1</from-outcome>
+      <to-activity-id>view1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>View1</managed-bean-name>
+    <managed-bean-class>test.view.MultiSelectSupportBackingBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>View2</managed-bean-name>
+    <managed-bean-class>test.view.MultiSelectSupportBackingBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

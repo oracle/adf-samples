@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:decorativeBox theme="medium" id="db1">
+          <f:facet name="center">
+            <!--
+               NOTE: After setting rowSelection="multiple" you need to remove these
+                     two attributes from the table to enable multi-select:
+                     
+                     selectedRowKeys="..." (if present)
+                     selectionListener="#{bindings.AllEmployees.collectionModel.makeCurrent}"
+            -->               
+            <af:table value="#{bindings.Departments.collectionModel}" var="row"
+                      rows="#{bindings.Departments.rangeSize}"
+                      emptyText="#{bindings.Departments.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.Departments.rangeSize}"
+                      filterModel="#{bindings.DepartmentsQuery.queryDescriptor}"
+                      queryListener="#{bindings.DepartmentsQuery.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      rowSelection="multiple" 
+                      id="myTable">
+              <af:column sortProperty="Deptno" filterable="true" sortable="true"
+                         headerText="#{bindings.Departments.hints.Deptno.label}"
+                         id="c1">
+                <af:outputText value="#{row.Deptno}" id="ot1">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Departments.hints.Deptno.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Dname" filterable="true" sortable="true"
+                         headerText="#{bindings.Departments.hints.Dname.label}"
+                         id="c2">
+                <af:outputText value="#{row.Dname}" id="ot2"/>
+              </af:column>
+              <af:column sortProperty="Loc" filterable="true" sortable="true"
+                         headerText="#{bindings.Departments.hints.Loc.label}"
+                         id="c3">
+                <af:outputText value="#{row.Loc}" id="ot3"/>
+              </af:column>
+            </af:table>
+          </f:facet>
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1">
+              <af:commandButton actionListener="#{bindings.processSelectedDepartments.execute}"
+                                text="processSelectedDepartments"
+                                disabled="#{!bindings.processSelectedDepartments.enabled}"
+                                id="cb1"/>
+              <af:spacer width="30" height="10" id="s1"/>
+              <af:commandLink text="Try a page with a Table, Tree, and TreeTable of Employees"
+                              action="TryView1" id="cl1"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:decorativeBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
