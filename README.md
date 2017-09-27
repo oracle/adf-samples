@@ -158,6 +158,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ReusablePanelExample
 * RouterDataAction
 * RowCurrencyJBO35007
+* RowSelectionButtonTestJSF
 
 
 

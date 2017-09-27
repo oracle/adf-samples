@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html"
+          xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:selectBooleanCheckbox text="Use AutoSubmit for the TableSelectOne in the Table Below?"
+                                    value="#{SessionSettings.useAutoSubmit}"
+                                    autoSubmit="true"
+                                    id="tableAutoSubmitControl"/>
+          <af:panelHorizontal valign="top">
+            <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                      rows="#{bindings.DeptView1.rangeSize}"
+                      first="#{bindings.DeptView1.rangeStart}"
+                      emptyText="#{bindings.DeptView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      selectionState="#{bindings.DeptView1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.DeptView1.collectionModel.makeCurrent}"
+                      id="myTable" partialTriggers="tableAutoSubmitControl">
+              <af:column sortProperty="Deptno" sortable="false"
+                         headerText="#{bindings.DeptView1.labels.Deptno}">
+                <af:outputText value="#{row.Deptno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.DeptView1.formats.Deptno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Dname" sortable="false"
+                         headerText="#{bindings.DeptView1.labels.Dname}">
+                <af:outputText value="#{row.Dname}"/>
+              </af:column>
+              <f:facet name="selection">
+                <af:tableSelectOne text="Select and"
+                                   autoSubmit="#{SessionSettings.useAutoSubmit}">
+                  <af:commandButton actionListener="#{bindings.testCurrentRow.execute}"
+                                    text="testCurrentRow"
+                                    disabled="#{!bindings.testCurrentRow.enabled}"/>
+                </af:tableSelectOne>
+              </f:facet>
+            </af:table>
+            <af:panelForm partialTriggers="myTable">
+              <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+                <af:outputText value="#{bindings.Deptno.inputValue}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Deptno.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+                <af:outputText value="#{bindings.Dname.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+                <af:outputText value="#{bindings.Loc.inputValue}"/>
+              </af:panelLabelAndMessage>
+            </af:panelForm>
+          </af:panelHorizontal>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
