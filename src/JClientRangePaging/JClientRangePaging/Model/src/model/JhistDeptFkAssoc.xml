@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+
+<Association
+   Name="JhistDeptFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+   </DesignTime>
+   <AssociationEnd
+      Name="Departments"
+      Cardinality="1"
+      Source="true"
+      Owner="model.Departments" >
+      <AttrArray Name="Attributes">
+         <Item Value="model.Departments.DepartmentId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="Departments" />
+         <Attr Name="_foreignKey" Value="model.Departments.DeptIdPk" />
+      </DesignTime>
+   </AssociationEnd>
+   <AssociationEnd
+      Name="JobHistory"
+      Cardinality="-1"
+      Owner="model.JobHistory" >
+      <AttrArray Name="Attributes">
+         <Item Value="model.JobHistory.DepartmentId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="JobHistory" />
+         <Attr Name="_foreignKey" Value="model.JobHistory.JhistDeptFk" />
+      </DesignTime>
+   </AssociationEnd>
+</Association>

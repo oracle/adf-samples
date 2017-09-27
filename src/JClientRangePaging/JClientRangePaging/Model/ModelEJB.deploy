@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ejb-deployment nselem="ejb-deployment" class="oracle.jdeveloper.deploy.ejb.EjbProfile" xmlns="http://xmlns.oracle.com/jdeveloper/10120/deploy/j2ee-ejb-jar">
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>true</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <defaultConnection>localoc4j</defaultConnection>
+   <deployClientMaxHeapSize/>
+   <earURL path="deploy/ModelEJB.ear"/>
+   <enterpriseAppName>ModelEJB</enterpriseAppName>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="project-output">
+            <contributors>
+               <Item type="2"/>
+               <Item type="7"/>
+            </contributors>
+            <displayName>Project Output</displayName>
+            <filters>
+               <rules>
+                  <Item type="0" pattern="META-INF/**"/>
+                  <Item type="0" pattern="model/server/ejb/beanmanaged/AppModuleServer.class"/>
+                  <Item type="1" pattern="**"/>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="deploy/ModelEJB.jar"/>
+   <profileDeps>
+      <Item>
+         <profileURL path="ModelCommon.deploy"/>
+         <projectURL path="Model.jpr"/>
+      </Item>
+   </profileDeps>
+   <properties/>
+</ejb-deployment>

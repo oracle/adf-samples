@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="AppModuleLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>hr</JDBCName>
+         <jbo.project>Model</jbo.project>
+         <AppModuleJndiName>model.AppModule</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>model.AppModule</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleEmbeddedAS">
+         <jbo.internal.embedded>true</jbo.internal.embedded>
+         <JDBCDataSource>jdbc/hrDS</JDBCDataSource>
+         <ApplicationPath>current-workspace-app</ApplicationPath>
+         <ConnectionPort>23891</ConnectionPort>
+         <AppModuleJndiName>AppModuleBean</AppModuleJndiName>
+         <HostName>localhost</HostName>
+         <java.naming.security.authentication>simple</java.naming.security.authentication>
+         <java.naming.security.credentials>welcome</java.naming.security.credentials>
+         <java.naming.security.principal>admin</java.naming.security.principal>
+         <DeployPlatform>EjbIas</DeployPlatform>
+         <jbo.server.internal_connection>jdbc/hrCoreDS</jbo.server.internal_connection>
+         <ApplicationName>model.AppModule</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleAS">
+         <JDBCDataSource>jdbc/hrDS</JDBCDataSource>
+         <ApplicationPath>ModelEJB</ApplicationPath>
+         <AppServerConnectionName>localoc4j</AppServerConnectionName>
+         <DtMiddleTierDeploymentProfile>../ModelMiddleTier.deploy</DtMiddleTierDeploymentProfile>
+         <DtDeploymentProfile>../ModelEJB.deploy</DtDeploymentProfile>
+         <AppModuleJndiName>AppModuleBean</AppModuleJndiName>
+         <DtCommonDeploymentProfile>../ModelCommon.deploy</DtCommonDeploymentProfile>
+         <java.naming.security.authentication>simple</java.naming.security.authentication>
+         <DeployPlatform>EjbIas</DeployPlatform>
+         <jbo.server.internal_connection>jdbc/hrCoreDS</jbo.server.internal_connection>
+         <ApplicationName>model.AppModule</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="hr">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="hr"/>
+      <ENTRY name="ConnectionName" value="hr"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05F507C8ECB6634DEA14622CC865BA989C]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.driver.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+   <ConnectionDefinition name="localoc4j">
+      <ENTRY name="URL" value="ormi://smuench-xp/"/>
+      <ENTRY name="ConnectionName" value="localoc4j"/>
+      <ENTRY name="user" value="admin"/>
+      <ENTRY name="ConnectionType" value="OC4J"/>
+      <ENTRY name="password">
+         <![CDATA[{904}058FBDF13907D14639D3B006C83C5819B5]]>
+      </ENTRY>
+      <ENTRY name="JNDI_INITIAL_CONTEXT_FACTORY" value="com.evermind.server.rmi.RMIInitialContextFactory"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="TARGET_NODE" value="http-web-site"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

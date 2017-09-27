@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="AppModule"
+   ComponentClass="model.AppModuleImpl" >
+   <Properties>
+      <Property Name ="DATA_CONTROL_NAME" Value ="AppModuleDataControl" />
+   </Properties>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_deployType" Value="8" />
+      <Attr Name="_ejbAppModule" Value="false" />
+   </DesignTime>
+   <ViewUsage
+      Name="EmployeesView1"
+      ViewObjectName="model.EmployeesView" >
+   </ViewUsage>
+   <Remote
+      Name="BeanManaged"
+      ServerClassName="model.server.ejb.beanmanaged.AppModuleServer" >
+      <DesignTime>
+         <Attr Name="_ejbId" Value="34f49dfe-0104-1000-8003-8d90813c079d" />
+         <Attr Name="_ejbName" Value="AppModuleBean" />
+         <Attr Name="_ejbLocal" Value="false" />
+         <Attr Name="_isStateless" Value="false" />
+      </DesignTime>
+   </Remote>
+</AppModule>

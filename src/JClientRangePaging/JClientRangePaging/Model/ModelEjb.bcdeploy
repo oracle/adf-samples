@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jbo-deployment class="oracle.jbo.dt.jdevx.deploy.JbdEJBProfile">
+   <bcApplication path="src/Model.jpx"/>
+   <beanTypes>0</beanTypes>
+   <commonProfileURL path="ModelCommon.deploy"/>
+   <deployType>Ejb</deployType>
+   <middleTierProfileURL path="ModelMiddleTier.deploy"/>
+   <o9iASDeploy>true</o9iASDeploy>
+   <serverProfile>
+      <name>ModelEJB</name>
+      <profileURL path="ModelEJB.deploy"/>
+   </serverProfile>
+   <serverProfiles class="java.util.ArrayList"/>
+   <weblogicDeploy>false</weblogicDeploy>
+</jbo-deployment>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="model" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Employees"
+      FullName="model.Employees"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmployeesView"
+      FullName="model.EmployeesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="AppModule"
+      FullName="model.AppModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="EmpManagerFkAssoc"
+      FullName="model.EmpManagerFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Departments"
+      FullName="model.Departments"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmpDeptFkAssoc"
+      FullName="model.EmpDeptFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="DeptMgrFkAssoc"
+      FullName="model.DeptMgrFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="JobHistory"
+      FullName="model.JobHistory"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="JhistEmpFkAssoc"
+      FullName="model.JhistEmpFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="JhistDeptFkAssoc"
+      FullName="model.JhistDeptFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+</JboPackage>
