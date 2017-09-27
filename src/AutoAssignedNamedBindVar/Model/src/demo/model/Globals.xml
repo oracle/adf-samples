@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="Globals"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   ComponentClass="demo.model.GlobalsImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   MaxFetchSize="0"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="DepartmentNumber"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+</ViewObject>

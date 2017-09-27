@@ -32,5 +32,6 @@ Each sample is also available in downloadable form in the zips directory.
 * ArrayOfStringDomain11g
 * ArrayOfStructExample
 * AttributeLevelViewAccessorValidation
+* AutoAssignedNamedBindVar
 
 

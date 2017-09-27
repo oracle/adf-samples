@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/technology/oracleas/schema http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd" version="10.0" xmlns="http://www.oracle.com/technology/oracleas/schema">
+  <web-module id="AutoAssignedNamedBindVar-ViewController-webapp" path="file:/D:/jdev/home/mywork/AutoAssignedNamedBindVar/ViewController/public_html/"/>
+  <jazn provider="XML" location="AutoAssignedNamedBindVar-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="AutoAssignedNamedBindVar-data-sources.xml"/>
+</orion-application>
