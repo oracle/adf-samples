@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl2" layout="vertical">
+          <af:iterator value="#{bindings.DeptWithBooleanView1.collectionModel}"
+                       var="row" id="i1">
+            <af:selectBooleanRadio text="#{row.bindings.Dname.inputValue}"
+                                   group="DeptGroup"
+                                   value="#{row.bindings.SelectedBoolean.inputValue}"
+                                   autoSubmit="true" id="sbr1"/>
+          </af:iterator>
+          <af:separator id="separator1"/>
+          <af:panelGroupLayout id="pgl1">
+            <af:commandButton actionListener="#{bindings.Execute.execute}"
+                              text="Execute"
+                               id="cb3"/>
+            <af:commandButton actionListener="#{bindings.Commit.execute}"
+                              text="Commit"
+                               id="cb1"/>
+            <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                              text="Rollback"
+                             
+                              immediate="true" id="cb2">
+              <af:resetActionListener/>
+            </af:commandButton>
+          </af:panelGroupLayout>
+          <!--
+        <af:table value="#{bindings.DeptWithBooleanView1.collectionModel}"
+                  var="row" rows="#{bindings.DeptWithBooleanView1.rangeSize}"
+                  emptyText="#{bindings.DeptWithBooleanView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.DeptWithBooleanView1.rangeSize}"
+                  rowBandingInterval="0" id="t1">
+          <af:column sortProperty="Deptno" sortable="false"
+                     headerText="#{bindings.DeptWithBooleanView1.hints.Deptno.label}"
+                     id="c2">
+            <af:outputText value="#{row.Deptno}" id="ot2">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DeptWithBooleanView1.hints.Deptno.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Dname" sortable="false"
+                     headerText="#{bindings.DeptWithBooleanView1.hints.Dname.label}"
+                     id="c3">
+            <af:outputText value="#{row.Dname}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="Loc" sortable="false"
+                     headerText="#{bindings.DeptWithBooleanView1.hints.Loc.label}"
+                     id="c1">
+            <af:outputText value="#{row.Loc}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="SelectedBoolean" sortable="false"
+                     headerText="#{bindings.DeptWithBooleanView1.hints.SelectedBoolean.label}"
+                     id="c4">
+            <af:outputText value="#{row.SelectedBoolean}" id="ot1"/>
+          </af:column>
+          -->
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

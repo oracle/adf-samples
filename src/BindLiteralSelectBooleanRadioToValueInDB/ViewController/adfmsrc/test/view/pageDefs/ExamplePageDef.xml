@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="ExamplePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DeptWithBooleanView1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="DeptWithBooleanView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptWithBooleanView1Iterator" id="DeptWithBooleanView1">
+      <nodeDefinition DefName="test.model.DeptWithBooleanView"
+                      Name="DeptWithBooleanView10">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+          <Item Value="SelectedBoolean"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="DeptWithBooleanView1Iterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>
