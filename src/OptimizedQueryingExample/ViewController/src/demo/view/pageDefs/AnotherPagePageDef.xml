@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73" id="AnotherPagePageDef"
+                Package="demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="CurrentEmployeeIterator" RangeSize="1"
+              Binds="CurrentEmployee" DataControl="ExampleModuleDataControl"/>
+    <iterator id="EmpDetail3Iterator" RangeSize="5" Binds="EmpDetail3"
+              DataControl="ExampleModuleDataControl"/>
+    <iterator id="EmpDetail4Iterator" RangeSize="5" Binds="EmpDetail4"
+              DataControl="ExampleModuleDataControl"/>
+  </executables>
+  <bindings>
+    <attributeValues id="CurrentEmployeeEname"
+                     IterBinding="CurrentEmployeeIterator">
+      <AttrNames>
+        <Item Value="Ename"/>
+      </AttrNames>
+    </attributeValues>
+    <table id="CurrentEmployeeEmpDetail3" IterBinding="EmpDetail3Iterator">
+      <AttrNames>
+        <Item Value="Empno"/>
+        <Item Value="Info"/>
+      </AttrNames>
+    </table>
+    <table id="CurrentEmployeeEmpDetail4" IterBinding="EmpDetail4Iterator">
+      <AttrNames>
+        <Item Value="Empno"/>
+        <Item Value="Info"/>
+      </AttrNames>
+    </table>
+    <action id="Rollback" InstanceName="ExampleModuleDataControl"
+            DataControl="ExampleModuleDataControl" RequiresUpdateModel="false"
+            Action="101"/>
+    <action id="Previous" IterBinding="CurrentEmployeeIterator"
+            InstanceName="ExampleModuleDataControl.CurrentEmployee"
+            DataControl="ExampleModuleDataControl" RequiresUpdateModel="true"
+            Action="11"/>
+    <action id="Next" IterBinding="CurrentEmployeeIterator"
+            InstanceName="ExampleModuleDataControl.CurrentEmployee"
+            DataControl="ExampleModuleDataControl" RequiresUpdateModel="true"
+            Action="10"/>
+  </bindings>
+</pageDefinition>

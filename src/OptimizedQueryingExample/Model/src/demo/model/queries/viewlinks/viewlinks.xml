@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="viewlinks"
+   SeparateXMLFiles="true"
+   PackageName="demo.model.queries.viewlinks" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="EmpDetail1ToEmpDetailDetail7"
+      FullName="demo.model.queries.viewlinks.EmpDetail1ToEmpDetailDetail7"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail1"
+      FullName="demo.model.queries.viewlinks.EmpToDetail1"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail2"
+      FullName="demo.model.queries.viewlinks.EmpToDetail2"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail3"
+      FullName="demo.model.queries.viewlinks.EmpToDetail3"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail4"
+      FullName="demo.model.queries.viewlinks.EmpToDetail4"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail5"
+      FullName="demo.model.queries.viewlinks.EmpToDetail5"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpToDetail6"
+      FullName="demo.model.queries.viewlinks.EmpToDetail6"
+      ObjectType="ViewLink" >
+   </Containee>
+</JboPackage>

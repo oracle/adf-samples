@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>demo.controller.CustomADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+  <navigation-rule>
+    <from-view-id>/Home.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>another</from-outcome>
+      <to-view-id>/AnotherPage.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>third</from-outcome>
+      <to-view-id>/ThirdPage.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>drill</from-outcome>
+      <to-view-id>/Drill.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/AnotherPage.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>home</from-outcome>
+      <to-view-id>/Home.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>third</from-outcome>
+      <to-view-id>/ThirdPage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/ThirdPage.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>home</from-outcome>
+      <to-view-id>/Home.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>another</from-outcome>
+      <to-view-id>/AnotherPage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/Drill.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/Home.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>

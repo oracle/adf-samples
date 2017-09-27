@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="ExampleModule"
+   ComponentClass="demo.model.ExampleModuleImpl"
+   ComponentInterface="demo.model.common.ExampleModule"
+   ClientProxyName="demo.model.client.ExampleModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_superClassName" Value="demo.model.fwkext.CustomApplicationModuleImpl" />
+   </DesignTime>
+   <ViewUsage
+      Name="CurrentEmployee"
+      ViewObjectName="demo.model.queries.CurrentEmployee" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail1"
+      ViewObjectName="demo.model.queries.EmpDetail1" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail2"
+      ViewObjectName="demo.model.queries.EmpDetail2" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail3"
+      ViewObjectName="demo.model.queries.EmpDetail3" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail4"
+      ViewObjectName="demo.model.queries.EmpDetail4" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail5"
+      ViewObjectName="demo.model.queries.EmpDetail5" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetail6"
+      ViewObjectName="demo.model.queries.EmpDetail6" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpDetailDetail7"
+      ViewObjectName="demo.model.queries.EmpDetailDetail7" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail1_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail1"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail1" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail2_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail2"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail2" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail3_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail3"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail3" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail4_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail4"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail4" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail5_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail5"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail5" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpToDetail6_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpToDetail6"
+      SrcViewUsageName="demo.model.ExampleModule.CurrentEmployee"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetail6" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpDetail1ToEmpDetailDetail7_1"
+      ViewLinkObjectName="demo.model.queries.viewlinks.EmpDetail1ToEmpDetailDetail7"
+      SrcViewUsageName="demo.model.ExampleModule.EmpDetail1"
+      DstViewUsageName="demo.model.ExampleModule.EmpDetailDetail7" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

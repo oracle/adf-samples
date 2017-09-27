@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="queries"
+   SeparateXMLFiles="true"
+   PackageName="demo.model.queries" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="CurrentEmployee"
+      FullName="demo.model.queries.CurrentEmployee"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail1"
+      FullName="demo.model.queries.EmpDetail1"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail2"
+      FullName="demo.model.queries.EmpDetail2"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail3"
+      FullName="demo.model.queries.EmpDetail3"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail4"
+      FullName="demo.model.queries.EmpDetail4"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail5"
+      FullName="demo.model.queries.EmpDetail5"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetail6"
+      FullName="demo.model.queries.EmpDetail6"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpDetailDetail7"
+      FullName="demo.model.queries.EmpDetailDetail7"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="ExampleModuleLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <enable.optimizations>false</enable.optimizations>
+         <JDBCName>scott</JDBCName>
+         <jbo.project>Model</jbo.project>
+         <AppModuleJndiName>demo.model.ExampleModule</AppModuleJndiName>
+         <ApplicationName>demo.model.ExampleModule</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="ExampleModuleLocalOptimizationsEnabled">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <enable.optimizations>true</enable.optimizations>
+         <JDBCName>scott</JDBCName>
+         <jbo.project>Model</jbo.project>
+         <AppModuleJndiName>demo.model.ExampleModule</AppModuleJndiName>
+         <ApplicationName>demo.model.ExampleModule</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="scott"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="password">
+         <![CDATA[{904}0516871E1A54B5BB990A89BC909859073B]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

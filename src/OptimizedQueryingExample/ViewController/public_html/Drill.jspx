@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Drill">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:commandLink text="Back Home" action="back"/>
+            <af:panelLabelAndMessage label="#{bindings.Empno.label}">
+              <af:outputText value="#{bindings.Empno.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Empno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Info.label}">
+              <af:outputText value="#{bindings.Info.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.EmpDetail1Id.label}">
+              <af:outputText value="#{bindings.EmpDetail1Id.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpDetail1Id.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+          </af:panelForm>
+          <af:table value="#{bindings.EmpDetail1EmpDetailDetail7.collectionModel}"
+                    var="row"
+                    rows="#{bindings.EmpDetail1EmpDetailDetail7.rangeSize}"
+                    first="#{bindings.EmpDetail1EmpDetailDetail7.rangeStart}"
+                    emptyText="#{bindings.EmpDetail1EmpDetailDetail7.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpDetail1EmpDetailDetail7.labels.Empno}">
+              <af:outputText value="#{row.Empno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpDetail1EmpDetailDetail7.formats.Empno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Info" sortable="false"
+                       headerText="#{bindings.EmpDetail1EmpDetailDetail7.labels.Info}">
+              <af:outputText value="#{row.Info}"/>
+            </af:column>
+            <af:column headerText="#{bindings.EmpDetail1EmpDetailDetail7.labels.Id}"
+                       sortProperty="Id" sortable="false">
+              <af:outputText value="#{row.Id}"/>
+            </af:column>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Home">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandLink text="Goto Another Page" action="another"/>
+          <af:objectSpacer width="10" height="10"/>
+          <af:commandLink text="Goto Third Page" action="third"/>
+          <af:objectSpacer width="10" height="10"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback"
+                            immediate="true">
+            <af:resetActionListener/>
+          </af:commandButton>
+          <af:panelHorizontal inlineStyle="background-color:rgb(181,255,181);">
+            <af:panelLabelAndMessage label="#{bindings.CurrentEmployeeEname.label}">
+              <af:outputText value="#{bindings.CurrentEmployeeEname.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:commandButton actionListener="#{bindings.Previous.execute}"
+                              text="Previous"
+                              disabled="#{!bindings.Previous.enabled}"/>
+            <af:commandButton actionListener="#{bindings.Next.execute}"
+                              text="Next" disabled="#{!bindings.Next.enabled}"/>
+          </af:panelHorizontal>
+          <af:panelHorizontal>
+            <af:table value="#{bindings.CurrentEmployeeEmpDetail1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.CurrentEmployeeEmpDetail1.rangeSize}"
+                      first="#{bindings.CurrentEmployeeEmpDetail1.rangeStart}"
+                      emptyText="#{bindings.CurrentEmployeeEmpDetail1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      selectionState="#{bindings.CurrentEmployeeEmpDetail1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.CurrentEmployeeEmpDetail1.collectionModel.makeCurrent}">
+              <f:facet name="selection">
+                <af:tableSelectOne text="Select and">
+                  <af:commandButton text="DrillDown" action="drill"/>
+                </af:tableSelectOne>
+              </f:facet>
+              <af:column sortProperty="Empno" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail1.labels.Empno}">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.CurrentEmployeeEmpDetail1.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Info" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail1.labels.Info}">
+                <af:outputText value="#{row.Info}"/>
+              </af:column>
+              <af:column headerText="#{bindings.CurrentEmployeeEmpDetail1.labels.Id}"
+                         sortProperty="Id" sortable="false">
+                <af:outputText value="#{row.Id}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.CurrentEmployeeEmpDetail1.formats.Id}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <af:table value="#{bindings.CurrentEmployeeEmpDetail2.collectionModel}"
+                      var="row"
+                      rows="#{bindings.CurrentEmployeeEmpDetail2.rangeSize}"
+                      first="#{bindings.CurrentEmployeeEmpDetail2.rangeStart}"
+                      emptyText="#{bindings.CurrentEmployeeEmpDetail2.viewable ? 'No rows yet.' : 'Access Denied.'}">
+              <af:column headerText="#{bindings.CurrentEmployeeEmpDetail2.labels.Empno}"
+                         sortProperty="Empno" sortable="true">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.CurrentEmployeeEmpDetail2.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.CurrentEmployeeEmpDetail2.labels.Info}"
+                         sortProperty="Info" sortable="true">
+                <af:outputText value="#{row.Info}"/>
+              </af:column>
+            </af:table>
+            <f:facet name="separator">
+              <af:objectSpacer width="10" height="10"/>
+            </f:facet>
+          </af:panelHorizontal>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

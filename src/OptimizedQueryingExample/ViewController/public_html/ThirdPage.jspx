@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ThirdPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandLink text="Back to Home Page" action="home"/>
+          <af:objectSpacer width="10" height="10"/>
+          <af:commandLink text="Goto Another Page" action="another"/>
+          <af:objectSpacer width="10" height="10"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback"
+                            immediate="true">
+            <af:resetActionListener/>
+          </af:commandButton>
+          <af:commandButton actionListener="#{bindings.Execute.execute}"
+                            text="Refresh Data in EmpDetail6"
+                            disabled="#{!bindings.Execute.enabled}"/>
+          <af:panelHorizontal inlineStyle="background-color:rgb(181,255,181);">
+            <af:panelLabelAndMessage label="#{bindings.CurrentEmployeeEname.label}">
+              <af:outputText value="#{bindings.CurrentEmployeeEname.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:commandButton actionListener="#{bindings.Previous.execute}"
+                              text="Previous"
+                              disabled="#{!bindings.Previous.enabled}"/>
+            <af:commandButton actionListener="#{bindings.Next.execute}"
+                              text="Next" disabled="#{!bindings.Next.enabled}"/>
+          </af:panelHorizontal>
+          <af:panelHorizontal valign="top">
+            <f:facet name="separator">
+              <af:objectSpacer width="10" height="10"/>
+            </f:facet>
+            <af:table value="#{bindings.CurrentEmployeeEmpDetail5.collectionModel}"
+                      var="row"
+                      rows="#{bindings.CurrentEmployeeEmpDetail5.rangeSize}"
+                      first="#{bindings.CurrentEmployeeEmpDetail5.rangeStart}"
+                      emptyText="#{bindings.CurrentEmployeeEmpDetail5.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      id="emp5Table" partialTriggers="emp6Table">
+              <af:column sortProperty="Empno" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail5.labels.Empno}">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.CurrentEmployeeEmpDetail5.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Info" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail5.labels.Info}">
+                <af:outputText value="#{row.Info}"/>
+              </af:column>
+              <af:column headerText="#{bindings.CurrentEmployeeEmpDetail5.labels.CurrentDate}"
+                         sortProperty="CurrentDate" sortable="false">
+                <af:outputText value="#{row.CurrentDate}">
+                  <f:convertDateTime pattern="#{bindings.CurrentEmployeeEmpDetail5.formats.CurrentDate}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <af:table value="#{bindings.CurrentEmployeeEmpDetail6.collectionModel}"
+                      var="row"
+                      rows="#{bindings.CurrentEmployeeEmpDetail6.rangeSize}"
+                      first="#{bindings.CurrentEmployeeEmpDetail6.rangeStart}"
+                      emptyText="#{bindings.CurrentEmployeeEmpDetail6.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      id="emp6Table">
+              <af:column sortProperty="Empno" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail6.labels.Empno}">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.CurrentEmployeeEmpDetail6.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Info" sortable="false"
+                         headerText="#{bindings.CurrentEmployeeEmpDetail6.labels.Info}">
+                <af:outputText value="#{row.Info}"/>
+              </af:column>
+              <af:column headerText="#{bindings.CurrentEmployeeEmpDetail6.labels.CurrentDate}"
+                         sortProperty="CurrentDate" sortable="false">
+                <af:outputText value="#{row.CurrentDate}">
+                  <f:convertDateTime pattern="#{bindings.CurrentEmployeeEmpDetail6.formats.CurrentDate}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:panelHorizontal>
+          <af:panelBox text="Note" width="100%">
+            <af:outputText value="This page refreshes detail queries on each page render to insure the very latest data is always shown to the user. The example queries the SYSDATE so you can easily see the data has refreshed. EmpDetail5Iterator sets its cacheResults property to false to accomplish this. EmpDetail6Iterator shows an alternative approach of using an invokeAction in the page definition bound to an action binding for the &quot;ExecuteQuery&quot; built-in operation on the EmpDetail6 view object. The page definition sets its &quot;EnableTokenValidation&quot; property false since we don't require current row validation on this page."/>
+          </af:panelBox>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
