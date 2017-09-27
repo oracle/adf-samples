@@ -149,6 +149,7 @@ Each sample is also available in downloadable form in the zips directory.
 * RecalcTotalOfRowsInViewObject
 * ReferenceCustomPropertiesInEL
 * RefreshCollectionTest
+* ReleaseReservedMode
 
 
 
