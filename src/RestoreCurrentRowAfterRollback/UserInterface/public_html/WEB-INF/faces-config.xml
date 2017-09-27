@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>oracle.adf.controller.faces.lifecycle.ADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>TestPage</managed-bean-name>
+    <managed-bean-class>view.backing.TestPage</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>bindings</property-name>
+      <value>#{bindings}</value>
+    </managed-property>
+  </managed-bean>
+  <navigation-rule>
+    <from-view-id>/TestPage.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/TestPageReadOnly.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/TestPageReadOnly.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/TestPage.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <managed-bean>
+    <managed-bean-name>TestPageReadOnly</managed-bean-name>
+    <managed-bean-class>view.backing.TestPageReadOnly</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>bindings</property-name>
+      <value>#{bindings}</value>
+    </managed-property>
+  </managed-bean>
+</faces-config>
