@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <web-module id="ADFFacesConvertNumberDetailProblem-Project-webapp" path="file:/D:/jdev/home/mywork/ADFFacesConvertNumberDetailMessage/Project/public_html/"/>
+    <jazn provider="XML" location="ADFFacesConvertNumberDetailMessage-jazn-data.xml" default-realm="jazn.com"/>
+    <data-sources path="ADFFacesConvertNumberDetailMessage-data-sources.xml"/>
+</orion-application>

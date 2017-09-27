@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html"
+          xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <f:loadBundle basename="view.resources.JSFMessages" var="res"/>
+    <afh:html>
+      <afh:head title="BugPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:messages/>
+          <af:inputText label="Field 2" value="#{BugPage.field2}">
+            <af:convertNumber convertNumberMessageDetail="#{AppMessages.messages.NOT_A_NUMBER}"/>
+          </af:inputText>
+          <af:inputText label="Field 3" value="#{BugPage.field3}">
+            <af:convertNumber />
+          </af:inputText>
+          <af:commandButton text="Submit"
+                            action="#{BugPage.commandButton_action}"/>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:BugPage-->
+</jsp:root>
