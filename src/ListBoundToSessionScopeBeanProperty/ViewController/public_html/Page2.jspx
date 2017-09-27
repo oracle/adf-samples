@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelGroupLayout layout="vertical">
+          <af:outputText value="Current value of Session-scoped myBean.selectedDepartment = #{myBean.selectedDepartment == null ? '&lt;null>' : myBean.selectedDepartment }"
+                         id="ot1"/>
+          <af:commandButton text="Go back to page 1" id="cb1" action="GoPage1"/>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

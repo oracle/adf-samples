@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Page1">
+    <page>/Page1.jspx</page>
+  </view>
+  <view id="Page2">
+    <page>/Page2.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>Page1</from-activity-id>
+    <control-flow-case>
+      <from-outcome>GoPage2</from-outcome>
+      <to-activity-id>Page2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>Page2</from-activity-id>
+    <control-flow-case>
+      <from-outcome>GoPage1</from-outcome>
+      <to-activity-id>Page1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>myBean</managed-bean-name>
+    <managed-bean-class>test.view.MyBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

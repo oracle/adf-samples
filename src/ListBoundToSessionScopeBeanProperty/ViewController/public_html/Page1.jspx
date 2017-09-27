@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:outputText value="Current value of Session-scoped myBean.selectedDepartment = #{myBean.selectedDepartment == null ? '&lt;null>' : myBean.selectedDepartment }"
+                       partialTriggers="soc1"/>
+        <af:selectOneChoice value="#{myBean.selectedDepartment}"
+                            label="Current Department:" id="soc1" unselectedLabel="&lt;Select a Department>"
+                            autoSubmit="true">
+          <af:forEach var="row" items="#{bindings.DeptView1.rangeSet}">
+            <af:selectItem label="#{row.Dname}" value="#{row.Deptno}"/>
+          </af:forEach>
+        </af:selectOneChoice>
+        <af:commandButton text="Go to page 2" id="cb1" action="GoPage2"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

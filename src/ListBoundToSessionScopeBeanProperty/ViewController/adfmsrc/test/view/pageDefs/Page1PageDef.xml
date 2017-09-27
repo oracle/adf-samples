@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="Page1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DeptView1" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="DeptView1Iterator"/>
+  </executables>
+  <bindings>
+    <table IterBinding="DeptView1Iterator" id="DeptView1">
+      <AttrNames>
+        <Item Value="Deptno"/>
+        <Item Value="Dname"/>
+      </AttrNames>
+    </table>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="test.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>
