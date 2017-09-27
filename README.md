@@ -106,6 +106,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ForceBindVariableValueToUppercaseThroughMetadata
 * ForceViewObjectDefaultToOverrideEntity
 * FurtherNarrowViewLinkAccessor
+* GetAttributesInvolvedInViewLink
 
 
 
