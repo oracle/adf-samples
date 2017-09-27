@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="TestModule"
+   ComponentClass="test.TestModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="DeptView"
+      ViewObjectName="test.DeptView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="DeptViewNonEntityBased"
+      ViewObjectName="test.DeptViewNonEntityBased" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransientViewObject"
+      ViewObjectName="test.TransientViewObject" >
+   </ViewUsage>
+</AppModule>

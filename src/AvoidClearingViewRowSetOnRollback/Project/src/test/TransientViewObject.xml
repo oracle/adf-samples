@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TransientViewObject"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   ComponentClass="test.TransientViewObjectImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   MaxFetchSize="0"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="StringValue"
+      IsSelected="false"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NumberValue"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DateValue"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      AliasName="VIEW_ATTR"
+      SQLType="DATE" >
+   </ViewAttribute>
+</ViewObject>

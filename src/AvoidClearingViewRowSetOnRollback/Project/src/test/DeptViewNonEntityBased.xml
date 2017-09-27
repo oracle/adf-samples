@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="DeptViewNonEntityBased"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   ComponentClass="test.DeptViewNonEntityBasedImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select deptno, dname, loc from dept
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Deptno"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="2"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="DEPTNO"
+      Expression="DEPTNO"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dname"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="14"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="DNAME"
+      Expression="DNAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="14" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Loc"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="13"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="LOC"
+      Expression="LOC"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="13" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>
