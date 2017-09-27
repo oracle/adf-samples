@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<simple-archive-deployment nselem="simple-archive-deployment" class="oracle.jdeveloper.deploy.jar.ArchiveProfile" xmlns="http://xmlns.oracle.com/jdeveloper/10120/deploy/jar">
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>true</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="project-output">
+            <contributors>
+               <Item type="2"/>
+               <Item type="7"/>
+            </contributors>
+            <displayName>Project Output</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="test/mypackage/"/>
+                  <Item type="1" pattern="connections.xml"/>
+                  <Item type="1" pattern="Project.jpx"/>
+                  <Item type="1" pattern="tester.xcfg"/>
+                  <Item type="1" pattern="test/rules/DateRangeRule.class"/>
+                  <Item type="1" pattern="test/rules/TestDateRangeRule.class"/>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="../DateRangeValidationRuleDT.jar"/>
+   <profileDeps/>
+</simple-archive-deployment>
