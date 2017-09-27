@@ -47,6 +47,7 @@ Each sample is also available in downloadable form in the zips directory.
 * CallVOAndViewRowFunctionsFromGroovy
 * ChangeLabelBasedOnValueInRow
 * ChangeLanguageInTheUI
+* CheckboxInTable
 
 
 

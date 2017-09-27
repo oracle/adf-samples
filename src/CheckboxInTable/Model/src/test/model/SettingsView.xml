@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="SettingsView"
+   SelectList="Settings.CODE, 
+       Settings.STATUS"
+   FromList="SETTINGS Settings"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="test.model.SettingsViewRowImpl"
+   MsgBundleClass="test.model.common.SettingsViewRowImplMsgBundle"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Msg|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Settings"
+      Entity="test.model.Settings" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Code"
+      IsNotNull="true"
+      EntityAttrName="Code"
+      EntityUsage="Settings"
+      AliasName="CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Status"
+      EntityAttrName="Status"
+      EntityUsage="Settings"
+      AliasName="STATUS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StatusAsBoolean"
+      IsSelected="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AnotherBoolean"
+      IsSelected="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+</ViewObject>
