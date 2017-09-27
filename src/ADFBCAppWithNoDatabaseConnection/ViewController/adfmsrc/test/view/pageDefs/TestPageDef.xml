@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.53.43" id="TestPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StaticVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="StaticVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StaticVO1Iterator" id="StaticVO1">
+      <nodeDefinition DefName="test.StaticVO" Name="StaticVO10">
+        <AttrNames>
+          <Item Value="Code"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

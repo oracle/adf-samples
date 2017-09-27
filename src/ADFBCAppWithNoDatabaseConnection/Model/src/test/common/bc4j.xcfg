@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+<AppModuleConfigBag ApplicationName="test.AppModule">
+    <AppModuleConfig DeployPlatform="LOCAL" jbo.project="test.Model"
+                     name="AppModuleLocal" SessionClass="test.CustomSessionImpl"
+                     ApplicationName="test.AppModule">
+      <AM-Pooling jbo.ampool.connectionstrategyclass="test.NoDatabaseConnectionStrategy" PoolClassName="test.NoDatabaseApplicationPoolImpl"/>
+      <Security AppModuleJndiName="test.AppModule"/>
+      <Custom RequiresConnection="false" password=""/>
+    </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" ApplicationName="test.AppModule" DeployPlatform="LOCAL" JDBCName="DeleteMeLater" jbo.project="test.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="test.AppModule" jbo.security.enforce="None"/>
+      </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

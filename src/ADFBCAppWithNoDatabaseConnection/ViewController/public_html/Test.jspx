@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:table value="#{bindings.StaticVO1.collectionModel}" var="row"
+                  rows="#{bindings.StaticVO1.rangeSize}"
+                  emptyText="#{bindings.StaticVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.StaticVO1.rangeSize}"
+                  rowBandingInterval="0" id="t1">
+          <af:column sortProperty="Code" sortable="false"
+                     headerText="#{bindings.StaticVO1.hints.Code.label}"
+                     id="c2">
+            <af:outputText value="#{row.Code}" id="ot1"/>
+          </af:column>
+          <af:column sortProperty="Description" sortable="false"
+                     headerText="#{bindings.StaticVO1.hints.Description.label}"
+                     id="c1">
+            <af:outputText value="#{row.Description}" id="ot2"/>
+          </af:column>
+        </af:table>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                          text="Rollback"
+                          immediate="true" id="cb2">
+          <af:resetActionListener/>
+        </af:commandButton>
+        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                          text="Commit"
+                          id="cb1"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
