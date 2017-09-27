@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>oracle.adf.controller.faces.lifecycle.ADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>Example</managed-bean-name>
+    <managed-bean-class>test.view.backing.Example</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>treeLevel</property-name>
+      <map-entries>
+        <key-class>java.lang.String</key-class>
+        <value-class>java.lang.String</value-class>
+        <map-entry>
+          <key>test.model.DeptView</key>
+          <value>DeptNode</value>
+        </map-entry>
+        <map-entry>
+          <key>test.model.EmpView</key>
+          <value>EmpNode</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    
+  </managed-bean>
+</faces-config>

@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<data-sources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/data-sources-10_1.xsd" xmlns="http://xmlns.oracle.com/oracleas/schema">
+    <connection-pool name="jdev-connection-pool-ADFTestCases">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="elegal" password="->DataBase_User_NaSIg0BpSZgKZET_Xxr2QIBdWLFd9f5B" url="jdbc:oracle:thin:@localhost:1521:XE"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-ADFTestCases" jndi-name="jdbc/ADFTestCasesDS" connection-pool-name="jdev-connection-pool-ADFTestCases"/>
+    <native-data-source name="jdev-connection-native-ADFTestCases" jndi-name="jdbc/ADFTestCasesCoreDS" url="jdbc:oracle:thin:@localhost:1521:XE" user="elegal" password="->DataBase_User_2ewpKMFvy_y5luInsCAxMRegPKh0n4ve" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-smuench">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="smuench" password="->DataBase_User_nj2SZeeWExN3wV-AsTkwvbauR8skqOku" url="jdbc:oracle:thin:@adt-scaler1.us.oracle.com:1521:adt1010"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-smuench" jndi-name="jdbc/smuenchDS" connection-pool-name="jdev-connection-pool-smuench"/>
+    <native-data-source name="jdev-connection-native-smuench" jndi-name="jdbc/smuenchCoreDS" url="jdbc:oracle:thin:@adt-scaler1.us.oracle.com:1521:adt1010" user="smuench" password="->DataBase_User_eh5UB7SoEbXMmzKKL5krmd8SodXhCG80" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-SRDemo">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="SRDEMO" password="->DataBase_User_qXAIpuUkmMuQtXdvzNfGGG_rv5z01lsB" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-SRDemo" jndi-name="jdbc/SRDemoDS" connection-pool-name="jdev-connection-pool-SRDemo"/>
+    <native-data-source name="jdev-connection-native-SRDemo" jndi-name="jdbc/SRDemoCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="SRDEMO" password="->DataBase_User_oqIXezpygkLlwsEGWp_THSv9qcTcozwD" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-scott">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="smuench" password="->DataBase_User_ptf1g9MB8Rx7Srij9_9WE9SqD4CYwfQS" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-scott" jndi-name="jdbc/scottDS" connection-pool-name="jdev-connection-pool-scott"/>
+    <native-data-source name="jdev-connection-native-scott" jndi-name="jdbc/scottCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="smuench" password="->DataBase_User_K0A5TzWzHP9IM5Z4yqiWR-chFglUu4rG" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-toystore">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="toystore" password="->DataBase_User_PYWxdiAOac58HhhcvrM36oqVdnqN5aIU" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-toystore" jndi-name="jdbc/toystoreDS" connection-pool-name="jdev-connection-pool-toystore"/>
+    <native-data-source name="jdev-connection-native-toystore" jndi-name="jdbc/toystoreCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="toystore" password="->DataBase_User_1mV35V6Y9CeEX8A8nIsJHqMSreDgJkO6" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-Test">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="scott" password="->DataBase_User_P6sa88P_Qq4Xzh34A0QtixiE6k541UNT" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-Test" jndi-name="jdbc/TestDS" connection-pool-name="jdev-connection-pool-Test"/>
+    <native-data-source name="jdev-connection-native-Test" jndi-name="jdbc/TestCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="scott" password="->DataBase_User_eYMUeDObtgiYZ0IpA3fiweRt_Y-ze1iU" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-scott_at_adt1010">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="smuench" password="->DataBase_User_aDL55xjNqslmxCdMPl6LnhEgMeySnOEE" url="jdbc:oracle:thin:@adt-scaler1.us.oracle.com:1521:adt1010"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-scott_at_adt1010" jndi-name="jdbc/scott_at_adt1010DS" connection-pool-name="jdev-connection-pool-scott_at_adt1010"/>
+    <native-data-source name="jdev-connection-native-scott_at_adt1010" jndi-name="jdbc/scott_at_adt1010CoreDS" url="jdbc:oracle:thin:@adt-scaler1.us.oracle.com:1521:adt1010" user="smuench" password="->DataBase_User_YIPc8glt4qxu_7xpe_SQ0PgfCbFRB1P3" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-toystore_statemgmt">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="toystore_statemgmt" password="->DataBase_User_425XxNcaMfeOxsRIbkOYQO7c7bv19U0k" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-toystore_statemgmt" jndi-name="jdbc/toystore_statemgmtDS" connection-pool-name="jdev-connection-pool-toystore_statemgmt"/>
+    <native-data-source name="jdev-connection-native-toystore_statemgmt" jndi-name="jdbc/toystore_statemgmtCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="toystore_statemgmt" password="->DataBase_User_h8IBFcc8Cqfug8_7FeHaFeKSVk0eTpFl" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-FOD">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="fod" password="->DataBase_User_TFjNKzzmOiYPoADBwHH-8Ou7msNpy0v6" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-FOD" jndi-name="jdbc/FODDS" connection-pool-name="jdev-connection-pool-FOD"/>
+    <native-data-source name="jdev-connection-native-FOD" jndi-name="jdbc/FODCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="fod" password="->DataBase_User_3f1GGQAsI1LtTHW_nbLhKMW2T6Glguog" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-scott_local">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="scott" password="->DataBase_User_IkENUB5hiFHTZMkImGsV7TkmrsF0qsfL" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-scott_local" jndi-name="jdbc/scott_localDS" connection-pool-name="jdev-connection-pool-scott_local"/>
+    <native-data-source name="jdev-connection-native-scott_local" jndi-name="jdbc/scott_localCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="scott" password="->DataBase_User_P1ivH3QRnaxDdXHopuRewbjP11OdW4CZ" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+    <connection-pool name="jdev-connection-pool-HR">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="hr" password="->DataBase_User_G8wwbKDk0GiCQsL_AfHXDPVppVB4C4FG" url="jdbc:oracle:thin:@localhost:1521:ORCL"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-HR" jndi-name="jdbc/HRDS" connection-pool-name="jdev-connection-pool-HR"/>
+    <native-data-source name="jdev-connection-native-HR" jndi-name="jdbc/HRCoreDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" user="hr" password="->DataBase_User_kyNz6Rw_4vAxh8CrWwTDCObmtjiz4s30" data-source-class="oracle.jdbc.pool.OracleDataSource"/>
+</data-sources>

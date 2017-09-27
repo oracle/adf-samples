@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Example">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelHorizontal valign="top">
+            <af:panelHeader text="Staff By Department">
+              <af:tree value="#{bindings.Departments.treeModel}" var="node"
+                       id="myTree"
+                       disclosureListener="#{Example.onTreeNodeDisclosed}"
+                       immediate="true">
+                <f:facet name="nodeStamp">
+                  <h:panelGroup>
+                    <af:switcher facetName="#{Example.treeLevel[node.hierType.viewDefName]}">
+                      <f:facet name="DeptNode">
+                        <af:outputText value="#{node}"/>
+                      </f:facet>
+                      <f:facet name="EmpNode">
+                        <af:commandLink text="#{node}"
+                                        actionListener="#{bindings.setCurrentRowInEmployeesIteratorWithKey.execute}"
+                                        action="#{Example.onClickEmployeeCommandLink}"
+                                        immediate="true">
+                                        <af:resetActionListener/>
+                        </af:commandLink>
+                      </f:facet>
+                    </af:switcher>
+                  </h:panelGroup>
+                </f:facet>
+              </af:tree>
+            </af:panelHeader>
+            <af:objectSpacer width="10" height="10"/>
+            <af:panelGroup partialTriggers="myTree" layout="vertical">
+              <af:objectSpacer width="10" height="30"/>
+              <af:panelBox text="Employee Details"
+                           binding="#{Example.employeeInfoPanelBox}"
+                           width="auto" rendered="false"
+                           background="transparent">
+                <af:panelForm
+                              rendered="true">
+                  <af:panelLabelAndMessage label="#{bindings.Empno.label}">
+                    <af:outputText value="#{bindings.Empno.inputValue}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.Empno.format}"/>
+                    </af:outputText>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Ename.label}">
+                    <af:outputText value="#{bindings.Ename.inputValue}"/>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Job.label}">
+                    <af:outputText value="#{bindings.Job.inputValue}"/>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Mgr.label}">
+                    <af:outputText value="#{bindings.Mgr.inputValue}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.Mgr.format}"/>
+                    </af:outputText>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Hiredate.label}">
+                    <af:outputText value="#{bindings.Hiredate.inputValue}">
+                      <f:convertDateTime pattern="#{bindings.Hiredate.format}"/>
+                    </af:outputText>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Sal.label}">
+                    <af:inputText value="#{bindings.Sal.inputValue}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.Sal.format}"/>
+                    </af:inputText>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Comm.label}">
+                    <af:outputText value="#{bindings.Comm.inputValue}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.Comm.format}"/>
+                    </af:outputText>
+                  </af:panelLabelAndMessage>
+                  <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+                    <af:outputText value="#{bindings.Deptno.inputValue}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.Deptno.format}"/>
+                    </af:outputText>
+                  </af:panelLabelAndMessage>
+                  <f:facet name="footer">
+                    <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                      text="Save"
+                                      disabled="false"/>
+                  </f:facet>
+                </af:panelForm>
+              </af:panelBox>
+            </af:panelGroup>
+          </af:panelHorizontal>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

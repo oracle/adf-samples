@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <web-module id="HideEmpInfoWhenExpandAnotherDept" path="file:/H:/examples/jdev/HideEmpInfoWhenExpandAnotherDept/ViewController/public_html/"/>
+    <log>
+        <file path="HideEmpInfoWhenExpandAnotherDept-oc4j-app.log"/>
+    </log>
+    <jazn provider="XML" location="HideEmpInfoWhenExpandAnotherDept-jazn-data.xml" default-realm="jazn.com"/>
+    <data-sources path="HideEmpInfoWhenExpandAnotherDept-data-sources.xml"/>
+</orion-application>
