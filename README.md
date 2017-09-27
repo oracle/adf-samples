@@ -43,5 +43,7 @@ Each sample is also available in downloadable form in the zips directory.
 * BindVariableToUserDataMapEntry
 * BooleanCheckboxInTableR1
 * CallPLSQLProcedureFromJSFUsingADFBC
+* CallStoredProc
+
 
 

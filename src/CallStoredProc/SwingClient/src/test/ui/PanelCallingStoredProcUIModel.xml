@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="PanelCallingStoredProcUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.ui"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="SomeViewIterator"
+         Binds="TestModuleDataControl.SomeView"
+         RangeSize="10" >
+      </DCIterator>
+   </Contents>
+</DCContainer>
