@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"
+    import="view.utils.ELHelper,java.util.Locale"/>
+  <html>
+    <head>
+      <meta http-equiv="Content-Type"
+            content="text/html; charset=windows-1252"/>
+      <title>RegularJSPPageNotUsingJSF</title>
+    </head>
+    <body>
+      <c:if test="${empty App}">
+        <b>NOTE:</b>You need to reference this page as  <a href="faces/RegularJSPPageNotUsingJSF.jspx">.../faces/RegularJSPPageNotUsingJSF.jspx</a> to have a JSF Context to reference managed beans.
+      </c:if>
+      <c:if test="${not empty App}">
+          <c:if test="${not empty param.locale}">
+            <c:set target="${App}" property="preferredLocaleAsString" value="${param.locale}"/>
+          </c:if>
+          <p>Set the preferred locale to: </p> 
+          <c:choose>
+            <c:when test="${App.preferredLocale.language == 'it'}">
+              Italian
+            </c:when>
+            <c:otherwise>
+              <a href="RegularJSPPageNotUsingJSF.jspx?locale=it">Italian</a>
+            </c:otherwise>
+          </c:choose>
+          &#xa0;
+          <c:choose>
+            <c:when test="${App.preferredLocale.language == 'en'}">
+              English
+            </c:when>
+            <c:otherwise>
+              <a href="RegularJSPPageNotUsingJSF.jspx?locale=en">English</a>
+            </c:otherwise>
+          </c:choose>
+          <br/>
+          <a href="TestPage.jspx">Goto the JSF Part of the Application</a>
+          </c:if>
+       </body>
+  </html>
+</jsp:root>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>view.CustomADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+    <locale-config>
+      <default-locale>en</default-locale>
+      <supported-locale>en</supported-locale>
+      <supported-locale>it</supported-locale>
+    </locale-config>
+  </application>
+  <managed-bean>
+    <managed-bean-name>TestPage</managed-bean-name>
+    <managed-bean-class>view.backing.TestPage</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <navigation-rule>
+    <from-view-id>/TestPage.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>GotoAnother</from-outcome>
+      <to-view-id>/AnotherPage.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>dialog:ShowDialog</from-outcome>
+      <to-view-id>/DialogPage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/AnotherPage.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>BackToTest</from-outcome>
+      <to-view-id>/TestPage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>GlobalAnotherPage</from-outcome>
+      <to-view-id>/AnotherPage.jspx</to-view-id>
+      <redirect/>
+    </navigation-case>
+  </navigation-rule>
+  <managed-bean>
+    <managed-bean-name>App</managed-bean-name>
+    <managed-bean-class>view.App</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <managed-property>
+      <property-name>preferredLocaleAsString</property-name>
+      <value>en</value>
+    </managed-property>
+  </managed-bean>
+</faces-config>

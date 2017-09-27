@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <f:loadBundle basename="view.resources.MyBundle" var="res"/>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelHeader text="#{res.welcome}"/>
+          <af:commandButton text="#{res.english}"
+                            action="#{TestPage.onClickEnglishButton}"/>
+          <af:commandButton text="#{res.italian}"
+                            action="#{TestPage.onClickItalianButton}"/>
+          <af:commandButton text="#{res.gotoAnotherGlobalRedir}"
+                            action="GlobalAnotherPage"/>
+          <af:commandButton text="#{res.launchDialog}"
+                            action="dialog:ShowDialog" useWindow="true"/>
+          <af:panelForm>
+            <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+              <af:outputText value="#{bindings.Deptno.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Deptno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+              <af:outputText value="#{bindings.Dname.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+              <af:outputText value="#{bindings.Loc.inputValue}"/>
+            </af:panelLabelAndMessage>
+          </af:panelForm>
+          <af:table value="#{bindings.DeptView.collectionModel}" var="row"
+                    rows="#{bindings.DeptView.rangeSize}"
+                    first="#{bindings.DeptView.rangeStart}"
+                    emptyText="#{bindings.DeptView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.DeptView.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.DeptView.collectionModel.makeCurrent}"
+                    id="table">
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and" autoSubmit="true">
+                <af:commandButton text="#{res.gotoAnother}" action="GlobalAnotherPage"/>
+              </af:tableSelectOne>
+            </f:facet>
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.DeptView.labels.Deptno}">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptView.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="false"
+                       headerText="#{bindings.DeptView.labels.Dname}">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="false"
+                       headerText="#{bindings.DeptView.labels.Loc}">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+            <af:column sortProperty="TransientNumberAttribute" sortable="false"
+                       headerText="#{bindings.DeptView.labels.TransientNumberAttribute}">
+              <af:outputText value="#{row.TransientNumberAttribute}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptView.formats.TransientNumberAttribute}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+          <af:selectOneChoice value="#{bindings.DeptViewTransientNumberAttribute.inputValue}"
+                              label="#{bindings.DeptViewTransientNumberAttribute.label}"
+                              partialTriggers="table">
+            <f:selectItems value="#{bindings.DeptViewTransientNumberAttribute.items}"/>
+          </af:selectOneChoice>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TestPage-->
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TestPage-->
+</jsp:root>

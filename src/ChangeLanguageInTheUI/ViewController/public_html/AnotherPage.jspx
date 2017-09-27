@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <f:loadBundle basename="view.resources.MyBundle" var="res"/>
+    <afh:html>
+      <afh:head title="AnotherPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+              <af:outputText value="#{bindings.Deptno.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Deptno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+              <af:outputText value="#{bindings.Dname.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+              <af:outputText value="#{bindings.Loc.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.DeptViewTransientNumberAttribute.label}">
+              <af:outputText value="#{bindings.DeptViewTransientNumberAttribute.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptViewTransientNumberAttribute.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+          </af:panelForm>
+          <af:inputText value="#{bindings.DeptViewTransientNumberAttribute.inputValue}"
+                        label="#{bindings.DeptViewTransientNumberAttribute.label}"
+                        required="#{bindings.DeptViewTransientNumberAttribute.mandatory}"
+                        columns="#{bindings.DeptViewTransientNumberAttribute.displayWidth}">
+            <af:validator binding="#{bindings.DeptViewTransientNumberAttribute.validator}"/>
+            <f:convertNumber groupingUsed="false"
+                             pattern="#{bindings.DeptViewTransientNumberAttribute.format}"/>
+          </af:inputText>
+          <af:commandButton text="#{res.backToTest}" action="BackToTest"/>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

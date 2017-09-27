@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+
+  <f:view>
+    <f:loadBundle basename="view.resources.MyBundle" var="res"/>
+    <afh:html>
+      <afh:head title="DialogPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:panelGroup layout="vertical">
+            <af:objectSpacer width="10" height="20"/>
+            <af:outputText value="#{res['dialogText']}"/>
+            <af:commandButton text="OK">
+              <af:returnActionListener/>
+            </af:commandButton>
+            <af:objectSpacer width="10" height="20"/>
+          </af:panelGroup>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
