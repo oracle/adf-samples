@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+
+<Association
+   Name="WorksInDeptAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.42.70" />
+   </DesignTime>
+   <AssociationEnd
+      Name="Dept"
+      Cardinality="1"
+      Source="true"
+      Owner="demo.model.businessobjects.Dept"
+      CascadeDelete="true"
+      DeleteContainee="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.businessobjects.Dept.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="Dept" />
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_foreignKey" Value="demo.model.businessobjects.Dept.DeptPk" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+   <AssociationEnd
+      Name="Emp"
+      Cardinality="-1"
+      Owner="demo.model.businessobjects.Emp"
+      HasOwner="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.businessobjects.Emp.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="Emp" />
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_foreignKey" Value="demo.model.businessobjects.Emp.WorksInDept" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+</Association>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="dataaccess"
+   SeparateXMLFiles="true"
+   PackageName="demo.model.dataaccess" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.42.70" />
+   </DesignTime>
+   <Containee
+      Name="DeptView"
+      FullName="demo.model.dataaccess.DeptView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="demo.model.dataaccess.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="WorksInDeptLink"
+      FullName="demo.model.dataaccess.WorksInDeptLink"
+      ObjectType="ViewLink" >
+   </Containee>
+</JboPackage>

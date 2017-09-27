@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="HRModule"
+   ComponentClass="demo.model.service.HRModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.42.70" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="DeptView1"
+      ViewObjectName="demo.model.dataaccess.DeptView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpView1"
+      ViewObjectName="demo.model.dataaccess.EmpView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmpView2"
+      ViewObjectName="demo.model.dataaccess.EmpView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="WorksInDeptLink1"
+      ViewLinkObjectName="demo.model.dataaccess.WorksInDeptLink"
+      SrcViewUsageName="demo.model.service.HRModule.DeptView1"
+      DstViewUsageName="demo.model.service.HRModule.EmpView2" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.42.70" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>
