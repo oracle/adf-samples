@@ -60,6 +60,7 @@ Each sample is also available in downloadable form in the zips directory.
 * CustomBeanDCDefinition
 * CustomCodeBeforeAfterTableListener
 * CustomLOVSearchField
+* CustomPageLifecycleAsManagedBean
 
 
 
