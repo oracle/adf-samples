@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style">
+
+  <import href="oracle-pda.xss"/>
+</styleSheetDocument>

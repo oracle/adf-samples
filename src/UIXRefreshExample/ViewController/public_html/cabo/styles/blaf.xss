@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<!--
+   See oracle-desktop.xss for the styles used by the desktop implementation
+   of the Oracle Browser Look And Feel.  
+
+   Note: This file is only provided by backward compatibility.  However,
+   as of UIX 2.2.5, custom style sheets are no longer required to 
+   explicitly import the base look and feel's style sheet.  So, rather
+   than importing blaf.xss or oracle-desktop.xss, custom style sheets
+   should no longer be importing any style sheet at all.  The styles
+   defined in custom style sheets are automatically merged on top of
+   the look and feel's style sheet (ie. on top of oracle-desktop.xss).
+-->
+
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style">
+
+<!-- 
+  No need to import oracle-desktop.xss.  We'll automatically be
+  layered on top of the current LAF's style sheet.
+-->
+
+
+ <styleSheet>
+
+  <!--
+    The following styles are no longer used by UIX.  However, they
+    are defined by BLAF, so they are provided here for existing
+    applications which make use of these styles.
+  -->
+
+  <!-- 
+    BreadCrumbs: Use OraBreadCrumbs and OraBreadCrumbsSelected instead. 
+  -->
+
+  <style selector=".OraCrumbsSelected">
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="TextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraCrumbsEnabled">
+    <includeStyle name="SmallLinkFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <!--
+    Button: UIX no longer uses (or never has used?) these styles.
+            Leaving here for applications that need these styles
+            for their own purposes.
+  -->
+  <style selector=".OraButtonText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraButtonTextDisabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <!--
+    Level 3 Navigation
+ 
+    These styles are not currently used by BLAF's sideBar/styledList.
+    Leaving here for backward compatibility, but these can probably
+    be removed altogether.
+  -->
+
+  <style selector=".OraNav3Selected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav3Enabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraNav3Disabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="MediumAccentForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+ </styleSheet>
+</styleSheetDocument>

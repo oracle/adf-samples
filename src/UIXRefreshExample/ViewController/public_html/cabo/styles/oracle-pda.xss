@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style"
+                    >
+
+  <!-- The base.xss import -->
+  <import href="base-desktop.xss"/>
+  <import href="oracle-desktop.xss"/>
+
+  <styleSheet>
+  <!-- The default font family -->
+  <!-- Removing font family as this doesn't seem to make a 
+       difference and makes the stylesheet much bigger -->
+  <style name="DefaultFontFamily">
+    <property name="font-family"/>
+  </style>
+
+  <!-- The default font -->
+  <style name="DefaultFont">
+    <includeStyle name="DefaultFontFamily"/>
+    <property name="font-size">9pt</property>
+  </style>
+
+  <!-- The default bold font -->
+  <style name="DefaultBoldFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- A very small font -->
+  <style name="VerySmallFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">-2pt</property>
+  </style>
+
+  <!-- A small font -->
+  <style name="SmallFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">-1pt</property>
+  </style>
+
+  <!-- A medium font - just slightly bigger than default -->
+  <style name="MediumFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+1pt</property>
+  </style>
+
+  <!-- A large font -->
+  <style name="LargeFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+2pt</property>
+  </style>
+
+  <!-- A very large font -->
+  <style name="VeryLargeFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+3pt</property>
+  </style>
+
+
+
+    <!-- darken to make visible on lcd displays -->
+    <style name="LightAccentBackground">
+      <property name="background-color">#ffffcc</property>
+    </style>
+
+    <!-- set the text style on the body so that it doesn' -->
+    <!-- have to be repeated -->
+
+    <style selector=".OraBody">
+      <includeStyle name="TextBackground"/>
+      <includeStyle name="DefaultFont"/>
+    </style>
+
+    <!-- Header Text -->
+    <style selector=".OraHeader">
+      <property name="margin-top">0px</property>
+    </style>
+
+    <style selector=".OraHeaderSub">
+      <property name="margin-top">4px</property>
+    </style>
+
+    <style selector=".OraHeaderSubSub">
+      <property name="margin-top">4px</property>
+    </style>    
+
+   <style selector=".OraErrorHeader">
+      <property name="margin-top">0px</property>
+   </style>
+    
+    <!-- Instruction Text == .OraInstructionText, OK -->
+    <!-- Text == DefaultFont OK -->
+    <!-- Subtext TBD -->
+
+    <!-- Label -->
+    <style selector=".OraPromptText"> 
+      <includeStyle name="VerySmallFont"/>
+      <property name="font-weight">bold</property>
+    </style>
+
+    <!-- Data -->
+    <style selector=".OraDataText">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-weight">normal</property>
+    </style>
+
+    <!-- Link == A:link, OraLinkText, OK -->
+    <!-- MicroLink == .OraGlobalButtonText..., Others? -->
+    <!-- Column Header == OraTableColumnHeader, OK -->
+    <!-- Message Text == OraInstructionTextStrong, OK --> 
+    <!-- Error! == OraErrorNameText, OK --> 
+    <!-- Error Message Font == OraErrorText, OK --> 
+    <!-- Help Text == OraInlineInfoText, OK -->
+
+    <!-- navigation bar styles shrunken -->
+    <style selector=".OraNavBarActiveLink">
+      <includeStyle name="SmallFont"/>
+    </style>
+
+    <style selector=".OraNavBarInactiveLink">
+      <includeStyle name="SmallFont"/>
+    </style>
+
+    <style selector=".OraNavBarViewOnly">
+      <includeStyle name="SmallFont"/>
+      <property name="color">#000000</property>
+    </style>
+
+
+    <style selector=".OraGlobalButtonText">
+      <includeStyle name="SmallLinkFont"/>
+      <includeStyle name="LinkForeground"/>
+      <property name="vertical-align"/>
+      <property name="padding"/>
+    </style>
+
+    <!-- Can't change link color, so setting to bold -->
+    <style selector=".OraGlobalButtonTextSelected">
+      <includeStyle name="SmallFont"/>
+      <includeStyle name="DarkForeground"/>
+      <property name="font-weight">bold</property>
+      <property name="vertical-align"/>
+      <property name="padding"/>
+    </style>
+
+    <style selector=".OraGlobalButtonTextDisabled">
+      <includeStyle name="SmallFont"/>
+      <includeStyle name="VeryDarkAccentForeground"/>
+      <property name="vertical-align"/>
+      <property name="padding"/>
+    </style>
+
+    <style selector=".OraPrivacy">
+      <includeStyle name="SmallLinkFont"/>
+      <includeStyle name="LinkForeground"/>
+      <property name="text-align">center</property>
+      <property name="padding"/>
+    </style>     
+    
+    <style selector=".p_OraAbout">
+      <includeStyle name="SmallLinkFont"/>
+      <includeStyle name="LinkForeground"/>
+      <property name="text-align">center</property>
+      <property name="padding"/>
+    </style>    
+    
+   <style selector=".OraCopyright">
+      <property name="text-align">center</property>
+      <property name="padding"/>
+    </style>    
+
+
+    <style selector=".OraCrumbsSelected">
+      <includeStyle name="VerySmallFont"/>
+      <!--property name="font-size">xx-small</property-->
+    </style>
+
+    <style selector=".OraCrumbsEnabled">
+      <includeStyle name="VerySmallLinkFont"/>
+      <!--property name="font-size">xx-small</property-->
+    </style>
+
+    <!-- don't change font-size of disabled links -->
+    <style selector=".p_OraDisabled">
+        <property name="font-size"/>
+    </style>  
+
+    
+    <style selector=".p_OraTabBar">
+      <includeStyle name="SmallLinkFont"/>
+      <includeStyle name="LightBackground"/>
+    </style>
+    
+      
+    <style selector=".OraNav1Selected">
+      <property name="background-color"/>
+    </style>
+
+    <style selector=".OraNav1Selected A:link">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+  
+    <style selector=".OraNav1Selected A:active">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+  
+    <style selector=".OraNav1Selected A:visited">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+      
+
+    <style selector=".OraNav1Enabled">
+      <property name="background-color"/>
+    </style>    
+    
+    <style selector=".OraNav1Enabled A:link">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+  
+    <style selector=".OraNav1Enabled A:active">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+  
+    <style selector=".OraNav1Enabled A:visited">
+      <includeStyle name="VeryDarkForeground"/>
+    <property name="text-decoration">none</property>
+    </style>
+      
+    
+    <style selector=".OraNav2Selected">
+      <property name="background-color"/>
+    </style>
+
+    <style selector=".OraNav2Selected A:link">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+  
+    <style selector=".OraNav2Selected A:active">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+  
+    <style selector=".OraNav2Selected A:visited">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+      
+
+    <style selector="SPAN.OraNav2Enabled">
+      <property name="background-color"/>
+    </style>    
+    
+    <style selector="SPAN.OraNav2Enabled A:link">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+  
+    <style selector="SPAN.OraNav2Enabled A:active">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+  
+    <style selector="SPAN.OraNav2Enabled A:visited">
+      <includeStyle name="VeryDarkForeground"/>
+    </style>
+      
+    
+      <style selector=".p_OraGlobalHeader">  
+          <includeStyle name="SmallLinkFont"/>
+          <includeStyle name="LightExtraAccentBackground"/>
+          <includeStyle name="TextForeground"/>        
+      </style>
+    
+      <style selector=".OraTableControlBarTop">
+        <property name="background-color"/>
+        <property name="border-style"/>
+        <property name="border-color"/>
+        <property name="padding"/>
+      </style>
+      
+      <style selector=".OraSortableHeaderBorder">
+        <property name="border-width">1px</property>
+      </style>    
+      
+      <style selector=".OraButtonText">
+        <includeStyle name="SmallFont"/>
+        <includeStyle name="LightAccentBackground"/>
+        <includeStyle name="TextForeground"/>
+      </style>
+      
+      <style selector=".OraFieldText">    
+        <includeStyle name="SmallFont"/>
+      </style>               
+      <style selector=".OraFieldTextDisabled">    
+        <includeStyle name="SmallFont"/>
+      </style>                
+      <style selector=".OraFieldNumber">    
+        <includeStyle name="SmallFont"/>
+      </style>               
+      <style selector=".OraFieldNumberDisabled">    
+        <includeStyle name="SmallFont"/>
+      </style>                 
+      <style selector=".OraDataText">    
+        <includeStyle name="SmallFont"/>
+      </style>               
+      <style selector=".OraDataNumber">    
+        <includeStyle name="SmallFont"/>
+      </style>                 
+      <style selector=".OraPhoneFieldText">    
+        <includeStyle name="SmallFont"/>
+      </style>                   
+      <style selector=".OraPostalCodeFieldText">    
+        <includeStyle name="SmallFont"/>
+      </style>                  
+      <style selector=".OraAddressFieldText">    
+        <includeStyle name="SmallFont"/>
+      </style>       
+      
+  </styleSheet>
+
+  <styleSheet platforms="windows" browsers="ie">
+    <!-- use Tahoma for everything -->
+    <style name="DefaultFontFamily">
+      <property name="font-family">Tahoma</property>
+    </style>
+    
+
+    <style name="DefaultFont">
+      <includeStyle name="DefaultFontFamily"/>
+      <property name="font-size">x-small</property>
+    </style>
+
+    <style name="VerySmallFont">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">xx-small</property>
+    </style>
+
+
+    <style name="SmallFont">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">xx-small</property>
+    </style>
+
+    <style name="MediumFont">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">x-small</property>
+    </style>
+
+    <style name="LargeFont">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">small</property>
+    </style>
+
+    <style name="VeryLargeFont">
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">medium</property>
+    </style>
+
+
+    <!-- If I include VerySmallFont, which is defined above, shouldn't that work? 
+         I'm getting the attributes in blaf.xss -->
+    <style name="VerySmallLinkFont">
+      <!--includeStyle name="VerySmallFont"/-->
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">xx-small</property>
+    </style>    
+
+    <!-- Same problem as above -->
+    <style name="SmallLinkFont">
+      <!--includeStyle name="SmallFont"/-->
+      <includeStyle name="DefaultFont"/>
+      <property name="font-size">xx-small</property>    
+    </style>    
+  </styleSheet>  
+  
+
+</styleSheetDocument>

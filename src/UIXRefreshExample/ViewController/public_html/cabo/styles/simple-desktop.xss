@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style"
+                    version="2.0">
+
+<!-- 
+  The base style sheet for the desktop implementation of
+  the Simple Look And Feel.
+ -->
+<styleSheet>
+
+  <!--
+    ContentContainer Styles
+  -->
+
+  <style selector=".OraContentContainerHeader">
+    <property name="width">100%</property>
+
+    <!-- Only tile the header's background image horizontally.
+         That way, if the user zooms up the text size, the 
+         header's top border won't end up repeating -->
+    <property name="background-repeat">repeat-x</property>
+  </style>
+
+  <!-- 
+    GlobalHeader styles
+  -->
+
+  <!-- Disable item wrapping - can make globalHeader's icons look bad -->
+  <style name="GlobalHeaderItem">
+    <property name="white-space">nowrap</property> 
+  </style>
+  
+  <!-- Move the background color to .OraGlobalHeaderBody/Title -->
+  <style selector=".OraGlobalHeader">
+    <property name="background-color"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderBody">
+    <includeStyle name="DarkBackground"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderTitle">
+    <includeStyle name="DarkBackground"/>
+  </style>
+
+  <!-- Also set the background color for the empty globalHeader -->
+  <style selector=".OraGlobalHeaderEmpty">
+    <includeStyle name="DarkBackground"/>
+
+    <!--
+      Custom LAFs can use the height property to control the empty
+      globalHeader's height.  We let it default though...
+    -->
+    <!--
+      <property name="height">4px</property>
+    -->
+  </style>
+  
+  <!--
+     MessageBox styles 
+
+     We remove the background color from the outer .OraMessageBox style
+     and move it to the inner .OraMessageBoxBody style.
+  -->
+
+  <style selector=".OraMessageBox">
+    <property name="background-color"/>
+  </style>
+
+  <style selector=".OraMessageBoxBody">
+    <includeStyle name="LightAccentBackground"/>
+  </style>
+
+  <!--
+     SideBar styles 
+
+     We remove the background color from the outer .OraSideBar style
+     and move it to the inner .OraSideBarBody style.
+  -->
+
+  <style selector=".OraSideBar">
+    <property name="background-color"/>
+  </style>
+
+  <style selector=".OraSideBarBody">
+    <includeStyle name="LightAccentBackground"/>
+  </style>
+
+  <!--
+    TabBar Styles
+  -->
+
+  <!-- Disable item wrapping - can make tabBar's icons look bad -->
+  <style name="TabBarItem">
+    <property name="white-space">nowrap</property> 
+  </style>
+
+  <!--
+    Table Styles
+  -->
+
+  <!-- Add a border around the table contents.
+       Does this really belong here? -->
+  <style selector=".OraTableContent">
+    <includeStyle name="VeryDarkAccentBorder"/>  
+    <includeStyle selector=".OraTableBorder1111"/>
+  </style>    
+
+  <!-- 
+    Styles for dynamically generated images 
+   -->
+
+  <!-- The style for dynamically generated button images -->
+  <style name="ButtonServerText">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!-- The style for dynamically generated disabled button images -->
+  <style name="ButtonServerTextDisabled">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <!-- Button padding for Albany WT J -->
+  <style name="AlbanyButtonPadding">
+    <property name="padding-top">-3px</property>
+    <property name="padding-bottom">-2px</property>
+  </style>
+
+  <style name="ButtonServerPaddingAlbany WT J">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Korean-specific styles -->
+<styleSheet locales="ko">
+
+  <!-- Button padding for Albany WT K -->
+  <style name="ButtonServerPaddingAlbany WT K">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Traditional Chinese specific styles -->
+<styleSheet locales="zh_TW">
+
+  <!-- Button padding for Albany WT TC -->
+  <style name="ButtonServerPaddingAlbany WT TC">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Simplified Chinese specific styles -->
+<styleSheet locales="zh_CN">
+
+  <!-- Button padding for Albany WT SC -->
+  <style name="ButtonServerPaddingAlbany WT SC">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+</styleSheet>
+
+</styleSheetDocument>

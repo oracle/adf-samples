@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-web-app PUBLIC "-//Evermind//DTD Orion Web Application 2.3//EN" "http://xmlns.oracle.com/ias/dtds/orion-web.dtd">
+<orion-web-app servlet-webdir="/servlet/">
+  <web-app-class-loader search-local-classes-first="true"/>
+</orion-web-app>

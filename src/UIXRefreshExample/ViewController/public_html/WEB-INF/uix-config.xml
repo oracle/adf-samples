@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<configurations xmlns="http://xmlns.oracle.com/uix/config">
+
+  <application-configuration debug="false">
+    <!--
+    <default-expression-language>el</default-expression-language>
+    -->
+    <ui-extensions>
+      <extension-class>
+        oracle.cabo.adf.rt.AdfUiExtension
+      </extension-class>
+    </ui-extensions>
+  </application-configuration>
+
+  <default-configuration>
+    <!--
+    <disable-partial-rendering>true</disable-partial-rendering>
+    -->
+
+    <look-and-feel>blaf</look-and-feel>
+    <!--
+    <look-and-feel>minimal</look-and-feel>
+    -->
+  </default-configuration>
+</configurations>

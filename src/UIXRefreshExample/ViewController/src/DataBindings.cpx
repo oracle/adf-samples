@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.17.96"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="DeptModuleDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="demo.model"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="DeptModuleLocal" >
+         <Parameters >
+            <Parameter
+               name="Sync"
+               value="Batch" >
+            </Parameter>
+         </Parameters>
+      </DataControl>
+      <Containee
+         id="RefreshOnDemandUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="demo.view.RefreshOnDemandUIModel" >
+      </Containee>
+      <Containee
+         id="RefreshEveryTimeUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="demo.view.RefreshEveryTimeUIModel" >
+      </Containee>
+   </Contents>
+</JboProject>
