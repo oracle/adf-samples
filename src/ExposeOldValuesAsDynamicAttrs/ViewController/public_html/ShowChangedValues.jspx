@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ShowChangedValues">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit"/>
+                <af:commandButton actionListener="#{bindings.revertCurrentDeptView1Row.execute}"
+                                  text="Revert Changes to This Row"
+                                  disabled="#{!bindings.revertCurrentDeptView1Row.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Rollback"
+                                  disabled="#{!bindings.Rollback.enabled}"
+                                  immediate="true">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </af:panelButtonBar>
+            </f:facet>
+            <af:inputText value="#{bindings.Deptno.inputValue}"
+                          label="#{bindings.Deptno.label}"
+                          required="#{bindings.Deptno.mandatory}"
+                          columns="#{bindings.Deptno.displayWidth}">
+              <af:validator binding="#{bindings.Deptno.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Deptno.format}"/>
+            </af:inputText>
+            <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+              <af:panelHorizontal>
+                <af:inputText value="#{bindings.Dname.inputValue}"
+                              required="#{bindings.Dname.mandatory}"
+                              columns="#{bindings.Dname.displayWidth}">
+                  <af:validator binding="#{bindings.Dname.validator}"/>
+                </af:inputText>
+                <af:outputText value=" (Was: #{bindings.Dname_orig.inputValue})"
+                               rendered="#{bindings.Dname.inputValue != bindings.Dname_orig.inputValue}"/>
+                <f:facet name="separator">
+                  <af:objectSpacer width="10" height="10"/>
+                </f:facet>
+              </af:panelHorizontal>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+              <af:panelHorizontal>
+                <af:inputText value="#{bindings.Loc.inputValue}"
+                              required="#{bindings.Loc.mandatory}"
+                              columns="#{bindings.Loc.displayWidth}">
+                  <af:validator binding="#{bindings.Loc.validator}"/>
+                </af:inputText>
+                <af:outputText value=" (Was: #{bindings.Loc_orig.inputValue})"
+                               rendered="#{bindings.Loc.inputValue != bindings.Loc_orig.inputValue}"/>
+                <f:facet name="separator">
+                  <af:objectSpacer width="10" height="10"/>
+                </f:facet>
+              </af:panelHorizontal>
+            </af:panelLabelAndMessage>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
