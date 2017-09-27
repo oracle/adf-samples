@@ -107,6 +107,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ForceViewObjectDefaultToOverrideEntity
 * FurtherNarrowViewLinkAccessor
 * GetAttributesInvolvedInViewLink
+* GetFormattedAttributeValue
 
 
 
