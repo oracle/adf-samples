@@ -99,6 +99,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ExamplesForAccessingAMFromJSF
 * ExplodedTreeBindingAccessedByIterator
 * ExposeOldValuesAsDynamicAttrs
+* ExposingRowStateOnClient
 
 
 
