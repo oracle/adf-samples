@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.17.96"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="SystemDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="model"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="MetadataModuleLocal" >
+         <Parameters >
+            <Parameter
+               name="releaseMode"
+               value="stateless" >
+            </Parameter>
+            <Parameter
+               name="Sync"
+               value="Immediate" >
+            </Parameter>
+         </Parameters>
+      </DataControl>
+   </Contents>
+</JboProject>

@@ -179,6 +179,7 @@ Each sample is also available in downloadable form in the zips directory.
 * SubclassesDCJboDataControl
 * SubstitutionExample
 * SuppressRangePagingFirstRows
+* SystemDataControlExample
 
 
 
