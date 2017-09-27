@@ -30,5 +30,6 @@ Each sample is also available in downloadable form in the zips directory.
 * ADFWebAppWithComponentSubstitution
 * ArrayOfStringDomain
 * ArrayOfStringDomain11g
+* ArrayOfStructExample
 
 

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EntityBasedScoredEmployees"
+  Version="11.1.1.51.56"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  ComponentClass="test.EntityBasedScoredEmployeesImpl"
+  ComponentInterface="test.common.EntityBasedScoredEmployees"
+  ClientProxyName="test.client.EntityBasedScoredEmployeesClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_objectSuperClassName"
+      Value="test.ViewObjectImplWithScoredKeyBindVariable"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="VarArrayOfStruct"
+    Kind="where"
+    Type="oracle.jbo.domain.Array">
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
+  </Variable>
+  <EntityUsage
+    Name="Emp"
+    Entity="test.Emp"/>
+  <ViewAttribute
+    Name="Score"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SCORE"
+    Expression="NULL /* replaced by expert mode sql */"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Empno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Empno"
+    EntityUsage="Emp"
+    AliasName="EMPNO"/>
+  <ViewAttribute
+    Name="Ename"
+    PrecisionRule="true"
+    EntityAttrName="Ename"
+    EntityUsage="Emp"
+    AliasName="ENAME"/>
+  <SQLQuery>
+    <![CDATA[select s.score, e.empno, e.ename
+from emp e, table( cast (? as scored_keys) ) s
+where e.empno = s.key
+order by score desc]]>
+  </SQLQuery>
+  <ClientInterface>
+    <Method
+      Name="setScoredKeysArray">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="scoredKeys"
+        Type="java.util.List">
+        <Element
+          Type="java.util.Map"/>
+      </Parameter>
+    </Method>
+  </ClientInterface>
+</ViewObject>
