@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobsView"
+  Version="11.1.2.60.17"
+  SelectList="Jobs.JOB_ID, 
+       Jobs.JOB_TITLE, 
+       Jobs.MIN_SALARY, 
+       Jobs.MAX_SALARY"
+  FromList="JOBS Jobs"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Jobs"
+    Entity="davelaar.demo.model.entities.Jobs"/>
+  <ViewAttribute
+    Name="JobId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobId"
+    EntityUsage="Jobs"
+    AliasName="JOB_ID"/>
+  <ViewAttribute
+    Name="JobTitle"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobTitle"
+    EntityUsage="Jobs"
+    AliasName="JOB_TITLE"/>
+  <ViewAttribute
+    Name="MinSalary"
+    PrecisionRule="true"
+    EntityAttrName="MinSalary"
+    EntityUsage="Jobs"
+    AliasName="MIN_SALARY"/>
+  <ViewAttribute
+    Name="MaxSalary"
+    PrecisionRule="true"
+    EntityAttrName="MaxSalary"
+    EntityUsage="Jobs"
+    AliasName="MAX_SALARY"/>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="davelaar.demo.model.queries.links.EmpJobFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

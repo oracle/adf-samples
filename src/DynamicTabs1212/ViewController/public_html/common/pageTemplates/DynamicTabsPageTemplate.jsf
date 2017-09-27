@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:f="http://java.sun.com/jsf/core" xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component"
+                    xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <af:xmlContent>
+    <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+      <description>This component lays out an entire page.</description>
+      <facet>
+        <description>An optional vertically oriented region of contexual components for the main content. Often this
+                     contains a list or tree of links for deeper navigation structure than the global, primary, and
+                     secondary regions can provide.</description>
+        <facet-name>menu3</facet-name>
+      </facet>
+      <facet>
+        <description>The content of all popups used on the page.</description>
+        <facet-name>popups</facet-name>
+      </facet>
+      <attribute>
+        <description>Specifies the number of pixels tall that the global content should consume.</description>
+        <attribute-name>headerGlobalSize</attribute-name>
+        <attribute-class>int</attribute-class>
+        <default-value>40</default-value>
+      </attribute>
+      <attribute>
+        <description>Specifies the number of pixels tall that the global footer content should consume.</description>
+        <attribute-name>footerGlobalSize</attribute-name>
+        <attribute-class>int</attribute-class>
+        <default-value>30</default-value>
+      </attribute>
+      <attribute>
+        <description>Specifies the number of pixels tall that the secondary header content should consume.</description>
+        <attribute-name>header2Size</attribute-name>
+        <attribute-class>int</attribute-class>
+        <default-value>20</default-value>
+      </attribute>
+      <attribute>
+        <description>menu model bean reference</description>
+        <attribute-name>menuModel</attribute-name>
+        <attribute-class>org.apache.myfaces.trinidad.model.XMLMenuModel</attribute-class>
+      </attribute>
+      <attribute>
+        <description>branding title</description>
+        <attribute-name>brandingTitle</attribute-name>
+        <attribute-class>string</attribute-class>
+        <default-value>Dynamic Tabs Demo</default-value>
+      </attribute>
+    </component>
+  </af:xmlContent>
+  <!-- We need to set dimensionsFrom="parent" to keep correct layout when web.xml contains
+      DEFAULT_DIMENSIONS context param set to 'auto'. See bug 17156560  -->
+  <af:decorativeBox id="db0" centerLandmark="none" topLandmark="none" dimensionsFrom="parent"
+                    styleClass="#{adfFacesContext.skinFamily=='fusion' ? '' : 'AFVisualRoot'}"
+                    theme="#{adfFacesContext.skinFamily=='fusion' ? 'contentBody' : 'dark'}">
+    <f:facet name="center">
+      <af:panelStretchLayout bottomHeight="#{attrs.footerGlobalSize}" id="pt_psl1">
+        <f:facet name="center">
+          <af:panelSplitter orientation="vertical" splitterPosition="#{attrs.headerGlobalSize}" id="pt_ps1">
+            <f:facet name="first">
+              <af:panelGroupLayout id="pt_gPbl" layout="vertical">
+                <af:panelBorderLayout id="pt_brBar" styleClass="AFBrandingBar">
+                  <f:facet name="start">
+                    <af:panelGroupLayout id="pt_brLogo" layout="horizontal">
+                      <af:image id="pt_imgLogo" shortDesc="logo" source="/afr/logo-oracle-light.png"/>
+                      <af:outputText value="#{attrs.brandingTitle}" noWrap="true" styleClass="AFBrandingBarTitle"
+                                     inlineStyle="color: white;" id="pt_ot1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="innerStart">
+                    <af:panelGroupLayout id="pt_titleWrp" styleClass="AFBrandingBarItem">
+                      <af:outputText value="" styleClass="AFBrandingBarTitle" inlineStyle="color: white;" id="pt_ot12"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="end">
+<af:subform id="pt_s1" defaultCommand="cb3">
+  <af:panelGroupLayout id="pt_statWrp" layout="horizontal" 
+        halign="end" styleClass="AFBrandingBarItem">
+    <f:facet name="separator">
+      <af:spacer width="5" id="pt_s2"/>
+    </f:facet>
+    <af:inputText value="#{pageFlowScope.globalSearchString}" shortDesc="Enter employee id or start of last name and press enter" 
+                  columns="10" label="Search employee" id="pt_it1"/>
+    <af:commandButton id="cb3" text="Go" action="uishell:EditEmployee" 
+          visible="false">
+      <af:setActionListener to="#{EditEmployeeDynTab.parameters['searchString']}"
+                            from="#{pageFlowScope.globalSearchString}"/>
+      <af:setActionListener to="#{EditEmployeeDynTab.uniqueIdentifier}"
+                            from="#{pageFlowScope.globalSearchString}"/>
+    </af:commandButton>
+    <af:statusIndicator id="pt_statInd"/>
+  </af:panelGroupLayout>
+</af:subform>
+                  </f:facet>
+                </af:panelBorderLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="second">
+              <af:decorativeBox theme="light" topHeight="0" id="pt_db1">
+                <f:facet name="center">
+                  <af:panelSplitter orientation="horizontal" splitterPosition="200" id="pt_ps2">
+                    <f:facet name="first">
+                      <af:decorativeBox theme="default" styleClass="TabletPageContent" id="pt_db2">
+                        <f:facet name="center">
+                          <af:panelCollection id="pctree">
+                            <af:tree id="Menu1" var="menuItem" contentDelivery="immediate" value="#{attrs.menuModel}"
+                                     summary="Menu Item" initiallyExpanded="true">
+                              <f:facet name="nodeStamp">
+                                <af:group>
+                                  <af:commandLink id="Item1" action="#{menuItem.doAction}"
+                                                  textAndAccessKey="#{menuItem.label}" partialSubmit="true"
+                                                  immediate="true"
+                                                  rendered="#{menuItem.focusViewId!=null and menuItem.rendered}"/>
+                                  <af:outputText id="Item2" value="#{menuItem.label}"
+                                                 rendered="#{menuItem.focusViewId==null and menuItem.rendered}"/>
+                                </af:group>
+                              </f:facet>
+                            </af:tree>
+                          </af:panelCollection>
+                        </f:facet>
+                      </af:decorativeBox>
+                    </f:facet>
+                    <f:facet name="second">
+                     <!-- Use DynamicTabsNavPane.jsff instead of DynamicTabs.jsff when dirty tab label
+                          should be shown in italics -->
+                      <af:declarativeComponent viewId="/common/declarativeComponents/DynamicTabsNavPane.jsff" 
+                                               id="dyntdc"/>
+                    </f:facet>
+                  </af:panelSplitter>
+                </f:facet>
+              </af:decorativeBox>
+            </f:facet>
+          </af:panelSplitter>
+        </f:facet>
+        <f:facet name="bottom">
+          <af:panelGroupLayout layout="horizontal" id="pt_pgl4">
+            <af:outputText value="Created for Oracle Open World 2011" id="pt_ot4"/>
+            <af:popup id="pendingChangesPopup" childCreation="deferred">
+              <af:dialog id="pendingChangesDialog" type="yesNo" title="#{nls.PENDING_CHANGES_TITLE}"
+                         dialogListener="#{pageFlowScope.pendingChangesBean.processDialogEvent}" modal="true">
+                <af:outputText value="#{nls.TAB_PENDING_CHANGES_TEXT}"
+                               id="pt_ot5"/>
+              </af:dialog>
+            </af:popup>
+            <af:facetRef facetName="popups"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+  </af:decorativeBox>
+</af:pageTemplateDef>
+
+  

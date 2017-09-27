@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource>/WEB-INF/home-tf.xml</metadata-resource>
+  <metadata-resource>/WEB-INF/edit-employees-tf.xml</metadata-resource>
+  <metadata-resource>/WEB-INF/jobs-tf.xml</metadata-resource>
+  <metadata-resource>/WEB-INF/departments-tf.xml</metadata-resource>
+  <view id="UIShell">
+    <page>/common/pages/UIShell.jsf</page>
+  </view>
+  <control-flow-rule id="__8">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>uishell</from-outcome>
+      <to-activity-id>UIShell</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+
+  <managed-bean id="__3">
+    <managed-bean-name>menuModel</managed-bean-name>
+    <managed-bean-class>org.apache.myfaces.trinidad.model.XMLMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__4">
+      <property-name>source</property-name>
+      <value>/WEB-INF/menu.xml</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__49">
+    <managed-bean-name id="__50">dynTabManager</managed-bean-name>
+    <managed-bean-class id="__51">davelaar.demo.ui.view.dyntab.DynTabManager</managed-bean-class>
+    <managed-bean-scope id="__52">view</managed-bean-scope>
+    <managed-property id="__63">
+      <property-name id="__64">maxNumberOfTabs</property-name>
+      <property-class>java.lang.Integer</property-class>
+      <value id="__65">10</value>
+    </managed-property>
+    <managed-property id="__66">
+      <property-name id="__67">initialTabs</property-name>
+      <property-class>java.util.List</property-class>
+      <list-entries>
+         <value>Home</value>
+      </list-entries>
+    </managed-property>
+    <managed-property id="__56">
+      <property-name id="__57">doUpdateDocumentTitle</property-name>
+      <property-class>java.lang.Boolean</property-class>
+      <value id="__58">true</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__1344">
+    <managed-bean-name>HomeDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>title</property-name>
+      <value>Home</value>
+    </managed-property>
+    <managed-property>
+      <property-name>uniqueIdentifier</property-name>
+      <value>Home</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/home-tf.xml#home</value>
+    </managed-property>
+    <managed-property>
+      <property-name>closeable</property-name>
+      <value>true</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__6">
+    <managed-bean-name>SearchEmployeesDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>title</property-name>
+      <value>Search Employees</value>
+    </managed-property>
+    <managed-property>
+      <property-name>uniqueIdentifier</property-name>
+      <value>SearchEmployees</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/search-employees-tf.xml#search-employees</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__18">
+    <managed-bean-name>EditEmployeeDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/edit-employees-tf.xml#edit-employees</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__13">
+    <managed-bean-name>JobsDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>title</property-name>
+      <value>Maintain Jobs</value>
+    </managed-property>
+    <managed-property>
+      <property-name>uniqueIdentifier</property-name>
+      <value>Jobs</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/jobs-tf.xml#jobs</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__16">
+    <managed-bean-name>DepartmentsDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>title</property-name>
+      <value>Departments</value>
+    </managed-property>
+    <managed-property>
+      <property-name>uniqueIdentifier</property-name>
+      <value>Departments</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/departments-tf.xml#departments</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean id="__14">
+    <managed-bean-name>ViewJobsDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>title</property-name>
+      <value>View Jobs</value>
+    </managed-property>
+    <managed-property>
+      <property-name>uniqueIdentifier</property-name>
+      <value>ViewJobs</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/jobs-tf.xml#jobs</value>
+    </managed-property>
+    <managed-property>
+      <property-name>parameters</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry id="__15">
+          <key>readOnlyMode</key>
+          <value>#{true}</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+  </managed-bean>
+
+
+</adfc-config>

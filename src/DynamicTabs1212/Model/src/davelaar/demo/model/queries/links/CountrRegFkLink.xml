@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountrRegFkLink"
+  Version="11.1.2.60.17"
+  EntityAssociation="davelaar.demo.model.entities.assocs.CountrRegFkAssoc">
+  <ViewLinkDefEnd
+    Name="RegionsView"
+    Cardinality="1"
+    Source="true"
+    Owner="davelaar.demo.model.queries.RegionsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="RegionsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.queries.RegionsView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CountriesView"
+    Cardinality="-1"
+    Owner="davelaar.demo.model.queries.CountriesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountriesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.queries.CountriesView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

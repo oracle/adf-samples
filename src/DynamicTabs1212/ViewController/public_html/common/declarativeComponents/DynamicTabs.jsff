@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:componentDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <description></description>
+      </component>
+    </af:xmlContent>
+    <af:panelStretchLayout topHeight="20" bottomHeight="0" id="pt_db3">
+      <f:facet name="center">
+        <af:panelTabbed id="ptb0" tabRemoval="all"  
+                        binding="#{viewScope.dynTabManager.tabsNavigationPane}">
+          <af:forEach var="tab" varStatus="vs" 
+                      items="#{viewScope.dynTabManager.tabList}">
+              <!-- Functional choice whether immediate is set to true:
+                   - true: you can switch tabs while required fields are empty, drawback
+                     is that tab is only marked dirty after a request has been sent to the server
+                     so if you change tabs while changes have not been sent to the
+                     server yet, the tab ypu leave is not marked dirty. 
+                     (JSF Model update phase is not executed when immediate=true)
+                   - false: if you switch tabs, the latest change is first processed in JSF Model
+                     Update phase, so the tab is marked dirty. Drawback is that
+                     you cannot switch tabs when validation errors occur. -->
+            <af:showDetailItem stretchChildren="first" id="sdi0" immediate="true"
+                   textAndAccessKey="#{tab.title}"
+                   disclosedTransient="true" 
+                   remove="#{tab.closeable ? 'inherit' : 'no'}"
+                   disclosed="#{tab.id==viewScope.dynTabManager.selectedTabId}"
+                   disclosureListener="#{viewScope.dynTabManager.selectTab}"
+                   itemListener="#{viewScope.dynTabManager.removeTab}">
+                <!-- we should NOT specify an ID for af:region tag, because facelets will not make multiple stamped regions unique
+                     in that case. If we do want to specify an id, we should make it dynamic using EL expression to ensure uniqueness
+                     However, it is easiest to omit the id, facekltes will then auto- assign unique id's.
+                     See bug 17156560 -->
+              <af:region value="#{bindings.multiRegion1.taskFlowBindings[tab.id].regionModel}" 
+                         />
+              <f:attribute name="tabId" value="#{tab.id}"/>
+            </af:showDetailItem>
+          </af:forEach>
+        </af:panelTabbed>
+      </f:facet>
+      <f:facet name="bottom">
+        <af:group id="dc_g1">
+          <af:popup id="pt_tabdirty" clientComponent="true" contentDelivery="lazy"
+                    binding="#{viewScope.dynTabManager.tabDirtyPopup}">
+            <af:dialog title="Alert for Unsaved Changes" type="yesNo" id="pt_d2"
+                       dialogListener="#{viewScope.dynTabManager.handleDirtyTabDialog}">
+              <af:outputText value="You have unsaved changes that will be lost when you close the tab, do you want to continue?"
+                             id="pt_ot7"/>
+            </af:dialog>
+          </af:popup>
+        </af:group>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:componentDef>
+</ui:composition>

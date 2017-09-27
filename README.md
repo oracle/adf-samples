@@ -88,6 +88,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DynamicParameterForm
 * DynamicPoplistForAngelo
 * DynamicTabs1112
+* DynamicTabs1212
 
 
 

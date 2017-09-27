@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall7">
+      <property
+         name="activityId">employeeQuickSearch</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>employeeQuickSearch&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">219.09766</property>
+      <property
+         name="x">22.363281</property>
+   </MethodCall>
+   <View
+      id="View8">
+      <property
+         name="activityId">EditEmployee</property>
+      <property
+         name="page">/pages/EditEmployee.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EditEmployee&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">216.09766</property>
+      <property
+         name="x">438.01953</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="MethodCall7"
+      to="View8">
+      <property
+         name="fromOutcome">employeeQuickSearch</property>
+      <property
+         name="sdm:polyPoints">R50,63.36328,219.09766,397.01953,215.74707,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="search-employees">
+    <template-reference>
+      <document>/WEB-INF/tf-fragment-template.xml</document>
+      <id>tf-fragment-template</id>
+    </template-reference>
+    <default-activity>SearchEmployees</default-activity>
+    <input-parameter-definition id="__4">
+      <name>hideDepartmentId</name>
+      <value>#{pageFlowScope.hideDepartmentId}</value>
+      <class>java.lang.Boolean</class>
+    </input-parameter-definition>
+
+  <managed-bean id="__8">
+    <managed-bean-name>EditEmployeeDynTab</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.view.dyntab.DynTab</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>taskFlowIdString</property-name>
+      <value>/WEB-INF/edit-employees-tf.xml#edit-employees</value>
+    </managed-property>
+  </managed-bean>
+
+    <view id="SearchEmployees">
+      <page>/pages/SearchEmployees.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+
+</adfc-config>

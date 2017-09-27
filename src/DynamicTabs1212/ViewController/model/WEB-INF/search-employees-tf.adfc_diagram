@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">266.5</property>
+      <property
+         name="x">91.5</property>
+   </OverallProperties>
+   <View
+      id="View148">
+      <property
+         name="activityId">SearchEmployees</property>
+      <property
+         name="page">/pages/SearchEmployees.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SearchEmployees&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">71.79883</property>
+      <property
+         name="x">73.69141</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+</SDM>

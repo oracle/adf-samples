@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="departments">
+    <template-reference>
+      <document>/WEB-INF/tf-fragment-template.xml</document>
+      <id>tf-fragment-template</id>
+    </template-reference>
+    <default-activity>EditDepartment</default-activity>
+    <view id="EditDepartment">
+      <page>/pages/EditDepartment.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+
+</adfc-config>
