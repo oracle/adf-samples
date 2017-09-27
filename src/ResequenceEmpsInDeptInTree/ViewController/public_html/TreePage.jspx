@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:commandButton actionListener="#{bindings.moveSelectedEmployeeNodeUpInRowIterator.execute}"
+                          text="moveSelectedEmployeeNodeUpInRowIterator"
+                          partialTriggers="tree"
+                          disabled="#{'test.model.EmpView' != TreePage.selectedNodeViewDefFullName || TreePage.selectedNodeInRowIteratorFirst}"
+                          id="UpButton"/>
+        <af:commandButton actionListener="#{bindings.moveSelectedEmployeeNodeDownInRowIterator.execute}"
+                          text="moveSelectedEmployeeNodeDownInRowIterator"
+                          partialTriggers="tree"
+                          disabled="#{'test.model.EmpView' != TreePage.selectedNodeViewDefFullName || TreePage.selectedNodeInRowIteratorLast}"
+                          id="DownButton"/>
+        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                          text="Commit"/>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                          text="Rollback"
+                          immediate="true">
+          <af:resetActionListener/>
+        </af:commandButton>
+        <af:tree value="#{bindings.Departments.treeModel}" var="node"
+                 selectionListener="#{bindings.Departments.treeModel.makeCurrent}"
+                 rowSelection="single" binding="#{TreePage.tree}"
+                 partialTriggers="::DownButton ::UpButton" id="tree">
+          <f:facet name="nodeStamp">
+            <af:outputText value="#{node}"/>
+          </f:facet>
+        </af:tree>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TreePage-->
+</jsp:root>

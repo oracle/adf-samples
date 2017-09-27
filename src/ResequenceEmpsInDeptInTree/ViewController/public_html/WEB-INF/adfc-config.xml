@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="TreePage">
+    <page>/TreePage.jspx</page>
+  </view>
+  <managed-bean>
+    <managed-bean-name>TreePage</managed-bean-name>
+    <managed-bean-class>test.view.util.TreeSupportBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

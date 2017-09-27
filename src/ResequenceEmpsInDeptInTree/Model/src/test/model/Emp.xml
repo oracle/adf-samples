@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Emp"
+  Version="11.1.1.50.92"
+  DBObjectType="table"
+  DBObjectName="EMP_WITH_RANK"
+  AliasName="Emp"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Empno"
+    IsNotNull="true"
+    Precision="4"
+    Scale="0"
+    ColumnName="EMPNO"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ename"
+    Precision="10"
+    ColumnName="ENAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Job"
+    Precision="9"
+    ColumnName="JOB"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Mgr"
+    Precision="4"
+    Scale="0"
+    ColumnName="MGR"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Hiredate"
+    ColumnName="HIREDATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sal"
+    Precision="7"
+    Scale="2"
+    ColumnName="SAL"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Comm"
+    Precision="7"
+    Scale="2"
+    ColumnName="COMM"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Deptno"
+    Precision="2"
+    Scale="0"
+    ColumnName="DEPTNO"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmpRank"
+    Precision="5"
+    Scale="0"
+    ColumnName="EMP_RANK"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="EMP_WITH_RANK">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Dept"
+    Association="test.model.WorksInDeptRankAssoc"
+    AssociationEnd="test.model.WorksInDeptRankAssoc.Dept"
+    AssociationOtherEnd="test.model.WorksInDeptRankAssoc.Emp"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmployeeRankPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_RANK_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Empno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0014514">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0014514"/>
+      <Attr Name="_checkCondition" Value='"EMPNO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Empno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WorksInDeptRank">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DEPT_RANK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="WORKS_IN_DEPT_RANK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Deptno"/>
+    </AttrArray>
+  </Key>
+</Entity>

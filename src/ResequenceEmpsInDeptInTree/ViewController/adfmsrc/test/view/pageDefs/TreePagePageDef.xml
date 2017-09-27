@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.92" id="TreePagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Departments" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsIterator" id="Departments">
+      <nodeDefinition DefName="test.model.DeptView">
+        <AttrNames>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmpView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="test.model.EmpView">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="EmpRank"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <methodAction id="moveSelectedEmployeeNodeDownInRowIterator"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="moveSelectedEmployeeNodeDownInRowIterator"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="ri" NDValue="#{TreePage.selectedNodeRowIterator}"
+                 NDType="oracle.jbo.RowIterator"/>
+      <NamedData NDName="selectedEmpKey"
+                 NDValue="#{TreePage.selectedNodeRowKey}"
+                 NDType="oracle.jbo.Key"/>
+    </methodAction>
+    <methodAction id="moveSelectedEmployeeNodeUpInRowIterator"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="moveSelectedEmployeeNodeUpInRowIterator"
+                  IsViewObjectMethod="false">
+      <NamedData NDName="ri" NDValue="#{TreePage.selectedNodeRowIterator}"
+                 NDType="oracle.jbo.RowIterator"/>
+      <NamedData NDName="selectedEmpKey"
+                 NDValue="#{TreePage.selectedNodeRowKey}"
+                 NDType="oracle.jbo.Key"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

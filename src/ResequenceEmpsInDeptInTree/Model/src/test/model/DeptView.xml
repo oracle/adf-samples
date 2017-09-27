@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptView"
+  Version="11.1.1.50.92"
+  SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+  FromList="DEPT_RANK Dept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  OrderBy="deptno"
+  FetchMode="FETCH_AS_NEEDED"
+  ViewLinkAccessorRetained="true">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Dept"
+    Entity="test.model.Dept"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="Deptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Dept"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="Dept"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="Dept"
+    AliasName="LOC"/>
+  <ViewLinkAccessor
+    Name="EmpView"
+    ViewLink="test.model.WorksInDeptRankLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>
