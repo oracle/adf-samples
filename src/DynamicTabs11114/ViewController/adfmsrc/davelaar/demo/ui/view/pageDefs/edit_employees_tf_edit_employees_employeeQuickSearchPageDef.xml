@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.59.23"
+                id="edit_employees_tf_edit_employees_employeeQuickSearchPageDef" Package="davelaar.demo.ui.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="employeeQuickSearch" RequiresUpdateModel="true" Action="invokeMethod" MethodName="employeeQuickSearch"
+                  IsViewObjectMethod="false" DataControl="HRServiceDataControl" InstanceName="HRServiceDataControl.dataProvider">
+      <NamedData NDName="searchString" NDValue="#{pageFlowScope.rowKeyValue!=null ? pageFlowScope.rowKeyValue : pageFlowScope.searchString}" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

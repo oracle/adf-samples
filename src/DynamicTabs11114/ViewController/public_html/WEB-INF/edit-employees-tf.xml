@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="edit-employees">
+    <template-reference>
+      <document>/WEB-INF/tf-fragment-template.xml</document>
+      <id>tf-fragment-template</id>
+    </template-reference>
+    <default-activity>employeeQuickSearch</default-activity>
+    <input-parameter-definition id="__2">
+      <name>rowKeyValue</name>
+      <value>#{pageFlowScope.rowKeyValue}</value>
+    </input-parameter-definition>
+    <input-parameter-definition id="__3">
+      <name>searchString</name>
+      <value>#{pageFlowScope.searchString}</value>
+    </input-parameter-definition>
+    <view id="EditEmployee">
+      <page>/pages/EditEmployee.jsff</page>
+    </view>
+    <method-call id="employeeQuickSearch">
+      <method>#{bindings.employeeQuickSearch.execute}</method>
+      <outcome id="__1">
+        <fixed-outcome>employeeQuickSearch</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__11">
+      <from-activity-id id="__12">employeeQuickSearch</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome id="__15">employeeQuickSearch</from-outcome>
+        <to-activity-id id="__14">EditEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

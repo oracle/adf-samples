@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.59.23" id="DynTabsTemplatePageDef"
+                Package="davelaar.demo.ui.view.pageDefs" SkipValidation="skipDataControls">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="r0"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r0'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r0'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r1"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r1'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r1'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r2"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r2'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r2'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r3"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r3'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r3'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r4"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r4'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r4'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r5"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r5'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r5'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r6"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r6'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r6'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r7"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r7'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r7'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r8"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r8'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r8'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r9"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r9'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r9'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r10"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r10'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r10'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r11"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r11'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r11'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r12"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r12'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r12'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r13"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r13'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r13'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="r14"
+              taskFlowId="#{viewScope.dynTabManager.tabMap['r14'].taskflowId}"
+              parametersMap="#{viewScope.dynTabManager.tabMap['r14'].parameters}"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

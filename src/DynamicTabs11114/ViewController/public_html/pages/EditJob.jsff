@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:panelHeader text="#{pageFlowScope.readOnlyMode ? 'View Job' : 'Edit Job'}" id="ph1">
+    <f:facet name="context"/>
+    <f:facet name="menuBar"/>
+    <f:facet name="toolbar">
+      <af:group id="g1" >
+        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                          disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="cb1"/>
+        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                          partialSubmit="true" id="cb2"/>
+        <af:commandButton actionListener="#{bindings.Commit.execute}" text="Save" id="cb3"
+                          rendered="#{!pageFlowScope.readOnlyMode}"/>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="cb4"
+                          action="cancel">
+          <af:resetActionListener/>
+        </af:commandButton>
+      </af:group>
+    </f:facet>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+    <af:panelFormLayout id="pfl1" rows="1" maxColumns="2">
+      <af:inputText value="#{bindings.JobId.inputValue}" label="#{bindings.JobId.hints.label}"
+                    readOnly="#{pageFlowScope.readOnlyMode}" required="#{bindings.JobId.hints.mandatory}"
+                    columns="#{bindings.JobId.hints.displayWidth}" maximumLength="#{bindings.JobId.hints.precision}"
+                    shortDesc="#{bindings.JobId.hints.tooltip}" id="it1">
+        <f:validator binding="#{bindings.JobId.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.JobTitle.inputValue}" label="#{bindings.JobTitle.hints.label}"
+                    required="#{bindings.JobTitle.hints.mandatory}" columns="#{bindings.JobTitle.hints.displayWidth}"
+                    maximumLength="#{bindings.JobTitle.hints.precision}" shortDesc="#{bindings.JobTitle.hints.tooltip}"
+                    id="it2" readOnly="#{pageFlowScope.readOnlyMode}">
+        <f:validator binding="#{bindings.JobTitle.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.MinSalary.inputValue}" label="#{bindings.MinSalary.hints.label}"
+                    readOnly="#{pageFlowScope.readOnlyMode}" required="#{bindings.MinSalary.hints.mandatory}"
+                    columns="#{bindings.MinSalary.hints.displayWidth}"
+                    maximumLength="#{bindings.MinSalary.hints.precision}"
+                    shortDesc="#{bindings.MinSalary.hints.tooltip}" id="it3">
+        <f:validator binding="#{bindings.MinSalary.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.MinSalary.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.MaxSalary.inputValue}" label="#{bindings.MaxSalary.hints.label}"
+                    readOnly="#{pageFlowScope.readOnlyMode}" required="#{bindings.MaxSalary.hints.mandatory}"
+                    columns="#{bindings.MaxSalary.hints.displayWidth}"
+                    maximumLength="#{bindings.MaxSalary.hints.precision}"
+                    shortDesc="#{bindings.MaxSalary.hints.tooltip}" id="it4">
+        <f:validator binding="#{bindings.MaxSalary.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.MaxSalary.format}"/>
+      </af:inputText>
+    </af:panelFormLayout>
+  </af:panelHeader></jsp:root>

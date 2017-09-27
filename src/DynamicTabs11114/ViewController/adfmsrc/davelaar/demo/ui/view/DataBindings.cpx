@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.59.23" id="DataBindings" SeparateXMLFiles="false"
+             Package="davelaar.demo.ui.view" ClientType="Generic">
+  <pageMap>
+    <page path="/common/pages/UIShell.jspx" usageId="davelaar_demo_ui_view_UIShellPageDef"/>
+    <page path="/pages/SearchEmployees.jsff" usageId="davelaar_demo_ui_view_SearchEmployeesPageDef"/>
+    <page path="/pages/EditEmployee.jsff" usageId="davelaar_demo_ui_view_EditEmployeePageDef"/>
+    <page path="/pages/SearchJobs.jsff" usageId="davelaar_demo_ui_view_SearchJobsPageDef"/>
+    <page path="/pages/EditJob.jsff" usageId="davelaar_demo_ui_view_EditJobPageDef"/>
+    <page path="/pages/EditDepartment.jsff" usageId="davelaar_demo_ui_view_EditDepartmentPageDef"/>
+    <page path="/WEB-INF/edit-employees-tf.xml#edit-employees@employeeQuickSearch"
+          usageId="davelaar_demo_ui_view_edit_employees_tf_edit_employees_employeeQuickSearchPageDef"/>
+  </pageMap>
+  <definitionFactories>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"
+             nameSpace="http://xmlns.oracle.com/adf/controller/binding"/>
+  </definitionFactories>
+  <pageDefinitionUsages>
+    <page id="davelaar_demo_ui_view_UIShellPageDef" path="davelaar.demo.ui.view.pageDefs.UIShellPageDef"/>
+    <page id="davelaar_demo_ui_view_SearchEmployeesPageDef" path="davelaar.demo.ui.view.pageDefs.SearchEmployeesPageDef"/>
+    <page id="davelaar_demo_ui_view_EditEmployeePageDef" path="davelaar.demo.ui.view.pageDefs.EditEmployeePageDef"/>
+    <page id="davelaar_demo_ui_view_SearchJobsPageDef" path="davelaar.demo.ui.view.pageDefs.SearchJobsPageDef"/>
+    <page id="davelaar_demo_ui_view_EditJobPageDef" path="davelaar.demo.ui.view.pageDefs.EditJobPageDef"/>
+    <page id="davelaar_demo_ui_view_EditDepartmentPageDef" path="davelaar.demo.ui.view.pageDefs.EditDepartmentPageDef"/>
+   <page id="DynTabsTemplatePageDef"
+          path="davelaar.demo.ui.view.pageDefs.DynTabsTemplatePageDef"/>
+    <page id="davelaar_demo_ui_view_edit_employees_tf_edit_employees_employeeQuickSearchPageDef"
+          path="davelaar.demo.ui.view.pageDefs.edit_employees_tf_edit_employees_employeeQuickSearchPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceDataControl"
+                     Package="davelaar.demo.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="HRServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:panelStretchLayout id="psl1" topHeight="60">
+    <f:facet name="center">
+      <!-- id="af_one_column_stretched"   -->
+      <af:panelCollection id="pc1">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.EmployeesView1.collectionModel}" var="row"
+                  rows="#{bindings.EmployeesView1.rangeSize}"
+                  emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.EmployeesView1.rangeSize}" rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.EmployeesView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.EmployeesView1.collectionModel.makeCurrent}" rowSelection="single"
+                  id="t1" partialTriggers=":::qryId1">
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.EmployeeId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.EmployeeId.label}" id="c1">
+            <af:outputText value="#{row.EmployeeId}" id="ot1">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView1.hints.EmployeeId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.FirstName.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.FirstName.label}" id="c2">
+            <af:outputText value="#{row.FirstName}" id="ot2"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.LastName.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.LastName.label}" id="c3">
+            <af:commandLink id="ot3" text="#{row.LastName}"  action="uishell:EditEmployee">
+              <af:setActionListener to="#{EditEmployeeDynTab.title}" 
+                                    from="#{af:formatString('Edit Employee {0}',row.LastName)}" />
+              <af:setActionListener to="#{EditEmployeeDynTab.uniqueIdentifier}" 
+                                    from="#{row.EmployeeId}" />
+              <af:setActionListener to="#{EditEmployeeDynTab.parameters['rowKeyValue']}" 
+                                    from="#{row.EmployeeId}" />
+            </af:commandLink>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.Email.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.Email.label}" id="c4">
+            <af:outputText value="#{row.Email}" id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.PhoneNumber.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.PhoneNumber.label}" id="c5">
+            <af:outputText value="#{row.PhoneNumber}" id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.HireDate.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.HireDate.label}" id="c6">
+            <af:outputText value="#{row.HireDate}" id="ot6">
+              <af:convertDateTime pattern="#{bindings.EmployeesView1.hints.HireDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.JobId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.JobId.label}" id="c7">
+            <af:selectOneChoice value="#{row.bindings.JobId.inputValue}" label="#{row.bindings.JobId.label}"
+                                required="#{bindings.EmployeesView1.hints.JobId.mandatory}"
+                                shortDesc="#{bindings.EmployeesView1.hints.JobId.tooltip}" readOnly="true" id="soc1">
+              <f:selectItems value="#{row.bindings.JobId.items}" id="si1"/>
+            </af:selectOneChoice>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.Salary.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.Salary.label}" id="c8">
+            <af:outputText value="#{row.Salary}" id="ot7"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.CommissionPct.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.CommissionPct.label}" id="c9">
+            <af:outputText value="#{row.CommissionPct}" id="ot8"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.ManagerId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.ManagerId.label}" id="c10">
+            <af:outputText value="#{row.ManagerId}" id="ot9">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView1.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.EmployeesView1.hints.DepartmentId.name}" sortable="true"
+                     headerText="#{bindings.EmployeesView1.hints.DepartmentId.label}" id="c11"
+                    >
+            <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                label="#{row.bindings.DepartmentId.label}"
+                                required="#{bindings.EmployeesView1.hints.DepartmentId.mandatory}"
+                                shortDesc="#{bindings.EmployeesView1.hints.DepartmentId.tooltip}" readOnly="true"
+                                id="soc2">
+              <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si2"/>
+            </af:selectOneChoice>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="scroll" id="pgl2">
+        <af:panelHeader text="Employees" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+        </af:panelHeader>
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+            <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+             
+                           value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                           model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                           queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+              <f:facet name="end">
+                <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+              </f:facet>
+            </af:quickQuery>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Jobs"
+  Version="11.1.1.59.23"
+  DBObjectType="table"
+  DBObjectName="JOBS"
+  AliasName="Jobs"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="JOB_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobTitle"
+    IsNotNull="true"
+    Precision="35"
+    ColumnName="JOB_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MinSalary"
+    Precision="6"
+    Scale="0"
+    ColumnName="MIN_SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MaxSalary"
+    Precision="6"
+    Scale="0"
+    ColumnName="MAX_SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="JOBS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Employees"
+    Association="davelaar.demo.model.entities.assocs.EmpJobFkAssoc"
+    AssociationEnd="davelaar.demo.model.entities.assocs.EmpJobFkAssoc.Employees"
+    AssociationOtherEnd="davelaar.demo.model.entities.assocs.EmpJobFkAssoc.Jobs"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="JobIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="JOB_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.entities.Jobs.JobId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="JobTitleNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="JOB_TITLE_NN"/>
+      <Attr Name="_checkCondition" Value='"JOB_TITLE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.entities.Jobs.JobTitle"/>
+    </AttrArray>
+  </Key>
+</Entity>

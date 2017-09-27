@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:componentDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <description></description>
+      </component>
+    </af:xmlContent>
+    <af:decorativeBox id="pt_psl4" theme="light" topHeight="24"
+                      binding="#{viewScope.dynTabManager.contentArea}">
+      <f:facet name="top">
+        <af:panelBorderLayout id="pt_psl6" styleClass="AFStretchWidth"
+                              rendered="#{viewScope.dynTabManager.tabsRendered}">
+          <af:navigationPane id="dynTabsPane"
+                             binding="#{viewScope.dynTabManager.tabsNavigationPane}"
+                             rendered="#{not empty viewScope.dynTabManager.selectedTabId}"
+                             value="#{viewScope.dynTabManager.tabMenuModel}"
+                             var="tab" itemRemoval="all">
+            <f:facet name="nodeStamp">
+              <!-- Functional choice whether immediate is set to true:
+                   - true: you can switch tabs while required fields are empty, drawback
+                     is that tab is only marked dirty after a request has been sent to the server
+                     so if you change tabs while changes have not been sent to the
+                     server yet, the tab ypu leave is not marked dirty. 
+                     (JSF Model update phase is not executed when immediate=true)
+                   - false: if you switch tabs, the latest change is first processed in JSF Model
+                     Update phase, so the tab is marked dirty. Drawback is that
+                     you cannot switch tabs when validation errors occur. -->
+              <af:commandNavigationItem id="tabIndex" rendered="#{tab.active}" immediate="false"
+                                        actionListener="#{viewScope.dynTabManager.tabActivatedEvent}"
+                                        inlineStyle="#{tab.dirty ? 'font-style: italic' : ''}"
+                                        partialSubmit="true"
+                                        textAndAccessKey="#{tab.title}"
+                                        remove="#{tab.closeable ? 'inherit' : 'no'}"
+                                        itemListener="#{viewScope.dynTabManager.removeTab}">
+                <f:attribute name="tabId" value="#{tab.id}"/>
+              </af:commandNavigationItem>
+            </f:facet>
+          </af:navigationPane>
+        </af:panelBorderLayout>
+      </f:facet>
+      <f:facet name="center">
+        <af:panelStretchLayout topHeight="0" bottomHeight="0" id="pt_db3">
+          <f:facet name="center">
+            <af:group id="pt_g10">
+              <af:region value="#{viewScope.dynTabManager.tabMap['r0'].binding.regionModel}"
+                         id="r0"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r0'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r1'].binding.regionModel}"
+                         id="r1"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r1'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r2'].binding.regionModel}"
+                         id="r2"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r2'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r3'].binding.regionModel}"
+                         id="r3"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r3'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r4'].binding.regionModel}"
+                         id="r4"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r4'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r5'].binding.regionModel}"
+                         id="r5"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r5'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r6'].binding.regionModel}"
+                         id="r6"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r6'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r7'].binding.regionModel}"
+                         id="r7"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r7'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r8'].binding.regionModel}"
+                         id="r8"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r8'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r9'].binding.regionModel}"
+                         id="r9"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r9'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r10'].binding.regionModel}"
+                         id="r10"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r10'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r11'].binding.regionModel}"
+                         id="r11"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r11'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r12'].binding.regionModel}"
+                         id="r12"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r12'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r13'].binding.regionModel}"
+                         id="r13"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r13'}"/>
+              <af:region value="#{viewScope.dynTabManager.tabMap['r14'].binding.regionModel}"
+                         id="r14"
+                         rendered="#{viewScope.dynTabManager.selectedTabId == 'r14'}"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="bottom">
+            <af:group id="dc_g1">
+              <af:popup id="pt_tabdirty" clientComponent="true"
+                        contentDelivery="lazy"
+                        binding="#{viewScope.dynTabManager.tabDirtyPopup}">
+                <af:dialog title="Alert for Unsaved Changes" type="yesNo"
+                           id="pt_d2"
+                           dialogListener="#{viewScope.dynTabManager.handleDirtyTabDialog}">
+                  <af:outputText value="You have unsaved changes that will be lost when you close the tab, do you want to continue?"
+                                 id="pt_ot7"/>
+                </af:dialog>
+              </af:popup>
+            </af:group>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:decorativeBox>
+  </af:componentDef>
+</jsp:root>

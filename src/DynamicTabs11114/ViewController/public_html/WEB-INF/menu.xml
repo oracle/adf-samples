@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+  <itemNode id="homeMI" label="Home" action="uishell:Home" 
+            focusViewId=""/> 
+  <groupNode id="hr" idref="empMI" label="Human Resources">
+    <itemNode id="empMI" label="Search Employees" 
+              action="uishell:SearchEmployees" focusViewId=""/>
+    <itemNode id="jobMI" label="Maintain Jobs" 
+              action="uishell:Jobs" focusViewId=""/>
+    <itemNode id="jobvMI" label="View Jobs" 
+              action="uishell:ViewJobs" focusViewId=""/>
+    <itemNode id="depMI" label="Departments" 
+              action="uishell:Departments" focusViewId=""/>
+  </groupNode>
+</menu>

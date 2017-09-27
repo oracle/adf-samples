@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="davelaar.demo.model.service.HRService">
+      <AppModuleConfig name="HRServiceLocal" ApplicationName="davelaar.demo.model.service.HRService" DeployPlatform="LOCAL" JDBCName="hr" jbo.project="davelaar.demo.model.Model">
+         <Security AppModuleJndiName="davelaar.demo.model.service.HRService"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HRServiceShared" ApplicationName="davelaar.demo.model.service.HRService" DeployPlatform="LOCAL" JDBCName="hr" jbo.project="davelaar.demo.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="davelaar.demo.model.service.HRService"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpDeptFkLink"
+  Version="11.1.1.59.23"
+  EntityAssociation="davelaar.demo.model.entities.assocs.EmpDeptFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="DepartmentsView1_1"
+    Cardinality="1"
+    Owner="davelaar.demo.model.queries.DepartmentsView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DepartmentsView1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.queries.DepartmentsView.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeesView"
+    Cardinality="-1"
+    Owner="davelaar.demo.model.queries.EmployeesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmployeesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="davelaar.demo.model.queries.EmployeesView.DepartmentId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

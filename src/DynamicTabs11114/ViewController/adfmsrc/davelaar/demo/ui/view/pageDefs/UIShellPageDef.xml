@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.59.23" id="UIShellPageDef"
+                Package="davelaar.demo.ui.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page id="dynTabsTemplateBinding"
+          path="davelaar.demo.ui.view.pageDefs.DynTabsTemplatePageDef" Refresh="ifNeeded"/>
+  </executables>
+</pageDefinition>

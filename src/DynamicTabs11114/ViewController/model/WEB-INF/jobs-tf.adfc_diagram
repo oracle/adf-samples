@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">328.2591</property>
+      <property
+         name="x">91.5</property>
+   </OverallProperties>
+   <View
+      id="View5">
+      <property
+         name="activityId">EditJob</property>
+      <property
+         name="page">/pages/EditJob.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EditJob&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">185.15039</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">490.9004</property>
+   </View>
+   <View
+      id="View6">
+      <property
+         name="activityId">SearchJobs</property>
+      <property
+         name="page">/pages/SearchJobs.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SearchJobs&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">184.39648</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">279.9004</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View6"
+      to="View5">
+      <property
+         name="fromOutcome">edit</property>
+      <property
+         name="sdm:polyPoints">R46,320.92084,180.5459,449.9004,181.2998,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View5"
+      to="View6">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">L54,449.87994,188.2998,320.9004,187.5459,R54</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="tf-fragment-template">
+    <data-control-scope id="dcs">
+      <isolated/>
+    </data-control-scope>
+    <!-- input params for dynamic tab functionality.
+         These params are automatically set in DynTabManager when launching a new tab -->
+    <input-parameter-definition id="__6">
+      <name>dynTabManager</name>
+      <value>#{pageFlowScope.dynTabManager}</value>
+      <class>davelaar.demo.ui.view.dyntab.DynTabManager</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__7">
+      <name>dynTabId</name>
+      <value>#{pageFlowScope.dynTabId}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <use-page-fragments/>
+  </task-flow-template>
+</adfc-config>
