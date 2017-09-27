@@ -9,3 +9,5 @@ Each sample is also available in downloadable form in the zips directory.
 ## List of Samples
 
 * 11gDynamicCredentials
+* AccessApplicationModuleFromBackingBean
+
