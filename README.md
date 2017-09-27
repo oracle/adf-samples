@@ -77,6 +77,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DRM004_AutoReduceSearch
 * DRM005_CSSAnimations
 * DRM007_RevealPanel
+* DRM008_InputSliderMeasureSelector
 
 
 

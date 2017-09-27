@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93" id="MoreData"
+          Package="oracle.demo.isms.model" BeanClass="oracle.demo.isms.model.MoreData" isJavaBased="true">
+  <Attribute Name="dataValueAsLong" Type="java.lang.Long"/>
+  <Attribute Name="dataValueAsDouble" Type="java.lang.Double"/>
+  <Attribute Name="dataValueAsFloat" Type="java.lang.Float"/>
+  <Attribute Name="dataValueAsJBONumber" Type="oracle.jbo.domain.Number"/>  
+  <Attribute Name="dataRangeLow" Type="java.lang.Long"/>
+  <Attribute Name="dataRangeHigh" Type="java.lang.Long"/>
+  <Attribute Name="rowKey" Type="int"/>
+  <Attribute Name="dataValueAsLong1" Type="java.lang.Long"/>
+  <Attribute Name="dataValueAsLong2" Type="java.lang.Long"/>
+  <ConstructorMethod IsCollection="true" Type="oracle.demo.isms.model.MoreData"
+                     BeanClass="oracle.demo.isms.model.MoreData" id="MoreData">
+    <ParameterInfo id="key" Type="int" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

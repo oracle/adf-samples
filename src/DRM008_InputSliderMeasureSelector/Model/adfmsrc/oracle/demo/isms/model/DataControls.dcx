@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.1.64.93" id="DataControls"
+                    Package="oracle.demo.isms.model">
+  <AdapterDataControl id="SampleData" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" Definition="oracle.demo.isms.model.SampleData"
+                      BeanClass="oracle.demo.isms.model.SampleData" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="oracle.demo.isms.model.SampleData"/>
+      <TypeInfo FullName="oracle.demo.isms.model.DrillPath"/>
+      <TypeInfo FullName="oracle.demo.isms.model.SampleRow"/>
+      <TypeInfo FullName="oracle.demo.isms.model.MoreData"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="oracle.demo.isms.model.SampleData" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

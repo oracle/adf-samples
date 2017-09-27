@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="sample">
+    <page>/sample.jspx</page>
+  </view>
+  <managed-bean id="__13">
+    <managed-bean-name id="__11">samplePageBB</managed-bean-name>
+    <managed-bean-class id="__10">oracle.demo.isms.view.SamplePageBacking</managed-bean-class>
+    <managed-bean-scope id="__12">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

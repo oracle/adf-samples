@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.1.64.93" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.demo.isms.view" ClientType="Generic">
+  <pageMap>
+    <page path="/sample.jspx" usageId="oracle_demo_isms_view_samplePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_demo_isms_view_samplePageDef" path="oracle.demo.isms.view.pageDefs.samplePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="SampleData" path="oracle.demo.isms.model.SampleData"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.64.93" id="samplePageDef"
+                Package="oracle.demo.isms.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator" ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="SampleDataIterator" Binds="dataRows" RangeSize="25" DataControl="SampleData"
+                      BeanClass="oracle.demo.isms.model.SampleRow" id="dataRowsIterator" ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="SampleDataIterator" Binds="additionalData" RangeSize="25" DataControl="SampleData"
+                      BeanClass="oracle.demo.isms.model.MoreData" id="additionalDataIterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator1"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator2"/>
+    <accessorIterator MasterBinding="SampleDataIterator2" Binds="taxonomyMeasures" RangeSize="10"
+                      DataControl="SampleData" BeanClass="oracle.demo.isms.model.DrillPath"
+                      id="taxonomyMeasuresIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator3"/>
+    <accessorIterator MasterBinding="SampleDataIterator3" Binds="fiscalTimeMeasures" RangeSize="10"
+                      DataControl="SampleData" BeanClass="oracle.demo.isms.model.DrillPath"
+                      id="fiscalTimeMeasuresIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator4"/>
+    <accessorIterator MasterBinding="SampleDataIterator4" Binds="romanNumeralMeasures" RangeSize="10"
+                      DataControl="SampleData" BeanClass="oracle.demo.isms.model.DrillPath"
+                      id="romanNumeralMeasuresIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator5"/>
+    <accessorIterator MasterBinding="SampleDataIterator5" Binds="timeMeasures" RangeSize="10" DataControl="SampleData"
+                      BeanClass="oracle.demo.isms.model.DrillPath" id="timeMeasuresIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SampleData" id="SampleDataIterator6"/>
+    <accessorIterator MasterBinding="SampleDataIterator6" Binds="volumeMeasures" RangeSize="10" DataControl="SampleData"
+                      BeanClass="oracle.demo.isms.model.DrillPath" id="volumeMeasuresIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="dataRowsIterator" id="dataRows">
+      <nodeDefinition DefName="oracle.demo.isms.model.SampleRow" Name="dataRows0">
+        <AttrNames>
+          <Item Value="rowKey"/>
+          <Item Value="dimension"/>
+          <Item Value="rowValue"/>
+          <Item Value="drillMax"/>
+          <Item Value="drillMin"/>
+          <Item Value="measures"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsLong">
+      <AttrNames>
+        <Item Value="dataValueAsLong"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsLong1">
+      <AttrNames>
+        <Item Value="dataValueAsLong1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsLong2">
+      <AttrNames>
+        <Item Value="dataValueAsLong2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataRangeLow">
+      <AttrNames>
+        <Item Value="dataRangeLow"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataRangeHigh">
+      <AttrNames>
+        <Item Value="dataRangeHigh"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomyMeasuresIterator" id="taxonomyMinimum">
+      <AttrNames>
+        <Item Value="drillPathMinimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomyMeasuresIterator" id="taxonomyMaximum">
+      <AttrNames>
+        <Item Value="drillPathMaximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomyMeasuresIterator" id="taxonomyMeasureList">
+      <AttrNames>
+        <Item Value="pathMeasureList"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fiscalTimeMeasuresIterator" id="fiscalMinimum">
+      <AttrNames>
+        <Item Value="drillPathMinimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fiscalTimeMeasuresIterator" id="fiscalMaximum">
+      <AttrNames>
+        <Item Value="drillPathMaximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fiscalTimeMeasuresIterator" id="fiscalMeasureList">
+      <AttrNames>
+        <Item Value="pathMeasureList"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="romanNumeralMeasuresIterator" id="romanMinimum">
+      <AttrNames>
+        <Item Value="drillPathMinimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="romanNumeralMeasuresIterator" id="romanMaximum">
+      <AttrNames>
+        <Item Value="drillPathMaximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="romanNumeralMeasuresIterator" id="romanMeasureList">
+      <AttrNames>
+        <Item Value="pathMeasureList"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="timeMeasuresIterator" id="timeMinimum">
+      <AttrNames>
+        <Item Value="drillPathMinimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="timeMeasuresIterator" id="timeMaximum">
+      <AttrNames>
+        <Item Value="drillPathMaximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="timeMeasuresIterator" id="timeMeasureList">
+      <AttrNames>
+        <Item Value="pathMeasureList"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="volumeMeasuresIterator" id="volMinimum">
+      <AttrNames>
+        <Item Value="drillPathMinimum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="volumeMeasuresIterator" id="volMaximum">
+      <AttrNames>
+        <Item Value="drillPathMaximum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="volumeMeasuresIterator" id="volMeasureList">
+      <AttrNames>
+        <Item Value="pathMeasureList"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsDouble">
+      <AttrNames>
+        <Item Value="dataValueAsDouble"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsFloat">
+      <AttrNames>
+        <Item Value="dataValueAsFloat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="additionalDataIterator" id="dataValueAsJBONumber">
+      <AttrNames>
+        <Item Value="dataValueAsJBONumber"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

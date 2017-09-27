@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <converter>
+    <converter-id>ismsConverter</converter-id>
+    <converter-class>oracle.demo.isms.converters.IsmsConverter</converter-class>
+  </converter>
+  <converter>
+    <converter-id>ismsJboConverter</converter-id>
+    <converter-class>oracle.demo.isms.converters.ismsJboConverter</converter-class>
+  </converter>  
+</faces-config>

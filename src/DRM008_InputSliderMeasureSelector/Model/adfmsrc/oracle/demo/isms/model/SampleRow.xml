@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93" id="SampleRow"
+          Package="oracle.demo.isms.model" BeanClass="oracle.demo.isms.model.SampleRow" isJavaBased="true">
+  <Attribute Name="rowKey" Type="int" PrimaryKey="true"/>
+  <Attribute Name="dimension" Type="java.lang.String"/>
+  <Attribute Name="rowValue" Type="int"/>
+  <Attribute Name="drillMin" IsUpdateable="0" Type="int"/>
+  <Attribute Name="drillMax" IsUpdateable="0" Type="int"/>
+  <Attribute Name="measures" IsUpdateable="0" Type="java.lang.String"/>
+  <AccessorAttribute id="drillPath" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true" Type="oracle.demo.isms.model.SampleRow"
+                     BeanClass="oracle.demo.isms.model.SampleRow" id="SampleRow">
+    <ParameterInfo id="key" Type="int" isStructured="false"/>
+    <ParameterInfo id="dimName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="drillPath" Type="oracle.demo.isms.model.DrillPath" isStructured="true"/>
+  </ConstructorMethod>
+</JavaBean>

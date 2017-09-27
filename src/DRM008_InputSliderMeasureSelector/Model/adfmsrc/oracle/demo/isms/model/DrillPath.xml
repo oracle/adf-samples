@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93" id="DrillPath"
+          Package="oracle.demo.isms.model" BeanClass="oracle.demo.isms.model.DrillPath" isJavaBased="true">
+  <Attribute Name="drillPathMinimum" IsUpdateable="0" Type="int"/>
+  <Attribute Name="drillPathMaximum" IsUpdateable="0" Type="int"/>
+  <Attribute Name="key" Type="int" PrimaryKey="true"/>
+  <Attribute Name="pathMeasureList" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="description" IsUpdateable="0" Type="java.lang.String"/>
+  <AccessorAttribute id="elementList" IsCollection="true" Type="java.util.List"
+                     CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="java.lang.String"/>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString" ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="oracle.demo.isms.model.DrillPath"
+                     BeanClass="oracle.demo.isms.model.DrillPath" id="DrillPath">
+    <ParameterInfo id="key" Type="int" isStructured="false"/>
+    <ParameterInfo id="name" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="elements" Type="java.lang.String[]" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

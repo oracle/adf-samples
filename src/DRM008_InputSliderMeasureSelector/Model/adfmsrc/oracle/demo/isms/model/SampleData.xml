@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93" id="SampleData"
+          Package="oracle.demo.isms.model" BeanClass="oracle.demo.isms.model.SampleData" isJavaBased="true">
+  <AccessorAttribute id="drillPaths" IsCollection="true" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="dataRows" IsCollection="true" BeanClass="oracle.demo.isms.model.SampleRow"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <AccessorAttribute id="additionalData" IsCollection="false" BeanClass="oracle.demo.isms.model.MoreData"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="taxonomyMeasures" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="timeMeasures" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="fiscalTimeMeasures" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="volumeMeasures" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="romanNumeralMeasures" IsCollection="false" BeanClass="oracle.demo.isms.model.DrillPath"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true" Type="oracle.demo.isms.model.SampleData"
+                     BeanClass="oracle.demo.isms.model.SampleData" id="SampleData"/>
+</JavaBean>

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Slide, Charlie Brown!, Slide!">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1" inlineStyle="width:100%;" styleClass="AFBrandingBar" layout="horizontal">
+              <af:spacer id="s1" styleClass="AFBrandingBarLogo"/>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:outputText value="InputNumberSlider with String Labels " id="ot1" styleClass="AFBrandingBarTitle"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelTabbed dimensionsFrom="parent" id="pt1">
+              <af:showDetailItem text="Slider used in Table" disclosed="true" id="sdi1" stretchChildren="first">
+                <af:decorativeBox id="db1" theme="light" topHeight="60">
+                  <f:facet name="top">
+                    <af:panelGroupLayout layout="scroll" id="pgl4">
+                      <af:outputText value="In this example, each row in the table collection potentially has a different set of measures, so each can display a custom slider. The slider is controlled by the list of measures associated with the row, the min value, the max value and of course the position of the pointer which will be controlled by the attribute bound as the value of the inputNumberSlider component."
+                                     id="ot2"/>
+                      <af:outputText value="The contentStyle of the slider is used to control the width so that all the sliders have a width that is preportional to the number of measures. The calculation includes the constant overhead for the chrome of the slider."
+                                     id="ot6"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:table value="#{bindings.dataRows.collectionModel}" var="row"
+                              rows="#{bindings.dataRows.rangeSize}"
+                              emptyText="#{bindings.dataRows.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              fetchSize="#{bindings.dataRows.rangeSize}" rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.dataRows.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.dataRows.collectionModel.makeCurrent}" rowSelection="single"
+                              id="t1" columnStretching="column:c1">
+                      <af:column sortProperty="#{bindings.dataRows.hints.rowKey.name}" sortable="true" headerText="Key"
+                                 width="40" align="end" id="c4">
+                        <af:outputText value="#{row.rowKey}" id="ot4"/>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.dataRows.hints.dimension.name}" sortable="true"
+                                 headerText="Dimension" id="c2" width="80">
+                        <af:outputText value="#{row.dimension}" id="ot5"/>
+                      </af:column>
+                      <af:column headerText="Measure" id="c3">
+                        <af:column sortProperty="#{bindings.dataRows.hints.rowValue.name}" sortable="true"
+                                   headerText="Select" id="c1">
+                          <af:inputNumberSlider value="#{row.bindings.rowValue.inputValue}" minimum="#{row.drillMin}"
+                                                maximum="#{row.drillMax}" minorIncrement="1" converter="ismsConverter"
+                                                contentStyle="width:#{(row.drillMax *100)+40}px;" autoSubmit="true"
+                                                partialTriggers="ot3" id="ins1">
+                            <f:attribute name="imsConverterMeasureElements" value="#{row.measures}"/>
+                          </af:inputNumberSlider>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.dataRows.hints.rowValue.name}" sortable="true"
+                                   headerText="Actual Value" id="c5" width="80">
+                          <af:outputText value="#{row.rowValue}" id="ot3"/>
+                        </af:column>
+                      </af:column>
+                    </af:table>
+                  </f:facet>
+                </af:decorativeBox>
+              </af:showDetailItem>
+              <af:showDetailItem text="Slider used with different Datatypes" id="sdi2" stretchChildren="first">
+                <af:decorativeBox theme="light" id="db2" dimensionsFrom="parent">
+                  <f:facet name="top">
+                    <af:panelGroupLayout layout="scroll" id="pgl2">
+                      <af:outputText value="This set of sliders shows various different underlying datatypes being used to provide the value of the slider.  In all cases the slider will end up selecting a integer value based on a zero index and map that back to the value datatype"
+                                     id="ot7"/>
+                      <af:outputText value="Note that the techniques here could be adapted to provide for lists not based on a zero based index. This would just involve encoding the value for each measure into the configuration string and doing that additional level of parsing and lookup to match the measure String with the specified value rather than just returning the index value."
+                                     id="ot8"/>
+                      <af:outputText value="This is left as an exercise for the reader" id="ot9"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:panelGridLayout dimensionsFrom="parent" id="pgl3">
+                      <af:gridRow height="20px" marginTop="10px" id="gr1"/>
+                      <af:gridRow height="auto" id="gr2">
+                        <af:gridCell width="250px" marginStart="10px" marginEnd="5px" halign="end" id="gc1">
+                          <af:outputText value="Double Value" id="ot11"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc2">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsDouble.inputValue}"
+                                                minimum="#{bindings.fiscalMinimum.inputValue}"
+                                                maximum="#{bindings.fiscalMaximum.inputValue}" minorIncrement="1"
+                                                converter="ismsConverter" autoSubmit="true"
+                                                contentStyle="width:#{(bindings.fiscalMaximum.inputValue *100)+40}px;"
+                                                id="ins5">
+                            <f:attribute name="imsConverterMeasureElements"
+                                         value="#{bindings.fiscalMeasureList.inputValue}"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="100px" id="gc3">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsDouble.inputValue}" id="of6"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="auto" id="gr3">
+                        <af:gridCell width="250px" marginStart="10px" marginEnd="5px" halign="end" id="gc4">
+                          <af:outputText value="Float Value" id="ot12"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc5">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsFloat.inputValue}"
+                                                minimum="#{bindings.volMinimum.inputValue}"
+                                                maximum="#{bindings.volMaximum.inputValue}" minorIncrement="1"
+                                                converter="ismsConverter" autoSubmit="true"
+                                                contentStyle="width:#{(bindings.volMaximum.inputValue *100)+40}px;"
+                                                id="ins6">
+                            <f:attribute name="imsConverterMeasureElements"
+                                         value="#{bindings.volMeasureList.inputValue}"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="100px" id="gc6">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsFloat.inputValue}" id="of7"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="auto" id="gr4">
+                        <af:gridCell width="250px" marginStart="10px" marginEnd="5px" halign="end" id="gc7">
+                          <af:panelGroupLayout layout="vertical" id="pgl5">
+                            <af:outputText value="JBO Number Value, uses the ismsJboConverter" id="ot13"/>
+                            <af:outputText value="(Uses the ismsJboConverter)" id="ot14"/>
+                          </af:panelGroupLayout>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc8">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsJBONumber.inputValue}"
+                                                minimum="#{bindings.romanMinimum.inputValue}"
+                                                maximum="#{bindings.romanMaximum.inputValue}" minorIncrement="1"
+                                                converter="ismsJboConverter" autoSubmit="true"
+                                                contentStyle="width:#{(bindings.romanMaximum.inputValue *50)+40}px;"
+                                                id="ins7">
+                            <f:attribute name="imsConverterMeasureElements"
+                                         value="#{bindings.romanMeasureList.inputValue}"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="100px" id="gc9">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsJBONumber.inputValue}"
+                                              id="of1"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </f:facet>
+                </af:decorativeBox>
+              </af:showDetailItem>
+              <af:showDetailItem text="Other Demos" id="sdi3" stretchChildren="first">
+                <af:decorativeBox theme="light" id="db3" dimensionsFrom="parent">
+                  <f:facet name="top">
+                    <af:panelGroupLayout layout="scroll" id="pgl6">
+                      <af:outputText value="On this tab we look at sliders with hardcoded lists of measures, sliders where not enoungh measures are provided for the possible range of values, and finally a inputRangeSlider"
+                                     id="ot10"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:panelGridLayout dimensionsFrom="parent" id="pgl7">
+                      <af:gridRow height="20px" marginTop="10px" id="gr5"/>
+                      <af:gridRow height="auto" id="gr6">
+                        <af:gridCell width="200px" marginStart="10px" marginEnd="5px" id="gc10">
+                          <af:outputText value="Using hardcoded elements" id="ot15"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc11">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsLong.inputValue}" minimum="0" maximum="5"
+                                                minorIncrement="1" converter="ismsConverter" autoSubmit="true" id="ins2"
+                                                contentStyle="width:#{(5 *100)+40}px;">
+                            <f:attribute name="imsConverterMeasureElements" value="A,B,C,D,E,F"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="100px" id="gc12">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsLong.inputValue}" id="of2"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="auto" id="gr7">
+                        <af:gridCell width="200px" marginStart="10px" marginEnd="5px" id="gc13">
+                          <af:outputText value="List with a shortfall of labels supplied" id="ot16"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc14">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsLong1.inputValue}" minimum="0" maximum="7"
+                                                minorIncrement="1" converter="ismsConverter" autoSubmit="true" id="ins3"
+                                                contentStyle="width:#{(7 *100)+40}px;">
+                            <f:attribute name="imsConverterMeasureElements" value="John,Paul,Ringo,George"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="160px" id="gc15">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsLong1.inputValue}" id="of3"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow height="auto" id="gr8">
+                        <af:gridCell width="200px" marginStart="10px" marginEnd="5px" id="gc16">
+                          <af:outputText value="Vertical Slider" id="ot17"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc17">
+                          <af:inputNumberSlider value="#{bindings.dataValueAsLong2.inputValue}" minimum="0"
+                                                orientation="vertical" maximum="2" minorIncrement="1"
+                                                converter="ismsConverter" autoSubmit="true" id="ins4">
+                            <f:attribute name="imsConverterMeasureElements" value="Cool,Warm,Hot"/>
+                          </af:inputNumberSlider>
+                        </af:gridCell>
+                        <af:gridCell width="160px" id="gc18">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Value #{bindings.dataValueAsLong2.inputValue}" id="of4"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow id="gr10" height="20px"/>
+                      <af:gridRow height="auto" marginBottom="10px" id="gr9">
+                        <af:gridCell width="200px" marginStart="10px" marginEnd="5px" id="gc19">
+                          <af:outputText value="InputRangeSlider" id="ot18"/>
+                        </af:gridCell>
+                        <af:gridCell width="100%" id="gc20">
+                          <af:inputRangeSlider value="#{samplePageBB.rangeSliderValue}"
+                                               minimum="#{bindings.romanMinimum.inputValue}"
+                                               maximum="#{bindings.romanMaximum.inputValue}" minorIncrement="1"
+                                               contentStyle="width:#{(bindings.romanMaximum.inputValue *50)+40}px;"
+                                               converter="ismsConverter" autoSubmit="true" id="irs1">
+                            <f:attribute name="imsConverterMeasureElements"
+                                         value="#{bindings.romanMeasureList.inputValue}"/>
+                          </af:inputRangeSlider>
+                        </af:gridCell>
+                        <af:gridCell width="160px" id="gc21">
+                          <af:outputFormatted styleUsage="instruction"
+                                              value="Selected Range: #{bindings.dataRangeLow.inputValue} to #{bindings.dataRangeHigh.inputValue}"
+                                              id="of5"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </f:facet>
+                </af:decorativeBox>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
