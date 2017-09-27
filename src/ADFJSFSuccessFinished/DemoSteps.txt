@@ -1,0 +1,84 @@
+- Say Hello
+
+- Explain basic JSF lifecycle
+
+- Show JSF phase while debugging
+
+- Greeting injected
+
+- reset button: immediate=true, dan wordt button actie uitgevoerd in ApplyRequestValues
+
+three ways to refresh page values after immediate action
+af:resetActionListener (only current region)
+ResetUtils.
+
+- suggest button greeting: werkt, maar dan Date verplicht maken, werkt niet meer
+Enige oplossing: immediate=true op suggest button, maar dan werkt de button niet meer want
+name is niet beschikbaar, dus valueChangeListener op name zetten die name property bijwerkt.
+Werkt nog steeds niet want valueChange gaat niet af, om dat er een imediate actie is en valeChange gaat DDEFAULT af
+in processValidations. Oplossing: ook op name veld immediate=true zetten zodat valueChange ook in 
+Apply Request values afgaat. 
+Breakpoint zetten JA, heb name binnen in de method. maar werkt nog steeds niet .. want greeting veld wordt niet ververst... Logisch want immediate actie en model update skipped
+OPLOSSING:
+- greeting veld ook op immediate=true zetten!
+Lijkt te werken, maar is niet helemaal juist, want als op suggest wordt geklikt, en greeting is ook veranderd dan werkt het niet!
+
+
+LEUK bij-effect: RESET en wegklikken via menu werkt niet meer als name leeg is!!!!
+Want name is nu immediate en wordt us gevalideerd voordat reset of menu actie plaatsvindt!
+
+KORTOM: gebruik ban immediate op een UI component is iha slecht plan!
+
+BETERE OPLOSSING: suggest button with greeting via UI comp
+immediate weer op false zetten op name veld en waarde ophalen via UI Component .....
+
+
+
+
+- Auto-suggest via name field
+button weg
+autoSubmit op true op name, en set greetings method aanroepen in valueChangeListener
+en partial trigger op greertings zetten
+werkt goed: BEHALVE scenario dat na wijzigen greeting daarna name wordt evrandere en METEEN op Say Hello wordt gedrukt
+de value change greeting setting wordt dan later overschreden door gewijzigde greeting in model update phase
+OPLOSSINg: reset greetings ui component
+
+INTERESSANT: We do not get a required date error with this autoSubmit on name? suggest....
+Caused by optimized ADF lifecycle, if we refresh the whole panelFormLayout after changing the name we do get the val error!
+- We can do this when we also need to change the button label to Say Hi... Don't do HERE, do with song
+
+- Say with song
+- first enable/disable song, then change to show/hide!
+validation on name when we set pfl as pt: 2 fixes:
+1. jump top render response
+2. add parttial target programatically
+
+
+
+- Say hello with PPR / optimzied lifecycle
+
+- Employees Table
+overflow rght: change row: overflow not updated. How can we fix this?
+1. Using changeEventPolicy = "ppr"  on iter binding : 
+
+-When changing data in overflow, then selection in other row: changes lost!!
+
+2. set partialTrigger to table in panel form layout, changes kept, but NOT when pressing Create button
+- try adding create button as pt to panel form layout ...no luck!
+need to add panel collection!
+Recommendation: "encapsulate pt's, pc listens to table and button, pfl listens to pc!"
+
+
+
+
+- Say Hello with client validations
+
+- rendered video, partial target is parent UI container
+
+- init songs with postconstruct
+
+- af:subform:
+command item inside subform:lifecyel processes all ites inside subform, and items in parent from 
+(does NOT process items in other subforms)
+However, an command item inside af:form does NOT process items in sub-form in lifecyle UNLESS af:subform has default="true" 
+PLUS: panelFormLayouting mechanism obstructed by items enclosed in subform.

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Wanna Be Cool? Get Your Personalized Hello Message!" id="ph1">
+
+    <af:panelGroupLayout id="pgl1" layout="scroll" valign="top">
+      <f:facet name="separator">
+        <af:spacer width="10" height="10" id="s1"/>
+      </f:facet>
+      <af:panelFormLayout id="pfl1">
+        <f:facet name="footer">
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:commandButton text="Say Hello" id="cb1"
+                              action="#{viewScope.HelloBeanSu.sayHello}"/>
+            <af:commandButton text="Reset" id="cb2" immediate="true"
+                              actionListener="#{viewScope.HelloBeanSu.reset}"></af:commandButton>
+            <f:facet name="separator">
+              <af:spacer width="10" height="10" id="s3"/>
+            </f:facet>
+          </af:panelGroupLayout>
+        </f:facet>
+        <af:inputText required="true" label="Name" id="it1" 
+                      binding="#{viewScope.HelloBeanSu.nameField}"
+                      value="#{viewScope.HelloBeanSu.name}" />
+        <af:panelLabelAndMessage label="Greeting" id="plam2" showRequired="true">
+          <af:inputText required="true" label="Greeting" id="it19"
+                        simple="true" partialTriggers="cb3"
+                        binding="#{viewScope.HelloBeanSu.greetingField}"
+                        value="#{viewScope.HelloBeanSu.greeting}"
+                        />
+          <f:facet name="end">
+            <af:commandButton text="Suggest" id="cb3" partialSubmit="true"
+                              immediate="true"
+                              actionListener="#{viewScope.HelloBeanSu.suggestPreferredGreeting}"/>
+          </f:facet>
+        </af:panelLabelAndMessage>
+        <af:inputDate label="Date" required="true" id="id1"
+                      value="#{viewScope.HelloBeanSu.date}"/>
+      </af:panelFormLayout>
+      <af:panelHeader text="Hello Message" id="ph2" inlineStyle="width:500px;">
+        <af:outputText value="#{viewScope.HelloBeanSu.helloMessage}" id="ot1"/>
+      </af:panelHeader>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+</jsp:root>

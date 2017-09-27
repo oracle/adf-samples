@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="UIShell">
+    <page>/pages/UIShell.jspx</page>
+  </view>
+  <control-flow-rule id="__9">
+    <from-activity-id id="__7">*</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome id="__12">uishell</from-outcome>
+      <to-activity-id id="__11">UIShell</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__2">
+    <managed-bean-name>mainRegionManager</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.DynamicRegionManager</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property id="__5">
+      <property-name>currentTaskFlowName</property-name>
+      <value>Hello</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>menuModel</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.RegionXmlMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__4">
+      <property-name>source</property-name>
+      <value>/WEB-INF/menu.xml</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__45">
+    <managed-bean-name>HomeTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>Home</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/home-tf.xml#home</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__435">
+    <managed-bean-name>HelloTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>Hello</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__4356">
+    <managed-bean-name>HelloResetTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry>
+          <key>scenario</key>
+          <value>reset</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>HelloReset</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__436">
+    <managed-bean-name>HelloSubFormTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry>
+          <key>scenario</key>
+          <value>subform</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>HelloSubForm</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__437">
+    <managed-bean-name>HelloSuggestGreetingTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry>
+          <key>scenario</key>
+          <value>suggest</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>HelloSuggestGreeting</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__438">
+    <managed-bean-name>HelloAutoSuggestGreetingTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry>
+          <key>scenario</key>
+          <value>autosuggest</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>HelloAutoSuggestGreeting</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__439">
+    <managed-bean-name>HelloSongTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+        <map-entry>
+          <key>scenario</key>
+          <value>song</value>
+        </map-entry>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>HelloSong</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/helloworld-tf.xml#helloworld</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>EmployeesTaskFlowConfig</managed-bean-name>
+    <managed-bean-class>davelaar.demo.ui.controller.bean.TaskFlowConfigBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+    <managed-property>
+      <property-name>params</property-name>
+      <property-class>java.util.Map</property-class>
+      <map-entries>
+      </map-entries>
+    </managed-property>
+    <managed-property>
+      <property-name>name</property-name>
+      <value>Employees</value>
+    </managed-property>
+    <managed-property>
+      <property-name>taskFlowId</property-name>
+      <value>/WEB-INF/employees-tf.xml#employees</value>
+    </managed-property>
+  </managed-bean>
+
+</adfc-config>

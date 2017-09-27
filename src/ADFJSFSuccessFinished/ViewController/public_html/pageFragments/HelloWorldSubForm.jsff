@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Sub Forms of Saying Hello - Are They Nice Enough?" 
+                  id="ph1">
+      <af:panelGroupLayout id="pgl2" layout="scroll">
+        <f:facet name="separator">
+          <af:spacer width="10" height="10" id="s1"/>
+        </f:facet>
+        <af:panelGroupLayout id="pfl1">
+          <af:subform id="s4" default="true" defaultCommand="cb3">
+            <af:panelFormLayout id="pfl2" labelWidth="60px">
+              <af:inputText required="true" label="Name" id="it1"
+                            value="#{viewScope.HelloBeanSf.name}"/>
+              <af:panelLabelAndMessage label="Greeting" id="plam2">
+                <af:inputText required="false" label="Greeting" id="it19"
+                              simple="true" partialTriggers="cb3"
+                              value="#{viewScope.HelloBeanSf.greeting}"/>
+                <f:facet name="end">
+                  <af:commandButton text="Suggest" id="cb3" partialSubmit="true"  
+                                    actionListener="#{viewScope.HelloBeanSf.suggestPreferredGreeting}"/>
+                </f:facet>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:subform>
+          <af:subform default="true" id="s5">
+            <af:panelFormLayout id="pfl3" labelWidth="60px">
+              <!-- Note that even if we use a component with only server-side validation, like
+                   the date component in HelloWorld.jsff, it still needs to be placed in a sub-form, otherwise
+                   we still get validation error when clicking suggest button in the other subform! -->
+              <af:inputDate label="Date" required="true" id="id1"
+                            value="#{viewScope.HelloBeanSf.date}">
+                <af:convertDateTime pattern="dd-MM-yyyy"/>
+              </af:inputDate>
+            </af:panelFormLayout>
+          </af:subform>
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:commandButton text="Say Hello" id="cb1"
+                              action="#{viewScope.HelloBeanSf.sayHello}"/>
+            <af:commandButton text="Reset" id="cb2" immediate="true"
+                              actionListener="#{viewScope.HelloBeanSf.reset}"></af:commandButton>
+            <f:facet name="separator">
+              <af:spacer width="10" height="10" id="s3"/>
+            </f:facet>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <af:panelHeader text="Hello Message" id="ph2" inlineStyle="width:500px;">
+          <af:outputText value="#{viewScope.HelloBeanSf.helloMessage}" id="ot1"/>
+        </af:panelHeader>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+</jsp:root>

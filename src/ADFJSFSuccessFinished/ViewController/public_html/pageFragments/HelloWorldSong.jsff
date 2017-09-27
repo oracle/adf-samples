@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Say Hello Optimized with a Song!" id="ph1">
+    <af:panelGroupLayout id="pgl1" layout="horizontal" valign="top">
+      <af:panelGroupLayout id="pgl2" layout="vertical">
+        <f:facet name="separator">
+          <af:spacer width="10" height="10" id="s1"/>
+        </f:facet>
+        <af:panelFormLayout id="pfl1">
+          <f:facet name="footer">
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
+              <af:commandButton text="Say Hello" id="cb1"
+                                action="#{viewScope.HelloBeanSo.sayHello}"/>
+              <af:commandButton text="Reset" id="cb2" immediate="true"
+                                actionListener="#{viewScope.HelloBeanSo.reset}"></af:commandButton>
+              <f:facet name="separator">
+                <af:spacer width="10" height="10" id="s3"/>
+              </f:facet>
+            </af:panelGroupLayout>
+          </f:facet>
+          <af:inputText required="true" label="Name" id="it1"
+                        value="#{viewScope.HelloBeanSo.name}" autoSubmit="true"
+                        valueChangeListener="#{viewScope.HelloBeanSo.nameChanged}"/>
+          <af:inputText required="true" label="Greeting" id="it19"
+                        value="#{viewScope.HelloBeanSo.greeting}"
+                        binding="#{viewScope.HelloBeanSo.greetingField}"/>
+          <af:inputDate required="true" label="Date" id="id1"
+                        value="#{viewScope.HelloBeanSo.date}"/>
+          <af:selectBooleanCheckbox autoSubmit="true" 
+                                    value="#{viewScope.HelloBeanSo.chooseSong}"
+                                    label="Choose Song?" id="sbc1"
+                                    valueChangeListener="#{viewScope.HelloBeanSo.chooseSongChanged}"/>
+          <af:selectOneChoice label="Song" id="soc1" autoSubmit="true"
+                              rendered="#{viewScope.HelloBeanSo.chooseSong}"
+                              value="#{viewScope.HelloBeanSo.songUrl}">
+            <f:selectItems value="#{viewScope.HelloBeanSo.songs}" id="si1"/>
+          </af:selectOneChoice>
+        </af:panelFormLayout>
+        <af:panelHeader text="Hello Message" id="ph2">
+          <af:outputText value="#{viewScope.HelloBeanSo.helloMessage}" id="ot1"/>
+        </af:panelHeader>
+      </af:panelGroupLayout>
+      <af:panelGroupLayout id="pgl0" partialTriggers="sbc1 soc1">
+        <af:inlineFrame source="#{viewScope.HelloBeanSo.songUrl}" shortDesc="Song"
+                        inlineStyle="width:384px; height:216.0px;"
+                        rendered="#{viewScope.HelloBeanSo.showYouTubeFrame}"
+                        id="if1"/>
+      </af:panelGroupLayout>
+      <f:facet name="separator">
+        <af:spacer width="10" height="10" id="s2"/>
+      </f:facet>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+</jsp:root>

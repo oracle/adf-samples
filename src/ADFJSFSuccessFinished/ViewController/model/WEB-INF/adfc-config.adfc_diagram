@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">UIShell</property>
+      <property
+         name="page">/pages/UIShell.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>UIShell&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">265.6953</property>
+      <property
+         name="x">166.5</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule3">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">81.29883</property>
+      <property
+         name="x">166.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="WildcardControlFlowRule3"
+      to="View2">
+      <property
+         name="fromOutcome">uishell</property>
+      <property
+         name="sdm:polyPoints">B50,166.0,123.94824,166.5,211.34473,T50</property>
+   </ControlFlowCase>
+</SDM>

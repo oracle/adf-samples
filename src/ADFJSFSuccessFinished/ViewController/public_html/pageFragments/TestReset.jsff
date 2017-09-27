@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Test resetting of field in child region" id="ph1">
+    <f:facet name="context"/>
+    <f:facet name="menuBar"/>
+    <f:facet name="toolbar"/>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+    <af:panelFormLayout id="pfl1">
+      <f:facet name="footer"/>
+      <af:inputText label="Will this item value be reset?" id="it1"/>
+    </af:panelFormLayout>
+  </af:panelHeader>
+</jsp:root>

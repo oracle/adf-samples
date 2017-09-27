@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <description>This component lays out an entire page.</description>
+        <facet>
+          <description>The content of all popups used on the page.</description>
+          <facet-name>popups</facet-name>
+        </facet>
+        <facet>
+          <description>The main page content.</description>
+          <facet-name>pageContent</facet-name>
+        </facet>
+        <attribute>
+          <description>Specifies the number of pixels tall that the navigation2
+                       content should consume.</description>
+          <attribute-name>navigation2Size</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>26</default-value>
+        </attribute>
+        <attribute>
+          <description>Specifies the number of pixels tall that the global
+                       content should consume.</description>
+          <attribute-name>headerGlobalSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>40</default-value>
+        </attribute>
+        <attribute>
+          <description>Specifies the number of pixels tall that the global
+                       footer content should consume.</description>
+          <attribute-name>footerGlobalSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>30</default-value>
+        </attribute>
+        <attribute>
+          <description>Specifies the number of pixels tall that the secondary
+                       header content should consume.</description>
+          <attribute-name>header2Size</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>20</default-value>
+        </attribute>
+        <attribute>
+          <description>menu model bean reference</description>
+          <attribute-name>menuModel</attribute-name>
+          <attribute-class>org.apache.myfaces.trinidad.model.XMLMenuModel</attribute-class>
+        </attribute>
+        <attribute>
+          <description>branding title</description>
+          <attribute-name>brandingTitle</attribute-name>
+          <attribute-class>string</attribute-class>
+          <default-value>18 Invaluable Lessons About ADF-JSF Interaction</default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:decorativeBox id="db0" centerLandmark="none" topLandmark="none"
+                      styleClass="#{adfFacesContext.skinFamily=='fusion' ? '' : 'AFVisualRoot'}"
+                      theme="#{adfFacesContext.skinFamily=='fusion' ? 'contentBody' : 'dark'}">
+      <f:facet name="center">
+        <af:panelStretchLayout bottomHeight="#{attrs.footerGlobalSize}"
+                               id="pt_psl1">
+          <f:facet name="center">
+            <af:panelSplitter orientation="vertical"
+                              splitterPosition="#{attrs.headerGlobalSize}"
+                              id="pt_ps1">
+              <f:facet name="first">
+                <af:panelGroupLayout id="pt_gPbl" layout="vertical">
+                  <af:panelBorderLayout id="pt_brBar"
+                                        styleClass="AFBrandingBar">
+                    <f:facet name="start">
+                      <af:panelGroupLayout id="pt_brLogo" layout="horizontal">
+                        <af:image id="pt_imgLogo" shortDesc="logo"
+                                  source="/afr/logo-oracle-light.png"/>
+                        <af:outputText value="#{attrs.brandingTitle}" noWrap="true"
+                                       shortDesc="What You Need To Know About JSF To Be Successful With ADF"
+                                       styleClass="AFBrandingBarTitle"
+                                       inlineStyle="color: white;" id="pt_ot1"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="innerStart">
+                      <af:panelGroupLayout id="pt_titleWrp"
+                                           styleClass="AFBrandingBarItem">
+                        <af:outputText value="" styleClass="AFBrandingBarTitle"
+                                       inlineStyle="color: white;"
+                                       id="pt_ot12"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end">
+                      <af:panelGroupLayout id="pt_statWrp" layout="horizontal"
+                                           halign="end"
+                                           styleClass="AFBrandingBarItem">
+                        <af:statusIndicator id="pt_statInd"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelBorderLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:decorativeBox theme="light"
+                                  topHeight="#{attrs.navigation2Size}"
+                                  id="pt_db1">
+                  <f:facet name="center">
+                    <af:panelSplitter orientation="horizontal"
+                                      splitterPosition="200" id="pt_ps2">
+                      <f:facet name="first">
+                        <af:decorativeBox theme="default"
+                                          styleClass="TabletPageContent"
+                                          id="pt_db2">
+                          <f:facet name="center">
+                              <af:navigationPane hint="list"  var="menuItem"                                  
+                                       value="#{attrs.menuModel}"
+                                       id="pt_np1">
+                                <f:facet name="nodeStamp">
+                                  <af:commandNavigationItem id="Item1"
+                                                  immediate="true"                                                   
+                                                  textAndAccessKey="#{menuItem.label}"
+                                                  action="#{menuItem.doAction}"
+                                                  partialSubmit="false"
+                                                  rendered="#{menuItem.rendered}"/>
+                                </f:facet>
+                              </af:navigationPane>
+                          </f:facet>
+                        </af:decorativeBox>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:decorativeBox theme="default"
+                                          styleClass="TabletPageContent"
+                                          id="pt_db3">
+                          <f:facet name="center">
+                            <af:panelStretchLayout  id="pt_psl3">
+                              <f:facet name="center">
+                                <af:facetRef facetName="pageContent"/>
+                              </f:facet>
+                            </af:panelStretchLayout>
+                          </f:facet>
+                        </af:decorativeBox>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:decorativeBox>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:decorativeBox>
+  </af:pageTemplateDef>
+</jsp:root>
+

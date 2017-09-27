@@ -17,3 +17,5 @@ Each sample is also available in downloadable form in the zips directory.
 * ADFBCDTObjectsSample
 * ADFDetectWindowResize
 * ADFFacesConvertNumberDetailMessage
+* ADFJSFSuccessFinished
+

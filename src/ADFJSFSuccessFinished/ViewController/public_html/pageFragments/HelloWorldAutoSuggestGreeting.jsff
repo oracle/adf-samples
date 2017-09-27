@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Always be Cool - Auto-Personalized Hello Message!" id="ph1">
+    <af:panelGroupLayout id="pgl1" layout="scroll" valign="top">
+      <f:facet name="separator">
+        <af:spacer width="10" height="10" id="s1"/>
+      </f:facet>
+      <af:panelFormLayout id="pfl1">
+        <f:facet name="footer">
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:commandButton text="Say Hello" id="cb1"
+                              action="#{viewScope.HelloBeanAs.sayHello}"/>
+            <af:commandButton text="Reset" id="cb2" immediate="true"
+                              actionListener="#{viewScope.HelloBeanAs.reset}"/>
+            <f:facet name="separator">
+              <af:spacer width="10" height="10" id="s3"/>
+            </f:facet>
+          </af:panelGroupLayout>
+        </f:facet>
+        <af:inputText required="true" label="Name" id="it1" 
+                      value="#{viewScope.HelloBeanAs.name}" autoSubmit="true"
+                      valueChangeListener="#{viewScope.HelloBeanAs.nameChanged}"/>
+        <af:inputText required="true" label="Greeting" id="it19"
+                      value="#{viewScope.HelloBeanAs.greeting}"
+                      binding="#{viewScope.HelloBeanAs.greetingField}"/>
+        <af:inputDate label="Date" required="true" id="id1"
+                      value="#{viewScope.HelloBeanAs.date}"/>
+      </af:panelFormLayout>
+      <af:panelHeader text="Hello Message" id="ph2" inlineStyle="width:500px;">
+        <af:outputText value="#{viewScope.HelloBeanAs.helloMessage}" id="ot1"/>
+      </af:panelHeader>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+</jsp:root>
