@@ -51,6 +51,7 @@ Each sample is also available in downloadable form in the zips directory.
 * CheckConsistencyWithoutLocking
 * CheckNextRowWithJSTL
 * ClearTableColumnFilterFields
+* ConditionalEntityAccessorRefresh
 
 
 
