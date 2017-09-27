@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.17.81" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="TestModule"
+      FullName="test.model.TestModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="test.model.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

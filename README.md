@@ -49,6 +49,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ChangeLanguageInTheUI
 * CheckboxInTable
 * CheckConsistencyWithoutLocking
+* CheckNextRowWithJSTL
 
 
 

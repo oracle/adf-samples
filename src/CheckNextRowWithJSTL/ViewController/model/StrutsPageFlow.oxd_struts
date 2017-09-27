@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?Oracle-JDeveloper Diagram = '1.1'?>
+<?Oracle-JDeveloper Artifact = '1.0'?>
+<diagram xmlns="http://xmlns.oracle.com/jdeveloper/modeler/diagram">
+   <!--This is redundant information provided by the diagrammer for the structure pane-->
+   <structure xmlns="">
+      <shape name="/TestPage">
+         <elemRef name="" value="516809de-0100-1000-8012-c0a80165bf70::/TestPage::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+      </shape>
+   </structure>
+   <!--This is the modeler artifact that model element that prepresents the diagram in UML-->
+   <artifact xmlns="http://xmlns.oracle.com/jdeveloper/modeler/artifact" name="StrutsPageFlow" type="Diagram" cid="503bda0f-0100-1000-8001-c0a801653cd8::StrutsPageFlow::Diagram">
+      <property xmlns="">
+         <cid name="NAMESPACE_REFERENCE" key="1000::::UMLContainer"/>
+         <null name="COMMENT"/>
+         <text name="DIAGRAM_TYPE">oxd_struts</text>
+         <null name="CDIDSC"/>
+         <null name="AUTHOR"/>
+         <text name="IS_SYNCHRONIZED">FALSE</text>
+         <null name="SUB_DIAGRAM_ID"/>
+         <null name="SUB_DIAGRAM_TYPE"/>
+         <null name="CDICHI"/>
+         <null name="CDINOT"/>
+         <null name="DTD_FILENAME"/>
+         <null name="TITLE"/>
+         <null name="SCENARIO"/>
+      </property>
+      <backreference xmlns=""/>
+      <children xmlns=""/>
+   </artifact>
+   <!--This is the information the is used to build up the shapes top level shapes can be found by searching for rootMap elements-->
+   <diagramProperty xmlns="">
+      <string name="diagramName">StrutsPageFlow</string>
+      <boolean name="dropPageForward" value="false"/>
+      <boolean name="enableGrid" value="true"/>
+      <float name="gridSpacing" value="10.0"/>
+      <integer name="layoutStyle" value="0"/>
+      <integer name="maxEntriesShownInList" value="10"/>
+      <integer name="maxWidth" value="200"/>
+      <long name="nextDruid" value="0"/>
+      <point name="pageSize" value="750.0,1000.0"/>
+      <point name="pageTL" value="-374.5,-499.5"/>
+      <dimension name="pageXY" value="1.0,1.0"/>
+      <insets name="paperMargins" value="50.0,50.0,50.0,50.0"/>
+      <dimension name="paperSize" value="850.0,1100.0"/>
+      <point name="paperTL" value="50.0,50.0"/>
+      <null name="printerName"/>
+      <boolean name="promptOnDataPage" value="true"/>
+      <boolean name="showGrid" value="false"/>
+      <boolean name="showPageBreaks" value="true"/>
+      <boolean name="straightenEdges" value="true"/>
+      <boolean name="useDataPage" value="true"/>
+   </diagramProperty>
+   <layer xmlns="">
+      <infoList name="base">
+         <infoMap>
+            <long name="DrUID" value="-6116408769185870282"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="-5426562163752736846"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="32.0,32.0"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="24.0,0.26568604"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="-8076100580467564828"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="80.0,17.468601"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="0.0,32.265686"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/TestPage</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="516809de-0100-1000-8012-c0a80165bf70::/TestPage::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" value="0.0,0.0,0.0,0.0"/>
+                     <dimension name="elementSize" value="80.0,50.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" value="54.5,39.5"/>
+               <graphicalProperties name="graphicalProperties" mask="127">
+                  <color name="lineColor" value="0,0,0,255"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" value="204,204,204,255"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" value="0,0,0,255"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </infoMap>
+      </infoList>
+   </layer>
+</diagram>
