@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="DemoModule"
+   ComponentClass="test.DemoModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="Employees"
+      ViewObjectName="test.queries.EmployeesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Regions"
+      ViewObjectName="test.queries.RegionsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Countries"
+      ViewObjectName="test.queries.CountriesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Locations"
+      ViewObjectName="test.queries.LocationsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Departments"
+      ViewObjectName="test.queries.DepartmentsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="AllDepartments"
+      ViewObjectName="test.queries.DepartmentsView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="CountriesInRegion"
+      ViewLinkObjectName="test.queries.viewlinks.CountriesInRegion"
+      SrcViewUsageName="test.DemoModule.Regions"
+      DstViewUsageName="test.DemoModule.Countries" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.40.66" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="LocationsForCountry"
+      ViewLinkObjectName="test.queries.viewlinks.LocationsForCountry"
+      SrcViewUsageName="test.DemoModule.Countries"
+      DstViewUsageName="test.DemoModule.Locations" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.40.66" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="DepartmentsAtLocation"
+      ViewLinkObjectName="test.queries.viewlinks.DepartmentsAtLocation"
+      SrcViewUsageName="test.DemoModule.Locations"
+      DstViewUsageName="test.DemoModule.Departments" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.40.66" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

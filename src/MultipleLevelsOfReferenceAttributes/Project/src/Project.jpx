@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="Project"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="hr" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_jprName" Value="../Project.jpr" />
+      <Attr Name="_appModuleNames0" Value="test.DemoModule" />
+   </DesignTime>
+   <Containee
+      Name="associations"
+      FullName="test.entities.associations.associations"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="entities"
+      FullName="test.entities.entities"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="queries"
+      FullName="test.queries.queries"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="viewlinks"
+      FullName="test.queries.viewlinks.viewlinks"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="test"
+      FullName="test.test"
+      ObjectType="JboPackage" >
+   </Containee>
+</JboProject>

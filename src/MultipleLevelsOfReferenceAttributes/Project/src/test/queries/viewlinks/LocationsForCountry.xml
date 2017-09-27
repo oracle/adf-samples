@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="LocationsForCountry"
+   EntityAssociation="test.entities.associations.LocCIdFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="sourceEnd"
+      Cardinality="1"
+      Owner="test.queries.CountriesView"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.queries.CountriesView.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="destEnd"
+      Cardinality="-1"
+      Owner="test.queries.LocationsView" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.queries.LocationsView.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

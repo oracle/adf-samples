@@ -126,6 +126,7 @@ Each sample is also available in downloadable form in the zips directory.
 * MethodActionThatCallsManagedBeanWithoutDataControlInvolved
 * ModelOneCheckboxes
 * MultilevelStoredProcExample
+* MultipleLevelsOfReferenceAttributes
 
 
 

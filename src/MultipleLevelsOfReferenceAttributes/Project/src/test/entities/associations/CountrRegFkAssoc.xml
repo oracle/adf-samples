@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+
+<Association
+   Name="CountrRegFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+   </DesignTime>
+   <AssociationEnd
+      Name="Regions"
+      Cardinality="1"
+      Source="true"
+      Owner="test.entities.Regions" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.entities.Regions.RegionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="Regions" />
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_foreignKey" Value="test.entities.Regions.RegIdPk" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+   <AssociationEnd
+      Name="Countries"
+      Cardinality="-1"
+      Owner="test.entities.Countries" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.entities.Countries.RegionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="Countries" />
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_foreignKey" Value="test.entities.Countries.CountrRegFk" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+</Association>
