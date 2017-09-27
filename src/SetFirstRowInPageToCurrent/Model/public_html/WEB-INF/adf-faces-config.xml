@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<adf-faces-config xmlns="http://xmlns.oracle.com/adf/view/faces/config">
+
+  <skin-family>oracle</skin-family>
+
+</adf-faces-config>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.EmpView.collectionModel}" var="row"
+                    rows="#{bindings.EmpView.rangeSize}"
+                    first="#{bindings.EmpView.rangeStart}"
+                    emptyText="#{bindings.EmpView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.EmpView.collectionModel.selectedRow}"
+                    rangeChangeListener="#{TestPage.onRangeChanged}" id="table"
+                    selectionListener="#{TestPage.onSelectionChanged}">
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Empno}">
+              <af:outputText value="#{row.Empno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Empno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Ename}">
+              <af:outputText value="#{row.Ename}"/>
+            </af:column>
+            <af:column sortProperty="Job" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Job}">
+              <af:outputText value="#{row.Job}"/>
+            </af:column>
+            <af:column sortProperty="Mgr" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Mgr}">
+              <af:outputText value="#{row.Mgr}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Mgr}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Hiredate" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Hiredate}">
+              <af:outputText value="#{row.Hiredate}">
+                <f:convertDateTime pattern="#{bindings.EmpView.formats.Hiredate}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Sal" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Sal}">
+              <af:outputText value="#{row.Sal}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Sal}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Comm" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Comm}">
+              <af:outputText value="#{row.Comm}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Comm}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.EmpView.labels.Deptno}">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and">
+                <af:commandButton text="Submit"/>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+          <af:panelTip id="tip" partialTriggers="table">
+            <af:panelLabelAndMessage label="#{bindings.EmpViewEmpno.label}">
+              <af:outputText value="#{bindings.EmpViewEmpno.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpViewEmpno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+          </af:panelTip>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone='yes'?>
+
+<oc4j-connectors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/oc4j-connectors-10_0.xsd"  schema-major-version="10" schema-minor-version="0"  >
+	<connector name="datasources" path="datasources.rar">
+	</connector>
+</oc4j-connectors>
