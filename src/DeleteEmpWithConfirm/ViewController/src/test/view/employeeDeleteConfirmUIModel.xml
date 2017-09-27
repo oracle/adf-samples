@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="employeeDeleteConfirmUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmpViewIterator"
+         Binds="TestModuleDataControl.EmpView"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="EmpView"
+         SubType="DCTable"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+            <Item Value="Job" />
+            <Item Value="Mgr" />
+            <Item Value="Hiredate" />
+            <Item Value="Sal" />
+            <Item Value="Comm" />
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Empno"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Ename"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Ename" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Job"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Job" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Mgr"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Mgr" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Hiredate"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Hiredate" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Sal"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Sal" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Comm"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Comm" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Deptno"
+         SubType="DCTextField"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Delete"
+         SubType="DCAction"
+         IterBinding="EmpViewIterator"
+         Action="30"
+         RequiresUpdateModel="false" >
+      </DCControl>
+      <DCControl
+         id="Commit"
+         SubType="DCAction"
+         DTClass="oracle.adf.dt.objects.JUDTCtrlDataControlAction"
+         Action="100"
+         RequiresUpdateModel="true"
+         DataControl="TestModuleDataControl" >
+      </DCControl>
+   </Contents>
+</DCContainer>

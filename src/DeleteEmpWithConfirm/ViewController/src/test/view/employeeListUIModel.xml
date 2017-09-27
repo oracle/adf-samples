@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="employeeListUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmpViewIterator"
+         Binds="TestModuleDataControl.EmpView" >
+      </DCIterator>
+      <DCControl
+         id="EmpView"
+         SubType="DCTable"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+            <Item Value="Job" />
+            <Item Value="Mgr" />
+            <Item Value="Hiredate" />
+            <Item Value="Sal" />
+            <Item Value="Comm" />
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="confirmDelete"
+         SubType="DCMethodAction"
+         IterBinding="EmpViewIterator"
+         Action="999"
+         RequiresUpdateModel="true"
+         DataControl="TestModuleDataControl"
+         InstanceName="EmpViewIterator"
+         MethodName="setCurrentRowWithKey"
+         ReturnName="TestModuleDataControl.methodResults.setCurrentRowWithKey"
+         IsLocalObjectReference="true" >
+         <Contents >
+            <NamedData
+               NDName="rowKeyStr"
+               NDType="java.lang.String"
+               NDValue="%null%" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+   </Contents>
+</DCContainer>
