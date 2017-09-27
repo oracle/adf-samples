@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <web-module id="InstrumentedADFJSFWebApp-ViewController-webapp" path="file:/D:/jdev/home/mywork/SocialSecurityNumberFormatter/ViewController/public_html/"/>
+    <web-module id="InstrumentedADFJSFWebApp-Model-webapp" path="file:/D:/jdev/home/mywork/SocialSecurityNumberFormatter/Model/public_html/"/>
+    <log>
+        <file path="SocialSecurityNumberFormatter-oc4j-app.log"/>
+    </log>
+    <jazn provider="XML" location="SocialSecurityNumberFormatter-jazn-data.xml" default-realm="jazn.com"/>
+    <data-sources path="SocialSecurityNumberFormatter-data-sources.xml"/>
+</orion-application>
