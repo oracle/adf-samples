@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="DeptView"
+   SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+   FromList="DEPT Dept"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.queries.DeptViewImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Dept"
+      Entity="test.entities.Dept" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Deptno"
+      IsNotNull="true"
+      EntityAttrName="Deptno"
+      EntityUsage="Dept"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dname"
+      EntityAttrName="Dname"
+      EntityUsage="Dept"
+      AliasName="DNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Loc"
+      EntityAttrName="Loc"
+      EntityUsage="Dept"
+      AliasName="LOC" >
+   </ViewAttribute>
+</ViewObject>

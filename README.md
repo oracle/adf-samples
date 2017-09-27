@@ -91,6 +91,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DynamicTabs1212
 * DynamicTabs11114
 * DynamicViewObjectsConstructingViewDefsProgrammatically
+* EfficientExistenceCheck
 
 
 
