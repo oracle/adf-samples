@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:commandButton text="Clear Search Fields" id="cb1"
+                          action="#{TestPage.onClearTableSearchFields}"/>
+        <af:commandButton text="Clear Search Fields &amp; Reexecute Query" id="cb2"
+                          action="#{TestPage.onClearTableSearchFieldsAndReexecuteQuery}"/>
+        <af:commandButton text="Clear Dname Search Field" id="cb3"
+                          action="#{TestPage.onJustClearTheDnameSearchField}"/>
+        <af:commandButton text="Set Dname,Loc Search fields &amp; Reexecute Query" id="cb4"
+                          action="#{TestPage.onProgrammaticallySetFilterCriteriaAndReexecuteQuery}"/>
+        <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                  rows="#{bindings.DeptView1.rangeSize}"
+                  emptyText="#{bindings.DeptView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.DeptView1.rangeSize}"
+                  rowBandingInterval="0"
+                  filterModel="#{bindings.DeptView1Query.queryDescriptor}"
+                  queryListener="#{TestPage.onTableQueryExecuted}"
+                  filterVisible="true" varStatus="vs"
+                  selectedRowKeys="#{bindings.DeptView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.DeptView1.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t1" binding="#{TestPage.table}"
+                  width="50%">
+          <af:column sortProperty="Deptno" filterable="true" sortable="true"
+                     headerText="#{bindings.DeptView1.hints.Deptno.label}"
+                     id="c1">
+            <af:outputText value="#{row.Deptno}" id="ot2">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DeptView1.hints.Deptno.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Dname" filterable="true" sortable="true"
+                     headerText="#{bindings.DeptView1.hints.Dname.label}"
+                     id="c2">
+            <af:outputText value="#{row.Dname}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="Loc" filterable="true" sortable="true"
+                     headerText="#{bindings.DeptView1.hints.Loc.label}" id="c3">
+            <af:outputText value="#{row.Loc}" id="ot1"/>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TestPage-->
+</jsp:root>
