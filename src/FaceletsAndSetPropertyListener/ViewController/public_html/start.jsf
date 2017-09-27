@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="start.jsf" id="d1">
+    <af:form id="f1">
+      <af:panelHeader text="Testing SetPropertyListener with Facelets" id="ph1">
+        <af:panelGroupLayout id="pgl1" layout="vertical">
+          <f:facet name="separator">
+            <af:spacer width="10" height="10" id="s1"/>
+          </f:facet>
+          <af:commandButton text="Not working: Say Hello To Steven Using ActionListener Property and af:setPropertyListener"
+                            id="cb1" actionListener="#{viewScope.SayHello.sayHello}">
+            <af:setPropertyListener from="Steven" to="#{viewScope.SayHello.name}" type="action"/>
+          </af:commandButton>
+          <af:commandButton text="Working: Say Hello To Steven Using Action Property and af:setPropertyListener"
+                            id="cb2" action="#{viewScope.SayHello.sayHello}">
+            <af:setPropertyListener from="Steven" to="#{viewScope.SayHello.name}" type="action"/>
+          </af:commandButton>
+          <af:commandButton text="Clear Name And Message" id="cb3" actionListener="#{viewScope.SayHello.reset}"/>
+         <af:inputText label="Message" id="it1" value="#{viewScope.SayHello.helloMessage}" readOnly="true"/>
+        </af:panelGroupLayout>
+      </af:panelHeader>
+    </af:form>
+  </af:document>
+</f:view>

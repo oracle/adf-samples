@@ -100,6 +100,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ExplodedTreeBindingAccessedByIterator
 * ExposeOldValuesAsDynamicAttrs
 * ExposingRowStateOnClient
+* FaceletsAndSetPropertyListener
 
 
 
