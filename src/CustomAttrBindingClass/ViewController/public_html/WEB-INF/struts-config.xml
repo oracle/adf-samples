@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="DataForm" type="oracle.adf.controller.struts.forms.BindingContainerActionForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/dataPage1" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/dataPage1.jsp">
+      <set-property property="modelReference" value="dataPage1UIModel"/>
+    </action>
+  </action-mappings>
+  <message-resources parameter="demo.view.ApplicationResources"/>
+</struts-config>

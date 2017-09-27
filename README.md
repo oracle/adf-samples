@@ -56,6 +56,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ControlBreakTable
 * CustomAppLevelExceptionHandler
 * CustomArrayListBasedDomain
+* CustomAttrBindingClass
 
 
 

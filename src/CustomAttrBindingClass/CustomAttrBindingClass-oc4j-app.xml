@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+  <web-module id="CustomAttrBindingClass-ViewController-webapp" path="C:\jdev\home\mywork\CustomAttrBindingClass\ViewController\public_html"/>
+  <jazn provider="XML" location="CustomAttrBindingClass-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="CustomAttrBindingClass-data-sources.xml"/>
+</orion-application>
