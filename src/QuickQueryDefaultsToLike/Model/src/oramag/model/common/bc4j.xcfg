@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.0" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oramag.model.AppModule">
+      <AppModuleConfig name="AppModuleLocal" ApplicationName="oramag.model.AppModule" DeployPlatform="LOCAL" JDBCName="scott" jbo.project="oramag.model.Model">
+         <Security AppModuleJndiName="oramag.model.AppModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" ApplicationName="oramag.model.AppModule" DeployPlatform="LOCAL" JDBCName="scott" jbo.project="oramag.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oramag.model.AppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

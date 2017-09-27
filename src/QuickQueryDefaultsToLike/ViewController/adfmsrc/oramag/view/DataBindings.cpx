@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.56" id="DataBindings" SeparateXMLFiles="false"
+             Package="oramag.view" ClientType="Generic">
+  <pageMap>
+    <page path="/PageWithQuickQuery.jspx"
+          usageId="oramag_view_PageWithQuickQueryPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oramag_view_PageWithQuickQueryPageDef"
+          path="oramag.view.pageDefs.PageWithQuickQueryPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="oramag.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
