@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" id="DataBindings"
+             Package="" version="10.1.2.17.76" SeparateXMLFiles="false"
+             ClientType="Generic">
+   <pageMap>
+      <page path="/editDepartments.do" usageId="editDepartmentsUIModel"/>
+   </pageMap>
+   <pageDefinitionUsages>
+      <page id="editDepartmentsUIModel"
+            path="mypackage1.editDepartmentsUIModel"/>
+   </pageDefinitionUsages>
+   <dataControlUsages>
+      <BC4JDataControl Configuration="TestModuleLocal" Package="model"
+                       xmlns="http://xmlns.oracle.com/adfm/datacontrol"
+                       id="TestModuleDataControl"
+                       FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                       syncMode="Immediate">
+         <Parameters/>
+      </BC4JDataControl>
+   </dataControlUsages>
+</Application>

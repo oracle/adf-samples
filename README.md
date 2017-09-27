@@ -35,5 +35,6 @@ Each sample is also available in downloadable form in the zips directory.
 * AutoAssignedNamedBindVar
 * AutoQueryOnSecondLOVPopulationInAFQuery
 * AvoidClearingViewRowSetOnRollback
+* BeforeCommitOnlyOncePerEntityType
 
 

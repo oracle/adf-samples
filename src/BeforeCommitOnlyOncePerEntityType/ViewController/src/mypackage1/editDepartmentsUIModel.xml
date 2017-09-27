@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                id="editDepartmentsUIModel" Package="mypackage1"
+                version="10.1.2.17.76" FindMode="false"
+                EnableTokenValidation="true">
+   <executables>
+      <iterator id="DeptView1Iterator" Binds="DeptView1" RangeSize="10"
+                DataControl="TestModuleDataControl"/>
+   </executables>
+   <bindings>
+      <table xmlns="http://xmlns.oracle.com/adfm/uimodel" id="DeptView1"
+             IterBinding="DeptView1Iterator" ApplyValidation="false"
+             isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Deptno"/>
+            <Item Value="Dname"/>
+            <Item Value="Loc"/>
+         </AttrNames>
+      </table>
+      <attributeValues xmlns="http://xmlns.oracle.com/adfm/uimodel" id="Deptno"
+                       IterBinding="DeptView1Iterator" ApplyValidation="false"
+                       isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Deptno"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues xmlns="http://xmlns.oracle.com/adfm/uimodel" id="Dname"
+                       IterBinding="DeptView1Iterator" ApplyValidation="false"
+                       isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Dname"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues xmlns="http://xmlns.oracle.com/adfm/uimodel" id="Loc"
+                       IterBinding="DeptView1Iterator" ApplyValidation="false"
+                       isDynamic="false">
+         <AttrNames xmlns="http://xmlns.oracle.com/adfm/uimodel">
+            <Item Value="Loc"/>
+         </AttrNames>
+      </attributeValues>
+      <action id="Previous" Action="11" IterBinding="DeptView1Iterator"
+              RequiresUpdateModel="true"/>
+      <action id="Next" Action="10" IterBinding="DeptView1Iterator"
+              RequiresUpdateModel="true"/>
+      <action id="Commit" Action="100" RequiresUpdateModel="true"
+              DataControl="TestModuleDataControl"/>
+      <action id="Rollback" Action="101" RequiresUpdateModel="false"
+              DataControl="TestModuleDataControl"/>
+   </bindings>
+</pageDefinition>

@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+    <web-module id="BeforeCommitOnlyOncePerEntityType-ViewController-webapp" path="file:/D:/jdev/home/mywork/BeforeCommitOnlyOncePerEntityType/ViewController/public_html/"/>
+  <log>
+        <file path="BeforeCommitOnlyOncePerEntityType-oc4j-app.log"/>
+    </log>
+  <jazn provider="XML" location="BeforeCommitOnlyOncePerEntityType-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="BeforeCommitOnlyOncePerEntityType-data-sources.xml"/>
+</orion-application>
