@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.36.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="JClient">
+  <dataControlUsages>
+    <BC4JDataControl id="TestModule1DataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="TestModule1Local" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="TestModule2DataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="TestModule2Local" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+  <pageDefinitionUsages>
+    <page id="EmployeePanelPageDef"
+          path="test.view.pageDefs.EmployeePanelPageDef"/>
+    <page id="Panel1PageDef" path="test.view.pageDefs.Panel1PageDef"/>
+    <page id="Panel2PageDef" path="test.view.pageDefs.Panel2PageDef"/>
+    <page id="Panel3PageDef" path="test.view.pageDefs.Panel3PageDef"/>
+    <page id="Panel4PageDef" path="test.view.pageDefs.Panel4PageDef"/>
+  </pageDefinitionUsages>
+</Application>
