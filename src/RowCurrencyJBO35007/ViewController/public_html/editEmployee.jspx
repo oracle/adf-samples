@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="List WorkList Tasks">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages rendered="#{requestScope.TriedToEditWrongCurrentRow == false}"/>
+
+        <h:form>
+          <af:commandButton text="Back To List" action="listEmployees"
+                            immediate="#{requestScope.TriedToEditWrongCurrentRow == true}"/>
+          <af:outputText value="PROBLEM!"
+                         rendered="#{requestScope.TriedToEditWrongCurrentRow == true}"/>
+          <af:panelForm>
+            <af:inputText value="#{bindings.EmployeesView1EmployeeId.inputValue}"
+                          label="#{bindings.EmployeesView1EmployeeId.label}"
+                          required="#{bindings.EmployeesView1EmployeeId.mandatory}"
+                          columns="#{bindings.EmployeesView1EmployeeId.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.EmployeesView1EmployeeId.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.FirstName.inputValue}"
+                          label="#{bindings.FirstName.label}"
+                          required="#{bindings.FirstName.mandatory}"
+                          columns="#{bindings.FirstName.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.FirstName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.LastName.inputValue}"
+                          label="#{bindings.LastName.label}"
+                          required="#{bindings.LastName.mandatory}"
+                          columns="#{bindings.LastName.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.LastName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Email.inputValue}"
+                          label="#{bindings.Email.label}"
+                          required="#{bindings.Email.mandatory}"
+                          columns="#{bindings.Email.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.Email.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.PhoneNumber.inputValue}"
+                          label="#{bindings.PhoneNumber.label}"
+                          required="#{bindings.PhoneNumber.mandatory}"
+                          columns="#{bindings.PhoneNumber.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.PhoneNumber.validator}"/>
+            </af:inputText>
+            <af:selectInputDate value="#{bindings.HireDate.inputValue}"
+                                label="#{bindings.HireDate.label}"
+                                required="#{bindings.HireDate.mandatory}"
+                                disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.HireDate.validator}"/>
+              <f:convertDateTime pattern="#{bindings.HireDate.format}"/>
+            </af:selectInputDate>
+            <af:inputText value="#{bindings.JobId.inputValue}"
+                          label="#{bindings.JobId.label}"
+                          required="#{bindings.JobId.mandatory}"
+                          columns="#{bindings.JobId.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.JobId.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Salary.inputValue}"
+                          label="#{bindings.Salary.label}"
+                          required="#{bindings.Salary.mandatory}"
+                          columns="#{bindings.Salary.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.Salary.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Salary.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.CommissionPct.inputValue}"
+                          label="#{bindings.CommissionPct.label}"
+                          required="#{bindings.CommissionPct.mandatory}"
+                          columns="#{bindings.CommissionPct.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.CommissionPct.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.CommissionPct.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.ManagerId.inputValue}"
+                          label="#{bindings.ManagerId.label}"
+                          required="#{bindings.ManagerId.mandatory}"
+                          columns="#{bindings.ManagerId.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.ManagerId.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.ManagerId.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                          label="#{bindings.DepartmentId.label}"
+                          required="#{bindings.DepartmentId.mandatory}"
+                          columns="#{bindings.DepartmentId.displayWidth}"
+                          disabled="#{requestScope.TriedToEditWrongCurrentRow == true}">
+              <af:validator binding="#{bindings.DepartmentId.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.DepartmentId.format}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <h:panelGroup>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit" partialSubmit="false"
+                                  disabled="#{requestScope.TriedToEditWrongCurrentRow == true}"/>
+              </h:panelGroup>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

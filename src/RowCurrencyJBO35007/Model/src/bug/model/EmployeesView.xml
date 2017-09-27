@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmployeesView"
+   SelectList="Employees.EMPLOYEE_ID, 
+       Employees.FIRST_NAME, 
+       Employees.LAST_NAME, 
+       Employees.EMAIL, 
+       Employees.PHONE_NUMBER, 
+       Employees.HIRE_DATE, 
+       Employees.JOB_ID, 
+       Employees.SALARY, 
+       Employees.COMMISSION_PCT, 
+       Employees.MANAGER_ID, 
+       Employees.DEPARTMENT_ID"
+   FromList="EMPLOYEES Employees"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="bug.model.EmployeesViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Employees"
+      Entity="bug.model.Employees" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="EmployeeId"
+      IsNotNull="true"
+      EntityAttrName="EmployeeId"
+      EntityUsage="Employees"
+      AliasName="EMPLOYEE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FirstName"
+      EntityAttrName="FirstName"
+      EntityUsage="Employees"
+      AliasName="FIRST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastName"
+      IsNotNull="true"
+      EntityAttrName="LastName"
+      EntityUsage="Employees"
+      AliasName="LAST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Email"
+      IsUnique="true"
+      IsNotNull="true"
+      EntityAttrName="Email"
+      EntityUsage="Employees"
+      AliasName="EMAIL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PhoneNumber"
+      EntityAttrName="PhoneNumber"
+      EntityUsage="Employees"
+      AliasName="PHONE_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="HireDate"
+      IsNotNull="true"
+      EntityAttrName="HireDate"
+      EntityUsage="Employees"
+      AliasName="HIRE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="JobId"
+      IsNotNull="true"
+      EntityAttrName="JobId"
+      EntityUsage="Employees"
+      AliasName="JOB_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Salary"
+      EntityAttrName="Salary"
+      EntityUsage="Employees"
+      AliasName="SALARY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CommissionPct"
+      EntityAttrName="CommissionPct"
+      EntityUsage="Employees"
+      AliasName="COMMISSION_PCT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ManagerId"
+      EntityAttrName="ManagerId"
+      EntityUsage="Employees"
+      AliasName="MANAGER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DepartmentId"
+      EntityAttrName="DepartmentId"
+      EntityUsage="Employees"
+      AliasName="DEPARTMENT_ID" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="EmployeesView"
+      ViewLink="bug.model.EmpManagerFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

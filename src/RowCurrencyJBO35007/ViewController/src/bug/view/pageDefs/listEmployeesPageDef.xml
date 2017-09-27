@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.41.57" id="listEmployeesPageDef"
+                Package="bug.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="EmployeesView1Iterator" RangeSize="10" Binds="EmployeesView1"
+              DataControl="AppModuleDataControl"/>
+  </executables>
+  <bindings>
+    <table id="EmployeesView1" IterBinding="EmployeesView1Iterator">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+        <Item Value="FirstName"/>
+        <Item Value="LastName"/>
+        <Item Value="Email"/>
+        <Item Value="PhoneNumber"/>
+        <Item Value="HireDate"/>
+        <Item Value="JobId"/>
+        <Item Value="Salary"/>
+        <Item Value="CommissionPct"/>
+        <Item Value="ManagerId"/>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </table>
+  </bindings>
+</pageDefinition>

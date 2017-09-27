@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.41.57" id="DataBindings" SeparateXMLFiles="false"
+             Package="bug.view" ClientType="Generic">
+  <pageMap>
+    <page path="/listEmployees.jspx" usageId="listEmployeesPageDef"/>
+    <page path="/editEmployee.jspx" usageId="editEmployeePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="listEmployeesPageDef"
+          path="bug.view.pageDefs.listEmployeesPageDef"/>
+    <page id="editEmployeePageDef"
+          path="bug.view.pageDefs.editEmployeePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="bug.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

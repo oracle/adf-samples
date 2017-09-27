@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="List WorkList Tasks">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.EmployeesView1.collectionModel}" var="row"
+                    rows="#{bindings.EmployeesView1.rangeSize}"
+                    first="#{bindings.EmployeesView1.rangeStart}"
+                    emptyText="#{bindings.EmployeesView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.EmployeesView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.EmployeesView1.collectionModel.makeCurrent}">
+            <af:column sortProperty="EmployeeId" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.EmployeeId}">
+              <af:outputText value="#{row.EmployeeId}"/>
+            </af:column>
+            <af:column sortProperty="FirstName" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.FirstName}">
+              <af:outputText value="#{row.FirstName}"/>
+            </af:column>
+            <af:column sortProperty="LastName" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.LastName}">
+              <af:outputText value="#{row.LastName}"/>
+            </af:column>
+            <af:column sortProperty="Email" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.Email}">
+              <af:outputText value="#{row.Email}"/>
+            </af:column>
+            <af:column sortProperty="PhoneNumber" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.PhoneNumber}">
+              <af:outputText value="#{row.PhoneNumber}"/>
+            </af:column>
+            <af:column sortProperty="HireDate" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.HireDate}">
+              <af:outputText value="#{row.HireDate}">
+                <f:convertDateTime pattern="#{bindings.EmployeesView1.formats.HireDate}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="JobId" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.JobId}">
+              <af:outputText value="#{row.JobId}"/>
+            </af:column>
+            <af:column sortProperty="Salary" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.Salary}">
+              <af:outputText value="#{row.Salary}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmployeesView1.formats.Salary}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="CommissionPct" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.CommissionPct}">
+              <af:outputText value="#{row.CommissionPct}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmployeesView1.formats.CommissionPct}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="ManagerId" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.ManagerId}">
+              <af:outputText value="#{row.ManagerId}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmployeesView1.formats.ManagerId}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="DepartmentId" sortable="true"
+                       headerText="#{bindings.EmployeesView1.labels.DepartmentId}">
+              <af:outputText value="#{row.DepartmentId}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmployeesView1.formats.DepartmentId}"/>
+              </af:outputText>
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and">
+                <af:commandButton text="Submit" action="edit"/>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
