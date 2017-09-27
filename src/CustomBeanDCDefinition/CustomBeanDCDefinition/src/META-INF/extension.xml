@@ -1,0 +1,33 @@
+<extension id="oracle.ateam.custombeandcdefinition" version="1.0" esdk-version="1.0"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>Custom Bean DCDefinition</name>
+  <required-bundles>
+    <bundle>oracle.jdeveloper</bundle>
+    <bundle>oracle.ide</bundle>
+    <bundle>oracle.ide.library</bundle>
+    <bundle>oracle.jdeveloper.java.core</bundle>
+    <bundle>oracle.javamodel-rt</bundle>
+    <bundle>oracle.javatools-nodeps</bundle>
+    <bundle>oracle.adf-common-dt</bundle>
+    <bundle>oracle.adfmcoredt</bundle>
+    <bundle>oracle.adfm.dc-adapters</bundle>
+    <bundle>oracle.adfm.dcpalette</bundle>
+  </required-bundles>
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+      <libraries xmlns="http://xmlns.oracle.com/jdeveloper/1013/jdev-libraries">
+        <library name="Enable Custom DC Bean Definition" deployed="false" forceExtensionInitialization="true">
+          <classpath>oracle.ateam.custombeandcdefinition.jar</classpath>
+        </library>
+      </libraries>
+    </triggers>
+  </trigger-hooks>
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>oracle.ateam.custombeandcdefinition.CustomDCBeanAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+  </hooks>
+</extension>
+
