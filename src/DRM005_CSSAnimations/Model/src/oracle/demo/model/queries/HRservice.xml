@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRservice"
+  Version="11.1.2.60.81"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="AllDepartmentsView1"
+    ViewObjectName="oracle.demo.model.queries.AllDepartmentsView"/>
+</AppModule>

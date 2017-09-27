@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllDepartmentsView"
+  Version="11.1.2.60.81"
+  SelectList="Departments.DEPARTMENT_ID, 
+       Departments.DEPARTMENT_NAME, 
+       Departments.MANAGER_ID, 
+       Departments.LOCATION_ID"
+  FromList="DEPARTMENTS Departments"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Departments"
+    Entity="oracle.demo.model.eo.Departments"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="Departments"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="Departments"
+    AliasName="MANAGER_ID"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="Departments"
+    AliasName="LOCATION_ID"/>
+</ViewObject>

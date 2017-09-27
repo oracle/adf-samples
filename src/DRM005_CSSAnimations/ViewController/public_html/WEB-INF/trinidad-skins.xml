@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>animation.desktop</id>
+    <family>animation</family>
+    <extends>fusionFx-simple-v2.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/animation/animation.css</style-sheet-name>
+    <bundle-name>oracle/demo/view.skinBundle</bundle-name>
+  </skin>
+</skins>

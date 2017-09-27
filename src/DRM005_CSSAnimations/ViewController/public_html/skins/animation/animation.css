@@ -1,0 +1,110 @@
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.slideout
+{
+  position: relative;
+  -webkit-transition-property: left, -webkit-box-shadow; ;  
+  -webkit-transition-timing-function: linear, ease-out;
+  -webkit-transition-duration: 1s, 1s;  
+  -webkit-box-shadow: 0px 0px 0px #888;
+  left: -80px; 
+}
+
+.slideout:hover
+{
+  position: relative;
+  -webkit-transition-property: left, -webkit-box-shadow;  
+  -webkit-transition-timing-function: linear, ease-in;
+  -webkit-transition-duration: 1s, 1s;  
+  -webkit-box-shadow: 10px 10px 5px #888;
+  left: 0px;
+}
+
+.rotateReturn {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transform: rotateY(0deg);
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 2s;
+    
+}
+
+.rotateOut {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transform: rotateY(90deg);
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 2s;   
+}
+
+
+af|commandButton.zoomOnFocus
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: scale(1,1); 
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 1s;  
+  position: relative;
+  z-index: 2;
+}
+
+
+af|commandButton.zoomOnFocus:hover
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: scale(2,2); 
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 1s;  
+  position: relative;
+  z-index: 2;
+}
+
+
+af|commandButton.spinZoomOnFocus
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: rotate(0deg) scale(1,1); 
+  -webkit-transition-timing-function: linear;
+   -webkit-transition-duration: 0.5s;  
+}
+
+
+af|commandButton.spinZoomOnFocus:hover
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: rotate(360deg) scale(1.5,1.5); 
+  -webkit-transition-timing-function: linear;
+   -webkit-transition-duration: 0.5s;  
+}
+
+af|commandButton.moveOnFocus
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: translate(0px,0px); 
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 1s;  
+  position: relative;
+  z-index: 2;
+}
+
+
+af|commandButton.moveOnFocus:hover
+{
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transform: translate(100px,-100px); 
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 1s;  
+  position: relative;
+  z-index: 2;
+}
+
+
+.popupFadeReset {
+  opacity: 1;
+}
+
+
+.popupFadeAnimate {
+  opacity: 0;
+  -webkit-transition: opacity 5s ease-in-out;
+}

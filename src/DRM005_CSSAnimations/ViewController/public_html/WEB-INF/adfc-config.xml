@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name>animationBB</managed-bean-name>
+    <managed-bean-class>oracle.demo.view.AnimationBacking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__3">
+      <property-name>uiManager</property-name>
+      <property-class>oracle.demo.view.UIManager</property-class>
+      <value>#{uiManager}</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>uiManager</managed-bean-name>
+    <managed-bean-class>oracle.demo.view.UIManager</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

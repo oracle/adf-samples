@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="animation.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout topHeight="50px" id="psl1">
+                <f:facet name="top">
+                    <af:panelGroupLayout layout="horizontal">
+                        <af:goLink destination="/faces/animation.jsf">
+                            <af:spacer styleClass="AFBrandingBarLogo"/>
+                        </af:goLink>
+                        <af:outputText value="Animations With CSS3" id="ot1" styleClass="AFBrandingBarTitle"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelGroupLayout id="pgl1" layout="vertical">
+                        <af:panelGroupLayout id="ani1" layout="horizontal">
+                            <!-- our slideout control bar-->
+                            <af:panelGroupLayout id="slideout" clientComponent="true" layout="vertical"
+                                                 styleClass="slideout">
+                                <af:panelBox showDisclosure="false">
+                                    <af:panelGroupLayout layout="horizontal">
+                                        <af:spacer width="10"/>
+                                        <af:panelGroupLayout layout="vertical">
+                                            <f:facet name="separator">
+                                                <af:spacer width="10" height="6" id="s1"/>
+                                            </f:facet>
+                                            <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                                              disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                              id="cb1"/>
+                                            <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                                              text="Previous" disabled="#{!bindings.Previous.enabled}"
+                                                              partialSubmit="true" id="cb2"/>
+                                            <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                              disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                              id="cb3"/>
+                                            <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                              disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                              id="cb4"/>
+                                            <af:commandButton text="Submit" id="cb5"/>
+                                        </af:panelGroupLayout>
+                                        <af:spacer width="10"/>
+                                    </af:panelGroupLayout>
+                                </af:panelBox>
+                            </af:panelGroupLayout>
+                            <af:spacer width="30"/>
+                            <af:panelGroupLayout layout="vertical" id="flip" clientComponent="true"
+                                                 binding="#{animationBB.flipPanel}" styleClass="rotateReturn">
+                                <af:decorativeBox theme="dark">
+                                    <f:facet name="center">
+                                        <af:panelGroupLayout layout="vertical" binding="#{animationBB.refreshPanel}">
+                                            <af:spacer height="40"/>
+                                            <af:switcher defaultFacet="ASide"
+                                                         facetName="#{uiManager.flipAnimationSelectedSide}">
+                                                <f:facet name="ASide">
+                                                    <af:panelHeader text="Basic Information">
+                                                        <af:spacer height="20"/>
+                                                        <af:panelFormLayout id="pfl1">
+                                                            <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                                                                          label="#{bindings.DepartmentId.hints.label}"
+                                                                          required="#{bindings.DepartmentId.hints.mandatory}"
+                                                                          columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                                                          maximumLength="#{bindings.DepartmentId.hints.precision}"
+                                                                          shortDesc="#{bindings.DepartmentId.hints.tooltip}"
+                                                                          id="it1">
+                                                                <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.DepartmentId.format}"/>
+                                                            </af:inputText>
+                                                            <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                                                                          label="#{bindings.DepartmentName.hints.label}"
+                                                                          required="#{bindings.DepartmentName.hints.mandatory}"
+                                                                          columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                                                          maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                                                          shortDesc="#{bindings.DepartmentName.hints.tooltip}"
+                                                                          id="it2">
+                                                                <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                                                            </af:inputText>
+                                                            <af:inputText value="#{bindings.ManagerId.inputValue}"
+                                                                          label="#{bindings.ManagerId.hints.label}"
+                                                                          required="#{bindings.ManagerId.hints.mandatory}"
+                                                                          columns="#{bindings.ManagerId.hints.displayWidth}"
+                                                                          maximumLength="#{bindings.ManagerId.hints.precision}"
+                                                                          shortDesc="#{bindings.ManagerId.hints.tooltip}"
+                                                                          id="it3">
+                                                                <f:validator binding="#{bindings.ManagerId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.ManagerId.format}"/>
+                                                            </af:inputText>
+                                                            <af:inputText value="#{bindings.LocationId.inputValue}"
+                                                                          label="#{bindings.LocationId.hints.label}"
+                                                                          required="#{bindings.LocationId.hints.mandatory}"
+                                                                          columns="#{bindings.LocationId.hints.displayWidth}"
+                                                                          maximumLength="#{bindings.LocationId.hints.precision}"
+                                                                          shortDesc="#{bindings.LocationId.hints.tooltip}"
+                                                                          id="it4">
+                                                                <f:validator binding="#{bindings.LocationId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.LocationId.format}"/>
+                                                            </af:inputText>
+                                                        </af:panelFormLayout>
+                                                        <af:panelGroupLayout layout="horizontal">
+                                                            <af:spacer width="200"/>
+                                                            <af:commandButton text="More..." partialSubmit="true"
+                                                                              clientComponent="true" id="cbflip1">
+                                                                <af:clientAttribute name="flipPanel"
+                                                                                    value="#{animationBB.flipClientId}"/>
+                                                                <af:clientListener method="animateFlipPanel"
+                                                                                   type="action"/>
+                                                                <af:serverListener type="flipEvent"
+                                                                                   method="#{animationBB.handlePanelFipEvent}"/>
+                                                                <af:serverListener type="msgEvent"
+                                                                                   method="#{animationBB.handleMsgEvent}"/>                                                                                   
+                                                            </af:commandButton>
+                                                        </af:panelGroupLayout>
+                                                    </af:panelHeader>
+                                                </f:facet>
+                                                <f:facet name="BSide">
+                                                    <af:panelHeader text="Comments">
+                                                        <af:outputText value="Hope you liked it!"/>
+                                                        <af:spacer height="80"/>
+                                                        <af:panelGroupLayout layout="horizontal">
+                                                            <af:spacer width="200"/>
+                                                            <af:commandButton text="Back..." partialSubmit="true"
+                                                                              clientComponent="true" id="cbflip2">
+                                                                <af:clientAttribute name="flipPanel"
+                                                                                    value="#{animationBB.flipClientId}"/>
+                                                                <af:clientListener method="animateFlipPanel"
+                                                                                   type="action"/>
+                                                                <af:serverListener type="flipEvent"
+                                                                                   method="#{animationBB.handlePanelFipEvent}"/>
+                                                            </af:commandButton>
+                                                        </af:panelGroupLayout>
+                                                    </af:panelHeader>
+                                                </f:facet>
+                                            </af:switcher>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:decorativeBox>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:spacer height="40"/>
+                        <af:panelGroupLayout layout="horizontal">
+                            <af:spacer width="100"/>
+                            <af:commandButton text="Zoom Me!" styleClass="zoomOnFocus" partialSubmit="true" id="cb7"/>
+                            <af:commandButton text="Spin Me!" styleClass="spinZoomOnFocus" partialSubmit="true"
+                                              id="cb6"/>
+                            <af:commandButton text="Move Me!" styleClass="moveOnFocus" partialSubmit="true"
+                                              id="cb8"/>
+                            <af:commandButton text="Popup Window"  partialSubmit="true">
+                              <af:showPopupBehavior popupId="msgpop2" triggerType="action"/>                            
+                            </af:commandButton> 
+                            <af:commandButton text="Popup Dialog"  partialSubmit="true">
+                              <af:showPopupBehavior popupId="msgpop3" triggerType="action"/>                            
+                            </af:commandButton>
+                            <af:popup id="msgpop2" clientComponent="true">
+                              <af:panelWindow title="panelWindow">
+                                <af:panelGroupLayout layout="vertical">
+                                  <af:outputText value="That's all folks"/>
+                                </af:panelGroupLayout>
+                              </af:panelWindow>                               
+                              <af:clientAttribute name="preFadeDelay"
+                                                  value="2"/>                                                     
+                              <af:clientListener method="animateFadingPopup" type="popupOpened"/>                                
+                            </af:popup>  
+                            <af:popup id="msgpop3" clientComponent="true">
+                              <af:clientAttribute name="preFadeDelay"
+                                                  value="2"/>                                                     
+                              <af:clientListener method="animateFadingPopup" type="popupOpened"/>   
+                              <af:dialog title="Dialog Fade">
+                                <af:panelGroupLayout layout="vertical">
+                                  <af:outputText value="That's all folks"/>
+                                </af:panelGroupLayout>
+                              </af:dialog>                                  
+                            </af:popup>
+                            <f:facet name="separator">
+                                <af:spacer width="20" height="10" id="s2"/>
+                            </f:facet>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+        <f:facet name="metaContainer">
+            <af:resource type="javascript" source="resources/js/animations.js"/>
+        </f:facet>
+    </af:document>
+</f:view>

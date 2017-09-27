@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.demo.view" ClientType="Generic">
+  <pageMap>
+    <page path="/animation.jsf" usageId="oracle_demo_view_animationPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_demo_view_animationPageDef" path="oracle.demo.view.pageDefs.animationPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRserviceDataControl" Package="oracle.demo.model.queries"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRserviceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

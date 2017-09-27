@@ -75,6 +75,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DisplayNoRecordsFoundMessage
 * DontValidateOnAddingNewRowInTableAndFormUI
 * DRM004_AutoReduceSearch
+* DRM005_CSSAnimations
 
 
 
