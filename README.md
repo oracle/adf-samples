@@ -67,6 +67,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DataPushSampleFilter
 * DateRangeCheck
 * DeclarativeErrorPageBC4JJSP
+* DeclarativeSequencePopulation
 
 
 

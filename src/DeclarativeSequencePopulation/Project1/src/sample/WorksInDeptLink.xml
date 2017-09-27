@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="WorksInDeptLink"
+   EntityAssociation="sample.WorksInDeptAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="DeptView"
+      Cardinality="1"
+      Owner="sample.DeptView"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="sample.DeptView.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="EmpView"
+      Cardinality="-1"
+      Owner="sample.EmpView" >
+      <AttrArray Name="Attributes">
+         <Item Value="sample.EmpView.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="EmpView" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>
