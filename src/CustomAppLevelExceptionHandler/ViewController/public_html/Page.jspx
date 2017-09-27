@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:region value="#{bindings.region1.regionModel}" id="regio1"/>
+        <af:commandButton actionListener="#{bindings.addInformationMessageTest.execute}"
+                          text="addInformationMessageTest"
+                          disabled="#{!bindings.addInformationMessageTest.enabled}"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

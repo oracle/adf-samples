@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="PagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <taskFlow id="region1" taskFlowId="/WEB-INF/region.xml#region"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <methodAction id="addInformationMessageTest" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="addInformationMessageTest"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

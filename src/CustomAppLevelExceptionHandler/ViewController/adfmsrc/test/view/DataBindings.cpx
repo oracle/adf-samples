@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.56" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic"
+             ErrorHandlerClass="test.view.CustomErrorHandler">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/RegionPage.jsff" usageId="test_view_RegionPagePageDef"/>
+    <page path="/Page.jspx" usageId="test_view_PagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_RegionPagePageDef"
+          path="test.view.pageDefs.RegionPagePageDef"/>
+    <page id="test_view_PagePageDef" path="test.view.pageDefs.PagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

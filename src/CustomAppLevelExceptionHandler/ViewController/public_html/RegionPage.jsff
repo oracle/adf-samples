@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout>
+    <af:inputText value="#{bindings.Empno.inputValue}"
+                  label="#{bindings.Empno.hints.label}"
+                  required="#{bindings.Empno.hints.mandatory}"
+                  columns="#{bindings.Empno.hints.displayWidth}"
+                  maximumLength="#{bindings.Empno.hints.precision}"
+                  shortDesc="#{bindings.Empno.hints.tooltip}">
+      <f:validator binding="#{bindings.Empno.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.Empno.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Ename.inputValue}"
+                  label="#{bindings.Ename.hints.label}"
+                  required="#{bindings.Ename.hints.mandatory}"
+                  columns="#{bindings.Ename.hints.displayWidth}"
+                  maximumLength="#{bindings.Ename.hints.precision}"
+                  shortDesc="#{bindings.Ename.hints.tooltip}">
+      <f:validator binding="#{bindings.Ename.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Job.inputValue}"
+                  label="#{bindings.Job.hints.label}"
+                  required="#{bindings.Job.hints.mandatory}"
+                  columns="#{bindings.Job.hints.displayWidth}"
+                  maximumLength="#{bindings.Job.hints.precision}"
+                  shortDesc="#{bindings.Job.hints.tooltip}">
+      <f:validator binding="#{bindings.Job.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Mgr.inputValue}"
+                  label="#{bindings.Mgr.hints.label}"
+                  required="#{bindings.Mgr.hints.mandatory}"
+                  columns="#{bindings.Mgr.hints.displayWidth}"
+                  maximumLength="#{bindings.Mgr.hints.precision}"
+                  shortDesc="#{bindings.Mgr.hints.tooltip}">
+      <f:validator binding="#{bindings.Mgr.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.Mgr.format}"/>
+    </af:inputText>
+    <af:inputDate value="#{bindings.Hiredate.inputValue}"
+                  label="#{bindings.Hiredate.hints.label}"
+                  required="#{bindings.Hiredate.hints.mandatory}"
+                  shortDesc="#{bindings.Hiredate.hints.tooltip}">
+      <f:validator binding="#{bindings.Hiredate.validator}"/>
+      <af:convertDateTime pattern="#{bindings.Hiredate.format}"/>
+    </af:inputDate>
+    <af:inputText value="#{bindings.Sal.inputValue}"
+                  label="#{bindings.Sal.hints.label}"
+                  required="#{bindings.Sal.hints.mandatory}"
+                  columns="#{bindings.Sal.hints.displayWidth}"
+                  maximumLength="#{bindings.Sal.hints.precision}"
+                  shortDesc="#{bindings.Sal.hints.tooltip}">
+      <f:validator binding="#{bindings.Sal.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.Sal.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Comm.inputValue}"
+                  label="#{bindings.Comm.hints.label}"
+                  required="#{bindings.Comm.hints.mandatory}"
+                  columns="#{bindings.Comm.hints.displayWidth}"
+                  maximumLength="#{bindings.Comm.hints.precision}"
+                  shortDesc="#{bindings.Comm.hints.tooltip}">
+      <f:validator binding="#{bindings.Comm.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.Comm.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Deptno.inputValue}"
+                  label="#{bindings.Deptno.hints.label}"
+                  required="#{bindings.Deptno.hints.mandatory}"
+                  columns="#{bindings.Deptno.hints.displayWidth}"
+                  maximumLength="#{bindings.Deptno.hints.precision}"
+                  shortDesc="#{bindings.Deptno.hints.tooltip}">
+      <f:validator binding="#{bindings.Deptno.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.Deptno.format}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:panelGroupLayout layout="horizontal">
+        <af:commandButton actionListener="#{bindings.First.execute}"
+                          text="First" disabled="#{!bindings.First.enabled}"
+                          partialSubmit="true"/>
+        <af:commandButton actionListener="#{bindings.Previous.execute}"
+                          text="Previous"
+                          disabled="#{!bindings.Previous.enabled}"
+                          partialSubmit="true"/>
+        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                          disabled="#{!bindings.Next.enabled}"
+                          partialSubmit="true"/>
+        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                          disabled="#{!bindings.Last.enabled}"
+                          partialSubmit="true"/>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>
