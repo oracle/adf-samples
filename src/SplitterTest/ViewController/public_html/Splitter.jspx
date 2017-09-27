@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+<af:document id="d1">
+  <f:facet name="metaContainer">
+    <af:resource source="/js/lib.js" type="javascript"></af:resource>
+  </f:facet>
+  <af:form id="f1">
+    <af:panelSplitter id="ps1" orientation="vertical"
+                      collapsed="#{viewScope.SplitterBean.collapsed}">
+      <f:facet name="first">
+        <af:panelHeader text="Splitter Collapse Test" id="ph1">
+          <af:panelGroupLayout id="pgl1" layout="scroll">
+            <af:commandButton text="Collapse this part" id="cb1">
+              <af:setActionListener from="#{true}"
+                                    to="#{viewScope.SplitterBean.collapsed}"/>
+            </af:commandButton>
+          </af:panelGroupLayout>
+        </af:panelHeader>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelHeader text="Second part of splitter" id="ph2">
+          <af:panelGroupLayout id="pgl2" layout="scroll">
+            <af:commandButton text="Expand top part" id="cb2">
+              <af:setActionListener from="#{false}"
+                                    to="#{viewScope.SplitterBean.collapsed}"/>
+            </af:commandButton>
+            <af:commandButton text="Collapse top part" id="cb3">
+              <af:setActionListener from="#{true}"
+                                    to="#{viewScope.SplitterBean.collapsed}"/>
+            </af:commandButton>
+          </af:panelGroupLayout>
+        </af:panelHeader>
+      </f:facet>
+      <af:clientListener type="click" method="splitterClick"/>
+      <af:serverListener type="handleSplitterClick"
+                         method="#{viewScope.SplitterBean.handleSplitterEvent}"/>
+    </af:panelSplitter>
+  </af:form>
+</af:document>
+  </f:view>
+</jsp:root>
