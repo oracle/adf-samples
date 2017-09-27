@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="DeleteMultipleEmpsUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmpViewIterator"
+         Binds="TestModuleDataControl.EmpView" >
+      </DCIterator>
+      <DCControl
+         id="EmpView"
+         SubType="DCTable"
+         IterBinding="EmpViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
