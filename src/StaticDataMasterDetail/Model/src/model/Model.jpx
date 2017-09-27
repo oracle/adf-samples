@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="Model"
+   Version="11.1.1.47.53"
+   SeparateXMLFiles="true"
+   PackageName="model" >
+   <DesignTime>
+      <Attr Name="_appModuleNames0" Value="model.TestModule" />
+      <Attr Name="_jprName" Value="../../Model.jpr" />
+      <Attr Name="_appModuleNames1" Value="persistentmodel.TestDataModule" />
+      <Attr Name="_NamedConnection" Value="scott" />
+   </DesignTime>
+   <Containee
+      Name="model"
+      FullName="model.model"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="persistentmodel"
+      FullName="persistentmodel.persistentmodel"
+      ObjectType="JboPackage" >
+   </Containee>
+   <AppModuleUsage
+      Name="TestModuleShared"
+      FullName="model.TestModule"
+      ConfigurationName="model.TestModuleShared"
+      SharedScope="2" >
+   </AppModuleUsage>
+</JboProject>

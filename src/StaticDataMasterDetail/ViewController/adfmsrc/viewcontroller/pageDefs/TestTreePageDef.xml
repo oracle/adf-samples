@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="TestTreePageDef"
+                Package="viewcontroller.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="States" RangeSize="25" DataControl="TestModuleDataControl"
+              id="StatesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StatesIterator" id="States">
+      <nodeDefinition DefName="model.States" Name="States0">
+        <Accessors>
+          <Item Value="Cities"/>
+        </Accessors>
+        <AttrNames>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.Cities" Name="States1">
+        <AttrNames>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

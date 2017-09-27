@@ -1,0 +1,9 @@
+# Cities
+CityId,Name,StateId
+101,"San Francisco",1
+102,"San Mateo",1
+103,"Baltimore",2
+104,"Chevy Chase",2
+105,"Palo Alto",1
+106,"Redwood Shores",1
+107,"Bethesda",2

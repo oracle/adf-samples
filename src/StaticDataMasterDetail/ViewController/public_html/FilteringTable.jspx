@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:table value="#{bindings.AllCities.collectionModel}" var="row"
+                  rows="#{bindings.AllCities.rangeSize}"
+                  emptyText="#{bindings.AllCities.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.AllCities.rangeSize}"
+                  filterModel="#{bindings.AllCitiesQuery.queryDescriptor}"
+                  queryListener="#{bindings.AllCitiesQuery.processQuery}"
+                  filterVisible="true" varStatus="vs"
+                  selectedRowKeys="#{bindings.AllCities.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.AllCities.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t1">
+          <af:column sortProperty="CityId" filterable="true" sortable="true"
+                     headerText="#{bindings.AllCities.hints.CityId.label}"
+                     id="c1">
+            <af:outputText value="#{row.CityId}" id="ot1">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.AllCities.hints.CityId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Name" filterable="true" sortable="true"
+                     headerText="#{bindings.AllCities.hints.Name.label}"
+                     id="c2">
+            <af:outputText value="#{row.Name}" id="ot2"/>
+          </af:column>
+          <af:column sortProperty="StateId" filterable="true" sortable="true"
+                     headerText="#{bindings.AllCities.hints.StateId.label}"
+                     id="c3">
+            <af:outputText value="#{row.StateId}" id="ot3">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.AllCities.hints.StateId.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

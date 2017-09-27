@@ -1,0 +1,18 @@
+# Nodes
+NodeId,NodeName,ParentId
+101,"Europe",0
+102,"Americas",0
+103,"Italy",101
+104,"France",101
+108,"Germany",101
+105,"USA",102
+106,"Mexico",102
+107,"Canada",102
+108,"Veneto",103
+109,"Lombdaria",103
+110,"Piemonte",103
+111,"California",105
+112,"Arizona",105
+113,"Illinois",105
+
+

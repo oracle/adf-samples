@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="FilteringTablePageDef"
+                Package="viewcontroller.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="AllCities" RangeSize="25"
+              DataControl="TestModuleDataControl" id="AllCitiesIterator"/>
+    <searchRegion Binds="AllCitiesIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AllCitiesQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AllCitiesIterator" id="AllCities">
+      <nodeDefinition DefName="model.Cities" Name="AllCities0">
+        <AttrNames>
+          <Item Value="CityId"/>
+          <Item Value="Name"/>
+          <Item Value="StateId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

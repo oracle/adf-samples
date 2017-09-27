@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="SelfReferencingTreePageDef"
+                Package="viewcontroller.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Nodes" RangeSize="25" DataControl="TestModuleDataControl"
+              id="NodesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NodesIterator" id="Nodes">
+      <nodeDefinition DefName="model.Nodes" Name="Nodes0">
+        <AttrNames>
+          <Item Value="NodeName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="NodeIdNodes"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

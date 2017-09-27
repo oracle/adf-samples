@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="States"
+  Version="11.1.1.47.41"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  ComponentClass="oracle.adfbc.staticdata.CSVFileViewObjectImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName"
+      Value="oracle.adfbc.staticdata.CSVFileViewObjectImpl"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Prog|VarAccess"/>
+  </DesignTime>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="Cities"
+    ViewLink="model.CitiesInStateLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

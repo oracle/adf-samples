@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TestData"
+  Version="11.1.1.47.42"
+  DBObjectType="table"
+  DBObjectName="TEST_DATA"
+  AliasName="TestData"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="TEST_DATA"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="State"
+    Precision="80"
+    ColumnName="STATE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="TEST_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    Precision="80"
+    ColumnName="CITY"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="TEST_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC009795"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C009795"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="persistentmodel.TestData.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

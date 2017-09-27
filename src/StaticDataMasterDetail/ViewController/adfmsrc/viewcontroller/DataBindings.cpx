@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.47.41" id="DataBindings" SeparateXMLFiles="false"
+             Package="viewcontroller" ClientType="Generic">
+  <pageMap>
+    <page path="/TestTree.jspx" usageId="TestTreePageDef"/>
+    <page path="/TestMasterDetail.jspx" usageId="TestMasterDetailPageDef"/>
+    <page path="/FilteringTable.jspx" usageId="FilteringTablePageDef"/>
+    <page path="/SelfReferencingTree.jspx"
+          usageId="viewcontroller_SelfReferencingTreePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="TestTreePageDef" path="viewcontroller.pageDefs.TestTreePageDef"/>
+    <page id="TestMasterDetailPageDef"
+          path="viewcontroller.pageDefs.TestMasterDetailPageDef"/>
+    <page id="FilteringTablePageDef"
+          path="viewcontroller.pageDefs.FilteringTablePageDef"/>
+    <page id="viewcontroller_SelfReferencingTreePageDef"
+          path="viewcontroller.pageDefs.SelfReferencingTreePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="TestModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="TestModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

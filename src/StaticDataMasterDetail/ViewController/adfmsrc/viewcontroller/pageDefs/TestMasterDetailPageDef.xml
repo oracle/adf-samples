@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="TestMasterDetailPageDef"
+                Package="viewcontroller.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="States" RangeSize="25" DataControl="TestModuleDataControl"
+              id="StatesIterator"/>
+    <iterator Binds="Cities" RangeSize="25" DataControl="TestModuleDataControl"
+              id="CitiesIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="StatesIterator" id="First" RequiresUpdateModel="true"
+            Action="first"/>
+    <action IterBinding="StatesIterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="StatesIterator" id="Next" RequiresUpdateModel="true"
+            Action="next"/>
+    <action IterBinding="StatesIterator" id="Last" RequiresUpdateModel="true"
+            Action="last"/>
+    <attributeValues IterBinding="StatesIterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StatesIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CitiesIterator" id="Cities">
+      <nodeDefinition DefName="model.Cities" Name="Cities0">
+        <AttrNames>
+          <Item Value="CityId"/>
+          <Item Value="Name"/>
+          <Item Value="StateId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-11_0.xsd">
+    <web-module id="StaticDataMasterDetail" path="file:/D:/jdev/home/mywork/11g/StaticDataMasterDetail/ViewController/public_html/"/>
+    <library path="D:\jdev\home\mywork\11g\StaticDataMasterDetail\.adf">jdev-generated</library>
+  <imported-shared-libraries>
+    <import-shared-library name="adf.oracle.domain"/>
+  </imported-shared-libraries>
+  <log>
+        <file path="StaticDataMasterDetail-oc4j-app.log"/>
+    </log>
+  <data-sources path="StaticDataMasterDetail-data-sources.xml"/>
+</orion-application>

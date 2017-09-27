@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="persistentmodel.TestDataModule">
+      <AppModuleConfig name="TestDataModuleLocal"
+                       ApplicationName="persistentmodel.TestDataModule"
+                       DeployPlatform="LOCAL" JDBCName="scott"
+                       jbo.project="model.Model">
+         <Security AppModuleJndiName="persistentmodel.TestDataModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="TestDataModuleShared"
+                       ApplicationName="persistentmodel.TestDataModule"
+                       DeployPlatform="LOCAL" JDBCName="scott"
+                       jbo.project="model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1"
+                     jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="persistentmodel.TestDataModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

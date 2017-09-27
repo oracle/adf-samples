@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TestDataView"
+  Version="11.1.1.47.42"
+  SelectList="TestData.ID, 
+       TestData.STATE, 
+       TestData.CITY"
+  FromList="TEST_DATA TestData"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="TestData"
+    Entity="persistentmodel.TestData"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TestData"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="State"
+    PrecisionRule="true"
+    EntityAttrName="State"
+    EntityUsage="TestData"
+    AliasName="STATE"/>
+  <ViewAttribute
+    Name="City"
+    PrecisionRule="true"
+    EntityAttrName="City"
+    EntityUsage="TestData"
+    AliasName="CITY"/>
+</ViewObject>

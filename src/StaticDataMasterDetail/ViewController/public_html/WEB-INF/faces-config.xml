@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <navigation-rule>
+    <from-view-id>/TestTree.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>goMasterDetail</from-outcome>
+      <to-view-id>/TestMasterDetail.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/TestMasterDetail.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>goTree</from-outcome>
+      <to-view-id>/TestTree.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>
