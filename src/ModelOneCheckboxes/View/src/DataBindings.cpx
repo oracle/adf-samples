@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="9.0.5.16.0"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="TestModuleDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="test.model"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="TestModuleLocal" >
+         <Parameters >
+            <Parameter
+               name="Sync"
+               value="Batch" >
+            </Parameter>
+         </Parameters>
+      </DataControl>
+      <Containee
+         id="TestCrudUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.TestCrudUIModel" >
+      </Containee>
+   </Contents>
+</JboProject>

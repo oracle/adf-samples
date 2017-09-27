@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+  <web-module id="ModelOneOverriddenCommit" path="C:\jdev\home\mywork\ModelOneCheckboxes\View\public_html"/>
+  <jazn provider="XML" location="ModelOneCheckboxes-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="ModelOneCheckboxes-data-sources.xml"/>
+</orion-application>
