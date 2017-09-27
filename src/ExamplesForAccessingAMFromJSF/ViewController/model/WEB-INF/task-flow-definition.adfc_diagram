@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">customApplicationModuleMethodWithResult</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">method-call - customApplicationModuleMethodWithResult&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">method-call - customApplicationModuleMethodWithResult</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">196.5</property>
+      <property
+         name="x">393.38965</property>
+   </MethodCall>
+</SDM>

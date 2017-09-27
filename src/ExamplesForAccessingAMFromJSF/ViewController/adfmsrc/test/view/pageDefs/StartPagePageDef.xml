@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="StartPagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="pageDefStringVariable" Type="java.lang.String">
+        <Properties xmlns="http://xmlns.oracle.com/adfm/beanmodel">
+          <SchemaBasedProperties>
+            <LABEL ResId="pageDefStringVariable_LABEL"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </variable>
+      <variable Name="pageDefIntVariable" Type="java.lang.Integer">
+        <Properties xmlns="http://xmlns.oracle.com/adfm/beanmodel">
+          <SchemaBasedProperties>
+            <LABEL ResId="test.view.pageDefs.StartPagePageDef.pageDefIntVariable_LABEL"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </variable>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="variables" id="pageDefStringVariable1">
+      <AttrNames>
+        <Item Value="pageDefStringVariable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="pageDefIntVariable1">
+      <AttrNames>
+        <Item Value="pageDefIntVariable"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="test.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

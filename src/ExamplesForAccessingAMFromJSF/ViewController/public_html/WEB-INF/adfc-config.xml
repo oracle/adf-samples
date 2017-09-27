@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="StartPage">
+    <page>/StartPage.jspx</page>
+  </view>
+  <task-flow-call id="emp-task-flow">
+    <task-flow-reference>
+      <document>/WEB-INF/emp-task-flow.xml</document>
+      <id>emp-task-flow</id>
+    </task-flow-reference>
+    <input-parameter>
+      <name>stringTaskFlowParam</name>
+      <value>#{requestScope.pageDefStringVariable}</value>
+    </input-parameter>
+    <input-parameter>
+      <name>intTaskFlowParam</name>
+      <value>#{requestScope.pageDefIntVariable}</value>
+    </input-parameter>
+  </task-flow-call>
+  <control-flow-rule>
+    <from-activity-id>StartPage</from-activity-id>
+    <control-flow-case>
+      <from-outcome>EmpFlow</from-outcome>
+      <to-activity-id>emp-task-flow</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>TestPage</managed-bean-name>
+    <managed-bean-class>test.view.backing.TestPage</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

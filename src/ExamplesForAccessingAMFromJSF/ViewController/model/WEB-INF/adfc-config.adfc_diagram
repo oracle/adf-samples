@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">StartPage</property>
+      <property
+         name="page">/StartPage.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - StartPage&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - StartPage</property>
+      <property
+         name="y">242.0</property>
+      <property
+         name="x">176.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall4">
+      <property
+         name="taskFlowId">emp-task-flow</property>
+      <property
+         name="activityId">emp-task-flow</property>
+      <property
+         name="documentReference">/WEB-INF/emp-task-flow.xml</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-call - emp-task-flow&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">task-flow-call - emp-task-flow</property>
+      <property
+         name="y">243.5</property>
+      <property
+         name="x">410.3418</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="TaskFlowCall4">
+      <property
+         name="fromOutcome">EmpFlow</property>
+      <property
+         name="sdm:polyPoints">R50,217.0,242.0,369.3418,243.5,L50</property>
+   </ControlFlowCase>
+</SDM>

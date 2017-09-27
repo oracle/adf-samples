@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelBox text="Start Page" id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:outputText value="Enter a String value and an integer value, then press the button to start the task flow passing these values as task flow parameters..." id="ot1"/>
+          <af:inputText label="#{bindings.pageDefStringVariable1.hints.label}"
+                        id="it1"
+                        value="#{bindings.pageDefStringVariable1.inputValue}"/>
+          <af:inputText label="#{bindings.pageDefIntVariable1.hints.label}"
+                        id="it2"
+                        value="#{bindings.pageDefIntVariable1.inputValue}"/>
+          <af:commandButton text="Click to Start the EmpFlow task flow"
+                            id="cb1" action="EmpFlow">
+            <af:setActionListener from="#{bindings.pageDefStringVariable1.inputValue}"
+                                  to="#{requestScope.pageDefStringVariable}"/>
+             <af:setActionListener from="#{bindings.pageDefIntVariable1.inputValue}"
+                                  to="#{requestScope.pageDefIntVariable}"/>                                  
+          </af:commandButton>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelBox text="Emp Task Flow - taskFlowStringParam = [#{pageFlowScope.stringTaskFlowParam}], taskFlowIntParam = [#{pageFlowScope.intTaskFlowParam}]"
+                     id="pb1" showDisclosure="false" ramp="core">
+          <f:facet name="toolbar"/>
+          <af:panelBox text="Tip" id="pb2" background="light"
+                       ramp="highlight" showDisclosure="false">
+            <f:facet name="toolbar">
+              <af:commandButton text="Done" id="cb14" action="Done"/>
+            </f:facet>
+            <af:outputText value="Look in the JDev console log window to see method output..." id="ot11"/>
+          </af:panelBox>
+          <af:panelHeader text="These buttons invoke AM client methods using an action binding..." id="ph1">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:panelFormLayout id="pfl2">
+              <af:panelLabelAndMessage label="...declaratively, passing no arguments"
+                                       id="plam10">
+                <af:commandButton actionListener="#{bindings.customApplicationModuleMethodNoArgs.execute}"
+                                  text="customApplicationModuleMethodNoArgs"
+                                  id="cb6"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="...declaratively, passing two pageFlowScope attributes as arguments configured in pageDef metadata using EL expressions"
+                                       id="plam11">
+                <af:commandButton actionListener="#{bindings.customApplicationModuleMethod.execute}"
+                                  text="customApplicationModuleMethod"
+                                  id="cb5"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage id="plam9"
+                                       label="...programmatically, leaving both arguments to be evaluated declaratively from pageDef EL expressions">
+                <af:commandButton text="customApplicationModuleMethodWithResult"
+                                  id="cb13"
+                                  action="#{TestPage.onClickApplicationModuleMethodWithResult}"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:panelHeader>
+          <af:panelHeader text="These buttons invoke VO client methods using an action binding..." id="ph2">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:panelFormLayout id="pfl3">
+              <af:panelLabelAndMessage label="...declaratively, passing no arguments" id="plam12">
+                <af:commandButton actionListener="#{bindings.customViewObjectMethodNoArgs.execute}"
+                                  text="customViewObjectMethodNoArgs"
+                                  id="cb8" partialTriggers="t1"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="...declaratively, passing two pageFlowScope attributes as arguments configured in pageDef metadata using EL expressions" id="plam14">
+                <af:commandButton actionListener="#{bindings.customViewObjectMethod.execute}"
+                                  text="customViewObjectMethod"
+                                  id="cb7" partialTriggers="t1"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="...programmatically in a backing bean, passing both arguments using code" id="plam13">
+                <af:commandButton text="customViewObjectMethodWithResult"
+                                  id="cb12" partialTriggers="t1"
+                                  action="#{TestPage.onClickViewObjectMethodWithResult}"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:panelHeader>
+          <af:panelHeader text="These buttons invoke VO Row client methods using an action binding..." id="ph3">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+            <af:panelFormLayout id="pfl4">
+              <af:panelLabelAndMessage label="...declaratively, passing no arguments"
+                                       id="plam15">
+                <af:commandButton text="customViewRowMethodNoArgs" id="cb9"
+                                  partialTriggers="t1"
+                                  actionListener="#{bindings.customViewRowMethodNoArgs.execute}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="...declaratively, passing two pageFlowScope attributes as arguments configured in pageDef metadata using EL expressions"
+                                       id="plam16">
+                <af:commandButton text="customViewRowMethod" id="cb10"
+                                  partialTriggers="t1"
+                                  actionListener="#{bindings.customViewRowMethod.execute}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="...programmatically in a backing bean, assigning one argument in code and leaving one declaratively-configured argument"
+                                       id="plam17">
+                <af:commandButton text="customViewRowMethodWithResult" id="cb11"
+                                  partialTriggers="t1"
+                                  action="#{TestPage.onClickViewRowMethodWithResult}"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:panelHeader>
+          <af:panelFormLayout id="pfl1" maxColumns="3" rows="2">
+            <af:panelLabelAndMessage label="#{bindings.Empno.hints.label}"
+                                     id="plam8">
+              <af:outputText value="#{bindings.Empno.inputValue}" id="ot5">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Empno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Ename.hints.label}"
+                                     id="plam2">
+              <af:outputText value="#{bindings.Ename.inputValue}" id="ot2"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Job.hints.label}"
+                                     id="plam4">
+              <af:outputText value="#{bindings.Job.inputValue}" id="ot6"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Mgr.hints.label}"
+                                     id="plam7">
+              <af:outputText value="#{bindings.Mgr.inputValue}" id="ot7">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Mgr.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Hiredate.hints.label}"
+                                     id="plam5">
+              <af:outputText value="#{bindings.Hiredate.inputValue}" id="ot3">
+                <af:convertDateTime pattern="#{bindings.Hiredate.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Sal.hints.label}"
+                                     id="plam6">
+              <af:outputText value="#{bindings.Sal.inputValue}" id="ot4">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Sal.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Comm.hints.label}"
+                                     id="plam3">
+              <af:outputText value="#{bindings.Comm.inputValue}" id="ot1">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Comm.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Deptno.hints.label}"
+                                     id="plam1">
+              <af:outputText value="#{bindings.Deptno.inputValue}" id="ot8">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Deptno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <f:facet name="footer">
+              <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelGroupLayout id="pgl2">
+                  <af:commandButton actionListener="#{bindings.First.execute}"
+                                    text="First"
+                                    disabled="#{!bindings.First.enabled}"
+                                    partialSubmit="true" id="cb4"
+                                    partialTriggers="t1"/>
+                  <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                    text="Previous"
+                                    disabled="#{!bindings.Previous.enabled}"
+                                    partialSubmit="true" id="cb3"
+                                    partialTriggers="t1"/>
+                  <af:commandButton actionListener="#{bindings.Next.execute}"
+                                    text="Next"
+                                    disabled="#{!bindings.Next.enabled}"
+                                    partialSubmit="true" id="cb2"
+                                    partialTriggers="t1"/>
+                  <af:commandButton actionListener="#{bindings.Last.execute}"
+                                    text="Last"
+                                    disabled="#{!bindings.Last.enabled}"
+                                    partialSubmit="true" id="cb1"
+                                    partialTriggers="t1"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelFormLayout>
+          <af:table value="#{bindings.EmpView1.collectionModel}" var="row"
+                    rows="#{bindings.EmpView1.rangeSize}"
+                    emptyText="#{bindings.EmpView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.EmpView1.rangeSize}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.EmpView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.EmpView1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t1" contentDelivery="immediate">
+            <af:column sortProperty="Empno" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Empno.label}"
+                       id="c1">
+              <af:outputText value="#{row.Empno}" id="ot10">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.EmpView1.hints.Empno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Ename" sortable="false"
+                       headerText="#{bindings.EmpView1.hints.Ename.label}"
+                       id="c2">
+              <af:outputText value="#{row.Ename}" id="ot9"/>
+            </af:column>
+          </af:table>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

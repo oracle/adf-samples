@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7"
+                id="task_flow_definition_task_flow_definition_customApplicationModuleMethodWithResultPageDef"
+                Package="test.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="customApplicationModuleMethodWithResult"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customApplicationModuleMethodWithResult"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.customApplicationModuleMethodWithResult_AppModuleDataControl_dataProvider_customApplicationModuleMethodWithResult_result">
+      <NamedData NDName="stringArg" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDType="java.lang.Integer"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

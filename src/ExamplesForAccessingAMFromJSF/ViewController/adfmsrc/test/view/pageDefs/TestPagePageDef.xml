@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="TestPagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmpView1Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpView1Iterator" id="Empno">
+      <AttrNames>
+        <Item Value="Empno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Ename">
+      <AttrNames>
+        <Item Value="Ename"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Job">
+      <AttrNames>
+        <Item Value="Job"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Mgr">
+      <AttrNames>
+        <Item Value="Mgr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Hiredate">
+      <AttrNames>
+        <Item Value="Hiredate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Sal">
+      <AttrNames>
+        <Item Value="Sal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Comm">
+      <AttrNames>
+        <Item Value="Comm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpView1Iterator" id="Deptno">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpView1Iterator" id="First" RequiresUpdateModel="true"
+            Action="first"/>
+    <action IterBinding="EmpView1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EmpView1Iterator" id="Next" RequiresUpdateModel="true"
+            Action="next"/>
+    <action IterBinding="EmpView1Iterator" id="Last" RequiresUpdateModel="true"
+            Action="last"/>
+    <tree IterBinding="EmpView1Iterator" id="EmpView1">
+      <nodeDefinition DefName="test.model.EmpView" Name="EmpView10">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="customApplicationModuleMethod" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="customApplicationModuleMethod"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+    <methodAction id="customApplicationModuleMethodNoArgs"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customApplicationModuleMethodNoArgs"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"/>
+    <methodAction id="customViewObjectMethod" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="customViewObjectMethod"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.EmpView1"
+                  IterBinding="EmpView1Iterator">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+    <methodAction id="customViewObjectMethodNoArgs" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="customViewObjectMethodNoArgs"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.EmpView1"/>
+    <methodAction IterBinding="EmpView1Iterator"
+                  id="customViewRowMethodWithResult" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="customViewRowMethodWithResult"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.EmpView1Iterator.currentRow"
+                  IsLocalObjectReference="true"
+                  ReturnName="AppModuleDataControl.methodResults.customViewRowMethodWithResult_customViewRowMethodWithResult_customViewRowMethodWithResult_result">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+    <methodAction id="customViewObjectMethodWithResult"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customViewObjectMethodWithResult"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.EmpView1"
+                  ReturnName="AppModuleDataControl.methodResults.customViewObjectMethodWithResult_AppModuleDataControl_EmpView1_customViewObjectMethodWithResult_result"
+                  IterBinding="EmpView1Iterator">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+    <methodAction id="customApplicationModuleMethodWithResult"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customApplicationModuleMethodWithResult"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  ReturnName="AppModuleDataControl.methodResults.customApplicationModuleMethodWithResult_AppModuleDataControl_dataProvider_customApplicationModuleMethodWithResult_result">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+    <methodAction IterBinding="EmpView1Iterator" id="customViewRowMethodNoArgs"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customViewRowMethodNoArgs"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="bindings.EmpView1Iterator.currentRow"
+                  IsLocalObjectReference="true"/>
+    <methodAction IterBinding="EmpView1Iterator" id="customViewRowMethod"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="customViewRowMethod" IsViewObjectMethod="false"
+                  DataControl="AppModuleDataControl"
+                  InstanceName="bindings.EmpView1Iterator.currentRow"
+                  IsLocalObjectReference="true">
+      <NamedData NDName="stringArg"
+                 NDValue="#{pageFlowScope.stringTaskFlowParam}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="intArg" NDValue="#{pageFlowScope.intTaskFlowParam}"
+                 NDType="java.lang.Integer"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

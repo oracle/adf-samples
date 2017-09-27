@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Emp"
+  Version="11.1.1.54.7"
+  DBObjectType="table"
+  DBObjectName="EMP"
+  AliasName="Emp"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Empno"
+    IsNotNull="true"
+    Precision="4"
+    Scale="0"
+    ColumnName="EMPNO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ename"
+    Precision="10"
+    ColumnName="ENAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Job"
+    Precision="9"
+    ColumnName="JOB"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Mgr"
+    Precision="4"
+    Scale="0"
+    ColumnName="MGR"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Hiredate"
+    ColumnName="HIREDATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Sal"
+    Precision="7"
+    Scale="2"
+    ColumnName="SAL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Comm"
+    Precision="7"
+    Scale="2"
+    ColumnName="COMM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Deptno"
+    Precision="2"
+    Scale="0"
+    ColumnName="DEPTNO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="EmployeePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLOYEE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Empno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0010874">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0010874"/>
+      <Attr Name="_checkCondition" Value='"EMPNO" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Empno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WorksInDept">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DEPT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="WORKS_IN_DEPT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Emp.Deptno"/>
+    </AttrArray>
+  </Key>
+</Entity>

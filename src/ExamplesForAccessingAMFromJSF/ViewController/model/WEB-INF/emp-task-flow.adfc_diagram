@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">TestPage</property>
+      <property
+         name="page">/TestPage.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - TestPage&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - TestPage</property>
+      <property
+         name="y">213.5</property>
+      <property
+         name="x">246.5</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">Done</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Done&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Done</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">212.0</property>
+      <property
+         name="x">519.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">Done</property>
+      <property
+         name="sdm:polyPoints">R50,287.5,213.5,478.0,212.0,L50</property>
+   </ControlFlowCase>
+</SDM>
