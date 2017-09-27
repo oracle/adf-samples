@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ | Example menu definition file
+ +-->
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://srdemo.org/menus Menus.xsd"
+      xmlns="http://srdemo.org/menus">
+  <item global="true" labelKey="global.search" icon="images/searchicon_enabled.gif"/>
+  <item global="true" labelKey="global.help" icon="images/help.gif"/>
+  <item labelKey="file" viewId="/File.jspx" outcome="File">
+    <item labelKey="file.new"/>
+    <item labelKey="file.print" viewId="/FilePrint.jspx" outcome="FilePrint">
+      <item labelKey="file.print.printer"/>
+      <item labelKey="file.print.fax"/>
+    </item>
+    <item labelKey="file.printpreview" viewId="/FilePrintPreview.jspx"
+          outcome="FilePrintPreview"/>
+  </item>
+  <item labelKey="edit" viewId="/Edit.jspx" outcome="Edit" roles="manager"
+        displayIfUnauthorized="true">
+    <item labelKey="edit.cut"/>
+    <item labelKey="edit.copy"/>
+    <item labelKey="edit.paste"/>
+    <item labelKey="edit.pastespecial"/>
+  </item>
+  <item labelKey="view" viewId="/View.jspx" roles="user,manager" outcome="View">
+    <item labelKey="view.zoom"/>
+    <item labelKey="view.fonts"/>
+  </item>
+</menu>

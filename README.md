@@ -196,3 +196,4 @@ Each sample is also available in downloadable form in the zips directory.
 * ValueEncodingDecodingExample
 * VariableInListUsingDBFunction
 * ViewLinkOnParameterizedTableFunction
+* XMLMenuManager

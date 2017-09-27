@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+    <locale-config>
+      <supported-locale>it</supported-locale>
+    </locale-config>
+  </application>
+  <managed-bean>
+    <managed-bean-name>AppMenu</managed-bean-name>
+    <managed-bean-class>oracle.srdemo.view.menu.XMLMenuDefinition</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+    <managed-property>
+      <property-name>menuDefinitionFile</property-name>
+      <value>SRDemoMenus.xml</value>
+    </managed-property>
+  </managed-bean>
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>Edit</from-outcome>
+      <to-view-id>/Edit.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>File</from-outcome>
+      <to-view-id>/File.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>FilePrint</from-outcome>
+      <to-view-id>/FilePrint.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>FilePrintPreview</from-outcome>
+      <to-view-id>/FilePrintPreview.jspx</to-view-id>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>View</from-outcome>
+      <to-view-id>/View.jspx</to-view-id>
+    </navigation-case>  
+  </navigation-rule>
+</faces-config>

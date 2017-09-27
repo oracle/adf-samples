@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://srdemo.org/menus Menus.xsd"
+      xmlns="http://srdemo.org/menus">
+  <item global="true" labelKey="global.1" label="OptionOne" outcome="One"/>
+  <item global="true" labelKey="global.2" label="OptionTwo" outcome="Two"
+        roles="role1,role2" hideIfNotInRoleNotInRole="true"/>
+  <item global="true" labelKey="global.3" label="OptionThree" outcome="Three"
+        roles="role1"/>
+  <item global="true" labelKey="global.4" label="OptionFour" outcome="Four"
+        readOnly="true"/>
+  <item labelKey="tab.1" label="TabOne" outcome="One">
+    <item labelKey="tab.1.1" label="TabOne_1" outcome="One"/>
+    <item labelKey="tab.1.2" label="TabOne_2" outcome="One">
+      <item labelKey="tab.1.2.1" label="TabOne_2_1" viewId="/Foo.jspx"/>
+      <item labelKey="tab.1.2.2" label="TabOne_2_2" viewId="/Foo3.jspx"
+            roles="role3,role2"/>
+    </item>
+    <item labelKey="tab.1.3" label="TabOne_3" outcome="One"/>
+    <item labelKey="tab.1.4" label="TabOne_4" outcome="One"/>
+  </item>
+  <item labelKey="tab.2" label="TabTwo" outcome="Two">
+    <item labelKey="tab.2.1" label="TabTwo_1" outcome="One"/>
+    <item labelKey="tab.2.2" label="TabTwo_2" outcome="One"/>
+    <item labelKey="tab.2.3" label="TabTwo_3" outcome="One"/>
+  </item>
+  <item labelKey="tab.3" label="TabThree" outcome="Three">
+    <item labelKey="tab.3.1" label="TabThree_1" outcome="One"/>
+    <item labelKey="tab.3.2" label="TabThree_2" outcome="One"/>
+  </item>
+</menu>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!-- $Header: /cvs/XMLMenuManager/ViewController/src/Menus.xsd,v 1.2 2005/12/01 15:34:13 steve Exp $ -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://srdemo.org/menus"
+            targetNamespace="http://srdemo.org/menus"
+            elementFormDefault="qualified">
+  <xsd:element name="menu">
+    <xsd:annotation>
+      <xsd:documentation>
+        A sample element
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+        <xsd:element ref="item"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="item">
+    <xsd:complexType>
+      <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+        <xsd:element ref="item"/>
+      </xsd:sequence>
+      <xsd:attribute name="label" type="xsd:string"/>
+      <xsd:attribute name="labelKey" type="xsd:string"/>
+      <xsd:attribute name="outcome" type="xsd:string"/>
+      <xsd:attribute name="roles" type="xsd:string"/>
+      <xsd:attribute name="viewId" type="xsd:string"/>
+      <xsd:attribute name="global" type="xsd:boolean"/>
+      <xsd:attribute name="displayIfUnauthorized" type="xsd:boolean"/>
+      <xsd:attribute name="icon"/>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
