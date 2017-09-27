@@ -1,0 +1,65 @@
+/*******************************************************************************
+ *
+ * Copyright (c) 2013 Oracle Corporation.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the MIT License
+ *
+ * Contributors:
+ *   Duncan Mills
+ *
+ *
+ *******************************************************************************/ 
+.revealPanelTopicIcon {
+    width:40px;
+    height:40px;
+}
+
+.revealPanelBackground{
+    background-color:rgb(231,231,231);    
+}
+
+.revealTopicPanel{
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgb(210,211,216);
+  background: -webkit-gradient(linear, left top, left bottom, 
+                 color-stop(0%,rgb(231,231,231)), 
+                 color-stop(21%,rgb(210,211,216)), 
+                 color-stop(49%,rgb(199,202,214)), 
+                 color-stop(80%,rgb(214,216,219)), 
+                 color-stop(100%,rgb(231,231,231)));
+}
+
+.triangleMarker {
+  width:0px;
+  height:0px;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:8px solid rgb(247,255,214);  
+}
+
+.triangleMarkerHidden {
+  width:0px;
+  height:0px;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-bottom:8px solid transparent;   
+}
+
+.revealPanel {
+    background-color:rgb(247,255,214);
+}
+
+.revealPanelAnimated {
+    background-color:rgb(247,255,214);
+    -webkit-transform: scale(1,1);
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-timing-function:ease-out;
+    -webkit-transition-duration:0.2s;
+}
+
+
+.revealPanelHidden {
+    -webkit-transform: scale(1,0);
+}

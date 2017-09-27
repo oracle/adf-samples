@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Reveal Panel Demo">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/WEB-INF/demoTemplate.jspx" id="pt1">
+          <f:facet name="content">
+            <af:panelSplitter id="ps1">
+              <f:facet name="first">
+                <af:panelGridLayout id="pgl3">
+                  <af:gridRow marginTop="20px" id="gr1">
+                    <af:gridCell width="100%" marginStart="10px" marginEnd="5px" valign="top" halign="stretch" id="gc1">
+                      <af:panelGroupLayout layout="scroll" id="pgl4">
+                      <af:outputText value="This page shows a version of the revealPanel where the hide and releveal is managed through a server side manager class written in java"
+                                     id="ot2"/>
+                      <af:outputText value="A small amount of JavaScript is used to handle the click event in the Topic panel which is then proxied into a server side handler"
+                                     id="ot14"/>
+                                     
+                      </af:panelGroupLayout>               
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelGroupLayout layout="vertical" id="pgl2">
+                  <af:panelHeader text="Click Any Topic Below to Expand" id="ph4"/>
+                  <af:panelGridLayout id="pgl1" styleClass="revealPanelBackground">
+                    <af:declarativeComponent viewId="/components/revealPanelRow.jspx" rowNumber="0"
+                                             iconSource="/images/head.png" iconShortDesc="Some option"
+                                             title="Employee Details" subTitle="Fred Flintstone" id="dc3">
+                      <f:facet name="disclosedArea">
+                        <af:panelHeader text="Information" id="ph1">
+                          <af:panelList id="pl1">
+                            <af:outputText value="Some" id="ot3"/>
+                            <af:outputText value="interesting" id="ot4"/>
+                            <af:outputText value="but" id="ot5"/>
+                            <af:outputText value="long" id="ot6"/>
+                            <af:outputText value="information" id="ot7"/>
+                            <af:outputText value="about" id="ot8"/>
+                            <af:outputText value="Fred" id="ot9"/>
+                            <af:outputText value="Flintstone" id="ot10"/>
+                          </af:panelList>
+                        </af:panelHeader>
+                      </f:facet>
+                    </af:declarativeComponent>
+                    <af:declarativeComponent viewId="/components/revealPanelRow.jspx" rowNumber="1"
+                                             iconSource="/images/sterling.png" iconShortDesc="Some option"
+                                             title="Compensation"
+                                             subTitle="Current Salary: £#{viewScope.demoData.salary}" id="dc4">
+                      <f:facet name="disclosedArea">
+                        <af:panelHeader text="Change Salary" id="ph2">
+                          <af:panelFormLayout id="pfl1">
+                            <af:inputNumberSlider label="Salary" value="#{viewScope.demoData.salary}" id="ins1"
+                                                  minimum="1000" maximum="50000" majorIncrement="5000"
+                                                  minorIncrement="1000" contentStyle="width:600px;"/>
+                          </af:panelFormLayout>
+                          <af:spacer height="10"/>
+                        </af:panelHeader>
+                      </f:facet>
+                    </af:declarativeComponent>
+                    <af:declarativeComponent viewId="/components/revealPanelRow.jspx" rowNumber="2"
+                                             iconSource="/images/year.png" iconShortDesc="Some option"
+                                             title="Significant Dates"
+                                             subTitle="Births, deaths and marriages..."
+                                             id="dc2">
+                      <f:facet name="disclosedArea">
+                       <af:panelHeader text="A smaller set of Information" id="ph3">
+                        <af:panelList id="pl2">
+                          <af:outputText value="One" id="ot11"/>
+                          <af:outputText value="Two" id="ot12"/>
+                          <af:outputText value="Three" id="ot13"/>
+                        </af:panelList>
+                        </af:panelHeader>
+                      </f:facet>
+                    </af:declarativeComponent>
+                  </af:panelGridLayout>
+                  <af:spacer id="s2" height="10"/>
+                  <af:outputText value="Some content after the revealPanel which you can see pushed down as the panel expands"
+                                 id="ot1" styleClass="AFInstructionText"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+          <f:attribute name="pageTitle" value="RevealPanel - Server Side Verson"/>
+          <f:attribute name="firstPage" value="false"/>
+        </af:pageTemplate>
+      </af:form>
+      <f:facet name="metaContainer">
+        <af:resource type="css" source="/css/revealPanelStyles.css"/>
+        <af:resource type="javascript" source="/js/revealPanel.js"/>
+      </f:facet>
+    </af:document>
+  </f:view>
+</jsp:root>

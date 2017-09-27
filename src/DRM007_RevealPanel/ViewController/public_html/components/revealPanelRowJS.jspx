@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+<!--
+/*******************************************************************************
+ *
+ * Copyright (c) 2013 Oracle Corporation.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the MIT License
+ *
+ * Contributors:
+ *   Duncan Mills
+ *
+ *
+ *******************************************************************************/ 
+-->  
+  <af:componentDef var="attrs" componentVar="component">
+    <af:gridRow height="50px" id="dc_topicRow" marginTop="0px" marginBottom="0px">
+      <af:gridCell columnSpan="3" id="gc9" halign="stretch">
+        <af:panelGridLayout id="dc_pgl1" styleClass="revealTopicPanel">
+          <af:gridRow marginTop="5px" height="auto" id="dc_gr2">
+            <af:gridCell marginStart="10px" width="60px" rowSpan="2" id="dc_gc2" halign="start" valign="middle">
+              <af:image source="#{attrs.iconSource}" shortDesc="#{attrs.iconShortDesc}" styleClass="revealPanelTopicIcon" id="dc_i1"/>
+            </af:gridCell>
+            <af:gridCell marginStart="10px" marginEnd="5px" width="100%" halign="stretch" id="dc_gc1" valign="middle">
+              <af:outputText value="#{attrs.title}" styleClass="AFHeaderLevelOne" id="dc_ot1"/>
+            </af:gridCell>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" marginBottom="10px" height="12px" id="dc_gr3">
+            <af:gridCell marginStart="10px" marginEnd="5px" width="100%" halign="stretch" id="dc_gc4">
+              <af:outputText value="#{attrs.subTitle}" id="dc_ot2" styleClass="AFInstructionText"></af:outputText>
+            </af:gridCell>
+          </af:gridRow>
+          <af:clientListener method="revealTopicPanelClickedJS" type="click"/>
+          <af:clientAttribute name="revealPanelLocator" value="#{attrs.panelGroup}:#{attrs.rowNumber}:0"/>
+        </af:panelGridLayout>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow height="auto" marginBottom="0px" id="dc_triangleRow">
+      <af:gridCell width="80px" id="dc_gc10"/>
+      <af:gridCell width="10px" valign="bottom" id="dc_gc3">
+        <af:panelGroupLayout layout="vertical" styleClass="triangleMarker" clientComponent="true"
+                             visible="false" id="dc_tri">
+         <af:clientAttribute name="revealPanelLocator" value="#{attrs.panelGroup}:#{attrs.rowNumber}:1"/>                       
+         </af:panelGroupLayout>                    
+          
+      </af:gridCell>
+      <af:gridCell width="100%" id="dc_gc5"/>
+    </af:gridRow>
+    <af:gridRow height="auto" marginTop="0px" marginBottom="0px" id="dc_revealRow">
+      <af:gridCell columnSpan="3" id="dc_gc11" halign="stretch" valign="top">
+        <af:panelGroupLayout layout="vertical" visible="false" clientComponent="true"
+                             styleClass="revealPanel" id="dc_pgl3">
+          <af:clientAttribute name="revealPanelLocator" value="#{attrs.panelGroup}:#{attrs.rowNumber}:2"/>
+          <af:facetRef facetName="disclosedArea"/>
+        </af:panelGroupLayout>
+      </af:gridCell>
+    </af:gridRow>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>revealPanelRow</display-name>
+        <facet>
+          <description>Content of the panel that will be revealed</description>
+          <facet-name>disclosedArea</facet-name>
+        </facet>
+        <attribute>
+          <description>Within a single revealPanel group each topic must have unique sequential id This is used to track
+                       the "open" topic and must be a zero indexed integer</description>
+          <attribute-name>rowNumber</attribute-name>
+          <attribute-class>java.lang.Integer</attribute-class>
+          <required>true</required>
+        </attribute>
+        <attribute>
+          <attribute-name>iconSource</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+        <attribute>
+          <attribute-name>iconShortDesc</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+        <attribute>
+          <attribute-name>title</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <required>true</required>
+        </attribute>
+        <attribute>
+          <attribute-name>subTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+        <attribute>
+          <description>To be used in client side handling when there may be more than one revealPanel set on the same
+                       page</description>
+          <attribute-name>panelGroup</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>revealPanel</default-value>
+        </attribute>
+        <component-extension>
+          <component-tag-namespace>oracle.demo</component-tag-namespace>
+          <component-taglib-uri>/oracleRevealPanelRowJS</component-taglib-uri>
+        </component-extension>
+      </component>
+    </af:xmlContent>
+  </af:componentDef>
+</jsp:root>

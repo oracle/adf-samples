@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="reveal-in-fragment-btf">
+    <default-activity id="__1">noReveal</default-activity>
+    <view id="noReveal">
+      <page>/fragments/noReveal.jsff</page>
+    </view>
+    <view id="showReveal">
+      <page>/fragments/showReveal.jsff</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">noReveal</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__6">show</from-outcome>
+        <to-activity-id id="__5">showReveal</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">showReveal</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">hide</from-outcome>
+        <to-activity-id id="__9">noReveal</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

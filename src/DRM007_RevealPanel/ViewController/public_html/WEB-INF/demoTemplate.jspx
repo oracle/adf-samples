@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelStretchLayout topHeight="50px" id="pt_psl1">
+      <f:facet name="top">
+        <af:panelGridLayout styleClass="AFBrandingBar AFStretchWidth" id="pt_pgl1">
+          <af:gridRow height="50px" id="pt_gr1">
+            <af:gridCell valign="middle" id="pt_gc1">
+              <af:goLink destination="index.html" shortDesc="Restart application" id="pt_gl1">
+                <af:spacer id="pt_s1" styleClass="AFBrandingBarLogo"/>
+              </af:goLink>
+            </af:gridCell>
+            <af:gridCell valign="middle" marginStart="10px" id="pt_gc2" width="100%">
+              <af:outputText value="#{attrs.pageTitle}" id="pt_ot1" styleClass="AFBrandingBarTitle"/>
+            </af:gridCell>
+            <af:gridCell marginEnd="10px" width="100px" valign="middle" halign="end" id="pt_gc3">
+              <af:commandLink action="menu" text="Return to menu page" rendered="#{!attrs.firstPage}" id="pt_cl1"/>
+            </af:gridCell>
+          </af:gridRow>
+        </af:panelGridLayout>
+      </f:facet>
+      <f:facet name="center">
+        <af:facetRef facetName="content"/>
+      </f:facet>
+    </af:panelStretchLayout>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>demoTemplate</display-name>
+        <facet>
+          <description>Page Demo content goes here</description>
+          <facet-name>content</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>pageTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>Demo</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>firstPage</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>false</default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="prototype">
+    <page>/prototype.jspx</page>
+  </view>
+  <view id="menu">
+    <page>/menu.jspx</page>
+  </view>
+  <view id="jsprototype">
+    <page>/jsprototype.jspx</page>
+  </view>
+  <control-flow-rule id="__8">
+    <from-activity-id id="__9">menu</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome id="__12">prototype1</from-outcome>
+      <to-activity-id id="__11">prototype</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__14">
+      <from-outcome id="__15">prototype2</from-outcome>
+      <to-activity-id id="__13">jsprototype</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__16">
+    <from-activity-id id="__17">*</from-activity-id>
+    <control-flow-case id="__19">
+      <from-outcome id="__20">menu</from-outcome>
+      <to-activity-id id="__18">menu</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name id="__4">revealManager</managed-bean-name>
+    <managed-bean-class id="__2">oracle.demo.view.RevealPanelManager</managed-bean-class>
+    <managed-bean-scope id="__3">view</managed-bean-scope>
+    <managed-property id="__7">
+      <property-name id="__6">panelCount</property-name>
+      <property-class>java.lang.Long</property-class>
+      <value id="__5">3</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name id="__25">revealComponent</managed-bean-name>
+    <managed-bean-class id="__27">oracle.demo.view.RevealRowComponentHandler</managed-bean-class>
+    <managed-bean-scope id="__26">backingBean</managed-bean-scope>
+    <managed-property id="__29">
+      <property-name id="__30">manager</property-name>
+      <property-class>oracle.demo.view.RevealPanelManager</property-class>
+      <value id="__31">#{viewScope.revealManager}</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__35">
+    <managed-bean-name id="__34">demoData</managed-bean-name>
+    <managed-bean-class id="__33">oracle.demo.view.data.DemoData</managed-bean-class>
+    <managed-bean-scope id="__32">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

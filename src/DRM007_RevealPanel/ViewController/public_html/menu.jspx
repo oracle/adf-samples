@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/WEB-INF/demoTemplate.jspx" id="pt1">
+          <f:facet name="content">
+            <af:panelGridLayout id="pgl2">
+              <af:gridRow marginTop="20px" height="20px" id="gr7">
+                <af:gridCell marginStart="50px" columnSpan="3" id="gc18">
+                  <af:outputText value="It might be a good idea to click on one of the buttons below..." id="ot2"
+                                 styleClass="AFHeaderLevelOne"/>
+                </af:gridCell>
+              </af:gridRow>            
+              <af:gridRow marginTop="5px" height="50%" id="gr3">
+                <af:gridCell marginStart="5px" width="50%" id="gc10"/>
+                <af:gridCell marginStart="5px" width="300px" id="gc4"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc8"/>
+              </af:gridRow>
+              <af:gridRow marginTop="40px" marginBottom="40px" height="120px" id="gr6">
+                <af:gridCell marginStart="5px" width="50%" id="gc12"/>
+                <af:gridCell marginStart="5px" width="300px" halign="stretch" valign="stretch" id="gc17" >
+                  <af:commandButton text="Version 1 - Server-side management" action="prototype1" id="cb1"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc15"/>
+              </af:gridRow>
+              <af:gridRow marginTop="40px" marginBottom="40px" height="120px" id="gr4">
+                <af:gridCell marginStart="5px" width="50%" id="gc16"/>
+                <af:gridCell marginStart="5px" width="300px" halign="stretch" valign="stretch" id="gc9">
+                  <af:commandButton text="Version 2 - JavaScript" disabled="false" action="prototype2" id="cb2"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc11"/>
+              </af:gridRow>
+              <af:gridRow height="50%" id="gr5">
+                <af:gridCell marginStart="5px" width="50%" id="gc5"/>
+                <af:gridCell marginStart="5px" width="300px" id="gc14"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc7"/>
+              </af:gridRow>
+            </af:panelGridLayout>          
+          </f:facet>
+          <f:attribute name="pageTitle" value="RevealPanel Demo Menu"/>
+          <f:attribute name="firstPage" value="true"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

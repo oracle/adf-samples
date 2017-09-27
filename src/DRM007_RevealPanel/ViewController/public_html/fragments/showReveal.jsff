@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" dimensionsFrom="children" topHeight="30" bottomHeight="60">
+    <f:facet name="top">
+      <af:panelHeader text="RevealPanel on Page Fragment" id="ph1" size="1"/>
+    </f:facet>
+    <f:facet name="center">
+
+      <af:panelGridLayout id="pgl1" styleClass="revealPanelBackground AFStretchWidth" inlineStyle="height:600px;background-color:red;">
+
+        <af:declarativeComponent viewId="/components/revealPanelRowJS.jspx" rowNumber="0" panelGroup="reveal3"
+                                 iconSource="/images/head.png" iconShortDesc="Some option" title="Employee Details 3"
+                                 subTitle="Pebbles Flintstone" id="dc3">
+          <f:facet name="disclosedArea">
+            <af:panelHeader text="Information" id="ph4">
+              <af:panelList id="pl1">
+                <af:outputText value="Some" id="ot3"/>
+                <af:outputText value="interesting" id="ot4"/>
+                <af:outputText value="but" id="ot5"/>
+                <af:outputText value="long" id="ot6"/>
+                <af:outputText value="information" id="ot7"/>
+                <af:outputText value="about" id="ot8"/>
+                <af:outputText value="Pebbles" id="ot9"/>
+                <af:outputText value="Flintstone" id="ot10"/>
+              </af:panelList>
+            </af:panelHeader>
+          </f:facet>
+        </af:declarativeComponent>
+        <af:declarativeComponent viewId="/components/revealPanelRowJS.jspx" rowNumber="1" panelGroup="reveal3"
+                                 iconSource="/images/sterling.png" iconShortDesc="Some option" title="Compensation"
+                                 subTitle="Current Salary: £1000" id="dc4">
+          <f:facet name="disclosedArea">
+            <af:panelHeader text="Change Salary" id="ph2">
+              <af:panelFormLayout id="pfl1">
+                <af:inputNumberSlider label="Salary" value="1000" id="ins1" minimum="1000"
+                                      maximum="50000" majorIncrement="5000" minorIncrement="1000"
+                                      contentStyle="width:600px;"/>
+              </af:panelFormLayout>
+              <af:spacer height="10" id="s1"/>
+            </af:panelHeader>
+          </f:facet>
+        </af:declarativeComponent>
+        <af:declarativeComponent viewId="/components/revealPanelRowJS.jspx" rowNumber="2" panelGroup="reveal3"
+                                 iconSource="/images/year.png" iconShortDesc="Some option" title="Significant Dates"
+                                 id="dc2">
+          <f:facet name="disclosedArea">
+            <af:panelHeader text="A smaller set of Information" id="ph3">
+              <af:panelList id="pl2">
+                <af:outputText value="One" id="ot11"/>
+                <af:outputText value="Two" id="ot12"/>
+                <af:outputText value="Three" id="ot13"/>
+              </af:panelList>
+            </af:panelHeader>
+          </f:facet>
+        </af:declarativeComponent>
+      </af:panelGridLayout>
+    </f:facet>
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl2" layout="vertical" halign="start">
+        <af:spacer height="10" id="s3"/>
+        <af:commandButton text="Return to start fragment" id="cb1" action="hide"/>
+        <af:spacer height="10" id="s2"/>
+        <af:outputText value="Pressing this button will effectivly invalidate the compoent references that the revealPanel model is holding in relation to a particular group Id.  This test helps us ensure that the code can effectivly recover from this."
+                       id="ot1"/> 
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

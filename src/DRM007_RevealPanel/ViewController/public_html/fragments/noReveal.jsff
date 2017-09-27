@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout dimensionsFrom="parent" topHeight="30" id="psl1">
+    <f:facet name="top">
+      <af:spacer id="s1"/>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll">
+        <af:spacer height="10" id="s3"/>
+        <af:commandButton text="Show Fragment containing PanelReveal" id="cb1" action="show"/>
+        <af:spacer id="s2" height="10"/>
+        <af:outputText value="This segement shows how the management of the panels can survive even when the JS components that represent the UI elements are destroyed and re-created within the lifetime of the JavaScript Cache which is held at the page (document) level"></af:outputText>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

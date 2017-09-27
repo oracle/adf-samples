@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<declarativeCompDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/declarativecomp">
+  <declarativecomp-jsp-ui-def>/components/revealPanelRow.jspx</declarativecomp-jsp-ui-def>
+  <declarativecomp-jsp-ui-def>/components/revealPanelRowJS.jspx</declarativecomp-jsp-ui-def>
+  <declarativecomp-taglib>
+    <taglib-name>oracleRevealPanelDemo</taglib-name>
+    <taglib-uri>/oracleRevealPanelDemo</taglib-uri>
+    <taglib-prefix>orp</taglib-prefix>
+  </declarativecomp-taglib>
+</declarativeCompDefs>

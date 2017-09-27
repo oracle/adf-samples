@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>/WEB-INF/demoTemplate.jspx</pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

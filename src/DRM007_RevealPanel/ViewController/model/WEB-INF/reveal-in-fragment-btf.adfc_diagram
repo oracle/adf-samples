@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">noReveal</property>
+      <property
+         name="page">/fragments/noReveal.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>noReveal&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">320.8672</property>
+      <property
+         name="x">545.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">showReveal</property>
+      <property
+         name="page">/fragments/showReveal.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>showReveal&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">325.73438</property>
+      <property
+         name="x">894.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">show</property>
+      <property
+         name="sdm:polyPoints">R46,586.0638,317.30078,853.0,322.16797,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">hide</property>
+      <property
+         name="sdm:polyPoints">L54,852.9362,329.16797,586.0,324.30078,R54</property>
+   </ControlFlowCase>
+</SDM>
