@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>extendedSkyros.desktop</id>
+    <family>extendedSkyros</family>
+    <extends>skyros-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/extendedSkyros.css</style-sheet-name>
+    <bundle-name>oracle.demo.view.skinBundle</bundle-name>
+    <metadata>
+      <description-bundle>oracle.demo.view.skinBundle</description-bundle>
+    </metadata>
+  </skin>
+</skins>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Compressed PanelTabbed Demo">
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="60" id="psl1">
+          <f:facet name="top">
+            <af:panelGroupLayout layout="horizontal" styleClass="AFBrandingBar" inlineStyle="width:100%;" id="pgl2">
+              <af:spacer styleClass="AFBrandingBarLogo" id="s1"/>
+              <af:spacer width="20" id="s2"/>
+              <af:outputText value="Conveyor PanelTabbed Demo" styleClass="AFBrandingBarTitle" id="ot1"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelGridLayout id="pgl1">
+              <af:gridRow marginTop="5px" height="50%" id="gr2">
+                <af:gridCell marginStart="5px" width="50%" id="gc5"/>
+                <af:gridCell marginStart="5px" width="200px" id="gc2"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc7"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="200px" id="gr3">
+                <af:gridCell marginStart="5px" width="50%" id="gc9"/>
+                <af:gridCell marginStart="5px" width="200px" id="gc4" halign="stretch" valign="stretch">
+                  <af:panelTabbed position="above"  dimensionsFrom="parent" id="pt1">
+                    <af:showDetailItem text="Tab 1" id="sdi1"/>
+                    <af:showDetailItem text="Tab 2" id="sdi2"/>
+                    <af:showDetailItem text="Tab 3" id="sdi3"/>
+                    <af:showDetailItem text="Tab 4" id="sdi4"/>
+                    <af:showDetailItem text="Tab 5" id="sdi5"/>
+                    <af:showDetailItem text="Tab 6" id="sdi6"/>
+                    <af:showDetailItem text="Tab 7" id="sdi7"/>
+                    <af:showDetailItem text="Tab 8" id="sdi8"/>
+                    <af:showDetailItem text="Tab 9" id="sdi9"/>
+                    <af:showDetailItem text="Tab 10" id="sdi10"/>
+                  </af:panelTabbed>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc6"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" marginBottom="5px" height="50%" id="gr1">
+                <af:gridCell marginStart="5px" width="50%" id="gc8"/>
+                <af:gridCell marginStart="5px" width="200px" id="gc1"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc3"/>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config" xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults useBindVarsForViewCriteriaLiterals="true" useBindValuesInFindByKey="true" executeEmptyOnException="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID" value="CompressedTabs.oracle.demo"/>
+  </adf:adf-properties-child>
+</adf-config>
