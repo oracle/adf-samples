@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<project>
+   <name>toplink_mappings</name>
+   <productVersion>9.0.4</productVersion>
+   <schemaVersion>5.0</schemaVersion>
+   <project-database>
+      <database>
+         <name></name>
+         <platform-name></platform-name>
+      </database>
+   </project-database>
+   <ejb-policy>
+      <project-ejb-policy>
+         <ejb-persistence-type>No EJB</ejb-persistence-type>
+      </project-ejb-policy>
+   </ejb-policy>
+   <repository>
+      <class-repository empty-aggregate="true"/>
+   </repository>
+   <project-sequencing-policy>
+      <sequencing-policy>
+         <preallocation-size>50</preallocation-size>
+         <sequencing-type>Use default sequencing</sequencing-type>
+         <name-field-handle>
+            <field-handle empty-aggregate="true"/>
+         </name-field-handle>
+         <counter-field-handle>
+            <field-handle empty-aggregate="true"/>
+         </counter-field-handle>
+      </sequencing-policy>
+   </project-sequencing-policy>
+   <defaults-policy>
+      <project-defaults-policy>
+         <use-method-accessing>false</use-method-accessing>
+         <bind-all-parameters>false</bind-all-parameters>
+         <cache-all-statements>false</cache-all-statements>
+         <project-identity-policy>
+            <identity-policy>
+               <identity-map-size>100</identity-map-size>
+               <identity-map-class-name>oracle.toplink.internal.identitymaps.SoftCacheWeakIdentityMap</identity-map-class-name>
+            </identity-policy>
+         </project-identity-policy>
+      </project-defaults-policy>
+   </defaults-policy>
+   <project-table-generation-policy>
+      <table-generation-policy>
+         <default-primary-key-name>ID</default-primary-key-name>
+         <primary-key-search-pattern>*ID</primary-key-search-pattern>
+      </table-generation-policy>
+   </project-table-generation-policy>
+</project>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="Params"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="9.0.5.16.0"
+   BeanClass="test.model.Params" >
+   <Contents >
+      <Attribute
+         Name="intParam"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="intParam"
+         Type="int" >
+      </Attribute>
+      <Attribute
+         Name="stringParam"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="stringParam"
+         Type="java.lang.String" >
+      </Attribute>
+   </Contents>
+</JavaBean>

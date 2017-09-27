@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="PersonService"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="9.0.5.16.0"
+   BeanClass="test.model.PersonService" >
+   <Contents >
+      <AccessorAttribute
+         id="people"
+         BeanClass="test.model.Person"
+         IsCollection="true"
+         Type="java.util.Collection" >
+      </AccessorAttribute>
+   </Contents>
+</JavaBean>

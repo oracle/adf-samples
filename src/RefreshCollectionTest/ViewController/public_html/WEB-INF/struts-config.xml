@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="DataForm" type="oracle.adf.controller.struts.forms.BindingContainerActionForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/SetupParameters" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/SetupParameters.jsp">
+      <set-property property="modelReference" value="SetupParametersUIModel"/>
+      <forward name="ShowResults" path="/SetupCollection.do"/>
+    </action>
+    <action path="/SetupCollection" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataAction" name="DataForm">
+      <set-property property="modelReference" value="SetupCollectionUIModel"/>
+      <set-property property="methodName" value="SetupCollectionUIModel.setupPeopleCollection"/>
+      <set-property property="resultLocation" value="${requestScope.methodResult}"/>
+      <set-property property="numParams" value="2"/>
+      <set-property property="paramNames[0]" value="${bindings.param0}"/>
+      <set-property property="paramNames[1]" value="${bindings.param1}"/>
+      <forward name="success" path="/Results.do"/>
+    </action>
+    <action path="/Results" className="oracle.adf.controller.struts.actions.DataActionMapping" type="test.controller.ResultsAction" name="DataForm" parameter="/Results.jsp">
+      <set-property property="modelReference" value="ResultsUIModel"/>
+    </action>
+  </action-mappings>
+  <message-resources parameter="test.controller.ApplicationResources"/>
+</struts-config>

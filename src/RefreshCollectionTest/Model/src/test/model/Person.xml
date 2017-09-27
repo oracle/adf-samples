@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="Person"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="9.0.5.16.0"
+   BeanClass="test.model.Person" >
+   <Contents >
+      <Attribute
+         Name="age"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="age"
+         Type="int" >
+      </Attribute>
+      <Attribute
+         Name="name"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="name"
+         Type="java.lang.String" >
+      </Attribute>
+   </Contents>
+</JavaBean>

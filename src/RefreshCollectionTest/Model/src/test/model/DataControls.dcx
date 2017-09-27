@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DataControlConfigs
+   id="DataControls"
+   xmlns="http://xmlns.oracle.com/adfm/configuration"
+   version="9.0.5.16.0" >
+   <Contents >
+      <DataControl
+         id="PersonServiceDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.PersonService"
+         BeanClass="test.model.PersonService" >
+      </DataControl>
+      <DataControl
+         id="ParamsDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.Params"
+         BeanClass="test.model.Params" >
+      </DataControl>
+   </Contents>
+</DataControlConfigs>

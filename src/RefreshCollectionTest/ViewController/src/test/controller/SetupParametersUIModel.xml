@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="SetupParametersUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.controller"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="ParamsDataControl_rootIter"
+         Binds="ParamsDataControl.root"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="intParam"
+         SubType="DCTextField"
+         IterBinding="ParamsDataControl_rootIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="intParam" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="stringParam"
+         SubType="DCTextField"
+         IterBinding="ParamsDataControl_rootIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="stringParam" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>

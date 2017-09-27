@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="9.0.5.16.0"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="ParamsDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.Params"
+         BeanClass="test.model.Params" >
+      </DataControl>
+      <DataControl
+         id="PersonServiceDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.PersonService"
+         BeanClass="test.model.PersonService" >
+      </DataControl>
+      <Containee
+         id="SetupCollectionUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.controller.SetupCollectionUIModel" >
+      </Containee>
+      <Containee
+         id="ResultsUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.controller.ResultsUIModel" >
+      </Containee>
+      <Containee
+         id="SetupParametersUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.controller.SetupParametersUIModel" >
+      </Containee>
+   </Contents>
+</JboProject>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="SetupCollectionUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.controller"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="ParamsDataControl_rootIter"
+         Binds="ParamsDataControl.root"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="setupPeopleCollection"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="false"
+         DataControl="PersonServiceDataControl"
+         InstanceName="PersonServiceDataControl.dataProvider"
+         MethodName="setupPeopleCollection"
+         ReturnName="PersonServiceDataControl.methodResults.PersonServiceDataControl_dataProvider_setupPeopleCollection_result" >
+         <Contents >
+            <NamedData
+               NDName="Arg0"
+               NDType="int"
+               NDOption="2"
+               NDValue="SetupCollectionUIModel.intParam" >
+            </NamedData>
+            <NamedData
+               NDName="Arg1"
+               NDType="java.lang.String"
+               NDOption="2"
+               NDValue="SetupCollectionUIModel.stringParam" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+      <DCControl
+         id="stringParam"
+         SubType="DCTextField"
+         IterBinding="ParamsDataControl_rootIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="stringParam" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="intParam"
+         SubType="DCTextField"
+         IterBinding="ParamsDataControl_rootIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="intParam" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
