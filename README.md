@@ -160,6 +160,7 @@ Each sample is also available in downloadable form in the zips directory.
 * RowCurrencyJBO35007
 * RowSelectionButtonTestJSF
 * SelectBooleanRadioBasedOnIterator
+* SelectOneChoicePPR
 
 
 
