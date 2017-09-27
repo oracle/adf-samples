@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="TestPage">
+    <page>/TestPage.jspx</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name id="__3">UserInfo</managed-bean-name>
+    <managed-bean-class id="__4">test.view.UserInfo</managed-bean-class>
+    <managed-bean-scope id="__2">session</managed-bean-scope>
+    <managed-property id="__7">
+      <property-name id="__6">favoriteColor</property-name>
+      <property-class>java.lang.String</property-class>
+      <value id="__5">emgreen</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name id="__9">TestPage</managed-bean-name>
+    <managed-bean-class id="__8">test.view.backing.TestPage</managed-bean-class>
+    <managed-bean-scope id="__11">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

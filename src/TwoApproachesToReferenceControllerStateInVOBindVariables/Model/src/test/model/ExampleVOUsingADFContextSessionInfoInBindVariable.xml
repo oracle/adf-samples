@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ExampleVOUsingADFContextSessionInfoInBindVariable"
+  Version="11.1.1.55.36"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="VarFavoriteColor"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.UserInfo.favoriteColor]]></TransientExpression>
+  </Variable>
+  <SQLQuery>
+    <![CDATA[select /* SESSIONTEST */ * from (
+select 'Fire Engine Red' as info, 'fered' as favorite_color
+from dual
+union all
+select 'Deep Ocean Blue', 'doblue'
+from dual
+union all
+select 'Emerald Green', 'emgreen'
+from dual)
+where favorite_color = :VarFavoriteColor]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="Info"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="15"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="INFO"
+    Expression="INFO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FavoriteColor"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FAVORITE_COLOR"
+    Expression="FAVORITE_COLOR"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </ViewAttribute>
+</ViewObject>

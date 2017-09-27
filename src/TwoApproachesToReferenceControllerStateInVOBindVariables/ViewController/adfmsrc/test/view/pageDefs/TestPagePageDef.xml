@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="TestPagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ExampleVO" RangeSize="25"
+              DataControl="ExampleModuleDataControl" id="ExampleVOIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="ExampleVO2" RangeSize="25"
+              DataControl="ExampleModuleDataControl" id="ExampleVO2Iterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ExampleVOIterator" id="Info">
+      <AttrNames>
+        <Item Value="Info"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExampleVOIterator" id="FavoriteColor">
+      <AttrNames>
+        <Item Value="FavoriteColor"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ExampleVOIterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <methodAction id="setSessionFavoriteColor" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setSessionFavoriteColor"
+                  IsViewObjectMethod="false"
+                  DataControl="ExampleModuleDataControl"
+                  InstanceName="ExampleModuleDataControl.dataProvider">
+      <NamedData NDName="color" NDValue="#{UserInfo.favoriteColor}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="ExampleVO2Iterator" id="Info1">
+      <AttrNames>
+        <Item Value="Info"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExampleVO2Iterator" id="FavoriteColor1">
+      <AttrNames>
+        <Item Value="FavoriteColor"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ExampleVO2Iterator" id="Execute1"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

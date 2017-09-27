@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl1" layout="horizontal"
+                             inlineStyle="background-color:InfoBackground;">
+          <af:selectOneChoice label="Favorite Color:"
+                              value="#{UserInfo.favoriteColor}" id="soc1"
+                              autoSubmit="true"
+                              valueChangeListener="#{TestPage.onFavoriteColorChanged}">
+            <af:selectItem label="Green" value="emgreen" id="si1"/>
+            <af:selectItem label="Red" value="fered" id="si3"/>
+            <af:selectItem label="Blue" value="doblue" id="si2"/>
+          </af:selectOneChoice>
+          <af:outputText value="&lt;--- This selectOneChoice is bound to \#{UserInfo.favoriteColor}session-scoped managed bean property" id="ot5"/>
+        </af:panelGroupLayout>
+        <af:panelHeader text="VO instance 'ExampleVO' with Bind Var Referencing adf.userSession.userData.UserInfo.favoriteColor" id="ph1">
+          <f:facet name="context">
+
+          </f:facet>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="pfl1">
+            <af:panelLabelAndMessage label="#{bindings.Info.hints.label}"
+                                     id="plam2">
+              <af:outputText value="#{bindings.Info.inputValue}" id="ot1"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.FavoriteColor.hints.label}"
+                                     id="plam1">
+              <af:outputText value="#{bindings.FavoriteColor.inputValue}"
+                             id="ot2"/>
+            </af:panelLabelAndMessage>
+          </af:panelFormLayout>
+        </af:panelHeader>
+        <af:panelHeader text="VO instance 'ExampleVO2' with Bind Var Referencing adf.context.sessionScope.UserInfo.favoriteColor" id="ph2">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="pfl2">
+            <af:panelLabelAndMessage label="#{bindings.Info1.hints.label}"
+                                     id="plam3">
+              <af:outputText value="#{bindings.Info1.inputValue}" id="ot4"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.FavoriteColor1.hints.label}"
+                                     id="plam4">
+              <af:outputText value="#{bindings.FavoriteColor1.inputValue}"
+                             id="ot3"/>
+            </af:panelLabelAndMessage>
+          </af:panelFormLayout>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
