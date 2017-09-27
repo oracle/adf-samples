@@ -1,0 +1,24 @@
+<DeptView>
+   <DeptViewRow>
+      <!-- Deptno will be assigned by database sequence -->
+      <Dname>NEW DEPT</Dname>
+      <Loc>PADOVA</Loc>
+      <EmpView>
+         <EmpViewRow>
+            <!-- Empno will be assigned by database sequence -->
+            <Ename>STEVE</Ename>
+            <Job>PM</Job>
+            <Mgr>7839</Mgr>
+            <Hiredate>1990-02-11</Hiredate>
+            <Sal>1234</Sal>
+         </EmpViewRow>
+         <EmpViewRow>
+            <!-- Empno will be assigned by database sequence -->
+            <Ename>ANDREJ</Ename>
+            <Job>DEVELOPER</Job>
+            <Hiredate>2004-08-13</Hiredate>
+            <Sal>5500</Sal>
+         </EmpViewRow>
+      </EmpView>
+   </DeptViewRow>
+</DeptView>
