@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73" id="CreatePageDef"
+                Package="demo.view.pageDefs" >
+  <parameters/>
+  <executables>
+    <iterator id="DeptViewIterator" RangeSize="10" Binds="DeptView"
+              DataControl="DeptModuleDataControl"/>
+  </executables>
+  <bindings>
+    <attributeValues id="Deptno" IterBinding="DeptViewIterator">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Dname" IterBinding="DeptViewIterator">
+      <AttrNames>
+        <Item Value="Dname"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" InstanceName="DeptModuleDataControl"
+            DataControl="DeptModuleDataControl" RequiresUpdateModel="true"
+            Action="100"/>
+    <attributeValues IterBinding="DeptViewIterator" id="Loc">
+      <AttrNames>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

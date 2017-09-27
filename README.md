@@ -69,6 +69,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DeclarativeErrorPageBC4JJSP
 * DeclarativeSequencePopulation
 * DeclarativeVOPruning
+* DefaultSessionValueIntoCreateForm
 
 
 

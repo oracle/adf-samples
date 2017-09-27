@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Browse">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandButton actionListener="#{bindings.Create.execute}"
+                            text="Create With Default"
+                            disabled="#{!bindings.Create.enabled}"
+                            action="create">
+            <af:setActionListener from="#{true}" to="#{requestScope.creating}"/>
+          </af:commandButton>
+          <af:commandButton actionListener="#{bindings.Create.execute}"
+                            text="Create Without Default"
+                            disabled="#{!bindings.Create.enabled}"
+                            action="create"/>
+          <af:table value="#{bindings.DeptView.collectionModel}" var="row"
+                    rows="#{bindings.DeptView.rangeSize}"
+                    first="#{bindings.DeptView.rangeStart}"
+                    emptyText="#{bindings.DeptView.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column headerText="#{bindings.DeptView.labels.Deptno}"
+                       sortProperty="Deptno" sortable="false">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptView.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.DeptView.labels.Dname}"
+                       sortProperty="Dname" sortable="false">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column headerText="#{bindings.DeptView.labels.Loc}"
+                       sortProperty="Loc" sortable="false">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+          </af:table>
+          <af:objectSeparator/>
+          <af:panelHorizontal>
+            <af:commandButton text="Set Session Value"/>
+            <af:outputText value="to:"/>
+            <af:inputText columns="10" value="#{sessionScope.locDefaultValue}"/>
+            <f:facet name="separator">
+              <af:objectSpacer width="10" height="10"/>
+            </f:facet>
+          </af:panelHorizontal>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
