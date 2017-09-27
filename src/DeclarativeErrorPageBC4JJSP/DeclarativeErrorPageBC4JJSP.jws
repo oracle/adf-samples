@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<workspace nselem="workspace" class="oracle.ide.model.Workspace" xmlns="http://xmlns.oracle.com/jdeveloper/904/workspace">
+   <activeProjectURL path="Project/Project.jpr" id="0"/>
+   <listOfChildren class="oracle.ide.model.DataList">
+      <Item class="oracle.ide.model.Reference">
+         <URL idref="0"/>
+         <nodeClass>oracle.jdeveloper.model.JProject</nodeClass>
+      </Item>
+   </listOfChildren>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>packageCounter</Key>
+         <Value>2</Value>
+      </Item>
+   </properties>
+</workspace>

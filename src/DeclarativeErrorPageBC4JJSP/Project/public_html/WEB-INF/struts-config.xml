@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <global-exceptions>
+    <exception type="oracle.jbo.JboException" path="/errorpage.jsp" key="globalerror.jboException"/>
+    <exception type="test.DatabaseIsDownException" path="/DatabaseIsDown.jsp" key="globalerrors.exception" scope="request"/>
+  </global-exceptions>
+  <global-forwards>
+    <forward name="DeptView1_Browse" path="/DeptView1_Browse.do"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/navigate" parameter="jboEvent" type="oracle.jbo.html.struts11.actions.NavigationAction"/>
+    <action path="/query" parameter="jboEvent" type="oracle.jbo.html.struts11.actions.QueryAction"/>
+    <action path="/transaction" parameter="jboEvent" type="oracle.jbo.html.struts11.actions.TransactionAction"/>
+    <action path="/first" type="oracle.jbo.html.struts11.actions.NavigationAction">
+      <set-property property="event" value="first"/>
+    </action>
+    <action path="/DeptView1_Browse" type="mypackage1.DeptView1BrowseAction">
+      <set-property property="application" value="TestModule"/>
+      <set-property property="releasemode" value="Stateful"/>
+      <forward name="success" path="/DeptView1_Browse.jsp"/>
+    </action>
+  </action-mappings>
+<!--
+  <controller locale="true" processorClass="oracle.jbo.html.struts11.BC4JRequestProcessor" contentType="text/html;charset=windows-1252"/>
+  -->
+  <controller locale="true" processorClass="test.MyRequestProcessor" contentType="text/html;charset=windows-1252"/>
+  <message-resources parameter="mypackage1.ApplicationResources"/>
+</struts-config>

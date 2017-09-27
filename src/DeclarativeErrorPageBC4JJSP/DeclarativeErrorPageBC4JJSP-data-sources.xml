@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE data-sources PUBLIC "Orion data-sources" "http://xmlns.oracle.com/ias/dtds/data-sources.dtd">
+<data-sources>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/UDDISYSDS" inactivity-timeout="30" location="jdbc/UDDISYSCoreDS" name="jdev-connection-UDDISYS" password="uddisys" pooled-location="jdbc/UDDISYSPooledDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" username="uddisys" xa-location="jdbc/xa/UDDISYSXADS"/>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/TarExampleDS" inactivity-timeout="30" location="jdbc/TarExampleCoreDS" name="jdev-connection-TarExample" password="MC_TEST" pooled-location="jdbc/TarExamplePooledDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" username="MC_TEST" xa-location="jdbc/xa/TarExampleXADS"/>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/bugsDS" inactivity-timeout="30" location="jdbc/bugsCoreDS" name="jdev-connection-bugs" password="bugs" pooled-location="jdbc/bugsPooledDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" username="bugs" xa-location="jdbc/xa/bugsXADS"/>
+   <data-source class="com.evermind.sql.DriverManagerDataSource" connection-driver="oracle.jdbc.driver.OracleDriver" ejb-location="jdbc/scottDS" inactivity-timeout="30" location="jdbc/scottCoreDS" name="jdev-connection-scott" password="tiger" pooled-location="jdbc/scottPooledDS" url="jdbc:oracle:thin:@localhost:1521:ORCL" username="scott" xa-location="jdbc/xa/scottXADS"/>
+</data-sources>

@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app-deployment nselem="web-app-deployment" class="oracle.jdeveloper.deploy.war.WarProfile" xmlns="http://xmlns.oracle.com/jdeveloper/904/deploy/j2ee-war">
+   <appletArchiveName/>
+   <appletArchives>
+      <archives/>
+      <selectionMode>0</selectionMode>
+   </appletArchives>
+   <appletDeployedAsArchive>false</appletDeployedAsArchive>
+   <appletDeployment>false</appletDeployment>
+   <appletFiles>
+      <autoInclude>true</autoInclude>
+      <deploySourceAs>0</deploySourceAs>
+      <files/>
+      <selectionFilters>
+         <Item id="0">oracle.jdevimpl.deploy.common.JavaSelectionFilter</Item>
+      </selectionFilters>
+   </appletFiles>
+   <appletLocation/>
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>false</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <cdaSettings>
+      <additionalArchives/>
+      <afterFilters/>
+      <beforeFilters/>
+      <duringFilters/>
+      <selectedArchives>
+         <archives/>
+         <selectionMode>0</selectionMode>
+      </selectedArchives>
+   </cdaSettings>
+   <contextRoot/>
+   <defaultConnection/>
+   <deployClientMaxHeapSize/>
+   <earURL path="../deploy/Project_jpr_War.ear"/>
+   <enterpriseAppName>Project_jpr_War</enterpriseAppName>
+   <javaFiles>
+      <autoInclude>true</autoInclude>
+      <deploySourceAs>0</deploySourceAs>
+      <files/>
+      <selectionFilters>
+         <Item idref="0"/>
+      </selectionFilters>
+   </javaFiles>
+   <profileDeps/>
+   <properties/>
+   <warURL path="../deploy/Project_jpr_War.war"/>
+   <webSelectionRules>
+      <rules>
+         <Item>
+            <pattern>**/CVS/</pattern>
+            <type>1</type>
+         </Item>
+         <Item>
+            <pattern>**.contrib</pattern>
+            <type>1</type>
+         </Item>
+         <Item>
+            <pattern>**.keep</pattern>
+            <type>1</type>
+         </Item>
+         <Item>
+            <pattern>**.rvi</pattern>
+            <type>1</type>
+         </Item>
+         <Item>
+            <pattern>**</pattern>
+            <type>0</type>
+         </Item>
+      </rules>
+   </webSelectionRules>
+</web-app-deployment>

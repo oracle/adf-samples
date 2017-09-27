@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone='yes'?>
+<!DOCTYPE ojsp-global-include SYSTEM  'ojsp-global-include.dtd'>
+
+<ojsp-global-include>
+  <include   file="/globalinclude.html" >
+   <into directory="/" />
+  </include>
+</ojsp-global-include>

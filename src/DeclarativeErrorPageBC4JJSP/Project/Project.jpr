@@ -1,0 +1,461 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<project nselem="project" class="oracle.jdeveloper.model.JProject" xmlns="http://xmlns.oracle.com/jdeveloper/904/jproject">
+   <defaultPackage>test</defaultPackage>
+   <defaultPackages class="java.util.ArrayList">
+      <Item class="java.lang.String">test</Item>
+      <Item class="java.lang.String">mypackage1</Item>
+   </defaultPackages>
+   <dependencyList class="java.util.ArrayList">
+      <Item class="oracle.jdeveloper.library.ProjectLibrary">
+         <locked>true</locked>
+         <sourceOwnerURL path="../DeclarativeErrorPageBC4JJSP.jws"/>
+         <sourceURL path="Project.jpr"/>
+      </Item>
+   </dependencyList>
+   <htmlRootDirectory path="public_html/"/>
+   <j2eeWebAppName>DeclarativeErrorPageBC4JJSP-Project-webapp</j2eeWebAppName>
+   <j2eeWebContextRoot>DeclarativeErrorPageBC4JJSP-Project-context-root</j2eeWebContextRoot>
+   <listOfChildren class="oracle.ide.model.DataList">
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/Project.jpx" id="7"/>
+         <nodeClass id="8">oracle.jbo.dt.jdevx.ui.JdxAppNode</nodeClass>
+      </Item>
+      <Item class="oracle.jbo.dt.jdevx.ui.JdxNode">
+         <URL protocol="ide.bc4j.file" path="/model/model.jbo"/>
+         <owner path="src/Project.jpx"/>
+         <package>model</package>
+         <type>Package</type>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/Project.cpx"/>
+         <nodeClass>oracle.jbo.dt.jclient.datadef.AppDefNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/WEB-INF/web.xml"/>
+         <nodeClass>oracle.jdeveloper.deploy.war.dd.WebAppNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/Project_jpr_War.deploy"/>
+         <nodeClass>oracle.ide.model.XMLDataNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/WEB-INF/struts-config.xml"/>
+         <nodeClass>oracle.jdevimpl.web.struts.StrutsConfigNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/mypackage1/ApplicationResources.properties"/>
+         <nodeClass id="1">oracle.ide.model.DeployableTextNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/ViewObject.gif"/>
+         <nodeClass>oracle.jdeveloper.model.GifImageNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/errorpage.jsp"/>
+         <nodeClass id="2">oracle.jdeveloper.model.JspSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/main.html"/>
+         <nodeClass id="0">oracle.jdevimpl.webapp.html.HtmlSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/contents.html"/>
+         <nodeClass idref="0"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/title.html"/>
+         <nodeClass idref="0"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/description.html"/>
+         <nodeClass idref="0"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/bc4j.css"/>
+         <nodeClass idref="1"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/globalinclude.html"/>
+         <nodeClass idref="0"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/WEB-INF/ojsp-global-include.xml"/>
+         <nodeClass>oracle.bali.xml.addin.XMLSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/DataTableComponent.jsp"/>
+         <nodeClass idref="2"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/DataScrollerComponent.jsp"/>
+         <nodeClass idref="2"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/DataTransactionComponent.jsp"/>
+         <nodeClass idref="2"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/DeptView1_Browse.jsp"/>
+         <nodeClass idref="2"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/mypackage1/DeptView1BrowseAction.java"/>
+         <nodeClass id="3">oracle.jdeveloper.model.JavaSourceNode</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/test/MyRequestProcessor.java"/>
+         <nodeClass idref="3"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="src/test/DatabaseIsDownException.java"/>
+         <nodeClass idref="3"/>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="public_html/DatabaseIsDown.jsp"/>
+         <nodeClass idref="2"/>
+      </Item>
+   </listOfChildren>
+   <ownerMap class="java.util.HashMap">
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/common/bc4j.xcfg"/>
+            <nodeClass>oracle.jbo.dt.jdevx.ui.JdxXcfgNode</nodeClass>
+         </Key>
+         <Value class="oracle.ide.model.Reference" id="5">
+            <URL path="src/model/model.xml" id="6"/>
+            <nodeClass id="4">oracle.jbo.dt.jdevx.JdvXmlNode</nodeClass>
+         </Value>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/DeptView.xml"/>
+            <nodeClass idref="4"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL idref="6"/>
+            <nodeClass idref="4"/>
+         </Key>
+         <Value class="oracle.ide.model.Reference">
+            <URL idref="7"/>
+            <nodeClass idref="8"/>
+         </Value>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/DeptImpl.java"/>
+            <nodeClass idref="3"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/TestModule.xml"/>
+            <nodeClass idref="4"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/DeptViewImpl.java"/>
+            <nodeClass idref="3"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/Dept.xml"/>
+            <nodeClass idref="4"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+      <Item>
+         <Key class="oracle.ide.model.Reference">
+            <URL path="src/model/TestModuleImpl.java"/>
+            <nodeClass idref="3"/>
+         </Key>
+         <Value idref="5"/>
+      </Item>
+   </ownerMap>
+   <projectDocPath>
+      <entries class="[Ljava.net.URL;"/>
+   </projectDocPath>
+   <projectLibraryList class="oracle.jdeveloper.library.JProjectLibraryList">
+      <jdkList class="java.util.ArrayList"/>
+      <libraryList class="java.util.ArrayList"/>
+   </projectLibraryList>
+   <projectSettings>
+      <activeConfigName>Development</activeConfigName>
+      <commonData class="java.util.HashMap">
+         <Item>
+            <Key>oracle.bm.commonIde.data.project.ModelerProjectSettings</Key>
+            <Value class="oracle.bm.commonIde.data.project.ModelerProjectSettings">
+               <modelersPath>
+                  <entries>
+                     <Item path="model/"/>
+                  </entries>
+               </modelersPath>
+            </Value>
+         </Item>
+         <Item>
+            <Key>oracle.jdeveloper.compiler.ant.AntConfiguration</Key>
+            <Value class="oracle.jdeveloper.compiler.ant.AntConfiguration">
+               <arguments class="java.lang.String"/>
+               <makeTarget/>
+               <projectBuildfile/>
+               <rebuildTarget/>
+               <showOutput>true</showOutput>
+            </Value>
+         </Item>
+      </commonData>
+      <configurations class="java.util.TreeMap">
+         <Item>
+            <Key>Development</Key>
+            <Value class="oracle.jdeveloper.model.JProjectConfiguration">
+               <configData class="java.util.HashMap">
+                  <Item>
+                     <Key>oracle.jdeveloper.compiler.OjcConfiguration</Key>
+                     <Value class="oracle.jdeveloper.compiler.OjcConfiguration">
+                        <assertionsEnabled>false</assertionsEnabled>
+                        <copyRes>
+                           <Item>.gif</Item>
+                           <Item>.properties</Item>
+                           <Item>.jpg</Item>
+                           <Item>.jpeg</Item>
+                           <Item>.xml</Item>
+                           <Item>-apf.xml</Item>
+                           <Item>.jpx</Item>
+                           <Item>.xcfg</Item>
+                        </copyRes>
+                        <debugInformation>true</debugInformation>
+                        <excludedClasses class="[Ljava.lang.String;"/>
+                        <internalEncoding>Cp1252</internalEncoding>
+                        <obfuscate>false</obfuscate>
+                        <showCompileProgress>false</showCompileProgress>
+                        <showDeprecations>true</showDeprecations>
+                        <showObjectDotStaticWarnings>false</showObjectDotStaticWarnings>
+                        <showPartialImportWarnings>false</showPartialImportWarnings>
+                        <showSelfDeprecations>true</showSelfDeprecations>
+                        <showUnusedImportWarnings>false</showUnusedImportWarnings>
+                        <showWarnings>true</showWarnings>
+                        <target>Default</target>
+                        <updateImports>false</updateImports>
+                        <updateZipJarImports>false</updateZipJarImports>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.javadoc.JProjectJavadoc</Key>
+                     <Value class="oracle.jdeveloper.javadoc.JProjectJavadoc">
+                        <generateAuthor>false</generateAuthor>
+                        <generateDeprecated>true</generateDeprecated>
+                        <generateIndex>true</generateIndex>
+                        <generateNavbar>true</generateNavbar>
+                        <generateSince>true</generateSince>
+                        <generateTree>true</generateTree>
+                        <generateVersion>false</generateVersion>
+                        <heapSize>32</heapSize>
+                        <miscOptions class="java.lang.String"/>
+                        <oneOneFormat>false</oneOneFormat>
+                        <outputDirectory path="javadoc/"/>
+                        <scope>-protected</scope>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdeveloper.runner.RunConfiguration</Key>
+                     <Value class="oracle.jdeveloper.runner.RunConfiguration">
+                        <VMName>ojvm</VMName>
+                        <allowInput>false</allowInput>
+                        <alwaysUseTarget>false</alwaysUseTarget>
+                        <clearLogBeforeRun>false</clearLogBeforeRun>
+                        <compileBeforeRun>true</compileBeforeRun>
+                        <connectionName/>
+                        <javaOptions class="java.lang.String"/>
+                        <logCommand>true</logCommand>
+                        <logError>true</logError>
+                        <logExit>true</logExit>
+                        <logOutput>true</logOutput>
+                        <programArguments class="java.lang.String"/>
+                        <runActiveFile>true</runActiveFile>
+                        <runDirectoryURL/>
+                        <targetURL path="src/model/TestModuleImpl.java"/>
+                        <useProxy>true</useProxy>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectLibraries</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectLibraries">
+                        <jdkName>1.4.2_03</jdkName>
+                        <jdkVersionNumber>1.4.2_03</jdkVersionNumber>
+                        <libraries>BC4J Tester;JClient Runtime;Oracle Intermedia JClient;Oracle XML Parser v2;JDeveloper Runtime;SQLJ Runtime;BC4J Runtime;Oracle JDBC;Oracle Intermedia;Connection Manager;BC4J Oracle Domains;BC4J HTML;JSP Runtime;UIX Runtime;Struts Runtime;BC4J Struts Runtime</libraries>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.config.JProjectPaths</Key>
+                     <Value class="oracle.jdevimpl.config.JProjectPaths">
+                        <additionalClassPath>
+                           <entries>
+                              <Item path="public_html/WEB-INF/lib/datatags.jar"/>
+                              <Item path="public_html/WEB-INF/lib/bc4jstruts.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-beanutils.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-collections.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-digester.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-fileupload.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-lang.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-logging.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/commons-validator.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/datatags.jar" jar-entry=""/>
+                              <Item path="public_html/WEB-INF/lib/struts.jar" jar-entry=""/>
+                           </entries>
+                        </additionalClassPath>
+                        <outputDirectory path="classes/"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.idl.config.IdlConfiguration</Key>
+                     <Value class="oracle.jdevimpl.idl.config.IdlConfiguration">
+                        <codeForIncludedFiles>false</codeForIncludedFiles>
+                        <noBindMethods>false</noBindMethods>
+                        <noComments>false</noComments>
+                        <noExampleCode>false</noExampleCode>
+                        <noSkeletonCode>false</noSkeletonCode>
+                        <noStubCode>false</noStubCode>
+                        <noTieCode>false</noTieCode>
+                        <noToString>false</noToString>
+                        <objectWrapper>false</objectWrapper>
+                        <packageName class="java.lang.String"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.codecoach.CCConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.codecoach.CCConfiguration">
+                        <advices>ALL</advices>
+                        <exclude>com;java;javax;sun;sunw;org;oracle</exclude>
+                        <include class="java.lang.String"/>
+                        <level>4</level>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.debug.DebugConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.debug.DebugConfiguration">
+                        <JPDAClassicDebugArguments>-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDAClassicDebugArguments>
+                        <JPDADebugArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=&lt;port></JPDADebugArguments>
+                        <OJVMDebugArguments>-XXdebug,quiet,port&lt;port></OJVMDebugArguments>
+                        <breakpointScope>workspace</breakpointScope>
+                        <remoteDebugging>false</remoteDebugging>
+                        <remoteDebuggingParameters class="java.util.HashMap"/>
+                        <remoteDebuggingParametersSaved>false</remoteDebuggingParametersSaved>
+                        <remoteDebuggingProtocol>ojvm</remoteDebuggingProtocol>
+                        <startOption>running</startOption>
+                        <tracingDisabled>java;javax;sun;sunw;com.sun;org.xml.sax</tracingDisabled>
+                        <tracingEnabled class="java.lang.String"/>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.runner.profile.ProfileConfiguration</Key>
+                     <Value class="oracle.jdevimpl.runner.profile.ProfileConfiguration">
+                        <DMSstartID>20000</DMSstartID>
+                        <DMSstate>0</DMSstate>
+                        <eventColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </eventColumnVisible>
+                        <events>G(All events;(G(VM Events;(E(0;GC;-16776961;1);E(10;Wait;-65485;0);E(11;Synch Blocks 0;-39322;0);E(12;Synch Blocks 1;-39322;0);E(13;Synch Blocks 2;-39322;0);E(20;Prepare Class;-16751002;0);E(21;Load Class;-16724992;0);E(22;Resolve Class;-16737997;0);));G(BC4J Events;(E(1000;JBO_MISCELLANEOUS;-4144960;1);E(1001;JDBC_SELECT;-256;1);E(1002;JDBC_CREATE_STATEMENT;-256;1);E(1003;JDBC_CONNECT;-256;1);E(1004;JDBC_CREATE_PREPARED_STATEMENT;-256;1);E(1005;JDBC_EXECUTE;-256;1);E(1006;METAOBJECT_LOAD;-65281;1);E(1007;EXECUTE_QUERY;-16776961;1);E(1008;BC4J_CREATE_COMPOBJ;-65281;0);E(1009;BC4J_CREATE_ROOTAM;-65281;1);E(1010;BC4J_CREATE_VIEWOBJECT;-65281;0);E(1011;BC4J_CREATE_AM;-65281;0);E(1012;BC4J_CREATE_VIEWLINK;-65281;0);E(1013;SQLB_DOENTITYDML;-16776961;1);E(1014;SQLB_DOENTITYSELECT;-16776961;1);E(1015;VIEWOBJECT_GETSTATEMENT;-16776961;1);E(1016;REMOTE_METHOD_CALL;-65536;1);));));</events>
+                        <excludedClasses>java;javax;sun;sunw;com;oracle</excludedClasses>
+                        <excludedInstances class="java.lang.String"/>
+                        <includedClasses class="java.lang.String"/>
+                        <includedInstances class="java.lang.String"/>
+                        <localProfiling>true</localProfiling>
+                        <memColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </memColumnVisible>
+                        <memoryUpdateInterval>10</memoryUpdateInterval>
+                        <remoteHost class="java.lang.String"/>
+                        <remoteParametersSaved>false</remoteParametersSaved>
+                        <remotePort>4000</remotePort>
+                        <sampleColumnVisible>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                           <Item>true</Item>
+                        </sampleColumnVisible>
+                        <sampleInterval>5</sampleInterval>
+                        <sliderDepth>20</sliderDepth>
+                        <useAPI>false</useAPI>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>oracle.jdevimpl.sqlj.config.SqljConfiguration</Key>
+                     <Value class="oracle.jdevimpl.sqlj.config.SqljConfiguration">
+                        <checkSemantics>false</checkSemantics>
+                        <codegen>oracle</codegen>
+                        <contextConnectionMap class="java.util.HashMap"/>
+                        <useCache>false</useCache>
+                        <warnAll>false</warnAll>
+                        <warnNull>false</warnNull>
+                        <warnPortable>false</warnPortable>
+                        <warnPrecision>false</warnPrecision>
+                        <warnStrict>false</warnStrict>
+                        <warnVerbose>false</warnVerbose>
+                     </Value>
+                  </Item>
+                  <Item>
+                     <Key>WebappJspCompilerOptions</Key>
+                     <Value class="oracle.jdevimpl.webapp.jsp.JspCompilerOptions">
+                        <forgiveDuplicateDirectiveAttributes>false</forgiveDuplicateDirectiveAttributes>
+                        <requestTimeIntrospection>false</requestTimeIntrospection>
+                        <validate>true</validate>
+                     </Value>
+                  </Item>
+               </configData>
+            </Value>
+         </Item>
+      </configurations>
+   </projectSettings>
+   <projectSourcePath>
+      <entries>
+         <Item path="src/"/>
+      </entries>
+   </projectSourcePath>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>CachedConfigTable</Key>
+         <Value class="oracle.jsp.parse.CachedConfigTable"/>
+      </Item>
+      <Item>
+         <Key>jbo.JboProject</Key>
+         <Value>Project</Value>
+      </Item>
+      <Item>
+         <Key>jbo.Struts11</Key>
+         <Value>true</Value>
+      </Item>
+      <Item>
+         <Key>JboProject</Key>
+         <Value>true</Value>
+      </Item>
+   </properties>
+   <userAuthor/>
+   <userCompany/>
+   <userCopyright/>
+   <userDescription/>
+   <userTitle/>
+   <userVersion/>
+</project>
