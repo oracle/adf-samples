@@ -84,6 +84,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DRM012_DeploymentPlan
 * DropdownListInTableChangingByRow
 * DumpPoolStatisticsExample
+* DynamicCredentials1013
 
 
 
