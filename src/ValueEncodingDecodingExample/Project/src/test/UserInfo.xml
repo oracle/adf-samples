@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="UserInfo"
+   DBObjectType="table"
+   DBObjectName="USER_INFO"
+   AliasName="UserInfo"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.CustomEntityImpl" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_superClass" Value="test.CustomEntityImpl" />
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Username"
+      IsNotNull="true"
+      Precision="10"
+      ColumnName="USERNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USER_INFO"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Password"
+      Precision="10"
+      ColumnName="PASSWORD"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="USER_INFO" >
+      <Properties>
+         <Property Name ="EncodeValue" Value ="true" />
+      </Properties>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="SysC0019160" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.UserInfo.Username" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C0019160" />
+      </DesignTime>
+   </Key>
+</Entity>

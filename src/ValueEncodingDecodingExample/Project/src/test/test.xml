@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="test"
+   SeparateXMLFiles="true"
+   PackageName="test" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.39.84" />
+   </DesignTime>
+   <Containee
+      Name="UserInfo"
+      FullName="test.UserInfo"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="UserInfoModule"
+      FullName="test.UserInfoModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="UserInfoView"
+      FullName="test.UserInfoView"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

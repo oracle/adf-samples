@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="UserInfoView"
+   SelectList="UserInfo.USERNAME, 
+       UserInfo.PASSWORD"
+   FromList="USER_INFO UserInfo"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_codeGenFlag2" Value="Access|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="UserInfo"
+      Entity="test.UserInfo" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Username"
+      IsNotNull="true"
+      EntityAttrName="Username"
+      EntityUsage="UserInfo"
+      AliasName="USERNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Password"
+      EntityAttrName="Password"
+      EntityUsage="UserInfo"
+      AliasName="PASSWORD" >
+   </ViewAttribute>
+</ViewObject>
