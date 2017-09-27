@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="TestEntity"
+   DBObjectType="table"
+   DBObjectName="OPTIONAL_REQUIRED_TEST"
+   AliasName="TestEntity"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="demo.model.TestEntityImpl"
+   MsgBundleClass="demo.model.common.TestEntityImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsNotNull="true"
+      ColumnName="ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="OPTIONAL_REQUIRED_TEST"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RowType"
+      IsNotNull="true"
+      DefaultValue="A"
+      Precision="1"
+      ColumnName="ROW_TYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="OPTIONAL_REQUIRED_TEST" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1" />
+      </DesignTime>
+      <ListValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="RowType_Rule_0"
+         OnAttribute="RowType"
+         OperandType="LITERAL" >
+         <AttrArray Name="List">
+            <Item Value="A" />
+            <Item Value="B" />
+         </AttrArray>
+      </ListValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ValueA"
+      Precision="10"
+      ColumnName="VALUE_A"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="OPTIONAL_REQUIRED_TEST" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ValueB"
+      Precision="10"
+      ColumnName="VALUE_B"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="OPTIONAL_REQUIRED_TEST" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="OptionalRequiredTestRowTypeCheck" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.TestEntity.RowType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ROW_TYPE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_isNotNull" Value="true" />
+         <Attr Name="_DBObjectName" Value="OPTIONAL_REQUIRED_TEST_ROW_TYP" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001831512" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.TestEntity.RowType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="row_type in (&#39;A&#39;,&#39;B&#39;)" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001831512" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001831513" >
+      <AttrArray Name="Attributes">
+         <Item Value="demo.model.TestEntity.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001831513" />
+      </DesignTime>
+   </Key>
+   <MethodValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      ResId="TestEntity_Rule_0"
+      MethodName="validateATypeHasAValue" >
+   </MethodValidationBean>
+   <MethodValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      ResId="TestEntity_Rule_1"
+      MethodName="validateBTypeHasBValue" >
+   </MethodValidationBean>
+</Entity>

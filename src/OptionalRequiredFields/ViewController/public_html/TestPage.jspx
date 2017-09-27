@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:inputText value="#{bindings.Id.inputValue}"
+                          label="#{bindings.Id.label}"
+                          required="#{bindings.Id.mandatory}"
+                          columns="#{bindings.Id.displayWidth}">
+              <af:validator binding="#{bindings.Id.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Id.format}"/>
+            </af:inputText>
+            <af:selectOneRadio value="#{bindings.TestEntitiesRowType.inputValue}"
+                               label="#{bindings.TestEntitiesRowType.label}"
+                               autoSubmit="true" id="RowTypeRadio"
+                               valueChangeListener="#{TestPage.onRowTypeChanged}">
+              <f:selectItems value="#{bindings.TestEntitiesRowType.items}"/>
+            </af:selectOneRadio>
+          </af:panelForm>
+          <af:panelForm partialTriggers="RowTypeRadio">
+            <af:inputText value="#{bindings.ValueA.inputValue}"
+                          label="#{bindings.ValueA.label}"
+                          required="#{bindings.ValueA.mandatory}"
+                          columns="#{bindings.ValueA.displayWidth}"
+                          disabled="false"
+                          rendered="#{bindings.RowType.inputValue == 'A'}"
+                          showRequired="true">
+              <af:validator binding="#{bindings.ValueA.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.ValueB.inputValue}"
+                          label="#{bindings.ValueB.label}"
+                          required="#{bindings.ValueB.mandatory}"
+                          columns="#{bindings.ValueB.displayWidth}"
+                          rendered="#{bindings.RowType.inputValue == 'B'}"
+                          showRequired="true">
+              <af:validator binding="#{bindings.ValueB.validator}"/>
+            </af:inputText>
+          </af:panelForm>
+          <af:panelButtonBar>
+            <af:commandButton actionListener="#{bindings.Create.execute}"
+                              text="Create"
+                              disabled="#{!bindings.Create.enabled}"/>
+            <af:commandButton actionListener="#{bindings.Previous.execute}"
+                              text="Previous"
+                              disabled="#{!bindings.Previous.enabled}"/>
+            <af:commandButton actionListener="#{bindings.Next.execute}"
+                              text="Next" disabled="#{!bindings.Next.enabled}"/>
+            <af:commandButton actionListener="#{bindings.Commit.execute}"
+                              text="Commit"/>
+            <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                              text="Rollback"
+                              immediate="true">
+              <af:resetActionListener/>
+            </af:commandButton>
+          </af:panelButtonBar>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

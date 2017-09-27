@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TestEntities"
+   SelectList="TestEntity.ID, 
+       TestEntity.ROW_TYPE, 
+       TestEntity.VALUE_A, 
+       TestEntity.VALUE_B"
+   FromList="OPTIONAL_REQUIRED_TEST TestEntity"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="TestEntity"
+      Entity="demo.model.TestEntity" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="TestEntity"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowType"
+      EntityAttrName="RowType"
+      EntityUsage="TestEntity"
+      AliasName="ROW_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ValueA"
+      EntityAttrName="ValueA"
+      EntityUsage="TestEntity"
+      AliasName="VALUE_A" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ValueB"
+      EntityAttrName="ValueB"
+      EntityUsage="TestEntity"
+      AliasName="VALUE_B" >
+   </ViewAttribute>
+</ViewObject>
