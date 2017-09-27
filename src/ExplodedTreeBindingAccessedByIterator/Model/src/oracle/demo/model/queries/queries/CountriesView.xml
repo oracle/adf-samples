@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountriesView"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  SelectList="Countries.COUNTRY_ID, 
+       Countries.COUNTRY_NAME, 
+       Countries.REGION_ID"
+  FromList="COUNTRIES Countries"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Countries"
+    Entity="oracle.demo.model.entities.Countries"/>
+  <ViewAttribute
+    Name="CountryId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CountryId"
+    EntityUsage="Countries"
+    AliasName="COUNTRY_ID"/>
+  <ViewAttribute
+    Name="CountryName"
+    PrecisionRule="true"
+    EntityAttrName="CountryName"
+    EntityUsage="Countries"
+    AliasName="COUNTRY_NAME"/>
+  <ViewAttribute
+    Name="RegionId"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="Countries"
+    AliasName="REGION_ID"/>
+  <ViewLinkAccessor
+    Name="LocationsView"
+    ViewLink="oracle.demo.model.queries.queries.LocCIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

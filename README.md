@@ -97,6 +97,7 @@ Each sample is also available in downloadable form in the zips directory.
 * EntityObjectsWithEvents
 * EntityOnViewWithInsteadOf
 * ExamplesForAccessingAMFromJSF
+* ExplodedTreeBindingAccessedByIterator
 
 
 

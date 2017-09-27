@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.92" id="homePageDef"
+                Package="oracle.demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AllRegions" RangeSize="25"
+              DataControl="ExplodedTreeAMDataControl" id="AllRegionsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AllRegionsIterator" id="AllRegions">
+      <nodeDefinition DefName="oracle.demo.model.queries.queries.RegionsView"
+                      Name="AllRegions0">
+        <AttrNames>
+          <Item Value="RegionId"/>
+          <Item Value="RegionName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CountriesView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="oracle.demo.model.queries.queries.CountriesView"
+                      Name="AllRegions1">
+        <AttrNames>
+          <Item Value="CountryId"/>
+          <Item Value="CountryName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="LocationsView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="oracle.demo.model.queries.queries.LocationsView"
+                      Name="AllRegions2">
+        <AttrNames>
+          <Item Value="LocationId"/>
+          <Item Value="City"/>
+          <Item Value="StateProvince"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

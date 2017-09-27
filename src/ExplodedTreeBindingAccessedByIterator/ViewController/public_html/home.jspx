@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout topHeight="50px" id="psl1">
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1" layout="horizontal">
+              <af:spacer id="s1" styleClass="AFBrandingBarLogo"/>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:outputText value="Exploded Tree Sample" id="ot1"
+                             styleClass="AFBrandingBarTitle"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelSplitter id="ps1" splitterPosition="516">
+              <f:facet name="first">
+                <af:panelStretchLayout id="psl2">
+                  <f:facet name="top">
+                    <af:panelHeader text="Basic Tree" id="ph1">
+                      <af:outputText value="This tree control just uses a standard ADF Tree binding"
+                                     id="ot4"/>
+                    </af:panelHeader>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:tree value="#{bindings.AllRegions.treeModel}" var="node"
+                             selectionListener="#{bindings.AllRegions.treeModel.makeCurrent}"
+                             rowSelection="single" id="t1">
+                      <f:facet name="nodeStamp">
+                        <af:outputText value="#{node}" id="ot2"/>
+                      </f:facet>
+                    </af:tree>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelStretchLayout id="psl3">
+                  <f:facet name="top">
+                    <af:panelHeader text="Exploded Tree" id="ph2">
+                      <af:outputText value="This output is created with af:iterator components traversing a standard ADF Tree binding using the '.children' construct"
+                                     id="ot5"/>                    
+                    </af:panelHeader>
+                  </f:facet>
+                  <f:facet name="center">
+                    <af:panelGroupLayout id="pgl2" layout="vertical">
+                      <af:iterator id="i1"
+                                   value="#{bindings.AllRegions.collectionModel}"
+                                   var="rgn">
+                        <af:showDetailHeader text="#{rgn.RegionName}"
+                                             disclosed="true" id="sdh1">
+                          <af:iterator id="i2" value="#{rgn.children}"
+                                       var="cnty">
+                            <af:showDetailHeader text="#{cnty.CountryName}"
+                                                 disclosed="true" id="sdh2">
+                              <af:iterator id="i3" value="#{cnty.children}"
+                                           var="loc">
+                                <af:panelList id="pl1">
+                                  <af:outputText value="#{loc.City}" id="ot3"/>
+                                </af:panelList>
+                              </af:iterator>
+                            </af:showDetailHeader>
+                          </af:iterator>
+                        </af:showDetailHeader>
+                      </af:iterator>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

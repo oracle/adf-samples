@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountrRegFkLink"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  EntityAssociation="oracle.demo.model.entities.CountrRegFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="RegionsView"
+    Cardinality="1"
+    Owner="oracle.demo.model.queries.queries.RegionsView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="RegionsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.demo.model.queries.queries.RegionsView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CountriesView"
+    Cardinality="-1"
+    Owner="oracle.demo.model.queries.queries.CountriesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountriesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.demo.model.queries.queries.CountriesView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
