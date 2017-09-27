@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RegionsView"
+  Version="11.1.2.60.17"
+  SelectList="Regions.REGION_ID, 
+       Regions.REGION_NAME"
+  FromList="REGIONS Regions"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Regions"
+    Entity="davelaar.demo.model.entities.Regions"/>
+  <ViewAttribute
+    Name="RegionId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="Regions"
+    AliasName="REGION_ID"/>
+  <ViewAttribute
+    Name="RegionName"
+    PrecisionRule="true"
+    EntityAttrName="RegionName"
+    EntityUsage="Regions"
+    AliasName="REGION_NAME"/>
+  <ViewLinkAccessor
+    Name="CountriesView"
+    ViewLink="davelaar.demo.model.queries.links.CountrRegFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

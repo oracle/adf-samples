@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.17" id="UIShellDTPageDef"
+                Package="davelaar.demo.ui.view.pageDefs"   SkipValidation="skipDataControls" >
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+   <multiTaskFlow id="multiRegion1"              
+    taskFlowList="${viewScope.dynTabManager.taskFlowList}" 
+    activation="deferred" Refresh="ifNeeded"
+    xmlns="http://xmlns.oracle.com/adf/controller/binding"/>    
+  </executables>
+</pageDefinition>

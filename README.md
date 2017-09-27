@@ -87,6 +87,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DynamicCredentials1013
 * DynamicParameterForm
 * DynamicPoplistForAngelo
+* DynamicTabs1112
 
 
 

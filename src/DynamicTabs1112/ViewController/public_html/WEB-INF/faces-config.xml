@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+    <message-bundle>davelaar.demo.ui.view.ViewControllerBundle</message-bundle>
+    <navigation-handler>davelaar.demo.ui.application.TabNavigationHandler</navigation-handler>
+    <resource-bundle>
+      <base-name>davelaar.demo.ui.view.ViewControllerBundle</base-name>
+      <var>nls</var>
+    </resource-bundle>
+  </application>
+</faces-config>

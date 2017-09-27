@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" 
+        xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="Home" id="doc0">
+    <af:form id="dataForm">
+      <af:pageTemplate id="pt" 
+         viewId="/common/pageTemplates/DynamicTabsPageTemplate.jsf">
+        <f:attribute name="menuModel" value="#{menuModel}"/>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>
+  
+  
+  

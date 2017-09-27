@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRService"
+  Version="11.1.2.60.17"
+  ClearCacheOnRollback="true"
+  ComponentClass="davelaar.demo.model.service.HRServiceImpl"
+  ComponentInterface="davelaar.demo.model.service.common.HRService"
+  ClientProxyName="davelaar.demo.model.service.client.HRServiceClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="davelaar.demo.model.queries.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="davelaar.demo.model.queries.EmployeesView"/>
+  <ViewUsage
+    Name="JobsView1"
+    ViewObjectName="davelaar.demo.model.queries.JobsView"/>
+  <ViewUsage
+    Name="EmployeesView3"
+    ViewObjectName="davelaar.demo.model.queries.EmployeesView"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="davelaar.demo.model.queries.links.EmpDeptFkLink"
+    SrcViewUsageName="davelaar.demo.model.service.HRService.DepartmentsView1"
+    DstViewUsageName="davelaar.demo.model.service.HRService.EmployeesView3"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="queryByKeyValue"
+      MethodName="queryByKeyValue">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="viewObjectUsage"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="keyValue"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="employeeQuickSearch"
+      MethodName="employeeQuickSearch">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="searchString"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

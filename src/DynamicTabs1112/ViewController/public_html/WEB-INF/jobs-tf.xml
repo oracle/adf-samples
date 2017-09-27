@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="jobs">
+    <template-reference>
+      <document>/WEB-INF/tf-fragment-template.xml</document>
+      <id>tf-fragment-template</id>
+    </template-reference>
+    <default-activity>Start</default-activity>
+    <input-parameter-definition id="__1">
+      <name>readOnlyMode</name>
+      <value>#{pageFlowScope.readOnlyMode}</value>
+      <class>java.lang.Boolean</class>
+    </input-parameter-definition>
+    <view id="SearchJobs">
+      <page>/pages/SearchJobs.jsff</page>
+    </view>
+    <view id="EditJob">
+      <page>/pages/EditJob.jsff</page>
+    </view>
+    <method-call id="SetCurrentRowWithKeyValue">
+      <method>#{bindings.setCurrentRowWithKeyValue.execute}</method>
+      <outcome>
+        <fixed-outcome>edit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="Start">
+      <case id="__5">
+        <expression>#{not empty pageFlowScope.rowKeyValue}</expression>
+        <outcome>setCurrentRow</outcome>
+      </case>
+      <default-outcome>defaultPage</default-outcome>
+    </router>
+    <task-flow-return id="Done">
+      <outcome>
+        <name>Done</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__6">
+      <from-activity-id>SearchJobs</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>EditJob</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>Start</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>defaultPage</from-outcome>
+        <to-activity-id>SearchJobs</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>setCurrentRow</from-outcome>
+        <to-activity-id>SetCurrentRowWithKeyValue</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>SetCurrentRowWithKeyValue</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>EditJob</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>EditJob</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>done</from-outcome>
+        <to-activity-id>Done</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>Start</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
