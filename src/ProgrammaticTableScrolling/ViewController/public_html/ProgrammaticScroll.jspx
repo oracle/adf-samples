@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ProgrammaticScroll">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelHorizontal>
+            <af:outputText value="Scroll" inlineStyle="font-weight:bold;"/>
+            <af:commandButton text="&lt;&lt;"
+                              action="#{ProgrammaticScroll.onScrollBackward}"
+                              id="ScrollBackwardsButton" partialSubmit="true"/>
+            <af:inputText columns="4"
+                          value="#{ProgrammaticScroll.rowsToScroll}">
+              <f:validateLongRange minimum="1" maximum="100"/>
+            </af:inputText>
+            <af:commandButton text=">>"
+                              action="#{ProgrammaticScroll.onScrollForward}"
+                              partialSubmit="true" id="ScrollForwardsButton"/>
+            <af:outputText value="Using" inlineStyle="font-weight:bold;"/>
+            <af:selectOneChoice value="#{ProgrammaticScroll.scollUsing}"
+                                autoSubmit="true">
+              <af:selectItem label="Table UI Component" value="1"/>
+              <af:selectItem label="Iterator Binding" value="2"/>
+              <af:selectItem label="View Object" value="3"/>
+            </af:selectOneChoice>
+            <f:facet name="separator">
+              <af:objectSpacer width="4" height="10"/>
+            </f:facet>
+          </af:panelHorizontal>
+          <af:panelHorizontal valign="top">
+            <af:table value="#{bindings.CountriesView.collectionModel}"
+                      var="row" rows="#{bindings.CountriesView.rangeSize}"
+                      first="#{bindings.CountriesView.rangeStart}"
+                      emptyText="#{bindings.CountriesView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      selectionState="#{bindings.CountriesView.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.CountriesView.collectionModel.makeCurrent}"
+                      rangeChangeListener="#{ProgrammaticScroll.onRangeChanged}"
+                      binding="#{ProgrammaticScroll.table}"
+                      partialTriggers="ScrollBackwardsButton ScrollForwardsButton"
+                      id="MyTable">
+              <af:column headerText="#{bindings.CountriesView.labels.CountryId}"
+                         sortProperty="CountryId" sortable="false">
+                <af:outputText value="#{row.CountryId}"/>
+              </af:column>
+              <af:column headerText="#{bindings.CountriesView.labels.CountryName}"
+                         sortProperty="CountryName" sortable="false">
+                <af:outputText value="#{row.CountryName}"/>
+              </af:column>
+              <f:facet name="selection">
+                <af:tableSelectOne text="Select and" autoSubmit="true">
+                  <af:commandButton text="Submit"/>
+                </af:tableSelectOne>
+              </f:facet>
+            </af:table>
+            <af:objectSpacer width="10" height="10"/>
+            <af:panelGroup layout="vertical" partialTriggers="MyTable">
+              <af:outputFormatted value="Current Country"
+                                  inlineStyle="font-weight:bolder;"/>
+              <af:outputText value="#{bindings.CountriesViewCountryName.inputValue}"/>
+              <af:outputFormatted value="Iterator Range Start"
+                                  inlineStyle="font-weight:bolder;"/>
+              <af:outputText value="#{bindings.CountriesViewIterator.rangeStart}"
+                             partialTriggers="MyTable"/>
+              <af:outputFormatted value="Table First Property"
+                                  inlineStyle="font-weight:bolder;"/>
+              <af:outputText value="#{ProgrammaticScroll.table.first}"
+                             partialTriggers="MyTable"/>
+            </af:panelGroup>
+          </af:panelHorizontal>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:ProgrammaticScroll-->
+  <!--oracle-jdev-comment:preferred-managed-bean-name:ProgrammaticScroll-->
+</jsp:root>

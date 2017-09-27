@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73" id="ProgrammaticScrollPageDef"
+                Package="demo.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="CountriesViewIterator" RangeSize="5" Binds="CountriesView"
+              DataControl="HRModuleDataControl"/>
+  </executables>
+  <bindings>
+    <table id="CountriesView" IterBinding="CountriesViewIterator">
+      <AttrNames>
+        <Item Value="CountryId"/>
+        <Item Value="CountryName"/>
+        <Item Value="RegionId"/>
+      </AttrNames>
+    </table>
+    <attributeValues id="CountriesViewCountryName"
+                     IterBinding="CountriesViewIterator">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
