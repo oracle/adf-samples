@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+</faces-config>

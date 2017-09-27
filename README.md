@@ -81,6 +81,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DRM009_ConveyorTabs
 * DRM010_UKOUGMobile
 * DRM011_MessagePrioritization
+* DRM012_DeploymentPlan
 
 
 

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="home.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="80px" id="gr1">
+                    <af:gridCell id="gc1" columnSpan="2" halign="stretch" valign="stretch">
+                        <af:panelGridLayout id="pgl2" styleClass="AFBrandingBar">
+                            <af:gridRow height="100%" id="gr1a">
+                                <af:gridCell width="160px" halign="start" valign="middle" marginStart="10px" id="gc1a">
+                                    <af:spacer styleClass="AFBrandingBarLogo"/>
+                                </af:gridCell>
+                                <af:gridCell width="100%" halign="start" valign="middle" id="gc1b">
+                                    <af:outputText styleClass="AFBrandingBarTitle" value="Deployment Plan Demo"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2" marginTop="80px">
+                    <af:gridCell id="gc2" width="60px" halign="stretch" valign="stretch">
+                      <af:spacer/>
+                    </af:gridCell>
+                    <af:gridCell id="gc3" width="100%" halign="stretch" valign="stretch">
+                    <af:panelHeader text="Context Parameter Values">
+                        <af:panelFormLayout>
+                          <af:panelLabelAndMessage label="oracle.adf.view.rich.versionString.HIDDEN:">
+                            <af:outputText value="#{initParam['oracle.adf.view.rich.versionString.HIDDEN']}" inlineStyle="color:Red;font-weight:bold;"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="javax.faces.PROJECT_STAGE:">
+                            <af:outputText value="#{initParam['javax.faces.PROJECT_STAGE']}" inlineStyle="color:Red;font-weight:bold;"/>
+                          </af:panelLabelAndMessage>                          
+                        </af:panelFormLayout>
+                      </af:panelHeader>
+                    </af:gridCell>         
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config" xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties">
+  <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+    <defaults changeEventPolicy="ppr" useBindVarsForViewCriteriaLiterals="true" useBindValuesInFindByKey="true"
+              mapNegativeScaleToIntegerTypes="true" executeEmptyOnException="true"/>
+    <startup>
+      <amconfig-overrides>
+        <config:Database jbo.locking.mode="optimistic"/>
+      </amconfig-overrides>
+    </startup>
+  </adf-adfm-config>
+  <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+    <adf-property name="adfAppUID" value="DeploymentPlan.oracle.demo"/>
+  </adf:adf-properties-child>
+</adf-config>
