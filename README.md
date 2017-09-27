@@ -85,6 +85,7 @@ Each sample is also available in downloadable form in the zips directory.
 * DropdownListInTableChangingByRow
 * DumpPoolStatisticsExample
 * DynamicCredentials1013
+* DynamicParameterForm
 
 
 

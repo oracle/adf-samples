@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="ParameterFormItemSetFkLink"
+   EntityAssociation="paramform.model.entities.associations.ParameterFormItemSetFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="ParameterDefinitionView"
+      Cardinality="1"
+      Owner="paramform.model.queries.ParameterDefinitionView"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.queries.ParameterDefinitionView.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_minCardinality" Value="1" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="ParameterFormItemSetView"
+      Cardinality="-1"
+      Owner="paramform.model.queries.ParameterFormItemSetView" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.queries.ParameterFormItemSetView.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="ParameterFormItemSetView" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

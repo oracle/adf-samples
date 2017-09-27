@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ParameterFormDefinitionView"
+   SelectList="ParameterFormDefinition.ID, 
+       ParameterFormDefinition.DESCRIPTION"
+   FromList="PARAMETER_FORM_DEFINITION ParameterFormDefinition"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="paramform.model.queries.ParameterFormDefinitionViewImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="ParameterFormDefinition"
+      Entity="paramform.model.entities.ParameterFormDefinition" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="ParameterFormDefinition"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Description"
+      EntityAttrName="Description"
+      EntityUsage="ParameterFormDefinition"
+      AliasName="DESCRIPTION" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="ParameterFormItemSetView"
+      ViewLink="paramform.model.queries.viewlinks.ItemsIncludeInForm"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

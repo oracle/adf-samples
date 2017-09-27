@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ParameterFormItemSetView"
+   SelectList="ParameterFormItemSet.PARAMETER_DEFINITION_ID, 
+       ParameterFormItemSet.PARAMETER_FORM_DEFINITION_ID"
+   FromList="PARAMETER_FORM_ITEM_SET ParameterFormItemSet"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="paramform.model.queries.ParameterFormItemSetViewImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="ParameterFormItemSet"
+      Entity="paramform.model.entities.ParameterFormItemSet" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="ParameterDefinitionId"
+      IsNotNull="true"
+      EntityAttrName="ParameterDefinitionId"
+      EntityUsage="ParameterFormItemSet"
+      AliasName="PARAMETER_DEFINITION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ParameterFormDefinitionId"
+      IsNotNull="true"
+      EntityAttrName="ParameterFormDefinitionId"
+      EntityUsage="ParameterFormItemSet"
+      AliasName="PARAMETER_FORM_DEFINITION_ID" >
+   </ViewAttribute>
+</ViewObject>

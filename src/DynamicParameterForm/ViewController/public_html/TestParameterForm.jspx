@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestParameterForm">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.ParameterFormDefinitions.collectionModel}"
+                    var="row"
+                    rows="#{bindings.ParameterFormDefinitions.rangeSize}"
+                    first="#{bindings.ParameterFormDefinitions.rangeStart}"
+                    emptyText="#{bindings.ParameterFormDefinitions.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.ParameterFormDefinitions.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.ParameterFormDefinitions.collectionModel.makeCurrent}">
+            <af:column headerText="#{bindings.ParameterFormDefinitions.labels.Id}"
+                       sortProperty="Id" sortable="false">
+              <af:outputText value="#{row.Id}"/>
+            </af:column>
+            <af:column headerText="#{bindings.ParameterFormDefinitions.labels.Description}"
+                       sortProperty="Description" sortable="false">
+              <af:outputText value="#{row.Description}"/>
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and" autoSubmit="true">
+                <af:commandButton text="Test Selected Parameter Form"
+                                  action="Test">
+                  <af:setActionListener from="#{bindings.Id}"
+                                        to="#{processScope.ParameterFormId}"/>
+                </af:commandButton>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

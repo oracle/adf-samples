@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="ParameterFormItemSet"
+   DBObjectType="table"
+   DBObjectName="PARAMETER_FORM_ITEM_SET"
+   AliasName="ParameterFormItemSet"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="paramform.model.entities.ParameterFormItemSetImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="ParameterDefinitionId"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="PARAMETER_DEFINITION_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_FORM_ITEM_SET"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ParameterFormDefinitionId"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="PARAMETER_FORM_DEFINITION_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_FORM_ITEM_SET"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="ParameterDefinition"
+      Association="paramform.model.entities.associations.ParameterFormItemSetFkAssoc"
+      AssociationEnd="paramform.model.entities.associations.ParameterFormItemSetFkAssoc.ParameterDefinition"
+      AssociationOtherEnd="paramform.model.entities.associations.ParameterFormItemSetFkAssoc.ParameterFormItemSet"
+      Type="paramform.model.entities.ParameterDefinitionImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="ParameterFormDefinition"
+      Association="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc"
+      AssociationEnd="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc.ParameterFormDefinition"
+      AssociationOtherEnd="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc.ParameterFormItemSet"
+      Type="paramform.model.entities.ParameterFormDefinitionImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="ParameterFormItemsPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterFormDefinitionId" />
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="PARAMETER_FORM_ITEMS_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008073" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PARAMETER_DEFINITION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008073" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008074" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterFormDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PARAMETER_FORM_DEFINITION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008074" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ParameterFormItemSetFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="PARAMETER_DEFINITION_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="PARAMETER_FORM_ITEM_SET_FK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ParameterFormItemSetFk1" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormItemSet.ParameterFormDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="PARAMETER_FORM_DEFINITION_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="PARAMETER_FORM_ITEM_SET_FK1" />
+      </DesignTime>
+   </Key>
+</Entity>

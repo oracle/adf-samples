@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="Model"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="scott" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_jprName" Value="../Model.jpr" />
+      <Attr Name="_appModuleNames0" Value="paramform.model.ParameterFormModule" />
+   </DesignTime>
+   <Containee
+      Name="associations"
+      FullName="paramform.model.entities.associations.associations"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="entities"
+      FullName="paramform.model.entities.entities"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="model"
+      FullName="paramform.model.model"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="queries"
+      FullName="paramform.model.queries.queries"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="viewlinks"
+      FullName="paramform.model.queries.viewlinks.viewlinks"
+      ObjectType="JboPackage" >
+   </Containee>
+</JboProject>

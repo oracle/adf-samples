@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="entities"
+   SeparateXMLFiles="true"
+   PackageName="paramform.model.entities" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="ParameterFormItemSet"
+      FullName="paramform.model.entities.ParameterFormItemSet"
+      ObjectType="Entity" >
+   </Containee>
+</JboPackage>

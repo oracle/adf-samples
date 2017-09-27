@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ParameterDefinitionView"
+   SelectList="ParameterDefinition.ID, 
+       ParameterDefinition.DESCRIPTION, 
+       ParameterDefinition.DISPLAY_TYPE"
+   FromList="PARAMETER_DEFINITION ParameterDefinition"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="paramform.model.queries.ParameterDefinitionViewImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="ParameterDefinition"
+      Entity="paramform.model.entities.ParameterDefinition" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsNotNull="true"
+      EntityAttrName="Id"
+      EntityUsage="ParameterDefinition"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Description"
+      EntityAttrName="Description"
+      EntityUsage="ParameterDefinition"
+      AliasName="DESCRIPTION" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DisplayType"
+      EntityAttrName="DisplayType"
+      EntityUsage="ParameterDefinition"
+      AliasName="DISPLAY_TYPE" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="ParameterFormItemSetView"
+      ViewLink="paramform.model.queries.viewlinks.ParameterFormItemSetFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+   <ViewLinkAccessor
+      Name="ParameterChoicesView"
+      ViewLink="paramform.model.queries.viewlinks.ChoicesForParameterDefinition"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

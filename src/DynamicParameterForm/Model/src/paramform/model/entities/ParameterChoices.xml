@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="ParameterChoices"
+   DBObjectType="table"
+   DBObjectName="PARAMETER_CHOICES"
+   AliasName="ParameterChoices"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="paramform.model.entities.ParameterChoicesImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Value"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="VALUE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_CHOICES"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Description"
+      Precision="80"
+      ColumnName="DESCRIPTION"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_CHOICES" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ParameterDefinitionId"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="PARAMETER_DEFINITION_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_CHOICES"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="ParameterDefinition"
+      Association="paramform.model.entities.associations.ParameterChoicesFkAssoc"
+      AssociationEnd="paramform.model.entities.associations.ParameterChoicesFkAssoc.ParameterDefinition"
+      AssociationOtherEnd="paramform.model.entities.associations.ParameterChoicesFkAssoc.ParameterChoices"
+      Type="paramform.model.entities.ParameterDefinitionImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="SysC008075" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterChoices.Value" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;VALUE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008075" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008076" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterChoices.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PARAMETER_DEFINITION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008076" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ParameterChoicesFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterChoices.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="PARAMETER_DEFINITION_PK" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="PARAMETER_CHOICES_FK" />
+      </DesignTime>
+   </Key>
+</Entity>

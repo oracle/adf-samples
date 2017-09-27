@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="ChoicesForItems" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="ParameterFormItems"
+      Cardinality="1"
+      Owner="paramform.model.queries.ParameterFormItems"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.queries.ParameterFormItems.ParameterName" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="ParameterFormItems" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="ParameterChoices"
+      Cardinality="-1"
+      Owner="paramform.model.queries.ParameterChoicesView" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.queries.ParameterChoicesView.ParameterDefinitionId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="ParameterChoices" />
+         <Attr Name="_accessor" Value="true" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

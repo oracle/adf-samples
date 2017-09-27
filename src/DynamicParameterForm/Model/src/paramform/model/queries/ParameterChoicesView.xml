@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ParameterChoicesView"
+   SelectList="ParameterChoices.VALUE, 
+       ParameterChoices.DESCRIPTION, 
+       ParameterChoices.PARAMETER_DEFINITION_ID"
+   FromList="PARAMETER_CHOICES ParameterChoices"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="paramform.model.queries.ParameterChoicesViewImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="ParameterChoices"
+      Entity="paramform.model.entities.ParameterChoices" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Value"
+      IsNotNull="true"
+      EntityAttrName="Value"
+      EntityUsage="ParameterChoices"
+      AliasName="VALUE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Description"
+      EntityAttrName="Description"
+      EntityUsage="ParameterChoices"
+      AliasName="DESCRIPTION" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ParameterDefinitionId"
+      IsNotNull="true"
+      EntityAttrName="ParameterDefinitionId"
+      EntityUsage="ParameterChoices"
+      AliasName="PARAMETER_DEFINITION_ID" >
+   </ViewAttribute>
+</ViewObject>

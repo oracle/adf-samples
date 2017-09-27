@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="ParameterFormDefinition"
+   DBObjectType="table"
+   DBObjectName="PARAMETER_FORM_DEFINITION"
+   AliasName="ParameterFormDefinition"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="paramform.model.entities.ParameterFormDefinitionImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_FORM_DEFINITION"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Description"
+      Precision="80"
+      ColumnName="DESCRIPTION"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PARAMETER_FORM_DEFINITION" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="ParameterFormItemSet"
+      Association="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc"
+      AssociationEnd="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc.ParameterFormItemSet"
+      AssociationOtherEnd="paramform.model.entities.associations.ParameterFormItemSetFk1Assoc.ParameterFormDefinition"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="ParameterFormDefinitionPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormDefinition.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="PARAMETER_FORM_DEFINITION_PK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008072" >
+      <AttrArray Name="Attributes">
+         <Item Value="paramform.model.entities.ParameterFormDefinition.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008072" />
+      </DesignTime>
+   </Key>
+</Entity>

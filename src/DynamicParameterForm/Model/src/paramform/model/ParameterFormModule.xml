@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="ParameterFormModule"
+   ComponentClass="paramform.model.ParameterFormModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="ParameterFormItems"
+      ViewObjectName="paramform.model.queries.ParameterFormItems" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ParameterDefinitions"
+      ViewObjectName="paramform.model.queries.ParameterDefinitionView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ParameterChoices"
+      ViewObjectName="paramform.model.queries.ParameterChoicesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ParameterFormDefinitions"
+      ViewObjectName="paramform.model.queries.ParameterFormDefinitionView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ItemsIncludedInForm"
+      ViewObjectName="paramform.model.queries.ParameterFormItemSetView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="ChoicesForParameterDefinition1"
+      ViewLinkObjectName="paramform.model.queries.viewlinks.ChoicesForParameterDefinition"
+      SrcViewUsageName="paramform.model.ParameterFormModule.ParameterDefinitions"
+      DstViewUsageName="paramform.model.ParameterFormModule.ParameterChoices" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="ItemsIncludeInForm1"
+      ViewLinkObjectName="paramform.model.queries.viewlinks.ItemsIncludeInForm"
+      SrcViewUsageName="paramform.model.ParameterFormModule.ParameterFormDefinitions"
+      DstViewUsageName="paramform.model.ParameterFormModule.ItemsIncludedInForm" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.73" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

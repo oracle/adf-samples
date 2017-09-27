@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="DynamicParameterForm">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:forEach items="#{bindings.ParameterFormItemsTree.children}"
+                     var="node">
+                <af:switcher facetName="#{node.DisplayType}">
+                  <f:facet name="I">
+                    <af:inputText value="#{node.UserValue}"
+                                  label="#{node.Description}"/>
+                  </f:facet>
+                  <f:facet name="S">
+                    <af:selectOneChoice label="#{node.Description}" value="#{node.UserValue}" >
+                      <af:forEach var="childNode" items="#{node.children}">
+                        <af:selectItem label="#{childNode.Description}" value="#{childNode.Value}"/>
+                      </af:forEach>
+                    </af:selectOneChoice>
+                  </f:facet>
+                  <f:facet name="R">
+                    <af:selectOneRadio label="#{node.Description}" value="#{node.UserValue}">
+                      <af:forEach var="childNode" items="#{node.children}">
+                        <af:selectItem label="#{childNode.Description}" value="#{childNode.Value}"/>
+                      </af:forEach>                    
+                    </af:selectOneRadio>
+                  </f:facet>
+                </af:switcher>
+            </af:forEach>
+          </af:panelForm>
+          <af:commandButton text="Submit"
+                            action="#{DynamicParameterForm.onParameterFormSubmitButtonPressed}"/>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:DynamicParameterForm-->
+</jsp:root>

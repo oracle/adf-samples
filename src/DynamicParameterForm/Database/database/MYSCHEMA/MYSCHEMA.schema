@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SCHEMA class="oracle.javatools.db.Schema" xmlns="http://xmlns.oracle.com/jdeveloper/10130/offlinedb">
+   <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+      <ID>37275ebe-010e-1000-8004-8d9080c726f0</ID>
+      <parent/>
+      <type>SCHEMA</type>
+   </ID>
+   <name>MYSCHEMA</name>
+   <properties/>
+</SCHEMA>
