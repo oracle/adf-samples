@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<web-app-deployment nselem="web-app-deployment" class="oracle.jdeveloper.deploy.war.WarProfile" xmlns="http://xmlns.oracle.com/jdeveloper/101303/deploy/j2ee-war">
+   <appletArchiveName/>
+   <appletArchives>
+      <archives/>
+      <selectionMode>0</selectionMode>
+   </appletArchives>
+   <appletDeployedAsArchive>false</appletDeployedAsArchive>
+   <appletDeployment>false</appletDeployment>
+   <appletFiles>
+      <autoInclude>true</autoInclude>
+      <deploySourceAs>0</deploySourceAs>
+      <files/>
+      <selectionFilters>
+         <Item>oracle.jdevimpl.deploy.common.JavaSelectionFilter</Item>
+      </selectionFilters>
+   </appletFiles>
+   <appletLocation/>
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>false</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <contextRoot/>
+   <defaultConnection>localoc4j</defaultConnection>
+   <deployClientMaxHeapSize/>
+   <earURL path="deploy/JSFGraph.ear"/>
+   <enterpriseAppName>JSFGraph</enterpriseAppName>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="web-files">
+            <contributors>
+               <Item type="5"/>
+            </contributors>
+            <displayName>Web Files</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="1" pattern=".tags/"/>
+                  <Item type="1" pattern=".dtags/"/>
+                  <Item type="1" pattern="**/*.jht"/>
+                  <Item type="1" pattern="**/*.jjt"/>
+                  <Item type="1" pattern="**/*.jxt"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+         <Item class="oracle.jdeveloper.deploy.common.PackagingFileGroup" internalName="project-output">
+            <contributors>
+               <Item type="2"/>
+               <Item type="7"/>
+            </contributors>
+            <displayName>WEB-INF/classes</displayName>
+            <filters>
+               <rules>
+                  <Item type="1" pattern="**/CVS/"/>
+                  <Item type="1" pattern="**.cdi"/>
+                  <Item type="1" pattern="**.contrib"/>
+                  <Item type="1" pattern="**.keep"/>
+                  <Item type="1" pattern="**.rvi"/>
+                  <Item type="1" pattern=".jsps/"/>
+                  <Item type="1" pattern=".tags/"/>
+                  <Item type="1" pattern=".dtags/"/>
+                  <Item type="1" pattern="**/*.jht"/>
+                  <Item type="1" pattern="**/*.jjt"/>
+                  <Item type="1" pattern="**/*.jxt"/>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <targetWithinJar>WEB-INF/classes</targetWithinJar>
+         </Item>
+         <Item class="oracle.jdeveloper.deploy.common.LibraryFileGroup" internalName="libraries">
+            <displayName>WEB-INF/lib</displayName>
+            <filters>
+               <rules>
+                  <Item type="0" pattern="**"/>
+               </rules>
+            </filters>
+            <selectedLibraries/>
+            <selectionMode>0</selectionMode>
+            <targetWithinJar>WEB-INF/lib</targetWithinJar>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="deploy/JSFGraph.war"/>
+   <profileDeps>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="public_html/WEB-INF/lib/adf-faces-impl.jar"/>
+         <projectURL path="ViewController.jpr"/>
+      </Item>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="public_html/WEB-INF/lib/adftags.jar"/>
+         <projectURL path="ViewController.jpr"/>
+      </Item>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="public_html/WEB-INF/lib/graphtags.jar"/>
+         <projectURL path="ViewController.jpr"/>
+      </Item>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="public_html/WEB-INF/lib/jsf-impl.jar"/>
+         <projectURL path="ViewController.jpr"/>
+      </Item>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="../Model/ModelCommon.deploy"/>
+         <projectURL path="../Model/Model.jpr"/>
+      </Item>
+      <Item>
+         <pathInEar class="java.lang.String"/>
+         <profileURL path="../Model/ModelMiddleTier.deploy"/>
+         <projectURL path="../Model/Model.jpr"/>
+      </Item>
+   </profileDeps>
+   <properties/>
+</web-app-deployment>

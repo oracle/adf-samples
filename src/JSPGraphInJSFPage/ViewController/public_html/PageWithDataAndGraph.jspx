@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html"
+          xmlns:graph="/webapp/graph.tld"
+          >
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="PageWithDataAndGraph">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelGroup>
+            <af:panelHorizontal>
+              <af:selectOneChoice id="navList1" autoSubmit="true"
+                                  value="#{bindings.Departments.inputValue}"
+                                  label="Jump to:">
+                <f:selectItems value="#{bindings.Departments.items}"/>
+              </af:selectOneChoice>
+              <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                text="Commit"/>
+              <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                text="Rollback"
+                                disabled="#{!bindings.Rollback.enabled}"
+                                immediate="true"
+                                binding="#{PageWithDataAndGraph.rollbackButton}"
+                                id="rollback">
+                <af:resetActionListener/>
+              </af:commandButton>
+            </af:panelHorizontal>
+          </af:panelGroup>
+          <af:panelGroup layout="vertical" partialTriggers="navList1">
+            <af:panelHeader text="Departments">
+              <af:panelForm>
+                <af:inputText value="#{bindings.Deptno.inputValue}"
+                              label="#{bindings.Deptno.label}" readOnly="true"/>
+                <af:inputText value="#{bindings.Dname.inputValue}"
+                              label="#{bindings.Dname.label}" readOnly="true"/>
+                <af:inputText value="#{bindings.Loc.inputValue}"
+                              label="#{bindings.Loc.label}" readOnly="true"/>
+                <f:facet name="footer">
+                  <af:panelButtonBar>
+                    <af:commandButton actionListener="#{bindings.First.execute}"
+                                      text="First"
+                                      disabled="#{!bindings.First.enabled}"/>
+                    <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                      text="Previous"
+                                      disabled="#{!bindings.Previous.enabled}"/>
+                    <af:commandButton actionListener="#{bindings.Next.execute}"
+                                      text="Next"
+                                      disabled="#{!bindings.Next.enabled}"/>
+                    <af:commandButton actionListener="#{bindings.Last.execute}"
+                                      text="Last"
+                                      disabled="#{!bindings.Last.enabled}"/>
+                  </af:panelButtonBar>
+                </f:facet>
+              </af:panelForm>
+            </af:panelHeader>
+          </af:panelGroup>
+          <af:panelGroup>
+            <af:panelHeader text="Employees In Department with Graph of Total Compensation">
+              <af:panelHorizontal valign="top">
+                <af:table rows="#{bindings.DepartmentsEmployeesInDepartment.rangeSize}"
+                          first="#{bindings.DepartmentsEmployeesInDepartment.rangeStart}"
+                          emptyText="#{bindings.DepartmentsEmployeesInDepartment.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                          var="row"
+                          value="#{bindings.DepartmentsEmployeesInDepartment.collectionModel}"
+                          selectionState="#{bindings.DepartmentsEmployeesInDepartment.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.DepartmentsEmployeesInDepartment.collectionModel.makeCurrent}"
+                          partialTriggers="navList1" id="table"
+                          binding="#{PageWithDataAndGraph.table}">
+                  <f:facet name="selection">
+                    <af:tableSelectOne text="Select and " autoSubmit="true">
+                      <af:commandButton text="Submit"/>
+                    </af:tableSelectOne>
+                  </f:facet>
+                  <af:column sortable="false" sortProperty="Empno"
+                             headerText="#{bindings.DepartmentsEmployeesInDepartment.labels.Empno}">
+                    <af:outputText value="#{row.Empno}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.DepartmentsEmployeesInDepartment.formats.Empno}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortable="false" sortProperty="Ename"
+                             headerText="#{bindings.DepartmentsEmployeesInDepartment.labels.Ename}">
+                    <af:outputText value="#{row.Ename}"/>
+                  </af:column>
+                  <af:column sortable="false" sortProperty="Sal"
+                             headerText="#{bindings.DepartmentsEmployeesInDepartment.labels.Sal}">
+                    <af:inputText id="sal" autoSubmit="true" value="#{row.Sal}"
+                                  columns="10"
+                                  valueChangeListener="#{PageWithDataAndGraph.onChangeSalOrCommValues}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.DepartmentsEmployeesInDepartment.formats.Sal}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortable="false" sortProperty="Comm"
+                             headerText="#{bindings.DepartmentsEmployeesInDepartment.labels.Comm}">
+                    <af:inputText id="comm" autoSubmit="true" value="#{row.Comm}"
+                                  columns="10"
+                                  valueChangeListener="#{PageWithDataAndGraph.onChangeSalOrCommValues}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.DepartmentsEmployeesInDepartment.formats.Comm}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="TotalComp" sortable="false"
+                             headerText="#{bindings.DepartmentsEmployeesInDepartment.labels.TotalComp}">
+                    <af:outputText value="#{row.TotalComp}">
+                      <f:convertNumber groupingUsed="false"
+                                       pattern="#{bindings.DepartmentsEmployeesInDepartment.formats.TotalComp}"/>
+                    </af:outputText>
+                  </af:column>
+                </af:table>
+                <af:panelGroup partialTriggers="comm sal navList1 table"
+                               binding="#{PageWithDataAndGraph.graphPanelGroup}">
+                  <f:verbatim>
+                    <graph:Graph imageHeight="200" imageWidth="400" data="${bindings.DepartmentsEmployeesInDepartmentGraph}"/>
+                  </f:verbatim>
+                </af:panelGroup>
+              </af:panelHorizontal>
+            </af:panelHeader>
+          </af:panelGroup>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

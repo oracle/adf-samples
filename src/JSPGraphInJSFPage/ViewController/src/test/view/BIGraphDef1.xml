@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Graph version="3.2.0.22" name="Graph" stylePath="/oracle/dss/graph/styles/earth.xml" autoLayout="AL_NEVER" depthAngle="50" depthRadius="8" pieDepth="30" pieTilt="20" seriesEffect="SE_AUTO_GRADIENT" graphType="BAR_HORIZ_CLUST">
+<ImageSize width="200" height="200"/>
+<LegendText>
+<GraphFont name="SansSerif" size="11" bold="true" italic="false" underline="false"/>
+</LegendText>
+<O1Axis visible="false"/>
+<X1Axis axisMinLabelVisible="true" visible="true"/>
+<X1MajorTick visible="true"/>
+<Y1Axis visible="true"/>
+<Y1MajorTick visible="true"/>
+<Y2Axis visible="true"/>
+</Graph>
