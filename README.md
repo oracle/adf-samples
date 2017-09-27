@@ -189,6 +189,7 @@ Each sample is also available in downloadable form in the zips directory.
 * UpdateInsteadOfDelete
 * UploadedFileToBlob
 * UploadedFileToClob
+* UploadTextFile
 
 
 

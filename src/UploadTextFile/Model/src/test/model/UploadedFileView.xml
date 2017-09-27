@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="UploadedFileView"
+   SelectList="UploadedFile.ID, 
+       UploadedFile.NAME, 
+       UploadedFile.CREATED, 
+       UploadedFile.MODIFIED, 
+       UploadedFile.FILE_CONTENTS, 
+       UploadedFile.ICON"
+   FromList="UPLOADED_FILE UploadedFile"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   ComponentClass="test.model.UploadedFileViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="UploadedFile"
+      Entity="test.model.UploadedFile" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      PrecisionRule="true"
+      EntityAttrName="Id"
+      EntityUsage="UploadedFile"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      PrecisionRule="true"
+      EntityAttrName="Name"
+      EntityUsage="UploadedFile"
+      AliasName="NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Created"
+      IsUpdateable="false"
+      PrecisionRule="true"
+      EntityAttrName="Created"
+      EntityUsage="UploadedFile"
+      AliasName="CREATED" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Modified"
+      IsUpdateable="false"
+      PrecisionRule="true"
+      EntityAttrName="Modified"
+      EntityUsage="UploadedFile"
+      AliasName="MODIFIED" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FileContents"
+      PrecisionRule="true"
+      EntityAttrName="FileContents"
+      EntityUsage="UploadedFile"
+      AliasName="FILE_CONTENTS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Icon"
+      PrecisionRule="true"
+      EntityAttrName="Icon"
+      EntityUsage="UploadedFile"
+      AliasName="ICON" >
+   </ViewAttribute>
+</ViewObject>

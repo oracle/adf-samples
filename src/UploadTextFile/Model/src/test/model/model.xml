@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="UploadedFile"
+      FullName="test.model.UploadedFile"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="UploadedFileView"
+      FullName="test.model.UploadedFileView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="FileUploadModule"
+      FullName="test.model.FileUploadModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>

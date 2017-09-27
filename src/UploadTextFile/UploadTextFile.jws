@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<workspace nselem="workspace" class="oracle.ide.model.Workspace" xmlns="http://xmlns.oracle.com/jdeveloper/9051/workspace">
+   <listOfChildren class="oracle.ide.model.DataList">
+      <Item class="oracle.ide.model.Reference">
+         <URL path="Model/Model.jpr"/>
+         <nodeClass>oracle.jdeveloper.model.JProject</nodeClass>
+      </Item>
+      <Item class="oracle.ide.model.Reference">
+         <URL path="ViewController/ViewController.jpr"/>
+         <nodeClass>oracle.jdeveloper.model.JProject</nodeClass>
+      </Item>
+   </listOfChildren>
+   <properties/>
+</workspace>

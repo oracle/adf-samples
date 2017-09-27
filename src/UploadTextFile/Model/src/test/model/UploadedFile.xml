@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="UploadedFile"
+   DBObjectType="table"
+   DBObjectName="UPLOADED_FILE"
+   AliasName="UploadedFile"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="test.model.UploadedFileImpl"
+   MsgBundleClass="test.model.common.UploadedFileImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      DefaultValue="@0"
+      ColumnName="ID"
+      Domain="oracle.jbo.domain.DBSequence"
+      Type="oracle.jbo.domain.DBSequence"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="UPLOADED_FILE"
+      PrimaryKey="true"
+      RetrievedOnInsert="true" >
+      <DesignTime>
+         <Attr Name="_SequenceName" Value="UPLOADED_FILE_SEQ" />
+         <Attr Name="_SequenceStart" Value="1" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Name"
+      Precision="40"
+      ColumnName="NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="UPLOADED_FILE" >
+   </Attribute>
+   <Attribute
+      Name="FileContents"
+      ColumnName="FILE_CONTENTS"
+      Type="oracle.ord.im.OrdDocDomain"
+      ColumnType="ORDSYS.ORDDOC"
+      SQLType="STRUCT"
+      TableName="UPLOADED_FILE" >
+   </Attribute>
+   <Attribute
+      Name="Created"
+      IsUpdateable="while_insert"
+      ColumnName="CREATED"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="UPLOADED_FILE"
+      HistoryColumn="DateHistory" >
+   </Attribute>
+   <Attribute
+      Name="Modified"
+      ColumnName="MODIFIED"
+      Type="oracle.jbo.domain.Timestamp"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="UPLOADED_FILE"
+      HistoryColumn="DateHistory" >
+   </Attribute>
+   <Attribute
+      Name="Icon"
+      ColumnName="ICON"
+      Type="oracle.ord.im.OrdImageDomain"
+      ColumnType="ORDSYS.ORDIMAGE"
+      SQLType="STRUCT"
+      TableName="UPLOADED_FILE" >
+   </Attribute>
+   <Key
+      Name="UploadedfilePrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.UploadedFile.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="UPLOADEDFILE_PRIMARY_KEY" />
+         <Attr Name="_isPrimary" Value="true" />
+      </DesignTime>
+   </Key>
+</Entity>

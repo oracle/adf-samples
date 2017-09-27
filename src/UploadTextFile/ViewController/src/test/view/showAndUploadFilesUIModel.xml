@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<DCContainer
+   id="showAndUploadFilesUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="UploadedFileViewIterator"
+         Binds="FileUploadModuleDataControl.UploadedFileView"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="UploadedFileView"
+         SubType="DCTable"
+         IterBinding="UploadedFileViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Id" />
+            <Item Value="Name" />
+            <Item Value="Created" />
+            <Item Value="Modified" />
+            <Item Value="FileContents" />
+            <Item Value="Icon" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Name"
+         SubType="DCTextField"
+         IterBinding="UploadedFileViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Name" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="FileContents"
+         SubType="DCTextField"
+         IterBinding="UploadedFileViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="FileContents" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Create"
+         SubType="DCAction"
+         IterBinding="UploadedFileViewIterator"
+         Action="40"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Commit"
+         SubType="DCAction"
+         DTClass="oracle.adf.dt.objects.JUDTCtrlDataControlAction"
+         Action="100"
+         RequiresUpdateModel="true"
+         DataControl="FileUploadModuleDataControl" >
+      </DCControl>
+      <DCControl
+         id="Next"
+         SubType="DCAction"
+         IterBinding="UploadedFileViewIterator"
+         Action="10"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Previous"
+         SubType="DCAction"
+         IterBinding="UploadedFileViewIterator"
+         Action="11"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Icon"
+         SubType="DCTextField"
+         IterBinding="UploadedFileViewIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Icon" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Delete"
+         SubType="DCAction"
+         IterBinding="UploadedFileViewIterator"
+         Action="30"
+         RequiresUpdateModel="false" >
+      </DCControl>
+   </Contents>
+</DCContainer>
