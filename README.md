@@ -31,5 +31,6 @@ Each sample is also available in downloadable form in the zips directory.
 * ArrayOfStringDomain
 * ArrayOfStringDomain11g
 * ArrayOfStructExample
+* AttributeLevelViewAccessorValidation
 
 
