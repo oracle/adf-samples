@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app>
+   <description>Empty web.xml file for Web Application</description>
+   <servlet>
+      <servlet-name>testpoolservlet</servlet-name>
+      <servlet-class>demo.TestPoolServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>testpoolservlet</servlet-name>
+      <url-pattern>/testpoolservlet</url-pattern>
+   </servlet-mapping>
+   <session-config>
+      <session-timeout>30</session-timeout>
+   </session-config>
+   <mime-mapping>
+      <extension>html</extension>
+      <mime-type>text/html</mime-type>
+   </mime-mapping>
+   <mime-mapping>
+      <extension>txt</extension>
+      <mime-type>text/plain</mime-type>
+   </mime-mapping>
+</web-app>
