@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeeModule"
+  Version="11.1.1.50.92"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="test.model.EmployeeAllInfo"/>
+  <ViewUsage
+    Name="EmployeesMedium"
+    ViewObjectName="test.model.EmployeeAllInfo"/>
+  <ViewUsage
+    Name="EmployeesLarge"
+    ViewObjectName="test.model.EmployeeAllInfo"/>
+</AppModule>

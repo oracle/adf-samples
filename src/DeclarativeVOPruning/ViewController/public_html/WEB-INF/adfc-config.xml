@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="MinimalEmployeeInfo">
+    <page>/MinimalEmployeeInfo.jspx</page>
+  </view>
+  <view id="MaximalEmployeeInfo">
+    <page>/MaximalEmployeeInfo.jspx</page>
+  </view>
+  <view id="MediumEmployeeInfo">
+    <page>/MediumEmployeeInfo.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>MinimalEmployeeInfo</from-activity-id>
+    <control-flow-case>
+      <from-outcome>MoreInfo</from-outcome>
+      <to-activity-id>MediumEmployeeInfo</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>MediumEmployeeInfo</from-activity-id>
+    <control-flow-case>
+      <from-outcome>EvenMoreInfo</from-outcome>
+      <to-activity-id>MaximalEmployeeInfo</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>MaximalEmployeeInfo</from-activity-id>
+    <control-flow-case>
+      <from-outcome>BackToBasics</from-outcome>
+      <to-activity-id>MinimalEmployeeInfo</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

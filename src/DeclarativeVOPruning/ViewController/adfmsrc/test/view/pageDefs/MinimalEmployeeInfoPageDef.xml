@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.92" id="MinimalEmployeeInfoPageDef"
+                Package="test.view.pageDefs" EnableTokenValidation="false">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25"
+              DataControl="EmployeeModuleDataControl" id="EmployeesIterator"/>
+    <searchRegion Criteria="SearchByFirstNameLastNameOrId"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmployeesIterator"
+                  id="SearchByFirstNameLastNameOrIdQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesIterator" id="Employees">
+      <nodeDefinition DefName="test.model.EmployeeAllInfo">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

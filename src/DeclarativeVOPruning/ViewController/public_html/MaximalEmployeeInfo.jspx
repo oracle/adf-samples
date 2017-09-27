@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:panelGroupLayout layout="vertical">
+          <af:commandButton text="Back to Minimal Employee Info"
+                            action="BackToBasics"/>
+          <af:panelHeader text="Employees">
+            <af:query id="searchByFirstNameLastNameOrIdQueryId"
+                      headerText="Search" disclosed="true"
+                      value="#{bindings.SearchByFirstNameLastNameOrIdQuery.queryDescriptor}"
+                      model="#{bindings.SearchByFirstNameLastNameOrIdQuery.queryModel}"
+                      queryListener="#{bindings.SearchByFirstNameLastNameOrIdQuery.processQuery}"
+                      queryOperationListener="#{bindings.SearchByFirstNameLastNameOrIdQuery.processQueryOperation}"/>
+          </af:panelHeader>
+          <af:panelGroupLayout partialTriggers="searchByFirstNameLastNameOrIdQueryId">
+            <af:panelFormLayout rendered="#{bindings.SearchByFirstNameLastNameOrIdQuery.queryPerformed}"
+                                maxColumns="4">
+              <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}">
+                <af:outputText value="#{bindings.EmployeeId.inputValue}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.EmployeeId.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.FirstName.hints.label}">
+                <af:outputText value="#{bindings.FirstName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.LastName.hints.label}">
+                <af:outputText value="#{bindings.LastName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.Email.hints.label}">
+                <af:outputText value="#{bindings.Email.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.PhoneNumber.hints.label}">
+                <af:outputText value="#{bindings.PhoneNumber.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.HireDate.hints.label}">
+                <af:outputText value="#{bindings.HireDate.inputValue}">
+                  <af:convertDateTime pattern="#{bindings.HireDate.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.JobId.hints.label}">
+                <af:outputText value="#{bindings.JobId.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.Salary.hints.label}">
+                <af:outputText value="#{bindings.Salary.inputValue}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Salary.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.CommissionPct.hints.label}">
+                <af:outputText value="#{bindings.CommissionPct.inputValue}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.CommissionPct.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.ManagerId.hints.label}">
+                <af:outputText value="#{bindings.ManagerId.inputValue}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.ManagerId.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.DepartmentId.hints.label}">
+                <af:outputText value="#{bindings.DepartmentId.inputValue}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.DepartmentId.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.DepartmentName.hints.label}">
+                <af:outputText value="#{bindings.DepartmentName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.ManagerEmail.hints.label}">
+                <af:outputText value="#{bindings.ManagerEmail.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.ManagerFirstName.hints.label}">
+                <af:outputText value="#{bindings.ManagerFirstName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.ManagerLastName.hints.label}">
+                <af:outputText value="#{bindings.ManagerLastName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.ManagerPhoneNumber.hints.label}">
+                <af:outputText value="#{bindings.ManagerPhoneNumber.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.PostalCode.hints.label}">
+                <af:outputText value="#{bindings.PostalCode.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.StateProvince.hints.label}">
+                <af:outputText value="#{bindings.StateProvince.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.StreetAddress.hints.label}">
+                <af:outputText value="#{bindings.StreetAddress.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.RegionName.hints.label}">
+                <af:outputText value="#{bindings.RegionName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.JobTitle.hints.label}">
+                <af:outputText value="#{bindings.JobTitle.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.CountryName.hints.label}">
+                <af:outputText value="#{bindings.CountryName.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.CountryId.hints.label}">
+                <af:outputText value="#{bindings.CountryId.inputValue}"/>
+              </af:panelLabelAndMessage>
+              <f:facet name="footer">
+                <af:panelGroupLayout layout="horizontal">
+                  <af:commandButton actionListener="#{bindings.First.execute}"
+                                    text="First"
+                                    disabled="#{!bindings.First.enabled}"
+                                    partialSubmit="true"/>
+                  <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                    text="Previous"
+                                    disabled="#{!bindings.Previous.enabled}"
+                                    partialSubmit="true"/>
+                  <af:commandButton actionListener="#{bindings.Next.execute}"
+                                    text="Next"
+                                    disabled="#{!bindings.Next.enabled}"
+                                    partialSubmit="true"/>
+                  <af:commandButton actionListener="#{bindings.Last.execute}"
+                                    text="Last"
+                                    disabled="#{!bindings.Last.enabled}"
+                                    partialSubmit="true"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

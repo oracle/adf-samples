@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:commandButton text="See More Employee Info" action="MoreInfo"/>
+        <af:panelGroupLayout layout="vertical">
+          <af:panelHeader text="Employees">
+            <af:query id="searchByFirstNameLastNameOrIdQueryId"
+                      headerText="Search" disclosed="true"
+                      value="#{bindings.SearchByFirstNameLastNameOrIdQuery.queryDescriptor}"
+                      model="#{bindings.SearchByFirstNameLastNameOrIdQuery.queryModel}"
+                      queryListener="#{bindings.SearchByFirstNameLastNameOrIdQuery.processQuery}"
+                      queryOperationListener="#{bindings.SearchByFirstNameLastNameOrIdQuery.processQueryOperation}"
+                      resultComponentId="::searchByFirstNameLastNameOrIdQueryResultId"/>
+          </af:panelHeader>
+          <af:panelCollection inlineStyle="width:auto;">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.Employees.collectionModel}" var="row"
+                      rows="#{bindings.Employees.rangeSize}"
+                      emptyText="#{bindings.Employees.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.Employees.rangeSize}"
+                      selectedRowKeys="#{bindings.Employees.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Employees.collectionModel.makeCurrent}"
+                      rowSelection="single"
+                      id="searchByFirstNameLastNameOrIdQueryResultId"
+                      partialTriggers=":::searchByFirstNameLastNameOrIdQueryId">
+              <af:column sortProperty="EmployeeId" sortable="true"
+                         headerText="#{bindings.Employees.hints.EmployeeId.label}">
+                <af:outputText value="#{row.EmployeeId}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Employees.hints.EmployeeId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="FirstName" sortable="true"
+                         headerText="#{bindings.Employees.hints.FirstName.label}">
+                <af:outputText value="#{row.FirstName}"/>
+              </af:column>
+              <af:column sortProperty="LastName" sortable="true"
+                         headerText="#{bindings.Employees.hints.LastName.label}">
+                <af:outputText value="#{row.LastName}"/>
+              </af:column>
+              <af:column sortProperty="Email" sortable="true"
+                         headerText="#{bindings.Employees.hints.Email.label}">
+                <af:outputText value="#{row.Email}"/>
+              </af:column>
+              <af:column sortProperty="PhoneNumber" sortable="true"
+                         headerText="#{bindings.Employees.hints.PhoneNumber.label}">
+                <af:outputText value="#{row.PhoneNumber}"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

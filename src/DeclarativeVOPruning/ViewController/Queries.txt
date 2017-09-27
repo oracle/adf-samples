@@ -1,0 +1,88 @@
+#==[Executing VO Employees]==#
+
+SELECT employees.employee_id,
+       employees.first_name,
+       employees.last_name,
+       employees.email,
+       employees.phone_number
+  FROM employees employees
+ ORDER BY employees.last_name,
+          employees.first_name
+          
+#==[Executing VO EmployeesMedium]==#
+
+SELECT employees.employee_id,
+       employees.first_name,
+       employees.last_name,
+       employees.email,
+       employees.phone_number,
+       employees.hire_date,
+       employees.job_id,
+       employees.salary,
+       employees.commission_pct,
+       employees.manager_id,
+       employees.department_id,
+       employeedepartment.department_name,
+       employeedepartment.department_id AS department_id1,
+       departmentmanager.email AS email1,
+       departmentmanager.first_name AS first_name1,
+       departmentmanager.last_name AS last_name1,
+       departmentmanager.phone_number AS phone_number1,
+       departmentmanager.employee_id AS employee_id1,
+       employeejob.job_title,
+       employeejob.job_id AS job_id1
+  FROM employees employees,
+       departments employeedepartment,
+       employees departmentmanager,
+       jobs employeejob
+ WHERE employees.department_id = employeedepartment.department_id
+   AND employeedepartment.manager_id = departmentmanager.employee_id
+   AND departmentmanager.job_id = employeejob.job_id
+ ORDER BY employees.last_name,
+          employees.first_name
+
+#==[Executing VO EmployeesLarge]==#
+
+SELECT employees.employee_id,
+       employees.first_name,
+       employees.last_name,
+       employees.email,
+       employees.phone_number,
+       employees.hire_date,
+       employees.job_id,
+       employees.salary,
+       employees.commission_pct,
+       employees.manager_id,
+       employees.department_id,
+       employeedepartment.department_name,
+       employeedepartment.department_id AS department_id1,
+       departmentmanager.email AS email1,
+       departmentmanager.first_name AS first_name1,
+       departmentmanager.last_name AS last_name1,
+       departmentmanager.phone_number AS phone_number1,
+       departmentmanager.employee_id AS employee_id1,
+       departmentlocation.postal_code,
+       departmentlocation.state_province,
+       departmentlocation.street_address,
+       departmentlocation.location_id,
+       departmentregion.region_name,
+       departmentregion.region_id,
+       employeejob.job_title,
+       employeejob.job_id AS job_id1,
+       departmentcountry.country_name,
+       departmentcountry.country_id
+  FROM employees employees,
+       departments employeedepartment,
+       employees departmentmanager,
+       locations departmentlocation,
+       countries departmentcountry,
+       regions departmentregion,
+       jobs employeejob
+ WHERE employees.department_id = employeedepartment.department_id
+   AND employeedepartment.manager_id = departmentmanager.employee_id
+   AND employeedepartment.location_id = departmentlocation.location_id
+   AND departmentcountry.region_id = departmentregion.region_id
+   AND departmentmanager.job_id = employeejob.job_id
+   AND departmentlocation.country_id = departmentcountry.country_id (+)
+ ORDER BY employees.last_name,
+          employees.first_name

@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">MinimalEmployeeInfo</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - MinimalEmployeeInfo&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - MinimalEmployeeInfo</property>
+      <property
+         name="y">107.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">171.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">MaximalEmployeeInfo</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - MaximalEmployeeInfo&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - MaximalEmployeeInfo</property>
+      <property
+         name="y">349.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">176.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">MediumEmployeeInfo</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - MediumEmployeeInfo&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - MediumEmployeeInfo</property>
+      <property
+         name="y">197.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">346.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">MoreInfo</property>
+      <property
+         name="sdm:polyPoints">R50,212.0,107.0,305.0,193.5,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View4"
+      to="View3">
+      <property
+         name="fromOutcome">EvenMoreInfo</property>
+      <property
+         name="sdm:polyPoints">L54,305.0,200.5,179.5,295.0,T56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">BackToBasics</property>
+      <property
+         name="sdm:polyPoints">T44,172.5,295.0,171.0,161.0,B50</property>
+   </ControlFlowCase>
+</SDM>
