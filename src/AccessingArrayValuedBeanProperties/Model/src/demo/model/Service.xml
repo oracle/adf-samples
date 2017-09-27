@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="Service"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="10.1.2.17.96"
+   BeanClass="demo.model.Service" >
+   <Contents >
+      <MethodAccessor
+         id="findNominalRecords"
+         BeanClass="demo.model.NominalRecord"
+         Type="java.util.List"
+         IsCollection="true" >
+         <Contents >
+            <ParameterInfo
+               id="param0"
+               Type="java.lang.String" >
+            </ParameterInfo>
+         </Contents>
+      </MethodAccessor>
+   </Contents>
+</JavaBean>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="TestPageUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="demo.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="findNominalRecordsIter"
+         SubType="DCMethodIterator"
+         Binds="findNominalRecords.result"
+         RangeSize="10"
+         DataControl="ServiceDataControl"
+         BeanClass="demo.model.NominalRecord" >
+      </DCIterator>
+      <DCIterator
+         id="descriptionCodeIterator"
+         SubType="DCAccessorIterator"
+         Binds="descriptionCode"
+         RangeSize="10"
+         MasterBinding="findNominalRecordsIter" >
+      </DCIterator>
+      <DCControl
+         id="findNominalRecords"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="false"
+         DataControl="ServiceDataControl"
+         InstanceName="ServiceDataControl.dataProvider"
+         MethodName="findNominalRecords"
+         ReturnName="ServiceDataControl.methodResults.ServiceDataControl_dataProvider_findNominalRecords_result" >
+         <Contents >
+            <NamedData
+               NDName="Arg0"
+               NDType="java.lang.String"
+               NDValue="%null%" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+      <DCControl
+         id="findNominalRecords1"
+         SubType="DCTable"
+         IterBinding="findNominalRecordsIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="firstname" />
+            <Item Value="surname" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>

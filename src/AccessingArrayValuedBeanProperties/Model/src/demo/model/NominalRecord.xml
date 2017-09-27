@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="NominalRecord"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="10.1.2.17.96"
+   BeanClass="demo.model.NominalRecord" >
+   <Contents >
+      <Attribute
+         Name="firstname"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="firstname"
+         Type="java.lang.String" >
+      </Attribute>
+      <Attribute
+         Name="surname"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="surname"
+         Type="java.lang.String" >
+      </Attribute>
+      <AccessorAttribute
+         id="descriptionCode"
+         IsCollection="true"
+         ArrayElementType="java.lang.String"
+         Type="[Ljava.lang.String;" >
+         <Contents >
+            <Attribute
+               Name="element"
+               IsUpdateable="true"
+               AttrLoad="Each"
+               IsQueriable="false"
+               IsVisible="true"
+               IsPersistent="false"
+               IsUnique="false"
+               IsNotNull="false"
+               PrecisionRule="true"
+               DiscrColumn="false"
+               Type="java.lang.String" >
+            </Attribute>
+         </Contents>
+      </AccessorAttribute>
+      <AccessorAttribute
+         id="descriptionText"
+         IsCollection="true"
+         ArrayElementType="java.lang.String"
+         Type="[Ljava.lang.String;" >
+         <Contents >
+            <Attribute
+               Name="element"
+               IsUpdateable="true"
+               AttrLoad="Each"
+               IsQueriable="false"
+               IsVisible="true"
+               IsPersistent="false"
+               IsUnique="false"
+               IsNotNull="false"
+               PrecisionRule="true"
+               DiscrColumn="false"
+               Type="java.lang.String" >
+            </Attribute>
+         </Contents>
+      </AccessorAttribute>
+   </Contents>
+</JavaBean>

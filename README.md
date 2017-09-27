@@ -10,4 +10,4 @@ Each sample is also available in downloadable form in the zips directory.
 
 * 11gDynamicCredentials
 * AccessApplicationModuleFromBackingBean
-
+* AccessingArrayValuedBeanProperties
