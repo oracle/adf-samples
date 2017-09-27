@@ -1,0 +1,338 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?Oracle-JDeveloper Diagram = '1.1'?>
+<?Oracle-JDeveloper Artifact = '1.0'?>
+<diagram xmlns="http://xmlns.oracle.com/jdeveloper/modeler/diagram">
+   <!--This is redundant information provided by the diagrammer for the structure pane-->
+   <structure xmlns="">
+      <shape name="DownloadCSV">
+         <elemRef name="" value="a30714f3-0102-1000-800c-c0a801659828::x442905810::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="success">
+         <elemRef name="" value="a31b66f6-0102-1000-800d-c0a801659828::x988190789::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="DownloadCSV">
+         <elemRef name="" value="a2f91b62-0102-1000-8006-c0a801659828::x442905810::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="success">
+         <elemRef name="" value="a2f901b9-0102-1000-8005-c0a801659828::x1967605192::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="DownloadCSV">
+         <elemRef name="" value="a3018fdd-0102-1000-8008-c0a801659828::x442905810::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="/BrowseEmployees">
+         <elemRef name="" value="a2f73a2f-0102-1000-8001-c0a801659828::/BrowseEmployees::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+      </shape>
+      <shape name="success">
+         <elemRef name="" value="a1e76157-0102-1000-8004-c0a80165da29::x577446825::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="success">
+         <elemRef name="" value="a3018fe7-0102-1000-8009-c0a801659828::x1967605192::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+      </shape>
+      <shape name="/EmployeesAsCSV">
+         <elemRef name="" value="a3057cdd-0102-1000-800b-c0a801659828::/EmployeesAsCSV::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+      </shape>
+   </structure>
+   <!--This is the modeler artifact that model element that prepresents the diagram in UML-->
+   <artifact xmlns="http://xmlns.oracle.com/jdeveloper/modeler/artifact" name="StrutsPageFlow" type="Diagram" cid="a1dc6ea4-0102-1000-8001-c0a80165da29::StrutsPageFlow::Diagram">
+      <property xmlns="">
+         <cid name="NAMESPACE_REFERENCE" key="1000::::UMLContainer"/>
+         <null name="COMMENT"/>
+         <text name="DIAGRAM_TYPE">oxd_struts</text>
+         <null name="CDIDSC"/>
+         <null name="AUTHOR"/>
+         <text name="IS_SYNCHRONIZED">FALSE</text>
+         <null name="SUB_DIAGRAM_ID"/>
+         <null name="SUB_DIAGRAM_TYPE"/>
+         <null name="CDICHI"/>
+         <null name="CDINOT"/>
+         <null name="DTD_FILENAME"/>
+         <null name="TITLE"/>
+         <null name="SCENARIO"/>
+      </property>
+      <backreference xmlns=""/>
+      <children xmlns=""/>
+   </artifact>
+   <!--This is the information the is used to build up the shapes top level shapes can be found by searching for rootMap elements-->
+   <diagramProperty xmlns="">
+      <string name="diagramName">StrutsPageFlow</string>
+      <boolean name="dropPageForward" value="false"/>
+      <boolean name="enableGrid" value="true"/>
+      <float name="gridSpacing" value="10.0"/>
+      <integer name="layoutStyle" value="0"/>
+      <integer name="maxEntriesShownInList" value="10"/>
+      <integer name="maxWidth" value="200"/>
+      <long name="nextDruid" value="0"/>
+      <point name="pageSize" value="750.0,1000.0"/>
+      <point name="pageTL" value="-374.5,-499.5"/>
+      <dimension name="pageXY" value="1.0,1.0"/>
+      <insets name="paperMargins" value="50.0,50.0,50.0,50.0"/>
+      <dimension name="paperSize" value="850.0,1100.0"/>
+      <point name="paperTL" value="50.0,50.0"/>
+      <null name="printerName"/>
+      <boolean name="promptOnDataPage" value="true"/>
+      <boolean name="showGrid" value="false"/>
+      <boolean name="showPageBreaks" value="true"/>
+      <boolean name="straightenEdges" value="false"/>
+      <boolean name="useDataPage" value="true"/>
+   </diagramProperty>
+   <layer xmlns="">
+      <infoList name="base">
+         <infoMap>
+            <long name="DrUID" value="4116662065543541054"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="-6731142674271944656"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="32.0,32.0"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="59.0,0.26568604"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="-3029978784640707114"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="150.0,17.468601"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="0.0,32.265686"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/BrowseEmployees</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="a2f73a2f-0102-1000-8001-c0a801659828::/BrowseEmployees::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" value="0.0,0.0,0.0,0.0"/>
+                     <dimension name="elementSize" value="150.0,50.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" value="74.5,79.5"/>
+               <graphicalProperties name="graphicalProperties" mask="127">
+                  <color name="lineColor" value="0,0,0,255"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" value="204,204,204,255"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" value="0,0,0,255"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </infoMap>
+         <infoMap>
+            <long name="DrUID" value="8641267166378496419"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="-7312058351013757503"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="32.0,32.0"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="54.0,0.26568604"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="4886919074381781465"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="140.0,17.468601"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="0.0,32.265686"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/EmployeesAsCSV</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="a3057cdd-0102-1000-800b-c0a801659828::/EmployeesAsCSV::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" value="0.0,0.0,0.0,0.0"/>
+                     <dimension name="elementSize" value="140.0,50.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" value="264.5,79.5"/>
+               <graphicalProperties name="graphicalProperties" mask="127">
+                  <color name="lineColor" value="0,0,0,255"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" value="204,204,204,255"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" value="0,0,0,255"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </infoMap>
+         <infoMap>
+            <long name="DrUID" value="-8091971998554271727"/>
+            <infoMap name="containedShapes">
+               <infoMap name="srcWithershins">
+                  <long name="DrUID" value="-1608379730555028249"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="86.27358,21.17955"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="-89.10202,7.104706"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <long name="destinationShapeDrUID" value="8641267166378496419"/>
+            <elemRef name="destinationShapeRef" value="a3057cdd-0102-1000-800b-c0a801659828::/EmployeesAsCSV::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+            <infoMap name="displayData">
+               <string name="nameOfElement">DownloadCSV</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="a30714f3-0102-1000-800c-c0a801659828::x442905810::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <dimension name="elementSize" value="0.0,0.0"/>
+                     <infoMap name="layoutConstraints"/>
+                  </infoMap>
+               </infoMap>
+               <array name="elementPoints">
+                  <point name="" value="154.5,129.23428"/>
+                  <point name="" value="154.5,169.5"/>
+                  <point name="" value="344.5,169.5"/>
+                  <point name="" value="344.5,129.23428"/>
+               </array>
+               <point name="elementPosition" value="374.5,499.5"/>
+               <graphicalProperties name="graphicalProperties" mask="119">
+                  <color name="lineColor" value="0,0,0,255"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="11.0" fontWeight="normal" fontStyle="normal"/>
+                  <color name="fontColor" value="0,0,0,255"/>
+               </graphicalProperties>
+               <array name="lastGlyph">
+                  <integer name="" value="2" scalar="true"/>
+                  <integer name="" value="805306369" scalar="true"/>
+                  <integer name="" value="1092616192" scalar="true"/>
+                  <integer name="" value="1090519040" scalar="true"/>
+                  <integer name="" value="1120403456" scalar="true"/>
+               </array>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+            <long name="sourceShapeDrUID" value="4116662065543541054"/>
+            <elemRef name="sourceShapeRef" value="a2f73a2f-0102-1000-8001-c0a801659828::/BrowseEmployees::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+         </infoMap>
+         <infoMap>
+            <long name="DrUID" value="-3541749958382841889"/>
+            <infoMap name="containedShapes">
+               <infoMap name="srcWithershins">
+                  <long name="DrUID" value="1618224708880848901"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" value="53.750645,21.17955"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" value="2.8284264,-28.284271"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <long name="destinationShapeDrUID" value="4116662065543541054"/>
+            <elemRef name="destinationShapeRef" value="a2f73a2f-0102-1000-8001-c0a801659828::/BrowseEmployees::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+            <infoMap name="displayData">
+               <string name="nameOfElement">success</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="a31b66f6-0102-1000-800d-c0a801659828::x988190789::StrutsForward" type="StrutsForward" class="o:b:CID"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <dimension name="elementSize" value="0.0,0.0"/>
+                     <infoMap name="layoutConstraints"/>
+                  </infoMap>
+               </infoMap>
+               <array name="elementPoints">
+                  <point name="" value="344.5,79.765686"/>
+                  <point name="" value="344.5,59.5"/>
+                  <point name="" value="144.5,59.5"/>
+                  <point name="" value="144.5,79.765686"/>
+               </array>
+               <point name="elementPosition" value="374.5,499.5"/>
+               <graphicalProperties name="graphicalProperties" mask="119">
+                  <color name="lineColor" value="0,0,0,255"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="11.0" fontWeight="normal" fontStyle="normal"/>
+                  <color name="fontColor" value="0,0,0,255"/>
+               </graphicalProperties>
+               <array name="lastGlyph">
+                  <integer name="" value="2" scalar="true"/>
+                  <integer name="" value="805306369" scalar="true"/>
+                  <integer name="" value="1092616192" scalar="true"/>
+                  <integer name="" value="1090519040" scalar="true"/>
+                  <integer name="" value="1120403456" scalar="true"/>
+               </array>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+            <long name="sourceShapeDrUID" value="8641267166378496419"/>
+            <elemRef name="sourceShapeRef" value="a3057cdd-0102-1000-800b-c0a801659828::/EmployeesAsCSV::StrutsDataForwardAction" type="StrutsDataForwardAction" class="o:b:CID"/>
+         </infoMap>
+      </infoList>
+   </layer>
+</diagram>

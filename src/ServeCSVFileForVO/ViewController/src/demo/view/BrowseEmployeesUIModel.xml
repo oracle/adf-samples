@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="BrowseEmployeesUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="demo.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmpView1CSVIterator"
+         Binds="TestModuleDataControl.EmpView1"
+         RSIName="csv" >
+      </DCIterator>
+      <DCIterator
+         id="EmpView1Iterator"
+         Binds="TestModuleDataControl.EmpView1"
+         RangeSize="5" >
+      </DCIterator>
+      <DCIterator
+         id="FindEmpView1Iterator"
+         Binds="TestModuleDataControl.EmpView1"
+         RangeSize="5" >
+      </DCIterator>
+      <DCControl
+         id="EmpView1"
+         SubType="DCTable"
+         IterBinding="EmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+            <Item Value="Sal" />
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="PreviousSet"
+         SubType="DCAction"
+         IterBinding="EmpView1Iterator"
+         Action="15"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="NextSet"
+         SubType="DCAction"
+         IterBinding="EmpView1Iterator"
+         Action="14"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="CSVEmpView"
+         SubType="DCTable"
+         IterBinding="EmpView1CSVIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+            <Item Value="Sal" />
+            <Item Value="Comm" />
+            <Item Value="Hiredate" />
+            <Item Value="Job" />
+            <Item Value="Mgr" />
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Empno"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Ename"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Ename" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Job"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Job" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Mgr"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Mgr" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Hiredate"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Hiredate" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Sal"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Sal" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Deptno"
+         SubType="DCTextField"
+         IterBinding="FindEmpView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
