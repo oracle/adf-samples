@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ExampleTransientView"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   ComponentClass="model.ExampleTransientViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Id"
+      IsQueriable="false"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ListOfAccounts"
+      IsSelected="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Domain="model.types.ListOfAccounts"
+      Type="model.types.common.ListOfAccounts"
+      ColumnType="$none$"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <AttrArray Name="KeyAttributes">
+      <Item Value="Id" />
+   </AttrArray>
+</ViewObject>

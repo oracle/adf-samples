@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Domain SYSTEM "jbo_03_01.dtd">
+
+<Domain
+   Name="ListOfAccounts" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isSelected" Value="true" />
+      <Attr Name="_type" Value="Object" />
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_isUpdateable" Value="true" />
+   </DesignTime>
+</Domain>
