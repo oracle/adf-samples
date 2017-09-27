@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TableAndFormPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelPage title="Don't Validate On Adding or Deleting With Table and Form (Declarative)">
+            <f:facet name="menu1"/>
+            <f:facet name="menuGlobal"/>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <f:facet name="actions">
+              <af:panelButtonBar>
+                <af:commandButton text="Create"
+                                  disabled="#{!bindings.Create.enabled}"
+                                  immediate="true"
+                                  actionListener="#{bindings.Create.execute}"
+                                  partialSubmit="true" id="createButton">
+                  <af:resetActionListener/>
+                </af:commandButton>
+                <af:commandButton text="Delete"
+                                  disabled="#{!bindings.Delete.enabled}"
+                                  immediate="true" id="deleteButton"
+                                  partialSubmit="true"
+                                  actionListener="#{bindings.Delete.execute}">
+                  <af:resetActionListener/>
+                </af:commandButton>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit"/>
+                <af:commandButton text="Rollback" immediate="true"
+                                  action="#{bindings.Rollback.execute}">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </af:panelButtonBar>
+            </f:facet>
+            <af:panelHorizontal valign="top" partialTriggers="deleteButton">
+              <af:table id="table" value="#{bindings.DeptView.collectionModel}"
+                        var="row" rows="#{bindings.DeptView.rangeSize}"
+                        first="#{bindings.DeptView.rangeStart}"
+                        emptyText="#{bindings.DeptView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        selectionState="#{bindings.DeptView.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.DeptView.collectionModel.makeCurrent}"
+                        partialTriggers="createButton">
+                <af:column headerText="#{bindings.DeptView.labels.Deptno}"
+                           sortProperty="Deptno" sortable="false">
+                  <af:outputText value="#{row.Deptno}">
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.DeptView.formats.Deptno}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.DeptView.labels.Dname}"
+                           sortProperty="Dname" sortable="false">
+                  <af:outputText value="#{row.Dname}"/>
+                </af:column>
+                <af:column headerText="#{bindings.DeptView.labels.Loc}"
+                           sortProperty="Loc" sortable="false">
+                  <af:outputText value="#{row.Loc}"/>
+                </af:column>
+                <f:facet name="selection">
+                  <af:tableSelectOne text="Select and" autoSubmit="true"/>
+                </f:facet>
+              </af:table>
+              <af:objectSpacer width="10" height="10"/>
+              <af:panelBox background="transparent" text="Details">
+                <af:panelForm partialTriggers="table">
+                  <af:inputText value="#{bindings.Deptno.inputValue}"
+                                label="#{bindings.Deptno.label}"
+                                required="#{bindings.Deptno.mandatory}"
+                                columns="#{bindings.Deptno.displayWidth}">
+                    <af:validator binding="#{bindings.Deptno.validator}"/>
+                    <f:convertNumber groupingUsed="false"
+                                     pattern="#{bindings.Deptno.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Dname.inputValue}"
+                                label="#{bindings.Dname.label}"
+                                required="#{bindings.Dname.mandatory}"
+                                columns="#{bindings.Dname.displayWidth}">
+                    <af:validator binding="#{bindings.Dname.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Loc.inputValue}"
+                                label="#{bindings.Loc.label}"
+                                required="#{bindings.Loc.mandatory}"
+                                columns="#{bindings.Loc.displayWidth}">
+                    <af:validator binding="#{bindings.Loc.validator}"/>
+                  </af:inputText>
+                </af:panelForm>
+              </af:panelBox>
+            </af:panelHorizontal>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
+

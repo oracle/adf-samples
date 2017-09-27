@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.36.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <pageMap>
+    <page path="/TableAndFormPage.jspx" usageId="TableAndFormPagePageDef"/>
+    <page path="/TableAndFormPageDeclarative.jspx"
+          usageId="TableAndFormPageDeclarativePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="TableAndFormPagePageDef"
+          path="test.view.pageDefs.TableAndFormPagePageDef"/>
+    <page id="TableAndFormPageDeclarativePageDef"
+          path="test.view.pageDefs.TableAndFormPageDeclarativePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="DeptModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="DeptModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
