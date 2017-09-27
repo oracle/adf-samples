@@ -15,3 +15,7 @@ Thumbs.db
 
 # Misc
 *.sso
+
+# Unwanted directories
+classes/
+deploy/
