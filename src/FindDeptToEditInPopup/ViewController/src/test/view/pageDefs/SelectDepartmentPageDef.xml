@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.39.84" id="SelectDepartmentPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="DepartmentListIterator" RangeSize="10" Binds="DepartmentList"
+              DataControl="TestModuleDataControl"/>
+  </executables>
+  <bindings>
+    <table id="DepartmentList" IterBinding="DepartmentListIterator">
+      <AttrNames>
+        <Item Value="Deptno"/>
+        <Item Value="Dname"/>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </table>
+  </bindings>
+</pageDefinition>
