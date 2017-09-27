@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="AppModule"
+   ComponentClass="test.model.AppModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.42.70" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="DeptView1"
+      ViewObjectName="test.model.DeptView" >
+   </ViewUsage>
+</AppModule>

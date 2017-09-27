@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jbo-deployment class="oracle.jbo.dt.jdevx.deploy.JbdJboProfile">
+   <bcApplication path="src/ExtendsProject.jpx"/>
+   <commonProfileURL path="ExtendsProjectCommon.deploy"/>
+   <deployType>CS</deployType>
+   <middleTierProfileURL path="ExtendsProjectMiddleTier.deploy"/>
+   <serverProfiles class="java.util.ArrayList"/>
+</jbo-deployment>

@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <web-module id="BaseADFWebApp-ViewController-webapp" path="file:/H:/examples/jdev/ADFWebAppWithComponentSubstitution/BaseADFWebApp/ViewController/public_html/"/>
+    <log>
+        <file path="BaseADFWebApp-oc4j-app.log"/>
+    </log>
+    <jazn provider="XML" location="BaseADFWebApp-jazn-data.xml" default-realm="jazn.com"/>
+    <data-sources path="BaseADFWebApp-data-sources.xml"/>
+</orion-application>
