@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmpViewWithNamedBindingStyle"
+   SelectList="Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.JOB, 
+       Emp.MGR, 
+       Emp.HIREDATE, 
+       Emp.SAL, 
+       Emp.COMM, 
+       Emp.DEPTNO"
+   FromList="EMP Emp"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.EmpViewWithNamedBindingStyleImpl"
+   ComponentInterface="test.common.EmpViewWithNamedBindingStyle"
+   ClientProxyName="test.client.EmpViewWithNamedBindingStyleClient"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <Variable
+      Name="EnameArray"
+      Kind="where"
+      Type="oracle.jbo.domain.Array" >
+   </Variable>
+   <EntityUsage
+      Name="Emp"
+      Entity="test.Emp" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Empno"
+      IsNotNull="true"
+      EntityAttrName="Empno"
+      EntityUsage="Emp"
+      AliasName="EMPNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ename"
+      EntityAttrName="Ename"
+      EntityUsage="Emp"
+      AliasName="ENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Job"
+      EntityAttrName="Job"
+      EntityUsage="Emp"
+      AliasName="JOB" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Mgr"
+      EntityAttrName="Mgr"
+      EntityUsage="Emp"
+      AliasName="MGR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Hiredate"
+      EntityAttrName="Hiredate"
+      EntityUsage="Emp"
+      AliasName="HIREDATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sal"
+      EntityAttrName="Sal"
+      EntityUsage="Emp"
+      AliasName="SAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Comm"
+      EntityAttrName="Comm"
+      EntityUsage="Emp"
+      AliasName="COMM" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Deptno"
+      EntityAttrName="Deptno"
+      EntityUsage="Emp"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+</ViewObject>
