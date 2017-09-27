@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.36.73" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="JClient">
+  <pageDefinitionUsages>
+    <page id="Panel1PageDef" path="test.view.pageDefs.Panel1PageDef"/>
+    <page id="PanelDeptView1HelperPageDef"
+          path="test.view.pageDefs.PanelDeptView1HelperPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="test.model"
+                     FactoryClass="test.view.MyCustomDataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
