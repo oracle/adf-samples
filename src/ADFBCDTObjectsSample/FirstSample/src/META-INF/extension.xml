@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="devguide.advanced.dtobjects"
+           version="10.1.3"
+           esdk-version="1.0">
+  <name>JDeveloper Extensions SDK - Sample 01</name>
+  <owner>Oracle</owner>
+  <dependencies>
+    <import>oracle.ide</import>
+  </dependencies>  
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>devguide.advanced.dtobjects.EmpDeptExampleExtension</addin>
+      </addins>
+<!--
+      <gallery>
+        <item>
+          <name>devguide.advanced.dtobjects.EmpDeptExampleExtension</name>
+          <description>Simple Extension that Created Emp/Dept AppModule</description>
+          <help>Simple Extension that Created Emp/Dept AppModule</help>
+          <category>General</category>
+          <folder>Extensions SDK Samples</folder>
+          <parameter>java.lang.String</parameter>
+          <technologyKey>ESDK</technologyKey>
+        </item>
+      </gallery>
+   -->
+    </jdeveloper-hook>
+ <!--
+    <feature-hook>
+      <description>Simple Extension that Created Emp/Dept AppModule</description>
+      <optional>true</optional>
+      <part-of>oracle.jdeveloper.extsample.allsamples</part-of>
+    </feature-hook>
+  -->
+  </hooks>
+</extension>            
