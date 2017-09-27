@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:commandButton text="Invoke Method Action That Calls Managed Bean Without Making Managed Bean A Data Control" id="cb2"
+                          actionListener="#{bindings.CallMyMethodOnMyBean.execute}"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

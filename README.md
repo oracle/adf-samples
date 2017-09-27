@@ -123,6 +123,7 @@ Each sample is also available in downloadable form in the zips directory.
 * ListBoundToSessionScopeBeanProperty
 * LookupDeptnoFromDnameViaReadXML
 * MasterDetailDetail
+* MethodActionThatCallsManagedBeanWithoutDataControlInvolved
 
 
 

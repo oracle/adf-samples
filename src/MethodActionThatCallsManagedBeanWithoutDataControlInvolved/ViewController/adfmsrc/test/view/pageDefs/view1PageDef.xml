@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.59.10" id="view1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+ <!--
+     *some* Data Control name is required to handle any exceptions
+     that might occur, but it's not related to our bean. 
+     
+     The bean whose method is to be invoked is resolved using the
+     "InstanceName" property's EL expression.
+     
+     NOTE: You need to use ${requestScope.MyBean} rather than
+                           #{requestScope.MyBean} or you'll get an error.
+   -->
+     <methodAction DataControl="AppModuleDataControl"
+                id="CallMyMethodOnMyBean"                
+                InstanceName="${MyBean}"
+                MethodName="myMethod">
+       <NamedData NDName="arg1" NDType="java.lang.String" NDValue="Foo"/>
+     </methodAction>               
+  </bindings>
+</pageDefinition>
