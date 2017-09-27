@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73" id="AddEmployeePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="EmployeesIterator" RangeSize="5" Binds="Employees"
+              DataControl="HRModuleDataControl"/>
+    <invokeAction Binds="Create" id="createNewEmpIfNeeded"
+                  Refresh="prepareModel"
+                  RefreshCondition="#{adfFacesContext.postback == false}"/>
+  </executables>
+  <bindings>
+    <attributeValues id="Empno" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Empno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Ename" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Ename"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Job" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Job"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Mgr" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Mgr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Hiredate" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Hiredate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Sal" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Sal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Comm" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Comm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Deptno" IterBinding="EmployeesIterator">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Delete" IterBinding="EmployeesIterator"
+            InstanceName="HRModuleDataControl.Employees"
+            DataControl="HRModuleDataControl" RequiresUpdateModel="false"
+            Action="30"/>
+    <action id="Create" IterBinding="EmployeesIterator"
+            InstanceName="HRModuleDataControl.Employees"
+            DataControl="HRModuleDataControl" RequiresUpdateModel="true"
+            Action="41"/>
+    <action id="Commit" InstanceName="HRModuleDataControl"
+            DataControl="HRModuleDataControl" RequiresUpdateModel="true"
+            Action="100"/>
+  </bindings>
+</pageDefinition>

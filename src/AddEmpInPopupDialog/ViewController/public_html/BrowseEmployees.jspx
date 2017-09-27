@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="BrowseEmployees">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelPage title="Browse Employees">
+            <f:facet name="menu1">
+              <af:panelButtonBar>
+                <af:commandButton text="Add New Employee..."
+                                  action="dialog:NewEmp" useWindow="true"
+                                  returnListener="#{BrowseEmployees.onReturnFromDialog}"
+                                  partialSubmit="true" id="button">
+                  <af:setActionListener from="#{true}"
+                                        to="#{processScope.addNewEmployee}"/>
+                </af:commandButton>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save Changes"
+                                  disabled="#{!bindings.Commit.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Cancel Changes"
+                                  disabled="#{!bindings.Rollback.enabled}"
+                                  immediate="true">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </af:panelButtonBar>
+            </f:facet>
+            <f:facet name="menuGlobal"/>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <af:table value="#{bindings.Employees.collectionModel}" var="row"
+                      rows="#{bindings.Employees.rangeSize}"
+                      first="#{bindings.Employees.rangeStart}"
+                      emptyText="#{bindings.Employees.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      selectionState="#{bindings.Employees.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Employees.collectionModel.makeCurrent}">
+              <f:facet name="selection">
+                <af:tableSelectOne text="Select and" autoSubmit="true">
+                  <af:commandButton text="Edit" action="Edit"/>
+                </af:tableSelectOne>
+              </f:facet>
+              <af:column sortProperty="Empno" sortable="true"
+                         headerText="#{bindings.Employees.labels.Empno}">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Employees.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Ename" sortable="true"
+                         headerText="#{bindings.Employees.labels.Ename}">
+                <af:outputText value="#{row.Ename}"/>
+              </af:column>
+              <af:column sortProperty="Job" sortable="true"
+                         headerText="#{bindings.Employees.labels.Job}">
+                <af:outputText value="#{row.Job}"/>
+              </af:column>
+              <af:column sortProperty="Mgr" sortable="true"
+                         headerText="#{bindings.Employees.labels.Mgr}">
+                <af:outputText value="#{row.Mgr}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Employees.formats.Mgr}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Hiredate" sortable="true"
+                         headerText="#{bindings.Employees.labels.Hiredate}">
+                <af:outputText value="#{row.Hiredate}">
+                  <f:convertDateTime pattern="#{bindings.Employees.formats.Hiredate}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Sal" sortable="true"
+                         headerText="#{bindings.Employees.labels.Sal}">
+                <af:outputText value="#{row.Sal}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Employees.formats.Sal}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Comm" sortable="true"
+                         headerText="#{bindings.Employees.labels.Comm}">
+                <af:outputText value="#{row.Comm}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Employees.formats.Comm}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Deptno" sortable="true"
+                         headerText="#{bindings.Employees.labels.Deptno}">
+                <af:outputText value="#{row.Deptno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.Employees.formats.Deptno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Empno" sortable="false">
+                <af:commandLink actionListener="#{bindings.removeRowWithKey.execute}"
+                                action="removeRowWithKey" text="Delete"
+                                disabled="#{!bindings.removeRowWithKey.enabled}"/>
+              </af:column>
+            </af:table>
+            <af:objectSeparator/>
+            <af:objectSpacer width="10" height="10"/>
+            <af:table value="#{bindings.ROEmpsViewByHiredate.collectionModel}"
+                      var="row"
+                      rows="#{bindings.ROEmpsViewByHiredate.rangeSize}"
+                      first="#{bindings.ROEmpsViewByHiredate.rangeStart}"
+                      emptyText="#{bindings.ROEmpsViewByHiredate.viewable ? 'No rows yet.' : 'Access Denied.'}">
+              <af:column headerText="#{bindings.ROEmpsViewByHiredate.labels.Empno}"
+                         sortProperty="Empno" sortable="false">
+                <af:outputText value="#{row.Empno}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.ROEmpsViewByHiredate.formats.Empno}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.ROEmpsViewByHiredate.labels.Ename}"
+                         sortProperty="Ename" sortable="false">
+                <af:outputText value="#{row.Ename}"/>
+              </af:column>
+              <af:column headerText="#{bindings.ROEmpsViewByHiredate.labels.Hiredate}"
+                         sortProperty="Hiredate" sortable="false">
+                <af:outputText value="#{row.Hiredate}">
+                  <f:convertDateTime pattern="#{bindings.ROEmpsViewByHiredate.formats.Hiredate}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <af:panelBox background="transparent" width="100%" text="Note">
+              <af:outputText value="Add New Employee popup is designed to immediately commit the new data and cause the table on this page to re-execute its query so that the new employee is correctly sorted by name into the list. On the other hand, edit and delete operations are left to be saved or rolled-back explicitly..."
+                             inlineStyle="font-size:smaller;"/>
+            </af:panelBox>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

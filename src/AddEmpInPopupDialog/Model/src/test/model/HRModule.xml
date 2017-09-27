@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="HRModule"
+   ComponentClass="test.model.HRModuleImpl"
+   ComponentInterface="test.model.common.HRModule"
+   ClientProxyName="test.model.client.HRModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="Employees"
+      ViewObjectName="test.model.EmpView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ROEmpsViewByHiredate"
+      ViewObjectName="test.model.ROEmpsViewByHiredate" >
+   </ViewUsage>
+</AppModule>

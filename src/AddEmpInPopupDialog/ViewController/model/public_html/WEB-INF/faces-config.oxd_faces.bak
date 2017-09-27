@@ -1,0 +1,439 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?Oracle-JDeveloper Diagram = '1.1.2'?>
+<diagram xmlns="http://xmlns.oracle.com/jdeveloper/modeler/diagram">
+   <!--This is redundant information provided by the diagrammer for the structure pane-->
+   <structure xmlns="">
+      <shape name=" - Browse">
+         <elemRef name="" value="/EditEmployee.jspx_null_Browse_/BrowseEmployees.jspx" type="JSFTransition" class="j:l:String"/>
+      </shape>
+      <shape name=" - Edit">
+         <elemRef name="" value="/BrowseEmployees.jspx_null_Edit_/EditEmployee.jspx" type="JSFTransition" class="j:l:String"/>
+      </shape>
+      <shape name=" - dialog:NewEmp">
+         <elemRef name="" value="/BrowseEmployees.jspx_null_dialog:NewEmp_/AddEmployee.jspx" type="JSFTransition" class="j:l:String"/>
+      </shape>
+      <shape name="/AddEmployee.jspx">
+         <elemRef name="" value="/AddEmployee.jspx" type="JSFPage" class="j:l:String"/>
+      </shape>
+      <shape name="/BrowseEmployees.jspx">
+         <elemRef name="" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+      </shape>
+      <shape name="/EditEmployee.jspx">
+         <elemRef name="" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+      </shape>
+   </structure>
+   <!--This is the information that is used to build up the shapes. Top level shapes can be found by searching for shapeMap elements-->
+   <diagramProperty xmlns="">
+      <boolean name="antialiasText" value="true"/>
+      <integer name="containerLayoutStyle" value="0"/>
+      <integer name="diagramLayoutStyle" value="0"/>
+      <string name="diagramName">faces-config</string>
+      <elemRef name="elementReference" value="7981f924-010d-1000-8001-8d908921dd78" type="oxd_faces" class="j:l:String"/>
+      <boolean name="enableGrid" value="true"/>
+      <float name="gridSpacing" value="10.0"/>
+      <integer name="layoutDistance" value="40"/>
+      <integer name="layoutStyle" value="0"/>
+      <integer name="maxEntriesShownInList" value="10"/>
+      <integer name="maxWidth" value="200"/>
+      <long name="nextDruid" value="0"/>
+      <point name="pageSize" x="1000.0" y="750.0"/>
+      <point name="pageTL" x="-499.5" y="-374.5"/>
+      <dimension name="pageXY" width="1.0" height="1.0"/>
+      <insets name="paperMargins" top="50.0" left="50.0" bottom="50.0" right="50.0"/>
+      <integer name="paperOrientation" value="0"/>
+      <dimension name="paperSize" width="1100.0" height="850.0"/>
+      <point name="paperTL" x="50.0" y="50.0"/>
+      <null name="printerName"/>
+      <boolean name="showGrid" value="false"/>
+      <boolean name="showPageBreaks" value="true"/>
+      <boolean name="straightenEdges" value="true"/>
+   </diagramProperty>
+   <layer xmlns="">
+      <infoList name="base">
+         <shapeMap>
+            <long name="DrUID" value="-3580212792373609526"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="-4963997916159292891"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="42.666668" height="42.666668"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="63.666664" y="0.11979675"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="-9217445645863484415"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="170.0" height="17.09375"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="0.0" y="42.78647"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/BrowseEmployees.jspx</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                     <dimension name="elementSize" width="170.0" height="60.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" x="309.5" y="224.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" rgb="0xcccccc" alpha="0xff"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </shapeMap>
+         <shapeMap>
+            <long name="DrUID" value="7494671219588556514"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="-4375650510007096994"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="42.666668" height="42.666668"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="48.666664" y="0.11979675"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="1366040683394740298"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="140.0" height="17.09375"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="0.0" y="42.78647"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/AddEmployee.jspx</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/AddEmployee.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                     <dimension name="elementSize" width="140.0" height="60.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" x="539.5" y="234.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" rgb="0xcccccc" alpha="0xff"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </shapeMap>
+         <shapeMap>
+            <long name="DrUID" value="1352472260476076901"/>
+            <infoMap name="containedShapes">
+               <infoMap name="srcWithershins">
+                  <long name="DrUID" value="7727989807163238911"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="111.0" height="20.835938"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="28.0" y="-20.835945"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <long name="destinationShapeDrUID" value="7494671219588556514"/>
+            <elemRef name="destinationShapeRef" value="/AddEmployee.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="displayData">
+               <string name="nameOfElement"> - dialog:NewEmp</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/BrowseEmployees.jspx_null_dialog:NewEmp_/AddEmployee.jspx" type="JSFTransition" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <dimension name="elementSize" width="0.0" height="0.0"/>
+                     <infoMap name="layoutConstraints"/>
+                  </infoMap>
+               </infoMap>
+               <array name="elementPoints">
+                  <point name="" x="415.8333" y="255.9924"/>
+                  <point name="" x="588.1667" y="255.9924"/>
+               </array>
+               <point name="elementPosition" x="499.5" y="374.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="11.0" fontWeight="normal" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <array name="lastGlyph">
+                  <integer name="" value="2" scalar="true"/>
+                  <integer name="" value="805306369" scalar="true"/>
+                  <integer name="" value="1092616192" scalar="true"/>
+                  <integer name="" value="1090519040" scalar="true"/>
+                  <integer name="" value="1120403456" scalar="true"/>
+               </array>
+               <string name="shapeState">symbolic</string>
+               <elemRef name="surrogateOriginalDstRef" value="/AddEmployee.jspx" type="JSFPage" class="j:l:String"/>
+               <elemRef name="surrogateOriginalSrcRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+            <long name="sourceShapeDrUID" value="-3580212792373609526"/>
+            <elemRef name="sourceShapeRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+         </shapeMap>
+         <shapeMap>
+            <long name="DrUID" value="5733947966362919337"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="5036226528065350301"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="42.666668" height="42.666668"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="48.666664" y="0.11979103"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="7364864974297446056"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="140.0" height="17.09375"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="0.0" y="42.78646"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/EditEmployee.jspx</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                     <dimension name="elementSize" width="140.0" height="60.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" x="329.5" y="394.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" rgb="0xcccccc" alpha="0xff"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </shapeMap>
+         <shapeMap>
+            <long name="DrUID" value="-308739463605831730"/>
+            <infoMap name="containedShapes">
+               <infoMap name="srcWithershins">
+                  <long name="DrUID" value="-492118313169519835"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="44.0" height="20.835938"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="27.0" y="37.0"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <long name="destinationShapeDrUID" value="5733947966362919337"/>
+            <elemRef name="destinationShapeRef" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="displayData">
+               <string name="nameOfElement"> - Edit</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/BrowseEmployees.jspx_null_Edit_/EditEmployee.jspx" type="JSFTransition" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <dimension name="elementSize" width="0.0" height="0.0"/>
+                     <infoMap name="layoutConstraints"/>
+                  </infoMap>
+               </infoMap>
+               <array name="elementPoints">
+                  <point name="" x="401.88403" y="282.38022"/>
+                  <point name="" x="401.88403" y="394.61978"/>
+               </array>
+               <point name="elementPosition" x="499.5" y="374.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="11.0" fontWeight="normal" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <array name="lastGlyph">
+                  <integer name="" value="2" scalar="true"/>
+                  <integer name="" value="805306369" scalar="true"/>
+                  <integer name="" value="1092616192" scalar="true"/>
+                  <integer name="" value="1090519040" scalar="true"/>
+                  <integer name="" value="1120403456" scalar="true"/>
+               </array>
+               <string name="shapeState">symbolic</string>
+               <elemRef name="surrogateOriginalDstRef" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+               <elemRef name="surrogateOriginalSrcRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+            <long name="sourceShapeDrUID" value="-3580212792373609526"/>
+            <elemRef name="sourceShapeRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+         </shapeMap>
+         <shapeMap>
+            <long name="DrUID" value="9168312632364119634"/>
+            <infoMap name="containedShapes">
+               <infoMap name="srcWithershins">
+                  <long name="DrUID" value="-3657974447387967987"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="66.0" height="20.835938"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="-70.0" y="-56.835938"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <long name="destinationShapeDrUID" value="-3580212792373609526"/>
+            <elemRef name="destinationShapeRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="displayData">
+               <string name="nameOfElement"> - Browse</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/EditEmployee.jspx_null_Browse_/BrowseEmployees.jspx" type="JSFTransition" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <dimension name="elementSize" width="0.0" height="0.0"/>
+                     <infoMap name="layoutConstraints"/>
+                  </infoMap>
+               </infoMap>
+               <array name="elementPoints">
+                  <point name="" x="389.5" y="394.61978"/>
+                  <point name="" x="389.5" y="282.38022"/>
+               </array>
+               <point name="elementPosition" x="499.5" y="374.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="11.0" fontWeight="normal" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <array name="lastGlyph">
+                  <integer name="" value="2" scalar="true"/>
+                  <integer name="" value="805306369" scalar="true"/>
+                  <integer name="" value="1092616192" scalar="true"/>
+                  <integer name="" value="1090519040" scalar="true"/>
+                  <integer name="" value="1120403456" scalar="true"/>
+               </array>
+               <string name="shapeState">symbolic</string>
+               <elemRef name="surrogateOriginalDstRef" value="/BrowseEmployees.jspx" type="JSFPage" class="j:l:String"/>
+               <elemRef name="surrogateOriginalSrcRef" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+            <long name="sourceShapeDrUID" value="5733947966362919337"/>
+            <elemRef name="sourceShapeRef" value="/EditEmployee.jspx" type="JSFPage" class="j:l:String"/>
+         </shapeMap>
+      </infoList>
+   </layer>
+</diagram>
