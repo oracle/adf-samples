@@ -1,0 +1,386 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TABLE class="oracle.javatools.db.Table" xmlns="http://xmlns.oracle.com/jdeveloper/10130/offlinedb">
+   <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID" id="0">
+      <ID>f6913c64-00fa-1000-808c-9016926944d6</ID>
+      <parent/>
+      <type>TABLE</type>
+   </ID>
+   <columns>
+      <Item id="3">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e63-00fa-1000-8185-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>precision</Key>
+                  <Value class="java.lang.String"/>
+               </Item>
+               <Item>
+                  <Key>scale</Key>
+                  <Value/>
+               </Item>
+            </attributeValues>
+            <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID" id="1">
+               <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+               <schemaName/>
+               <typeName>NUMBER</typeName>
+            </dataTypeID>
+         </dataTypeUsage>
+         <default/>
+         <name>ORDERID</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-80fc-9016926944d6::DB.LINEITEM::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item id="4">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e63-00fa-1000-8186-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>precision</Key>
+                  <Value class="java.lang.String"/>
+               </Item>
+               <Item>
+                  <Key>scale</Key>
+                  <Value/>
+               </Item>
+            </attributeValues>
+            <dataTypeID idref="1"/>
+         </dataTypeUsage>
+         <default/>
+         <name>LINENUM</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-80fd-9016926944d6::DB.LINEITEM::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item id="2">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e63-00fa-1000-8187-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>size</Key>
+                  <Value class="java.lang.Long">10</Value>
+               </Item>
+            </attributeValues>
+            <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+               <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+               <schemaName/>
+               <typeName>VARCHAR2</typeName>
+            </dataTypeID>
+         </dataTypeUsage>
+         <default/>
+         <name>ITEMID</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-80fe-9016926944d6::DB.LINEITEM::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item>
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e63-00fa-1000-8188-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>precision</Key>
+                  <Value class="java.lang.String"/>
+               </Item>
+               <Item>
+                  <Key>scale</Key>
+                  <Value/>
+               </Item>
+            </attributeValues>
+            <dataTypeID idref="1"/>
+         </dataTypeUsage>
+         <default/>
+         <name>QUANTITY</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-80ff-9016926944d6::DB.LINEITEM::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item>
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e63-00fa-1000-8189-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>precision</Key>
+                  <Value>10</Value>
+               </Item>
+               <Item>
+                  <Key>scale</Key>
+                  <Value class="java.lang.Long">2</Value>
+               </Item>
+            </attributeValues>
+            <dataTypeID idref="1"/>
+         </dataTypeUsage>
+         <default/>
+         <name>UNITPRICE</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-8100-9016926944d6::DB.LINEITEM::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+   </columns>
+   <constraints>
+      <Item class="oracle.javatools.db.FKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa298-0106-1000-8008-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="2"/>
+         </columns>
+         <deleteMode>0</deleteMode>
+         <enabled>true</enabled>
+         <name>ORDER_FOR_ITEM</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-8101-9016926944d6::DB.ORDER_FOR_ITEM::ForeignKey</Value>
+            </Item>
+            <Item>
+               <Key>ID_CHILD</Key>
+               <Value>f6913cc9-00fa-1000-8103-9016926944d6::DB.ORDER_FOR_ITEM::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>ID_PARENT</Key>
+               <Value>f6913cc9-00fa-1000-8102-9016926944d6::DB.ORDER_FOR_ITEM::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>IS_MANDATORY</Key>
+               <Value>TRUE</Value>
+            </Item>
+            <Item>
+               <Key>NAME_CHILD</Key>
+               <Value>end1</Value>
+            </Item>
+            <Item>
+               <Key>NAME_PARENT</Key>
+               <Value>end0</Value>
+            </Item>
+            <Item>
+               <Key>NAMESPACE_REFERENCE</Key>
+               <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+         <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa28e-0106-1000-8005-8d90483022a1</ID>
+            <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+               <ID>f6913c64-00fa-1000-807e-9016926944d6</ID>
+               <parent/>
+               <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+         </referenceID>
+      </Item>
+      <Item class="oracle.javatools.db.PKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa298-0106-1000-8009-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="3"/>
+            <Item idref="4"/>
+         </columns>
+         <enabled>true</enabled>
+         <name>PK_LINEITEM</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-8104-9016926944d6::DB.LINEITEM.PK_LINEITEM::UniqueKey</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item class="oracle.javatools.db.FKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa298-0106-1000-800a-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="3"/>
+         </columns>
+         <deleteMode>0</deleteMode>
+         <enabled>true</enabled>
+         <name>ITEM_ORDERD_ON</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cc9-00fa-1000-8105-9016926944d6::DB.ITEM_ORDERD_ON::ForeignKey</Value>
+            </Item>
+            <Item>
+               <Key>ID_CHILD</Key>
+               <Value>f6913cc9-00fa-1000-8107-9016926944d6::DB.ITEM_ORDERD_ON::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>ID_PARENT</Key>
+               <Value>f6913cc9-00fa-1000-8106-9016926944d6::DB.ITEM_ORDERD_ON::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>IS_MANDATORY</Key>
+               <Value>TRUE</Value>
+            </Item>
+            <Item>
+               <Key>NAME_CHILD</Key>
+               <Value>end1</Value>
+            </Item>
+            <Item>
+               <Key>NAME_PARENT</Key>
+               <Value>end0</Value>
+            </Item>
+            <Item>
+               <Key>NAMESPACE_REFERENCE</Key>
+               <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+         <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa2a2-0106-1000-800c-8d90483022a1</ID>
+            <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+               <ID>f6913c64-00fa-1000-8093-9016926944d6</ID>
+               <parent/>
+               <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+         </referenceID>
+      </Item>
+   </constraints>
+   <indexes class="[Loracle.javatools.db.Index;"/>
+   <name>LINEITEM</name>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>COMPLETE_LIBRARY</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>ID</Key>
+         <Value>f6913cc9-00fa-1000-80fa-9016926944d6::DB.LINEITEM::DatabaseTable</Value>
+      </Item>
+      <Item>
+         <Key>IS_ACTIVE</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>IS_ROOT</Key>
+         <Value>TRUE</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</Key>
+         <Value>toystore</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+         <Value class="oracle.jdeveloper.offlinedb.marshal.OracleDBReferenceID">
+            <ID/>
+            <connectionName/>
+            <databaseID>50456</databaseID>
+            <name>LINEITEM</name>
+            <parent/>
+            <schemaName>TOYSTORE</schemaName>
+            <type>TABLE</type>
+         </Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_NAME</Key>
+         <Value>LINEITEM</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_SCHEMA</Key>
+         <Value>TOYSTORE</Value>
+      </Item>
+      <Item>
+         <Key>TableType</Key>
+         <Value>Normal</Value>
+      </Item>
+      <Item>
+         <Key>Timestamp</Key>
+         <Value class="java.lang.Long">1077619212000</Value>
+      </Item>
+   </properties>
+   <schema>
+      <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+         <ID>f6913781-00fa-1000-8066-9016926944d6</ID>
+         <parent/>
+         <type>SCHEMA</type>
+      </ID>
+      <name>DB</name>
+      <properties class="java.util.HashMap">
+         <Item>
+            <Key>ID</Key>
+            <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+         </Item>
+         <Item>
+            <Key>NAMESPACE_REFERENCE</Key>
+            <Value>1006::::DatabaseContainer</Value>
+         </Item>
+      </properties>
+   </schema>
+</TABLE>

@@ -1,0 +1,28 @@
+<?xml version = '1.0'?>
+<!DOCTYPE connections>
+<connections>
+   <connection>
+      <JDBC_PORT>1521</JDBC_PORT>
+      <ConnectionType>JDBC</ConnectionType>
+      <HOSTNAME>localhost</HOSTNAME>
+      <DeployPassword>true</DeployPassword>
+      <user>toystore_statemgmt</user>
+      <ConnectionName>toystore_statemgmt</ConnectionName>
+      <SID>ORCL</SID>
+      <JdbcDriver>oracle.jdbc.driver.OracleDriver</JdbcDriver>
+      <password>toystore</password>
+      <ORACLE_JDBC_TYPE>thin</ORACLE_JDBC_TYPE>
+   </connection>
+   <connection>
+      <JDBC_PORT>1521</JDBC_PORT>
+      <ConnectionType>JDBC</ConnectionType>
+      <HOSTNAME>localhost</HOSTNAME>
+      <DeployPassword>true</DeployPassword>
+      <user>toystore</user>
+      <ConnectionName>toystore</ConnectionName>
+      <SID>ORCL</SID>
+      <JdbcDriver>oracle.jdbc.driver.OracleDriver</JdbcDriver>
+      <password>toystore</password>
+      <ORACLE_JDBC_TYPE>thin</ORACLE_JDBC_TYPE>
+   </connection>
+</connections>

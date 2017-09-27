@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Profile"
+   DBObjectType="table"
+   DBObjectName="PROFILE"
+   AliasName="Profile"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   CodeGenFlag="4"
+   RowClass="toystore.model.businessobjects.ProfileImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.14.39" />
+      <Attr Name="_superClass" Value="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Userid"
+      IsNotNull="true"
+      Precision="80"
+      Type="java.lang.String"
+      ColumnName="USERID"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PROFILE"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Langpref"
+      IsNotNull="true"
+      Precision="80"
+      Type="java.lang.String"
+      ColumnName="LANGPREF"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PROFILE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Favcategory"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnName="FAVCATEGORY"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="PROFILE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Mylistopt"
+      Precision="38"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnName="MYLISTOPT"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="PROFILE" >
+   </Attribute>
+   <Attribute
+      Name="Banneropt"
+      Precision="38"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnName="BANNEROPT"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="PROFILE" >
+   </Attribute>
+   <AccessorAttribute
+      Name="Account"
+      Association="toystore.model.businessobjects.ProfileForAccountAssoc"
+      AssociationEnd="toystore.model.businessobjects.ProfileForAccountAssoc.Account"
+      AssociationOtherEnd="toystore.model.businessobjects.ProfileForAccountAssoc.Profile"
+      Type="toystore.model.businessobjects.AccountImpl" >
+   </AccessorAttribute>
+</Entity>

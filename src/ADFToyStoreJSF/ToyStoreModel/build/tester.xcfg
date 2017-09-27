@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="1090D22BAD5">
+         <user>toystore</user>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <password>toystore</password>
+         <jbo.server.internal_connection>jdbc:oracle:thin:toystore_statemgmt/toystore@localhost:1521:XE</jbo.server.internal_connection>
+         <jbo.locking.mode>optimistic</jbo.locking.mode>
+         <jbo.ampool.dynamicjdbccredentials>false</jbo.ampool.dynamicjdbccredentials>
+         <DBconnection>jdbc:oracle:thin:@localhost:1521:XE</DBconnection>
+         <JDBCName>toystore</JDBCName>
+         <TransactionFactory>toystore.fwk.model.service.ToyStoreDBTransactionFactory</TransactionFactory>
+         <jbo.pers.max.active.nodes>-1</jbo.pers.max.active.nodes>
+         <jbo.project>ToyStoreModel</jbo.project>
+         <AppModuleJndiName>toystore.model.services.ToyStoreService</AppModuleJndiName>
+         <BC4JConfigName>ToyStoreServiceLocalJUnit</BC4JConfigName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <ApplicationName>toystore.model.services.ToyStoreService</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="toystore">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="toystore"/>
+      <ENTRY name="ConnectionName" value="toystore"/>
+      <ENTRY name="SID" value="XE"/>
+      <ENTRY name="password">
+         <![CDATA[{904}059080CDAC7D94A0FF295F710DCF416D42BFF2700BC626A62D]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

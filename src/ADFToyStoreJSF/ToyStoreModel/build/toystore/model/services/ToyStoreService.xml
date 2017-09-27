@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="ToyStoreService"
+   ComponentClass="toystore.model.services.ToyStoreServiceImpl"
+   ComponentInterface="toystore.model.services.common.ToyStoreService"
+   ClientProxyName="toystore.model.services.client.ToyStoreServiceClient" >
+   <Properties>
+      <Property Name ="DATA_CONTROL_NAME" Value ="ToyStoreService" />
+   </Properties>
+   <Data>
+      <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+      <Property Name ="ID" Value ="3adb9ffa-00fa-1000-8016-7f000001477e::services.ToyStoreService::ApplicationModule" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="IS_ACTIVE" Value ="FALSE" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="IS_ROOT" Value ="TRUE" />
+      <Property Name ="VISIBILITY" Value ="PUBLIC" />
+   </Data>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.22" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_superClassName" Value="toystore.fwk.model.service.ToyStoreApplicationModuleImpl" />
+   </DesignTime>
+   <ViewUsage
+      Name="ProductList"
+      ViewObjectName="toystore.model.dataaccess.ProductList" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba022-00fa-1000-8017-7f000001477e::services.ToyStoreService$ProductList::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ItemsForSale"
+      ViewObjectName="toystore.model.dataaccess.ItemsForSale" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8018-7f000001477e::services.ToyStoreService$ItemsForSale::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="Accounts"
+      ViewObjectName="toystore.model.dataaccess.Accounts" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8019-7f000001477e::services.ToyStoreService$Accounts::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="Orders"
+      ViewObjectName="toystore.model.dataaccess.Orders" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-801a-7f000001477e::services.ToyStoreService$Orders::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="LineItems"
+      ViewObjectName="toystore.model.dataaccess.LineItems" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-801b-7f000001477e::services.ToyStoreService$LineItems::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="FindProducts"
+      ViewObjectName="toystore.model.dataaccess.FindProducts" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-801c-7f000001477e::services.ToyStoreService$FindProducts::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ReviewOrder"
+      ViewObjectName="toystore.model.dataaccess.ReviewOrder" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-801e-7f000001477e::services.ToyStoreService$ReviewOrder::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ReviewLineItems"
+      ViewObjectName="toystore.model.dataaccess.ReviewLineItems" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-801f-7f000001477e::services.ToyStoreService$ReviewLineItems::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="CountryList"
+      ViewObjectName="toystore.model.dataaccess.CountryList" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8020-7f000001477e::services.ToyStoreService$CountryList::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="CreditCardList"
+      ViewObjectName="toystore.model.dataaccess.CreditCardList" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8021-7f000001477e::services.ToyStoreService$CreditCardList::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ExpirationYearList"
+      ViewObjectName="toystore.model.dataaccess.ExpirationYearList" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8022-7f000001477e::services.ToyStoreService$ExpirationYearList::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ShippingOptionsList"
+      ViewObjectName="toystore.model.dataaccess.ShippingOptionsList" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8023-7f000001477e::services.ToyStoreService$ShippingOptionsList::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ProductsInCategory"
+      ViewObjectName="toystore.model.dataaccess.ProductsInCategory" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8024-7f000001477e::services.ToyStoreService$ProductsInCategory::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ShoppingCart"
+      ViewObjectName="toystore.model.dataaccess.ShoppingCart" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8025-7f000001477e::services.ToyStoreService$ShoppingCart::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewUsage
+      Name="ShoppingCartItemLookup"
+      ViewObjectName="toystore.model.dataaccess.ShoppingCartItemLookup" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adba02c-00fa-1000-8026-7f000001477e::services.ToyStoreService$ShoppingCartItemLookup::ViewObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="TRUE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="ItemsOfProductKind"
+      ViewLinkObjectName="toystore.model.dataaccess.ItemsOfProductKind"
+      SrcViewUsageName="toystore.model.services.ToyStoreService.ProductList"
+      DstViewUsageName="toystore.model.services.ToyStoreService.ItemsForSale" >
+      <Data>
+         <Property Name ="DST_END_ID" Value ="3adba04a-00fa-1000-8029-7f000001477e::services.ToyStoreService.ItemsOfProductKind::ViewLinkEndInstance" />
+         <Property Name ="DST_END_NAME" Value ="Detail" />
+         <Property Name ="DST_END_SCOPE" Value ="INSTANCE" />
+         <Property Name ="DST_END_SEQUENCE" Value ="10" />
+         <Property Name ="DST_END_VISIBILITY" Value ="PROTECTED" />
+         <Property Name ="ID" Value ="3adba036-00fa-1000-8027-7f000001477e::services.ToyStoreService.ItemsOfProductKind::ViewLinkInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="FALSE" />
+         <Property Name ="SRC_END_ID" Value ="3adba036-00fa-1000-8028-7f000001477e::services.ToyStoreService.ItemsOfProductKind::ViewLinkEndInstance" />
+         <Property Name ="SRC_END_NAME" Value ="Master" />
+         <Property Name ="SRC_END_SEQUENCE" Value ="0" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.22" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="AccountPlacingOrder"
+      ViewLinkObjectName="toystore.model.dataaccess.AccountPlacingOrder"
+      SrcViewUsageName="toystore.model.services.ToyStoreService.Accounts"
+      DstViewUsageName="toystore.model.services.ToyStoreService.Orders" >
+      <Data>
+         <Property Name ="DST_END_ID" Value ="3adba04a-00fa-1000-802c-7f000001477e::services.ToyStoreService.AccountPlacingOrder::ViewLinkEndInstance" />
+         <Property Name ="DST_END_NAME" Value ="Detail" />
+         <Property Name ="DST_END_SCOPE" Value ="INSTANCE" />
+         <Property Name ="DST_END_SEQUENCE" Value ="10" />
+         <Property Name ="DST_END_VISIBILITY" Value ="PROTECTED" />
+         <Property Name ="ID" Value ="3adba04a-00fa-1000-802a-7f000001477e::services.ToyStoreService.AccountPlacingOrder::ViewLinkInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="FALSE" />
+         <Property Name ="SRC_END_ID" Value ="3adba04a-00fa-1000-802b-7f000001477e::services.ToyStoreService.AccountPlacingOrder::ViewLinkEndInstance" />
+         <Property Name ="SRC_END_NAME" Value ="Master" />
+         <Property Name ="SRC_END_SEQUENCE" Value ="0" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.22" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="OrderLines"
+      ViewLinkObjectName="toystore.model.dataaccess.OrderLines"
+      SrcViewUsageName="toystore.model.services.ToyStoreService.Orders"
+      DstViewUsageName="toystore.model.services.ToyStoreService.LineItems" >
+      <Data>
+         <Property Name ="DST_END_ID" Value ="3adba04a-00fa-1000-802f-7f000001477e::services.ToyStoreService.OrderLines::ViewLinkEndInstance" />
+         <Property Name ="DST_END_NAME" Value ="Detail" />
+         <Property Name ="DST_END_SCOPE" Value ="INSTANCE" />
+         <Property Name ="DST_END_SEQUENCE" Value ="10" />
+         <Property Name ="DST_END_VISIBILITY" Value ="PROTECTED" />
+         <Property Name ="ID" Value ="3adba04a-00fa-1000-802d-7f000001477e::services.ToyStoreService.OrderLines::ViewLinkInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="FALSE" />
+         <Property Name ="SRC_END_ID" Value ="3adba04a-00fa-1000-802e-7f000001477e::services.ToyStoreService.OrderLines::ViewLinkEndInstance" />
+         <Property Name ="SRC_END_NAME" Value ="Master" />
+         <Property Name ="SRC_END_SEQUENCE" Value ="0" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.22" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="ReviewLinesForOrder"
+      ViewLinkObjectName="toystore.model.dataaccess.ReviewLinesForOrder"
+      SrcViewUsageName="toystore.model.services.ToyStoreService.ReviewOrder"
+      DstViewUsageName="toystore.model.services.ToyStoreService.ReviewLineItems" >
+      <Data>
+         <Property Name ="DST_END_ID" Value ="3adba04a-00fa-1000-8032-7f000001477e::services.ToyStoreService.ReviewLinesForOrder::ViewLinkEndInstance" />
+         <Property Name ="DST_END_NAME" Value ="Detail" />
+         <Property Name ="DST_END_SCOPE" Value ="INSTANCE" />
+         <Property Name ="DST_END_SEQUENCE" Value ="10" />
+         <Property Name ="DST_END_VISIBILITY" Value ="PROTECTED" />
+         <Property Name ="ID" Value ="3adba04a-00fa-1000-8030-7f000001477e::services.ToyStoreService.ReviewLinesForOrder::ViewLinkInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="FALSE" />
+         <Property Name ="SRC_END_ID" Value ="3adba04a-00fa-1000-8031-7f000001477e::services.ToyStoreService.ReviewLinesForOrder::ViewLinkEndInstance" />
+         <Property Name ="SRC_END_NAME" Value ="Master" />
+         <Property Name ="SRC_END_SEQUENCE" Value ="0" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.36.22" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

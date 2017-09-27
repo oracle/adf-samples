@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="StatesForCountry"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   FetchMode="FETCH_AS_NEEDED"
+   MaxFetchSize="1"
+   Passivate="None"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select validate_state_for_country(:0,:1) as found
+  from dual
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.17.37" />
+      <Attr Name="_codeGenFlag2" Value="Access" />
+      <Attr Name="_isExpertMode" Value="true" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Found"
+      IsQueriable="false"
+      IsPersistent="false"
+      PrecisionRule="false"
+      Precision="1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="FOUND"
+      Expression="FOUND"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

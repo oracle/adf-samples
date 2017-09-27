@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TABLE class="oracle.javatools.db.Table" xmlns="http://xmlns.oracle.com/jdeveloper/10130/offlinedb">
+   <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID" id="0">
+      <ID>f6913c79-00fa-1000-80c3-9016926944d6</ID>
+      <parent/>
+      <type>TABLE</type>
+   </ID>
+   <columns>
+      <Item id="2">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e3b-00fa-1000-8156-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>size</Key>
+                  <Value class="java.lang.Long">25</Value>
+               </Item>
+            </attributeValues>
+            <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID" id="1">
+               <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+               <schemaName/>
+               <typeName>VARCHAR2</typeName>
+            </dataTypeID>
+         </dataTypeUsage>
+         <default/>
+         <name>USERNAME</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cf1-00fa-1000-8149-9016926944d6::DB.SIGNON::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item>
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e3b-00fa-1000-8157-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>size</Key>
+                  <Value class="java.lang.Long">25</Value>
+               </Item>
+            </attributeValues>
+            <dataTypeID idref="1"/>
+         </dataTypeUsage>
+         <default/>
+         <name>PASSWORD</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cf1-00fa-1000-814a-9016926944d6::DB.SIGNON::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+   </columns>
+   <constraints>
+      <Item class="oracle.javatools.db.PKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa2c0-0106-1000-8013-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="2"/>
+         </columns>
+         <enabled>true</enabled>
+         <name>PK_SIGNON</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cf1-00fa-1000-814b-9016926944d6::DB.SIGNON.PK_SIGNON::UniqueKey</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+   </constraints>
+   <indexes class="[Loracle.javatools.db.Index;"/>
+   <name>SIGNON</name>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>COMPLETE_LIBRARY</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>ID</Key>
+         <Value>f6913cf1-00fa-1000-8147-9016926944d6::DB.SIGNON::DatabaseTable</Value>
+      </Item>
+      <Item>
+         <Key>IS_ACTIVE</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>IS_ROOT</Key>
+         <Value>TRUE</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</Key>
+         <Value>toystore</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+         <Value class="oracle.jdeveloper.offlinedb.marshal.OracleDBReferenceID">
+            <ID/>
+            <connectionName/>
+            <databaseID>50462</databaseID>
+            <name>SIGNON</name>
+            <parent/>
+            <schemaName>TOYSTORE</schemaName>
+            <type>TABLE</type>
+         </Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_NAME</Key>
+         <Value>SIGNON</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_SCHEMA</Key>
+         <Value>TOYSTORE</Value>
+      </Item>
+      <Item>
+         <Key>TableType</Key>
+         <Value>Normal</Value>
+      </Item>
+      <Item>
+         <Key>Timestamp</Key>
+         <Value class="java.lang.Long">1077619213000</Value>
+      </Item>
+   </properties>
+   <schema>
+      <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+         <ID>f6913781-00fa-1000-8066-9016926944d6</ID>
+         <parent/>
+         <type>SCHEMA</type>
+      </ID>
+      <name>DB</name>
+      <properties class="java.util.HashMap">
+         <Item>
+            <Key>ID</Key>
+            <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+         </Item>
+         <Item>
+            <Key>NAMESPACE_REFERENCE</Key>
+            <Value>1006::::DatabaseContainer</Value>
+         </Item>
+      </properties>
+   </schema>
+</TABLE>

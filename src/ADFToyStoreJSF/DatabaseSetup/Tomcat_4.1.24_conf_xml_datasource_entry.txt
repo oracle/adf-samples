@@ -1,0 +1,110 @@
+<Server>
+  <Service>
+    <Engine>  
+      <Host>
+        :
+
+   
+        <!--
+         | BEGIN ADF Toy Store Tomcat DataSource Config Section
+         +-->
+        <Context path="/ADFToyStore" docBase="ADFToyStore">
+
+          <Logger className="org.apache.catalina.logger.FileLogger"
+                  prefix="localhost_ADFToyStore." 
+                  suffix=".log"
+                  timestamp="true"/>
+            <!--
+             | Using the oracle.jdbc.pool.OracleDataSourceFactory factory class
+             | the valid values for the 'type' attribute below are:
+             | 
+             |    1. oracle.jdbc.pool.OracleDataSource
+             |    2. oracle.jdbc.pool.OracleConnectionPoolDataSource 
+             |    3. oracle.jdbc.xa.client.OracleXADataSource
+             |    4. oracle.jdbc.pool.OracleConnectionCacheImpl
+             |    5. oracle.jdbc.pool.OracleOCIConnectionPool
+             |
+             | If you specify either "oracle.jdbc.pool.OracleConnectionCacheImpl"
+             | or "oracle.jdbc.pool.OracleOCIConnectionPool" you can supply
+             | additional children <parameter> entries of the corresponding 
+             | <ResourceParams> element below to set the values of a number
+             | of additional configuration parameters.
+             | 
+             | For "oracle.jdbc.pool.OracleConnectionCacheImpl", additional  
+             | optional parameters are:
+             |        
+             |        minLimit
+             |        maxLimit
+             |        cacheScheme
+             |
+             | For "oracle.jdbc.pool.OracleOCIConnectionPool", additional
+             | optional parameters are:
+             |
+             |        connpool_min_limit
+             |        connpool_max_limit
+             |        connpool_increment
+             |        connpool_active_size
+             |        connpool_pool_size
+             |        connpool_timeout
+             |        connpool_nowait
+             |        transactions_distributed
+             | 
+             | Consult the Oracle JDBC documentation for more info on what
+             | the values of these parameters mean and how they can be
+             | used to tune the connection pool implementation.
+             |
+             +-->
+
+            <Resource name="jdbc/toystoreDS"
+                      auth="Container"
+                      type="oracle.jdbc.pool.OracleConnectionPoolDataSource"/> 
+
+            <Resource name="jdbc/toystore_statemgmtDS"
+                      auth="Container"
+                      type="oracle.jdbc.pool.OracleConnectionPoolDataSource"/> 
+
+            <ResourceParams name="jdbc/toystoreDS">
+              <parameter>
+                <name>factory</name>
+                <value>oracle.jdbc.pool.OracleDataSourceFactory</value>
+              </parameter>
+              <!--
+               | You might need to change the "@machine:port:SID" part of the JDBC URL below
+               | to match your target database. The value below is for a default Oracle 
+               | database running on the same machine as Tomcat.
+               +-->
+              <parameter>
+                <name>url</name>
+                <value>jdbc:oracle:thin:toystore/toystore@127.0.0.1:1521:ORCL</value>
+              </parameter>
+            </ResourceParams>
+
+            <ResourceParams name="jdbc/toystore_statemgmtDS">
+              <parameter>
+                <name>factory</name>
+                <value>oracle.jdbc.pool.OracleDataSourceFactory</value>
+              </parameter>
+              <!--
+               | You might need to change the "@machine:port:SID" part of the JDBC URL below
+               | to match your target database. The value below is for a default Oracle 
+               | database running on the same machine as Tomcat.
+               +-->
+              <parameter>
+                <name>url</name>
+                <value>jdbc:oracle:thin:toystore_statemgmt/toystore@127.0.0.1:1521:ORCL</value>
+              </parameter>
+            </ResourceParams>
+       </Context>
+        <!--
+         | END ADF Toy Store Tomcat DataSource Config Section
+         +-->
+
+
+         :
+      </Host>
+         :
+    </Engine>
+     :
+  </Service>
+    :
+</Server>

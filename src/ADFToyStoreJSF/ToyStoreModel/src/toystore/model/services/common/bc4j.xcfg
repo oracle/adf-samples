@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="ToyStoreServiceLocal">
+         <user>toystore</user>
+         <jbo.project>ToyStoreModel</jbo.project>
+         <jbo.pers.max.active.nodes>-1</jbo.pers.max.active.nodes>
+         <toystore.shoppingcartlookup>ViewObject</toystore.shoppingcartlookup>
+         <AppModuleJndiName>toystore.model.services.ToyStoreService</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.ampool.dynamicjdbccredentials>false</jbo.ampool.dynamicjdbccredentials>
+         <jbo.recyclethreshold>35</jbo.recyclethreshold>
+         <ApplicationName>toystore.model.services.ToyStoreService</ApplicationName>
+         <jbo.locking.mode>optimistic</jbo.locking.mode>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <password>toystore</password>
+         <toystore.lockinventoryitems>StoredProcedure</toystore.lockinventoryitems>
+         <JDBCDataSource>java:comp/env/jdbc/toystoreDS</JDBCDataSource>
+         <jbo.server.internal_connection>java:comp/env/jdbc/toystore_statemgmtDS</jbo.server.internal_connection>
+         <jbo.dofailover>false</jbo.dofailover>
+         <TransactionFactory>toystore.fwk.model.service.ToyStoreDBTransactionFactory</TransactionFactory>
+         <toystore.refreshaccountonedit>false</toystore.refreshaccountonedit>
+         <jbo.ampool.resetnontransactionalstate>false</jbo.ampool.resetnontransactionalstate>
+      </AppModuleConfig>
+      <AppModuleConfig name="ToyStoreServiceLocalJUnit">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <DBconnection>jdbc:oracle:thin:@localhost:1521:xe</DBconnection>
+         <JDBCName>toystore</JDBCName>
+         <jbo.pers.max.active.nodes>-1</jbo.pers.max.active.nodes>
+         <jbo.project>ToyStoreModel</jbo.project>
+         <jbo.locking.mode>optimistic</jbo.locking.mode>
+         <jbo.ampool.dynamicjdbccredentials>false</jbo.ampool.dynamicjdbccredentials>
+         <AppModuleJndiName>toystore.model.services.ToyStoreService</AppModuleJndiName>
+         <TransactionFactory>toystore.fwk.model.service.ToyStoreDBTransactionFactory</TransactionFactory>
+         <ApplicationName>toystore.model.services.ToyStoreService</ApplicationName>
+         <jbo.server.internal_connection>jdbc:oracle:thin:toystore_statemgmt/toystore@localhost:1521:XE</jbo.server.internal_connection>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="toystore">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="toystore"/>
+      <ENTRY name="ConnectionName" value="toystore"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05CACECFFE6C0B6CFE0A308A2A15258BD673D2F90142A074F4]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

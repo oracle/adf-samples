@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.34.12" id="confirmshippinginfoPageDef"
+                Package="toystore.view.pageDefs"
+                MsgBundleClass="toystore.view.pageDefs.confirmshippinginfoPageDefMsgBundle"
+                ControllerClass="toystore.controller.adf.LoginRequiredPagePhaseListener">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="createNewOrder" id="invokeCreateNewOrder"
+                  Refresh="prepareModel"
+                  RefreshCondition="${bindings.OrdersIterator.currentRow == null}"/>
+    <iterator id="OrdersIterator" RangeSize="10" Binds="Orders"
+              DataControl="ToyStoreService"/>
+    <variableIterator id="variables"/>
+    <iterator id="CountryListIterator" Binds="CountryList" RangeSize="-1"
+              DataControl="ToyStoreService"/>
+    <iterator id="ShippingOptionsListIterator" RangeSize="-1"
+              Binds="ShippingOptionsList" DataControl="ToyStoreService"/>
+    <iterator id="CreditCardListIterator" RangeSize="-1" Binds="CreditCardList"
+              DataControl="ToyStoreService"/>
+    <iterator id="ExpirationYearListIterator" RangeSize="-1"
+              Binds="ExpirationYearList" DataControl="ToyStoreService"/>
+  </executables>
+  <bindings>
+    <attributeValues id="Orderid" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Orderid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Userid" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Userid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Shipaddr1" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Shipaddr1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Shipcity" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Shipcity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Shipzip" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Shipzip"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OrdersIterator" id="Shipstate">
+      <AttrNames>
+        <Item Value="Shipstate"/>
+      </AttrNames>
+    </attributeValues>
+    <list id="Shipcountry" IterBinding="OrdersIterator"
+          ListIter="CountryListIterator">
+      <AttrNames>
+        <Item Value="Shipcountry"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Code"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Description"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues id="Totalprice" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Totalprice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Shiptofirstname" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Shiptofirstname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Shiptolastname" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Shiptolastname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Creditcard" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Creditcard"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="finalizeOrder" InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService" MethodName="finalizeOrder"
+                  RequiresUpdateModel="true" Action="999"
+                  ReturnName="ToyStoreService.methodResults.ToyStoreService_dataProvider_finalizeOrder_result"/>
+    <list id="Courier" IterBinding="OrdersIterator" StaticList="false"
+          ListOperMode="0" ListIter="ShippingOptionsListIterator"
+          NullValueFlag="1" NullValueId="Courier_null">
+      <AttrNames>
+        <Item Value="Courier"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Code"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Description"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list id="Cardtype" IterBinding="OrdersIterator" StaticList="false"
+          ListOperMode="0" ListIter="CreditCardListIterator" NullValueFlag="1"
+          NullValueId="Cardtype_null">
+      <AttrNames>
+        <Item Value="Cardtype"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Code"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Description"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues id="Exprdate" IterBinding="OrdersIterator">
+      <AttrNames>
+        <Item Value="Exprdate"/>
+      </AttrNames>
+    </attributeValues>    
+    <list id="ExprMonth" IterBinding="OrdersIterator" ListOperMode="0"
+          StaticList="true" NullValueFlag="1">
+      <AttrNames>
+        <Item Value="ExprMonth"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="MM"/>
+        <Item Value="01"/>
+        <Item Value="02"/>
+        <Item Value="03"/>
+        <Item Value="04"/>
+        <Item Value="05"/>
+        <Item Value="06"/>
+        <Item Value="07"/>
+        <Item Value="08"/>
+        <Item Value="09"/>
+        <Item Value="10"/>
+        <Item Value="12"/>
+      </ValueList>
+    </list>
+    <list id="ExprYear" IterBinding="OrdersIterator" StaticList="false"
+          ListOperMode="0" ListIter="ExpirationYearListIterator"
+          NullValueFlag="1" NullValueId="ExprYear_null">
+      <AttrNames>
+        <Item Value="ExprYear"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Code"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Description"/>
+      </ListDisplayAttrNames>
+    </list>
+    <methodAction id="createNewOrder"
+                  InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService" MethodName="createNewOrder"
+                  RequiresUpdateModel="true" Action="999">
+      <NamedData NDName="currentUsername" NDValue="${sessionScope.UserLoggedIn}"
+                 NDType="java.lang.String"/>
+    </methodAction>    
+  </bindings>
+</pageDefinition>

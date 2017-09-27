@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Orderstatus"
+   DBObjectType="table"
+   DBObjectName="ORDERSTATUS"
+   AliasName="Orderstatus"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   CodeGenFlag="4"
+   RowClass="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.14.39" />
+      <Attr Name="_superClass" Value="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Orderid"
+      IsNotNull="true"
+      Precision="38"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnName="ORDERID"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="ORDERSTATUS"
+      PrimaryKey="true" >
+   </Attribute>
+   <Attribute
+      Name="Linenum"
+      IsNotNull="true"
+      Precision="38"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnName="LINENUM"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="ORDERSTATUS"
+      PrimaryKey="true" >
+   </Attribute>
+   <Attribute
+      Name="Timestamp"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Date"
+      ColumnName="TIMESTAMP"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="ORDERSTATUS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Status"
+      IsNotNull="true"
+      Precision="2"
+      Type="java.lang.String"
+      ColumnName="STATUS"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERSTATUS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Orders"
+      Association="toystore.model.businessobjects.StatusOfOrderAssoc"
+      AssociationEnd="toystore.model.businessobjects.StatusOfOrderAssoc.Orders"
+      AssociationOtherEnd="toystore.model.businessobjects.StatusOfOrderAssoc.Orderstatus"
+      Type="toystore.model.businessobjects.OrdersImpl" >
+   </AccessorAttribute>
+</Entity>

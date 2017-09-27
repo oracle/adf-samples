@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<simple-archive-deployment nselem="simple-archive-deployment" class="oracle.jdeveloper.deploy.jar.ArchiveProfile" xmlns="http://xmlns.oracle.com/jdeveloper/9051/deploy/jar">
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>true</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.ProjectFileGroup" internalName="legacy">
+            <contributors>
+               <autoInclude>true</autoInclude>
+               <deploySourceAs>0</deploySourceAs>
+               <files class="[Ljava.net.URL;"/>
+               <selectionFilters/>
+            </contributors>
+            <displayName>Main</displayName>
+            <filters>
+               <additionalArchives/>
+               <afterFilters/>
+               <beforeFilters/>
+               <duringFilters/>
+               <selectedArchives>
+                  <archives/>
+                  <selectionMode>0</selectionMode>
+               </selectedArchives>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="../../deploy/ToyStoreFwkExtensions.jar"/>
+   <profileDeps/>
+</simple-archive-deployment>

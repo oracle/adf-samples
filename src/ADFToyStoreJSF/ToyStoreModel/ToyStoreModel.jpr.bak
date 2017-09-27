@@ -1,0 +1,327 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <value n="CachedConfigTable" v=""/>
+   <hash n="component-versions">
+      <value n="oracle.adf.dt.migration.ProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.jsf.addin.JSFProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.struts.addin.db.ADFStrutsProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.adfdt.controller.struts.addin.StrutsProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.bm.commonIde.ProjectUpgrader" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.ide.model.Project" v="10.1.2.0.0;10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.ide.model.ResourcePathsMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jbo.dt.jclient.migrator.JCProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jbo.dt.jdevx.ui.appnav.APProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jdeveloper.dbmodeler.migration.ProjectMigratorHelper" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jdeveloper.offlinedb.migration.OfflineDBProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.jsp.JspMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.runner.RunConfigurationsMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.jdevimpl.webservices.WebServicesMigratorHelper" v="10.1.3.0.3;10.1.3.0.4"/>
+      <value n="oracle.tip.tools.ide.pm.PMProjectMigrator" v="10.1.3.0.4"/>
+      <value n="oracle.toplink.addin.migration.TopLinkProjectMigrator" v="10.1.3.0.3;10.1.3.0.4"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.toplink.addin.TopLinkProjectSettings/toplinkContentSet"/>
+      <string v="oracle.tip.tools.ide.pm.PMProjectSettings/Integration_Content"/>
+   </list>
+   <value n="defaultPackage" v="toystore.model.businessobjects"/>
+   <value n="jbo.JboProject" v="ToyStoreModel"/>
+   <value n="JboProject" v="true"/>
+   <hash n="oracle.adf.dt.settings.ADFMSettings">
+      <value n="metafilepackage" v="toystore.model.businessobjects"/>
+   </hash>
+   <hash n="oracle.bm.commonIde.data.project.ModelerProjectSettings">
+      <hash n="modelersContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="model/"/>
+         </list>
+      </hash>
+      <value n="modelersVersion" v="10.12"/>
+   </hash>
+   <hash n="oracle.ide.model.DependencyConfiguration">
+      <list n="dependencyList">
+         <hash>
+            <value n="class" v="oracle.jdeveloper.library.ProjectLibrary"/>
+            <url n="sourceOwnerURL" path="../ADFToyStore.jws"/>
+            <url n="sourceURL" path="../FwkExtensions/FwkExtensions.jpr"/>
+         </hash>
+         <hash>
+            <value n="class" v="oracle.jdeveloper.library.ProjectLibrary"/>
+            <url n="sourceOwnerURL" path="../ADFToyStore.jws"/>
+            <url n="sourceURL" path="ToyStoreModel.jpr"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jbo.dt.validation.RulesSettings">
+      <value n="VerifyStateForCountryRule" v="toystore.fwk.rules.VerifyStateForCountryRule"/>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".gif"/>
+         <string v=".properties"/>
+         <string v=".jpg"/>
+         <string v=".jpeg"/>
+         <string v=".xml"/>
+         <string v=".jpx"/>
+         <string v=".xcfg"/>
+         <string v="-apf.xml"/>
+      </list>
+      <value n="internalEncoding" v="Cp1252"/>
+      <value n="useJavac" v="false"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="ADFToyStore"/>
+      <value n="j2eeWebContextRoot" v="ADFToyStore"/>
+      <hash n="webContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="public_html/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings">
+      <hash n="offlineDBContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="database/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="clearLogBeforeRun" v="false"/>
+            <value n="compileBeforeRun" v="false"/>
+            <value n="connectionName" v="scott"/>
+            <value n="custom" v="false"/>
+            <value n="javaOptions" v="-Djbo.debugoutput=console"/>
+            <value n="name" v="Default"/>
+            <url n="targetURL" path="src/toystore/model/services/ToyStoreServiceImpl.java"/>
+            <value n="useProxy" v="false"/>
+         </hash>
+      </hash>
+      <list n="runConfigurationList">
+         <string v="Default"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="Oracle Java Object Cache"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <hash n="internalDefinitions">
+         <list n="jdkDefinitions"/>
+         <list n="libraryDefinitions"/>
+      </hash>
+      <hash n="jdkReference">
+         <value n="id" v="1.4.2_04"/>
+         <value n="isJDK" v="true"/>
+         <value n="jdkVersion" v="1.4.2_04"/>
+      </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JDeveloper Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Tester"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="J2EE"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="SQLJ Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle9 iAS"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle Java Object Cache"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="build/"/>
+   </hash>
+   <hash n="oracle.tip.tools.ide.pm.PMProjectSettings">
+      <hash n="Integration_Content">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.toplink.addin.TopLinkProjectSettings">
+      <hash n="toplinkContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="toplink/"/>
+         </list>
+      </hash>
+   </hash>
+   <list n="ownerMap">
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Account.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/AccountInfoForUser.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/businessobjects.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Category.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/CategoryForProductAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Inventory.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Item.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ItemOrderdOnAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Lineitem.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/OnHandInfoForAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/OrderedByAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/OrderForItemAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Orders.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Orderstatus.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Product.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ProductKindAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Profile.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ProfileForAccountAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Signon.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/StatusOfOrderAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/SuppliedByAssoc.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/Supplier.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/AccountPlacingOrder.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/Accounts.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/CountryList.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/CreditCardList.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/dataaccess.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ExpirationYearList.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/FindProducts.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ItemsForSale.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ItemsOfProductKind.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/LineItems.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/OrderLines.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/Orders.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ProductList.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ProductsInCategory.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ReviewLineItems.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ReviewLinesForOrder.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ReviewOrder.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShippingOptionsList.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShoppingCart.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShoppingCartItemLookup.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/datatypes/CreditCardNumber.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/datatypes/datatypes.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/datatypes/Email.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/datatypes/ExpirationDate.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/services/services.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="nodeURL" path="src/toystore/model/services/ToyStoreService.xml"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/services/services.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.ui.JdxXcfgNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/common/bc4j.xcfg"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.ui.JdxXcfgNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/bc4j.xcfg"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.ui.JdxXcfgNode"/><url n="nodeURL" path="src/toystore/model/datatypes/common/bc4j.xcfg"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jbo.dt.jdevx.ui.JdxXcfgNode"/><url n="nodeURL" path="src/toystore/model/services/common/bc4j.xcfg"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/services/services.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/AccountImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/CategoryImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/common/AccountImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/common/ItemImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/common/OrdersImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/common/SignonImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/InventoryCollImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/InventoryImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ItemImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/LineitemImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/OrdersImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ProductImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/ProfileImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/SignonImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/businessobjects/SupplierImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/businessobjects/businessobjects.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/AccountsImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/AccountsRowImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/client/ItemsForSaleClient.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/client/ShoppingCartClient.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/client/ShoppingCartRowClient.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/AccountsRowImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/FindProducts.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/FindProductsRowImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ItemsForSale.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ItemsForSaleRowImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/OrdersRowImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.ui.JdxAppNode"/><url n="ownerURL" path="src/ToyStoreModel.jpx"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ProductList.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ShoppingCart.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ShoppingCartRow.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/common/ShoppingCartRowImplMsgBundle.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ItemsForSaleImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/LineItemsRowImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/OrdersRowImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ReviewOrderImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShoppingCartImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShoppingCartItemLookupRowImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/dataaccess/ShoppingCartRowImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/dataaccess/dataaccess.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/datatypes/common/CreditCardNumber.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/datatypes/common/Email.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/datatypes/common/ExpirationDate.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/datatypes/datatypes.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/services/client/ToyStoreServiceClient.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/services/services.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/services/common/ToyStoreService.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/services/services.xml"/></hash>
+      <hash><value n="nodeClass" v="oracle.jdeveloper.model.JavaSourceNode"/><url n="nodeURL" path="src/toystore/model/services/ToyStoreServiceImpl.java"/><value n="ownerClass" v="oracle.jbo.dt.jdevx.JdvXmlNode"/><url n="ownerURL" path="src/toystore/model/services/services.xml"/></hash>
+   </list>
+   <list n="recentlyUsedPackages">
+      <string v="toystore.model.businessobjects"/>
+      <string v="toystore.model.services"/>
+      <string v="toystore.model.dataaccess"/>
+      <string v="toystore.model"/>
+      <string v="toystore.model.beans"/>
+      <string v="toystore.model.datatypes"/>
+      <string v="toystore.model.dataaccess.common"/>
+      <string v="toystore.model.businessobjects.common"/>
+      <string v="toystore.model.rules"/>
+      <string v="toystore.model.datatypes.common"/>
+      <string v="package1"/>
+   </list>
+</jpr:project>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.34.12" id="yourcartPageDef"
+                Package="toystore.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="ShoppingCartIterator" RangeSize="-1" Binds="ShoppingCart"
+              DataControl="ToyStoreService"/>
+    <variableIterator id="variables">
+      <variable IsQueriable="false" Type="java.lang.Double"
+                Name="getCartTotal_return" SourceName="getCartTotal_return"
+                IsUpdateable="0"
+                DefaultValue="${bindings.getCartTotal.result}"/>
+    </variableIterator>
+    <invokeAction id="calculateCartTotal" Binds="getCartTotal"
+                  Refresh="renderModel"/>
+  </executables>
+  <bindings>
+    <table id="ShoppingCart" IterBinding="ShoppingCartIterator">
+      <AttrNames>
+        <Item Value="Itemid"/>
+        <Item Value="Quantity"/>
+        <Item Value="Listprice"/>
+        <Item Value="Name"/>
+        <Item Value="ExtendedTotal"/>
+        <Item Value="InStock"/>
+      </AttrNames>
+    </table>
+    <methodAction id="getCartTotal" InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService" MethodName="getCartTotal"
+                  RequiresUpdateModel="true" Action="999"
+                  ReturnName="ToyStoreService.methodResults.ToyStoreService_dataProvider_getCartTotal_result"/>
+    <attributeValues id="getCartTotal1" IterBinding="variables">
+      <AttrNames>
+        <Item Value="getCartTotal_return"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="removeItemFromCart"
+                  InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService" MethodName="removeItemFromCart"
+                  RequiresUpdateModel="true" Action="999">
+      <NamedData NDName="itemid" NDValue="#{row.Itemid}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="removeShoppingCartItemsWithZeroQuantity"
+                  InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService"
+                  MethodName="removeShoppingCartItemsWithZeroQuantity"
+                  RequiresUpdateModel="true" Action="999"/>
+  </bindings>
+</pageDefinition>

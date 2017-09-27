@@ -1,0 +1,230 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TABLE class="oracle.javatools.db.Table" xmlns="http://xmlns.oracle.com/jdeveloper/10130/offlinedb">
+   <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID" id="0">
+      <ID>f6913c64-00fa-1000-807a-9016926944d6</ID>
+      <parent/>
+      <type>TABLE</type>
+   </ID>
+   <columns>
+      <Item id="1">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e6d-00fa-1000-8198-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>size</Key>
+                  <Value class="java.lang.Long">10</Value>
+               </Item>
+            </attributeValues>
+            <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+               <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+               <schemaName/>
+               <typeName>VARCHAR2</typeName>
+            </dataTypeID>
+         </dataTypeUsage>
+         <default/>
+         <name>ITEMID</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cab-00fa-1000-80e3-9016926944d6::DB.INVENTORY::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item>
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>f6913e6d-00fa-1000-8199-9016926944d6</ID>
+            <parent idref="0"/>
+            <type>COLUMN</type>
+         </ID>
+         <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+            <attributeValues class="java.util.HashMap">
+               <Item>
+                  <Key>precision</Key>
+                  <Value class="java.lang.String"/>
+               </Item>
+               <Item>
+                  <Key>scale</Key>
+                  <Value/>
+               </Item>
+            </attributeValues>
+            <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+               <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+               <schemaName/>
+               <typeName>NUMBER</typeName>
+            </dataTypeID>
+         </dataTypeUsage>
+         <default/>
+         <name>QTY</name>
+         <notNull>true</notNull>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cab-00fa-1000-80e4-9016926944d6::DB.INVENTORY::Column</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+   </columns>
+   <constraints>
+      <Item class="oracle.javatools.db.PKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa284-0106-1000-8003-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="1"/>
+         </columns>
+         <enabled>true</enabled>
+         <name>PK_INVENTORY</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cab-00fa-1000-80e5-9016926944d6::DB.INVENTORY.PK_INVENTORY::UniqueKey</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+      </Item>
+      <Item class="oracle.javatools.db.FKConstraint">
+         <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa284-0106-1000-8004-8d90483022a1</ID>
+            <parent idref="0"/>
+            <type>CONSTRAINT</type>
+         </ID>
+         <columns>
+            <Item idref="1"/>
+         </columns>
+         <deleteMode>0</deleteMode>
+         <enabled>true</enabled>
+         <name>ON_HAND_INFO_FOR</name>
+         <properties class="java.util.HashMap">
+            <Item>
+               <Key>ID</Key>
+               <Value>f6913cb5-00fa-1000-80e6-9016926944d6::DB.ON_HAND_INFO_FOR::ForeignKey</Value>
+            </Item>
+            <Item>
+               <Key>ID_CHILD</Key>
+               <Value>f6913cbf-00fa-1000-80e8-9016926944d6::DB.ON_HAND_INFO_FOR::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>ID_PARENT</Key>
+               <Value>f6913cb5-00fa-1000-80e7-9016926944d6::DB.ON_HAND_INFO_FOR::ForeignKeyEnd</Value>
+            </Item>
+            <Item>
+               <Key>IS_MANDATORY</Key>
+               <Value>TRUE</Value>
+            </Item>
+            <Item>
+               <Key>NAME_CHILD</Key>
+               <Value>end1</Value>
+            </Item>
+            <Item>
+               <Key>NAME_PARENT</Key>
+               <Value>end0</Value>
+            </Item>
+            <Item>
+               <Key>NAMESPACE_REFERENCE</Key>
+               <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+            </Item>
+            <Item>
+               <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+               <Value/>
+            </Item>
+         </properties>
+         <referenceID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+            <ID>c3ffa28e-0106-1000-8005-8d90483022a1</ID>
+            <parent class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+               <ID>f6913c64-00fa-1000-807e-9016926944d6</ID>
+               <parent/>
+               <type>TABLE</type>
+            </parent>
+            <type>CONSTRAINT</type>
+         </referenceID>
+      </Item>
+   </constraints>
+   <indexes class="[Loracle.javatools.db.Index;"/>
+   <name>INVENTORY</name>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>COMPLETE_LIBRARY</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>ID</Key>
+         <Value>f6913cab-00fa-1000-80e1-9016926944d6::DB.INVENTORY::DatabaseTable</Value>
+      </Item>
+      <Item>
+         <Key>IS_ACTIVE</Key>
+         <Value>FALSE</Value>
+      </Item>
+      <Item>
+         <Key>IS_ROOT</Key>
+         <Value>TRUE</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</Key>
+         <Value>toystore</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_ID</Key>
+         <Value class="oracle.jdeveloper.offlinedb.marshal.OracleDBReferenceID">
+            <ID/>
+            <connectionName/>
+            <databaseID>50451</databaseID>
+            <name>INVENTORY</name>
+            <parent/>
+            <schemaName>TOYSTORE</schemaName>
+            <type>TABLE</type>
+         </Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_NAME</Key>
+         <Value>INVENTORY</Value>
+      </Item>
+      <Item>
+         <Key>OfflineDBConstants.IMPORT_SOURCE_SCHEMA</Key>
+         <Value>TOYSTORE</Value>
+      </Item>
+      <Item>
+         <Key>TableType</Key>
+         <Value>Normal</Value>
+      </Item>
+      <Item>
+         <Key>Timestamp</Key>
+         <Value class="java.lang.Long">1077619211000</Value>
+      </Item>
+   </properties>
+   <schema>
+      <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+         <ID>f6913781-00fa-1000-8066-9016926944d6</ID>
+         <parent/>
+         <type>SCHEMA</type>
+      </ID>
+      <name>DB</name>
+      <properties class="java.util.HashMap">
+         <Item>
+            <Key>ID</Key>
+            <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+         </Item>
+         <Item>
+            <Key>NAMESPACE_REFERENCE</Key>
+            <Value>1006::::DatabaseContainer</Value>
+         </Item>
+      </properties>
+   </schema>
+</TABLE>

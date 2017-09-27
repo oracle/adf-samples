@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+
+<Association
+   Name="StatusOfOrderAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.14.39" />
+   </DesignTime>
+   <AssociationEnd
+      Name="Orders"
+      Cardinality="0"
+      Source="true"
+      Owner="toystore.model.businessobjects.Orders" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="Orders" />
+      </DesignTime>
+   </AssociationEnd>
+   <AssociationEnd
+      Name="Orderstatus"
+      Cardinality="-1"
+      Owner="toystore.model.businessobjects.Orderstatus" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orderstatus.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="Orderstatus" />
+      </DesignTime>
+   </AssociationEnd>
+</Association>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.36.73" id="editaccountPageDef"
+                Package="toystore.view.pageDefs">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="prepareToEditAccountInfoFor"
+                  id="prepareToEditAccountInfo"
+                  RefreshCondition="${adfFacesContext.postback == false}"/>
+    <iterator id="AccountsIterator" RangeSize="10" Binds="Accounts"
+              DataControl="ToyStoreService"/>
+    <iterator id="CountryListIterator" RangeSize="-1" Binds="CountryList"
+              DataControl="ToyStoreService"/>
+  </executables>
+  <bindings>
+    <attributeValues id="Password" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Email" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Firstname" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Firstname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Lastname" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Lastname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Address" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="City" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="State" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Zip" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Zip"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Phone" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <list id="AccountsCountry" IterBinding="AccountsIterator"
+          StaticList="false" ListOperMode="0" ListIter="CountryListIterator">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Code"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Description"/>
+      </ListDisplayAttrNames>
+    </list>
+    <action id="Commit" InstanceName="ToyStoreService"
+            DataControl="ToyStoreService" RequiresUpdateModel="true"
+            Action="100"/>
+    <attributeValues id="AccountsUsername" IterBinding="AccountsIterator">
+      <AttrNames>
+        <Item Value="Username"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="prepareToEditAccountInfoFor"
+                  InstanceName="ToyStoreService.dataProvider"
+                  DataControl="ToyStoreService"
+                  MethodName="prepareToEditAccountInfoFor"
+                  RequiresUpdateModel="true" Action="999"
+                  ReturnName="ToyStoreService.methodResults.ToyStoreService_dataProvider_prepareToEditAccountInfoFor_result">
+      <NamedData NDName="username" NDValue="${AppUserManager.signedInUser}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

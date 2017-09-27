@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="ToyStoreModel"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="toystore" />
+      <Attr Name="_dataControlNames0" Value="ToyStoreService" />
+      <Attr Name="_version" Value="10.1.3.34.12" />
+      <Attr Name="_jprName" Value="../ToyStoreModel.jpr" />
+      <Attr Name="_appModuleNames0" Value="toystore.model.services.ToyStoreService" />
+   </DesignTime>
+   <Containee
+      Name="businessobjects"
+      FullName="toystore.model.businessobjects.businessobjects"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="dataaccess"
+      FullName="toystore.model.dataaccess.dataaccess"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="datatypes"
+      FullName="toystore.model.datatypes.datatypes"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Containee
+      Name="services"
+      FullName="toystore.model.services.services"
+      ObjectType="JboPackage" >
+   </Containee>
+   <RegisteredRule
+      Name="VerifyStateForCountryRule"
+      ValidationBeanClass="toystore.fwk.rules.VerifyStateForCountryRule" >
+   </RegisteredRule>
+   <AttrArray Name="MessageBundles">
+      <Item Value="toystore.model.businessobjects.common.CustomBC4JExceptionBundle" />
+   </AttrArray>
+</JboProject>

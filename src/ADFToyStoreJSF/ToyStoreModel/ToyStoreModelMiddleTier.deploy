@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<simple-archive-deployment nselem="simple-archive-deployment" class="oracle.jdeveloper.deploy.jar.ArchiveProfile" xmlns="http://xmlns.oracle.com/jdeveloper/9051/deploy/jar">
+   <archiveOptions>
+      <additionalManifests/>
+      <compressed>false</compressed>
+      <hasManifest>true</hasManifest>
+      <mainClass/>
+   </archiveOptions>
+   <fileGroups>
+      <groups>
+         <Item class="oracle.jdeveloper.deploy.common.ProjectFileGroup" internalName="legacy">
+            <contributors>
+               <autoInclude>true</autoInclude>
+               <deploySourceAs>0</deploySourceAs>
+               <files>
+                  <Item path="database_setup/CreateToyStoreUsers.sql"/>
+                  <Item path="database_setup/ToyStore.sql"/>
+               </files>
+               <selectionFilters/>
+            </contributors>
+            <displayName/>
+            <filters>
+               <additionalArchives/>
+               <afterFilters>
+                  <filters>
+                     <Item name="toystore.model.businessobjects.common" scope="0" type="1"/>
+                     <Item name="toystore.model.businessobjects.server" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.common" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.server" scope="0" type="1"/>
+                     <Item name="toystore.model.services.common" scope="0" type="1"/>
+                     <Item name="toystore.model.services.server" scope="0" type="1"/>
+                  </filters>
+               </afterFilters>
+               <beforeFilters>
+                  <filters>
+                     <Item name="toystore.model.businessobjects.common" scope="0" type="1"/>
+                     <Item name="toystore.model.businessobjects.server" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.common" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.server" scope="0" type="1"/>
+                     <Item name="toystore.model.services.common" scope="0" type="1"/>
+                     <Item name="toystore.model.services.server" scope="0" type="1"/>
+                  </filters>
+               </beforeFilters>
+               <duringFilters>
+                  <filters>
+                     <Item name="toystore.model.businessobjects.common" scope="0" type="1"/>
+                     <Item name="toystore.model.businessobjects.server" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.common" scope="0" type="1"/>
+                     <Item name="toystore.model.dataaccess.server" scope="0" type="1"/>
+                     <Item name="toystore.model.services.common" scope="0" type="1"/>
+                     <Item name="toystore.model.services.server" scope="0" type="1"/>
+                  </filters>
+               </duringFilters>
+               <selectedArchives>
+                  <archives class="[Ljava.net.URL;"/>
+                  <selectionMode>0</selectionMode>
+               </selectedArchives>
+            </filters>
+            <targetWithinJar/>
+         </Item>
+      </groups>
+   </fileGroups>
+   <jarURL path="../deploy/ToyStoreModelCSMT.jar"/>
+   <profileDeps>
+      <Item>
+         <profileURL path="../FwkExtensions/deploy/FwkExtensions.deploy"/>
+         <projectURL path="../FwkExtensions/FwkExtensions.jpr"/>
+      </Item>
+      <Item>
+         <profileURL path="ToyStoreModelCommon.deploy"/>
+         <projectURL path="ToyStoreModel.jpr"/>
+      </Item>
+   </profileDeps>
+</simple-archive-deployment>

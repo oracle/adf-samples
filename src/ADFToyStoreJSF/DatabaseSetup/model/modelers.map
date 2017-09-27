@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ModelersMap class="java.util.HashMap">
+   <Item>
+      <Key>f690cbf7-00fa-1000-8062-9016926944d6</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore</Item>
+         <Item/>
+         <Item>UMLPackage</Item>
+      </Value>
+   </Item>
+   <Item>
+      <Key>f690cc0b-00fa-1000-8063-9016926944d6</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore.db</Item>
+         <Item/>
+         <Item>UMLPackage</Item>
+      </Value>
+   </Item>
+   <Item>
+      <Key>f690ceaa-00fa-1000-8064-9016926944d6</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore.db.Toystore Database Design</Item>
+         <Item>oxd_db</Item>
+         <Item>Diagram</Item>
+      </Value>
+   </Item>
+</ModelersMap>

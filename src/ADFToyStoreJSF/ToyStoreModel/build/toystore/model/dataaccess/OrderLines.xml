@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="OrderLines" >
+   <Data>
+      <Property Name ="ID" Value ="3adba202-00fa-1000-8046-7f000001477e::::ViewLink" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="IS_ROOT" Value ="FALSE" />
+   </Data>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.22" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="Orders"
+      Cardinality="1"
+      Owner="toystore.model.dataaccess.Orders"
+      Source="true" >
+      <Data>
+         <Property Name ="ENTITY_ACCESSOR" Value ="TRUE" />
+         <Property Name ="ID" Value ="3adba202-00fa-1000-8047-7f000001477e::::ViewLinkEnd" />
+         <Property Name ="SCOPE" Value ="INSTANCE" />
+         <Property Name ="SEQUENCE" Value ="0" />
+         <Property Name ="VISIBILITY" Value ="PROTECTED" />
+      </Data>
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.dataaccess.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="Orders" />
+         <Attr Name="_minCardinality" Value="1" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="LineItems"
+      Cardinality="-1"
+      Owner="toystore.model.dataaccess.LineItems" >
+      <Data>
+         <Property Name ="ENTITY_ACCESSOR" Value ="TRUE" />
+         <Property Name ="ID" Value ="3adba20c-00fa-1000-804a-7f000001477e::::ViewLinkEnd" />
+         <Property Name ="SCOPE" Value ="INSTANCE" />
+         <Property Name ="SEQUENCE" Value ="10" />
+         <Property Name ="VISIBILITY" Value ="PROTECTED" />
+      </Data>
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.dataaccess.LineItems.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_finderName" Value="LineItems" />
+         <Attr Name="_accessor" Value="true" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

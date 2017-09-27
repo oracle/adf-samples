@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="Orders"
+   SelectList="Orders.ORDERID, 
+       Orders.USERID, 
+       Orders.SHIPADDR1, 
+       Orders.SHIPADDR2, 
+       Orders.SHIPCITY, 
+       Orders.SHIPSTATE, 
+       Orders.SHIPZIP, 
+       Orders.SHIPCOUNTRY, 
+       Orders.COURIER, 
+       Orders.TOTALPRICE, 
+       Orders.SHIPTOFIRSTNAME, 
+       Orders.SHIPTOLASTNAME, 
+       Orders.CREDITCARD, 
+       Orders.CARDTYPE, 
+       Orders.EXPRDATE, 
+       SUBSTR(EXPRDATE,1,2) AS EXPRMONTH, 
+       SUBSTR(EXPRDATE,4,4) AS EXPRYEAR, 
+       Orders.BILLADDR1, 
+       Orders.BILLADDR2, 
+       Orders.BILLCITY, 
+       Orders.BILLSTATE, 
+       Orders.BILLZIP, 
+       Orders.BILLCOUNTRY, 
+       Orders.BILLTOFIRSTNAME, 
+       Orders.BILLTOLASTNAME, 
+       Orders.LOCALE, 
+       Orders.ORDERDATE"
+   FromList="ORDERS Orders"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="toystore.model.dataaccess.OrdersRowImpl"
+   MsgBundleClass="toystore.model.dataaccess.common.OrdersRowImplMsgBundle"
+   FetchMode="FETCH_AS_NEEDED"
+   MaxFetchSize="0"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.35.29" />
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+   </DesignTime>
+   <EntityUsage
+      Name="Orders"
+      Entity="toystore.model.businessobjects.Orders" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Orderid"
+      IsUpdateable="false"
+      EntityAttrName="Orderid"
+      EntityUsage="Orders"
+      AliasName="ORDERID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Userid"
+      IsUpdateable="false"
+      IsNotNull="true"
+      EntityAttrName="Userid"
+      EntityUsage="Orders"
+      AliasName="USERID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipaddr1"
+      IsNotNull="true"
+      EntityAttrName="Shipaddr1"
+      EntityUsage="Orders"
+      AliasName="SHIPADDR1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipaddr2"
+      EntityAttrName="Shipaddr2"
+      EntityUsage="Orders"
+      AliasName="SHIPADDR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipcity"
+      IsNotNull="true"
+      EntityAttrName="Shipcity"
+      EntityUsage="Orders"
+      AliasName="SHIPCITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipstate"
+      IsNotNull="true"
+      EntityAttrName="Shipstate"
+      EntityUsage="Orders"
+      AliasName="SHIPSTATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipzip"
+      IsNotNull="true"
+      EntityAttrName="Shipzip"
+      EntityUsage="Orders"
+      AliasName="SHIPZIP" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shipcountry"
+      IsNotNull="true"
+      EntityAttrName="Shipcountry"
+      EntityUsage="Orders"
+      AliasName="SHIPCOUNTRY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Courier"
+      IsNotNull="true"
+      EntityAttrName="Courier"
+      EntityUsage="Orders"
+      AliasName="COURIER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Totalprice"
+      IsNotNull="true"
+      EntityAttrName="Totalprice"
+      EntityUsage="Orders"
+      AliasName="TOTALPRICE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shiptofirstname"
+      IsNotNull="true"
+      EntityAttrName="Shiptofirstname"
+      EntityUsage="Orders"
+      AliasName="SHIPTOFIRSTNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Shiptolastname"
+      IsNotNull="true"
+      EntityAttrName="Shiptolastname"
+      EntityUsage="Orders"
+      AliasName="SHIPTOLASTNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Creditcard"
+      EntityAttrName="Creditcard"
+      EntityUsage="Orders"
+      AliasName="CREDITCARD" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Cardtype"
+      IsNotNull="true"
+      EntityAttrName="Cardtype"
+      EntityUsage="Orders"
+      AliasName="CARDTYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Exprdate"
+      EntityAttrName="Exprdate"
+      EntityUsage="Orders"
+      AliasName="EXPRDATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ExprMonth"
+      IsQueriable="false"
+      IsPersistent="false"
+      Precision="2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="EXPRMONTH"
+      Expression="SUBSTR(EXPRDATE,1,2)"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ExprYear"
+      IsQueriable="false"
+      IsPersistent="false"
+      Precision="2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="EXPRYEAR"
+      Expression="SUBSTR(EXPRDATE,4,4)"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billaddr1"
+      IsNotNull="true"
+      EntityAttrName="Billaddr1"
+      EntityUsage="Orders"
+      AliasName="BILLADDR1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billaddr2"
+      EntityAttrName="Billaddr2"
+      EntityUsage="Orders"
+      AliasName="BILLADDR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billcity"
+      IsNotNull="true"
+      EntityAttrName="Billcity"
+      EntityUsage="Orders"
+      AliasName="BILLCITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billstate"
+      IsNotNull="true"
+      EntityAttrName="Billstate"
+      EntityUsage="Orders"
+      AliasName="BILLSTATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billzip"
+      IsNotNull="true"
+      EntityAttrName="Billzip"
+      EntityUsage="Orders"
+      AliasName="BILLZIP" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billcountry"
+      IsNotNull="true"
+      EntityAttrName="Billcountry"
+      EntityUsage="Orders"
+      AliasName="BILLCOUNTRY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billtofirstname"
+      IsNotNull="true"
+      EntityAttrName="Billtofirstname"
+      EntityUsage="Orders"
+      AliasName="BILLTOFIRSTNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Billtolastname"
+      IsNotNull="true"
+      EntityAttrName="Billtolastname"
+      EntityUsage="Orders"
+      AliasName="BILLTOLASTNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Locale"
+      IsNotNull="true"
+      EntityAttrName="Locale"
+      EntityUsage="Orders"
+      AliasName="LOCALE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Orderdate"
+      IsNotNull="true"
+      EntityAttrName="Orderdate"
+      EntityUsage="Orders"
+      AliasName="ORDERDATE" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="LineItems"
+      ViewLink="toystore.model.dataaccess.OrderLines"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

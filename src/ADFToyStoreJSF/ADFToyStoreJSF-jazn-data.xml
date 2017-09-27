@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'windows-1252' standalone = 'yes'?>
+<jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data-10_0.xsd" filepath="" OC4J_INSTANCE_ID="">
+    <jazn-realm>
+        <realm>
+            <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>DataBase_User_BjN2vbkcSieH34p9q3mVSf5TpBXbwLfr</name>
+                    <credentials>{903}BjN2vbkcSieH34p9q3mVSf5TpBXbwLfr</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_q_atJoNRjbarEiAzxs-mN8jyXYAZGcHj</name>
+                    <credentials>{903}q/atJoNRjbarEiAzxs+mN8jyXYAZGcHj</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_JmzXtoHUm2PpkY2FtiXnJ_y_STOLg3B5</name>
+                    <credentials>{903}JmzXtoHUm2PpkY2FtiXnJ/y/STOLg3B5</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_qNSk1UZoJHMFbm1xseNkAOzmVaYbSwmM</name>
+                    <credentials>{903}qNSk1UZoJHMFbm1xseNkAOzmVaYbSwmM</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_dBIUrADmLORiPFfDv5zurLUJ3VTXAsE-</name>
+                    <credentials>{903}dBIUrADmLORiPFfDv5zurLUJ3VTXAsE+</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_ghkxItOWHWejdS2uhh5d0o-5dZNn7zL0</name>
+                    <credentials>{903}ghkxItOWHWejdS2uhh5d0o+5dZNn7zL0</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_fJ2bvU-ZvVQ3W-RDKtNCgKPDQywnrV3c</name>
+                    <credentials>{903}fJ2bvU+ZvVQ3W+RDKtNCgKPDQywnrV3c</credentials>
+                </user>
+                <user>
+                    <name>DataBase_User_2JwhO_LH3uppZbdbOkXIJpY4HCRRHbPv</name>
+                    <credentials>{903}2JwhO/LH3uppZbdbOkXIJpY4HCRRHbPv</credentials>
+                </user>
+            </users>
+            <roles/>
+        </realm>
+    </jazn-realm>
+</jazn-data>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ProductsInCategory"
+   SelectList="Product.PRODUCTID, 
+       Product.NAME"
+   FromList="PRODUCT Product"
+   Where="category = :CategoryId"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   FetchMode="FETCH_AS_NEEDED"
+   FetchSize="10"
+   PageIterMode="Partial"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.34.12" />
+      <Attr Name="_codeGenFlag2" Value="Access" />
+   </DesignTime>
+   <Variable
+      Name="CategoryId"
+      Kind="where"
+      Type="java.lang.String" >
+   </Variable>
+   <EntityUsage
+      Name="Product"
+      Entity="toystore.model.businessobjects.Product" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryWhere" Value="category = :CategoryId" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Productid"
+      IsNotNull="true"
+      EntityAttrName="Productid"
+      EntityUsage="Product"
+      AliasName="PRODUCTID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      EntityAttrName="Name"
+      EntityUsage="Product"
+      AliasName="NAME" >
+   </ViewAttribute>
+</ViewObject>

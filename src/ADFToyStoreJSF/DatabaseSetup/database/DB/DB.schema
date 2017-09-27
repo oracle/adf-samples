@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SCHEMA class="oracle.javatools.db.Schema" xmlns="http://xmlns.oracle.com/jdeveloper/10130/offlinedb">
+   <ID class="oracle.jdeveloper.offlinedb.OfflineDBObjectID">
+      <ID>f6913781-00fa-1000-8066-9016926944d6</ID>
+      <parent/>
+      <type>SCHEMA</type>
+   </ID>
+   <name>DB</name>
+   <properties class="java.util.HashMap">
+      <Item>
+         <Key>ID</Key>
+         <Value>f6913745-00fa-1000-8065-9016926944d6::DB::DatabasePackage</Value>
+      </Item>
+      <Item>
+         <Key>NAMESPACE_REFERENCE</Key>
+         <Value>1006::::DatabaseContainer</Value>
+      </Item>
+   </properties>
+</SCHEMA>

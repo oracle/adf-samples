@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Domain SYSTEM "jbo_03_01.dtd">
+
+<Domain
+   Name="ExpirationDate" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_type" Value="String" />
+      <Attr Name="_version" Value="10.1.3.35.24" />
+      <Attr Name="_columnType" Value="VARCHAR2(7)" />
+      <Attr Name="_isUpdateable" Value="true" />
+      <Attr Name="_isPersistent" Value="true" />
+      <Attr Name="_isQueriable" Value="true" />
+   </DesignTime>
+</Domain>

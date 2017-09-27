@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="FwkExtensions"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="toystore" />
+      <Attr Name="_version" Value="10.1.3.34.12" />
+      <Attr Name="_jprName" Value="../FwkExtensions.jpr" />
+   </DesignTime>
+   <Containee
+      Name="dataaccess"
+      FullName="toystore.fwk.rules.dataaccess.dataaccess"
+      ObjectType="JboPackage" >
+   </Containee>
+   <RegisteredRule
+      Name="VerifyStateForCountryRule"
+      ValidationBeanClass="toystore.fwk.rules.VerifyStateForCountryRule" >
+   </RegisteredRule>
+</JboProject>

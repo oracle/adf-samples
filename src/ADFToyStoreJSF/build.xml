@@ -1,0 +1,276 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!--
+ | $Header: /cvs/ADFToyStoreJSF/build.xml,v 1.2 2006/01/27 22:23:12 steve Exp $ 
+ +-->
+<!--
+ | Ant build file for ADFToyStore Demo
+ +-->
+<project default="all">
+  <!--
+   | JDev will define the "jdev.home" property when an Ant build is
+   | run from within the IDE.
+   |
+   |  <property name="jdev.home" value="C:\jdev\9051_1525"/>
+   +-->
+
+  <!--
+   | Controls whether source will be compiled with 
+   | debug ("on") symbols or without ("off")
+   +-->
+  <property name="debug" value="off"/>
+
+  <property name="modelbuild_dir" value="ToyStoreModel/build"/>
+  <property name="fwkextbuild_dir" value="FwkExtensions/build"/>
+  <property name="jspviewcontrollerbuild_dir" value="ToyStoreViewController/build"/>
+  <property name="deploy_dir" value="deploy"/>
+  <property name="webroot" value="ToyStoreViewController/public_html"/>
+  <property name="model_src" value="ToyStoreModel/src"/>
+  <property name="model_common_jar" value="ToyStoreModelCSCommon.jar"/>
+  <property name="model_server_jar" value="ToyStoreModelCSMT.jar"/>
+  <property name="jspviewcontroller_src" value="ToyStoreViewController/src"/>
+  <property name="jspviewcontroller_jar" value="ToyStoreViewControllerJSP.jar"/>
+  <property name="fwkextensions_src" value="FwkExtensions/src"/>
+  <property name="fwkextensions_jar" value="ToyStoreFwkExtensions.jar"/>
+  <property name="jspwarfile" value="${deploy_dir}/ADFToyStore.war"/>
+  <property name="earfile" value="${deploy_dir}/ADFToyStore.ear"/>
+
+ 
+  <!--
+   | Local OC4J Connection Information for "deploy" task
+   +-->
+  <property name="oc4j.admin.jar" value="${jdev.home}/j2ee/home/admin.jar"/>
+  <property name="oc4j.url" value="ormi://localhost/"/>
+  <property name="oc4j.username" value="oc4jadmin"/>
+  <property name="oc4j.password" value="welcome"/>
+  <property name="j2ee.app.name" value="ADFToyStore"/>
+  <property name="jsp.j2ee.web.app.name" value="ADFToyStore"/>
+  <property name="oc4j.web.site" value="default-web-site"/>
+  <property name="jsp.j2ee.context.root" value="/ADFToyStore"/>
+
+  <!--
+   | Make sure the build and deploy directories exist
+   +-->
+  <target name="init">
+    <fail unless="jdev.home"
+          message="Need to set jdev.home property to JDev home dir!"/>          
+    <mkdir dir="${modelbuild_dir}"/>
+    <mkdir dir="${fwkextbuild_dir}"/>
+    <mkdir dir="${jspviewcontrollerbuild_dir}"/>
+    <mkdir dir="${deploy_dir}"/>
+  </target>
+  <!--
+   | Clean up the deploy directories, leaving built files
+   +-->
+  <target name="cleanbeforezip">
+    <delete dir="${webroot}/WEB-INF/temp"/>
+    <delete dir="${deploy_dir}"/>
+    <delete>
+      <fileset dir="." includes="ADFToyStore*-*.*"/> 
+      <fileset dir="." includes="oc4j-connectors.xml"/> 
+      <fileset dir="." includes="application.log"/> 
+    </delete>
+    <delete>
+      <fileset dir="." includes="**/*.*.bak" defaultexcludes="no" /> 
+      <fileset dir="." includes="**/*.*~" defaultexcludes="no" /> 
+      <fileset dir="." includes="**/#*#" defaultexcludes="no" /> 
+    </delete>
+  </target>  
+  <!--
+   | Clean up the build and deploy directories
+   +-->
+  <target name="clean">
+    <delete dir="${modelbuild_dir}"/>
+    <delete dir="${fwkextbuild_dir}"/>
+    <delete dir="${jspviewcontrollerbuild_dir}"/>
+    <delete dir="${deploy_dir}"/>
+    <delete>
+      <fileset dir="." includes="ADFToyStore-*.*"/> 
+    </delete>
+    <delete>
+      <fileset dir="." includes="**/*.*~" defaultexcludes="no"/> 
+      <fileset dir="." includes="**/#*#" defaultexcludes="no" /> 
+    </delete>
+  </target>
+  <!--
+   | Framework Extensions
+   +-->
+  <target name="fwk-extensions" depends="init">
+    <javac nowarn="true" srcdir="${fwkextensions_src}" destdir="${fwkextbuild_dir}" debug="{$debug}" deprecation="on">
+      <classpath>
+        <pathelement location="${jdev.home}/bc4j/lib/bc4jmt.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/collections.jar"/>
+        <pathelement location="${jdev.home}/jakarta-struts/lib/struts.jar"/>
+        <pathelement location="${jdev.home}/j2ee/home/lib/servlet.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/adfm.jar"/>
+        <pathelement location="${jdev.home}/adfc/lib/adf-controller.jar"/>
+        <pathelement location="${jdev.home}/lib/xmlparserv2.jar"/>
+        <pathelement location="${jdev.home}/lib/oraclexsql.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/bc4jdomorcl.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/adfmweb.jar"/>
+        <pathelement location="${jdev.home}/bc4j/jlib/bc4jhtml.jar"/>
+      </classpath>
+    </javac>
+    <copy todir="${fwkextbuild_dir}">
+      <fileset dir="${fwkextensions_src}" includes="*.jpx,**/*.xml"/>
+    </copy>
+    <jar destfile="${deploy_dir}/${fwkextensions_jar}">
+      <fileset dir="${fwkextbuild_dir}"
+               includes="toystore/fwk/**/*.class,
+                         toystore/fwk/**/*.xml,
+                         *.jpx"/>
+    </jar>
+  </target>
+  <!--
+   | Model Layer
+   +-->
+  <target name="model-layer" depends="fwk-extensions">
+    <javac nowarn="true" srcdir="${model_src}" destdir="${modelbuild_dir}" debug="{$debug}" deprecation="on">
+      <compilerarg value="-Xlint:unchecked"/>      
+      <classpath>
+        <pathelement location="${deploy_dir}/${fwkextensions_jar}"/>
+        <pathelement location="${jdev.home}/bc4j/lib/bc4jmt.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/bc4jct.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/bc4jdomorcl.jar"/>
+        <pathelement location="${jdev.home}/jdbc/lib/ojdbc14.jar"/>
+        <pathelement location="${jdev.home}/bc4j/lib/collections.jar"/>
+      </classpath>
+    </javac>
+    <copy todir="${modelbuild_dir}">
+      <fileset dir="${model_src}"
+               includes="*.jpx,
+                         **/*.xml,
+                         **/*.properties,
+                         toystore/model/services/common/bc4j.xcfg"/>
+    </copy>
+    <jar destfile="${deploy_dir}/${model_server_jar}">
+      <fileset dir="${modelbuild_dir}"
+               includes="toystore/model/**/*.class,
+                         toystore/model/**/*.xml,
+                         toystore/model/**/*.properties,
+                         *.jpx"
+               excludes="**/common/*"/>
+    </jar>
+    <jar destfile="${deploy_dir}/${model_common_jar}">
+      <fileset dir="${modelbuild_dir}"
+               includes="toystore/model/**/common/*.class,
+                         toystore/model/**/common/*.xml,
+                         toystore/model/services/common/bc4j.xcfg"/>
+    </jar>
+  </target>
+  <!--
+   | JSP View and Controller Layers
+   +-->
+  <target name="jsp-view-controller" depends="fwk-extensions,model-layer">
+    <javac nowarn="true" srcdir="${jspviewcontroller_src}" destdir="${jspviewcontrollerbuild_dir}"
+           debug="{$debug}"  deprecation="on">
+      <compilerarg value="-Xlint:unchecked"/>
+      <classpath>
+        <pathelement location="${deploy_dir}/${fwkextensions_jar}"/>
+        <pathelement location="${jdev.home}/jakarta-struts/lib/struts.jar"/>
+        <pathelement location="${jdev.home}/adfc/lib/adf-controller.jar"/>
+        <pathelement location="${jdev.home}/j2ee/home/lib/servlet.jar"/>
+        <pathelement location="${deploy_dir}/${model_common_jar}"/>
+        <pathelement location="${deploy_dir}/${model_common_jar}"/>
+        <pathelement location="${jdev.home}/bc4j/lib/adfm.jar"/>
+        <pathelement location="${jdev.home}/jsf-ri/jsf-api.jar"/>
+        <pathelement location="${jdev.home}/jsr227/lib/jsr227.jar"/>
+      </classpath>
+    </javac>
+    <copy todir="${jspviewcontrollerbuild_dir}">
+      <fileset dir="${jspviewcontroller_src}"
+                includes="*.cpx,
+                **/*.xml,
+                **/*.properties"/>
+    </copy>
+    <jar destfile="${deploy_dir}/${jspviewcontroller_jar}">
+      <fileset dir="${jspviewcontrollerbuild_dir}"
+               includes="toystore/view/**/*.class,
+                         toystore/view/**/*.xml,
+                         toystore/view/**/*.properties,
+                         toystore/controller/**/*.class,
+                         toystore/controller/**/*.xml,
+                         *.cpx"/>
+    </jar>
+  </target>
+  <!--
+   | Make JSP WAR File
+   +-->
+  <target name="jspwar" depends="model-layer,jsp-view-controller">
+    <war destfile="${jspwarfile}" webxml="${webroot}/WEB-INF/web.xml">
+
+      <!--
+       | Webroot content WITHOUT any of the lib files (explicitly included below)
+       +-->
+      <fileset dir="${webroot}" includes="**"
+               excludes="WEB-INF/web.xml,
+                         WEB-INF/lib/*.jar"/>
+
+      <!--
+       | ToyStore application code JAR Files
+       +-->
+      <lib dir="${deploy_dir}" includes="${fwkextensions_jar}"/>
+      <lib dir="${deploy_dir}" includes="${model_common_jar}"/>
+      <lib dir="${deploy_dir}" includes="${model_server_jar}"/>
+      <lib dir="${deploy_dir}" includes="${jspviewcontroller_jar}"/>
+      <lib dir="${jdev.home}/jlib" includes="adf-faces-impl.jar"/>
+      <lib dir="${jdev.home}/jsf-ri" includes="jsf-impl.jar"/>
+      <lib dir="${jdev.home}/adfp" includes="custComps.jar"/>
+      <!--
+       | Core ADF Framework (Pre-Installed by "ADF Runtime Installer" in JDev 10g)
+       +-->
+<!--
+      <lib dir="${jdev.home}/bc4j/lib"   includes="adfm.jar"/>
+      <lib dir="${jdev.home}/bc4j/jlib"  includes="bc4jdatum.jar"/>
+      <lib dir="${jdev.home}/bc4j/lib"   includes="bc4jct.jar"/>
+      <lib dir="${jdev.home}/bc4j/lib"   includes="bc4jdomorcl.jar"/>
+      <lib dir="${jdev.home}/bc4j/lib"   includes="bc4jimdomains.jar"/>
+      <lib dir="${jdev.home}/bc4j/lib"   includes="bc4jmt.jar"/>
+      <lib dir="${jdev.home}/jdev/lib"   includes="jdev-rt.jar"/>
+      <lib dir="${jdev.home}/jlib"       includes="jdev-cm.jar"/>
+      <lib dir="${jdev.home}/lib"        includes="xmlparserv2.jar"/>
+      <lib dir="${jdev.home}/rdbms/jlib" includes="xsu12.jar"/>
+      <lib dir="${jdev.home}/sqlj/lib"   includes="runtime12.jar"/>
+-->
+
+      <!--
+       | XSQL Servlet
+       +-->
+      <lib dir="${jdev.home}/lib" includes="oraclexsql.jar"/>
+      <lib dir="${jdev.home}/rdbms/jlib" includes="xsu12.jar"/>
+      <classes dir="${jspviewcontroller_src}" includes="XSQLConfig.xml"/>
+
+      <!--
+       | ADF Controller Struts Integration
+       +-->
+      <lib dir="${jdev.home}/adfc/lib" includes="adf-controller.jar"/>
+
+    </war>
+  </target>
+  <!--
+   | Make EAR File
+   +-->
+  <target name="ear" depends="jspwar">
+    <copy todir="${deploy_dir}">
+      <fileset dir="." includes="META-INF/*.xml"/>
+    </copy>
+    <ear destfile="${earfile}" appxml="META-INF/application.xml"
+         basedir="${deploy_dir}" includes="META-INF/*.xml,*.war">
+    </ear>
+  </target>
+  <!--
+   | deploy
+   +-->
+  <target name="deploy" depends="ear">
+    <java jar="${oc4j.admin.jar}" fork="true">
+      <arg line="${oc4j.url}"/>
+      <arg line="${oc4j.username}"/>
+      <arg line="${oc4j.password}"/>
+      <arg line="-deploy -file ${earfile}"/>
+      <arg line="-deploymentName ${j2ee.app.name}"/>
+      <arg line="-bindWebApp ${oc4j.web.site}"/>
+    </java>
+  </target>
+  <target name="all" depends="ear"/>
+  <target name="allclean" depends="clean,ear"/>
+  <target name="deployclean" depends="clean,deploy"/>
+</project>

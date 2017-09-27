@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.34.12" id="DataBindings" SeparateXMLFiles="false"
+             Package="toystore.view" ClientType="Generic">
+  <pageMap>
+    <page path="/showcategory.jsp" usageId="showcategoryPageDef"/>
+    <page path="/showproduct.jsp" usageId="showproductPageDef"/>
+    <page path="/yourcart.jsp" usageId="yourcartPageDef"/>
+    <page path="/reviewcheckout.jsp" usageId="reviewcheckoutPageDef"/>
+    <page path="/confirmshippinginfo.jsp" usageId="confirmshippinginfoPageDef"/>
+    <page path="/signin.jsp" usageId="signinPageDef"/>
+    <page path="/thankyou.jsp" usageId="thankyouPageDef"/>
+    <page path="/showproductdetails.jsp" usageId="showproductdetailsPageDef"/>
+    <page path="/search.jsp" usageId="searchPageDef"/>
+    <page path="/editaccount.jsp" usageId="editaccountPageDef"/>
+    <page path="/register.jsp" usageId="registerPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="showcategoryPageDef"
+          path="toystore.view.pageDefs.showcategoryPageDef"/>
+    <page id="showproductPageDef"
+          path="toystore.view.pageDefs.showproductPageDef"/>
+    <page id="yourcartPageDef" path="toystore.view.pageDefs.yourcartPageDef"/>
+    <page id="reviewcheckoutPageDef"
+          path="toystore.view.pageDefs.reviewcheckoutPageDef"/>
+    <page id="confirmshippinginfoPageDef"
+          path="toystore.view.pageDefs.confirmshippinginfoPageDef"/>
+    <page id="signinPageDef" path="toystore.view.pageDefs.signinPageDef"/>
+    <page id="thankyouPageDef" path="toystore.view.pageDefs.thankyouPageDef"/>
+    <page id="showproductdetailsPageDef"
+          path="toystore.view.pageDefs.showproductdetailsPageDef"/>
+    <page id="searchPageDef" path="toystore.view.pageDefs.searchPageDef"/>
+    <page id="editaccountPageDef"
+          path="toystore.view.pageDefs.editaccountPageDef"/>
+    <page id="registerPageDef" path="toystore.view.pageDefs.registerPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ToyStoreService" Package="toystore.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="ToyStoreServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

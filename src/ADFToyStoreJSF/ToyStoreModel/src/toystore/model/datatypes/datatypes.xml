@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="datatypes"
+   SeparateXMLFiles="true"
+   PackageName="toystore.model.datatypes" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.35.24" />
+   </DesignTime>
+   <Containee
+      Name="CreditCardNumber"
+      FullName="toystore.model.datatypes.CreditCardNumber"
+      ObjectType="Domain" >
+   </Containee>
+   <Containee
+      Name="Email"
+      FullName="toystore.model.datatypes.Email"
+      ObjectType="Domain" >
+   </Containee>
+   <Containee
+      Name="ExpirationDate"
+      FullName="toystore.model.datatypes.ExpirationDate"
+      ObjectType="Domain" >
+   </Containee>
+</JboPackage>

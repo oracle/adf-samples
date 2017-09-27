@@ -1,0 +1,669 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Account"
+   DBObjectType="table"
+   DBObjectName="ACCOUNT"
+   AliasName="Account"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="toystore.model.businessobjects.AccountImpl"
+   MsgBundleClass="toystore.model.businessobjects.common.AccountImplMsgBundle" >
+   <Data>
+      <Property Name ="ID" Value ="b8d488ce-00f2-1000-8004-901692b23245::businessobjects.Account::EntityObject" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="IS_ROOT" Value ="FALSE" />
+      <Property Name ="CODE_SYNC_STATE" Value ="MODEL_ONLY" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="IS_ACTIVE" Value ="FALSE" />
+      <Property Name ="java.lang.JavaStrictFP" Value ="FALSE" />
+      <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      <Property Name ="java.lang.JavaStatic" Value ="FALSE" />
+   </Data>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.37" />
+      <Attr Name="_codeGenFlag2" Value="Init|Access|Msg" />
+      <Attr Name="_superClass" Value="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Userid"
+      IsUpdateable="while_insert"
+      IsUnique="true"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="USERID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT"
+      PrimaryKey="true" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d4895a-00f2-1000-8005-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Email"
+      IsQueriable="false"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="EMAIL"
+      Domain="toystore.model.datatypes.Email"
+      Type="toystore.model.datatypes.common.Email"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489b4-00f2-1000-8006-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Firstname"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="FIRSTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-8007-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Lastname"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="LASTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-8008-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Status"
+      Precision="2"
+      ColumnName="STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-8009-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Addr1"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="ADDR1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-800a-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="City"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-800b-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="State"
+      IsNotNull="true"
+      Precision="2"
+      ColumnName="STATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Properties>
+         <Property Name ="Case" Value ="Upper" />
+      </Properties>
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-800c-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Zip"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="ZIP"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d489c9-00f2-1000-800d-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Country"
+      IsNotNull="true"
+      DefaultValue="US"
+      Precision="20"
+      ColumnName="COUNTRY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Properties>
+         <Property Name ="Case" Value ="Upper" />
+      </Properties>
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d48a05-00f2-1000-800e-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+      <ListValidationBean
+         ResId="Country_Rule_0"
+         OnAttribute="Country"
+         OperandType="JBO"
+         ListValue="toystore.model.dataaccess.CountryList.Code" >
+      </ListValidationBean>
+   </Attribute>
+   <Attribute
+      Name="Phone"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="PHONE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ACCOUNT" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8d48a05-00f2-1000-800f-901692b23245::businessobjects.Account::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CountryStateValid"
+      IsQueriable="false"
+      IsPersistent="false"
+      ColumnName="$none$"
+      Type="java.lang.Boolean"
+      ColumnType="$none$"
+      SQLType="BIT" >
+   </Attribute>
+   <AccessorAttribute
+      Name="Signon"
+      Association="toystore.model.businessobjects.AccountInfoForUser"
+      AssociationEnd="toystore.model.businessobjects.AccountInfoForUser.Signon"
+      AssociationOtherEnd="toystore.model.businessobjects.AccountInfoForUser.Account"
+      Type="toystore.model.businessobjects.SignonImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Orders"
+      Association="toystore.model.businessobjects.OrderedByAssoc"
+      AssociationEnd="toystore.model.businessobjects.OrderedByAssoc.Orders"
+      AssociationOtherEnd="toystore.model.businessobjects.OrderedByAssoc.Account"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Profile"
+      Association="toystore.model.businessobjects.ProfileForAccountAssoc"
+      AssociationEnd="toystore.model.businessobjects.ProfileForAccountAssoc.Profile"
+      AssociationOtherEnd="toystore.model.businessobjects.ProfileForAccountAssoc.Account"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="SysC005488" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005488" />
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005489" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Email" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005489" />
+         <Attr Name="_checkCondition" Value="&#34;EMAIL&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005490" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Firstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005490" />
+         <Attr Name="_checkCondition" Value="&#34;FIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005491" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Lastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005491" />
+         <Attr Name="_checkCondition" Value="&#34;LASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005492" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Addr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005492" />
+         <Attr Name="_checkCondition" Value="&#34;ADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005493" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.City" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005493" />
+         <Attr Name="_checkCondition" Value="&#34;CITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005494" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.State" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005494" />
+         <Attr Name="_checkCondition" Value="&#34;STATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005495" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Zip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005495" />
+         <Attr Name="_checkCondition" Value="&#34;ZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005496" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Country" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005496" />
+         <Attr Name="_checkCondition" Value="&#34;COUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC005497" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Phone" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C005497" />
+         <Attr Name="_checkCondition" Value="&#34;PHONE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008771" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008771" />
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008772" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Email" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008772" />
+         <Attr Name="_checkCondition" Value="&#34;EMAIL&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008773" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Firstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008773" />
+         <Attr Name="_checkCondition" Value="&#34;FIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008774" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Lastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008774" />
+         <Attr Name="_checkCondition" Value="&#34;LASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008775" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Addr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008775" />
+         <Attr Name="_checkCondition" Value="&#34;ADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008776" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.City" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008776" />
+         <Attr Name="_checkCondition" Value="&#34;CITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008777" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.State" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008777" />
+         <Attr Name="_checkCondition" Value="&#34;STATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008778" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Zip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008778" />
+         <Attr Name="_checkCondition" Value="&#34;ZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008779" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Country" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008779" />
+         <Attr Name="_checkCondition" Value="&#34;COUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008780" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Phone" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C008780" />
+         <Attr Name="_checkCondition" Value="&#34;PHONE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009409" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009409" />
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009410" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Email" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009410" />
+         <Attr Name="_checkCondition" Value="&#34;EMAIL&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009411" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Firstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009411" />
+         <Attr Name="_checkCondition" Value="&#34;FIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009412" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Lastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009412" />
+         <Attr Name="_checkCondition" Value="&#34;LASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009413" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Addr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009413" />
+         <Attr Name="_checkCondition" Value="&#34;ADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009414" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.City" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009414" />
+         <Attr Name="_checkCondition" Value="&#34;CITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009415" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.State" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009415" />
+         <Attr Name="_checkCondition" Value="&#34;STATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009416" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Zip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009416" />
+         <Attr Name="_checkCondition" Value="&#34;ZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009417" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Country" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009417" />
+         <Attr Name="_checkCondition" Value="&#34;COUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009418" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Account.Phone" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C009418" />
+         <Attr Name="_checkCondition" Value="&#34;PHONE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <ValidationBean
+      OperandType="LITERAL"
+      Name="VerifyStateForCountryRule"
+      BeanClass="toystore.fwk.rules.VerifyStateForCountryRule" >
+      <NamedData
+         NDName="stateAttributeName"
+         NDType="java.lang.String"
+         NDValue="State" >
+      </NamedData>
+      <NamedData
+         NDName="countryAttributeName"
+         NDType="java.lang.String"
+         NDValue="Country" >
+      </NamedData>
+   </ValidationBean>
+   <UniquePKValidationBean >
+   </UniquePKValidationBean>
+</Entity>

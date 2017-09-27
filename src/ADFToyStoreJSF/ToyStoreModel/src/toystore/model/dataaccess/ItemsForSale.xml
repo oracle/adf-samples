@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="ItemsForSale"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   ComponentClass="toystore.model.dataaccess.ItemsForSaleImpl"
+   MsgBundleClass="toystore.model.dataaccess.common.ItemsForSaleRowImplMsgBundle"
+   ComponentInterface="toystore.model.dataaccess.common.ItemsForSale"
+   ClientProxyName="toystore.model.dataaccess.client.ItemsForSaleClient"
+   FetchMode="FETCH_AS_NEEDED"
+   FetchSize="10"
+   PageIterMode="Partial"
+   UseGlueCode="false" >
+   <Data>
+      <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+      <Property Name ="ID" Value ="3adbdc2e-00fa-1000-808c-7f000001477e::dataaccess.ItemsForSale::ViewObject" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="IS_ACTIVE" Value ="FALSE" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="IS_ROOT" Value ="FALSE" />
+      <Property Name ="VISIBILITY" Value ="PUBLIC" />
+   </Data>
+   <SQLQuery><![CDATA[
+SELECT Item.ITEMID, 
+       ITEM.ATTR1||' '||PRODUCT.NAME AS NAME, 
+       Item.LISTPRICE, 
+       Item.PRODUCTID, 
+       DECODE(INVENTORY.QTY,NULL,'Back Ordered',0,'Back Ordered','In Stock')        AS IN_STOCK,  
+      Product.Descn as Descn,
+      Product.Picture as Picture
+FROM ITEM Item, PRODUCT Product, INVENTORY Inventory
+WHERE Item.PRODUCTID = Product.PRODUCTID
+    AND Inventory.ItemId = Item.ItemId
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.35.31" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|Msg" />
+   </DesignTime>
+   <EntityUsage
+      Name="Item"
+      Entity="toystore.model.businessobjects.Item" >
+      <Data>
+         <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-8094-7f000001477e::dataaccess.ItemsForSale$Item::EntityObjectInstance" />
+         <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+         <Property Name ="IS_ACTIVE" Value ="FALSE" />
+         <Property Name ="IS_LEAF" Value ="FALSE" />
+         <Property Name ="IS_ROOT" Value ="FALSE" />
+         <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Itemid"
+      IsNotNull="true"
+      EntityAttrName="Itemid"
+      EntityUsage="Item"
+      AliasName="ITEMID" >
+      <Data>
+         <Property Name ="ATTR_LOAD" Value ="LOAD_EACH" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-808d-7f000001477e::dataaccess.ItemsForSale::ViewObjectAttribute" />
+         <Property Name ="IS_NOT_NULL" Value ="TRUE" />
+         <Property Name ="IS_OVERRIDE_ATTR" Value ="FALSE" />
+         <Property Name ="IS_PERSISTENT" Value ="TRUE" />
+         <Property Name ="IS_QUERIABLE" Value ="TRUE" />
+         <Property Name ="IS_SUPER_ATTR" Value ="FALSE" />
+         <Property Name ="IS_UNIQUE" Value ="FALSE" />
+         <Property Name ="IS_UPDATEABLE" Value ="UPDATEABLE" />
+         <Property Name ="IS_VISIBLE" Value ="TRUE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      IsUpdateable="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      Precision="161"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="NAME"
+      Expression="expr"
+      SQLType="VARCHAR" >
+      <Data>
+         <Property Name ="ATTR_LOAD" Value ="LOAD_EACH" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-808e-7f000001477e::dataaccess.ItemsForSale::ViewObjectAttribute" />
+         <Property Name ="IS_NOT_NULL" Value ="TRUE" />
+         <Property Name ="IS_OVERRIDE_ATTR" Value ="FALSE" />
+         <Property Name ="IS_PERSISTENT" Value ="TRUE" />
+         <Property Name ="IS_QUERIABLE" Value ="TRUE" />
+         <Property Name ="IS_SUPER_ATTR" Value ="FALSE" />
+         <Property Name ="IS_UNIQUE" Value ="FALSE" />
+         <Property Name ="IS_UPDATEABLE" Value ="UPDATEABLE" />
+         <Property Name ="IS_VISIBLE" Value ="TRUE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Listprice"
+      EntityAttrName="Listprice"
+      EntityUsage="Item"
+      AliasName="LISTPRICE" >
+      <Data>
+         <Property Name ="ATTR_LOAD" Value ="LOAD_EACH" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-808f-7f000001477e::dataaccess.ItemsForSale::ViewObjectAttribute" />
+         <Property Name ="IS_NOT_NULL" Value ="TRUE" />
+         <Property Name ="IS_OVERRIDE_ATTR" Value ="FALSE" />
+         <Property Name ="IS_PERSISTENT" Value ="TRUE" />
+         <Property Name ="IS_QUERIABLE" Value ="TRUE" />
+         <Property Name ="IS_SUPER_ATTR" Value ="FALSE" />
+         <Property Name ="IS_UNIQUE" Value ="FALSE" />
+         <Property Name ="IS_UPDATEABLE" Value ="UPDATEABLE" />
+         <Property Name ="IS_VISIBLE" Value ="TRUE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Productid"
+      IsNotNull="true"
+      EntityAttrName="Productid"
+      EntityUsage="Item"
+      AliasName="PRODUCTID" >
+      <Data>
+         <Property Name ="ATTR_LOAD" Value ="LOAD_EACH" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-8090-7f000001477e::dataaccess.ItemsForSale::ViewObjectAttribute" />
+         <Property Name ="IS_NOT_NULL" Value ="TRUE" />
+         <Property Name ="IS_OVERRIDE_ATTR" Value ="FALSE" />
+         <Property Name ="IS_PERSISTENT" Value ="TRUE" />
+         <Property Name ="IS_QUERIABLE" Value ="TRUE" />
+         <Property Name ="IS_SUPER_ATTR" Value ="FALSE" />
+         <Property Name ="IS_UNIQUE" Value ="FALSE" />
+         <Property Name ="IS_UPDATEABLE" Value ="UPDATEABLE" />
+         <Property Name ="IS_VISIBLE" Value ="TRUE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InStock"
+      IsPersistent="false"
+      Precision="12"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="IN_STOCK"
+      Expression="IN_STOCK"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="12" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Descn"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="DESCN"
+      Expression="DESCN"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="255" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Picture"
+      IsQueriable="false"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PICTURE"
+      Expression="PICTURE"
+      SQLType="VARCHAR" >
+      <Data>
+         <Property Name ="ATTR_LOAD" Value ="LOAD_EACH" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="3adbdc2e-00fa-1000-8093-7f000001477e::dataaccess.ItemsForSale::ViewObjectAttribute" />
+         <Property Name ="IS_NOT_NULL" Value ="TRUE" />
+         <Property Name ="IS_OVERRIDE_ATTR" Value ="FALSE" />
+         <Property Name ="IS_PERSISTENT" Value ="TRUE" />
+         <Property Name ="IS_QUERIABLE" Value ="TRUE" />
+         <Property Name ="IS_SUPER_ATTR" Value ="FALSE" />
+         <Property Name ="IS_UNIQUE" Value ="FALSE" />
+         <Property Name ="IS_UPDATEABLE" Value ="UPDATEABLE" />
+         <Property Name ="IS_VISIBLE" Value ="TRUE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="255" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

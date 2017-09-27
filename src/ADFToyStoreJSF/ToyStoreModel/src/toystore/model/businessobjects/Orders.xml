@@ -1,0 +1,1463 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Orders"
+   DBObjectType="table"
+   DBObjectName="ORDERS"
+   AliasName="Orders"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="toystore.model.businessobjects.OrdersImpl"
+   MsgBundleClass="toystore.model.businessobjects.common.OrdersImplMsgBundle" >
+   <Data>
+      <Property Name ="CODE_SYNC_STATE" Value ="MODEL_ONLY" />
+      <Property Name ="ID" Value ="b8d92ae3-00f2-1000-8038-901692b23245::businessobjects.Orders::EntityObject" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="IS_ACTIVE" Value ="FALSE" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="IS_ROOT" Value ="FALSE" />
+      <Property Name ="java.lang.JavaStatic" Value ="FALSE" />
+      <Property Name ="java.lang.JavaStrictFP" Value ="FALSE" />
+      <Property Name ="VISIBILITY" Value ="PUBLIC" />
+   </Data>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.35.34" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_superClass" Value="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" />
+      <Attr Name="_codeGenFlag2" Value="Init|Access|Msg" />
+   </DesignTime>
+   <Attribute
+      Name="Orderid"
+      IsUpdateable="while_insert"
+      DefaultValue="@0"
+      ColumnName="ORDERID"
+      Domain="oracle.jbo.domain.DBSequence"
+      Type="oracle.jbo.domain.DBSequence"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="ORDERS"
+      PrimaryKey="true"
+      RetrievedOnInsert="true" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92ae3-00f2-1000-8039-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </Attribute>
+   <Attribute
+      Name="Userid"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="USERID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92ae3-00f2-1000-803a-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Orderdate"
+      IsNotNull="true"
+      ColumnName="ORDERDATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92ae3-00f2-1000-803b-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipaddr1"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="SHIPADDR1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92ae3-00f2-1000-803c-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipaddr2"
+      Precision="80"
+      ColumnName="SHIPADDR2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-803d-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipcity"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="SHIPCITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-803e-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipstate"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="SHIPSTATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Properties>
+         <Property Name ="Case" Value ="Upper" />
+      </Properties>
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-803f-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipzip"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="SHIPZIP"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8040-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shipcountry"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="SHIPCOUNTRY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8041-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billaddr1"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="BILLADDR1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8042-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billaddr2"
+      Precision="80"
+      ColumnName="BILLADDR2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8043-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billcity"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="BILLCITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8044-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billstate"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="BILLSTATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Properties>
+         <Property Name ="Case" Value ="Upper" />
+      </Properties>
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8045-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billzip"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="BILLZIP"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8046-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billcountry"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="BILLCOUNTRY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Properties>
+         <Property Name ="Case" Value ="Upper" />
+      </Properties>
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8047-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Courier"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="COURIER"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8048-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Totalprice"
+      Precision="10"
+      Scale="2"
+      ColumnName="TOTALPRICE"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8049-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+   </Attribute>
+   <Attribute
+      Name="Billtofirstname"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="BILLTOFIRSTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804a-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Billtolastname"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="BILLTOLASTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804b-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shiptofirstname"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="SHIPTOFIRSTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804c-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Shiptolastname"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="SHIPTOLASTNAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804d-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Creditcard"
+      IsNotNull="true"
+      Precision="16"
+      ColumnName="CREDITCARD"
+      Domain="toystore.model.datatypes.CreditCardNumber"
+      Type="toystore.model.datatypes.common.CreditCardNumber"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804e-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Exprdate"
+      IsNotNull="true"
+      Precision="7"
+      ColumnName="EXPRDATE"
+      Domain="toystore.model.datatypes.ExpirationDate"
+      Type="toystore.model.datatypes.common.ExpirationDate"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-804f-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Cardtype"
+      IsNotNull="true"
+      Precision="80"
+      ColumnName="CARDTYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8050-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Locale"
+      IsNotNull="true"
+      Precision="20"
+      ColumnName="LOCALE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="ORDERS" >
+      <Data>
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="ID" Value ="b8d92aed-00f2-1000-8051-901692b23245::businessobjects.Orders::EntityObjectAttribute" />
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CountryStateValid"
+      IsQueriable="false"
+      IsPersistent="false"
+      ColumnName="$none$"
+      Type="java.lang.Boolean"
+      ColumnType="$none$"
+      SQLType="BIT" >
+   </Attribute>
+   <AccessorAttribute
+      Name="Account"
+      Association="toystore.model.businessobjects.OrderedByAssoc"
+      AssociationEnd="toystore.model.businessobjects.OrderedByAssoc.Account"
+      AssociationOtherEnd="toystore.model.businessobjects.OrderedByAssoc.Orders"
+      Type="toystore.model.businessobjects.AccountImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Lineitem"
+      Association="toystore.model.businessobjects.ItemOrderdOnAssoc"
+      AssociationEnd="toystore.model.businessobjects.ItemOrderdOnAssoc.Lineitem"
+      AssociationOtherEnd="toystore.model.businessobjects.ItemOrderdOnAssoc.Orders"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Orderstatus"
+      Association="toystore.model.businessobjects.StatusOfOrderAssoc"
+      AssociationEnd="toystore.model.businessobjects.StatusOfOrderAssoc.Orderstatus"
+      AssociationOtherEnd="toystore.model.businessobjects.StatusOfOrderAssoc.Orders"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="OrdersExprdateCheck" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Exprdate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;EXPRDATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_isNotNull" Value="true" />
+         <Attr Name="_DBObjectName" Value="ORDERS_EXPRDATE_CHECK" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="OrdersPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="ORDERS_PRIMARY_KEY" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002790" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002790" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002791" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002791" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002792" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderdate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERDATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002792" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002793" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002793" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002794" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002794" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002795" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002795" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002796" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002796" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002797" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002797" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002798" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002798" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002799" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002799" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002800" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002800" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002801" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002801" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002802" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002802" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002803" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Totalprice" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TOTALPRICE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002803" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002804" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002804" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002805" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002805" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002806" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002806" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC002807" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C002807" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003920" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003920" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003921" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003921" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003922" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderdate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERDATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003922" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003923" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003923" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003924" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003924" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003925" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003925" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003926" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003926" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003927" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003927" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003928" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003928" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003929" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003929" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003930" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003930" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003931" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003931" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003932" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003932" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003933" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Totalprice" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TOTALPRICE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003933" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003934" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003934" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003935" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003935" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003936" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003936" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003937" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C003937" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008800" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008800" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008801" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008801" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008802" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderdate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERDATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008802" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008803" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008803" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008804" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008804" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008805" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008805" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008806" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008806" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008807" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008807" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008808" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008808" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008809" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008809" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008810" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008810" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008811" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008811" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008812" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008812" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008813" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Totalprice" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TOTALPRICE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008813" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008814" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008814" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008815" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008815" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008816" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008816" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC008817" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C008817" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009438" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009438" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009439" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;USERID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009439" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009440" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Orderdate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORDERDATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009440" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009441" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009441" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009442" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009442" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009443" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009443" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009444" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009444" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009445" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shipcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009445" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009446" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billaddr1" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLADDR1&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009446" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009447" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcity" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCITY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009447" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009448" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billstate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLSTATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009448" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009449" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billzip" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLZIP&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009449" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009450" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billcountry" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLCOUNTRY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009450" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009451" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Totalprice" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TOTALPRICE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009451" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009452" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009452" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009453" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Billtolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BILLTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009453" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009454" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptofirstname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOFIRSTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009454" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC009455" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Shiptolastname" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;SHIPTOLASTNAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C009455" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="OrderedBy" >
+      <AttrArray Name="Attributes">
+         <Item Value="toystore.model.businessobjects.Orders.Userid" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_referencedKey" Value="PK_ACCOUNT" />
+         <Attr Name="_isForeign" Value="true" />
+         <Attr Name="_DBObjectName" Value="ORDERED_BY" />
+      </DesignTime>
+   </Key>
+   <ValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      OperandType="LITERAL"
+      Name="VerifyStateForCountryRule"
+      ValidationBeanClass="toystore.fwk.rules.VerifyStateForCountryRule" >
+      <NamedData
+         NDName="stateAttributeName"
+         NDType="java.lang.String"
+         NDValue="Shipstate" >
+      </NamedData>
+      <NamedData
+         NDName="countryAttributeName"
+         NDType="java.lang.String"
+         NDValue="Shipcountry" >
+      </NamedData>
+   </ValidationBean>
+   <MethodValidationBean
+      xmlns="http://xmlns.oracle.com/adfm/validation"
+      MethodName="validateCreditCardExpiration" >
+   </MethodValidationBean>
+</Entity>

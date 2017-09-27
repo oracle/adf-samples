@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Supplier"
+   DBObjectType="table"
+   DBObjectName="SUPPLIER"
+   AliasName="Supplier"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="toystore.model.businessobjects.SupplierImpl" >
+   <Data>
+      <Property Name ="IS_ACTIVE" Value ="FALSE" />
+      <Property Name ="IS_ABSTRACT" Value ="FALSE" />
+      <Property Name ="java.lang.JavaStrictFP" Value ="FALSE" />
+      <Property Name ="IS_LEAF" Value ="FALSE" />
+      <Property Name ="java.lang.JavaStatic" Value ="FALSE" />
+      <Property Name ="VISIBILITY" Value ="PUBLIC" />
+      <Property Name ="CODE_SYNC_STATE" Value ="MODEL_ONLY" />
+      <Property Name ="IS_ROOT" Value ="FALSE" />
+      <Property Name ="COMPLETE_LIBRARY" Value ="FALSE" />
+      <Property Name ="ID" Value ="b8dfb625-00f2-1000-80b1-901692b23245::businessobjects.Supplier::EntityObject" />
+   </Data>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.15.36" />
+      <Attr Name="_codeGenFlag2" Value="Access" />
+      <Attr Name="_superClass" Value="toystore.fwk.model.businessobjects.ToyStoreEntityImpl" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Suppid"
+      IsNotNull="true"
+      Precision="38"
+      Scale="0"
+      ColumnName="SUPPID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="SUPPLIER"
+      PrimaryKey="true" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb625-00f2-1000-80b2-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+   </Attribute>
+   <Attribute
+      Name="Name"
+      Precision="80"
+      ColumnName="NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb625-00f2-1000-80b3-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Status"
+      IsNotNull="true"
+      Precision="2"
+      ColumnName="STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb625-00f2-1000-80b4-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Addr1"
+      Precision="80"
+      ColumnName="ADDR1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb625-00f2-1000-80b5-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Addr2"
+      Precision="80"
+      ColumnName="ADDR2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb62f-00f2-1000-80b6-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="City"
+      Precision="80"
+      ColumnName="CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb62f-00f2-1000-80b7-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="State"
+      Precision="80"
+      ColumnName="STATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb62f-00f2-1000-80b8-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Zip"
+      Precision="5"
+      ColumnName="ZIP"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb62f-00f2-1000-80b9-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="5" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Phone"
+      Precision="80"
+      ColumnName="PHONE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="SUPPLIER" >
+      <Data>
+         <Property Name ="java.lang.JavaTransient" Value ="FALSE" />
+         <Property Name ="OWNER_SCOPE" Value ="INSTANCE" />
+         <Property Name ="ID" Value ="b8dfb62f-00f2-1000-80ba-901692b23245::businessobjects.Supplier::EntityObjectAttribute" />
+         <Property Name ="CHANGEABILITY" Value ="CHANGEABLE" />
+         <Property Name ="MULTIPLICITY" Value ="1" />
+         <Property Name ="VISIBILITY" Value ="PACKAGE" />
+         <Property Name ="java.lang.JavaVolatile" Value ="FALSE" />
+      </Data>
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Item"
+      Association="toystore.model.businessobjects.SuppliedByAssoc"
+      AssociationEnd="toystore.model.businessobjects.SuppliedByAssoc.Item"
+      AssociationOtherEnd="toystore.model.businessobjects.SuppliedByAssoc.ItemSupplier"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+</Entity>

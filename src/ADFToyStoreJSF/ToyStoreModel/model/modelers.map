@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ModelersMap class="java.util.HashMap">
+   <Item>
+      <Key>3ad78e70-00fa-1000-807a-7f000001c742</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore.uml.ToyStoreService</Item>
+         <Item>oxd_bc4j</Item>
+         <Item>Diagram</Item>
+      </Value>
+   </Item>
+   <Item>
+      <Key>b8cf2fec-00f2-1000-8001-901692b23245</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore</Item>
+         <Item/>
+         <Item>UMLPackage</Item>
+      </Value>
+   </Item>
+   <Item>
+      <Key>b8cf3014-00f2-1000-8002-901692b23245</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore.uml</Item>
+         <Item/>
+         <Item>UMLPackage</Item>
+      </Value>
+   </Item>
+   <Item>
+      <Key>b8cf3639-00f2-1000-8003-901692b23245</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>toystore.uml.Business Objects</Item>
+         <Item>oxd_otd</Item>
+         <Item>Diagram</Item>
+      </Value>
+   </Item>
+</ModelersMap>
