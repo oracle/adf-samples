@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Departments">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandLink text="Goto Another Page" action="GotoAnotherPage"/>
+          <af:objectSeparator/>
+          <af:panelTip>
+            <af:outputText value="This page's pageDefinition has an invokeAction bound to the same Execute action binding as the button above that using its Refresh and RefreshCondition properties causes the page to conditionally invoke this Execute operation during the prepareModel phase of the ADF lifecycle if the adfFacesContext.postback flag is false (meaning we are navigating to this page for the first time or from another page, but not posting back to itself)
+"/>
+          </af:panelTip>
+          <af:table value="#{bindings.Departments.collectionModel}" var="row"
+                    rows="#{bindings.Departments.rangeSize}"
+                    first="#{bindings.Departments.rangeStart}"
+                    emptyText="#{bindings.Departments.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.Departments.labels.Deptno}">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Departments.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="false"
+                       headerText="#{bindings.Departments.labels.Dname}">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="false"
+                       headerText="#{bindings.Departments.labels.Loc}">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+          </af:table>
+          <af:commandButton actionListener="#{bindings.Execute.execute}"
+                            text="Refresh the Data Manually"
+                            disabled="#{!bindings.Execute.enabled}"/>
+          <af:panelTip>
+            <af:outputText value="The button above was created by dropping an 'Execute' operation from the data control palette for the Departments data collection and changing the button text."/>
+          </af:panelTip>
+          <af:objectSeparator/>
+          <af:commandButton text="Another Button That Causes a Postback (and Otherwise Does Nothing)"/>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

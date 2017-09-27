@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="AnotherPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:panelBox text="Interesting Page">
+            <af:outputText value="This page has some other interesting information, and upon returning to the Departments page, you would like to force a requery to occur."/>
+          </af:panelBox>
+          <af:commandLink text="Back to Departments Page"
+                          action="BackToDepartments"/>
+          <af:objectSeparator/>
+          <af:commandLink text="Back to Departments Page Triggering a Data Refresh"
+                          action="BackToDepartments">
+            <af:setActionListener from="#{true}"
+                                  to="#{requestScope.refreshFlag}"/>
+          </af:commandLink>
+          <af:panelTip>
+            <af:outputText value="The commandLink above has a nested af:setActionListener to declaratively set a requestScope attribute as a refresh flag that the Departments page uses to conditionally trigger the Execute operation to refresh the query result"/>
+          </af:panelTip>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

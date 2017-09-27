@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="DepartmentsTimedAutoRefresh">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form  id="form1">
+          <af:panelTip>
+            <af:outputText value="This page has no explicit (Refresh) button, however using the Structure Window I've inserted an &quot;Execute&quot; action binding in the 'bindings' section related to the 'DepartmentsIterator' iterator binding. This page has a non-visible af:poll component whose PollListener method in the backing bean executes the &quot;Execute&quot; action binding to refresh the query results. The poll component is set to fire every 5000 milliseconds (i.e. 5 seconds)
+"/>
+          </af:panelTip>
+          <af:panelHorizontal>
+            <af:outputText value="Data last refreshed at:"/>
+            <af:outputText value="#{UserInfo.currentDateTime}"
+                           partialTriggers="timer">
+              <f:convertDateTime pattern="dd-MMM-yyyy HH:mm:ss"/>
+            </af:outputText>
+          </af:panelHorizontal>
+          <af:table value="#{bindings.Departments.collectionModel}" var="row"
+                    rows="#{bindings.Departments.rangeSize}"
+                    first="#{bindings.Departments.rangeStart}"
+                    emptyText="#{bindings.Departments.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    partialTriggers="timer">
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.Departments.labels.Deptno}">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Departments.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="false"
+                       headerText="#{bindings.Departments.labels.Dname}">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="false"
+                       headerText="#{bindings.Departments.labels.Loc}">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+          </af:table>
+          <af:poll pollListener="#{DepartmentsTimedAutoRefresh.onPollTimerExpired}"
+                   id="timer"/>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
