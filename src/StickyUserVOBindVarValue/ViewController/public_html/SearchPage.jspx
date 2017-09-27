@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="SearchPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:panelForm>
+              <af:inputText value="#{bindings.EmpName.inputValue}"
+                            label="#{bindings.EmpName.label}"
+                            required="#{bindings.EmpName.mandatory}"
+                            columns="#{bindings.EmpName.displayWidth}">
+                <af:validator binding="#{bindings.EmpName.validator}"/>
+              </af:inputText>
+              <af:selectOneListbox value="#{bindings.LowSalList.inputValue}"
+                                   label="#{bindings.LowSalList.label}">
+                <f:selectItems value="#{bindings.LowSalList.items}"/>
+              </af:selectOneListbox>
+              <af:inputText value="#{bindings.HighSal.inputValue}"
+                            label="#{bindings.HighSal.label}"
+                            required="#{bindings.HighSal.mandatory}"
+                            columns="#{bindings.HighSal.displayWidth}">
+                <af:validator binding="#{bindings.HighSal.validator}"/>
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.HighSal.format}"/>
+              </af:inputText>
+            </af:panelForm>
+            <af:panelButtonBar>
+              <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                                text="ExecuteWithParams"
+                                disabled="#{!bindings.ExecuteWithParams.enabled}"
+                                action="showResults">
+                <af:setActionListener from="#{bindings.EmpName.inputValue}"
+                                      to="#{processScope.EmpName}"/>
+                <af:setActionListener from="#{bindings.HighSal.inputValue}"
+                                      to="#{processScope.HighSal}"/>
+                <af:setActionListener from="#{bindings.LowSal.inputValue}"
+                                      to="#{processScope.LowSal}"/>
+              </af:commandButton>
+              <af:commandButton text="Clear Criteria">
+                <af:setActionListener from="#{null}"
+                                      to="#{processScope.EmpName}"/>
+                <af:setActionListener from="#{null}"
+                                      to="#{processScope.HighSal}"/>
+                <af:setActionListener from="#{null}"
+                                      to="#{processScope.LowSal}"/>
+              </af:commandButton>
+            </af:panelButtonBar>
+            <af:panelBox background="transparent" text="Debug Info"
+                         width="100%" binding="#{SearchPage.panelBoxComponent}">
+              <af:panelLabelAndMessage label="processScope.EmpName =">
+                <af:outputText value="#{processScope.EmpName}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="processScope.HighSal =">
+                <af:outputText value="#{processScope.HighSal}"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="processScope.LowSal =">
+                <af:outputText value="#{processScope.LowSal}"/>
+              </af:panelLabelAndMessage>
+            </af:panelBox>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

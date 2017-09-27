@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ResultsPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:commandLink text="Try Search Again..." action="searchAgain"/>
+          <af:table value="#{bindings.EmpView1.collectionModel}" var="row"
+                    rows="#{bindings.EmpView1.rangeSize}"
+                    first="#{bindings.EmpView1.rangeStart}"
+                    emptyText="#{bindings.EmpView1.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column headerText="#{bindings.EmpView1.labels.Empno}"
+                       sortProperty="Empno" sortable="true">
+              <af:outputText value="#{row.Empno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView1.formats.Empno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Ename}"
+                       sortProperty="Ename" sortable="true">
+              <af:outputText value="#{row.Ename}"/>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Job}"
+                       sortProperty="Job" sortable="true">
+              <af:outputText value="#{row.Job}"/>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Mgr}"
+                       sortProperty="Mgr" sortable="true">
+              <af:outputText value="#{row.Mgr}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView1.formats.Mgr}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Hiredate}"
+                       sortProperty="Hiredate" sortable="true">
+              <af:outputText value="#{row.Hiredate}">
+                <f:convertDateTime pattern="#{bindings.EmpView1.formats.Hiredate}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Sal}"
+                       sortProperty="Sal" sortable="true">
+              <af:outputText value="#{row.Sal}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView1.formats.Sal}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Comm}"
+                       sortProperty="Comm" sortable="true">
+              <af:outputText value="#{row.Comm}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView1.formats.Comm}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView1.labels.Deptno}"
+                       sortProperty="Deptno" sortable="true">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView1.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
