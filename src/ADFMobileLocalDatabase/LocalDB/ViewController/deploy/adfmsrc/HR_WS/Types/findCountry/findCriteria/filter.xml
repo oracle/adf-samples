@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="filter"
+          Package="HR_WS.Types.findCountry.findCriteria" BeanClass="HR_WS.Types.findCountry.findCriteria.filter"
+          isJavaBased="false">
+  <Attribute Name="conjunction" IsNotNull="false" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="_ROWNUM___ATTR_" PrimaryKey="true" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="DISPLAYHINT" Value="Hide"/>
+        <Property Name="PrimaryKey" Value="true"/>
+        <Property Name="IsVisible" Value="false"/>
+        <Property Name="IsQueriable" Value="false"/>
+        <Property Name="updateable" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="group" IsCollection="true" BeanClass="HR_WS.Types.findCountry.findCriteria.filter.group"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria.filter_Operations"/>
+  <AccessorAttribute id="nested" IsCollection="true" BeanClass="HR_WS.Types.findCountry.findCriteria.filter"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria.filter_Operations"/>
+</JavaBean>

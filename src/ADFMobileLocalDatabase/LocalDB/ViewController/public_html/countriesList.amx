@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:loadBundle basename="oracle.adfinsider.localdb.mobile.ViewControllerBundle" var="viewcontrollerBundle" id="lb1"/>
+  <amx:panelPage id="pp1">
+    <amx:verbatim id="v1">
+        <script type="text/javascript">if (!window.adf) window.adf = {}; adf.wwwPath = "../../../../www/";</script> 
+        <script type="text/javascript" src="../../../../www/js/base.js"></script>
+        <script type="text/javascript" src="../../../../www/js/cordova-2.2.0.js"></script>
+    </amx:verbatim>
+    <amx:facet name="header">
+      <amx:outputText value="#{viewcontrollerBundle.COUNTRIES}" id="ot1"/>
+    </amx:facet>
+    <amx:facet name="footer">
+      <amx:panelGroupLayout id="pgl1" layout="horizontal" halign="center">
+        <amx:commandButton text="#{viewcontrollerBundle.REFRESH}" id="cb1" action="refresh"/>
+      </amx:panelGroupLayout>
+    </amx:facet>
+    <amx:panelLabelAndMessage label="#{viewcontrollerBundle.NETWORKSTATUS}" id="plam1">
+      <amx:outputText value="#{deviceScope.hardware.networkStatus}" id="ot3"/>
+    </amx:panelLabelAndMessage>
+    <amx:listView var="row" value="#{bindings.countries.collectionModel}" fetchSize="#{bindings.countries.rangeSize}"
+                  styleClass="adfmf-listView-insetList" id="lv1">
+      <amx:listItem showLinkIcon="false" id="li1">
+        <amx:outputText value="#{row.countryName}" id="ot2"/>
+      </amx:listItem>
+    </amx:listView>
+  </amx:panelPage>
+</amx:view>

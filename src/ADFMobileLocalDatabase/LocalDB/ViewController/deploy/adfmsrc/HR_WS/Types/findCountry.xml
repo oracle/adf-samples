@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="findCountry" Package="HR_WS.Types"
+          BeanClass="HR_WS.Types.findCountry" isJavaBased="false">
+  <AccessorAttribute id="findCriteria" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findCriteria"/>
+  <AccessorAttribute id="findControl" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findControl"/>
+</JavaBean>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="countriesListPageDef"
+                Package="oracle.adfinsider.localdb.mobile.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CountryDC" id="CountryDCIterator"/>
+    <accessorIterator MasterBinding="CountryDCIterator" Binds="countries" RangeSize="25" DataControl="CountryDC"
+                      BeanClass="oracle.adfinsider.localdb.mobile.bo.CountryBO" id="countriesIterator" Sortable="true"
+                      Refresh="always"/>
+    <iterator id="HR_WS_rootIter" Binds="root" DataControl="HR_WS" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="countriesIterator" id="countries">
+      <nodeDefinition DefName="oracle.adfinsider.localdb.mobile.bo.CountryBO" Name="countries0">
+        <AttrNames>
+          <Item Value="countryName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

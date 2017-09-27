@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf" version="11.1.1.0.0">
+   <BusinessComponentProjectRegistry path="oracle/adfinsider/localdb/hrservices/Model.jpx"/>
+   <BusinessComponentServiceRegistry path="oracle/adfinsider/localdb/common/bc4j.xcfg"/>
+   <BusinessComponentServiceRegistry path="oracle/adfinsider/localdb/hrservices/common/bc4j.xcfg"/>
+</MetadataDirectory>

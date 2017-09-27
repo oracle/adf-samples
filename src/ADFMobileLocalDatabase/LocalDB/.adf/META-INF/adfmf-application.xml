@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
+                   version="1.0" name="LocalDB" id="com.company.LocalDB" appControllerFolder="ApplicationController"
+                   listener-class="oracle.adfinsider.localdb.application.LifeCycleListenerImpl">
+  <adfmf:featureReference id="oracle.adfinsider.localdb.countries"/>
+  <adfmf:navigation>
+    <adfmf:navigationBar enabled="false" displayHideShowNavigationBarControl="false"/>
+    <adfmf:springboard enabled="false" displayGotoSpringboardControl="false" showSpringboardAtStartup="false"/>
+  </adfmf:navigation>
+</adfmf:application>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="HRModuleService" targetNamespace="/oracle/adfinsider/localdb/" xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="/oracle/adfinsider/localdb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:types="/oracle/adfinsider/localdb/types/">
+  <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="ServiceException.wsdl"/>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="/oracle/adfinsider/localdb/types/" schemaLocation="HRModuleService.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="HRModuleService_getCountry">
+    <wsdl:part name="parameters" element="types:getCountry"/>
+  </wsdl:message>
+  <wsdl:message name="HRModuleService_getCountryResponse">
+    <wsdl:part name="parameters" element="types:getCountryResponse"/>
+  </wsdl:message>
+  <wsdl:message name="HRModuleService_findCountry">
+    <wsdl:part name="parameters" element="types:findCountry"/>
+  </wsdl:message>
+  <wsdl:message name="HRModuleService_findCountryResponse">
+    <wsdl:part name="parameters" element="types:findCountryResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="HRModuleService">
+    <wsdl:documentation>
+      <ViewInstance FindOpName="findCountry" GetOpName="getCountry" Name="CountriesView" SDOName="ns0:CountriesViewSDO" xmlns="http://xmlns.oracle.com/adf/svc/metadata/" xmlns:ns0="/oracle/adfinsider/localdb/hrservices/common/"/>
+    </wsdl:documentation>
+    <wsdl:operation name="getCountry">
+      <wsdl:input message="tns:HRModuleService_getCountry"/>
+      <wsdl:output message="tns:HRModuleService_getCountryResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findCountry">
+      <wsdl:input message="tns:HRModuleService_findCountry"/>
+      <wsdl:output message="tns:HRModuleService_findCountryResponse"/>
+      <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HRModuleServiceSoapHttp" type="tns:HRModuleService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCountry">
+      <soap:operation soapAction="/oracle/adfinsider/localdb/getCountry"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findCountry">
+      <soap:operation soapAction="/oracle/adfinsider/localdb/findCountry"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HRModuleService">
+    <wsdl:port name="HRModuleServiceSoapHttpPort" binding="tns:HRModuleServiceSoapHttp">
+      <soap:address location="http://localhost:7101/LocalDB-ViewController-context-root/HR_WSService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

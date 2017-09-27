@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="findControl"
+          Package="HR_WS.Types.findCountry" BeanClass="HR_WS.Types.findCountry.findControl" isJavaBased="false">
+  <Attribute Name="retrieveAllTranslations" IsNotNull="true" Type="java.lang.Boolean">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+</JavaBean>

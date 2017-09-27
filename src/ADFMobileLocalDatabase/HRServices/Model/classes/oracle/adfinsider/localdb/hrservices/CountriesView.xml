@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountriesView"
+  Version="11.1.2.64.36"
+  SelectList="Countries.COUNTRY_ID, 
+       Countries.COUNTRY_NAME, 
+       Countries.REGION_ID"
+  FromList="COUNTRIES Countries"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  SdoGen="true"
+  SdoName="CountriesViewSDO"
+  SdoNameSpace="/oracle/adfinsider/localdb/hrservices/common/">
+  <EntityUsage
+    Name="Countries"
+    Entity="oracle.adfinsider.localdb.hrservices.Countries"/>
+  <ViewAttribute
+    Name="CountryId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CountryId"
+    EntityUsage="Countries"
+    AliasName="COUNTRY_ID"/>
+  <ViewAttribute
+    Name="CountryName"
+    PrecisionRule="true"
+    EntityAttrName="CountryName"
+    EntityUsage="Countries"
+    AliasName="COUNTRY_NAME"/>
+  <ViewAttribute
+    Name="RegionId"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="Countries"
+    AliasName="REGION_ID"/>
+  <ViewLinkAccessor
+    Name="LocationsView"
+    ViewLink="oracle.adfinsider.localdb.hrservices.LocCIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

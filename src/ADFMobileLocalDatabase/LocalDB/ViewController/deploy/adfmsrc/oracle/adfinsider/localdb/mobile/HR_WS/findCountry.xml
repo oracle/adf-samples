@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="findCountry"
+          Package="oracle.adfinsider.localdb.mobile.HR_WS"
+          BeanClass="oracle.adfinsider.localdb.mobile.HR_WS.findCountry" isJavaBased="false">
+  <AccessorAttribute id="result" IsCollection="true"
+                     BeanClass="oracle.adfinsider.localdb.mobile.HR_WS.findCountry.result"
+                     CollectionBeanClass="oracle.adfinsider.localdb.mobile.HR_WS.findCountry_Operations"/>
+</JavaBean>

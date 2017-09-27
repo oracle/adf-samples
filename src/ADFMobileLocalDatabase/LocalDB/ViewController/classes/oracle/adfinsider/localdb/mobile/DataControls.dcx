@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="oracle.adfinsider.localdb.mobile">
+  <AdapterDataControl id="HR_WS" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.webservice.WSDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="oracle.adfinsider.localdb.mobile.HR_WS"
+                      BeanClass="oracle.adfinsider.localdb.mobile.HR_WS"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <definition xmlns="http://xmlns.oracle.com/adfm/adapter/webservice" name="HR_WS" version="1.0"
+                  provider="oracle.adfinternal.model.adapter.webservice.provider.soap.SOAPProvider"
+                  wsdl="oracle.adfinsider.localdb.mobile/HRModuleService.wsdl" ensureKeyAttribute="true"
+                  UsePersistedStructure="false">
+        <service name="HRModuleService" namespace="/oracle/adfinsider/localdb/" connection="HR_WS">
+          <port name="HRModuleServiceSoapHttpPort">
+            <operation name="getCountry"/>
+            <operation name="findCountry"/>
+          </port>
+        </service>
+      </definition>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="CountryDC" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="oracle.adfinsider.localdb.mobile.dc.CountryDC"
+                      BeanClass="oracle.adfinsider.localdb.mobile.dc.CountryDC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="oracle.adfinsider.localdb.mobile.bo.CountryBO"/>
+      <TypeInfo FullName="oracle.adfinsider.localdb.mobile.dc.CountryDC"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="oracle.adfinsider.localdb.mobile.dc.CountryDC"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

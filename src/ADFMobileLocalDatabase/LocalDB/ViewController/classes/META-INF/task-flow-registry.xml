@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="oracle.adfinsider.localdb.countries/countries-flow.xml" id="countries-flow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" train="false" page-type="unspecified"/>
+</task-flow-registry>

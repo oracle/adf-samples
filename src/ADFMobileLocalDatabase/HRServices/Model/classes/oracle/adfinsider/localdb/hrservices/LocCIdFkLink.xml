@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LocCIdFkLink"
+  Version="11.1.2.64.36"
+  EntityAssociation="oracle.adfinsider.localdb.hrservices.LocCIdFkAssoc">
+  <ViewLinkDefEnd
+    Name="CountriesView"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.adfinsider.localdb.hrservices.CountriesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountriesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.adfinsider.localdb.hrservices.CountriesView.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LocationsView"
+    Cardinality="-1"
+    Owner="oracle.adfinsider.localdb.hrservices.LocationsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="LocationsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.adfinsider.localdb.hrservices.LocationsView.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

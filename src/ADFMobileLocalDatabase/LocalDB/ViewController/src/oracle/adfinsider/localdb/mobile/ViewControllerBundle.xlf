@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file source-language="en" original="oracle.adfinsider.localdb.mobile.ViewControllerBundle" datatype="x-oracle-adf">
+    <body>
+      <trans-unit id="NETWORKSTATUS">
+        <source>Network Status</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="REFRESH">
+        <source>Refresh</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="COUNTRIES_LIST">
+        <source>Countries List</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="COUNTRIES">
+        <source>Countries</source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

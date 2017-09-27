@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">countriesList</property>
+      <property
+         name="page">/countriesList.amx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>countriesList&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">258.94824</property>
+      <property
+         name="x">323.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase3"
+      from="View2"
+      to="View2">
+      <property
+         name="fromOutcome">refresh</property>
+      <property
+         name="sdm:polyPoints">T44,319.5,204.59766,326.5,204.59766,T56</property>
+   </ControlFlowCase>
+</SDM>

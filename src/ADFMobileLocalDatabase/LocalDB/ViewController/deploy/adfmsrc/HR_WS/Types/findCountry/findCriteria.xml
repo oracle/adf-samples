@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="findCriteria"
+          Package="HR_WS.Types.findCountry" BeanClass="HR_WS.Types.findCountry.findCriteria" isJavaBased="false">
+  <Attribute Name="fetchStart" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="fetchSize" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="excludeAttribute" IsNotNull="true" Type="java.lang.Boolean">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="filter" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findCriteria.filter"/>
+  <AccessorAttribute id="sortOrder" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder"/>
+  <AccessorAttribute id="findAttribute" IsCollection="true"
+                     BeanClass="HR_WS.Types.findCountry.findCriteria.findAttribute"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria_Operations"/>
+  <AccessorAttribute id="childFindCriteria" IsCollection="true"
+                     BeanClass="HR_WS.Types.findCountry.findCriteria.childFindCriteria"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria_Operations"/>
+</JavaBean>

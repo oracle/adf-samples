@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
+  <adfmf:feature id="oracle.adfinsider.localdb.countries" name="countries">
+    <adfmf:content id="oracle.adfinsider.localdb.countries.1">
+      <adfmf:amx file="oracle.adfinsider.localdb.countries/countries-flow.xml#countries-flow">
+        <adfmf:includes/>
+      </adfmf:amx>
+    </adfmf:content>
+  </adfmf:feature>
+</adfmf:features>

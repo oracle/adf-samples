@@ -1,0 +1,458 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdt.controller.migrate.TrinidadDatabindingsProjectMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.adfdtinternal.dvt.datapresdt.migration.DVTDataMapMigrator" v="11.1.1.1.0.3"/>
+      <value n="oracle.adfdtinternal.model.ide.migration.ProjectMigrator" v="11.1.1.1.0.11.1.1"/>
+      <value n="oracle.adfdtinternal.model.ide.security.wizard.FormPageMigrator" v="11.1.1.0.0"/>
+      <value n="oracle.adfdtinternal.model.ide.security.wizard.JpsFilterMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdtinternal.model.ide.xmled.migration.ADFNodeMigrator" v="11.1.1.1.0.5"/>
+      <value n="oracle.adfdtinternal.model.ide.xmled.migration.PageDefinitionParameterValueMigrator" v="11.1.1.1.0.5"/>
+      <value n="oracle.adfdtinternal.model.ide.xmled.migration.WebXmlMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdtinternal.view.common.migration.wizards.MigrationHelper" v="11.1.1.1.0.3"/>
+      <value n="oracle.adfdtinternal.view.rich.binding.migration.JarResourceMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdtinternal.view.rich.migration.ComponentIdNodeMigratorHelper" v="11.1.1.1.0.01"/>
+      <value n="oracle.adfdtinternal.view.rich.migration.LibraryVersionMigrator" v="11.1.1.1.0.1"/>
+      <value n="oracle.ide.model.Project" v="11.1.2.0.0"/>
+      <value n="oracle.ide.model.ResourcePathsMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.ideimpl.model.TechnologyScopeUpdateMigrator" v="11.1.2.0.0.4"/>
+      <value n="oracle.jbo.dt.jdevx.deployment.JbdProjectMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jbo.dt.jdevx.ui.appnav.APProjectMigrator" v="11.1.1.0.1.5"/>
+      <value n="oracle.jbo.dt.migrate.ResourceBundlePathMigrator" v="11.1.1.0.1.5"/>
+      <value n="oracle.jbo.dt.migration.ServiceInterfaceMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.ejb.EjbMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.library.ProjectLibraryMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdeveloper.model.OutputDirectoryMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.deploy.DeploymentProfilesMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.deploy.jps.JpsDataMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.jsp.JspMigrator" v="11.1.1"/>
+      <value n="oracle.jdevimpl.offlinedb.migration.OfflineDBProjectMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.offlinedb.migration.OfflinePlSqlMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.resourcebundle.XliffAddin$XliffMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.webapp.jsp.libraries.JspLibraryMigrator" v="11.1.1.1.4"/>
+      <value n="oracle.jdevimpl.webapp.WebAppContentSetNodeMigratorHelper" v="11.1.1"/>
+      <value n="oracle.jdevimpl.webapp.WebAppProjectNodeMigratorHelper" v="11.1.2.0.0"/>
+      <value n="oracle.jdevimpl.webservices.rest.migration.RestPathMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jdevimpl.webservices.WebServicesMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.xml.wl.WeblogicMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.modeler.bmmigrate.management.Migration" v="11.1.1.1.0"/>
+      <value n="oracle.toplink.workbench.addin.migration.PersistenceProjectMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.toplink.workbench.addin.migration.TopLinkProjectMigrator" v="11.1.1.1.0"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
+   </list>
+   <value n="defaultPackage" v="oracle.adfinsider.localdb.hrservices"/>
+   <hash n="ejbModuleContainer">
+      <url n="ejbJarNodeURL" path="src/META-INF/ejb-jar.xml"/>
+      <value n="ejbVersion" v="3.0"/>
+      <url n="weblogicEjbJarNodeURL" path="src/META-INF/weblogic-ejb-jar.xml"/>
+   </hash>
+   <value n="jbo.JpxName" v="oracle.adfinsider.localdb.hrservices.Model"/>
+   <value n="JboProject" v="true"/>
+   <hash n="oracle.ide.model.TechnologyScopeConfiguration">
+      <list n="technologyScope">
+         <string v="ADFbc"/>
+         <string v="EJB"/>
+         <string v="Java"/>
+         <string v="WSDL"/>
+         <string v="WSPolicy"/>
+         <string v="WebServices"/>
+         <string v="XML"/>
+         <string v="XML_SCHEMA"/>
+      </list>
+   </hash>
+   <value n="oracle.jbo.SavedPreferences" v="true"/>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".ejx"/>
+         <string v=".gif"/>
+         <string v=".ini"/>
+         <string v=".jpeg"/>
+         <string v=".jpg"/>
+         <string v=".png"/>
+         <string v=".properties"/>
+         <string v=".sva"/>
+         <string v=".tag"/>
+         <string v=".tld"/>
+         <string v=".wsdl"/>
+         <string v=".xcfg"/>
+         <string v=".xlf"/>
+         <string v=".xml"/>
+         <string v=".xsd"/>
+         <string v=".xsl"/>
+         <string v=".jpx"/>
+      </list>
+      <value n="internalEncoding" v="Cp1252"/>
+      <list n="Javac.commandline.optionlist">
+         <string v="-g"/>
+         <string v="-Xlint:all"/>
+         <string v="-Xlint:-cast"/>
+         <string v="-Xlint:-empty"/>
+         <string v="-Xlint:-fallthrough"/>
+         <string v="-Xlint:-path"/>
+         <string v="-Xlint:-processing"/>
+         <string v="-Xlint:-serial"/>
+         <string v="-Xlint:-unchecked"/>
+      </list>
+      <value n="webIANAEncoding" v="windows-1252"/>
+   </hash>
+   <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
+      <hash n="profileDefinitions">
+         <hash n="ModelSDO">
+            <url n="bcApplication" path="src/oracle/adfinsider/localdb/hrservices/Model.jpx"/>
+            <hash n="commonProfile">
+               <value n="adflib-connectionDetails" v="true"/>
+               <value n="adflib-nonReusablesError" v="false"/>
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="5"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/Model.jpx"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**.xcfg"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/common/serviceinterface/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/common/*"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/classes/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="DefaultFilters" v=""/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/ModelSDO_Common.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+               </hash>
+               <hash n="LibraryDependencies"/>
+               <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+               <value n="profileName" v="ModelSDO_Common"/>
+            </hash>
+            <url n="commonProfileURL" path="Model.jpr" ref="ModelSDO_Common"/>
+            <hash n="mtProfile">
+               <value n="adflib-connectionDetails" v="true"/>
+               <value n="adflib-nonReusablesError" v="false"/>
+               <hash n="archiveOptions">
+                  <value n="hasManifest" v="true"/>
+               </hash>
+               <value n="containedProfile" v="true"/>
+               <hash n="fileGroups">
+                  <list n="groups">
+                     <hash>
+                        <list n="contributors">
+                           <hash>
+                              <value n="type" v="2"/>
+                           </hash>
+                           <hash>
+                              <value n="type" v="5"/>
+                           </hash>
+                        </list>
+                        <value n="displayName" v="Project Output"/>
+                        <hash n="filters">
+                           <list n="rules">
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/Model.jpx"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="**/bc4j.xcfg"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/common/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/common/serviceinterface/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/server/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/hrservices/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/common/serviceinterface/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/server/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="oracle/adfinsider/localdb/**"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="tester.*"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="META-INF/adfm.xml"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="META-INF/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="pattern" v="WEB-INF/classes/**"/>
+                                 <value n="type" v="1"/>
+                              </hash>
+                              <hash>
+                                 <value n="DefaultFilters" v=""/>
+                              </hash>
+                           </list>
+                        </hash>
+                        <value n="internalName" v="project-output"/>
+                        <value n="type" v="1"/>
+                     </hash>
+                  </list>
+               </hash>
+               <url n="jarURL" path="deploy/ModelSDO_MiddleTier.jar"/>
+               <hash n="libraryDependencies">
+                  <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+               </hash>
+               <hash n="LibraryDependencies">
+                  <list n="dependencyList">
+                     <hash>
+                        <hash n="dependable">
+                           <hash n="deployDependable">
+                              <value n="adapterClass" v="oracle.jdevimpl.deploy.common.ArchiveProfileDependable"/>
+                              <url n="ownerURL" path="Model.jpr"/>
+                              <value n="profileName" v="ModelSDO_Common"/>
+                           </hash>
+                        </hash>
+                        <value n="recognizerId" v="oracle.jdeveloper.deploy.common"/>
+                     </hash>
+                  </list>
+               </hash>
+               <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+               <value n="profileName" v="ModelSDO_MiddleTier"/>
+            </hash>
+            <url n="mtProfileURL" path="Model.jpr" ref="ModelSDO_MiddleTier"/>
+            <value n="profileClass" v="oracle.jbo.dt.jdevx.deployment.JbdSDOProfile"/>
+            <value n="profileName" v="ModelSDO"/>
+            <hash n="serverProfile">
+               <value n="containedProfile" v="true"/>
+               <value n="name" v="ModelEJB"/>
+               <hash n="profile">
+                  <hash n="archiveOptions">
+                     <value n="hasManifest" v="true"/>
+                  </hash>
+                  <value n="containedProfile" v="true"/>
+                  <hash n="dependencies">
+                     <list n="dependencyList">
+                        <hash>
+                           <value n="adapterClass" v="oracle.jdevimpl.deploy.common.ArchiveProfileDependable"/>
+                           <url n="ownerURL" path="Model.jpr"/>
+                           <value n="profileName" v="ModelSDO_Common"/>
+                        </hash>
+                        <hash>
+                           <value n="adapterClass" v="oracle.jdevimpl.deploy.common.ArchiveProfileDependable"/>
+                           <url n="ownerURL" path="Model.jpr"/>
+                           <value n="profileName" v="ModelSDO_MiddleTier"/>
+                        </hash>
+                     </list>
+                  </hash>
+                  <value n="enterpriseAppName" v="ModelEJB"/>
+                  <hash n="fileGroups">
+                     <list n="groups">
+                        <hash>
+                           <list n="contributors">
+                              <hash>
+                                 <value n="type" v="2"/>
+                              </hash>
+                              <hash>
+                                 <value n="type" v="7"/>
+                              </hash>
+                           </list>
+                           <value n="displayName" v="Project Output"/>
+                           <hash n="filters">
+                              <list n="rules">
+                                 <hash>
+                                    <value n="pattern" v="oracle/adfinsider/localdb/common/serviceinterface/HRModuleService.wsdl"/>
+                                 </hash>
+                                 <hash>
+                                    <value n="pattern" v="oracle/adfinsider/localdb/server/serviceinterface/HRModuleServiceImpl.class"/>
+                                 </hash>
+                                 <hash>
+                                    <value n="pattern" v="**"/>
+                                    <value n="type" v="1"/>
+                                 </hash>
+                                 <hash>
+                                    <value n="DefaultFilters" v=""/>
+                                 </hash>
+                              </list>
+                           </hash>
+                           <value n="internalName" v="project-output"/>
+                           <value n="type" v="1"/>
+                        </hash>
+                     </list>
+                  </hash>
+                  <url n="jarURL" path="deploy/ModelSDO_EJB.jar"/>
+                  <hash n="libraryDependencies">
+                     <value n="IncludeLibrariesFromOtherContainers" v="true"/>
+                  </hash>
+                  <value n="profileName" v="ModelSDO_EJB"/>
+                  <hash n="properties">
+                     <value n="JboService" v="true"/>
+                  </hash>
+               </hash>
+               <url n="profileURL" path="ModelEJB.deploy"/>
+            </hash>
+         </hash>
+      </hash>
+      <list n="profileList">
+         <string v="ModelSDO"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="HRServices"/>
+      <value n="j2eeWebContextRoot" v="HRServices"/>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="MDS Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="MDS Runtime Dependencies"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Service Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java EE 1.5 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="ADF Model Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="MDS Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="MDS Runtime Dependencies"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Service Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="EJB 3.0"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Java EE 1.5 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="classes/"/>
+   </hash>
+</jpr:project>

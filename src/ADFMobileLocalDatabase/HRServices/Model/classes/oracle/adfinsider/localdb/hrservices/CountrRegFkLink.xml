@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountrRegFkLink"
+  Version="11.1.2.64.36"
+  EntityAssociation="oracle.adfinsider.localdb.hrservices.CountrRegFkAssoc">
+  <ViewLinkDefEnd
+    Name="RegionsView"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.adfinsider.localdb.hrservices.RegionsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="RegionsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.adfinsider.localdb.hrservices.RegionsView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CountriesView"
+    Cardinality="-1"
+    Owner="oracle.adfinsider.localdb.hrservices.CountriesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountriesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.adfinsider.localdb.hrservices.CountriesView.RegionId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

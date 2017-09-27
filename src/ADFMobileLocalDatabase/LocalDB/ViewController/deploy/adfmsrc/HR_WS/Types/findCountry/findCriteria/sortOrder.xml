@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="sortOrder"
+          Package="HR_WS.Types.findCountry.findCriteria" BeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder"
+          isJavaBased="false">
+  <AccessorAttribute id="sortAttribute" IsCollection="true"
+                     BeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder.sortAttribute"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder_Operations"/>
+</JavaBean>

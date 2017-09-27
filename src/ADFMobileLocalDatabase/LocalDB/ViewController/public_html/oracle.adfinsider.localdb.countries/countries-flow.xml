@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="countries-flow">
+    <default-activity>countriesList</default-activity>
+    <view id="countriesList">
+      <page>/countriesList.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>countriesList</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>refresh</from-outcome>
+        <to-activity-id>countriesList</to-activity-id>
+        <transition>none</transition>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

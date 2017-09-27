@@ -1,0 +1,20 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="/oracle/adfinsider/localdb/hrservices/common/"
+     xmlns="/oracle/adfinsider/localdb/hrservices/common/" elementFormDefault="qualified"
+     sdoJava:package="oracle.adfinsider.localdb.hrservices.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:complexType name="CountriesViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>CountryId</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CountryId" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="CountryName" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="RegionId" type="xsd:decimal" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="countriesViewSDO" type="CountriesViewSDO"/>
+</xsd:schema>

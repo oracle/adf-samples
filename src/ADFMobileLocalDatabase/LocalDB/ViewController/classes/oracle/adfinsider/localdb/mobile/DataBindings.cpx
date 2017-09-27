@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.adfinsider.localdb.mobile" ClientType="Generic">
+  <pageMap>
+    <page path="/countriesList.amx" usageId="oracle_adfinsider_localdb_mobile_countriesListPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_adfinsider_localdb_mobile_countriesListPageDef"
+          path="oracle.adfinsider.localdb.mobile.pageDefs.countriesListPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HR_WS" path="oracle.adfinsider.localdb.mobile.HR_WS"/>
+    <dc id="CountryDC" path="oracle.adfinsider.localdb.mobile.CountryDC"/>
+  </dataControlUsages>
+</Application>

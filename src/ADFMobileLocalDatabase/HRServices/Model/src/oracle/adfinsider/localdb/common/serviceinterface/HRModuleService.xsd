@@ -1,0 +1,35 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/oracle/adfinsider/localdb/types/"
+     xmlns:tns="/oracle/adfinsider/localdb/types/" xmlns:ns0="/oracle/adfinsider/localdb/hrservices/common/"
+     xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/">
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <import namespace="/oracle/adfinsider/localdb/hrservices/common/" schemaLocation="../../hrservices/common/CountriesViewSDO.xsd"/>
+    <element name="getCountry">
+        <complexType>
+            <sequence>
+                <element name="countryId" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getCountryResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CountriesViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCountry">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findCountryResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CountriesViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

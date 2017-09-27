@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="sortAttribute"
+          Package="HR_WS.Types.findCountry.findCriteria.sortOrder"
+          BeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder.sortAttribute" isJavaBased="false">
+  <Attribute Name="name" IsNotNull="true" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="descending" IsNotNull="true" Type="java.lang.Boolean">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="_ROWNUM___ATTR_" PrimaryKey="true" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="DISPLAYHINT" Value="Hide"/>
+        <Property Name="PrimaryKey" Value="true"/>
+        <Property Name="IsVisible" Value="false"/>
+        <Property Name="IsQueriable" Value="false"/>
+        <Property Name="updateable" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+</JavaBean>

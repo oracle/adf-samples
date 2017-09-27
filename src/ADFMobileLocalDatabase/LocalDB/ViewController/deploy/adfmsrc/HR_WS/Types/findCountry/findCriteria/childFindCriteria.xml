@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="childFindCriteria"
+          Package="HR_WS.Types.findCountry.findCriteria"
+          BeanClass="HR_WS.Types.findCountry.findCriteria.childFindCriteria" isJavaBased="false">
+  <Attribute Name="fetchStart" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="fetchSize" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="excludeAttribute" IsNotNull="true" Type="java.lang.Boolean">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="childAttrName" IsNotNull="true" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="PrimaryKey" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="_ROWNUM___ATTR_" PrimaryKey="true" IsNotNull="true" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="DISPLAYHINT" Value="Hide"/>
+        <Property Name="PrimaryKey" Value="true"/>
+        <Property Name="IsVisible" Value="false"/>
+        <Property Name="IsQueriable" Value="false"/>
+        <Property Name="updateable" Value="false"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="filter" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findCriteria.filter"/>
+  <AccessorAttribute id="sortOrder" IsCollection="false" BeanClass="HR_WS.Types.findCountry.findCriteria.sortOrder"/>
+  <AccessorAttribute id="findAttribute" IsCollection="true"
+                     BeanClass="HR_WS.Types.findCountry.findCriteria.childFindCriteria.findAttribute"
+                     CollectionBeanClass="HR_WS.Types.findCountry.findCriteria.childFindCriteria_Operations"/>
+</JavaBean>

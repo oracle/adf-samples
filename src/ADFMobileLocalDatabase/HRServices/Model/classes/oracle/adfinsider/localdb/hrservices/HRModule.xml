@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRModule"
+  Version="11.1.2.64.36"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="CountriesView1"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.CountriesView"/>
+  <ViewUsage
+    Name="LocationsView1"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.LocationsView"/>
+  <ViewUsage
+    Name="RegionsView1"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.RegionsView"/>
+  <ViewUsage
+    Name="LocationsView2"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.LocationsView"/>
+  <ViewUsage
+    Name="CountriesView2"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.CountriesView"/>
+  <ViewLinkUsage
+    Name="LocCIdFkLink1"
+    ViewLinkObjectName="oracle.adfinsider.localdb.hrservices.LocCIdFkLink"
+    SrcViewUsageName="oracle.adfinsider.localdb.hrservices.HRModule.CountriesView1"
+    DstViewUsageName="oracle.adfinsider.localdb.hrservices.HRModule.LocationsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CountrRegFkLink1"
+    ViewLinkObjectName="oracle.adfinsider.localdb.hrservices.CountrRegFkLink"
+    SrcViewUsageName="oracle.adfinsider.localdb.hrservices.HRModule.RegionsView1"
+    DstViewUsageName="oracle.adfinsider.localdb.hrservices.HRModule.CountriesView2"
+    Reversed="false"/>
+</AppModule>

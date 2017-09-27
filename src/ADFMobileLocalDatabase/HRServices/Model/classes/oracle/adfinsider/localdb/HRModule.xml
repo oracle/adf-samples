@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRModule"
+  Version="11.1.2.64.36"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="4096"/>
+  </DesignTime>
+  <ViewUsage
+    Name="CountriesView"
+    ViewObjectName="oracle.adfinsider.localdb.hrservices.CountriesView"/>
+  <Remote
+    Name="ServiceInterface"
+    ServerClassName="oracle.adfinsider.localdb.server.serviceinterface.HRModuleServiceImpl"
+    ServerInterfaceName="oracle.adfinsider.localdb.common.serviceinterface.HRModuleService">
+    <DesignTime>
+      <Attr Name="_webServiceName" Value="HRModuleService"/>
+      <Attr Name="_targetNameSpace" Value="/oracle/adfinsider/localdb/"/>
+    </DesignTime>
+  </Remote>
+  <ServiceViewUsage
+    ViewUsageName="CountriesView">
+    <DesignTime>
+      <Attr Name="_GetOpName" Value="getCountry"/>
+      <Attr Name="_FindOpName" Value="findCountry"/>
+    </DesignTime>
+  </ServiceViewUsage>
+</AppModule>

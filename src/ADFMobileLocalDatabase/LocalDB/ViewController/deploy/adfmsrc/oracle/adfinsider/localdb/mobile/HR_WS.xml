@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.2.64.36" id="HR_WS"
+          Package="oracle.adfinsider.localdb.mobile" BeanClass="oracle.adfinsider.localdb.mobile.HR_WS"
+          isJavaBased="false">
+  <AccessorAttribute id="findCountry_parameters" IsCollection="false" BeanClass="HR_WS.Types.findCountry"/>
+  <MethodAccessor IsCollection="false" Type="oracle.adfinsider.localdb.mobile.HR_WS.getCountry"
+                  BeanClass="oracle.adfinsider.localdb.mobile.HR_WS.getCountry" id="getCountry" ReturnNodeName="Return">
+    <ParameterInfo id="countryId" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="oracle.adfinsider.localdb.mobile.HR_WS.findCountry"
+                  BeanClass="oracle.adfinsider.localdb.mobile.HR_WS.findCountry" id="findCountry"
+                  ReturnNodeName="Return"
+                  CollectionBeanClass="oracle.adfinsider.localdb.mobile.HR_WS.findCountry_Operations">
+    <ParameterInfo id="findCriteria" Type="java.lang.Object" isStructured="false">
+      <Properties>
+        <Property Name="__SET_INITIAL_VALUE" Value="true"/>
+      </Properties>
+    </ParameterInfo>
+    <ParameterInfo id="findControl" Type="java.lang.Object" isStructured="false">
+      <Properties>
+        <Property Name="__SET_INITIAL_VALUE" Value="true"/>
+      </Properties>
+    </ParameterInfo>
+  </MethodAccessor>
+</JavaBean>

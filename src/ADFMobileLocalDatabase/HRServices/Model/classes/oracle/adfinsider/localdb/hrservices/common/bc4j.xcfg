@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.adfinsider.localdb.hrservices.HRModule">
+      <AppModuleConfig name="HRModuleLocal" jbo.project="oracle.adfinsider.localdb.hrservices.Model" ApplicationName="oracle.adfinsider.localdb.hrservices.HRModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="oracle.adfinsider.localdb.hrservices.HRModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HRModuleShared" jbo.project="oracle.adfinsider.localdb.hrservices.Model" ApplicationName="oracle.adfinsider.localdb.hrservices.HRModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="oracle.adfinsider.localdb.hrservices.HRModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

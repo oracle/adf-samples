@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="HR_WS" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl" xmlns="">
+      <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+      <RefAddresses>
+         <XmlRefAddr addrType="WebServiceConnection">
+            <Contents>
+               <wsconnection description="http://192.168.2.13:7101/HRServices/HRModuleService?wsdl" service="{/oracle/adfinsider/localdb/}HRModuleService">
+                  <model name="{/oracle/adfinsider/localdb/}HRModuleService" xmlns="http://oracle.com/ws/model">
+                     <service name="{/oracle/adfinsider/localdb/}HRModuleService">
+                        <port name="HRModuleServiceSoapHttpPort" binding="{/oracle/adfinsider/localdb/}HRModuleServiceSoapHttp">
+                           <soap addressUrl="http://192.168.2.13:7101/HRServices/HRModuleService" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                           <operation name="getCountry">
+                              <soap soapAction="/oracle/adfinsider/localdb/getCountry" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                           <operation name="findCountry">
+                              <soap soapAction="/oracle/adfinsider/localdb/findCountry" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                              <output name=""/>
+                              <input name=""/>
+                           </operation>
+                        </port>
+                     </service>
+                  </model>
+               </wsconnection>
+            </Contents>
+         </XmlRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>
