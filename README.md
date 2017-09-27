@@ -103,6 +103,7 @@ Each sample is also available in downloadable form in the zips directory.
 * FaceletsAndSetPropertyListener
 * FilterTreeShowingInterimParentNodes
 * FindDeptToEditInPopup
+* ForceBindVariableValueToUppercaseThroughMetadata
 
 
 
