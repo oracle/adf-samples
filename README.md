@@ -173,6 +173,7 @@ Each sample is also available in downloadable form in the zips directory.
 * SortableInMemoryStaticViewObject
 * SortingFilteringByChoiceDisplayValue
 * SplitterTest
+* SQLTrace
 
 
 
