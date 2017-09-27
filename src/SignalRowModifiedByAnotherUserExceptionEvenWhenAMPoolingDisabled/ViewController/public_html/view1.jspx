@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:tr="http://myfaces.apache.org/trinidad">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.Deptno.inputValue}"
+                        label="#{bindings.Deptno.hints.label}"
+                        required="#{bindings.Deptno.hints.mandatory}"
+                        columns="#{bindings.Deptno.hints.displayWidth}"
+                        maximumLength="#{bindings.Deptno.hints.precision}"
+                        shortDesc="#{bindings.Deptno.hints.tooltip}" id="it3">
+            <f:validator binding="#{bindings.Deptno.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.Deptno.format}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Dname.inputValue}"
+                        label="#{bindings.Dname.hints.label}"
+                        required="#{bindings.Dname.hints.mandatory}"
+                        columns="#{bindings.Dname.hints.displayWidth}"
+                        maximumLength="#{bindings.Dname.hints.precision}"
+                        shortDesc="#{bindings.Dname.hints.tooltip}" id="it1">
+            <f:validator binding="#{bindings.Dname.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Loc.inputValue}"
+                        label="#{bindings.Loc.hints.label}"
+                        required="#{bindings.Loc.hints.mandatory}"
+                        columns="#{bindings.Loc.hints.displayWidth}"
+                        maximumLength="#{bindings.Loc.hints.precision}"
+                        shortDesc="#{bindings.Loc.hints.tooltip}" id="it4">
+            <f:validator binding="#{bindings.Loc.validator}"/>
+          </af:inputText>
+          <af:panelGroupLayout layout="horizontal" id="pgl1">
+            <af:commandButton actionListener="#{bindings.First.execute}"
+                              text="First" disabled="#{!bindings.First.enabled}"
+                              partialSubmit="true" id="cb6"/>
+            <af:commandButton actionListener="#{bindings.Previous.execute}"
+                              text="Previous"
+                              disabled="#{!bindings.Previous.enabled}"
+                              partialSubmit="true" id="cb4"/>
+            <af:commandButton actionListener="#{bindings.Next.execute}"
+                              text="Next" disabled="#{!bindings.Next.enabled}"
+                              partialSubmit="true" id="cb5"/>
+            <af:commandButton actionListener="#{bindings.Last.execute}"
+                              text="Last" disabled="#{!bindings.Last.enabled}"
+                              partialSubmit="true" id="cb3"/>
+          </af:panelGroupLayout>
+          <tr:inputHidden id="ih1" value="#{bindings.ObjectVersion.inputValue}"/>
+        </af:panelFormLayout>
+        <af:panelBox>
+          <af:outputText value="This page contains a hidden input component with the object version number using the tag tr:inputHidden. We use tr:inputHidden instead of h:inputHidden because tr:inputHidden supports Auto-PPR. This ensures that as the user navigates from row to row, that the hidden field is updated to reflect the latest value in the new current row via the Auto-PPR mechanism."/>
+        </af:panelBox>
+        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                          text="Commit"
+                          id="cb1"/>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                          text="Rollback"
+                          immediate="true" id="cb2">
+          <af:resetActionListener/>
+        </af:commandButton>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

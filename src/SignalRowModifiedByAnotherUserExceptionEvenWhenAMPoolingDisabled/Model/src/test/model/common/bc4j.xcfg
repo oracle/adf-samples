@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="test.model.AppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="test.model.Model" name="AppModuleLocal" ApplicationName="test.model.AppModule">
+         <AM-Pooling jbo.ampool.doampooling="false"/>
+         <Database jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="test.model.AppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/scottDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" ApplicationName="test.model.AppModule" DeployPlatform="LOCAL" JDBCName="scott" jbo.project="test.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="test.model.AppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
