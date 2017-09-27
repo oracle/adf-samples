@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-11_0.xsd">
+  <web-module id="CustomLOVSearchField-ViewController-webapp" path="file:/H:/examples/jdev/11g/CustomLOVSearchField/ViewController/public_html/"/>
+  <library path="H:\examples\jdev\11g\CustomLOVSearchField\.adf">jdev-generated</library>
+  <imported-shared-libraries>
+    <import-shared-library name="adf.oracle.domain"/>
+  </imported-shared-libraries>
+  <log>
+    <file path="CustomLOVSearchField-oc4j-app.log"/>
+  </log>
+  <data-sources path="CustomLOVSearchField-data-sources.xml"/>
+</orion-application>
