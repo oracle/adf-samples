@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+  <amx:panelPage id="pp1">
+    <amx:facet name="header">
+      <amx:outputText value="Departments" id="ot1"/>
+    </amx:facet>
+<amx:listView var="row" value="#{bindings.departments.collectionModel}"
+              fetchSize="#{bindings.departments.rangeSize}" id="lv1">
+  <amx:listItem id="li1" action="view">
+    <amx:outputText value="#{row.name}" id="ot2"/>
+    <amx:setPropertyListener from="#{row.rowKey}" type="action"
+                             to="#{bindings.departmentsIterator.iterator.currentIndexWithKey}" id="spl2"/>
+  </amx:listItem>
+</amx:listView>
+  </amx:panelPage>
+</amx:view>

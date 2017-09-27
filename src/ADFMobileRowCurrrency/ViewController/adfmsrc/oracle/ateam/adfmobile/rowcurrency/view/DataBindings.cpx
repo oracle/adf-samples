@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.ateam.adfmobile.rowcurrency.view" ClientType="Generic">
+  <pageMap>
+    <page path="/DepartmentList.amx" usageId="oracle_ateam_adfmobile_rowcurrency_view_DepartmentListPageDef"/>
+    <page path="/ViewDepartment.amx" usageId="oracle_ateam_adfmobile_rowcurrency_view_ViewDepartmentPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_ateam_adfmobile_rowcurrency_view_DepartmentListPageDef"
+          path="oracle.ateam.adfmobile.rowcurrency.view.pageDefs.DepartmentListPageDef"/>
+    <page id="oracle_ateam_adfmobile_rowcurrency_view_ViewDepartmentPageDef"
+          path="oracle.ateam.adfmobile.rowcurrency.view.pageDefs.ViewDepartmentPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DepartmentService" path="oracle.ateam.adfmobile.rowcurrency.view.DepartmentService"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.64.36" id="DataControls"
+                    Package="oracle.ateam.adfmobile.rowcurrency.view">
+  <AdapterDataControl id="DepartmentService" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.ateam.adfmobile.rowcurrency.model.PreserveRowCurrencyBeanDCDefinition" 
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true" SupportsTransactions="false"
+                      Definition="oracle.ateam.adfmobile.rowcurrency.model.DepartmentService"
+                      BeanClass="oracle.ateam.adfmobile.rowcurrency.model.DepartmentService"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="oracle.ateam.adfmobile.rowcurrency.model.Department"/>
+      <TypeInfo FullName="oracle.ateam.adfmobile.rowcurrency.model.DepartmentService"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="oracle.ateam.adfmobile.rowcurrency.model.DepartmentService"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>
+
+

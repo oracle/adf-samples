@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
+  <task-flow-definition id="departments-task-flow">
+    <default-activity>DepartmentList</default-activity>
+    <view id="DepartmentList">
+      <page>/DepartmentList.amx</page>
+    </view>
+    <view id="ViewDepartment">
+      <page>/ViewDepartment.amx</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>DepartmentList</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>view</from-outcome>
+        <to-activity-id>ViewDepartment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-mobile-config>

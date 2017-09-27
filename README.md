@@ -24,4 +24,5 @@ Each sample is also available in downloadable form in the zips directory.
 * ADFMobileBrowsingThroughSwiping
 * ADFMobileErrorHandling
 * ADFMobileLocalDatabase
+* ADFMobileRowCurrrency
 
