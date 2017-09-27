@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="UploadedFilesView"
+   SelectList="UploadedFiles.ID, 
+       UploadedFiles.FILENAME, 
+       UploadedFiles.CONTENT"
+   FromList="UPLOADED_FILES UploadedFiles"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="test.model.UploadedFilesViewRowImpl"
+   ComponentClass="test.model.UploadedFilesViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   MaxFetchSize="0"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="UploadedFiles"
+      Entity="test.model.UploadedFiles" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      EntityAttrName="Id"
+      EntityUsage="UploadedFiles"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Filename"
+      EntityAttrName="Filename"
+      EntityUsage="UploadedFiles"
+      AliasName="FILENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Content"
+      IsQueriable="false"
+      EntityAttrName="Content"
+      EntityUsage="UploadedFiles"
+      AliasName="CONTENT" >
+   </ViewAttribute>
+</ViewObject>

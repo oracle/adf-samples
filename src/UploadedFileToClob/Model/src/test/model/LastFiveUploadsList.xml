@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="LastFiveUploadsList"
+   SelectList="UploadedFiles.ID, 
+       UploadedFiles.FILENAME, 
+       UploadedFiles.DATE_CREATED, 
+       DBMS_LOB.GETLENGTH(CONTENT) AS CONTENT_SIZE"
+   FromList="UPLOADED_FILES UploadedFiles"
+   OrderBy="date_created desc"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.model.LastFiveUploadsListImpl"
+   MsgBundleClass="test.model.common.LastFiveUploadsListRowImplMsgBundle"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|Msg|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="UploadedFiles"
+      Entity="test.model.UploadedFiles" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryOrderBy" Value="date_created desc" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      EntityAttrName="Id"
+      EntityUsage="UploadedFiles"
+      AliasName="ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Filename"
+      EntityAttrName="Filename"
+      EntityUsage="UploadedFiles"
+      AliasName="FILENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DateCreated"
+      IsUpdateable="false"
+      EntityAttrName="DateCreated"
+      EntityUsage="UploadedFiles"
+      AliasName="DATE_CREATED" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Size"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="CONTENT_SIZE"
+      Expression="DBMS_LOB.GETLENGTH(CONTENT)"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+</ViewObject>
