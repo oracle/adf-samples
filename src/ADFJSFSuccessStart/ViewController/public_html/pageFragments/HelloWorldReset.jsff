@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelHeader text="Just Say Nothing - Reset Test" id="ph1">
+    <af:panelGroupLayout id="pgl2" layout="scroll">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText required="true" label="Name" id="it1"
+                      value="#{viewScope.HelloBean.name}">
+          <f:validateLength minimum="4"></f:validateLength>
+        </af:inputText>
+        <af:inputDate required="true" label="Date" id="id1"
+                      value="#{viewScope.HelloBean.date}">
+          <af:convertDateTime pattern="dd-MM-yyyy"/>
+        </af:inputDate>
+        <f:facet name="footer">
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:commandButton text="Say Hello" id="cb1"
+                              action="#{viewScope.HelloBean.sayHello}"/>
+            <af:commandButton text="Reset with resetActionListener" id="cb2"
+                              immediate="true"
+                              actionListener="#{viewScope.HelloBean.reset}">
+              <af:resetActionListener/>
+            </af:commandButton>
+            <af:commandButton text="Reset with ResetUtils.reset()" id="cb3"
+                              actionListener="#{viewScope.HelloBean.resetRegionSave}"
+                              immediate="true"/>
+            <f:facet name="separator">
+              <af:spacer width="10" height="10" id="s3"/>
+            </f:facet>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelFormLayout>
+      <af:panelHeader text="Hello Message" id="ph2" inlineStyle="width:500px;">
+        <af:outputText value="#{viewScope.HelloBean.helloMessage}" id="ot1"/>
+      </af:panelHeader>
+      <f:facet name="separator">
+        <af:spacer width="10" height="10" id="s1"/>
+      </f:facet>
+    </af:panelGroupLayout>
+  </af:panelHeader>
+  <af:region value="#{bindings.testresettf1.regionModel}" id="r1"/>
+</jsp:root>

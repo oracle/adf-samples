@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+  <itemNode id="helloMI" label="Just Say Hello!" action="uishell:Hello" focusViewId="Hello"/>
+  <itemNode id="helloMI" label="Just Say Nothing" action="uishell:HelloReset" focusViewId="HelloReset"/>
+  <itemNode id="helloMI" label="Say Hello Suggestions" action="uishell:HelloSuggestGreeting" focusViewId="HelloSuggestGreeting"/>
+  <itemNode id="helloSFMI" label="Sub Forms of Hello Saying" action="uishell:HelloSubForm" focusViewId="HelloSubForm"/>
+  <itemNode id="helloSFMI" label="Auto-Suggested Hello Saying" action="uishell:HelloAutoSuggestGreeting" focusViewId="HelloAutoSuggestGreeting"/>
+  <itemNode id="empMI" label="Optimized Lifecycle of Employees" action="uishell:Employees" focusViewId="Employees"/>
+  <itemNode id="helloSFMI" label="Say Hello Optimized with a Song" action="uishell:HelloSong" focusViewId="HelloSong"/>
+</menu>

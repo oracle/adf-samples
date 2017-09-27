@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.59.23" id="DataBindings" SeparateXMLFiles="false"
+             Package="davelaar.demo.ui.view" ClientType="Generic">
+  <pageMap>
+    <page path="/pages/UIShell.jspx" usageId="davelaar_demo_ui_view_UIShellPageDef"/>
+    <page path="/pageFragments/EditEmployees.jsff"
+          usageId="davelaar_demo_ui_view_EditEmployeesPageDef"/>
+    <page path="/pageFragments/HelloWorldReset.jsff"
+          usageId="davelaar_demo_ui_view_HelloWorldResetPageDef"/>
+  </pageMap>
+  <definitionFactories>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"
+             nameSpace="http://xmlns.oracle.com/adf/controller/binding"/>
+  </definitionFactories>
+  <pageDefinitionUsages>
+    <page id="davelaar_demo_ui_view_UIShellPageDef" path="davelaar.demo.ui.view.pageDefs.UIShellPageDef"/>
+    <page id="davelaar_demo_ui_view_EditEmployeesPageDef"
+          path="davelaar.demo.ui.view.pageDefs.EditEmployeesPageDef"/>
+    <page id="davelaar_demo_ui_view_HelloWorldResetPageDef"
+          path="pageFragments.HelloWorldResetPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceDataControl"
+                     Package="davelaar.demo.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="HRServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

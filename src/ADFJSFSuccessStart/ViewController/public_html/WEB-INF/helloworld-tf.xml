@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="helloworld">
+    <default-activity id="__1">router1</default-activity>
+    <input-parameter-definition id="__11">
+      <name id="__12">scenario</name>
+      <value>#{pageFlowScope.scenario}</value>
+    </input-parameter-definition>
+    <managed-bean>
+      <managed-bean-name >HelloBean</managed-bean-name>
+      <managed-bean-class >davelaar.demo.ui.controller.bean.HelloBean</managed-bean-class>
+      <managed-bean-scope >view</managed-bean-scope>
+      <managed-property>
+        <property-name>greeting</property-name>
+        <value>Hello</value>
+      </managed-property>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name >HelloBeanSu</managed-bean-name>
+      <managed-bean-class >davelaar.demo.ui.controller.bean.HelloBeanSuggest</managed-bean-class>
+      <managed-bean-scope >view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name >HelloBeanSf</managed-bean-name>
+      <managed-bean-class >davelaar.demo.ui.controller.bean.HelloBeanSubForm</managed-bean-class>
+      <managed-bean-scope >view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name >HelloBeanAs</managed-bean-name>
+      <managed-bean-class >davelaar.demo.ui.controller.bean.HelloBeanAutoSuggest</managed-bean-class>
+      <managed-bean-scope >view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name >HelloBeanSo</managed-bean-name>
+      <managed-bean-class >davelaar.demo.ui.controller.bean.HelloBeanSong</managed-bean-class>
+      <managed-bean-scope >view</managed-bean-scope>
+    </managed-bean>
+
+    <view id="HelloWorld">
+      <page>/pageFragments/HelloWorld.jsff</page>
+    </view>
+    <view id="HelloWorldSubForm">
+      <page>/pageFragments/HelloWorldSubForm.jsff</page>
+    </view>
+    <router id="router1">
+      <case>
+        <expression>#{pageFlowScope.scenario=='reset'}</expression>
+        <outcome id="__139">reset</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.scenario=='subform'}</expression>
+        <outcome id="__13">subform</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.scenario=='suggest'}</expression>
+        <outcome id="__17">suggest</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.scenario=='autosuggest'}</expression>
+        <outcome id="__18">autosuggest</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.scenario=='song'}</expression>
+        <outcome id="__19">song</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.scenario=='suggestbinding'}</expression>
+        <outcome id="__32">suggestbinding</outcome>
+      </case>
+      <default-outcome>simple</default-outcome>
+    </router>
+    <view id="HelloWorldSuggestGreeting">
+      <page>/pageFragments/HelloWorldSuggestGreeting.jsff</page>
+    </view>
+    <view id="HelloWorldSong">
+      <page>/pageFragments/HelloWorldSong.jsff</page>
+    </view>
+    <view id="HelloWorldAutoSuggestGreeting">
+      <page>/pageFragments/HelloWorldAutoSuggestGreeting.jsff</page>
+    </view>
+    <view id="HelloWorldReset">
+      <page>/pageFragments/HelloWorldReset.jsff</page>
+    </view>
+    <control-flow-rule id="__6">
+      <from-activity-id id="__7">router1</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome id="__10">simple</from-outcome>
+        <to-activity-id id="__9">HelloWorld</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome id="__14">subform</from-outcome>
+        <to-activity-id id="__15">HelloWorldSubForm</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome id="__21">suggest</from-outcome>
+        <to-activity-id id="__20">HelloWorldSuggestGreeting</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__24">
+        <from-outcome id="__25">song</from-outcome>
+        <to-activity-id id="__23">HelloWorldSong</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome id="__28">autosuggest</from-outcome>
+        <to-activity-id id="__26">HelloWorldAutoSuggestGreeting</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome id="__2">reset</from-outcome>
+        <to-activity-id id="__3">HelloWorldReset</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
