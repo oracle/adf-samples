@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:panelGroupLayout layout="vertical">
+          <af:panelHeader text="Dept">
+            <af:query id="implicitViewCriteriaQueryId" headerText="Search"
+                      disclosed="true"
+                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::implicitViewCriteriaQueryResultId"/>
+          </af:panelHeader>
+          <af:spacer height="20"/>
+          <af:panelGroupLayout partialTriggers="implicitViewCriteriaQueryId">
+            <af:outputText value="Enter some criteria above to find the department(s) you're looking for..."
+                           rendered="#{bindings.ImplicitViewCriteriaQuery.queryPerformed == false}"/>
+            <af:panelGroupLayout rendered="#{bindings.ImplicitViewCriteriaQuery.queryPerformed &amp;&amp; bindings.DeptView1Iterator.estimatedRowCount ==0}">
+            <af:outputText value="No Departments found. Click to "/>
+            <af:commandLink  text="create a new Department"/>
+            <af:outputText value=" (In the demo, link isn't wired up!)"/>
+               
+          </af:panelGroupLayout>
+          <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                    rendered="#{bindings.ImplicitViewCriteriaQuery.queryPerformed &amp;&amp; bindings.DeptView1Iterator.estimatedRowCount > 0}"
+                    rows="#{bindings.DeptView1.rangeSize}"
+                    emptyText="Enter a query above to find some Departments..."
+                    fetchSize="#{bindings.DeptView1.rangeSize}"
+                    selectedRowKeys="#{bindings.DeptView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.DeptView1.collectionModel.makeCurrent}"
+                    rowSelection="single"
+                    id="implicitViewCriteriaQueryResultId">
+            <af:column sortProperty="Deptno" sortable="true"
+                       headerText="#{bindings.DeptView1.hints.Deptno.label}">
+              <af:outputText value="#{row.Deptno}">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DeptView1.hints.Deptno.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="true"
+                       headerText="#{bindings.DeptView1.hints.Dname.label}">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="true"
+                       headerText="#{bindings.DeptView1.hints.Loc.label}">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+          </af:table>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
