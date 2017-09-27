@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="EditEmployeePageDef"
+                Package="oramag.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25"
+              DataControl="EmpModuleDataControl" id="EmployeesIterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeesIterator" id="Empno">
+      <AttrNames>
+        <Item Value="Empno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Ename">
+      <AttrNames>
+        <Item Value="Ename"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Job">
+      <AttrNames>
+        <Item Value="Job"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Mgr">
+      <AttrNames>
+        <Item Value="Mgr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Hiredate">
+      <AttrNames>
+        <Item Value="Hiredate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Sal">
+      <AttrNames>
+        <Item Value="Sal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesIterator" id="Comm">
+      <AttrNames>
+        <Item Value="Comm"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmployeesIterator" StaticList="false" Uses="LOV_Deptno"
+          id="Deptno" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="EmployeesIterator" id="Loc">
+      <AttrNames>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

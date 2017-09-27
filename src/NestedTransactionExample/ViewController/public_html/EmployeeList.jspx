@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:pageTemplate viewId="/PageTemplate.jspx">
+          <f:facet name="MainArea">
+            <af:panelGroupLayout layout="vertical">
+              <af:quickQuery label="Search" searchDesc="Search" id="quickSearch"
+                             value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                             model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                             queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                <f:facet name="end">
+                  <af:commandLink text="Advanced" rendered="false"/>
+                </f:facet>
+              </af:quickQuery>
+              <af:panelCollection inlineStyle="width:auto;"
+                                  featuresOff="#{'detach'}">
+                <af:table value="#{bindings.Employees.collectionModel}"
+                          id="resultsTable"
+                          var="row" rows="#{bindings.Employees.rangeSize}"
+                          emptyText="#{bindings.Employees.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.Employees.rangeSize}"
+                          selectedRowKeys="#{bindings.Employees.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Employees.collectionModel.makeCurrent}"
+                          rowSelection="single" partialTriggers="::quickSearch">
+                  <af:column sortProperty="Empno" sortable="false"
+                             headerText="#{bindings.Employees.hints.Empno.label}">
+                    <af:outputText value="#{row.Empno}"
+                                   inlineStyle="font-style: #{row.bindings.Empno.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                font-weight: #{row.bindings.Empno.hints.valueChanged ? 'bold' : ''}">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Employees.hints.Empno.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Ename" sortable="false"
+                             headerText="#{bindings.Employees.hints.Ename.label}">
+                    <af:outputText value="#{row.Ename}"
+                                   inlineStyle="font-style: #{row.bindings.Ename.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                font-weight: #{row.bindings.Ename.hints.valueChanged ? 'bold' : ''}"/>
+                  </af:column>
+                  <af:column sortProperty="Job" sortable="false"
+                             headerText="#{bindings.Employees.hints.Job.label}">
+                    <af:outputText value="#{row.Job}"
+                                  inlineStyle="font-style: #{row.bindings.Job.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                               font-weight: #{row.bindings.Job.hints.valueChanged ? 'bold' : ''}"/>
+
+                  </af:column>
+                  <af:column sortProperty="Mgr" sortable="false"
+                             headerText="#{bindings.Employees.hints.Mgr.label}">
+                    <af:outputText value="#{row.Mgr}"
+                                   inlineStyle="font-style: #{row.bindings.Mgr.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                               font-weight: #{row.bindings.Mgr.hints.valueChanged ? 'bold' : ''}">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Employees.hints.Mgr.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Hiredate" sortable="false"
+                             headerText="#{bindings.Employees.hints.Hiredate.label}">
+                    <af:outputText value="#{row.Hiredate}"
+                                   inlineStyle="font-style: #{row.bindings.Mgr.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                               font-weight: #{row.bindings.Mgr.hints.valueChanged ? 'bold' : ''}">                    
+                      <af:convertDateTime pattern="#{bindings.Employees.hints.Hiredate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Sal" sortable="false"
+                             headerText="#{bindings.Employees.hints.Sal.label}">
+                    <af:outputText value="#{row.Sal}"
+                                   inlineStyle="font-style: #{row.bindings.Sal.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                 font-weight: #{row.bindings.Sal.hints.valueChanged ? 'bold' : ''}">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Employees.hints.Sal.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Comm" sortable="false"
+                             headerText="#{bindings.Employees.hints.Comm.label}">
+                    <af:outputText value="#{row.Comm}"
+                                   inlineStyle="font-style: #{row.bindings.Comm.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                 font-weight: #{row.bindings.Comm.hints.valueChanged ? 'bold' : ''}">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Employees.hints.Comm.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Deptno" sortable="false"
+                             headerText="#{bindings.Employees.hints.Deptno.label}">
+                    <af:outputText value="#{row.Deptno}"
+                                   inlineStyle="font-style: #{row.bindings.Deptno.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                font-weight: #{row.bindings.Deptno.hints.valueChanged ? 'bold' : ''}">                    
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Employees.hints.Deptno.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="Dname" sortable="false"
+                             headerText="#{bindings.Employees.hints.Dname.label}">
+                    <af:outputText value="#{row.Dname}"
+                                    inlineStyle="font-style: #{row.bindings.Dname.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                 font-weight: #{row.bindings.Dname.hints.valueChanged ? 'bold' : ''}"/>
+                  </af:column>
+                  <af:column sortProperty="Loc" sortable="false"
+                             headerText="#{bindings.Employees.hints.Loc.label}">
+                    <af:outputText value="#{row.Loc}"
+                                   inlineStyle="font-style: #{row.bindings.Loc.hints.rowState == 'Unmodified' ? '' : 'italic'};
+                                                 font-weight: #{row.bindings.Loc.hints.valueChanged ? 'bold' : ''}"
+                    />
+                  </af:column>
+                </af:table>
+                <f:facet name="toolbar">
+                  <af:toolbar>
+                    <af:commandButton text="Edit"
+                                      disabled="#{bindings.Employees.rowKeyStr == null}"
+                                      partialTriggers="resultsTable"
+                                      action="AddOrEdit">
+                      <af:setActionListener from="#{'Edit'}"
+                                            to="#{requestScope.mode}"/>
+                      <af:setActionListener from="#{bindings.Employees.rowKeyStr}"
+                                            to="#{requestScope.rowKeyStr}"/>
+                    </af:commandButton>
+                  </af:toolbar>
+                </f:facet>
+              </af:panelCollection>
+              <af:panelGroupLayout>
+                <af:commandButton text="OK" action="Save"/>
+                <af:commandButton text="Cancel" action="Cancel"
+                                  immediate="true"
+                                  disabled="#{!bindings.EmployeesIterator.dataControl.transactionDirty}"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="ButtonArea">
+            <af:panelGroupLayout>
+              <af:commandButton text="Add a New Employee..." action="AddOrEdit">
+                <af:setActionListener from="#{'Create'}"
+                                      to="#{requestScope.mode}"/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:attribute name="PageTitle" value="Manage Employees"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

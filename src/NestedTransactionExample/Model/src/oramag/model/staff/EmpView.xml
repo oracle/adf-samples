@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpView"
+  Version="11.1.1.51.56"
+  SelectList="Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.JOB, 
+       Emp.MGR, 
+       Emp.HIREDATE, 
+       Emp.SAL, 
+       Emp.COMM, 
+       Emp.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC, 
+       Dept.DEPTNO AS DEPTNO1"
+  FromList="EMP Emp, DEPT Dept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Where="Emp.DEPTNO = Dept.DEPTNO"
+  ComponentClass="oramag.model.fwkext.CustomViewObjectImpl"
+  RowClass="oramag.model.fwkext.CustomViewRowImpl">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName"
+      Value="oramag.model.fwkext.CustomViewObjectImpl"/>
+    <Attr Name="_rowSuperClassName"
+      Value="oramag.model.fwkext.CustomViewRowImpl"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="DeptView1"
+    ViewObjectName="oramag.model.org.DeptView"/>
+  <ListBinding
+    Name="LOV_Deptno"
+    ListVOName="DeptView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="LOV_Deptno_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Deptno"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Deptno"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Dname"/>
+      <Item Value="Deptno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Emp"
+    Entity="oramag.model.staff.Emp"/>
+  <EntityUsage
+    Name="Dept"
+    Entity="oramag.model.org.Dept"
+    Association="oramag.model.staff.WorksInDept"
+    AssociationEnd="oramag.model.staff.WorksInDept.Dept"
+    SourceUsage="oramag.model.staff.EmpView.Emp"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="oramag.model.staff.Emp.Deptno"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="oramag.model.org.Dept.Deptno"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="Empno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Empno"
+    EntityUsage="Emp"
+    AliasName="EMPNO"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="Ename"
+    PrecisionRule="true"
+    EntityAttrName="Ename"
+    EntityUsage="Emp"
+    AliasName="ENAME"/>
+  <ViewAttribute
+    Name="Job"
+    PrecisionRule="true"
+    EntityAttrName="Job"
+    EntityUsage="Emp"
+    AliasName="JOB"/>
+  <ViewAttribute
+    Name="Mgr"
+    PrecisionRule="true"
+    EntityAttrName="Mgr"
+    EntityUsage="Emp"
+    AliasName="MGR"/>
+  <ViewAttribute
+    Name="Hiredate"
+    PrecisionRule="true"
+    EntityAttrName="Hiredate"
+    EntityUsage="Emp"
+    AliasName="HIREDATE"/>
+  <ViewAttribute
+    Name="Sal"
+    PrecisionRule="true"
+    EntityAttrName="Sal"
+    EntityUsage="Emp"
+    AliasName="SAL"/>
+  <ViewAttribute
+    Name="Comm"
+    PrecisionRule="true"
+    EntityAttrName="Comm"
+    EntityUsage="Emp"
+    AliasName="COMM"/>
+  <ViewAttribute
+    Name="Deptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Emp"
+    AliasName="DEPTNO"
+    LOVName="LOV_Deptno">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="Dept"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="Dept"
+    AliasName="LOC"/>
+  <ViewAttribute
+    Name="WorksInDeptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Dept"
+    AliasName="DEPTNO1"
+    IsUpdateable="while_insert"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Empno"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oramag.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

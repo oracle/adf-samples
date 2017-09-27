@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:decorativeBox theme="medium">
+      <f:facet name="center">
+        <af:panelStretchLayout startWidth="10px" endWidth="10px"
+                               topHeight="10px">
+          <f:facet name="bottom">
+            <af:spacer width="10" height="10"/>
+          </f:facet>
+          <f:facet name="center">
+            <af:panelHeader text="#{attrs.PageTitle}"
+                            inlineStyle="background-color:White;">
+              <f:facet name="context"/>
+              <f:facet name="menuBar"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="legend">
+                <af:facetRef facetName="ButtonArea"/>
+              </f:facet>
+              <f:facet name="info"/>
+              <af:facetRef facetName="MainArea"/>
+            </af:panelHeader>
+          </f:facet>
+          <f:facet name="start">
+            <af:spacer width="10" height="10"/>
+          </f:facet>
+          <f:facet name="end">
+            <af:spacer width="10" height="10"/>
+          </f:facet>
+          <f:facet name="top">
+            <af:spacer width="10" height="10"/>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+      <f:facet name="top">
+        <af:panelGroupLayout>
+          <af:outputText value="Frameworks March/April 2009"
+                         inlineStyle="font-size:large;"/>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:decorativeBox>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>PageTemplate</display-name>
+        <facet>
+          <description>MainArea</description>
+          <facet-name>MainArea</facet-name>
+        </facet>
+        <facet>
+          <description>ButtonArea</description>
+          <facet-name>ButtonArea</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>PageTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>DefaultPageTitle</default-value>
+          <required>true</required>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

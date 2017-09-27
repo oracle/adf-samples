@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.56" id="DataBindings" SeparateXMLFiles="false"
+             Package="oramag.view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/create-department.xml#create-department@CreateNewDepartment"
+          usageId="oramag_view_create_department_create_department_CreateNewDepartmentPageDef"/>
+    <page path="/AddDepartment.jspx"
+          usageId="oramag_view_AddDepartmentPageDef"/>
+    <page path="/WEB-INF/modify-employee.xml#modify-employee@FindEmployee"
+          usageId="oramag_view_modify_employee_modify_employee_FindEmployeePageDef"/>
+    <page path="/WEB-INF/modify-employee.xml#modify-employee@CreateEmployee"
+          usageId="oramag_view_modify_employee_modify_employee_CreateEmployeePageDef"/>
+    <page path="/EditEmployee.jspx" usageId="oramag_view_EditEmployeePageDef"/>
+    <page path="/EmployeeList.jspx" usageId="oramag_view_EmployeeListPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oramag_view_create_department_create_department_CreateNewDepartmentPageDef"
+          path="oramag.view.pageDefs.create_department_create_department_CreateNewDepartmentPageDef"/>
+    <page id="oramag_view_AddDepartmentPageDef"
+          path="oramag.view.pageDefs.AddDepartmentPageDef"/>
+    <page id="oramag_view_modify_employee_modify_employee_FindEmployeePageDef"
+          path="oramag.view.pageDefs.modify_employee_modify_employee_FindEmployeePageDef"/>
+    <page id="oramag_view_modify_employee_modify_employee_CreateEmployeePageDef"
+          path="oramag.view.pageDefs.modify_employee_modify_employee_CreateEmployeePageDef"/>
+    <page id="oramag_view_EditEmployeePageDef"
+          path="oramag.view.pageDefs.EditEmployeePageDef"/>
+    <page id="oramag_view_EmployeeListPageDef"
+          path="oramag.view.pageDefs.EmployeeListPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="DeptModuleDataControl" Package="oramag.model.org"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="DeptModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="EmpModuleDataControl" Package="oramag.model.staff"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="EmpModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

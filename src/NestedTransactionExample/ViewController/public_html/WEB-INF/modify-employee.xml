@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="modify-employee">
+    <default-activity>RouteByMode</default-activity>
+    <transaction>
+      <requires-existing-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition>
+      <name>mode</name>
+      <value>#{pageFlowScope.mode}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition>
+      <name>rowKeyStrToEdit</name>
+      <value>#{pageFlowScope.rowKeyStrToEdit}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <router id="RouteByMode">
+      <case>
+        <expression>#{pageFlowScope.mode == 'Create'}</expression>
+        <outcome>Create</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.mode == 'Edit'}</expression>
+        <outcome>Find</outcome>
+      </case>
+      <default-outcome>Create</default-outcome>
+    </router>
+    <method-call id="FindEmployee">
+      <method>#{bindings.setCurrentRowWithKey.execute}</method>
+      <outcome>
+        <fixed-outcome>Edit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CreateEmployee">
+      <method>#{bindings.Create.execute}</method>
+      <outcome>
+        <fixed-outcome>Edit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="EditEmployee">
+      <page>/EditEmployee.jspx</page>
+    </view>
+    <task-flow-return id="OK">
+      <outcome>
+        <name>OK</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome>
+        <name>Cancel</name>
+        <restore-save-point/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-call id="create-department">
+      <task-flow-reference>
+        <document>/WEB-INF/create-department.xml</document>
+        <id>create-department</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule>
+      <from-activity-id>RouteByMode</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Find</from-outcome>
+        <to-activity-id>FindEmployee</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>Create</from-outcome>
+        <to-activity-id>CreateEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>FindEmployee</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Edit</from-outcome>
+        <to-activity-id>EditEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>CreateEmployee</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Edit</from-outcome>
+        <to-activity-id>EditEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>EditEmployee</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Cancel</from-outcome>
+        <to-activity-id>Cancel</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>OK</from-outcome>
+        <to-activity-id>OK</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>NewDepartment</from-outcome>
+        <to-activity-id>create-department</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

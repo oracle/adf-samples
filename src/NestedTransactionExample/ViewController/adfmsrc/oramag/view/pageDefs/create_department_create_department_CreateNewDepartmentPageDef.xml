@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56"
+                id="create_department_create_department_CreateNewDepartmentPageDef"
+                Package="oramag.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Departments" RangeSize="25"
+              DataControl="DeptModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="DepartmentsIterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+  </bindings>
+</pageDefinition>

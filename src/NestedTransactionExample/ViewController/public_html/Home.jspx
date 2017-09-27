@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:form>
+        <af:pageTemplate viewId="/PageTemplate.jspx">
+          <f:facet name="MainArea">
+            <af:panelGroupLayout layout="vertical">
+              <af:outputText value="Choose one of the following tasks..."/>
+              <af:spacer height="20"/>
+              <af:panelList listStyle="list-style-type:square">
+                <af:commandLink text="Create a New Department"
+                                action="CreateDepartment"/>
+                <af:commandLink text="Manage Employees"
+                                action="ManageEmployees"/>
+              </af:panelList>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="ButtonArea"/>
+          <f:attribute name="PageTitle" value="Home"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="create-department">
+    <default-activity>CreateNewDepartment</default-activity>
+    <transaction>
+      <requires-transaction/>
+    </transaction>
+    <method-call id="CreateNewDepartment">
+      <method>#{bindings.Create.execute}</method>
+      <outcome>
+        <fixed-outcome>Create</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="AddDepartment">
+      <page>/AddDepartment.jspx</page>
+    </view>
+    <task-flow-return id="Save">
+      <outcome>
+        <name>Save</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome>
+        <name>Cancel</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>CreateNewDepartment</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Create</from-outcome>
+        <to-activity-id>AddDepartment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>AddDepartment</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Save</from-outcome>
+        <to-activity-id>Save</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>Cancel</from-outcome>
+        <to-activity-id>Cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

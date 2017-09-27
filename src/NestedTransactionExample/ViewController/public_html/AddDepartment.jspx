@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document>
+      <af:messages/>
+      <af:form>
+        <af:pageTemplate viewId="/PageTemplate.jspx">
+          <f:facet name="MainArea">
+            <af:panelFormLayout>
+              <af:inputText value="#{bindings.Deptno.inputValue}"
+                            label="#{bindings.Deptno.hints.label}"
+                            required="#{bindings.Deptno.hints.mandatory}"
+                            columns="#{bindings.Deptno.hints.displayWidth}"
+                            maximumLength="#{bindings.Deptno.hints.precision}"
+                            shortDesc="#{bindings.Deptno.hints.tooltip}">
+                <f:validator binding="#{bindings.Deptno.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.Deptno.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Dname.inputValue}"
+                            label="#{bindings.Dname.hints.label}"
+                            required="#{bindings.Dname.hints.mandatory}"
+                            columns="#{bindings.Dname.hints.displayWidth}"
+                            maximumLength="#{bindings.Dname.hints.precision}"
+                            shortDesc="#{bindings.Dname.hints.tooltip}">
+                <f:validator binding="#{bindings.Dname.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Loc.inputValue}"
+                            label="#{bindings.Loc.hints.label}"
+                            required="#{bindings.Loc.hints.mandatory}"
+                            columns="#{bindings.Loc.hints.displayWidth}"
+                            maximumLength="#{bindings.Loc.hints.precision}"
+                            shortDesc="#{bindings.Loc.hints.tooltip}">
+                <f:validator binding="#{bindings.Loc.validator}"/>
+              </af:inputText>
+              <f:facet name="footer">
+                <af:panelGroupLayout>
+                  <af:commandButton text="OK" action="Save"/>
+                  <af:commandButton text="Cancel" action="Cancel"
+                                    immediate="true"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelFormLayout>
+          </f:facet>
+          <f:facet name="ButtonArea"/>
+          <f:attribute name="PageTitle" value="Create Department"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

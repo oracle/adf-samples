@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="AddDepartmentPageDef"
+                Package="oramag.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Departments" RangeSize="25"
+              DataControl="DeptModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DepartmentsIterator" id="Deptno">
+      <AttrNames>
+        <Item Value="Deptno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="Dname">
+      <AttrNames>
+        <Item Value="Dname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="Loc">
+      <AttrNames>
+        <Item Value="Loc"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

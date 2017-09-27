@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56"
+                id="modify_employee_modify_employee_CreateEmployeePageDef"
+                Package="oramag.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25"
+              DataControl="EmpModuleDataControl" id="EmployeesIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesIterator" id="Create"
+            RequiresUpdateModel="true" Action="createRow"/>
+  </bindings>
+</pageDefinition>

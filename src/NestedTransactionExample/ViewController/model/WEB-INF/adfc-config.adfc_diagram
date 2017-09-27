@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">Home</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - Home&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">view - Home</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">276.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">92.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="activityId">manage-employees</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-call - manage-employees&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-call - manage-employees</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">348.5</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">359.6963</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">ManageEmployees</property>
+      <property
+         name="sdm:polyPoints">R54,133.0,279.5,318.6963,348.5,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall5">
+      <property
+         name="activityId">create-department</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-call - create-department&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-call - create-department</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">233.5</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">361.0254</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowCall5">
+      <property
+         name="fromOutcome">CreateDepartment</property>
+      <property
+         name="sdm:polyPoints">R46,132.0,272.5,320.0254,233.5,L50</property>
+   </ControlFlowCase>
+</SDM>

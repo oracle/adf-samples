@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">EmployeeList</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - EmployeeList&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - EmployeeList</property>
+      <property
+         name="y">168.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">75.0</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="status">warning</property>
+      <property
+         name="activityId">modify-employee</property>
+      <property
+         name="statusDescription">EL token ''mode'' is unknown; EL token ''rowKeyStr'' is unknown</property>
+      <property
+         name="runAsDialog">false</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-call - modify-employee&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-call - modify-employee</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">167.5</property>
+      <property
+         name="x">303.68555</property>
+      <property
+         name="realized">true</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">AddOrEdit</property>
+      <property
+         name="sdm:polyPoints">R50,116.0,168.0,262.68555,167.5,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn7">
+      <property
+         name="id">TaskFlowReturn7</property>
+      <property
+         name="activityId">Save</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Save&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Save</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">348.0</property>
+      <property
+         name="x">74.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn8">
+      <property
+         name="id">TaskFlowReturn8</property>
+      <property
+         name="activityId">Cancel</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Cancel&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Cancel</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">321.0</property>
+      <property
+         name="x">259.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View2"
+      to="TaskFlowReturn7">
+      <property
+         name="fromOutcome">Save</property>
+      <property
+         name="id">ControlFlowCase9</property>
+      <property
+         name="sdm:polyPoints">B44,71.5,223.86868,74.0,294.0,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View2"
+      to="TaskFlowReturn8">
+      <property
+         name="fromOutcome">Cancel</property>
+      <property
+         name="id">ControlFlowCase10</property>
+      <property
+         name="sdm:polyPoints">B56,78.5,222.0,218.0,321.0,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">CreateNewDepartment</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">method-call - CreateNewDepartment&lt;/p>&lt;/html></property>
+      <property
+         name="binding">method</property>
+      <property
+         name="rawDescription">method-call - CreateNewDepartment</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">162.0</property>
+      <property
+         name="x">93.0</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">AddDepartment</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - AddDepartment&lt;/p>&lt;/html></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - AddDepartment</property>
+      <property
+         name="y">161.0</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">273.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">Create</property>
+      <property
+         name="sdm:polyPoints">R50,134.0,162.0,232.0,161.0,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">Save</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Save&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Save</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">223.0</property>
+      <property
+         name="x">441.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn6">
+      <property
+         name="activityId">Cancel</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Cancel&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Cancel</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">81.0</property>
+      <property
+         name="x">442.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View3"
+      to="TaskFlowReturn5">
+      <property
+         name="fromOutcome">Save</property>
+      <property
+         name="sdm:polyPoints">R54,314.0,164.5,400.0,223.0,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View3"
+      to="TaskFlowReturn6">
+      <property
+         name="fromOutcome">Cancel</property>
+      <property
+         name="sdm:polyPoints">R46,314.0,157.5,401.0,81.0,L50</property>
+   </ControlFlowCase>
+</SDM>

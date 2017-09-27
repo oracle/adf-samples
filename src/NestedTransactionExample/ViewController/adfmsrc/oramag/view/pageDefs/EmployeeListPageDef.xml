@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="EmployeeListPageDef"
+                Package="oramag.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25"
+              DataControl="EmpModuleDataControl" id="EmployeesIterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmployeesIterator" id="ImplicitViewCriteriaQuery"
+                  DefaultQuickSearchAttrName="Ename"
+                  TrackQueryPerformed="PageFlow"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesIterator" id="Employees">
+      <nodeDefinition DefName="oramag.model.staff.EmpView">
+        <AttrNames>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Sal"/>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+          <Item Value="Dname"/>
+          <Item Value="Loc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="manage-employees">
+    <default-activity>EmployeeList</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <view id="EmployeeList">
+      <page>/EmployeeList.jspx</page>
+    </view>
+    <task-flow-call id="modify-employee">
+      <task-flow-reference>
+        <document>/WEB-INF/modify-employee.xml</document>
+        <id>modify-employee</id>
+      </task-flow-reference>
+      <input-parameter>
+        <name>mode</name>
+        <value>#{requestScope.mode}</value>
+      </input-parameter>
+      <input-parameter>
+        <name>rowKeyStrToEdit</name>
+        <value>#{requestScope.rowKeyStr}</value>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-return id="Save">
+      <outcome>
+        <name>CancelAll</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome>
+        <name>SaveAll</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>EmployeeList</from-activity-id>
+      <control-flow-case>
+        <from-outcome>AddOrEdit</from-outcome>
+        <to-activity-id>modify-employee</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>Save</from-outcome>
+        <to-activity-id>Save</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>Cancel</from-outcome>
+        <to-activity-id>Cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

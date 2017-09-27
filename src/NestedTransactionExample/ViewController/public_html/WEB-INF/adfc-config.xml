@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Home">
+    <page>/Home.jspx</page>
+  </view>
+  <task-flow-call id="manage-employees">
+    <task-flow-reference>
+      <document>/WEB-INF/manage-employees.xml</document>
+      <id>manage-employees</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="create-department">
+    <task-flow-reference>
+      <document>/WEB-INF/create-department.xml</document>
+      <id>create-department</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule>
+    <from-activity-id>Home</from-activity-id>
+    <control-flow-case>
+      <from-outcome>ManageEmployees</from-outcome>
+      <to-activity-id>manage-employees</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>CreateDepartment</from-outcome>
+      <to-activity-id>create-department</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
