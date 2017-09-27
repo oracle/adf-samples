@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="FormDeclarativeUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="example.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="MyBeanDataControl_rootIter"
+         Binds="MyBeanDataControl.root"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="name"
+         SubType="DCTextField"
+         IterBinding="MyBeanDataControl_rootIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="name" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="sayHello"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="true"
+         DataControl="MyServiceDataControl"
+         InstanceName="MyServiceDataControl.dataProvider"
+         MethodName="sayHello"
+         ReturnName="MyServiceDataControl.methodResults.MyServiceDataControl_dataProvider_sayHello_result" >
+         <Contents >
+            <NamedData
+               NDName="Arg0"
+               NDType="java.lang.String"
+               NDValue="FormDeclarativeUIModel.name" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+   </Contents>
+</DCContainer>
