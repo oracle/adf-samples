@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- 
+ Copyright (c) 2012, shay shmeltzer. 
+-->
+
+<update-bundle version="1.0"
+    xmlns="http://xmlns.oracle.com/jdeveloper/updatebundle"
+    xmlns:u="http://xmlns.oracle.com/jdeveloper/update">
+
+  <u:update id="shay.glassfish">
+
+    <u:name>Glassfish Extension</u:name>
+    <u:version>1.1</u:version>
+    <u:author>Shay Shmeltzer</u:author>
+    <u:author-url>http://blogs.oracle.com/shay</u:author-url>
+    
+    <u:description>
+      This extension provides menu options that allow you to start/stop and administer a glassfish server directly from inside JDeveloper menus.
+    </u:description>
+
+    <u:requirements>
+      <u:requires-extension id="oracle.jdeveloper" 
+        minVersion="11.1.2.0.0" maxVersion="11.1.2.9.9" />
+    </u:requirements>
+
+    <u:destination>${oracle.home}</u:destination>
+
+  </u:update>
+</update-bundle>

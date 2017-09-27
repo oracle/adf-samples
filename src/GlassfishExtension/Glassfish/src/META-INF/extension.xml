@@ -1,0 +1,119 @@
+<extension id="shay.glassfish" version="1.1" esdk-version="1.0" rsbundle-class="shay.glassfish.Res.properties"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+    <name>Glassfish Extension</name>
+    <owner>Shay Shmeltzer</owner>
+    <dependencies>
+        <import>oracle.ide</import>
+        <import>oracle.ide.webbrowser</import>
+    </dependencies>
+    <required-bundles>
+        <bundle>oracle.uic</bundle>
+        <bundle>oracle.javatools-nodeps</bundle>
+    </required-bundles>
+    <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+        <triggers>
+            <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+                <action id="shay.glassfish.startglassfish">
+                    <properties>
+                        <property name="Name">Start Glassfish</property>
+                        <property name="SmallIcon">res:/shay/glassfish/gf001.gif</property>
+                        <property name="LongDescription">start Glassfish</property>
+                    </properties>
+                    <command-class>shay.glassfish.startGlassfishCommand</command-class>
+                </action>
+                <action id="shay.glassfish.stopglassfish">
+                    <properties>
+                        <property name="Name">Stop Glassfish</property>
+                        <property name="SmallIcon">res:/shay/glassfish/gf002.gif</property>
+                        <property name="LongDescription">stop Glassfish</property>
+                    </properties>
+                    <command-class>shay.glassfish.stopGlassfishCommand</command-class>
+                </action>
+                <action id="shay.glassfish.startglassfishdbg">
+                    <properties>
+                        <property name="Name">Start glassfish Debug</property>
+                        <property name="SmallIcon">res:/shay/glassfish/gf003.gif</property>
+                        <property name="LongDescription">start glassfish in Debug</property>
+                    </properties>
+                    <command-class>shay.glassfish.startGlassfishDbgCommand</command-class>
+                </action>
+                                <action id="shay.glassfish.startadmin">
+                    <properties>
+                        <property name="Name">Start glassfish Admin</property>
+                        <property name="SmallIcon">res:/shay/glassfish/gf004.gif</property>
+                        <property name="LongDescription">start glassfish administrator</property>
+                    </properties>
+                    <command-class>shay.glassfish.startAdminCommand</command-class>
+                </action>
+            </actions>
+            <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+                <controller class="shay.glassfish.startGlassfishController">
+                    <update-rules>
+                        <update-rule rule="always-enabled">
+                            <action id="shay.glassfish.startglassfish" />
+                        </update-rule>
+                    </update-rules>
+                </controller>
+                <controller class="shay.glassfish.stopGlassfishController">
+                    <update-rules>
+                        <update-rule rule="always-enabled">
+                            <action id="shay.glassfish.stopglassfish" />
+                        </update-rule>
+                    </update-rules>
+                </controller>
+                <controller class="shay.glassfish.startGlassfishDbgController">
+                    <update-rules>
+                        <update-rule rule="always-enabled">
+                            <action id="shay.glassfish.startglassfishdbg" />
+                        </update-rule>
+                    </update-rules>
+                </controller>
+                                <controller class="shay.glassfish.startAdminController">
+                    <update-rules>
+                        <update-rule rule="always-enabled">
+                            <action id="shay.glassfish.startadmin" />
+                        </update-rule>
+                    </update-rules>
+                </controller>
+            </controllers>
+            <settings-ui-hook xmlns="http://xmlns.oracle.com/ide/extension">
+                <page id="shay.glassfish.glassfishpreferences" parent-idref="/preferences">
+                    <label>Glassfish Preferences</label>
+                    <traversable-class>shay.glassfish.GlassfishPreferencesPanel</traversable-class>
+                </page>
+            </settings-ui-hook>
+            <menu-hook xmlns="http://jcp.org/jsr/198/extension-manifest">
+                <menus>
+                    <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+                        <menu id="34" weight="999.99">
+                            <label>Glassfish</label>
+                            <section id="Tomcat">
+                                <item action-ref="shay.glassfish.startglassfish"/>
+                                <item action-ref="shay.glassfish.stopglassfish"/>
+                                <item action-ref="shay.glassfish.startglassfishdbg"/>
+                                <item action-ref="shay.glassfish.startadmin"/>
+                            </section>
+                        </menu>
+                    </menubar>
+                </menus>
+                <toolbars>
+                    <toolbar id="javax.ide.view.MAIN_WINDOW_TOOLBAR_ID">
+                        <!-- Add a new section after the first section in the toolbar. -->
+                        <section id="javax.ide.tck.toolbar.glassfishsection" after="javax.ide.COPY_PASTE_SECTION_ID ">
+                            <item action-ref="shay.glassfish.startglassfish"/>
+                            <item action-ref="shay.glassfish.stopglassfish"/>
+                            <item action-ref="shay.glassfish.startglassfishdbg"/>
+                            <item action-ref="shay.glassfish.startadmin"/>
+                        </section>
+                    </toolbar>
+                </toolbars>
+            </menu-hook>
+        </triggers>
+    </trigger-hooks>
+
+    <hooks/>
+
+</extension>
+
+
+
