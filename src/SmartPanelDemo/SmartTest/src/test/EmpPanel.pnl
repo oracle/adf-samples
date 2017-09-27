@@ -1,0 +1,45 @@
+<panel datamodel='TestProject.HRModule' xmlns="urn:jclient-smartpanel">
+  <table border-style="" cellpadding="2" viewobject='AllEmployees'>
+    <tr>
+      <th><label   attr="Empno"/></th>
+      <td><display attr="Empno" size="5"/></td>
+      <th><label   attr="Ename"/></th>
+      <td><display attr="Ename"/></td>
+    </tr>
+    <tr>
+      <th><label attr="Hiredate"/></th>
+      <td><display attr="Hiredate" align="right"/></td>
+      <th><label attr="Loc"/></th>
+      <td><display attr="Loc"/></td>
+    </tr>
+    <tr>
+      <th><label attr="Sal"/></th>
+      <td><input attr="Sal" size="5"/></td>
+      <th><label attr="WorksInDeptno"/></th>
+      <td>
+        <poplist attr="WorksInDeptno"
+                 list-viewobject="Departments"
+                 list-target-attrs="WorksInDeptno"
+                 list-value-attrs="Deptno"
+                 list-display-attrs="Dname"/>
+      </td>
+    </tr>
+    <tr>
+      <th><label attr="ManagersSalary"/></th>
+      <td><display attr="ManagersSalary"/></td>
+      <th><label attr="Mgr"/></th>
+      <td>
+        <poplist attr="Mgr"
+                   list-viewobject="ManagerList" 
+                                 list-target-attrs="Mgr"
+                                 list-value-attrs="Empno"
+                                 list-display-attrs="Ename"/></td>
+    </tr>
+    <tr>
+      <th><label attr="SalaryPercentageOfManager"/></th>
+      <td><display attr="SalaryPercentageOfManager"/></td>
+      <td/>
+      <td/>
+    </tr>
+  </table>
+</panel>

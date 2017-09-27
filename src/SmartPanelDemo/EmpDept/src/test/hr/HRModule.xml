@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="HRModule"
+   ComponentClass="test.hr.HRModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_ejbAppModule" Value="false" />
+   </DesignTime>
+   <ViewUsage
+      Name="Departments"
+      ViewObjectName="test.hr.DeptView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="AllEmployees"
+      ViewObjectName="test.hr.EmpView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmployeesInDept"
+      ViewObjectName="test.hr.EmpView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ManagerList"
+      ViewObjectName="test.hr.Managers" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="EmployeeWorksInLink1"
+      ViewLinkObjectName="test.hr.EmployeeWorksInLink"
+      SrcViewUsageName="test.hr.HRModule.Departments"
+      DstViewUsageName="test.hr.HRModule.EmployeesInDept" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="9.0.5.16.0" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

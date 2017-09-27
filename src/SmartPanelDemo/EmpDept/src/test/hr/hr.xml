@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="hr"
+   SeparateXMLFiles="true"
+   PackageName="test.hr" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Dept"
+      FullName="test.hr.Dept"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="DeptView"
+      FullName="test.hr.DeptView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="Emp"
+      FullName="test.hr.Emp"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="ManagedByAssoc"
+      FullName="test.hr.ManagedByAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmployeeWorksInAssoc"
+      FullName="test.hr.EmployeeWorksInAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="test.hr.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ManagedByLink"
+      FullName="test.hr.ManagedByLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmployeeWorksInLink"
+      FullName="test.hr.EmployeeWorksInLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="HRModule"
+      FullName="test.hr.HRModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="Managers"
+      FullName="test.hr.Managers"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

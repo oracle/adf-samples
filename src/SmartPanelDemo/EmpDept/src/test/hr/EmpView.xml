@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmpView"
+   SelectList="Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.JOB, 
+       Emp.MGR, 
+
+       Emp.HIREDATE, 
+       Emp.SAL, 
+       Emp.COMM, 
+   
+    Emp.DEPTNO, 
+       Dept.DNAME, 
+       Dept.DEPTNO AS DEPTNO1, 
+
+       Dept.LOC, 
+       Manager.SAL AS SAL1, 
+       Manager.EMPNO 
+AS EMPNO1"
+   FromList="EMP Emp, DEPT Dept, EMP Manager"
+   Where="(Emp.DEPTNO = Dept.DEPTNO)AND (Emp.MGR = Manager.EMPNO)"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="test.hr.EmpViewRowImpl"
+   ComponentClass="test.hr.EmpViewImpl"
+   MsgBundleClass="test.hr.common.EmpViewRowImplMsgBundle"
+   UseGlueCode="false" >
+   <Properties>
+      <Property Name ="Recalc_Mgr" Value ="SalaryPercentageOfManager" />
+   </Properties>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|Msg" />
+      <Attr Name="_isExpertMode" Value="false" />
+      <Attr Name="_objectSuperClassName" Value="test.hr.DeclarativeRecalculatingViewObjectImpl" />
+   </DesignTime>
+   <EntityUsage
+      Name="Emp"
+      Entity="test.hr.Emp" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <EntityUsage
+      Name="Dept"
+      Entity="test.hr.Dept"
+      Association="test.hr.EmployeeWorksInAssoc"
+      AssociationEnd="test.hr.EmployeeWorksInAssoc.Dept"
+      SourceUsage="test.hr.EmpView.Emp"
+      ReadOnly="true"
+      Reference="true" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+         <AttrArray Name="_srcAttributes">
+            <Item Value="test.hr.Emp.Deptno" />
+         </AttrArray>
+         <AttrArray Name="_dstAttributes">
+            <Item Value="test.hr.Dept.Deptno" />
+         </AttrArray>
+      </DesignTime>
+   </EntityUsage>
+   <EntityUsage
+      Name="Manager"
+      Entity="test.hr.Emp"
+      Association="test.hr.ManagedByAssoc"
+      AssociationEnd="test.hr.ManagedByAssoc.MgrEmp"
+      SourceUsage="test.hr.EmpView.Emp"
+      ReadOnly="true"
+      Reference="true" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+         <AttrArray Name="_srcAttributes">
+            <Item Value="test.hr.Emp.Mgr" />
+         </AttrArray>
+         <AttrArray Name="_dstAttributes">
+            <Item Value="test.hr.Emp.Empno" />
+         </AttrArray>
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Empno"
+      IsNotNull="true"
+      PrecisionRule="false"
+      EntityAttrName="Empno"
+      EntityUsage="Emp"
+      AliasName="EMPNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ename"
+      PrecisionRule="false"
+      EntityAttrName="Ename"
+      EntityUsage="Emp"
+      AliasName="ENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Job"
+      PrecisionRule="false"
+      EntityAttrName="Job"
+      EntityUsage="Emp"
+      AliasName="JOB" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Mgr"
+      PrecisionRule="false"
+      EntityAttrName="Mgr"
+      EntityUsage="Emp"
+      AliasName="MGR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Hiredate"
+      PrecisionRule="false"
+      EntityAttrName="Hiredate"
+      EntityUsage="Emp"
+      AliasName="HIREDATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sal"
+      PrecisionRule="false"
+      EntityAttrName="Sal"
+      EntityUsage="Emp"
+      AliasName="SAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Comm"
+      PrecisionRule="false"
+      EntityAttrName="Comm"
+      EntityUsage="Emp"
+      AliasName="COMM" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="WorksInDeptno"
+      PrecisionRule="false"
+      EntityAttrName="Deptno"
+      EntityUsage="Emp"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dname"
+      PrecisionRule="false"
+      EntityAttrName="Dname"
+      EntityUsage="Dept"
+      AliasName="DNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Deptno"
+      IsNotNull="true"
+      PrecisionRule="false"
+      EntityAttrName="Deptno"
+      EntityUsage="Dept"
+      AliasName="DEPTNO1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Loc"
+      PrecisionRule="false"
+      EntityAttrName="Loc"
+      EntityUsage="Dept"
+      AliasName="LOC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ManagersSalary"
+      PrecisionRule="false"
+      EntityAttrName="Sal"
+      EntityUsage="Manager"
+      AliasName="SAL1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ManagersEmpno"
+      IsNotNull="true"
+      PrecisionRule="false"
+      EntityAttrName="Empno"
+      EntityUsage="Manager"
+      AliasName="EMPNO1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SalaryPercentageOfManager"
+      IsUpdateable="false"
+      IsQueriable="false"
+      IsPersistent="false"
+      PrecisionRule="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="EmpView"
+      ViewLink="test.hr.ManagedByLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

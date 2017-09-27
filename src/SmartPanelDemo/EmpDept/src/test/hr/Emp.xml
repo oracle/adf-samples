@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Emp"
+   DBObjectType="table"
+   DBObjectName="EMP"
+   AliasName="Emp"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="test.hr.EmpImpl"
+   MsgBundleClass="test.hr.common.EmpImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="Empno"
+      IsNotNull="true"
+      Precision="4"
+      Scale="0"
+      ColumnName="EMPNO"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EMP"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Ename"
+      Precision="10"
+      ColumnName="ENAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Job"
+      Precision="9"
+      ColumnName="JOB"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="9" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Mgr"
+      Precision="4"
+      Scale="0"
+      ColumnName="MGR"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Hiredate"
+      ColumnName="HIREDATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Sal"
+      Precision="7"
+      Scale="2"
+      ColumnName="SAL"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Comm"
+      Precision="7"
+      Scale="2"
+      ColumnName="COMM"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Deptno"
+      Precision="2"
+      Scale="0"
+      ColumnName="DEPTNO"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="EMP" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="MgrEmp"
+      Association="test.hr.ManagedByAssoc"
+      AssociationEnd="test.hr.ManagedByAssoc.MgrEmp"
+      AssociationOtherEnd="test.hr.ManagedByAssoc.Emp"
+      Type="test.hr.EmpImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Dept"
+      Association="test.hr.EmployeeWorksInAssoc"
+      AssociationEnd="test.hr.EmployeeWorksInAssoc.Dept"
+      AssociationOtherEnd="test.hr.EmployeeWorksInAssoc.Emp"
+      Type="test.hr.DeptImpl" >
+   </AccessorAttribute>
+   <AccessorAttribute
+      Name="Emp"
+      Association="test.hr.ManagedByAssoc"
+      AssociationEnd="test.hr.ManagedByAssoc.Emp"
+      AssociationOtherEnd="test.hr.ManagedByAssoc.MgrEmp"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </AccessorAttribute>
+   <Key
+      Name="EmployeePk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.hr.Emp.Empno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="EMPLOYEE_PK" />
+         <Attr Name="_isPrimary" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC003995" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.hr.Emp.Empno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="SYS_C003995" />
+         <Attr Name="_checkCondition" Value="&#34;EMPNO&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="EmployeeWorksIn" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.hr.Emp.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="EMPLOYEE_WORKS_IN" />
+         <Attr Name="_referencedKey" Value="DEPT_PK" />
+         <Attr Name="_isForeign" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="ManagedBy" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.hr.Emp.Mgr" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="MANAGED_BY" />
+         <Attr Name="_referencedKey" Value="EMPLOYEE_PK" />
+         <Attr Name="_isForeign" Value="true" />
+      </DesignTime>
+   </Key>
+</Entity>

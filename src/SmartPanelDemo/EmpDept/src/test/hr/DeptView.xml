@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="DeptView"
+   SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+   FromList="DEPT Dept"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="test.hr.DeptViewRowImpl"
+   ComponentClass="test.hr.DeptViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="Dept"
+      Entity="test.hr.Dept" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Deptno"
+      IsNotNull="true"
+      PrecisionRule="false"
+      EntityAttrName="Deptno"
+      EntityUsage="Dept"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dname"
+      PrecisionRule="false"
+      EntityAttrName="Dname"
+      EntityUsage="Dept"
+      AliasName="DNAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Loc"
+      PrecisionRule="false"
+      EntityAttrName="Loc"
+      EntityUsage="Dept"
+      AliasName="LOC" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="EmployeesInDepartment"
+      ViewLink="test.hr.EmployeeWorksInLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<!--BC4J Client Data Model-->
+
+<JboProject
+   Name="TestProject"
+   Package="" >
+   <Session
+      Name="HRModule"
+      Package="test.hr"
+      Configuration="HRModuleLocal" >
+   </Session>
+</JboProject>
