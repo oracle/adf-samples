@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="QueryPagePageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmpView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="EmpView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmpView1Iterator" id="EmpView1">
+      <nodeDefinition DefName="test.model.EmpView" Name="EmpView10">
+        <AttrNames>
+          <Item Value="Comm"/>
+          <Item Value="Deptno"/>
+          <Item Value="Empno"/>
+          <Item Value="Ename"/>
+          <Item Value="Hiredate"/>
+          <Item Value="Job"/>
+          <Item Value="Mgr"/>
+          <Item Value="Sal"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

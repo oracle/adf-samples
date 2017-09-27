@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpView"
+  Version="11.1.1.50.84"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="test.model.EmpViewRowImpl"
+  FromList="EMP Emp"
+  SelectList="Emp.COMM, 
+       Emp.DEPTNO, 
+       Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.HIREDATE, 
+       Emp.JOB, 
+       Emp.MGR, 
+       Emp.SAL">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Emp"
+    Entity="test.model.Emp"
+    JoinType="INNER JOIN"/>
+  <ViewAttribute
+    Name="Comm"
+    PrecisionRule="true"
+    EntityAttrName="Comm"
+    EntityUsage="Emp"
+    AliasName="COMM"/>
+  <ViewAttribute
+    Name="Deptno"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Emp"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Empno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Empno"
+    EntityUsage="Emp"
+    AliasName="EMPNO"/>
+  <ViewAttribute
+    Name="Ename"
+    PrecisionRule="true"
+    EntityAttrName="Ename"
+    EntityUsage="Emp"
+    AliasName="ENAME"/>
+  <ViewAttribute
+    Name="Hiredate"
+    PrecisionRule="true"
+    EntityAttrName="Hiredate"
+    EntityUsage="Emp"
+    AliasName="HIREDATE"/>
+  <ViewAttribute
+    Name="Job"
+    PrecisionRule="true"
+    EntityAttrName="Job"
+    EntityUsage="Emp"
+    AliasName="JOB"/>
+  <ViewAttribute
+    Name="Mgr"
+    PrecisionRule="true"
+    EntityAttrName="Mgr"
+    EntityUsage="Emp"
+    AliasName="MGR"/>
+  <ViewAttribute
+    Name="Sal"
+    PrecisionRule="true"
+    EntityAttrName="Sal"
+    EntityUsage="Emp"
+    AliasName="SAL"/>
+</ViewObject>
