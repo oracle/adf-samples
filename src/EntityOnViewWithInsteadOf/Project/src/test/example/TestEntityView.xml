@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TestEntityView"
+   SelectList="TestEntity.V, 
+       TestEntity.ROWID, 
+       TestEntity.OTHER_UNIQUE_VALUE"
+   FromList="TESTVIEW TestEntity"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   ComponentClass="test.example.TestEntityViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="TestEntity"
+      Entity="test.example.TestEntity" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="V"
+      PrecisionRule="true"
+      EntityAttrName="V"
+      EntityUsage="TestEntity"
+      AliasName="V" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      PrecisionRule="true"
+      EntityAttrName="RowID"
+      EntityUsage="TestEntity"
+      AliasName="ROWID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OtherUniqueValue"
+      IsUnique="true"
+      PrecisionRule="true"
+      EntityAttrName="OtherUniqueValue"
+      EntityUsage="TestEntity"
+      AliasName="OTHER_UNIQUE_VALUE" >
+   </ViewAttribute>
+</ViewObject>
