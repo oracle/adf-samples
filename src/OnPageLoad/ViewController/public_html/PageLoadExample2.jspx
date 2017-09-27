@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="PageLoadExample2">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:panelLabelAndMessage label="#{bindings.Deptno.label}">
+              <af:outputText value="#{bindings.Deptno.inputValue}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.Deptno.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Dname.label}">
+              <af:outputText value="#{bindings.Dname.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="#{bindings.Loc.label}">
+              <af:outputText value="#{bindings.Loc.inputValue}"/>
+            </af:panelLabelAndMessage>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton text="Do Something Programmatically"
+                                  action="#{PageLoadExample2Backing.commandButton_action}"/>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+                <af:commandButton text="Goto Another Page"
+                                  action="GotoAnother"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+          <af:panelBox text="Tip">
+            <af:outputText value="The Page Definition for this page defines the ControllerClass property to the EL expression #{'#'}{PageLoadExample2} which is a backing bean that extends the TestModuleBackingBeanBase class, which in turn, implements PagePhaseListener (one of the two allowed kinds of classes that can be specified as a pageDef controller class. The other kind of class is one that extends oracle.adf.controller.v2.PageController)"/>
+          </af:panelBox>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:PageLoadExample2Backing-->
+</jsp:root>

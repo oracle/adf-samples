@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>oracle.adf.controller.faces.lifecycle.ADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>PageLoadExampleBacking</managed-bean-name>
+    <managed-bean-class>demo.controller.backing.PageLoadExampleBacking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>PageLoadExample2Backing</managed-bean-name>
+    <managed-bean-class>demo.controller.backing.PageLoadExample2Backing</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>PageLoadExample3Backing</managed-bean-name>
+    <managed-bean-class>demo.controller.backing.PageLoadExample3Backing</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>bindings</property-name>
+      <value>#{bindings}</value>
+    </managed-property>
+  </managed-bean>
+  <navigation-rule>
+    <from-view-id>/PageLoadExample2.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>GotoAnother</from-outcome>
+      <to-view-id>/AnotherPage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <managed-bean>
+    <managed-bean-name>AnotherPageBacking</managed-bean-name>
+    <managed-bean-class>demo.controller.backing.AnotherPageBacking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</faces-config>

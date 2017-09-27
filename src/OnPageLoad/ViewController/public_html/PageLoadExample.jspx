@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="PageLoadExample">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.DeptView.collectionModel}" var="row"
+                    rows="#{bindings.DeptView.rangeSize}"
+                    first="#{bindings.DeptView.rangeStart}"
+                    emptyText="#{bindings.DeptView.viewable ? 'No rows yet.' : 'Access Denied.'}">
+            <af:column headerText="#{bindings.DeptView.labels.Deptno}"
+                       sortProperty="Deptno" sortable="false">
+              <af:outputText value="#{row.Deptno}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptView.formats.Deptno}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="#{bindings.DeptView.labels.Dname}"
+                       sortProperty="Dname" sortable="false">
+              <af:outputText value="#{row.Dname}"/>
+            </af:column>
+            <af:column headerText="#{bindings.DeptView.labels.Loc}"
+                       sortProperty="Loc" sortable="false">
+              <af:outputText value="#{row.Loc}"/>
+            </af:column>
+          </af:table>
+          <af:commandButton text="Do Something Programmatically"
+                            action="#{PageLoadExampleBacking.myButton_action}"/>
+          <af:panelBox text="Tip">
+            <af:outputText value="The Page Definition for this page defines the ControllerClass property to the EL expression #{'#'}{PageLoadExample} which is a backing bean that implements PagePhaseListener (one of the two allowed kinds of classes that can be specified as a pageDef controller class. The other kind of class is one that extends oracle.adf.controller.v2.PageController)"/>
+          </af:panelBox>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:PageLoadExampleBacking-->
+</jsp:root>
