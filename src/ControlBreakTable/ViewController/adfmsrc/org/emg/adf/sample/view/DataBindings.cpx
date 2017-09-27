@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.61.92" id="DataBindings" SeparateXMLFiles="false"
+             Package="org.emg.adf.sample.view" ClientType="Generic">
+  <pageMap>
+    <page path="/Locations.jspx"
+          usageId="org_emg_adf_sample_view_LocationsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="org_emg_adf_sample_view_LocationsPageDef"
+          path="org.emg.adf.sample.view.pageDefs.LocationsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl"
+                     Package="org.emg.adf.sample.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

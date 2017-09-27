@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Countries"
+  Version="11.1.1.61.92"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="COUNTRIES"
+  AliasName="Countries"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="CountryId"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="COUNTRIES"
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryName"
+    Precision="40"
+    ColumnName="COUNTRY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegionId"
+    ColumnName="REGION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Regions"
+    Association="org.emg.adf.sample.model.CountrRegFkAssoc"
+    AssociationEnd="org.emg.adf.sample.model.CountrRegFkAssoc.Regions"
+    AssociationOtherEnd="org.emg.adf.sample.model.CountrRegFkAssoc.Countries"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Locations"
+    Association="org.emg.adf.sample.model.LocCIdFkAssoc"
+    AssociationEnd="org.emg.adf.sample.model.LocCIdFkAssoc.Locations"
+    AssociationOtherEnd="org.emg.adf.sample.model.LocCIdFkAssoc.Countries"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CountryCIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COUNTRY_C_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.emg.adf.sample.model.Countries.CountryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CountryIdNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COUNTRY_ID_NN"/>
+      <Attr Name="_checkCondition" Value='"COUNTRY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.emg.adf.sample.model.Countries.CountryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CountrRegFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="REG_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="COUNTR_REG_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="org.emg.adf.sample.model.Countries.RegionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

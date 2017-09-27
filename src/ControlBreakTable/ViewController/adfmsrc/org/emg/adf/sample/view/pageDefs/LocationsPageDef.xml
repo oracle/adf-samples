@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.92" id="LocationsPageDef"
+                Package="org.emg.adf.sample.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LocationsView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="LocationsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LocationsView1Iterator" id="LocationsView1">
+      <nodeDefinition DefName="org.emg.adf.sample.model.LocationsView"
+                      Name="LocationsView10">
+        <AttrNames>
+          <Item Value="RegionId"/>
+          <Item Value="CountryId"/>
+          <Item Value="LocationId"/>
+          <Item Value="StreetAddress"/>
+          <Item Value="PostalCode"/>
+          <Item Value="City"/>
+          <Item Value="StateProvince"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

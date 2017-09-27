@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="center">
+            <af:table value="#{bindings.LocationsView1.collectionModel}"
+                      var="row" rows="#{bindings.LocationsView1.rangeSize}"
+                      emptyText="#{bindings.LocationsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.LocationsView1.rangeSize}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.LocationsView1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.LocationsView1.collectionModel.makeCurrent}"
+                      rowSelection="single" id="t1">
+              <af:column sortProperty="RegionId" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.RegionId.label}"
+                         id="c5">
+                <af:outputText value="#{row.RegionId}" id="ot2"
+                               rendered="#{!CompareWithPreviousRowBean['RegionId']}">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.LocationsView1.hints.RegionId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="CountryId" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.CountryId.label}"
+                         id="c1">
+                <af:outputText value="#{row.CountryId}" id="ot5"
+                               rendered="#{!CompareWithPreviousRowBean['CountryId']}"/>
+              </af:column>
+              <af:column sortProperty="LocationId" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.LocationId.label}"
+                         id="c3">
+                <af:outputText value="#{row.LocationId}" id="ot7">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.LocationsView1.hints.LocationId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="StreetAddress" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.StreetAddress.label}"
+                         id="c4">
+                <af:outputText value="#{row.StreetAddress}" id="ot4"/>
+              </af:column>
+              <af:column sortProperty="PostalCode" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.PostalCode.label}"
+                         id="c2">
+                <af:outputText value="#{row.PostalCode}" id="ot6"/>
+              </af:column>
+              <af:column sortProperty="City" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.City.label}"
+                         id="c7">
+                <af:outputText value="#{row.City}" id="ot3"/>
+              </af:column>
+              <af:column sortProperty="StateProvince" sortable="false"
+                         headerText="#{bindings.LocationsView1.hints.StateProvince.label}"
+                         id="c6">
+                <af:outputText value="#{row.StateProvince}" id="ot1"/>
+              </af:column>
+            </af:table>
+            <!-- id="af_one_column_stretched"   -->
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
