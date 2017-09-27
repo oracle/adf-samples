@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="untitled1">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.EmpView.collectionModel}" var="row"
+                    rows="#{bindings.EmpView.rangeSize}"
+                    first="#{bindings.EmpView.rangeStart}"
+                    emptyText="#{bindings.EmpView.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    rangeChangeListener="#{Untitled1.onTableRangeChanged}">
+            <af:column headerText="#{bindings.EmpView.labels.Empno}"
+                       sortProperty="Empno" sortable="true">
+              <af:inputText value="#{row.Empno}"
+                            inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            required="#{bindings.EmpView.attrDefs.Empno.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Empno.displayWidth}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Empno}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Ename}"
+                       sortProperty="Ename" sortable="true">
+              <af:inputText value="#{row.Ename}" simple="true"
+              inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            required="#{bindings.EmpView.attrDefs.Ename.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Ename.displayWidth}"/>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Sal}"
+                       sortProperty="Sal" sortable="true">
+              <af:inputText value="#{row.Sal}"
+                           inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            required="#{bindings.EmpView.attrDefs.Sal.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Sal.displayWidth}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Sal}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Comm}"
+                       sortProperty="Comm" sortable="true"
+                       
+                       formatType="text">
+              <af:inputText value="#{row.Comm}"
+                            inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            required="#{bindings.EmpView.attrDefs.Comm.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Comm.displayWidth}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Comm}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Deptno}"
+                       sortProperty="Deptno" sortable="true">
+              <af:inputText value="#{row.Deptno}"
+              inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            required="#{bindings.EmpView.attrDefs.Deptno.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Deptno.displayWidth}">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.EmpView.formats.Deptno}"/>
+              </af:inputText>
+            </af:column>
+            <af:column headerText="#{bindings.EmpView.labels.Job}"
+                       sortProperty="Job" sortable="false">
+              <af:inputText value="#{row.Job}" simple="true"
+                            required="#{bindings.EmpView.attrDefs.Job.mandatory}"
+                            columns="#{bindings.EmpView.attrHints.Job.displayWidth}"
+                            inlineStyle="#{row.Valid ? '' : 'background-color:rgb(156,255,0)'}"
+                            />
+            </af:column>
+          </af:table>
+          <af:commandButton actionListener="#{bindings.Commit.execute}"
+                            text="Commit"/>
+          <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                            text="Rollback"
+                            immediate="true">
+            <af:resetActionListener/>
+          </af:commandButton>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

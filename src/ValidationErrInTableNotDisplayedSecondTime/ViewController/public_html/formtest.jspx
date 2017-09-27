@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="formtest">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelForm>
+            <af:inputText value="#{bindings.Empno.inputValue}"
+                          label="#{bindings.Empno.label}"
+                          required="#{bindings.Empno.mandatory}"
+                          columns="#{bindings.Empno.displayWidth}">
+              <af:validator binding="#{bindings.Empno.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Empno.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Ename.inputValue}"
+                          label="#{bindings.Ename.label}"
+                          required="#{bindings.Ename.mandatory}"
+                          columns="#{bindings.Ename.displayWidth}">
+              <af:validator binding="#{bindings.Ename.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Sal.inputValue}"
+                          label="#{bindings.Sal.label}"
+                          required="#{bindings.Sal.mandatory}"
+                          columns="#{bindings.Sal.displayWidth}">
+              <af:validator binding="#{bindings.Sal.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Sal.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Comm.inputValue}"
+                          label="#{bindings.Comm.label}"
+                          required="#{bindings.Comm.mandatory}"
+                          columns="#{bindings.Comm.displayWidth}">
+              <af:validator binding="#{bindings.Comm.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Comm.format}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.EmpViewJob.inputValue}"
+                          label="#{bindings.EmpViewJob.label}"
+                          required="#{bindings.EmpViewJob.mandatory}"
+                          columns="#{bindings.EmpViewJob.displayWidth}">
+              <af:validator binding="#{bindings.EmpViewJob.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Deptno.inputValue}"
+                          label="#{bindings.Deptno.label}"
+                          required="#{bindings.Deptno.mandatory}"
+                          columns="#{bindings.Deptno.displayWidth}">
+              <af:validator binding="#{bindings.Deptno.validator}"/>
+              <f:convertNumber groupingUsed="false"
+                               pattern="#{bindings.Deptno.format}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
