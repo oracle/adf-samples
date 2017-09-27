@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   Name="CustomizedProject"
+   SeparateXMLFiles="true"
+   PackageName="" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_NamedConnection" Value="scott" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <Attr Name="_jprName" Value="../CustomizedProject.jpr" />
+      <Attr Name="_appModuleNames0" Value="com.somecompany.someapp.SomeModule" />
+   </DesignTime>
+   <Containee
+      Name="someapp"
+      FullName="com.somecompany.someapp.someapp"
+      ObjectType="JboPackage" >
+      <DesignTime>
+         <Attr Name="_LocationURL" Value="../../BaseProject/classes/" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="someapp"
+      FullName="com.somecustomer.someapp.someapp"
+      ObjectType="JboPackage" >
+   </Containee>
+   <Substitutes>
+      <Substitute OldName ="com.somecompany.someapp.ExpertViewObject" NewName ="com.somecustomer.someapp.CustomizedView" />
+   </Substitutes>
+</JboProject>
