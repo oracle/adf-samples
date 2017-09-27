@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<?xml-stylesheet type="text/xsl" href="TestPage.xsl" ?>
+<page xmlns:xsql="urn:oracle-xsql">
+  <xsql:set-stylesheet-param name="orderId" value="{@id}"/>
+  <xsql:action handler="test.view.xsql.ADFViewObject"
+               iterator="EmployeesIterator"/>
+</page>

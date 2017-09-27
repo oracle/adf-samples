@@ -1,0 +1,536 @@
+<?xml version="1.0" ?>
+<!--
+| This is the XSQL Pages configuration file
+|
+| ============
+| SECURITY TIP: This file contains sensitive database username/password
+| ============ information that you want to keep secure on the server.
+| This file can reside in any directory and it need only have
+| read permission by the owner of the servlet engine under
+| which the XSQLServlet is running.
+|
+| On a PRODUCTION system, under no circumstances should this
+| configuration file reside in a directory that is browseable
+| through the virtual path of your web server. Therefore, make
+| sure that it is not in any directory or subdirectory of
+| file system paths that are aliases to virtual directories
+| in your web server environment.
+|
++-->
+<XSQLConfig>
+
+<!--
+|
+| This section defines configuration settings
+| specific to the XSQL Servlet
+|
++-->
+<servlet>
+
+<!--
+|
+| Sets the size (in bytes) of the buffered output stream.
+| If your servlet engine already buffers I/O to the
+| Servlet Output Stream, then you can set to 0
+| to avoid additional buffering.
+|
+| <output-buffer-size>10000</output-buffer-size>
+|
++-->
+<output-buffer-size>0</output-buffer-size>
+
+<!--
+|
+| Add <media-type> elements as shown below to cause
+| the XSQL Servlet to *suppress* sending the "charset=XXX"
+| portion of the Media/Content-type.
+|
+| For example, sending a character set for "image/svg"
+| documents seems to confuse current SVG plugins.
+|
+| <suppress-mime-charset>
+| <media-type>image/svg</media-type>
+| </suppress-mime-charset>
+|
++-->
+
+<suppress-mime-charset>
+<media-type>image/svg+xml</media-type>
+<media-type>image/svg</media-type>
+</suppress-mime-charset>
+
+</servlet>
+
+<!--
+|
+| This section defines XSQL Page Processor configuration settings.
+|
++-->
+<processor>
+
+<!--
+|
+| Use this parameter to change the default character set used for
+| automatic character set conversion performed by the XSQL Page Processor.
+| The value of the <default-charset> element must be a legal
+| Java character encoding name.
+|
+| To avoid the overhead of automatic character set conversion,
+| place a replace the <default-charset> element by a <none/>
+| empty element like this:
+|
+| <character-set-conversion>
+| <none/>
+| </character-set-conversion>
+|
+| The default value if <none/> is NOT present and if no <default-charset>
+| is specified is 8859_1, which works best for most servlet
+| engines.
+|
++-->
+<character-set-conversion>
+<default-charset>8859_1</default-charset>
+</character-set-conversion>
+
+<!--
+|
+| Connection definitions (see <connectiondefs> below)
+| are cached when the XSQL Page Processor is initialized.
+|
+| Set to "yes" to cause the processor to
+| reread the XSQLConfig.xml file to reload
+| connection definitions if an attempt is made
+| to request a connection name that's not in the
+| cached connection list. The "yes" setting is useful
+| during development when you might be adding new
+| <connection> definitions to the file while the
+| servlet is running. Set to "no" to avoid reloading
+| the connection definition file when a connection name
+| is not found in the in-memory cache.
+|
++-->
+
+<reload-connections-on-error>yes</reload-connections-on-error>
+
+<!--
+|
+| Set the default value of the Row Fetch Size
+| for retrieving information from SQL queries
+| from the database. Only takes effect if you
+| are using the Oracle JDBC Driver, otherwise
+| the setting is ignored. Useful for reducing
+| network roundtrips to the database from
+| the servlet engine running in a different tier.
+|
+| <default-fetch-size>50</default-fetch-size>
+|
++-->
+
+<default-fetch-size>50</default-fetch-size>
+
+<!--
+|
+| Set the size of the XSQL LRU Cache for cached
+| XSQL Page results. This determines the maximum
+| number of result fragments that will be cached.
+| Least recently used fragments get "bumped" out
+| of the cache if you go beyond this number.
+|
+| <result-cache-size>25</result-cache-size>
+|
++-->
+
+<result-cache-size>50</result-cache-size>
+
+<!--
+|
+| Set the size of the XSQL LRU Cache for XSQL Pages
+| This determines the maximum number of XSQL pages
+| that will be cached. Least recently used pages get
+| "bumped" out of the cache if you go beyond this number.
+|
+| <page-cache-size>25</page-cache-size>
+|
++-->
+
+<page-cache-size>25</page-cache-size>
+
+<!--
+|
+| Set the value of the XSQL LRU Cache for XSL Stylesheets.
+| This determines the maximum number of stylesheets
+| that will be cached. Least recently used sheets get
+| "bumped" out of the cache if you go beyond this number.
+|
+| <stylesheet-cache-size>25</stylesheet-cache-size>
+|
++-->
+
+<stylesheet-cache-size>25</stylesheet-cache-size>
+
+<!--
+|
+| Set the parameters controlling stylesheet pools.
+|
+| Each cached stylesheet is actually a cached pool
+| of stylesheet instances. These values control
+| The initial number of stylesheet instances in the
+| pool, the number that will be added/incremented
+| when under-load the pool must be grown, and
+| the number of seconds that must transpire without
+| activity before a stylesheet instance will be
+| dropped out of the pool to shrink it back towards
+| its initial number.
+|
+| <stylesheet-pool>
+| <initial>1</initial>
+| <increment>1</increment>
+| <timeout-seconds>60</timeout-seconds>
+| </stylesheet-pool>
+|
++-->
+
+<stylesheet-pool>
+<initial>1</initial>
+<increment>1</increment>
+<timeout-seconds>60</timeout-seconds>
+</stylesheet-pool>
+
+<!--
+|
+| Set the parameters controlling database connection pools.
+|
+| When used, each named connection defined can have a pool of
+| connection instances to share among requests. These values
+| control the initial number of connection instances in the pool,
+| the number that will be added/incremented when under-load the
+| pool must be grown, and the number of seconds that must
+| transpire without activity before a stylesheet instance will be
+| dropped out of the pool to shrink it back towards its initial
+| number.
+|
+| If the "dump-allowed" element has the value "yes"
+| then a browser-based status report that dumps the
+| current state of the connection pools is enabled.
+|
+| <connection-pool>
+| <initial>2</initial>
+| <increment>1</increment>
+| <timeout-seconds>60</timeout-seconds>
+| <dump-allowed>no</dump-allowed>
+| </connection-pool>
+|
++-->
+
+<connection-pool>
+<initial>2</initial>
+<increment>1</increment>
+<timeout-seconds>60</timeout-seconds>
+<dump-allowed>no</dump-allowed>
+</connection-pool>
+
+<connection-manager>
+<!--
+| To revert to using the default XSQL pages connection manager, change
+| the <factory> setting in this file to look like this:
+|
+| <factory>oracle.xml.xsql.XSQLConnectionManagerFactoryImpl</factory>
+|
+| For improved maintainability, by default JDeveloper configures the
+| alternative XSQL connection manager that uses the connections defined
+| in the Oracle Application server as JDBC datasources. Using Oracle's
+| application server, you can refer to the connection using the name
+| of the datasource you have configured which you want to use. Using
+| other application servers (e.g. Apache Tomcat), you may need to
+| define a resource reference in your web.xml like this:
+|
+| <resource-ref>
+| <res-ref-name>jdbc/YourDesiredConnectionName</res-ref-name>
+| <res-type>javax.sql.DataSource</res-type>
+| <res-auth>Container</res-auth>
+| </resource-ref>
+|
+| and then map this portable JNDI resource name
+| "jdbc/YourDesiredConnectionName" to an appropriate datasource's
+| JNDI name using an application-server-specific resource mapping
+| mechanism. In this case, your XSQL page's connection attribute
+| will need to look like:
+|
+| connection="java:comp/env/jdbc/YourDesiredConnectionName"
+|
+| NOTE: If you are connecting to a datasource that uses a JDBC
+| ==== driver other than the Oracle JDBC driver (or one that
+| implements the oracle.jdbc.* driver interfaces), then
+| you will need to use the third XSQL connection manager
+| factory name of oracle.xml.xsql.XSQLDatasourceConnectionManager
+| instead.
+|
++-->
+<factory>oracle.xml.xsql.XSQLOracleDatasourceConnectionManager</factory>
+</connection-manager>
+
+<!--
+|
+| Include timing information (in Milliseconds)
+|
+| <timing-info>
+| <page>yes</page>
+| <action>yes</action>
+| </timing-info>
+|
++-->
+
+<timing-info>
+<page>no</page>
+<action>no</action>
+</timing-info>
+
+<!--
+|
+| Security Settings
+|
++-->
+<security>
+<stylesheet>
+
+<!--
+|
+| This setting controls whether by default a client
+| request can override the XSLT stylesheet in the
+| URL by providing a value for the special
+| "xml-stylesheet" parameter.
+|
+| This default setting can be explicitly overridden
+| in any given XSQL page by including the attribute:
+|
+| allow-client-style="yes|no"
+|
+| on the document element of the page. If this
+| attribute is provided, its value takes precedence
+| over the default setting given here.
+|
+| Versions of XSQL prior to 1.0.4 hard-coded this
+| default value to "yes", meaning that if not otherwise
+| specified in the XSQL page, it was allowed for a
+| client to supply the "xml-stylesheet" parameter and
+| have it take effect. For upward compatibility, this
+| setting comes set to "yes" by default.
+|
+| To switch the default setting to DISALLOW any
+| client stylesheet overrides wherever no specifically
+| indicated with the allow-client-style="yes|no"
+| attribute, change the default "yes" setting below to:
+|
+| <defaults>
+| <allow-client-style>no</allow-client-style>
+| </defaults>
+|
+| This setting is useful to default to "yes" during development
+| of an application, so that the helpful xml-stylesheet=none
+| can be supplied when needed, but to change to "no" when
+| the system goes production.
+|
++-->
+<defaults>
+<allow-client-style>yes</allow-client-style>
+</defaults>
+
+<!--
+| Processing XSLT stylesheets using *RELATIVE*
+| URL's is the preferred and safest way to do
+| server-side XSLT transformations.
+|
+| If the XSQL Page Processor attempts to process
+| an XSLT stylesheet from an absolute URL, it MUST
+| be from a URL that points to a trusted host.
+| To include a host (by IP address or machine name)
+| in the list of trusted hosts, add it as a <host>
+| element below like this:
+|
+| <trusted-hosts>
+| <host>wumpus</host>
+| <host>131.35.100.218</host>
+| </trusted-hosts>
+|
+| To allow all hosts (a potential security risk),
+| add the entry:
+|
+| <host>*</host>
+|
+| to the <trusted-hosts> list.
+|
+| By default, only the local host machine 127.0.0.1
+| is allowed. It is allowed whether or not it appears
+| in the list below.
++-->
+<trusted-hosts>
+<host>127.0.0.1</host>
+</trusted-hosts>
+</stylesheet>
+</security>
+
+<!--
+| Sets the default OWA Page Buffer fetch style
+| used by the <xsql:include-owa> action
+| Valid values are CLOB or TABLE.
+|
+| If set to CLOB, the processor uses temporary
+| CLOB to retrieve the OWA page buffer.
+|
+| If set to TABLE the processor uses a more
+| efficient approach that requires the existence
+| of the Oracle user-defined type named
+| XSQL_OWA_ARRAY defined using the DDL statement:
+|
+| CREATE TYPE xsql_owa_array AS TABLE OF VARCHAR2(32767)
+|
++-->
+<owa>
+<fetch-style>CLOB</fetch-style>
+</owa>
+</processor>
+
+<!--
+|
+| This section defines HTTP Proxy Server name
+| and port for use by the <xsql:include-xml>
+| action. If you intend to use <xsql:include-xml>
+| to include XML from URL's outside a firewall,
+| uncomment the:
+|
+| <http>
+| <proxyhost>your-proxy-server.yourcompany.com</proxyhost>
+| <proxyport>80</proxyport>
+| </http>
+|
+| section below and change the proxyhost and proxyport
+| as appropriate. If left commented out, then the XSQL
+| Page processor does not use a proxy server.
+|
++-->
+
+<!--
+
+<http>
+<proxyhost>your-proxy-server.yourcompany.com</proxyhost>
+<proxyport>80</proxyport>
+</http>
+
+-->
+
+<!--
+|
+| This section defines convenient "nicknames" for
+| one or more database connections. You can include
+| any number of <connection> elements inside of
+| the <connectiondefs> element. XSQL Pages refer to
+| these connections by their name in the "connection"
+| attribute on the document element of the page.
+|
+| Specifying an <autocommit> child element allows you
+| to control the setting of the JDBC auto-commit for
+| any connection. If *NO* <autocommit> child element
+| is specified for a <connection>, then the autocommit
+| setting will not be specifically set by the XSQL page
+| processor's connection manager and thus will default
+| to the JDBC driver's default auto-commit setting. The
+| valid values for the <autocommit> child element of
+| a <connection> element are <autocommit>false</autocommit>
+| or <autocommit>true</autocommit>
+|
++-->
+
+<connectiondefs>
+
+<connection name="demo">
+<username>scott</username>
+<password>tiger</password>
+<dburl>jdbc:oracle:thin:@localhost:1521:ORCL</dburl>
+<driver>oracle.jdbc.driver.OracleDriver</driver>
+<autocommit>true</autocommit>
+</connection>
+<connection name="xmlbook">
+<username>xmlbook</username>
+<password>xmlbook</password>
+<dburl>jdbc:oracle:thin:@localhost:1521:ORCL</dburl>
+<driver>oracle.jdbc.driver.OracleDriver</driver>
+<autocommit>true</autocommit>
+</connection>
+<connection name="lite">
+<username>system</username>
+<password>manager</password>
+<dburl>jdbc:Polite:POlite</dburl>
+<driver>oracle.lite.poljdbc.POLJDBCDriver</driver>
+</connection>
+
+</connectiondefs>
+
+<!--
+|
+| This section registers pre-defined element names and
+| handler classes for user-defined XSQL page actions
+|
+| The section looks like:
+|
+| <actiondefs>
+| <action>
+| <elementname>myAction</elementname>
+| <handlerclass>mypackage.MyActionHandler</handlerclass>
+| </action>
+| :
+| </actiondefs>
+|
+| Action Handler classes must implement the interface
+| oracle.xml.xsql.XSQLActionHandler.
+|
+| Once registered here, user-defined actions can be
+| used in the same way as built-in XSQL actions, for example
+| including the <xsql:myAction> element in your page.
+|
++-->
+<actiondefs>
+<action>
+<elementname>param</elementname>
+<handlerclass>oracle.xml.xsql.actions.ExampleGetParameterHandler</handlerclass>
+</action>
+<action>
+<elementname>current-date</elementname>
+<handlerclass>oracle.xml.xsql.actions.ExampleCurrentDBDateHandler</handlerclass>
+</action>
+</actiondefs>
+
+<!--
+|
+| This section registers pre-defined names and handler classes
+| for serializers.
+|
+| The section looks like:
+|
+| <serializerdefs>
+| <serializer>
+| <name>myAction</name>
+| <class>mypackage.MyActionHandler</class>
+| </serializer>
+| :
+| </serializerdefs>
+|
+| Serializer classes must implement the interface
+| oracle.xml.xsql.XSQLDocumentSerializer.
+|
+| Once registered here, serializers can be used
+| in the serializer="XXX" attribute of an <?xml-stylesheet?>
+| processing instruction at the top of your XSQL pages.
+|
++-->
+<serializerdefs>
+<serializer>
+<name>Sample</name>
+<class>oracle.xml.xsql.serializers.XSQLSampleSerializer</class>
+</serializer>
+<serializer>
+<name>FOP</name>
+<class>oracle.xml.xsql.serializers.XSQLFOPSerializer</class>
+</serializer>
+</serializerdefs>
+
+</XSQLConfig>

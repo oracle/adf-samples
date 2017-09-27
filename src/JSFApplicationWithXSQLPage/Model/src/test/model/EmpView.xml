@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmpView"
+   SelectList="Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.JOB, 
+       Emp.MGR, 
+       Emp.HIREDATE, 
+       Emp.SAL, 
+       Emp.COMM, 
+       Emp.DEPTNO"
+   FromList="EMP Emp"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   ComponentClass="test.model.EmpViewImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <Properties>
+      <Property Name ="XML_EXPLICIT_NULL" Value ="true" />
+   </Properties>
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.40.66" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="Emp"
+      Entity="test.model.Emp" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Empno"
+      IsNotNull="true"
+      EntityAttrName="Empno"
+      EntityUsage="Emp"
+      AliasName="EMPNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ename"
+      EntityAttrName="Ename"
+      EntityUsage="Emp"
+      AliasName="ENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Job"
+      EntityAttrName="Job"
+      EntityUsage="Emp"
+      AliasName="JOB" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Mgr"
+      EntityAttrName="Mgr"
+      EntityUsage="Emp"
+      AliasName="MGR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Hiredate"
+      EntityAttrName="Hiredate"
+      EntityUsage="Emp"
+      AliasName="HIREDATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sal"
+      EntityAttrName="Sal"
+      EntityUsage="Emp"
+      AliasName="SAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Comm"
+      EntityAttrName="Comm"
+      EntityUsage="Emp"
+      AliasName="COMM" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Deptno"
+      EntityAttrName="Deptno"
+      EntityUsage="Emp"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+</ViewObject>
