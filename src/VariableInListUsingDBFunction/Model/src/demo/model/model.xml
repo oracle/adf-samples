@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<JboPackage
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="model"
+   Version="11.1.1.56.60"
+   SeparateXMLFiles="true"
+   PackageName="demo.model" >
+   <Containee
+      Name="AppModule"
+      FullName="demo.model.AppModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="Dept"
+      FullName="demo.model.Dept"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="DeptView"
+      FullName="demo.model.DeptView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="DeptView2"
+      FullName="demo.model.DeptView2"
+      ObjectType="ViewObject"/>
+   <Containee
+      Name="DeptView3"
+      FullName="demo.model.DeptView3"
+      ObjectType="ViewObject"/>
+</JboPackage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptView2"
+  Version="11.1.1.56.60"
+  SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+  FromList="DEPT Dept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Where="DNAME IN (SELECT * FROM TABLE(CAST(in_varchar2_list(:CommaSeparatedListOfDname) as varchar2_table)))">
+  <Variable
+    Name="CommaSeparatedListOfDname"
+    Kind="where"
+    Type="java.lang.String"/>
+  <EntityUsage
+    Name="Dept"
+    Entity="demo.model.Dept"/>
+  <ViewAttribute
+    Name="Deptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Dept"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="Dept"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="Dept"
+    AliasName="LOC"/>
+</ViewObject>
