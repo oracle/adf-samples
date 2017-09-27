@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="TestPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:selectOneChoice autoSubmit="true" id="dropdown"
+                              label="Occurrence Dropdown:"
+                              value="#{TestPage.mode}"
+                              valueChangeListener="#{TestPage.onOccurrenceDropdownValueChanged}"
+                              unselectedLabel="&lt;Choose>" required="false">
+            <af:selectItem label="One-Time" value="1"/>
+            <af:selectItem label="Recurring" value="2"/>
+          </af:selectOneChoice>
+          <af:panelGroup partialTriggers="dropdown">
+            <af:panelBox text="One Time PanelBox for Dropdown"
+                         rendered="#{TestPage.mode == 1}">
+              <af:outputText value="Something in the one-time box"/>
+              <af:commandButton text="Button1"
+                                action="#{TestPage.onButton1Clicked}"/>
+              <af:inputText label="Field1" value="#{TestPage.name1}"/>
+              <h:commandButton value="Button1"
+                               action="#{TestPage.onButton1Clicked}"/>
+            </af:panelBox>
+            <af:panelBox text="Recurring PanelBox for Dropdown"
+                         rendered="#{TestPage.mode == 2}">
+              <af:outputText value="Something in the recurring box"/>
+              <af:commandButton text="Button2"
+                                action="#{TestPage.onButton2Clicked}"/>
+              <af:inputText label="Field2" value="#{TestPage.name2}"/>
+              <h:commandButton value="Button2"
+                               action="#{TestPage.onButton2Clicked}"/>
+            </af:panelBox>
+          </af:panelGroup>
+          <af:selectOneRadio label="Occurrence Radio:" value="#{TestPage.mode2}"
+                             id="radio" autoSubmit="true"
+                             valueChangeListener="#{TestPage.onOccurrenceRadioValueChanged}"
+                             required="false">
+            <af:selectItem label="One-Time" value="1"/>
+            <af:selectItem label="Recurring" value="2"/>
+          </af:selectOneRadio>
+          <af:panelGroup partialTriggers="radio">
+            <af:panelBox text="One Time PanelBox for Radio"
+                         rendered="#{TestPage.mode2 == 1}">
+              <af:outputText value="Something in the one-time box"/>
+              <af:commandButton text="Button3"
+                                action="#{TestPage.onButton3Clicked}"/>
+              <af:inputText label="Field3" value="#{TestPage.name3}"/>
+              <h:commandButton value="Button3"
+                               action="#{TestPage.onButton3Clicked}"/>
+            </af:panelBox>
+            <af:panelBox text="Recurring PanelBox for Radio"
+                         rendered="#{TestPage.mode2 == 2}">
+              <af:outputText value="Something in the recurring box"/>
+              <af:commandButton text="Button4"
+                                action="#{TestPage.onButton4Clicked}"/>
+              <af:inputText label="Field4" value="#{TestPage.name4}"/>
+              <h:commandButton value="Button4"
+                               action="#{TestPage.onButton4Clicked}"/>
+            </af:panelBox>
+          </af:panelGroup>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TestPage-->
+</jsp:root>
