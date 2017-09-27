@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="AppModuleLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott_local</JDBCName>
+         <jbo.project>Model</jbo.project>
+         <jbo.locking.mode>optimistic</jbo.locking.mode>
+         <AppModuleJndiName>test.model.AppModule</AppModuleJndiName>
+         <ApplicationName>test.model.AppModule</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott_local">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="scott"/>
+      <ENTRY name="ConnectionName" value="scott_local"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="password">
+         <![CDATA[{904}0568F08A50F3EB05C04A62342C99720B09]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

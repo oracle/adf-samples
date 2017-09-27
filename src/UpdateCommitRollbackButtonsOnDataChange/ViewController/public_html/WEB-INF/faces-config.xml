@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+  <lifecycle>
+    <phase-listener>oracle.adf.controller.faces.lifecycle.ADFPhaseListener</phase-listener>
+  </lifecycle>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+  <managed-bean>
+    <managed-bean-name>Departments</managed-bean-name>
+    <managed-bean-class>test.view.backing.Departments</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>bindings</property-name>
+      <value>#{bindings}</value>
+    </managed-property>
+  </managed-bean>
+</faces-config>

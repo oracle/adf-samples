@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Departments">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.DeptView1.collectionModel}" var="row"
+                    rows="#{bindings.DeptView1.rangeSize}"
+                    first="#{bindings.DeptView1.rangeStart}"
+                    emptyText="#{bindings.DeptView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.DeptView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.DeptView1.collectionModel.makeCurrent}">
+            <af:column sortProperty="Deptno" sortable="false"
+                       headerText="#{bindings.DeptView1.labels.Deptno}">
+              <af:inputText value="#{row.Deptno}"
+                            required="#{bindings.DeptView1.attrDefs.Deptno.mandatory}"
+                            columns="#{bindings.DeptView1.attrHints.Deptno.displayWidth}"
+                            valueChangeListener="#{Departments.onDeptnoDnameOrLocValueChange}"
+                            autoSubmit="true">
+                <f:convertNumber groupingUsed="false"
+                                 pattern="#{bindings.DeptView1.formats.Deptno}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="Dname" sortable="false"
+                       headerText="#{bindings.DeptView1.labels.Dname}">
+              <af:inputText value="#{row.Dname}" simple="true"
+                            required="#{bindings.DeptView1.attrDefs.Dname.mandatory}"
+                            columns="#{bindings.DeptView1.attrHints.Dname.displayWidth}"
+                            valueChangeListener="#{Departments.onDeptnoDnameOrLocValueChange}"
+                            autoSubmit="true"/>
+            </af:column>
+            <af:column sortProperty="Loc" sortable="false"
+                       headerText="#{bindings.DeptView1.labels.Loc}">
+              <af:inputText value="#{row.Loc}" simple="true"
+                            required="#{bindings.DeptView1.attrDefs.Loc.mandatory}"
+                            columns="#{bindings.DeptView1.attrHints.Loc.displayWidth}"
+                            valueChangeListener="#{Departments.onDeptnoDnameOrLocValueChange}"
+                            autoSubmit="true"/>
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and" autoSubmit="true">
+                <af:commandButton text="Submit"/>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+          <af:panelForm>
+            <f:facet name="footer">
+              <af:panelButtonBar>
+                <af:outputText value="#{bindings.Commit.dataControl.transactionDirty}" partialTriggers="createButton deleteButton"/>
+                <af:commandButton
+                                  text="Create"
+                                  disabled="#{!bindings.Create.enabled}"
+                                  id="createButton"
+                                  actionListener="#{bindings.Create.execute}"/>
+                <af:commandButton
+                                  text="Delete"
+                                  disabled="#{!bindings.Delete.enabled}"
+                                  id="deleteButton"
+                                  actionListener="#{bindings.Delete.execute}"/>
+                <af:commandButton actionListener="#{bindings.First.execute}"
+                                  text="First"
+                                  disabled="#{!bindings.First.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                  text="Previous"
+                                  disabled="#{!bindings.Previous.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Next.execute}"
+                                  text="Next"
+                                  disabled="#{!bindings.Next.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Last.execute}"
+                                  text="Last"
+                                  disabled="#{!bindings.Last.enabled}"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Commit"
+                                  disabled="#{!bindings.Commit.dataControl.transactionDirty}"
+                                  partialTriggers="createButton deleteButton"
+                                  binding="#{Departments.commitButton}"/>
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Rollback"
+                                  disabled="#{!bindings.Rollback.dataControl.transactionDirty}"
+                                  partialTriggers="createButton deleteButton"
+                                  immediate="true"
+                                  binding="#{Departments.rollbackButton}">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </af:panelButtonBar>
+            </f:facet>
+          </af:panelForm>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>
