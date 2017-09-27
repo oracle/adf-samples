@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="TestModule"
+   ComponentClass="test.TestModuleImpl"
+   ComponentInterface="test.common.TestModule"
+   ClientProxyName="test.client.TestModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.39.84" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="Departments"
+      ViewObjectName="test.DeptView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Employees"
+      ViewObjectName="test.EmpView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="WorksInDeptLink1"
+      ViewLinkObjectName="test.WorksInDeptLink"
+      SrcViewUsageName="test.TestModule.Departments"
+      DstViewUsageName="test.TestModule.Employees" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.3.39.84" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>
