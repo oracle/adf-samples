@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="EmpModuleLocal">
+         <AppModuleJndiName>mydemo.model.EmpModule</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <ApplicationName>mydemo.model.EmpModule</ApplicationName>
+         <jbo.project>Project</jbo.project>
+      </AppModuleConfig>
+      <AppModuleConfig name="DeptModuleLocal">
+         <AppModuleJndiName>mydemo.model.DeptModule</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <ApplicationName>mydemo.model.DeptModule</ApplicationName>
+         <jbo.project>Project</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="adt-scaler1.us.oracle.com"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="smuench"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="adt1010"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05D0EE07ADEA23B01D7F5F3DF124B82DBC]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="DeptModule"
+   ComponentClass="mydemo.model.DeptModuleImpl" >
+   <Properties>
+      <Property Name ="DeptView1" Value ="mydemo.model.WorksInDeptLink,EmpModule1.EmpView1" />
+   </Properties>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_superClassName" Value="mydemo.fwkext.ExtendedApplicationModuleImpl" />
+   </DesignTime>
+   <ViewUsage
+      Name="DeptView1"
+      ViewObjectName="mydemo.model.DeptView" >
+   </ViewUsage>
+   <AppModuleUsage
+      Name="EmpModule1"
+      FullName="mydemo.model.EmpModule" >
+   </AppModuleUsage>
+</AppModule>
