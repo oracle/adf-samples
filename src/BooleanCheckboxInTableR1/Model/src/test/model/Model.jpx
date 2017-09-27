@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.1.57.22"
+  SeparateXMLFiles="true"
+  PackageName="test.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../Model.jpr"/>
+    <Attr Name="_NamedConnection" Value="ApplicationDB"/>
+    <Attr Name="_appModuleNames0" Value="test.model.AppModule"/>
+    <Attr Name="_jbo.TypeMapEntries"
+      Value="oracle.jbo.common.OracleAppsTypeMapEntries"/>
+    <Attr Name="_appModuleNames1"
+      Value="test.model.applicationModule.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="applicationModule"
+    PackageName="test.model.applicationModule"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entity"
+    PackageName="test.model.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="model"
+    PackageName="test.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="test.model.view"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

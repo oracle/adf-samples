@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptWithFlagView"
+  Version="11.1.1.54.7"
+  SelectList="DeptWithFlag.DEPTNO, 
+       DeptWithFlag.DNAME, 
+       DeptWithFlag.LOC, 
+       DeptWithFlag.FLAG"
+  FromList="DEPT_WITH_FLAG DeptWithFlag"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="DeptWithFlag"
+    Entity="test.model.DeptWithFlag"/>
+  <ViewAttribute
+    Name="Deptno"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="DeptWithFlag"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="DeptWithFlag"
+    AliasName="DNAME"/>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="DeptWithFlag"
+    AliasName="LOC"/>
+  <ViewAttribute
+    Name="Flag"
+    PrecisionRule="true"
+    EntityAttrName="Flag"
+    EntityUsage="DeptWithFlag"
+    AliasName="FLAG"/>
+</ViewObject>

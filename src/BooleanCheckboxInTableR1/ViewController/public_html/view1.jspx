@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                          text="Commit" disabled="false"
+                          id="cb1"/>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                          text="Rollback"
+                          disabled="false"
+                          immediate="true" id="cb2">
+          <af:resetActionListener/>
+        </af:commandButton>
+        <af:table value="#{bindings.ZcxDeptView1.collectionModel}" var="row"
+                  rows="#{bindings.ZcxDeptView1.rangeSize}"
+                  emptyText="#{bindings.ZcxDeptView1.viewable ? applcoreBundle.TABLE_EMPTY_TEXT_NO_ROWS_YET : applcoreBundle.TABLE_EMPTY_TEXT_ACCESS_DENIED}"
+                  fetchSize="#{bindings.ZcxDeptView1.rangeSize}"
+                            selectedRowKeys="#{bindings.ZcxDeptView1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.ZcxDeptView1.collectionModel.makeCurrent}"                  rowBandingInterval="0" id="t1" rowSelection="single">
+          <af:column sortProperty="Deptno" sortable="false"
+                     headerText="#{bindings.ZcxDeptView1.hints.Deptno.label}"
+                     id="c3">
+            <af:inputText value="#{row.bindings.Deptno.inputValue}"
+                          label="#{bindings.ZcxDeptView1.hints.Deptno.label}"
+                          required="#{bindings.ZcxDeptView1.hints.Deptno.mandatory}"
+                          columns="#{bindings.ZcxDeptView1.hints.Deptno.displayWidth}"
+                          maximumLength="#{bindings.ZcxDeptView1.hints.Deptno.precision}"
+                          shortDesc="#{bindings.ZcxDeptView1.hints.Deptno.tooltip}"
+                          id="it2">
+              <f:validator binding="#{row.bindings.Deptno.validator}"/>
+              <af:convertNumber pattern="#{applCorePrefs.numberFormatPattern}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="Dname" sortable="false"
+                     headerText="#{bindings.ZcxDeptView1.hints.Dname.label}"
+                     id="c1">
+            <af:inputText value="#{row.bindings.Dname.inputValue}"
+                          label="#{bindings.ZcxDeptView1.hints.Dname.label}"
+                          required="#{bindings.ZcxDeptView1.hints.Dname.mandatory}"
+                          columns="#{bindings.ZcxDeptView1.hints.Dname.displayWidth}"
+                          maximumLength="#{bindings.ZcxDeptView1.hints.Dname.precision}"
+                          shortDesc="#{bindings.ZcxDeptView1.hints.Dname.tooltip}"
+                          id="it1">
+              <f:validator binding="#{row.bindings.Dname.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="BooleanTestFld" sortable="false"
+                     headerText="#{bindings.ZcxDeptView1.hints.BooleanTestFld.label}"
+                     id="c2">
+            <af:selectBooleanCheckbox value="#{row.bindings.BooleanTestFld.inputValue}"
+                                      label="#{row.bindings.BooleanTestFld.label}"
+                                      shortDesc="#{bindings.ZcxDeptView1.hints.BooleanTestFld.tooltip}"
+                                      id="sbc1" autoSubmit="true"/>
+          </af:column>
+        </af:table>
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.Deptno.inputValue}"
+                        label="#{bindings.Deptno.hints.label}"
+                        required="#{bindings.Deptno.hints.mandatory}"
+                        columns="#{bindings.Deptno.hints.displayWidth}"
+                        maximumLength="#{bindings.Deptno.hints.precision}"
+                        shortDesc="#{bindings.Deptno.hints.tooltip}" id="it4">
+            <f:validator binding="#{bindings.Deptno.validator}"/>
+            <af:convertNumber pattern="#{applCorePrefs.numberFormatPattern}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Dname.inputValue}"
+                        label="#{bindings.Dname.hints.label}"
+                        required="#{bindings.Dname.hints.mandatory}"
+                        columns="#{bindings.Dname.hints.displayWidth}"
+                        maximumLength="#{bindings.Dname.hints.precision}"
+                        shortDesc="#{bindings.Dname.hints.tooltip}" id="it3">
+            <f:validator binding="#{bindings.Dname.validator}"/>
+          </af:inputText>
+          <af:selectBooleanCheckbox value="#{bindings.BooleanTestFld.inputValue}"
+                                    label="#{bindings.BooleanTestFld.label}"
+                                    shortDesc="#{bindings.BooleanTestFld.hints.tooltip}"
+                                    id="sbc2" autoSubmit="true"/>
+        </af:panelFormLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
