@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="AddPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:panelPage title="Add New Contact">
+            <f:facet name="menu1"/>
+            <f:facet name="menuGlobal"/>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <af:panelForm>
+              <af:inputText value="#{bindings.email.inputValue}"
+                            label="#{bindings.email.label}"
+                            required="#{bindings.email.mandatory}"
+                            columns="#{bindings.email.displayWidth}">
+                <af:validator binding="#{bindings.email.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.name.inputValue}"
+                            label="#{bindings.name.label}"
+                            required="#{bindings.name.mandatory}"
+                            columns="#{bindings.name.displayWidth}">
+                <af:validator binding="#{bindings.name.validator}"/>
+              </af:inputText>
+            </af:panelForm>
+            <af:panelButtonBar>
+              <af:commandButton text="OK"
+                                disabled="#{!bindings.addContact.enabled}"
+                                action="#{AddPage.onClickOK}"/>
+              <af:commandButton text="Cancel" action="BackToList"
+                                immediate="true"/>
+            </af:panelButtonBar>
+            <f:facet name="messages">
+              <af:messages/>
+            </f:facet>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="ListPage">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <h:form>
+          <af:panelPage title="Contact List">
+            <f:facet name="menu1">
+              <af:commandLink text="Try Find or Merge Page"
+                              action="TryFindMerge" immediate="true"/>
+            </f:facet>
+            <f:facet name="menuGlobal"/>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <af:panelForm>
+              <af:inputText value="#{UserInfo.nameSearch}"
+                            label="Search by Name:" columns="15"/>
+              <f:facet name="footer">
+                <af:commandButton actionListener="#{bindings.findContactsByName.execute}"
+                                  text="Search"
+                                  disabled="#{!bindings.findContactsByName.enabled}"/>
+              </f:facet>
+            </af:panelForm>
+            <af:objectSeparator/>
+            <af:commandButton text="Add New Contact" action="Add"/>
+            <af:table value="#{bindings.findContactsByName1.collectionModel}"
+                      var="row" rows="#{bindings.findContactsByName1.rangeSize}"
+                      first="#{bindings.findContactsByName1.rangeStart}"
+                      emptyText="#{bindings.findContactsByName1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      selectionState="#{bindings.findContactsByName1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.findContactsByName1.collectionModel.makeCurrent}">
+              <f:facet name="selection">
+                <af:tableSelectOne text="Select Contact to...">
+                  <af:commandButton text="Edit" action="Edit"/>
+                  <af:commandButton text="Remove"
+                                    disabled="#{!bindings.removeContact.enabled}"
+                                    action="#{ListPage.onClickRemoveContact}"/>
+                </af:tableSelectOne>
+              </f:facet>
+              <af:column sortProperty="name" sortable="true"
+                         headerText="#{bindings.findContactsByName1.labels.name}">
+                <af:outputText value="#{row.name}"/>
+              </af:column>
+              <af:column sortProperty="email" sortable="true"
+                         headerText="#{bindings.findContactsByName1.labels.email}">
+                <af:outputText value="#{row.email}"/>
+              </af:column>
+              <af:column sortProperty="updated" sortable="true"
+                         headerText="#{bindings.findContactsByName1.labels.updated}"
+                         noWrap="true">
+                <af:outputText value="#{row.updated}">
+                  <f:convertDateTime pattern="#{bindings.findContactsByName1.formats.updated}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <f:facet name="messages">
+              <af:messages/>
+            </f:facet>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

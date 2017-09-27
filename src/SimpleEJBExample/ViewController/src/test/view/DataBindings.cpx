@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="10.1.3.40.66" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <pageMap>
+    <page path="/ListPage.jspx" usageId="ListPagePageDef"/>
+    <page path="/EditPage.jspx" usageId="EditPagePageDef"/>
+    <page path="/AddPage.jspx" usageId="AddPagePageDef"/>
+    <page path="/FindOrMergePage.jspx" usageId="FindOrMergePagePageDef"/>
+    <page path="/NewAddPage.jspx" usageId="NewAddPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ListPagePageDef" path="test.view.pageDefs.ListPagePageDef"/>
+    <page id="EditPagePageDef" path="test.view.pageDefs.EditPagePageDef"/>
+    <page id="AddPagePageDef" path="test.view.pageDefs.AddPagePageDef"/>
+    <page id="FindOrMergePagePageDef"
+          path="test.view.pageDefs.FindOrMergePagePageDef"/>
+    <page id="NewAddPagePageDef" path="test.view.pageDefs.NewAddPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="MyServiceLocal" path="test.model.MyServiceLocal"/>
+  </dataControlUsages>
+</Application>

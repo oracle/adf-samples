@@ -1,0 +1,4 @@
+<MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf"
+                   version="10.1.3.40.66">
+  <DataControlRegistry path="test/model/DataControls.dcx"/>
+</MetadataDirectory>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.40.66" id="AddPagePageDef"
+                Package="test.view.pageDefs" ControllerClass="#{AddPage}">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="Contact" id="invokeContact" Refresh="renderModel"
+                  RefreshCondition="${!adfFacesContext.postback and empty bindings.exceptionsList}"/>
+    <methodIterator DataControl="MyServiceLocal" BeanClass="test.model.Contact"
+                    Binds="Contact.result" id="ContactIter"
+                    Refresh="renderModel"
+                    RefreshCondition="${!adfFacesContext.postback and empty bindings.exceptionsList}"/>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction DataControl="MyServiceLocal" id="Contact" MethodName="Contact"
+                  RequiresUpdateModel="true" Action="999"
+                  IsViewObjectMethod="false"
+                  ReturnName="MyServiceLocal.methodResults.MyServiceLocal_Contact_result"
+                  ClassName="test.model.Contact"/>
+    <attributeValues id="email" IterBinding="ContactIter">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="name" IterBinding="ContactIter">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="addContact" InstanceName="MyServiceLocal.dataProvider"
+                  DataControl="MyServiceLocal" MethodName="addContact"
+                  RequiresUpdateModel="true" Action="999"
+                  IsViewObjectMethod="false"
+                  ReturnName="MyServiceLocal.methodResults.MyServiceLocal_dataProvider_addContact_result">
+      <NamedData NDName="c" NDValue="${bindings.Contact.result}"
+                 NDType="test.model.Contact"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

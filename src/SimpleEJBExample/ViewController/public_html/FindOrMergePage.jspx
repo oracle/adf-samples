@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="Find or Merge Page">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:panelPage title="Find or Merge Page">
+            <f:facet name="menu1">
+              <af:commandLink text="Back to List Page" action="BackToList"
+                              immediate="true">
+                <af:setActionListener from="#{true}"
+                                      to="#{requestScope.modifiedContact}"/>
+              </af:commandLink>
+            </f:facet>
+            <f:facet name="menuGlobal"/>
+            <f:facet name="branding"/>
+            <f:facet name="brandingApp"/>
+            <f:facet name="appCopyright"/>
+            <f:facet name="appPrivacy"/>
+            <f:facet name="appAbout"/>
+            <af:objectSeparator/>
+            <af:panelForm>
+              <af:inputText value="#{bindings.email.inputValue}"
+                            label="#{bindings.email.label}"
+                            columns="#{bindings.email.displayWidth}"
+                            required="true">
+                <af:validator binding="#{bindings.email.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.name.inputValue}"
+                            label="#{bindings.name.label}"
+                            required="#{bindings.name.mandatory}"
+                            columns="#{bindings.name.displayWidth}">
+                <af:validator binding="#{bindings.name.validator}"/>
+              </af:inputText>
+              <f:facet name="footer">
+                <h:panelGroup>
+                  <af:panelHorizontal valign="top">
+                    <af:commandButton text="OK"
+                                      disabled="false"
+                                      action="#{FindOrMergePage.onClickOK}"/>
+                    <af:objectSpacer width="10" height="10"/>
+                    <af:panelGroup>
+                      <af:selectBooleanCheckbox text="Clear Page Definition Variables on Submit?"
+                                                value="#{UserInfo.clearPageDefinitionVariablesOnSubmit}"/>
+                      <af:selectBooleanCheckbox text="Clear Page Definition Variables on Page Entry?"
+                                                value="#{UserInfo.clearPageDefinitionVariablesOnPageLoad}"/>
+                      <af:panelTip>
+                        <af:outputText value="Changes to these setting take effect when you click OK"/>
+                      </af:panelTip>
+                    </af:panelGroup>
+                  </af:panelHorizontal>
+                </h:panelGroup>
+              </f:facet>
+            </af:panelForm>
+            <af:panelBox text="Contact Information"
+                         rendered="#{adfFacesContext.postback}">
+              <af:panelForm>
+                <af:panelLabelAndMessage label="#{bindings.email1.label}">
+                  <af:outputText value="#{bindings.email1.inputValue}"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.name1.label}">
+                  <af:outputText value="#{bindings.name1.inputValue}"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.updated.label}">
+                  <af:outputText value="#{bindings.updated.inputValue}">
+                    <f:convertDateTime pattern="#{bindings.updated.format}"/>
+                  </af:outputText>
+                </af:panelLabelAndMessage>
+              </af:panelForm>
+            </af:panelBox>
+          </af:panelPage>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

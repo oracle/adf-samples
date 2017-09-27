@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-10_0.xsd">
+    <ejb-module path="file:/D:/jdev/home/mywork/SimpleEJBExample/Model/classes/" id="SimpleEJBExample_Model_0"/>
+    <web-module id="EJBRefreshExample" path="file:/D:/jdev/home/mywork/SimpleEJBExample/ViewController/public_html/"/>
+    <library path="D:\jdev\10133_dbg\toplink\jlib\toplink.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\toplink\jlib\toplink-oc4j.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\toplink\jlib\antlr.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\lib\xmlparserv2.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\lib\xml.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\ejb30.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\toplink\jlib\toplink-essentials.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\activation.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\ejb.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\jms.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\jta.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\mail.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\j2ee\home\lib\servlet.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\lib\adfshare.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\lib\adfm.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\lib\collections.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\jlib\adfui.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\lib\adfbinding.jar">jdev-generated</library>
+    <library path="D:\jdev\10133_dbg\BC4J\jlib\adfmtl.jar">jdev-generated</library>
+  <log>
+        <file path="SimpleEJBExample-oc4j-app.log"/>
+    </log>
+  <jazn provider="XML" location="SimpleEJBExample-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="SimpleEJBExample-data-sources.xml"/>
+</orion-application>
