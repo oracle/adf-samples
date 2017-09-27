@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <Page
+      id="Page1">
+      <property
+         name="x">279.5</property>
+      <property
+         name="jspName">/TestPage.jspx</property>
+      <property
+         name="y">64.5</property>
+   </Page>
+</SDM>

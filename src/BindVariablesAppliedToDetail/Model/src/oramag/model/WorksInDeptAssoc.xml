@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+
+<Association
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="WorksInDeptAssoc"
+   Version="11.1.1.50.92" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+   </DesignTime>
+   <AssociationEnd
+      Name="Dept"
+      Cardinality="1"
+      Source="true"
+      Owner="oramag.model.Dept" >
+      <AttrArray Name="Attributes">
+         <Item Value="oramag.model.Dept.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_finderName" Value="Dept" />
+         <Attr Name="_foreignKey" Value="oramag.model.Dept.DeptPk" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+   <AssociationEnd
+      Name="Emp"
+      Cardinality="-1"
+      Owner="oramag.model.Emp" >
+      <AttrArray Name="Attributes">
+         <Item Value="oramag.model.Emp.Deptno" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_aggregation" Value="0" />
+         <Attr Name="_finderName" Value="Emp" />
+         <Attr Name="_foreignKey" Value="oramag.model.Emp.WorksInDept" />
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </AssociationEnd>
+</Association>

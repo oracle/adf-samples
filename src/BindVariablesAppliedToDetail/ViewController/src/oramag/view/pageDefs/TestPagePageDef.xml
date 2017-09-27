@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.50.92" id="TestPagePageDef"
+                Package="oramag.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables" Refresh="ifNeeded">
+      <variable Type="oracle.jbo.domain.Number"
+                Name="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_lowSalary"
+                IsQueriable="false"/>
+      <variable Type="oracle.jbo.domain.Number"
+                Name="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_highSalary"
+                IsQueriable="false"/>
+    </variableIterator>
+    <iterator id="DepartmentsIterator" RangeSize="10" Binds="Departments"
+              DataControl="AppModuleDataControl" Refresh="ifNeeded"/>
+  </executables>
+  <bindings>
+    <methodAction id="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject"
+                  MethodName="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  IsViewObjectMethod="true" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.Departments">
+      <NamedData NDName="lowSalary" NDType="oracle.jbo.domain.Number"
+                 NDValue="${bindings.setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_lowSalary}"/>
+      <NamedData NDName="highSalary" NDType="oracle.jbo.domain.Number"
+                 NDValue="${bindings.setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_highSalary}"/>
+    </methodAction>
+    <attributeValues id="lowSalary" IterBinding="variables">
+      <AttrNames>
+        <Item Value="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_lowSalary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="highSalary" IterBinding="variables">
+      <AttrNames>
+        <Item Value="setLowHighSalaryRangeForDetailEmployeesAccessorViewObject_highSalary"/>
+      </AttrNames>
+    </attributeValues>
+    <tree id="Departments" IterBinding="DepartmentsIterator">
+      <AttrNames>
+        <Item Value="Deptno"/>
+        <Item Value="Dname"/>
+        <Item Value="Loc"/>
+      </AttrNames>
+      <nodeDefinition DefName="oramag.model.DeptView" Name="Departments.0">
+        <AttrNames>
+          <Item Value="Dname"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="EmpView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="oramag.model.EmpView" Name="Departments.1">
+        <AttrNames>
+          <Item Value="Ename"/>
+          <Item Value="Sal"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

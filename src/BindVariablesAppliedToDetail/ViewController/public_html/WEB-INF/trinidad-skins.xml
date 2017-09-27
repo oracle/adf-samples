@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+ <skin>
+  <id>suede.desktop</id>
+  <family>suede</family>
+  <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+  <style-sheet-name>skins/suede/suede.css</style-sheet-name>
+  <translation-source>#{skinTranslationMap.resourceBundle}</translation-source>
+ </skin>
+</skins>
