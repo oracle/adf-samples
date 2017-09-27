@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="SelectedEmployeesUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="getSelectedEmployeesIter"
+         SubType="DCMethodIterator"
+         Binds="getSelectedEmployees.result"
+         RangeSize="10"
+         DataControl="TestModuleDataControl" >
+      </DCIterator>
+      <DCControl
+         id="getSelectedEmployees"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="false"
+         DataControl="TestModuleDataControl"
+         InstanceName="TestModuleDataControl.dataProvider"
+         MethodName="getSelectedEmployees"
+         ReturnName="TestModuleDataControl.methodResults.TestModuleDataControl_dataProvider_getSelectedEmployees_result" >
+      </DCControl>
+      <DCControl
+         id="getSelectedEmployees1"
+         SubType="DCDynamicTable"
+         IterBinding="getSelectedEmployeesIter"
+         DTClass="oracle.adf.dt.objects.JUDTDynamicTable"
+         ApplyValidation="false"
+         isDynamic="true" >
+      </DCControl>
+   </Contents>
+</DCContainer>

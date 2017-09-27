@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="EmployeeListUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmployeeListIterator"
+         Binds="TestModuleDataControl.EmployeeList" >
+      </DCIterator>
+      <DCControl
+         id="EmployeeList"
+         SubType="DCTable"
+         IterBinding="EmployeeListIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Empno" />
+            <Item Value="Ename" />
+            <Item Value="Selected" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
