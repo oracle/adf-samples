@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="DataForm" type="oracle.adf.controller.struts.forms.BindingContainerActionForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/dataPage1" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/dataPage1.jsp">
+      <set-property property="modelReference" value="dataPage1UIModel"/>
+      <forward name="DoIt" path="/dataAction1.do"/>
+    </action>
+    <action path="/dataPage2" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/dataPage2.jsp">
+      <set-property property="modelReference" value="dataPage2UIModel"/>
+    </action>
+    <action path="/dataPage3" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/dataPage3.jsp">
+      <set-property property="modelReference" value="dataPage3UIModel"/>
+    </action>
+    <action path="/dataAction1" className="oracle.adf.controller.struts.actions.DataActionMapping" type="test.controller.RouterDataAction" name="DataForm">
+      <set-property property="modelReference" value="dataAction1UIModel"/>
+      <set-property property="methodName" value="dataAction1UIModel.nextForwardName"/>
+      <set-property property="resultLocation" value="${requestScope.methodResult}"/>
+      <set-property property="numParams" value="0"/>
+      <forward name="OneWay" path="/dataPage2.do"/>
+      <forward name="AnotherWay" path="/dataPage3.do"/>
+    </action>
+  </action-mappings>
+  <message-resources parameter="test.view.ApplicationResources"/>
+</struts-config>

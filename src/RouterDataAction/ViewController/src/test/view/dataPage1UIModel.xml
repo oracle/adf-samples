@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="dataPage1UIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="DeptView1Iterator"
+         Binds="TestModuleDataControl.DeptView1"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="DeptView1"
+         SubType="DCTable"
+         IterBinding="DeptView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Deptno" />
+            <Item Value="Dname" />
+            <Item Value="Loc" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Deptno1"
+         SubType="DCTextField"
+         IterBinding="DeptView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Deptno" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Dname1"
+         SubType="DCTextField"
+         IterBinding="DeptView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Dname" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Loc1"
+         SubType="DCTextField"
+         IterBinding="DeptView1Iterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Loc" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="First"
+         SubType="DCAction"
+         IterBinding="DeptView1Iterator"
+         Action="12"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Previous"
+         SubType="DCAction"
+         IterBinding="DeptView1Iterator"
+         Action="11"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Next"
+         SubType="DCAction"
+         IterBinding="DeptView1Iterator"
+         Action="10"
+         RequiresUpdateModel="true" >
+      </DCControl>
+      <DCControl
+         id="Last"
+         SubType="DCAction"
+         IterBinding="DeptView1Iterator"
+         Action="13"
+         RequiresUpdateModel="true" >
+      </DCControl>
+   </Contents>
+</DCContainer>
