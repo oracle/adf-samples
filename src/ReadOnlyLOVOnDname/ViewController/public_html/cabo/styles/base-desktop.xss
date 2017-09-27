@@ -1,0 +1,2530 @@
+<?xml version="1.0"?>
+
+<!--
+  base-desktop.xss defines all of the base styles that are shared
+  by the Minimal and Simple Look And Feels.
+-->
+
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style"
+                    documentVersion="2_2_20"
+                    version="2.0">
+
+<!-- 
+
+  Please Note:  We are in the processing of reviewing the set of
+  style classes/named styles that are exposed to customizers.  Thus,
+  this style sheet document is temporarily divided into
+  two sections.  
+
+  The first section contains style definitions that 
+  have been reviewed and have been determined to be suitable for
+  use by customizers.
+
+  The second section contains style definitions that are required
+  by the Minimal or Simple Look And Feel implementations, but have
+  not yet been reviewed - and thus could potentially be changed or
+  moved back down into the MLAF/SLAF style sheets.
+
+  Please keep this in mind when adding new style definitions.
+
+-->
+
+<styleSheet>
+
+  <!--
+
+    Section 1: Publically supported styles.   The styles defined in
+    this section have been reviewed and are considered suitable for use
+    by customizers.
+
+  -->
+
+  <!-- 
+    Global font named styles
+  -->
+
+  <!-- The default font family -->
+  <style name="DefaultFontFamily">
+    <property name="font-family">Arial,Helvetica,Geneva,sans-serif</property>
+  </style>
+
+  <!-- The default font -->
+  <style name="DefaultFont">
+    <includeStyle name="DefaultFontFamily"/>
+    <property name="font-size">10pt</property>
+  </style>
+
+  <!-- The default bold font -->
+  <style name="DefaultBoldFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- A very small font -->
+  <style name="VerySmallFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">-2pt</property>
+  </style>
+
+  <!-- A small font -->
+  <style name="SmallFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">-1pt</property>
+  </style>
+
+  <!-- A medium font - just slightly bigger than default -->
+  <style name="MediumFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+1pt</property>
+  </style>
+
+  <!-- A large font -->
+  <style name="LargeFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+3pt</property>
+  </style>
+
+  <!-- A very large font -->
+  <style name="VeryLargeFont">
+    <includeStyle name="DefaultFont"/>
+    <property name="font-size">+6pt</property>
+  </style>
+
+  <!-- 
+    Global background color named styles
+  -->
+
+  <!-- DarkBackground defines the primary color in the
+       core (green) color ramp. -->
+  <style name="DarkBackground">
+    <property name="background-color">#669966</property> 
+  </style>
+
+  <!-- VeryDarkBackground is the darkest color in the 
+       core (green) color ramp. -->
+  <style name="VeryDarkBackground">
+    <includeStyle name="DarkBackground"/>
+    <property name="background-color">-#333333</property>
+  </style>
+
+  <!-- MediumBackground is the middle color in the 
+       core (green) color ramp. -->
+  <style name="MediumBackground">
+    <includeStyle name="DarkBackground"/>
+    <property name="background-color">+#333333</property>
+  </style>
+
+  <!-- LightBackground is the lightest color in the 
+       core (green) color ramp. -->
+  <style name="LightBackground">
+    <includeStyle name="DarkBackground"/>
+    <property name="background-color">+#666666</property>
+  </style>
+
+  <!-- DarkAccentBackground defines the primary color in the 
+       accent (grey) color ramp.  -->
+  <style name="DarkAccentBackground">
+    <property name="background-color">#CCCCCC</property>
+  </style>
+
+  <!-- VeryDarkAccentBackground is the darkest color in the accent (grey)
+       color ramp. -->
+  <style name="VeryDarkAccentBackground">
+    <includeStyle name="DarkAccentBackground"/>
+    <property name="background-color">-#333333</property>
+  </style>
+
+  <!-- MediumAccentBackground is the middle color in the accent (grey)
+       color ramp.  -->
+  <style name="MediumAccentBackground">
+    <includeStyle name="DarkAccentBackground"/>
+    <property name="background-color">+#333300</property>
+  </style>
+
+  <!-- LightAccentBackground is the lightest color in the accent (grey)
+       color ramp. -->
+  <style name="LightAccentBackground">
+    <includeStyle name="DarkAccentBackground"/>
+    <property name="background-color">+#1D1C1C</property>
+    <!--property name="background-color">#E9E8E8</property-->
+  </style>
+
+  <!-- TextBackground is the (white) background color used for
+       most text -->
+  <style name="TextBackground">
+    <property name="background-color">#ffffff</property>
+  </style>
+
+  <!-- 
+    Global foreground color named styles
+  -->
+
+  <!-- VeryDarkForeground is the darkest foreground color in the core (green)
+       color ramp -->
+  <style name="VeryDarkForeground">
+    <includeProperty name="VeryDarkBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+
+  <!-- DarkForeground is the primary foreground color in the core (green)
+       color ramp -->
+  <style name="DarkForeground">
+    <includeProperty name="DarkBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- MediumForeground is the middle foreground color in the core (green)
+       color ramp -->
+  <style name="MediumForeground">
+    <includeProperty name="MediumBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- LightForeground is the lightest foreground color in the core (green)
+       color ramp -->
+  <style name="LightForeground">
+    <includeProperty name="LightBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- VeryDarkAccentForeground is the darkest foreground color in the
+       accent (grey) color ramp -->
+  <style name="VeryDarkAccentForeground">
+    <includeProperty name="VeryDarkAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- DarkAccentForeground is the primary foreground color in the
+       accent (grey) color ramp -->
+  <style name="DarkAccentForeground">
+    <includeProperty name="DarkAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- MediumAccentForeground is the middle foreground color in the
+       accent (grey) color ramp -->
+  <style name="MediumAccentForeground">
+    <includeProperty name="MediumAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- LightAccentForeground is the lightest foreground color in the
+       accent (grey) color ramp -->
+  <style name="LightAccentForeground">
+    <includeProperty name="LightAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- TextForeground is the (black) foreground color used for almost
+       all text in the Minimal Look And Feel -->
+  <style name="TextForeground">
+    <property name="color">#000000</property>
+  </style>
+
+  <!-- SelectedTextForeground is the (white) foreground color used for
+       "selected" text - text which is typically drawn on a dark
+       background -->
+  <style name="SelectedTextForeground">
+    <includeProperty name="TextBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- Style for error text -->
+  <style name="ErrorTextForeground">
+    <property name="color">#cc0000</property>
+  </style>
+
+  <!-- Link colors -->
+  <style name="LinkForeground">
+    <includeProperty name="DarkBackground" 
+                     propertyName="background-color" 
+                     localPropertyName="color" />
+    <property name="color">-#666633</property>
+  </style>
+
+  <style name="ActiveLinkForeground">
+    <includeStyle name="LinkForeground"/>
+    <property name="color">+#003333</property>
+  </style>
+
+  <style name="VisitedLinkForeground">
+    <includeStyle name="LinkForeground"/>
+    <property name="color">+#333333</property>
+  </style>
+
+  <style name="DisabledLinkForeground">
+    <includeStyle name="LinkForeground"/>
+    <property name="color">+#666666</property>
+  </style>
+
+  <!-- 
+    Border named sytles
+  -->
+
+  <style name="DarkBorder">
+    <includeProperty name="DarkBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>    
+
+  <style name="VeryDarkBorder">
+    <includeProperty name="VeryDarkBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>     
+
+  <style name="MediumBorder">
+    <includeProperty name="MediumBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>    
+
+  <style name="LightBorder">
+    <includeProperty name="LightBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>  
+
+  <style name="DarkAccentBorder">
+    <includeProperty name="DarkAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <style name="VeryDarkAccentBorder">
+    <includeProperty name="VeryDarkAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <style name="MediumAccentBorder">
+    <includeProperty name="MediumAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <style name="LightAccentBorder">
+    <includeProperty name="LightAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <!--
+    Alignment named styles
+  -->
+
+  <style name="StartTextAlign">
+    <property name="text-align">left</property>
+  </style>
+
+  <style name="EndTextAlign">
+    <property name="text-align">right</property>
+  </style>
+
+  <!-- Additional named styles for alignment;  not strictly necessary,
+       since these aren't actually ever overridden, but it
+       does make alignment in our XSS more obvious -->
+  <style name="LeftTextAlign">
+    <property name="text-align">left</property>
+  </style>
+
+  <style name="RightTextAlign">
+    <property name="text-align">right</property>
+  </style>
+
+  <style name="CenterTextAlign">
+    <property name="text-align">center</property>
+  </style>
+
+  <!--
+    Global text style classes
+  -->
+  <style selector=".OraInstructionText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraInstructionTextStrong">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+  
+  <style selector=".OraDataText">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraDataNumber">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="TextForeground"/>
+    <includeStyle name="RightTextAlign"/>
+  </style>
+
+  <style selector=".OraFieldText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraFieldTextDisabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+  </style>
+
+  <style selector=".OraFieldNumber">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="RightTextAlign"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraFieldNumberDisabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="RightTextAlign"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+  </style>
+
+  <style selector=".OraPromptText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="EndTextAlign"/>
+    <includeStyle name="TextForeground"/>
+    <property name="font-weight">normal</property>
+  </style>
+
+  <!-- 
+    Global Icon Styles
+  -->
+  <style selector=".OraErrorIcon">
+    <includeStyle name="ErrorTextForeground"/>
+    <property name="font-family">monospace</property>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraInfoIcon">
+    <includeStyle name="DarkForeground"/>
+    <property name="font-family">monospace</property>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraWarningIcon">
+    <includeStyle name="DarkForeground"/>
+    <property name="font-family">monospace</property>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraRequiredIcon">
+    <includeStyle name="DarkForeground"/>
+    <!-- This style is only applied to the required icon ('*'),
+         so we don't have to worry about picking a font that
+         can be used for non-English text -->
+    <property name="font-family">Courier,sans-serif</property>
+  </style>
+
+  <!--
+     Global Link Styles
+
+     Note: Keep these near the top so that .OraLink gets a
+     2 character alias.
+  -->
+
+  <style selector=".OraLink:link">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraLink:active">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="ActiveLinkForeground"/>
+  </style>
+
+  <style selector=".OraLink:visited">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="VisitedLinkForeground"/>   
+  </style>  
+
+  <style selector=".OraLinkDisabled">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <!-- 
+    ApplicationSwitcher Styles
+  -->
+
+  <style selector=".OraApplicationSwitcherText">
+    <includeStyle name="VerySmallFont"/>
+  </style>
+
+  <!--
+    Body Styles
+  -->
+
+  <style selector=".OraBody">
+    <includeStyle name="TextBackground"/>
+    <includeStyle name="DefaultFontFamily"/>
+  </style>
+
+  <!--
+    BreadCrumbs Styles
+  -->
+
+  <style selector=".OraBreadCrumbs">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraBreadCrumbs A">
+    <includeStyle name="LinkForeground"/>
+    <includeProperty name="SmallLinkFont" propertyName="font-size"/>
+  </style>
+
+  <style selector=".OraBreadCrumbsSelected A">
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!--
+    BulletedList Styles
+  -->
+  <style selector=".OraBulletedList A">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraBulletedList UL">
+    <property name="margin-top">4px</property>
+    <property name="margin-bottom">4px</property>
+  </style>
+
+  <!--
+    Button Styles
+  -->
+
+  <style selector="button">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <!-- 
+    ColorField styles 
+  -->
+  <style selector=".OraColorFieldSwatchOverlayIcon">
+    <property name="position">relative</property>
+    <property name="left">-7px</property>
+    <property name="top">5px</property>
+  </style>
+
+  <!--
+    ContentContainer Styles
+
+    Note: Content containers use one of two different style strategies,
+    depending on whether a header is present.  If the content container
+    has a header, then three style classes are used:
+
+    1. The outer container is labeled with one of the 
+       .OraContentContainer[Background] style classes.
+
+    2. The portion of the content container which contains the header
+       is labeled with the .OraContentContainerHeader style class.
+
+    3. The portion of the content container which contains the body
+       is labeled with the .OraContentContainerBody style class.
+
+    This allows styles to be applied to the header or body selectively
+    based on the background color by using contextual selectors like:
+
+    .OraContentContainerDark .OraContentContainerBody { Dark body colors }
+    .OraContentContainerLight .OraContentContainerBody { Light body colors }
+
+    Content containers which contain content but do not have a header only 
+    have two style classes:
+
+    1. The outer container is labeled with one of the 
+       .OraContentConatinerContent[Background] style classes, ie.
+       .OraContentContainerContentDark instead of .OraContentContainerDark.
+
+    2. The portion of the content container which contains the body
+       is labeled with the .OraContentContainerBody style class.
+
+    .OraContentContainerHeader is not used for these content containers.
+
+  -->
+
+  <style name="ContentContainer">
+  </style>
+
+  <style selector=".OraContentContainerTransparent">
+    <includeStyle name="ContentContainer"/>
+  </style>
+  
+  <style selector=".OraContentContainerLight">
+    <includeStyle name="ContentContainer"/>
+  </style>
+  
+  <style selector=".OraContentContainerMedium">
+    <includeStyle name="ContentContainer"/>
+  </style>
+  
+  <style selector=".OraContentContainerDark">
+    <includeStyle name="ContentContainer"/>
+  </style>
+
+  <style selector=".OraContentContainerHeader">
+    <includeStyle name="MediumBackground"/>
+    <includeStyle name="TextForegroundDarkBackground"/>
+  </style>
+
+  <!-- Named style for all content container bodies for 
+       content containers which have headers -->
+  <style name="ContentContainerBody">
+  </style>
+
+  <style name="ContentContainerLightBackground">
+    <includeStyle name="LightAccentBackground"/>
+  </style>
+
+  <style name="ContentContainerMediumBackground">
+    <includeStyle name="MediumAccentBackground"/>
+  </style>
+
+  <style name="ContentContainerDarkBackground">
+    <includeStyle name="DarkAccentBackground"/>
+  </style>
+
+  <style selector=".OraContentContainerTransparent .OraContentContainerBody">
+    <includeStyle name="ContentContainerBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerLight .OraContentContainerBody">
+    <includeStyle name="ContentContainerLightBackground"/>
+    <includeStyle name="ContentContainerBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerMedium .OraContentContainerBody">
+    <includeStyle name="ContentContainerMediumBackground"/>
+    <includeStyle name="ContentContainerBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerDark .OraContentContainerBody">
+    <includeStyle name="ContentContainerDarkBackground"/>
+    <includeStyle name="ContentContainerBody"/>
+  </style>
+
+  <!-- Named style which is included by all of the
+       .OraContentContainerContent[Background] style classes -->
+  <style name="ContentContainerContent">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <!-- These styles are only used by content containers which
+       do not have headers -->  
+  <style selector=".OraContentContainerContentTransparent">
+    <includeStyle name="ContentContainerContent"/>
+  </style>  
+
+  <style selector=".OraContentContainerContentLight">
+    <includeStyle name="ContentContainerContent"/>
+  </style>  
+
+  <style selector=".OraContentContainerContentMedium">
+    <includeStyle name="ContentContainerContent"/>
+  </style>  
+
+  <style selector=".OraContentContainerContentDark">
+    <includeStyle name="ContentContainerContent"/>
+  </style>  
+
+  <!-- Named style for all content container bodies for 
+       content containers which do not have headers -->
+  <style name="ContentContainerContentBody">
+  </style>
+
+  <style selector=".OraContentContainerContentTransparent .OraContentContainerBody">
+    <includeStyle name="ContentContainerContentBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerContentLight .OraContentContainerBody">
+    <includeStyle name="ContentContainerLightBackground"/>
+    <includeStyle name="ContentContainerContentBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerContentMedium .OraContentContainerBody">
+    <includeStyle name="ContentContainerMediumBackground"/>
+    <includeStyle name="ContentContainerContentBody"/>
+  </style>
+  
+  <style selector=".OraContentContainerContentDark .OraContentContainerBody">
+    <includeStyle name="ContentContainerDarkBackground"/>
+    <includeStyle name="ContentContainerContentBody"/>
+  </style>
+
+  <!--
+    Footer Styles
+  -->
+
+  <style name="FooterMessageText">
+    <includeStyle name="VerySmallFont"/>
+    <includeStyle name="TextForeground"/>
+    <property name="white-space">nowrap</property>
+  </style>
+
+  <style name="FooterMessageLink">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraCopyright">
+    <includeStyle name="FooterMessageText"/>
+  </style>
+
+  <style selector=".OraCopyright A">
+    <includeStyle name="FooterMessageLink"/>
+  </style>
+
+  <style selector=".OraPrivacy">
+    <includeStyle name="FooterMessageText"/>
+  </style>
+
+  <style selector=".OraPrivacy A">
+    <includeStyle name="FooterMessageLink"/>
+  </style>
+
+  <style selector=".OraAbout">
+    <includeStyle name="FooterMessageText"/>
+  </style>
+
+  <style selector=".OraAbout A">
+    <includeStyle name="FooterMessageLink"/>
+  </style>
+
+  <!--
+    GlobalButton Styles
+  -->
+
+  <style name="GlobalButtonText">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style selector=".OraGlobalButtonText">
+    <includeStyle name="LinkForeground"/>
+    <includeStyle name="GlobalButtonText"/>
+  </style>
+
+  <style selector=".OraGlobalButtonTextSelected">
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="GlobalButtonText"/>
+  </style>
+
+  <style selector=".OraGlobalButtonTextDisabled">
+    <includeStyle name="VeryDarkAccentForeground"/>
+    <includeStyle name="GlobalButtonText"/>
+  </style>
+
+  <!-- 
+    Global Header Styles
+  -->
+
+  <style selector=".OraGlobalHeader">
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="TextForegroundDarkBackground"/>
+    <includeStyle name="DefaultFont"/>
+    <property name="min-height">4px</property>
+  </style>
+
+  <style name="GlobalHeaderItem">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style name="GlobalHeaderLink">
+    <includeStyle name="TextForegroundDarkBackground"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderEnabled">
+    <includeStyle name="GlobalHeaderItem"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderSelected">
+    <includeStyle name="GlobalHeaderItem"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderEnabled A">
+    <includeStyle name="GlobalHeaderLink"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderSelected A">
+    <includeStyle name="GlobalHeaderLink"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderSeparator">
+    <includeStyle name="TextForegroundDarkBackground"/>
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <!-- 
+    HGrid styles 
+  -->
+  <style selector=".OraHGridExpansionIcon">
+    <includeStyle name="DarkForeground"/>
+
+    <!-- Shift icon over to the start of the cell as
+         described in bug 2296869. -->
+    <property name="position">absolute</property>
+    <property name="top">0px</property>
+    <property name="left">-18px</property>
+  </style>
+
+  <style selector=".OraHGridFocusIcon">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="font-family">monospace</property>
+  </style>
+
+  <style selector=".OraHGridLocatorIcon">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+    <property name="font-family">monospace</property>
+  </style>  
+
+  <!-- 
+    Header styles
+  -->
+
+  <style name="HeaderText">
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector="H1.OraHeader">
+    <includeStyle name="LargeFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>
+
+  <style selector="H2.OraHeader">
+    <includeStyle name="MediumFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>
+
+  <style selector="H3.OraHeader">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>  
+
+  <style selector="H4.OraHeader">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>  
+
+  <style selector="H5.OraHeader">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>  
+  
+  <style selector="H6.OraHeader">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="HeaderText"/>
+  </style>  
+
+
+  <!--
+    MessageBox Styles
+  -->
+
+  <style selector=".OraMessageBox">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="MediumAccentBackground"/>
+    <includeStyle name="VeryDarkForeground"/>
+  </style>
+
+  <!--
+    SideBar styles
+  -->
+
+  <style selector=".OraSideBar">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="VeryDarkForeground"/>
+  </style>
+
+  <!--
+    SortableHeader styles
+  -->
+  <style selector=".OraSortableHeaderSortIcon">
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+
+  <!-- 
+    TabBar Styles
+  -->
+
+  <style selector=".OraTabBar">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style name="TabBarItem">
+  </style>
+
+  <style name="TabBarLink">
+  </style>
+
+  <style selector=".OraTabBarEnabled">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="TabBarItem"/>
+  </style>
+
+  <style selector=".OraTabBarSelected">
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="TabBarItem"/>
+  </style>
+
+  <style selector=".OraTabBarDisabled">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+    <includeStyle name="TabBarItem"/>
+  </style>
+
+  <style selector=".OraTabBarEnabled A">
+    <includeStyle name="TabBarLink"/>
+    <includeStyle name="VeryDarkForeground"/>
+  </style>
+
+  <style selector=".OraTabBarSelected A">
+    <includeStyle name="TabBarLink"/>
+    <includeStyle name="LightForeground"/>
+  </style>
+
+  <!-- 
+     By default we don't want any space between tabs, so we 
+     set the OraTabBarSeparator's width to 0px
+  -->
+  <style selector=".OraTabBarSeparator">
+    <property name="width">0px</property>
+  </style>
+
+  <!--
+    Table Styles
+  -->
+
+  <!-- Rendering on table which contains the actual content -
+       everything between the top/bottom control bars -->
+  <style selector=".OraTableContent">
+    <property name="border-collapse">collapse</property>
+  </style>    
+
+  <!-- Contains top navigation bar -->
+  <style selector=".OraTableControlBarTop">
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle selector=".OraTableBorder1101"/>
+    <property name="padding">1px 2px</property> 
+  </style>
+
+  <!-- Contains bottom navigation bar -->
+  <style selector=".OraTableControlBarBottom">
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle selector=".OraTableBorder0111"/>
+    <property name="padding">1px 2px</property> 
+  </style>  
+
+  <!-- Contains Select All | Select None links -->
+  <style selector=".OraTableSubControlBar">
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle selector=".OraTableBorder1101"/>
+    <property name="padding">1px 2px</property> 
+  </style>
+
+  <!-- table data cell styles -->
+  <style name="TableCellDataText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style name="TableCellDataBackgroundColor">    
+    <includeStyle name="LightAccentBackground"/>
+  </style>  
+
+  <style name="TableCellDataBandedBackgroundColor">    
+    <!-- Table cell background color shouldn't vary with text background -->
+    <property name="background-color">#ffffff</property>
+  </style>  
+
+  <style selector=".OraTableCellText">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+  </style>
+
+  <style selector=".OraTableCellTextBand">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBandedBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+  </style>
+
+  <style selector=".OraTableCellNumber">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="RightTextAlign"/>
+    <property name="padding-right">2px</property>
+  </style>
+
+  <style selector=".OraTableCellNumberBand">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBandedBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="RightTextAlign"/>
+    <property name="padding-right">2px</property>
+  </style>
+
+  <style selector=".OraTableCellIconButton">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <style selector=".OraTableCellIconButtonBand">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBandedBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <style selector=".OraTableColumnHeader">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="StartTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="vertical-align">bottom</property>
+  </style>
+
+  <style selector=".OraTableColumnHeaderNumber">
+    <includeStyle selector=".OraTableColumnHeader"/>
+    <includeStyle name="RightTextAlign"/>
+  </style>
+
+  <style selector=".OraTableColumnHeaderIconButton">
+    <includeStyle selector=".OraTableColumnHeader"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <style selector=".OraTableRowHeader">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="EndTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".OraTableDetail">
+    <includeStyle name="TableCellDataText"/>
+    <!-- Table cell background color shouldn't vary with text background -->
+    <property name="background-color">#ffffff</property>
+    <includeStyle name="TableCellDataBorderColor"/>
+  </style>
+
+  <style selector=".OraTableColumnFooter">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="StartTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- for totalRow button and text -->
+  <style selector=".OraTableTotal">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="EndTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- for cells containing a total -->
+  <style selector=".OraTableTotalNumber">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="RightTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+  </style>
+
+  <!-- for cells containing a total -->
+  <style selector=".OraTableTotalText">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="StartTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+  </style>
+
+  <style selector=".OraTableSortableColumnHeader">
+    <includeStyle selector=".OraTableColumnHeader"/>
+    <property name="cursor">hand</property>
+  </style>
+
+  <style selector=".OraTableSortableColumnHeaderNumber">
+    <includeStyle selector=".OraTableSortableColumnHeader"/>
+    <includeStyle name="RightTextAlign"/>
+  </style>
+
+  <style selector=".OraTableSortableColumnHeaderIconButton">
+    <includeStyle selector=".OraTableSortableColumnHeader"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <style selector=".OraTableSortableHeaderLink">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+    <property name="vertical-align">bottom</property>
+  </style>
+
+  <!-- Used by sortableHeaders that aren't sortable -->
+  <style selector=".OraTableHeaderLink">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!--
+    Train Styles
+  -->
+
+  <style name="TrainStation">  
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style selector=".OraTrainActive">
+    <includeStyle name="TrainStation"/>
+    <includeStyle name="DarkBorder"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraTrainVisited">
+    <includeStyle name="TrainStation"/>
+    <includeStyle name="DarkExtraAccentForeground"/>
+    <includeProperty name="MediumExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <style selector=".OraTrainVisited A">
+    <includeStyle name="DarkExtraAccentForeground"/>
+  </style>
+
+  <style selector=".OraTrainDisabled">
+    <includeStyle name="TrainStation"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+    <includeProperty name="LightExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+  </style>  
+
+  <style selector=".OraTrainUnvisited">
+    <includeStyle name="TrainStation"/>
+    <includeStyle name="DarkBorder"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".OraTrainUnvisited A">
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!--
+
+    Section 2: Private styles.   The styles defined in this section need
+    to be reviewed to determine whether they should be exposed to 
+    customizers.
+
+  -->
+
+  <!--
+    Private Font Styles:  These styles should probably be made public.
+  -->
+
+  <!-- A very small font for text which appears within a link -->
+  <style name="VerySmallLinkFont">
+    <includeStyle name="VerySmallFont"/>
+  </style>
+
+  <!-- A small font for text which appears within a link -->
+  <style name="SmallLinkFont">
+    <includeStyle name="SmallFont"/>
+  </style>
+
+
+  <!--
+    Private Color Styles:  Most of these styles should probably
+    just be documented and made public.
+  -->
+
+  <!-- The "extra" accent ramp is a gray color ramp used in various places
+       to provide shading.  VeryDarkExtraAccentBackground is the darkest
+       color in this color ramp. -->
+  <style name="VeryDarkExtraAccentBackground">
+    <property name="background-color">#333333</property>
+  </style>
+
+  <!-- The "extra" accent ramp is a gray color ramp used in various places
+       to provide shading.  DarkExtraAccentBackground is the primary
+       color in this color ramp. -->  
+  <style name="DarkExtraAccentBackground">
+    <property name="background-color">#666666</property>
+  </style>
+
+  <!-- The "extra" accent ramp is a gray color ramp used in various places
+       to provide shading.  MediumExtraAccentBackground is the middle
+       color in this color ramp. -->
+  <style name="MediumExtraAccentBackground">
+    <property name="background-color">#999999</property>
+  </style>
+
+  <!-- The "extra" accent ramp is a gray color ramp used in various places
+       to provide shading.  LightExtraAccentBackground is the lightest
+       color in this color ramp. -->
+  <style name="LightExtraAccentBackground">
+    <property name="background-color">#cccccc</property>
+  </style>
+
+  <!-- VeryDarkExtraAccentForeground is the darkest foreground color in the
+       extra accent (gray) color ramp -->
+  <style name="VeryDarkExtraAccentForeground">
+    <includeProperty name="VeryDarkExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- DarkExtraAccentForeground is the primary foreground color in the
+       extra accent (gray) color ramp -->
+  <style name="DarkExtraAccentForeground">
+    <includeProperty name="DarkExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- MediumExtraAccentForeground is the middle foreground color in the
+       extra accent (gray) color ramp -->
+  <style name="MediumExtraAccentForeground">
+    <includeProperty name="MediumExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <!-- LightExtraAccentForeground is the lightest foreground color in the
+       extra accent (gray) color ramp -->
+  <style name="LightExtraAccentForeground">
+    <includeProperty name="LightExtraAccentBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <style name="TextForegroundDarkBackground">
+    <includeProperty name="TextBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+
+  <style selector=".OraBGColorVeryDark">
+    <includeStyle name="VeryDarkBackground"/>
+  </style>
+
+  <style selector=".OraBGColorDark">
+    <includeStyle name="DarkBackground"/>
+   </style>
+
+  <style selector=".OraBGColorMedium">
+    <includeStyle name="MediumBackground"/>
+  </style>
+
+  <style selector=".OraBGColorLight">
+    <includeStyle name="LightBackground"/>
+  </style>
+
+  <style selector=".OraBGGrayVeryDark">
+    <includeStyle name="VeryDarkExtraAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGGrayDark">
+    <includeStyle name="DarkExtraAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGGrayMedium">
+    <includeStyle name="MediumExtraAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGGrayLight">
+    <includeStyle name="LightExtraAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGAccentVeryDark">
+    <includeStyle name="VeryDarkAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGAccentDark">
+    <includeStyle name="DarkAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGAccentMedium">
+    <includeStyle name="MediumAccentBackground"/>
+  </style>
+
+  <style selector=".OraBGAccentLight">
+    <includeStyle name="LightAccentBackground"/>
+  </style>
+
+  <!-- 
+    Private BIDI Styles:  Not sure if these are generally useful, but
+    if so, these could be made public.
+  --> 
+
+  <style name="FloatStart">
+    <property name="float">left</property>    
+  </style>
+  
+  <style name="FloatEnd">
+    <property name="float">right</property>    
+  </style>
+
+  <style name="LTROverride">
+  </style>
+
+  <!-- 
+    Private Text Styles
+  -->
+
+  <!-- Implementation detail of styleUsage="inContextBranding" -->
+  <style selector=".p_InContextBrandingText">
+      <includeStyle name="DefaultFont"/>
+      <includeStyle name="VeryDarkAccentForeground"/>
+  </style> 
+
+  <!-- Implementation detail of styleUsage="pageStamp" -->
+  <style selector=".OraPageStampText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- Don't think we use this one? -->
+  <style selector=".OraPageStampLabel">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraInlineInfoText">
+    <includeStyle name="VerySmallFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraTextInline">
+    <includeStyle name="VerySmallFont"/>
+    <includeStyle name="MediumForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraErrorText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <!-- Should probably not exist? -->
+  <style selector=".OraError">
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraErrorNameText">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraInlineErrorText">
+    <includeStyle name="VerySmallFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraGlobalPageTitle">
+    <includeStyle name="LargeFont"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraLinkText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraVLinkText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="VisitedLinkForeground"/>
+  </style>
+
+  <!-- Should probably be public -->
+  <style selector=".OraALinkText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="ActiveLinkForeground"/>
+  </style>
+
+  <style selector=".OraFieldTextLTR">
+    <includeStyle selector=".OraFieldText"/>
+    <includeStyle name="LTROverride"/>
+  </style>
+
+  <style selector=".OraFieldTextLTRDisabled">
+    <includeStyle selector=".OraFieldTextDisabled"/>
+    <includeStyle name="LTROverride"/>
+  </style>
+
+  <style selector=".OraPhoneFieldText">
+    <includeStyle selector=".OraFieldTextLTR"/>
+  </style>
+
+  <style selector=".OraPhoneFieldTextDisabled">
+    <includeStyle selector=".OraFieldTextLTRDisabled"/>
+  </style>
+
+  <style selector=".OraPostalCodeFieldText">
+    <includeStyle selector=".OraFieldTextLTR"/>
+  </style>
+
+  <style selector=".OraPostalCodeFieldTextDisabled">
+    <includeStyle selector=".OraFieldTextLTRDisabled"/>
+  </style>
+
+  <style selector=".OraAddressFieldText">
+    <includeStyle selector=".OraFieldTextLTR"/>
+  </style>
+
+  <style selector=".OraAddressFieldTextDisabled">
+    <includeStyle selector=".OraFieldTextLTRDisabled"/>
+  </style>
+
+  <!-- 
+    Private Utility Styles:  Again, if any of these are useful
+    to customizers, they should be documented and made public.
+  -->
+
+  <style name="NoTextAlign">
+    <property name="text-align"></property>
+  </style>
+
+  <!-- Need to come up with a disabled link style strategy that 
+       doesn't rely on private styles -->
+   <style selector=".p_OraDisabled">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <!-- Need to come up with a selected link style strategy that
+       doesn't rely on private styles -->
+  <style selector=".p_OraSelected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="LightBackground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- This style should never be exposed.  Implementation detail only -->
+  <style selector=".p_OraHiddenLabel">
+    <property name="position">absolute</property>
+    <property name="top">-999px</property>
+    <property name="left">0px</property>
+  </style>
+
+  <!--
+    Private ColorField Styles:  These styles need to be reviewed/renamed
+    if they need to be exposed.
+  -->
+
+  <style selector=".p_OraColorFieldSwatch">
+    <property name="border-style">solid</property>
+    <property name="border-width">1</property>
+    <includeProperty name="TextForeground"
+                     propertyName="color"
+                     localPropertyName="border-color"/>
+  </style>
+
+  <style selector=".p_OraColorPalette">
+    <includeProperty name="TextForeground"
+                     propertyName="color"
+                     localPropertyName="background-color"/>
+  </style>
+
+  <style selector=".p_OraColorPaletteEmptyCell">
+    <includeStyle name="TextBackground"/>
+  </style>
+
+  <!--
+    Private DatePicker Styles:  The datePicker style strategy needs
+    to be reviewed before these styles can be made public.  We'll 
+    probably want to switch over from the "OraCalendar" prefix to 
+    "OraDatePicker" (and from "OraInlineCalendar" to "OraInlineDatePicker"
+    to make room for future calendar component styles.
+  -->
+
+  <style selector=".OraCalendarNav A">
+    <property name="text-decoration">none</property>
+    <includeStyle name="LinkForeground"/>
+  </style>
+    
+  <style selector=".OraCalendarTitle">
+    <includeStyle name="LargeFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="TextBackground"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="padding">2px</property>
+  </style>
+
+  <style selector=".OraCalendarHeader">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="padding">2px</property>
+  </style>
+
+  <style selector=".OraCalendarContent">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+    <property name="text-decoration">none</property>
+
+    <includeProperty selector=".OraCalendarHeader"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+    <property name="border-width">1px</property>
+    <property name="border-style">solid</property>
+    <property name="padding">2px</property>
+  </style>
+
+
+  <style selector=".OraCalendarSelected">
+    <property name="font-weight">bold</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraCalendarContent A">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraInlineCalendarNav A">
+    <property name="text-decoration">none</property>
+    <includeStyle name="LinkForeground"/>
+  </style>
+    
+  <style selector=".OraInlineCalendarTitle">
+    <includeStyle name="LargeFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="TextBackground"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="padding">2px</property>
+  </style>
+
+  <style selector=".OraInlineCalendarHeader">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="padding">2px</property>
+  </style>
+
+  <style selector=".OraInlineCalendarContent">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+    <property name="text-decoration">none</property>
+
+    <includeProperty selector=".OraInlineCalendarHeader"
+                     propertyName="background-color"
+                     localPropertyName="border-color"/>
+    <property name="border-width">1px</property>
+    <property name="border-style">solid</property>
+    <property name="padding">2px</property>
+  </style>
+
+
+  <style selector=".OraInlineCalendarSelected">
+    <property name="font-weight">bold</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraInlineCalendarContent A">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <!-- 
+    Private ContentFooter Styles:  Not sure whether any of these
+    styles need to be exposed, but if so, they need to be renamed
+    accordingly (no "p_" prefix).
+  -->
+
+  <style selector=".p_OraContentFooterRule">
+    <includeStyle name="DarkForeground"/>
+  </style>    
+
+  <style selector=".p_OraContentFooterStart">
+    <includeStyle name="FloatStart"/> 
+  </style>    
+
+  <style selector=".p_OraContentFooterChildren">
+    <includeStyle name="FloatEnd"/> 
+  </style>    
+    
+  <style selector=".p_OraContentFooterBottom">
+    <property name="clear">both</property>
+    <property name="margin-bottom">5px</property>
+  </style>  
+
+
+  <!-- 
+    Private Footer Styles: Again, if these styles are useful
+    to customizers, they'll need to be renamed.
+  -->
+  
+  <style selector=".p_OraFooter">
+    <property name="text-align">center</property>
+  </style>  
+
+  <style selector=".p_OraFooterBottom">
+    <property name="padding-top">5px</property>
+  </style> 
+ 
+  <style selector=".p_OraHeaderNest">
+    <property name="margin">5px 0px 0px 12px</property>
+  </style>
+
+  <!-- 
+    Private HGrid Styles: Need to review hGrid/table styles before
+    they are exposed to customizers.
+  -->
+
+  <style selector=".OraHGridLocatorHeader">
+    <includeStyle name="TableCellHeaderBorderColor"/>
+    <includeStyle name="LightAccentBackground"/>
+  </style>
+
+  <style selector=".OraHGridNavRowActiveLink">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+ 
+  <style selector=".OraHGridNavRowInactiveLink">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <!-- 
+    Private Header styles 
+  -->
+
+  <!-- do we need this one except for component guide tests?-->
+  <style selector=".OraHeaderSub">
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="MediumFont"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- do we need this one except for component guide tests?-->
+  <style selector=".OraHeaderSubSub">
+    <includeStyle selector=".OraHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+
+  <!--
+    Private HideShow Styles
+  -->
+
+  <!-- 
+    This is a private style that is used by the 
+    base.desktop implementation of the hideShowDisclosed
+    and hideShowUndisclosed icons.  Note that this style
+    attempts to turn off the link's text decoaration, but
+    this doesn't actually work on Mozilla.  The problem is
+    that this style is not actually rendered on a link, but
+    on a span within a link.  IE seems to honor the span's text 
+    decoration style in this case but Mozilla seems to require
+    that the text decoration be specified at the link level.
+
+    We need to re-design the way hideShow renders its icon/prompt
+    to work around this problem.  At that point, it might be
+    possible to remove this style altogether - or rename this
+    style and make it public.  In the meantime, customizers
+    are discouraged from depending on this style.
+  -->
+  <style selector=".p_OraHideShowDisclosedSymbol">
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!--
+    Private MessageBox Styles:  These styles need to be reviewed before
+    they can be exposed to customizers.
+  -->
+
+  <style name="MessageBoxMargin">
+    <property name="margin-left">25px</property>
+  </style>
+  
+  <style selector=".OraMessageBoxList">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="MessageBoxMargin"/>
+    <property name="margin-top">5px</property>
+  </style>
+
+  <style selector=".p_OraMessageBoxMessage">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="MessageBoxMargin"/>
+  </style>
+
+  <!-- 
+    Private NavigationBar Styles: These styles should probably be
+    public, but should they be renamed "OraNavigationBar..." first
+    to follow our Ora<Component Name> naming convention?
+  -->
+
+  <style selector=".OraNavBarActiveLink">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraNavBarInactiveLink">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <style selector=".OraNavBarViewOnly">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- 
+    Private PageLayout Styles: These styles clearly need to be
+    reviewed and renamed before they can be exposed.
+  -->
+
+  <style selector=".p_OraQuickSearchBox">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="DarkAccentBorder"/>
+    <property name="border-style">solid</property>
+    <property name="padding">0pt 5pt 5pt 5pt</property>
+    <property name="border-width">0px 0px 1px 1px</property>
+  </style>
+
+  <style selector=".p_OraGlobalQuick">
+    <includeStyle name="DarkAccentBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 0px 0px 1px</property>
+  </style>
+
+  <!-- 
+    Private Processing Styles:  Needs review and rename before
+    epxosing to customizers.
+  -->
+
+  <style selector=".p_OraProcessingStatus">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="MediumBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+  </style>
+
+  <!--
+    Private ProductBranding Styles:  Needs review and rename before
+    exposing to customizers.
+  -->
+
+  <style selector=".p_OraProductBrandingText">
+    <property name="position">relative</property>
+    <property name="font-family">Garamond, Times, Times New Roman, Serif</property>
+    <property name="font-weight">normal</property>
+    <property name="font-size">24pt</property>
+    <property name="line-height">28.8pt</property>
+    <property name="top">-4.8pt</property>
+    <includeProperty name="DarkBackground"
+                     propertyName="background-color"
+                     localPropertyName="color"/>
+  </style>
+  
+  <!-- private style for ProductBranding component compact text -->
+  <style selector=".p_OraProductBrandingCompactText">
+      <includeStyle name="DarkForeground"/>
+      <property name="margin-bottom">0px</property>
+      <property name="font-weight">normal</property>
+      <includeStyle name="LargeFont"/>
+      <property name="font-weight">bold</property>
+  </style>
+
+  <!-- 
+    Private Shuttle Styles:  These styles might very well be exposed -
+    just need to be reviewed first to make sure they are useful.
+  -->
+
+  <style selector=".OraShuttleHeader">
+    <includeStyle name="SmallFont"/>
+    <property name="font-weight">bold</property>
+    <includeStyle name="DarkForeground"/>
+    <property name="padding">0px 0px 0px 18px</property>
+  </style>
+
+  <style selector=".OraShuttleLinkText">
+    <includeStyle name="SmallLinkFont"/>
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <!--
+    Private SideBar Styles
+  -->
+
+  <!-- Expose this so custmozers can control sideBar min width? -->
+  <style selector=".p_OraSideBarMinWidth">
+    <property name="width">140px</property>
+  </style>  
+
+  <!-- 
+    Private StyledList Styles:  We really need to clean up our
+    styledList/styledItem style strategy so that these components
+    can be better customized.
+  -->
+
+  <style selector=".OraNav3Selected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="LightBackground"/>
+  </style>
+
+  <style selector=".OraNav3">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style name="list">
+    <property name="list-style-position">inside</property> 
+    <property name="padding">0px</property>
+    <property name="margin">0px</property>
+  </style>
+
+  <style name="nestedList">    
+    <property name="padding">0pt 0pt 0pt 10pt</property>
+  </style>
+
+  <style selector=".OraStyledList">
+    <includeStyle name="list"/>
+  </style>  
+  
+  <style selector=".OraStyledList .OraStyledList">
+    <includeStyle name="nestedList"/>
+  </style>
+
+  
+  <!-- 
+    Private SubTabBar Styles: Before we make these styles public,
+    we need to re-evaluate the use of the private p_OraDisabled style - 
+    and possibly consider splitting .OraSubTab into 
+    OraSubTabBarEnabled/OraSubTabBarDisabled/OraSubTabBarSelected
+    style classes - like tabBar and globalHeader.
+  -->
+
+  <style name="OraSubTabBar">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="MediumBorder"/>
+    <property name="border-style">solid</property>
+    <includeStyle name="CenterTextAlign"/>
+    <property name="padding">2px 0px</property>  
+    <property name="margin">4px 0px</property>    
+  </style>
+
+  <style selector=".OraSubTabBarOrientationTop">
+    <includeStyle name="OraSubTabBar"/>
+    <property name="border-width">1px 0px 0px</property>
+  </style>
+
+  <style selector=".OraSubTabBarOrientationBottom">
+    <includeStyle name="OraSubTabBar"/>
+    <property name="border-width">0px 0px 1px</property>
+  </style>  
+  
+  <style selector=".OraSubTab">
+    <includeStyle name="DefaultFont"/>
+    <property name="padding">0px 8px</property>  
+  </style>
+
+  <style selector=".OraSubTab A">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".OraSubTab .p_OraDisabled">
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+ 
+  <style selector=".OraSubTabSelected">
+    <includeStyle name="DefaultBoldFont"/>
+    <property name="padding">0px 8px</property>  
+  </style>
+
+  <style selector=".OraSubTabSelected A">
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- 
+    Private Table Styles: These styles can probably just be made public,
+    but before we do that we should review to make sure that we are
+    happy with the current set of styles.
+  -->
+
+  <!-- table borders -->
+  <style selector=".OraTableBorder0001">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 0px 0px 1px</property>
+  </style>
+
+  <style selector=".OraTableBorder0010">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 0px 1px</property>
+  </style>
+
+  <style selector=".OraTableBorder0011">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 0px 1px 1px</property>
+  </style>
+
+  <style selector=".OraTableBorder0100">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 1px 0px 0px</property>
+  </style>
+  
+  <style selector=".OraTableBorder0101">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 1px</property>
+  </style>
+  
+  <style selector=".OraTableBorder0110">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 1px 1px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder0111">
+    <property name="border-style">solid</property>
+    <property name="border-width">0px 1px 1px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1000">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 0px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1001">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 0px 0px 1px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1010">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1011">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 0px 1px 1px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1100">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 1px 0px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1101">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 1px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1110">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 1px 1px 0px</property>
+  </style>  
+  
+  <style selector=".OraTableBorder1111">
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+  </style>    
+  
+  <style selector=".OraTableControlBarText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- Table title is deprecated - don't expose this style -->  
+  <style selector=".OraTableTitle">  
+    <includeStyle selector=".OraHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+  <!-- Only used on Netscape 4? -->
+  <style selector=".OraTable">
+    <includeStyle name="VeryDarkAccentBackground"/>
+  </style>
+
+  <!-- This is actually used by a wide range of style classes,
+       not just headers.  Might want to refactor - keep this
+       private till then -->
+  <style name="TableCellHeaderBorderColor">    
+    <includeStyle name="VeryDarkAccentBorder"/>
+  </style>
+
+  <!-- Only used by deprecated code -->
+  <style selector=".OraTableAddTotal">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="StartTextAlign"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- Probably should be public -->
+  <style name="TableCellDataVerticalAlign">
+    <property name="vertical-align">baseline</property>
+  </style>
+
+  <!-- Probably should be public -->  
+  <style name="TableCellDataBorderColor">    
+    <includeStyle name="VeryDarkAccentBorder"/>
+  </style>  
+
+  <!-- Couldn't find any code that uses the CellSelect style -->
+  <style selector=".OraTableCellSelect">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <!-- Couldn't find any code that uses the CellSelect style -->
+  <style selector=".OraTableCellSelectBand">
+    <includeStyle name="TableCellDataText"/>
+    <includeStyle name="TableCellDataVerticalAlign"/>
+    <includeStyle name="TableCellDataBandedBackgroundColor"/>
+    <includeStyle name="TableCellDataBorderColor"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <!-- Need to confirm that we really do want a separate
+       style class for this.  Seems like this should be
+       a named styles that is included by all of the 
+       OraTableSortableHeader* style classes instead of
+       its own style.  -->
+  <style selector=".OraSortableHeaderBorder">
+     <property name="border-width">2px</property>
+     <property name="border-style">outset</property>
+   </style>
+
+  <!-- 
+    Private Tip Styles: These can probably be made public.
+  -->
+
+  <style selector=".OraTipLabel">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".OraTipText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!--
+    Private Train Styles:  These train styles are private because they 
+    probably need to be renamed for BIDI compliance - ie. Start/End instead
+    of Left/Right.
+  -->
+
+  <style selector=".OraTrainSubLeft">
+    <includeStyle name="DarkBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">2px 2px 0px 0px</property>
+    <property name="padding">0pt</property>
+  </style>
+
+  <style selector=".OraTrainSubRight">
+    <includeStyle name="DarkBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">2px 0px 0px 2px</property>
+    <property name="padding">0pt</property>
+  </style>
+
+  <!-- 
+    Private Tree Styles:  These styles need to be renamed (no "p_") 
+    if they are going to be exposed to customizers.
+  -->
+
+  <style selector=".p_OraTreeDisclosedSymbol">
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="EndTextAlign"/>
+  </style>
+
+  <style name="TreeDisclosedSymbol">
+    <property name="text-decoration">none</property>  
+    <includeStyle name="DarkForeground"/>
+  </style>  
+  
+  <style selector=".p_OraTreeDisclosedSymbol A:link">
+    <includeStyle name="TreeDisclosedSymbol"/>
+  </style>
+
+  <style selector=".p_OraTreeDisclosedSymbol A:active">
+    <includeStyle name="TreeDisclosedSymbol"/>
+  </style>
+
+  <style selector=".p_OraTreeDisclosedSymbol A:visited">
+    <includeStyle name="TreeDisclosedSymbol"/>
+  </style>
+
+  <style selector=".p_OraTreeIcon">
+    <property name="vertical-align">top</property>
+  </style>
+
+  <style selector=".p_OraTreeNodeAdjust">
+    <property name="padding-bottom">2px</property>
+  </style>
+
+  <style selector=".p_OraTreeRow">
+    <includeStyle name="DefaultFont"/>
+  </style>
+
+  <style selector=".p_OraTreeRow A:link">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".p_OraTreeRow A:active">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".p_OraTreeRow A:visited">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector=".p_OraTreeRowSelected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+  
+  <style name="TreeRowSelected">
+    <property name="text-decoration">none</property>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".p_OraTreeRowSelected A:link">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <style selector=".p_OraTreeRowSelected A:active">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <style selector=".p_OraTreeRowSelected A:visited">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <!--
+       The following set of styles define server-side styles used by
+       the UIX.  These styles affect the appearance of images such as buttons 
+       and tab bars which are dynamically generated.  They are named styles, 
+       as these styles should not appear in the generated CSS files.
+
+       Note that since these styles apply to images generated
+       by on the server, modifying these styles can result in
+       additional image generation.  So, these styles should only be
+       modified if the server-side environment has been configured to
+       support image generation.  That is, these styles should not be
+       modified unless the JSP/Servlet has access to an X server and
+       the necessary fonts have been installed.
+  -->
+
+  <!-- This named style defines the font families to use when generating
+       images on the server-side.  Note, the UIX will try to locate fonts 
+       for any of the families listed here, so the list should contain 
+       valid font family names for the server environment. -->
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Albany WT J,Dialog</property>
+  </style>
+
+  <!-- A named style for the default server-side font definition -->
+  <style name="DefaultServerFont">
+    <includeStyle name="DefaultServerFontFamily"/>
+    <property name="font-size">13pt</property>
+    <property name="text-antialias">true</property>
+  </style>
+
+</styleSheet>
+
+<!--
+  This style sheet resets the server font family for ISO Latin 1 Locales.
+  For most locales, we are forced to use the Albany fonts with antialising
+  enabled due to the poor job that Java2D (pre-JDK 1.4) does rasterizing
+  true type fonts.  For Latin 1 languages, we avoid antialiasing by using
+  native fonts (and thus use the native rasterizer instead of the Java2D
+  rasterizer).  The assumption here is that the Dialog font defines all
+  of the glyphs needed to render Latin 1 text.  If this is not the case
+  on some particular platform, then this style sheet should be removed,
+  in which case antialiased Albany text will be rendered for all languages.
+
+  For now, we only use Dialog for English - other locales can be added
+  here as desired.
+-->
+<styleSheet locales="en">
+
+  <!-- Use native fonts -->
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Dialog</property>
+  </style>
+
+
+  <style name="DefaultServerFont">
+    <!-- Turn off antialiasing -->
+    <property name="text-antialias">false</property>
+
+    <!-- We can also use a slightly smaller font, since non-antialiased
+         text is legible at smaller font sizes -->
+    <property name="font-size">-1pt</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet direction="rtl">
+
+  <style name="LTROverride">
+    <property name="unicode-bidi">bidi-override</property>
+    <property name="direction">ltr</property>
+    <property name="text-align">right</property>
+  </style>
+
+  <!-- Disable absolute position of HGrid expansion icon -->
+  <style selector=".OraHGridExpansionIcon">
+    <property name="position"/>
+    <property name="top"/>
+    <property name="left"/>
+  </style>
+
+  <!-- Adjust positioning of colorField swatch overlay icon -->
+  <style selector=".OraColorFieldSwatchOverlayIcon">
+    <!-- Unset left property - use right positioning instead -->
+    <property name="left"/>
+    <property name="right">-7px</property>
+    <property name="top">5px</property>
+  </style>
+
+  <style name="MessageBoxMargin">
+    <property name="margin-left"/>
+    <property name="margin-right">25px</property>
+  </style>
+
+  <style name="FloatStart">
+    <property name="float">right</property>    
+  </style>
+  
+  <style name="FloatEnd">
+    <property name="float">left</property>    
+  </style>
+  
+  <style selector=".OraShuttleHeader">
+    <property name="padding">0px 18px 0px 0px</property>
+  </style>
+
+  <style selector=".p_OraQuickSearchBox">
+    <property name="border-width">0px 1px 1px 0px</property>
+  </style>
+
+  <style selector=".p_OraGlobalQuick">
+    <property name="border-width">0px 1px 0px 0px</property>
+  </style>
+
+  <style name="StartTextAlign">
+    <property name="text-align">right</property>
+  </style>
+
+  <style name="EndTextAlign">
+    <property name="text-align">left</property>
+  </style>
+  
+  <style name="nestedList">    
+    <property name="padding">0pt 10pt 0pt 0pt</property>
+  </style>
+
+  <style selector=".OraMessageBoxList">
+    <property name="margin">5px 25px 0px 0px </property>
+  </style>
+
+  <style selector=".p_OraHeaderImage">
+    <property name="margin">0pt 0pt 0pt 2pt</property>
+  </style>
+  
+</styleSheet>
+
+<styleSheet browsers="ie">
+  
+  <style selector="body">
+    <property name="margin-top">8px</property>
+  </style>
+
+  <style selector=".p_OraNav2">
+    <includeStyle name="MediumBorder"/>  
+  </style>
+
+</styleSheet>
+
+<!-- Use "relative" font sizes on Windows IE -->
+<styleSheet platforms="windows" browsers="ie">
+
+  <!-- Override the default font sizes to use "scalable" size units -->
+  <!-- The default font -->
+  <style name="DefaultFont">
+    <property name="font-size">x-small</property>
+  </style>
+
+  <!-- A very small font -->
+  <style name="VerySmallFont">
+    <property name="font-size">67%</property>
+  </style>
+
+  <!-- Very small font for text links.  The VerySmallLinkFont needs to use
+       a larger font size than the VerySmallFont style, because the
+       percentage size is resolved relative to the link's font size (10pt),
+       instead of relative to the browser's default font size (12pt) -->
+  <style name="VerySmallLinkFont">
+    <property name="font-size">80%</property>
+  </style>
+
+  <!-- A small font -->
+  <style name="SmallFont">
+    <property name="font-size">75%</property>
+  </style>
+
+  <!-- Small font for text links.  The SmallLinkFont needs to use
+       a larger font size than the SmallFont style, because the
+       percentage size is resolved relative to the link's font size (10pt),
+       instead of relative to the browser's default font size (12pt) -->
+  <style name="SmallLinkFont">
+    <property name="font-size">90%</property>
+  </style>
+
+  <!-- A medium font - just slightly bigger than default -->
+  <style name="MediumFont">
+    <property name="font-size">92%</property>
+  </style>
+
+  <!-- A large font -->
+  <style name="LargeFont">
+    <property name="font-size">small</property>
+  </style>
+
+  <!-- A very large font -->
+  <style name="VeryLargeFont">
+    <property name="font-size">133%</property>
+  </style>
+
+  <style selector=".p_OraHeaderNest">
+    <property name="margin">5px 0px 0px 0px</property>
+    <property name="width">97%</property>
+    <property name="clear">both</property>
+    <includeStyle name="FloatEnd"/>
+  </style>  
+
+</styleSheet>
+
+
+<!-- The base derivation for Gecko-based browsers -->
+<styleSheet browsers="ice">
+
+  <style name="list">
+    <!-- ice doesn't seem to respect list-style-position,
+         so adding padding as workaround -->
+    <property name="padding">0px 0px 0px 12px</property>
+  </style>
+</styleSheet>
+
+<styleSheet browsers="gecko">
+
+  <!-- Dunno why, but Gecko makes asterisks look very thin -->
+  <style selector=".OraRequiredIcon">
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".p_OraContentFooterRule">
+    <includeStyle name="DarkBackground"/>
+  </style>    
+
+  <style selector=".OraSortableHeaderBorder">
+     <property name="border-style">inset</property>
+   </style>
+
+  <style selector=".OraCalendarContent">
+    <property name="line-height">1.8</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet platforms="macos" browsers="ie" versions="5">
+  <!-- Override on mac as it doesn't show up.-->
+  <style name="MediumExtraAccentForeground">
+    <property name="color"/>
+  </style>
+
+  <style selector=".OraCalendarContent">
+    <property name="line-height">1.8</property>
+  </style>
+
+  <!-- Style for alignment in table cells -->
+  <style name="TableCellDataVerticalAlign">
+    <property name="vertical-align"/>
+  </style>
+
+  <!-- See bug 2866906 -->
+  <style selector=".OraTableSortableHeaderLink">
+    <property name="vertical-align"/>
+  </style>
+
+</styleSheet>
+
+<!-- CJK style sheet for all -->
+<styleSheet locales="ja zh ko">
+
+  <!--
+    We don't specify a font family for CJK languages, since most browsers
+    (Netscape, ICE, IE) seem to have problems displaying CJK text with
+    our default font-family list (Arial, Helvetica, etc...).  We're better 
+    off letting the font-family default.  (However - that just causes
+    still more problems on Windows Netscape 4 - so we've got more overrides
+    below for that specific case.
+  -->
+  <style name="DefaultFontFamily">
+    <property name="font-family"/>
+  </style>
+
+  <!-- In order for CJK glyphs rendered on the server to be
+       appear readable, we need to crank up the font size and
+       turn on antialiasing -->
+  <style name="DefaultServerFont">
+    <property name="font-size">+1pt</property>
+    <property name="text-antialias">true</property>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Japanese-specific styles -->
+<styleSheet locales="ja">
+
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Albany WT J, Dialog</property>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Korean-specific styles -->
+<styleSheet locales="ko">
+
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Albany WT K, Dialog</property>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Traditional Chinese specific styles -->
+<styleSheet locales="zh_TW">
+
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Albany WT TC, Dialog</property>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Simplified Chinese specific styles -->
+<styleSheet locales="zh_CN">
+
+  <style name="DefaultServerFontFamily">
+    <property name="font-family">Albany WT SC, Dialog</property>
+  </style>
+
+</styleSheet>
+
+<!-- Bug 1687431:  Netscape 4 does a very, very poor job dealing
+    with Unicode characters outside the range of the default font.
+    Consequently, on Windows only for the CJK languages, set
+    the default font explicitly to the default Windows font -->
+<styleSheet locales="ja" browsers="netscape" platforms="windows">
+  <style name="DefaultFontFamily">
+    <property name="font-family">MS Gothic</property>
+  </style>
+</styleSheet>
+
+<styleSheet locales="zh_CN" browsers="netscape" platforms="windows">
+  <style name="DefaultFontFamily">
+    <property name="font-family">MingLiU</property>
+  </style>
+</styleSheet>
+
+<styleSheet locales="zh_TW" browsers="netscape" platforms="windows">
+  <style name="DefaultFontFamily">
+    <property name="font-family">SimHei</property>
+  </style>
+</styleSheet>
+
+<styleSheet locales="ko" browsers="netscape" platforms="windows">
+  <style name="DefaultFontFamily">
+    <property name="font-family">Gulim</property>
+  </style>
+</styleSheet>
+
+
+<!-- But: in CJK, IE is having some bad problems with sizing lists
+  and choices correctly - this is bug 2440402.  For the two styles
+  that are relevant here, work around the problem using size 100%.  That's
+  not perfect, since it'll make these resolve relative to their
+  container, but it seems to work well in practice. -->
+<styleSheet platforms="windows" browsers="ie" locales="ja zh ko">
+  <style selector=".OraFieldText">
+    <property name="font-size">100%</property>
+  </style>
+
+  <style selector=".OraFieldTextDisabled">
+    <property name="font-size">100%</property>
+  </style>
+</styleSheet>
+
+<!-- And on Thai Gecko - see bug 3897341 - bump the font size up -->
+<styleSheet platforms="windows linux" browsers="gecko" locales="th">
+  <style name="DefaultFontFamily">
+    <property name="font-family">Browallia New,Arial,Helvetica,Geneva,sans-serif</property>
+    <property name="font-size">16pt</property>
+  </style>
+  
+  <style name="DefaultFont">
+    <includeStyle name="DefaultFontFamily"/>
+  </style>
+</styleSheet>
+
+</styleSheetDocument>

@@ -1,0 +1,1004 @@
+<?xml version="1.0"?>
+
+<!-- 
+  The oracle-desktop.xss style sheet defines the styles that are 
+  specific to the desktop implementation of the Oracle Browser
+  Look And Feel.  The styles defined here are automatically layered
+  on top of the styles defined by base-desktop.xss.  As such, this
+  style sheet should only contain new BLAF-specific styles that are not 
+  defined by base-desktop.xss, or BLAF-specific overrides of styles
+  that are defined by base-desktop.xss.
+-->
+
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style"
+                    version="2.0">
+
+<!-- The base style sheet for the Browser Look And Feel -->
+<styleSheet>
+
+  <!-- 
+     Global Color Styles:  oracle-desktop inherits most of the named
+     color styles from base-desktop, but needs to override some of
+     the styles to change the color ramps from green/grey to blue/tan.
+  -->
+
+  <!-- Change core color ramp to blue -->
+  <style name="DarkBackground">
+    <property name="background-color">#336699</property>
+  </style>
+
+  <!-- Change the accent color ramp to tan -->
+  <style name="DarkAccentBackground">
+    <property name="background-color">#d2d8b0</property>
+  </style>
+
+  <!-- Change the medium accent offset.  base-desktop uses
+       "+#333300", we want "+#333333". -->
+  <style name="MediumAccentBackground">
+    <includeStyle name="DarkAccentBackground"/>
+    <property name="background-color">+#333333</property>
+  </style>
+
+  <!-- Change the light accent offset.  base-desktop uses
+       "+#1D1C1C", we want "+#251f37". (2b2b4e was when the 
+       darkAccent was cccc99.) The absolute color we want is f7f7e7-->
+  <style name="LightAccentBackground">  
+    <includeStyle name="DarkAccentBackground"/>
+    <!--property name="background-color">+#2b2b4e</property-->
+    <property name="background-color">+#251f37</property>    
+  </style>
+
+  <!-- VeryDarkShadowAccentBackground and DarkShadowAccentBackground
+       are two very dark colors which are used sparingly by the Browser
+       Look And Feel in cases where the darkest color in the accent
+       (tan) color ramp is not dark enough.
+  -->
+  <style name="VeryDarkShadowAccentBackground">
+    <property name="background-color">#333300</property>
+  </style>
+
+  <style name="DarkShadowAccentBackground">
+    <property name="background-color">#666633</property>
+  </style>
+
+  <!-- Link colors -->
+  <style name="LinkForeground">
+    <property name="color">#663300</property>
+  </style>
+
+  <style name="ActiveLinkForeground">
+    <property name="color">#ff6600</property>
+  </style>
+
+  <style name="VisitedLinkForeground">
+    <includeStyle name="LinkForeground"/>
+    <property name="color">+#333333</property>
+  </style>
+
+  <style name="DisabledLinkForeground">
+    <property name="color">#999966</property>
+  </style>
+
+  <!--
+    Global Utility Styles
+  -->
+
+  <style selector=".p_OraSelected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".p_OraRequired">
+    <includeStyle name="DefaultFont"/>
+    <!-- Use "Courier" by default.  This font is only used for 
+         the asterisk (and is private, so clients can't use it), so
+         we don't have to worry about this getting applied to CJK text -->
+    <property name="font-family">Courier,sans-serif</property>
+    <property name="color">#3366cc</property>
+  </style>
+
+  <!-- 
+    ContentContainer Styles
+  -->   
+
+  <style selector=".OraContentContainerBackgroundTransparent">
+    <includeStyle name="DarkBorder"/>
+  </style>
+  
+  <style selector=".OraContentContainerBackgroundLight">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="DarkAccentBorder"/>    
+  </style>
+  
+  <style selector=".OraContentContainerBackgroundMedium">
+    <includeStyle name="MediumAccentBackground"/>
+    <includeStyle name="DarkAccentBorder"/>    
+  </style>
+  
+  <style selector=".OraContentContainerBackgroundDark">
+    <includeStyle name="DarkBorder"/>
+    <includeStyle name="MediumBackground"/>
+  </style>
+
+  <!--
+    DatePicker Styles
+  -->
+
+  <style selector=".OraCalendarHeader">
+    <includeStyle name="DarkAccentBackground"/>
+  </style>
+
+  <style selector=".OraCalendarContent">
+    <includeStyle name="LightAccentBackground"/>
+    <property name="line-height">1.5</property>
+  </style>
+
+  <style selector=".OraCalendarSelected">
+    <includeStyle name="VeryDarkAccentBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="padding">2px</property>
+  </style>
+
+  <style selector=".OraCalendarContent A">
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- Now, define the inline calendar styles -->
+
+  <style selector=".OraInlineCalendarTitle">
+    <includeStyle name="MediumFont"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraInlineCalendarHeader">
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <property name="font-weight"/>
+  </style>
+
+  <style selector=".OraInlineCalendarContent">
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <property name="line-height">1.5</property>
+  </style>
+
+  <style selector=".OraInlineCalendarContent A">
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraInlineCalendarDisabled">
+    <includeStyle name="SmallFont"/>
+  </style>
+
+  <!--
+    Footer Styles 
+  -->
+
+  <style selector=".OraPrivacy">
+    <includeStyle name="EndTextAlign"/>
+  </style>
+
+  <!--
+    GlobalButton Styles
+  -->
+
+  <style name="GlobalButtonText">
+    <!-- We use a smaller font than base-desktop -->
+    <includeStyle name="VerySmallFont"/>
+  </style>
+
+  <!--
+    GlobalHeader Styles
+  -->
+
+  <style selector=".OraGlobalPageTitle">
+    <!-- Change font size from Large to Medium -->
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <style selector=".OraGlobalHeaderSeparator">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="LightForeground"/>
+    <property name="font-weight">bold</property>
+    <!-- this has to be margin instead of padding or gecko browsers 
+         cut off text when global header wider than screen -->
+    <property name="margin">0px 8px</property>  
+  </style>  
+
+  <style selector=".OraNav2Selected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav2Selected A">
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav2Enabled">
+    <includeStyle name="DefaultFont"/>
+    <property name="color">#ffffff</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav2Enabled A">
+    <property name="color">#ffffff</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav2Disabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="MediumForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- 
+    HGrid Styles 
+  -->
+
+  <!-- HGrid expansion icon isn't shifted over quite as
+       much as the base-desktop icon -->
+  <style selector=".OraHGridExpansionIcon">
+    <property name="left">-16px</property>
+  </style>
+
+  <style selector=".OraHGridLocatorHeader">
+    <!-- Change border color from TableCellHeaderBorderColor -->
+    <includeStyle name="DarkAccentBorder"/>
+  </style>
+
+  <style selector=".OraHGridNavCell">
+    <includeStyle selector=".OraTableCellText"/>
+    <includeStyle name="TextBackground"/>
+  </style>
+
+  <!--
+    Header Styles
+  -->
+  <style selector=".OraHeader">
+    <includeStyle name="DarkForeground"/>
+    <includeStyle name="LargeFont"/>
+    <property name="margin-bottom">0px</property>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <style selector=".OraErrorHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <style selector=".OraHeaderSub">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <style selector=".OraHeaderSubSub">
+    <includeStyle selector=".OraHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+  <style selector=".OraDarkHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="VeryDarkForeground"/>
+  </style>
+
+  <style selector=".OraDarkHeaderSub">
+    <includeStyle selector=".OraDarkHeader"/>
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <style selector=".OraDarkHeaderSubSub">
+    <includeStyle selector=".OraDarkHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+  <style selector=".OraLightHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="MediumForeground"/>
+  </style>
+
+  <style selector=".OraLightHeaderSub">
+    <includeStyle selector=".OraLightHeader"/>
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <style selector=".OraLightHeaderSubSub">
+    <includeStyle selector=".OraLightHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+  <style selector=".OraColorHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="MediumAccentForeground"/>
+  </style>
+
+  <style selector=".OraColorHeaderSub">
+    <includeStyle selector=".OraColorHeader"/>
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <style selector=".OraColorHeaderSubSub">
+    <includeStyle selector=".OraColorHeaderSub"/>
+    <includeStyle name="SmallFont"/>
+  </style>
+
+
+  <style selector=".OraPortletHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".OraDarkPortletHeader">
+    <includeStyle selector=".OraHeader"/>
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector=".p_OraSpacingHeader">
+    <property name="margin">4px 0px 2px 0px</property>
+  </style>
+
+  <style selector=".p_OraSpacingHeaderSub">
+    <property name="margin">10px 0px 2px 0px</property>
+  </style>
+
+  <style selector=".p_OraSpacingHeaderLarge">
+    <property name="margin">20px 0px 2px 0px</property>
+  </style>
+
+  <!-- 
+    MessageBox Styles
+  -->
+
+  <style selector=".OraMessageBoxList">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="margin-bottom">0px</property>
+    <property name="margin-top">5px</property>
+  </style>
+
+  <style selector=".OraMessageBoxLink">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".OraMessageBoxParagraph">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="margin-top">5px</property>
+  </style>
+
+  <style selector=".OraMessageBoxErrorList">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+    <property name="margin-bottom">0px</property>
+  </style>
+
+  <style selector=".OraMessageBoxErrorLink">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+  </style>
+
+  <style selector=".OraMessageBoxErrorParagraph">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="ErrorTextForeground"/>
+    <property name="margin-top">5px</property>
+  </style>
+
+  <style selector=".OraMessageBoxText">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!--
+    PageLayout Styles
+  -->
+
+  <style selector=".p_OraQuickSearchBox">
+    <property name="padding">2pt 5pt</property>
+    <property name="border-width">0px 1px 1px 1px</property>
+  </style>
+
+  <!--
+    Processing Styles
+  -->
+
+  <style selector=".OraProcessingStatusVariable">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <style selector=".OraProcessingStatusFixed">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!--
+    RichTextEditor Styles
+  -->
+
+  <style selector=".OraRichTextEditorButtonBar">
+    <property name="width">22px</property>
+    <property name="height">22px</property>
+    <property name="text-align">center</property>
+    <property name="padding">2px</property>
+    <property name="cursor">default</property>
+  </style>
+
+  <style selector=".OraRichTextEditorSpace">
+    <property name="background-color">buttonface</property>
+    <property name="width">0px</property>
+    <property name="height">24px</property>
+  </style>
+
+  <style selector=".OraRichTextEditorDivider">
+    <property name="background-color">buttonface</property>
+    <property name="border-left">buttonshadow solid 1px</property>
+    <property name="border-top">buttonshadow solid 1px</property>
+    <property name="border-right">buttonhighlight solid 1px</property>
+    <property name="border-bottom">buttonhighlight solid 1px</property>
+    <property name="width">2px</property>
+    <property name="height">24px</property>
+  </style>
+
+  <!--
+    Shuttle Styles
+  -->
+
+  <style selector=".OraShuttleHeader">
+    <!-- Change font from SmallFont to MediumFont -->
+    <includeStyle name="MediumFont"/>
+  </style>
+
+  <!-- 
+    SideBar Styles
+  -->
+
+  <style selector=".p_OraSideBar">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector="TD.p_OraSideBar A:link">
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <style selector="TD.p_OraSideBar A:active">
+    <property name="color">#003399</property>
+  </style>
+
+  <style selector="TD.p_OraSideBar A:visited">
+    <property name="color">#336699</property>
+  </style>
+
+  <style selector="TD.p_OraSideBar SPAN.p_OraDisabled">
+    <property name="color">#ffffcc</property>
+  </style>
+
+  <style selector="TD.p_OraSideBar TD.p_OraSelected  A:link">
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector="TD.p_OraSideBar TD.p_OraSelected  A:active">
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector="TD.p_OraSideBar TD.p_OraSelected  A:visited">
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!--
+    SubTabBar Styles
+  -->
+
+  <style selector=".OraSubTabLayoutBody">
+    <property name="padding-top">10px</property>
+    <property name="padding-bottom">10px</property>
+  </style>
+
+  <style selector=".OraSubTab">
+    <includeStyle name="LightAccentBackground"/>
+    <property name="padding-bottom">1pt</property>
+  </style>
+
+  <!--
+    TabBar Styles
+  -->
+
+  <style selector=".OraNav1Selected">
+    <includeStyle name="MediumFont"/>
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="font-weight">bold</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav1Enabled">
+    <includeStyle name="MediumFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraNav1Disabled">
+    <includeStyle name="MediumFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="MediumAccentForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+  
+  <!-- 
+    Table Styles
+  -->
+
+  <!-- base-desktop uses VeryDarkAccentBorder. We want DarkAccentBorder. -->
+  <style name="TableCellDataBorderColor">    
+    <includeStyle name="DarkAccentBorder"/>
+  </style>  
+
+  <!-- base-desktop uses VeryDarkAccentBorder. We want LightAccentBorder. -->
+  <style name="TableCellHeaderBorderColor">    
+    <includeStyle name="LightAccentBorder"/>
+  </style>
+
+  <!-- Not defined by base-desktop.xss, maybe should be? -->
+  <style selector=".OraTableColumnFooter .OraPromptText">
+    <includeStyle selector=".OraTableColumnFooter"/>
+  </style>
+
+  <!-- Not defined by base-desktop.xss, maybe should be? -->
+  <style selector=".p_OraTableFooterTotal">
+    <includeStyle name="EndTextAlign"/>
+    <property name="padding">0px 0px 0px 30px</property>
+  </style>
+
+  <!--
+    Train Styles
+  -->
+
+  <!-- Use smaller, center-aligned text -->
+  <style name="TrainStation">  
+    <includeStyle name="SmallFont"/>
+    <includeStyle name="CenterTextAlign"/>
+  </style>
+
+  <!-- Reset foreground for visisted stations: use dark accent -->
+  <style selector=".OraTrainVisited">
+    <includeStyle name="DarkAccentForeground"/>
+  </style>
+
+  <!-- Reset foreground for visisted links: use link foreground -->
+  <style selector=".OraTrainVisited A">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <!--
+    Tree Styles
+  -->
+
+  <style selector=".p_OraTreeRowSelected">
+    <includeStyle name="DefaultBoldFont"/>
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+  </style>
+
+  <style selector=".p_OraTreeRow">
+    <property name="color">#003366</property>
+  </style>
+
+  <style selector="SPAN.p_OraTreeRow A:link">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector="SPAN.p_OraTreeRow A:active">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style selector="SPAN.p_OraTreeRow A:visited">
+    <includeStyle name="LinkForeground"/>
+  </style>
+
+  <style name="TreeRowSelected">
+    <property name="color">#ffffff</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- we need the TD SPAN A selector. Otherwise we get bug 2314067 -->
+  <style selector="TD SPAN.p_OraTreeRowSelected A:link">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <!-- we need the TD SPAN A selector. Otherwise we get bug 2314067 -->
+  <style selector="TD SPAN.p_OraTreeRowSelected A:active">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <!-- we need the TD SPAN A selector. Otherwise we get bug 2314067 -->
+  <style selector="TD SPAN.p_OraTreeRowSelected A:visited">
+    <includeStyle name="TreeRowSelected"/>
+  </style>
+
+  <!-- 
+    The following styles are used for server-side image generation 
+  -->
+
+  <!-- Define a default padding for all CJK Albany fonts -->
+  <style name="AlbanyButtonPadding">
+    <property name="padding-top">-2px</property>
+    <property name="padding-bottom">-1px</property>
+  </style>
+
+  <!-- Button padding for Albany WT J -->
+  <style name="BLAFServerButtonPaddingAlbany WT J">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+  <!-- Tab bar padding for Albany WT J -->
+  <style name="BLAFServerTabBarPaddingAlbany WT J">
+    <property name="padding-top">0px</property>
+    <property name="padding-bottom">0px</property>
+  </style>
+
+  <!-- The style for dynamically generated button images -->
+  <style name="BLAFServerButtonText">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!-- The style for dynamically generated disabled button images -->
+  <style name="BLAFServerButtonTextDisabled">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <!-- The style for dynamically generated selected level 1 tabs -->
+  <style name="BLAFServerNav1Selected">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="DarkBackground"/>
+    <includeStyle name="SelectedTextForeground"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- The style for dynamically generated enabled level 1 tabs -->
+  <style name="BLAFServerNav1Enabled">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="TextForeground"/>
+  </style>
+
+  <!-- The style for dynamically generated disabled level 1 tabs -->
+  <style name="BLAFServerNav1Disabled">
+    <includeStyle name="DefaultServerFont"/>
+    <includeStyle name="DarkAccentBackground"/>
+    <includeStyle name="MediumAccentForeground"/>
+  </style>
+
+  <!-- The style for the global button icon -->
+  <style name="BLAFServerGlobalButtonIconEnabled">
+    <!-- Global button background color shouldn't vary with text background -->
+    <property name="background-color">#ffffff</property>
+    <includeStyle name="VeryDarkAccentForeground"/>
+  </style>
+
+  <!-- The style for the selected global button icon -->
+  <style name="BLAFServerGlobalButtonIconSelected">
+    <includeStyle name="LightBackground"/>
+    <includeStyle name="DarkForeground"/>
+  </style>
+
+  <!-- The style for the disabled global button icon -->
+  <style name="BLAFServerGlobalButtonIconDisabled">
+    <includeStyle name="LightAccentBackground"/>
+    <includeStyle name="DarkAccentForeground"/>
+  </style>
+
+  <!-- 
+     In this section, we remove any styles that are defined by 
+     base-desktop that aren't needed by oracle-desktop.
+  -->
+
+  <style selector=".OraError" resetProperties="true"/>
+
+  <style selector="H1.OraHeader" resetProperties="true"/>
+  <style selector="H2.OraHeader" resetProperties="true"/>
+  <style selector="H3.OraHeader" resetProperties="true"/>
+  <style selector="H4.OraHeader" resetProperties="true"/>
+  <style selector="H5.OraHeader" resetProperties="true"/>
+  <style selector="H6.OraHeader" resetProperties="true"/>
+
+  <!-- Some icon styles that BLAF doesn't need -->
+  <style selector=".OraErrorIcon" resetProperties="true"/>
+  <style selector=".OraInfoIcon" resetProperties="true"/>
+  <style selector=".OraWarningIcon" resetProperties="true"/>
+  <style selector=".OraHGridFocusIcon" resetProperties="true"/>
+  <style selector=".OraHGridLocatorIcon" resetProperties="true"/>
+  <style selector=".p_OraHideShowDisclosedSymbol" resetProperties="true"/>
+  <style selector=".OraSortableHeaderSortIcon" resetProperties="true"/>
+
+  <!-- We don't use .OraMessageBox -->
+  <style selector=".OraMessageBox" resetProperties="true"/>
+  <style selector=".p_OraMessageBoxMessage" resetProperties="true"/>
+
+  <!-- Remove contentFooter styles -->
+  <style selector=".p_OraContentFooterRule" resetProperties="true"/>
+  <style selector=".p_OraContentFooterStart" resetProperties="true"/>
+  <style selector=".p_OraContentFooterChildren" resetProperties="true"/>
+  <style selector=".p_OraContentFooterBottom" resetProperties="true"/>
+
+  <!-- Remove footer styles -->
+  <style selector=".p_OraFooter" resetProperties="true"/>
+  <style selector=".p_OraFooterBottom" resetProperties="true"/>
+
+  <!-- Remove globalHeader styles -->
+  <style selector=".OraGlobalHeader" resetProperties="true"/>
+  <style selector=".OraGlobalHeaderEnabled" resetProperties="true"/>
+  <style selector=".OraGlobalHeaderSelected" resetProperties="true"/>
+  <style selector=".OraGlobalHeaderEnabled A" resetProperties="true"/>
+  <style selector=".OraGlobalHeaderSelected A" resetProperties="true"/>
+
+  <!-- Remove header styles -->
+  <style selector=".p_OraHeaderNest" resetProperties="true"/>
+
+  <!-- Remove pageLayout styles -->
+  <style selector=".p_OraGlobalQuick" resetProperties="true"/>
+
+  <!-- Remove processing styles -->
+  <style selector=".p_OraProcessingStatus" resetProperties="true"/>
+
+  <!-- Remove nav3 styles -->
+  <style selector=".OraNav3" resetProperties="true"/>
+  <style selector=".OraNav3Selected" resetProperties="true"/>
+  <style selector=".OraStyledList" resetProperties="true"/>
+  <style selector=".OraStyledList .OraStyledList" resetProperties="true"/>
+
+  <!-- Remove subTabBar styles -->
+  <style selector=".OraSubTabBarOrientationTop" resetProperties="true"/>
+  <style selector=".OraSubTabBarOrientationBottom" resetProperties="true"/>
+
+  <!-- Remove train properties -->
+  <style selector=".OraTrainSubLeft" resetProperties="true"/>
+  <style selector=".OraTrainSubRight" resetProperties="true"/>
+
+  <!-- Remove tree styles -->
+  <style selector=".p_OraTreeDisclosedSymbol" resetProperties="true"/>
+
+</styleSheet>
+
+<styleSheet direction="rtl">
+  <style selector=".p_OraTableFooterTotal">  
+    <property name="padding">0px 30px 0px 0px</property>
+  </style>
+
+  <style selector=".OraShuttleHeader">
+    <property name="padding">0px 18px 0px 0px</property>
+  </style>
+
+  <style selector=".p_OraQuickSearchBox">
+    <property name="border-width">0px 1px 1px 1px</property>
+  </style>
+
+</styleSheet>
+
+<!-- The base derivation for Netscape browsers -->
+<styleSheet browsers="netscape">
+
+  <style selector=".OraCalendarDisabled">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="MediumExtraAccentForeground"/>
+  </style>
+
+  <style selector=".OraCalendarDisabled A">
+    <includeStyle name="DefaultFont"/>
+    <includeStyle name="CenterTextAlign"/>
+    <includeStyle name="DarkForeground"/>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- Disable absolute positioning of HGrid expansion icons -->
+  <style selector=".OraHGridExpansionIcon">
+    <property name="position"/>
+    <property name="top"/>
+    <property name="left"/>
+  </style>
+
+  <style selector=".OraTableSubControlBar">
+    <property name="padding"/>
+  </style>
+
+  <style selector=".OraTableControlBarTop">
+    <property name="padding"/>
+  </style>
+
+  <style selector=".OraTableControlBarBottom">
+    <property name="padding"/>
+  </style>  
+
+  <style selector=".OraTableContent">
+    <property name="border-collapse"/>
+  </style>    
+
+  <style selector=".p_OraBulletedListSingleColumn">
+    <property name="margin-top">-10px</property>
+    <property name="margin-bottom">-10px</property>
+  </style>
+
+  <style selector=".OraGlobalHeaderSeparator">
+    <property name="margin"/>
+  </style>  
+  
+  <style selector=".p_OraQuickSearchBox">
+    <property name="padding">0px</property>
+  </style>
+
+  <style selector=".OraTableTitle">
+    <includeStyle name="VeryLargeFont"/>
+  </style>
+
+  <style selector=".OraTableSortableHeaderLink">
+    <property name="text-decoration">underline</property>
+  </style>
+
+  <!-- turn off right alignment for text fields, because
+       Netscape aligns the text field itslef, rather than its content
+  -->
+  <style selector=".OraFieldNumber">
+    <includeStyle name="NoTextAlign"/>
+  </style>
+
+  <!-- turn off right alignment for text fields, because
+       Netscape aligns the text field itslef, rather than its content
+  -->
+  <style selector=".OraFieldNumberDisabled">
+    <includeStyle name="NoTextAlign"/>
+  </style>
+
+  <style selector=".OraTreeNodeAdjust">
+    <property name="padding-bottom">0px</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet browsers="ie" versions="4 5" platforms="windows" >
+  <style selector=".OraMessageBoxList">
+    <property name="text-indent">-20px</property>
+  </style>
+
+  <style selector=".OraMessageBoxErrorList">
+    <property name="text-indent">-20px</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet browsers="ie" versions="6">
+  <style selector=".OraMessageBoxList">
+    <property name="text-indent">-15px</property>
+  </style>
+
+  <style selector=".OraMessageBoxErrorList">
+    <property name="text-indent">-15px</property>
+  </style>
+
+</styleSheet>
+
+<!-- Arabic style sheet -->
+<styleSheet locales="ar">
+
+  <!-- Button padding for Albany WT J -->
+  <style name="BLAFServerButtonPaddingAlbany WT J">
+    <property name="padding-top">0px</property>
+    <property name="padding-bottom">1px</property>
+  </style>
+
+</styleSheet>
+
+<!-- Thai style sheet -->
+<styleSheet locales="th">
+
+  <!-- Button padding for Albany WT J -->
+  <style name="BLAFServerButtonPaddingAlbany WT J">
+    <property name="padding-top">3px</property>
+    <property name="padding-bottom">1px</property>
+  </style>
+
+  <style name="BLAFServerTabBarPaddingAlbany WT J">
+    <property name="padding-top">1px</property>
+    <property name="padding-bottom">0px</property>
+  </style>
+
+</styleSheet>
+
+<!-- CJK style sheet for all -->
+<styleSheet locales="ja zh ko">
+
+  <style name="AlbanyTabBarPadding">
+    <property name="padding-top">0px</property>
+    <property name="padding-bottom">0px</property>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Japanese-specific styles -->
+<styleSheet locales="ja">
+
+  <!--
+    Do not use bold font for Japanese selected tab text.  Due to
+    bug 1650372, bold text does not display in certain Solaris
+    configurations.
+  -->
+  <style name="BLAFServerNav1Selected">
+    <property name="font-weight"/>
+  </style>
+
+  <!-- Button padding for Albany WT J -->
+  <style name="BLAFServerButtonPaddingAlbany WT J">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+  <!-- Tab bar padding for Albany WT J -->
+  <style name="BLAFServerTabBarPaddingAlbany WT J">
+    <includeStyle name="AlbanyTabBarPadding"/>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Korean-specific styles -->
+<styleSheet locales="ko">
+
+  <!-- Button padding for Albany WT K -->
+  <style name="BLAFServerButtonPaddingAlbany WT K">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+  <!-- Tab bar padding for Albany WT K -->
+  <style name="BLAFServerTabBarPaddingAlbany WT K">
+    <includeStyle name="AlbanyTabBarPadding"/>
+  </style>
+
+
+</styleSheet>
+
+<!-- Style sheet just for Traditional Chinese specific styles -->
+<styleSheet locales="zh_TW">
+
+  <!-- Button padding for Albany WT TC -->
+  <style name="BLAFServerButtonPaddingAlbany WT TC">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+  <!-- Tab bar padding for Albany WT TC -->
+  <style name="BLAFServerTabBarPaddingAlbany WT TC">
+    <includeStyle name="AlbanyTabBarPadding"/>
+  </style>
+
+</styleSheet>
+
+<!-- Style sheet just for Simplified Chinese specific styles -->
+<styleSheet locales="zh_CN">
+
+  <!-- Button padding for Albany WT SC -->
+  <style name="BLAFServerButtonPaddingAlbany WT SC">
+    <includeStyle name="AlbanyButtonPadding"/>
+  </style>
+
+  <!-- Tab bar padding for Albany WT SC -->
+  <style name="BLAFServerTabBarPaddingAlbany WT SC">
+    <includeStyle name="AlbanyTabBarPadding"/>
+  </style>
+
+</styleSheet>
+
+</styleSheetDocument>

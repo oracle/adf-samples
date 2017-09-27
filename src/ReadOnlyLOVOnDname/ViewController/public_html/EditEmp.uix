@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<page xmlns="http://xmlns.oracle.com/uix/controller"
+      xmlns:ui="http://xmlns.oracle.com/uix/ui"
+      xmlns:ctrl="http://xmlns.oracle.com/uix/controller"
+      xmlns:html="http://www.w3.org/TR/REC-html40" expressionLanguage="el">
+  <content>
+    <dataScope xmlns="http://xmlns.oracle.com/uix/ui">
+      <provider>
+        <!-- Add DataProviders (<data> elements) here -->
+      </provider>
+      <contents>
+        <document>
+          <metaContainer>
+            <!-- Set the page title -->
+            <head title=""/>
+          </metaContainer>
+          <contents>
+            <body>
+              <contents>
+                <form name="form0" method="POST">
+                  <contents>
+                    <formValue name="${bindings.statetokenid}"
+                               value="${bindings.statetoken}" id="_uixState"/>
+                    <flowLayout>
+                      <contents>
+                        <messageBox model="${data}"/>
+                        <labeledFieldLayout>
+                          <contents>
+                            <messageTextInput model="${bindings.Empno}"
+                                              columns="10">
+                              <onSubmitValidater>
+                                <decimal/>
+                              </onSubmitValidater>
+                            </messageTextInput>
+                            <messageTextInput model="${bindings.Ename}"
+                                              columns="10"/>
+                            <messageTextInput model="${bindings.Job}"
+                                              columns="10"/>
+                            <messageTextInput model="${bindings.Mgr}"
+                                              columns="10">
+                              <onSubmitValidater>
+                                <decimal/>
+                              </onSubmitValidater>
+                            </messageTextInput>
+                            <messageDateField model="${bindings.Hiredate}">
+                              <onSubmitValidater>
+                                <date pattern="yyyy-MM-dd"/>
+                              </onSubmitValidater>
+                            </messageDateField>
+                            <messageTextInput model="${bindings.Sal}"
+                                              columns="10">
+                              <onSubmitValidater>
+                                <decimal/>
+                              </onSubmitValidater>
+                            </messageTextInput>
+                            <messageTextInput model="${bindings.Comm}"
+                                              columns="10">
+                              <onSubmitValidater>
+                                <decimal/>
+                              </onSubmitValidater>
+                            </messageTextInput>
+                            <messageLovInput model="${bindings.Dname}"
+                                             id="Dname_No_Update"
+                                             destination="lovWindow0.uix"
+                                             partialRenderMode="multiple"
+                                             partialTargets="_uixState"
+                                             readOnly="false" disabled="false"
+                                             columns="0" onFocus="this.blur()"
+                                             tip="Choose department from the LOV" formSubmitted="true" unvalidated="true"/>
+                          </contents>
+                        </labeledFieldLayout>
+                        <pageButtonBar>
+                          <contents>
+                            <submitButton text="Submit"/>
+                            <submitButton text="Previous"
+                                          model="${bindings.Previous}"
+                                          id="Previous2" event="action"/>
+                            <submitButton text="Next" model="${bindings.Next}"
+                                          id="Next1" event="action"/>
+                          </contents>
+                        </pageButtonBar>
+                      </contents>
+                    </flowLayout>
+                  </contents>
+                </form>
+              </contents>
+            </body>
+          </contents>
+        </document>
+      </contents>
+    </dataScope>
+  </content>
+  <handlers>
+    <!-- Add EventHandlers (<event> elements) here  -->
+    <event name="lovUpdate">
+      <null/>
+    </event>
+    <event name="action" source="Next1">
+      <invoke method="doIt"
+              javaType="oracle.jbo.uicli.binding.JUCtrlActionBinding"
+              instance="${bindings.Next}"/>
+    </event>
+    <event name="action" source="Previous2">
+      <invoke method="doIt"
+              javaType="oracle.jbo.uicli.binding.JUCtrlActionBinding"
+              instance="${bindings.Previous}"/>
+    </event>
+  </handlers>
+</page>

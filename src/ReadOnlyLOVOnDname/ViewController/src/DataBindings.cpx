@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.18.73"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="HRModuleDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="demo.model"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="HRModuleLocal" >
+         <Parameters >
+            <Parameter
+               name="Sync"
+               value="Immediate" >
+            </Parameter>
+         </Parameters>
+      </DataControl>
+      <Containee
+         id="EditEmpUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="demo.view.EditEmpUIModel" >
+      </Containee>
+      <Containee
+         id="lovWindow0UIModel"
+         ObjectType="BindingContainerReference"
+         FullName="demo.view.lovWindow0UIModel" >
+      </Containee>
+   </Contents>
+</JboProject>

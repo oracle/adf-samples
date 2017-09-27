@@ -1,0 +1,170 @@
+/* CSS file generated on Thu Mar 02 15:47:14 CET 2006 */
+.OraInstructionText,.x0,.OraFieldText,.x4,.OraFieldTextLTR,.x2y,.OraPhoneFieldText,.x30,.OraPostalCodeFieldText,.x32,.OraAddressFieldText,.x34,.OraMessageBoxText,.x68,.OraProcessingStatusFixed,.x6a {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000}
+.OraInstructionTextStrong,.x1,.OraDataText,.x2 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#000000}
+.OraDataNumber,.x3 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#000000;text-align:right}
+.OraFieldTextDisabled,.x5,.OraFieldTextLTRDisabled,.x2z,.OraPhoneFieldTextDisabled,.x31,.OraPostalCodeFieldTextDisabled,.x33,.OraAddressFieldTextDisabled,.x35 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#999999}
+.OraFieldNumber,.x6 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;text-align:right;color:#000000}
+.OraFieldNumberDisabled,.x7 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;text-align:right;color:#999999}
+.OraPromptText,.x8 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;text-align:right;color:#000000;font-weight:normal}
+.OraRequiredIcon,.xc {color:#336699;font-family:Courier,sans-serif}
+.OraLink:link,.xd:link,.OraBreadCrumbs,.xh,.OraBulletedList A,.xj A,.OraLinkText,.x2v,.OraHGridNavRowActiveLink,.x3u,.OraNavBarActiveLink,.x41 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#663300}
+.OraLink:active,.xd:active,.OraALinkText,.x2x {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#ff6600}
+.OraLink:visited,.xd:visited,.OraVLinkText,.x2w {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#996633}
+.OraLinkDisabled,.xe,button,.OraContentContainerContentTransparent,.xr,.OraContentContainerContentLight,.xs,.OraContentContainerContentMedium,.xt,.OraContentContainerContentDark,.xu,.OraTabBar,.x1c,.p_OraDisabled,.x36 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt}
+.OraApplicationSwitcherText,.xf {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt}
+.OraBody,.xg {background-color:#ffffff;font-family:Arial,Helvetica,Geneva,sans-serif}
+.OraBreadCrumbs A,.xh A {color:#663300;font-size:9pt}
+.OraBreadCrumbsSelected A,.xi A,TD.p_OraSideBar A:link,TD.x6e A:link {color:#000000}
+.OraBulletedList UL,.xj UL {margin-top:4px;margin-bottom:4px}
+.OraColorFieldSwatchOverlayIcon,.xk {position:relative;left:-7px;top:5px}
+.OraContentContainerHeader,.xp {background-color:#6699cc;color:#ffffff}
+.OraContentContainerLight .OraContentContainerBody,.xm .xq,.OraContentContainerContentLight .OraContentContainerBody,.xs .xq,.OraTabBarEnabled,.x1d,.OraBGAccentLight,.x2k {background-color:#f7f7e7}
+.OraContentContainerMedium .OraContentContainerBody,.xn .xq,.OraContentContainerContentMedium .OraContentContainerBody,.xt .xq,.OraBGAccentMedium,.x2j {background-color:#ffffe3}
+.OraContentContainerDark .OraContentContainerBody,.xo .xq,.OraContentContainerContentDark .OraContentContainerBody,.xu .xq,.OraBGAccentDark,.x2i {background-color:#d2d8b0}
+.OraCopyright,.xv,.OraAbout,.xx {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt;color:#000000;white-space:nowrap}
+.OraCopyright A,.xv A,.OraPrivacy A,.xw A,.OraAbout A,.xx A,.OraTrainVisited A,.x26 A,.OraSubTab A,.x4h A,.p_OraTreeRow A:link,.x5c A:link,.p_OraTreeRow A:active,.x5c A:active,.p_OraTreeRow A:visited,.x5c A:visited,SPAN.p_OraTreeRow A:link,SPAN.x5c A:link,SPAN.p_OraTreeRow A:active,SPAN.x5c A:active,SPAN.p_OraTreeRow A:visited,SPAN.x5c A:visited {color:#663300}
+.OraPrivacy,.xw {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt;color:#000000;white-space:nowrap;text-align:right}
+.OraGlobalButtonText,.xy {color:#663300;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt}
+.OraGlobalButtonTextSelected,.xz,.OraInlineInfoText,.x2o {color:#336699;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt}
+.OraGlobalButtonTextDisabled,.x10 {color:#9fa57d;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt}
+.OraGlobalHeaderSeparator,.x14 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#99ccff;font-weight:bold;margin:0px 8px}
+.OraHGridExpansionIcon,.x15 {color:#336699;position:absolute;top:0px;left:-16px}
+.OraSideBar,.x1a {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;background-color:#f7f7e7;color:#003366}
+.OraTabBarSelected,.x1e,.OraBGColorDark,.x2a {background-color:#336699}
+.OraTabBarDisabled,.x1f {background-color:#f7f7e7;color:#9fa57d}
+.OraTabBarEnabled A,.x1d A {color:#003366}
+.OraTabBarSelected A,.x1e A {color:#99ccff}
+.OraTabBarSeparator,.x1g {width:0px}
+.OraTableContent,.x1h {border-collapse:collapse}
+.OraTableControlBarTop,.x1i {background-color:#f7f7e7;border-color:#d2d8b0;border-style:solid;border-width:1px 1px 0px;padding:1px 2px}
+.OraTableControlBarBottom,.x1j {background-color:#f7f7e7;border-color:#d2d8b0;border-style:solid;border-width:0px 1px 1px;padding:1px 2px}
+.OraTableSubControlBar,.x1k {border-color:#d2d8b0;border-style:solid;border-width:1px 1px 0px;padding:1px 2px}
+.OraTableCellText,.x1l {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#f7f7e7;border-color:#d2d8b0}
+.OraTableCellTextBand,.x1m,.OraHGridNavCell,.x5n {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#ffffff;border-color:#d2d8b0}
+.OraTableCellNumber,.x1n {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#f7f7e7;border-color:#d2d8b0;text-align:right;padding-right:2px}
+.OraTableCellNumberBand,.x1o {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#ffffff;border-color:#d2d8b0;text-align:right;padding-right:2px}
+.OraTableCellIconButton,.x1p,.OraTableCellSelect,.x52 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#f7f7e7;border-color:#d2d8b0;text-align:center}
+.OraTableCellIconButtonBand,.x1q,.OraTableCellSelectBand,.x53 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;vertical-align:baseline;background-color:#ffffff;border-color:#d2d8b0;text-align:center}
+.OraTableColumnHeader,.x1r {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:left;background-color:#d2d8b0;color:#336699;vertical-align:bottom}
+.OraTableColumnHeaderNumber,.x1s {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;vertical-align:bottom;text-align:right}
+.OraTableColumnHeaderIconButton,.x1t {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;vertical-align:bottom;text-align:center}
+.OraTableRowHeader,.x1u {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:right;background-color:#d2d8b0;color:#336699}
+.OraTableDetail,.x1v {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#000000;border-color:#d2d8b0;background-color:#ffffff}
+.OraTableColumnFooter,.x1w,.OraTableColumnFooter .OraPromptText,.x1w .x8 {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:left;background-color:#d2d8b0;color:#336699}
+.OraTableTotal,.x1x {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:right;background-color:#d2d8b0;color:#336699}
+.OraTableTotalNumber,.x1y {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:right;background-color:#d2d8b0;color:#000000;vertical-align:baseline}
+.OraTableTotalText,.x1z {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:left;background-color:#d2d8b0;color:#000000;vertical-align:baseline}
+.OraTableSortableColumnHeader,.x20 {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:left;background-color:#d2d8b0;color:#336699;vertical-align:bottom;cursor:hand}
+.OraTableSortableColumnHeaderNumber,.x21 {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;vertical-align:bottom;cursor:hand;text-align:right}
+.OraTableSortableColumnHeaderIconButton,.x22 {border-color:#f7f7e7;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;vertical-align:bottom;cursor:hand;text-align:center}
+.OraTableSortableHeaderLink,.x23 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;text-decoration:none;vertical-align:bottom}
+.OraTableHeaderLink,.x24 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#d2d8b0;color:#336699;text-decoration:none}
+.OraTrainActive,.x25 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;text-align:center;border-color:#336699;color:#336699;font-weight:bold}
+.OraTrainVisited,.x26 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;text-align:center;border-color:#999999;color:#d2d8b0}
+.OraTrainDisabled,.x27 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;text-align:center;color:#999999;border-color:#cccccc}
+.OraTrainUnvisited,.x28 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;text-align:center;border-color:#336699;color:#336699}
+.OraTrainUnvisited A,.x28 A,TD.p_OraSideBar A:visited,TD.x6e A:visited {color:#336699}
+.OraBGColorVeryDark,.x29 {background-color:#003366}
+.OraBGColorMedium,.x2b {background-color:#6699cc}
+.OraBGColorLight,.x2c {background-color:#99ccff}
+.OraBGGrayVeryDark,.x2d {background-color:#333333}
+.OraBGGrayDark,.x2e {background-color:#666666}
+.OraBGGrayMedium,.x2f {background-color:#999999}
+.OraBGGrayLight,.x2g {background-color:#cccccc}
+.OraBGAccentVeryDark,.x2h,.OraTable,.x50 {background-color:#9fa57d}
+.p_InContextBrandingText,.x2l,.OraHGridNavRowInactiveLink,.x3v,.OraNavBarInactiveLink,.x42 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#9fa57d}
+.OraPageStampText,.x2m,.OraNavBarViewOnly,.x43,.OraTipText,.x56 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#336699}
+.OraPageStampLabel,.x2n,.OraTableControlBarText,.x4y,.OraTipLabel,.x55,.OraMessageBoxLink,.x63,.OraProcessingStatusVariable,.x69 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#336699}
+.OraTextInline,.x2p {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt;color:#6699cc}
+.OraErrorText,.x2q {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#cc0000}
+.OraErrorNameText,.x2s,.OraMessageBoxErrorLink,.x66 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#cc0000}
+.OraInlineErrorText,.x2t {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:8pt;color:#cc0000}
+.OraGlobalPageTitle,.x2u {color:#ffffff;font-weight:bold;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.p_OraSelected,.x37 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#336699;color:#ffffff;text-decoration:none}
+.p_OraHiddenLabel,.x38 {position:absolute;top:-999px;left:0px}
+.p_OraColorFieldSwatch,.x39 {border-color:#000000;border-style:solid;border-width:1}
+.p_OraColorPalette,.x3a {background-color:#000000}
+.p_OraColorPaletteEmptyCell,.x3b {background-color:#ffffff}
+.OraCalendarNav A,.x3c A,.OraInlineCalendarNav A,.x3h A {color:#663300;text-decoration:none}
+.OraCalendarTitle,.x3d {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;text-align:center;background-color:#ffffff;color:#336699;padding:2px}
+.OraCalendarHeader,.x3e {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:center;color:#336699;padding:2px;background-color:#d2d8b0}
+.OraCalendarContent,.x3f {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;text-align:center;color:#999999;border-color:#d2d8b0;text-decoration:none;border-width:1px;border-style:solid;padding:2px;background-color:#f7f7e7;line-height:1.5}
+.OraCalendarSelected,.x3g {font-weight:bold;text-decoration:none;background-color:#9fa57d;color:#ffffff;padding:2px}
+.OraCalendarContent A,.x3f A {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;text-align:center;color:#336699;text-decoration:none}
+.OraInlineCalendarTitle,.x3i {text-align:center;background-color:#ffffff;color:#336699;padding:2px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt;font-weight:bold}
+.OraInlineCalendarHeader,.x3j {text-align:center;color:#336699;padding:2px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;background-color:#d2d8b0}
+.OraInlineCalendarContent,.x3k {text-align:center;color:#999999;border-color:#d2d8b0;text-decoration:none;border-width:1px;border-style:solid;padding:2px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;background-color:#f7f7e7;line-height:1.5}
+.OraInlineCalendarSelected,.x3l {font-weight:bold;text-decoration:none}
+.OraInlineCalendarContent A,.x3k A {text-align:center;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;color:#336699;text-decoration:none}
+.OraHGridLocatorHeader,.x3t,.OraContentContainerBackgroundLight,.x5g {background-color:#f7f7e7;border-color:#d2d8b0}
+.OraHeaderSub,.x3w {color:#336699;margin-bottom:0px;font-weight:bold;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.OraHeaderSubSub,.x3x,.OraTableTitle,.x4z {color:#336699;margin-bottom:0px;font-weight:bold;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt}
+.OraMessageBoxList,.x3z {margin-left:25px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#336699;margin-bottom:0px;margin-top:5px}
+.p_OraQuickSearchBox,.x44 {background-color:#f7f7e7;border-color:#d2d8b0;border-style:solid;padding:2pt 5pt;border-width:0px 1px 1px 1px}
+.p_OraProductBrandingText,.x47 {color:#336699;position:relative;font-family:Garamond, Times, Times New Roman, Serif;font-weight:normal;font-size:24pt;line-height:28.8pt;top:-4.8pt}
+.p_OraProductBrandingCompactText,.x48,.OraHeader,.x18 {color:#336699;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;margin-bottom:0px;font-weight:bold}
+.OraShuttleHeader,.x49 {color:#336699;font-weight:bold;padding:0px 0px 0px 18px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.OraShuttleLinkText,.x4a {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt;color:#663300}
+.p_OraSideBarMinWidth,.x4b {width:140px}
+.OraSubTab,.x4h {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;padding:0px 8px;background-color:#f7f7e7;padding-bottom:1pt}
+.OraSubTab .p_OraDisabled,.x4h .x36 {color:#9fa57d}
+.OraSubTabSelected,.x4i {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;padding:0px 8px}
+.OraSubTabSelected A,.x4i A,.p_OraTreeDisclosedSymbol A:link,.x59 A:link,.p_OraTreeDisclosedSymbol A:active,.x59 A:active,.p_OraTreeDisclosedSymbol A:visited,.x59 A:visited {color:#336699;text-decoration:none}
+.OraTableBorder0001,.x4j {border-style:solid;border-width:0px 0px 0px 1px}
+.OraTableBorder0010,.x4k {border-style:solid;border-width:0px 0px 1px}
+.OraTableBorder0011,.x4l {border-style:solid;border-width:0px 0px 1px 1px}
+.OraTableBorder0100,.x4m {border-style:solid;border-width:0px 1px 0px 0px}
+.OraTableBorder0101,.x4n {border-style:solid;border-width:0px 1px}
+.OraTableBorder0110,.x4o {border-style:solid;border-width:0px 1px 1px 0px}
+.OraTableBorder0111,.x4p {border-style:solid;border-width:0px 1px 1px}
+.OraTableBorder1000,.x4q {border-style:solid;border-width:1px 0px 0px}
+.OraTableBorder1001,.x4r {border-style:solid;border-width:1px 0px 0px 1px}
+.OraTableBorder1010,.x4s {border-style:solid;border-width:1px 0px}
+.OraTableBorder1011,.x4t {border-style:solid;border-width:1px 0px 1px 1px}
+.OraTableBorder1100,.x4u {border-style:solid;border-width:1px 1px 0px 0px}
+.OraTableBorder1101,.x4v {border-style:solid;border-width:1px 1px 0px}
+.OraTableBorder1110,.x4w {border-style:solid;border-width:1px 1px 1px 0px}
+.OraTableBorder1111,.x4x {border-style:solid;border-width:1px}
+.OraTableAddTotal,.x51 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;text-align:left;background-color:#d2d8b0;color:#336699}
+.OraSortableHeaderBorder,.x54 {border-width:2px;border-style:outset}
+.p_OraTreeIcon,.x5a {vertical-align:top}
+.p_OraTreeNodeAdjust,.x5b {padding-bottom:2px}
+.p_OraTreeRow,.x5c {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#003366}
+.p_OraTreeRowSelected,.x5d {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;background-color:#336699;color:#ffffff}
+.p_OraTreeRowSelected A:link,.x5d A:link,.p_OraTreeRowSelected A:active,.x5d A:active,.p_OraTreeRowSelected A:visited,.x5d A:visited,.OraNav2Selected A,.x5k A,.OraNav2Enabled A,.x5l A,TD.p_OraSideBar TD.p_OraSelected  A:link,TD.x6e TD.x37  A:link,TD.p_OraSideBar TD.p_OraSelected  A:active,TD.x6e TD.x37  A:active,TD.p_OraSideBar TD.p_OraSelected  A:visited,TD.x6e TD.x37  A:visited,TD SPAN.p_OraTreeRowSelected A:link,TD SPAN.x5d A:link,TD SPAN.p_OraTreeRowSelected A:active,TD SPAN.x5d A:active,TD SPAN.p_OraTreeRowSelected A:visited,TD SPAN.x5d A:visited {color:#ffffff;text-decoration:none}
+.p_OraRequired,.x5e {font-size:10pt;font-family:Courier,sans-serif;color:#3366cc}
+.OraContentContainerBackgroundTransparent,.x5f {border-color:#336699}
+.OraContentContainerBackgroundMedium,.x5h {background-color:#ffffe3;border-color:#d2d8b0}
+.OraContentContainerBackgroundDark,.x5i {border-color:#336699;background-color:#6699cc}
+.OraInlineCalendarDisabled,.x5j {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt}
+.OraNav2Selected,.x5k {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#ffffff;text-decoration:none}
+.OraNav2Enabled,.x5l {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#ffffff;text-decoration:none}
+.OraNav2Disabled,.x5m {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#6699cc;text-decoration:none}
+.OraErrorHeader,.x5o {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;margin-bottom:0px;font-weight:bold;color:#cc0000}
+.OraDarkHeader,.x5p {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;margin-bottom:0px;font-weight:bold;color:#003366}
+.OraDarkHeaderSub,.x5q {margin-bottom:0px;font-weight:bold;color:#003366;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.OraDarkHeaderSubSub,.x5r {margin-bottom:0px;font-weight:bold;color:#003366;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt}
+.OraLightHeader,.x5s {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;margin-bottom:0px;font-weight:bold;color:#6699cc}
+.OraLightHeaderSub,.x5t {margin-bottom:0px;font-weight:bold;color:#6699cc;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.OraLightHeaderSubSub,.x5u {margin-bottom:0px;font-weight:bold;color:#6699cc;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt}
+.OraColorHeader,.x5v {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:13pt;margin-bottom:0px;font-weight:bold;color:#ffffe3}
+.OraColorHeaderSub,.x5w {margin-bottom:0px;font-weight:bold;color:#ffffe3;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt}
+.OraColorHeaderSubSub,.x5x {margin-bottom:0px;font-weight:bold;color:#ffffe3;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:9pt}
+.OraPortletHeader,.x5y,.OraDarkPortletHeader,.x5z {margin-bottom:0px;font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;font-weight:bold;color:#000000}
+.p_OraSpacingHeader,.x60 {margin:4px 0px 2px 0px}
+.p_OraSpacingHeaderSub,.x61 {margin:10px 0px 2px 0px}
+.p_OraSpacingHeaderLarge,.x62 {margin:20px 0px 2px 0px}
+.OraMessageBoxParagraph,.x64 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#336699;margin-top:5px}
+.OraMessageBoxErrorList,.x65 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#cc0000;margin-bottom:0px}
+.OraMessageBoxErrorParagraph,.x67 {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;color:#cc0000;margin-top:5px}
+.OraRichTextEditorButtonBar,.x6b {width:22px;height:22px;text-align:center;padding:2px;cursor:default}
+.OraRichTextEditorSpace,.x6c {background-color:buttonface;width:0px;height:24px}
+.OraRichTextEditorDivider,.x6d {background-color:buttonface;border-left:buttonshadow solid 1px;border-top:buttonshadow solid 1px;border-right:buttonhighlight solid 1px;border-bottom:buttonhighlight solid 1px;width:2px;height:24px}
+.p_OraSideBar,.x6e {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:10pt;background-color:#d2d8b0;color:#000000}
+TD.p_OraSideBar A:active,TD.x6e A:active {color:#003399}
+TD.p_OraSideBar SPAN.p_OraDisabled,TD.x6e SPAN.x36 {color:#ffffcc}
+.OraSubTabLayoutBody,.x6f {padding-top:10px;padding-bottom:10px}
+.OraNav1Selected,.x6g {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt;background-color:#336699;color:#ffffff;font-weight:bold;text-decoration:none}
+.OraNav1Enabled,.x6h {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt;background-color:#d2d8b0;color:#000000;text-decoration:none}
+.OraNav1Disabled,.x6i {font-family:Arial,Helvetica,Geneva,sans-serif;font-size:11pt;background-color:#d2d8b0;color:#ffffe3;text-decoration:none}
+.p_OraTableFooterTotal,.x6j {text-align:right;padding:0px 0px 0px 30px}

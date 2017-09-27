@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="HRModuleLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>scott</JDBCName>
+         <jbo.dofailover>false</jbo.dofailover>
+         <jbo.project>Model</jbo.project>
+         <jbo.locking.mode>optimistic</jbo.locking.mode>
+         <AppModuleJndiName>demo.model.HRModule</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>demo.model.HRModule</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="scott">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="scott"/>
+      <ENTRY name="ConnectionName" value="scott"/>
+      <ENTRY name="SID" value="XE"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05040EF63B6F3E831FB5B895CD66B76C0F]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.driver.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

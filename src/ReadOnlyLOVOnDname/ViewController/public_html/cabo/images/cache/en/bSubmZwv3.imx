@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImageMetadata version="2.0" xmlns="http://xmlns.oracle.com/uix/image">
+<button textAntialias="false" disabled="false" width="58" height="18" direction="ltr" startRounded="true" version="040503" endRounded="true">
+<foreground red="0" green="0" blue="0"/>
+<background red="247" green="247" blue="231"/>
+<font>
+<name>Dialog</name>
+<size>12</size>
+<style>plain</style>
+</font>
+<text>Submit</text>
+<borderColor red="210" green="216" blue="176"/>
+</button>
+</ImageMetadata>

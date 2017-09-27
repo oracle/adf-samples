@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+
+<!--
+
+  minimal-desktop.xss defines the styles used by the desktop 
+  implementation of the Minimal Look And Feel.  The styles defined
+  here are layered on top of the styles defined by the Base 
+  Look And Feel (base-desktop.xss).
+
+-->
+
+<styleSheetDocument xmlns="http://xmlns.oracle.com/uix/style"
+                    version="2.0">
+
+<styleSheet>
+
+  <!--
+    Button Styles
+  -->
+
+  <style selector="button">
+    <includeStyle name="LightAccentBackground"/>
+    <property name="padding">0px</property>
+    <property name="margin">1px</property>
+  </style>
+
+  <!--
+    ContentContainer Styles
+  -->
+
+  <!-- Add a 1 pixel border around the entire content container -->
+  <style name="ContentContainer">
+    <includeStyle name="MediumBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="margin">2px</property>
+  </style>
+
+  <!-- Use darker border for dark content containers -->
+  <style selector=".OraContentContainerDark">
+    <includeStyle name="DarkBorder"/>
+  </style>
+
+  <style name="ContentContainerContent">
+    <includeStyle name="MediumBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="margin">2px</property>
+  </style>
+
+  <!-- Use darker border for dark content containers -->
+  <style selector=".OraContentContainerContentDark">
+    <includeStyle name="DarkBorder"/>
+  </style>
+
+
+  <!-- Adjust the header padding and text size/weight -->
+  <style selector=".OraContentContainerHeader">
+    <property name="padding">0px 3px</property>
+    <includeStyle name="MediumFont"/>
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- Add padding around the body of all content containers -->
+  <style selector=".OraContentContainerBody">
+    <property name="padding">5px</property>
+
+    <!-- Add a minimum height so that empty content containers
+         occupy some space -->
+    <property name="height">20px</property>
+  </style>  
+
+  <!--
+    Footer Styles
+  -->
+
+  <style name="FooterMessageText">
+    <property name="padding">5px</property>
+  </style>
+
+  <!--
+    GlobalButton Styles
+  -->
+
+  <style selector=".OraGlobalButtonText">
+    <property name="padding">0px 0px 2px 0px</property>
+  </style>
+
+  <style selector=".OraGlobalButtonTextSelected">
+    <property name="padding">0px 0px 2px 0px</property>
+  </style>
+
+  <!-- 
+    Global Header Styles
+  -->
+
+  <!-- Add some padding around the edges -->
+  <style selector=".OraGlobalHeader">
+    <property name="padding">3px</property>
+  </style>
+
+  <!-- 
+    Fix up the padding around the globalHeader items and
+    disable word wrapping 
+   -->
+  <style name="GlobalHeaderItem">
+    <property name="padding">0px 0px 0px 5px</property>
+    <property name="white-space">nowrap</property> 
+  </style>
+
+  <!-- Remove the text decoration from all globalHeader links -->
+  <style name="GlobalHeaderLink">
+    <property name="text-decoration">none</property>    
+  </style>
+
+  <!-- Make the selected link bold -->
+  <style selector=".OraGlobalHeaderSelected A">
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!-- 
+    HGrid Styles
+  -->
+
+  <style selector=".OraHGridExpansionIcon">
+    <property name="text-decoration">none</property>
+  </style>
+
+  <style selector=".OraHGridFocusIcon">
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!--
+    Header Styles
+  -->
+
+  <style selector=".OraHeader">
+    <includeStyle name="DarkAccentBorder"/>
+    <property name="border-width">0px 0px 1px 0px</property>
+    <property name="border-style">solid</property>
+    <property name="vertical-align">bottom</property>
+    <property name="margin-bottom">3px</property>
+    <property name="padding">0px 3px</property>
+  </style>
+
+   <style name="HeaderText">
+    <includeStyle name="DarkForeground"/>
+    <property name="font-weight">bold</property>
+    <property name="padding">0px</property>   
+    <property name="margin">0px</property> 
+  </style>
+
+  <style selector=".OraHeaderIcon">
+    <property name="margin-right">3px</property>
+  </style>
+
+  <!--
+    MessageBox Styles
+  -->
+
+  <style selector=".OraMessageBox">
+    <includeStyle name="VeryDarkAccentBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px</property>
+    <property name="padding">5px</property>
+    <property name="margin">5px 0px 0px</property>
+  </style>
+
+  <!--
+    Separator Styles
+  -->
+  <style selector=".OraSeparator">
+    <includeStyle name="DarkBorder"/>
+    <property name="border-style">dashed none none</property>
+    <property name="border-width">1px 0px 0px</property>
+    <property name="height">1px</property>
+    <property name="margin">-3px 0px -3px 0px</property>
+    <property name="padding">0px</property>
+  </style>  
+
+  <!-- 
+    SideBar Styles
+  -->
+  <style selector=".OraSideBar">
+    <includeStyle name="VeryDarkAccentBorder"/>
+    <property name="border-width">0px 1px 1px</property>
+    <property name="border-style">solid</property>
+    <property name="padding">5px</property>
+    <property name="margin">0px 5px 0px 0px</property>
+  </style>
+
+  <!--
+    SortableHeader Styles
+  -->
+  <style selector=".OraSortableHeaderSortIcon">
+    <property name="padding-left">4px</property>
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!--
+    TabBar Styles
+  -->
+
+  <!-- Add a border and padding to all tabBar items -->
+  <style name="TabBarItem">
+    <includeStyle name="VeryDarkAccentBorder"/>
+    <property name="border-style">solid</property>
+    <property name="border-width">1px 1px 0px 1px</property>
+    <property name="padding">2px 6px</property>
+  </style>
+
+  <!-- Remove the text decoration from all tabBar links -->
+  <style name="TabBarLink">
+    <property name="text-decoration">none</property>
+  </style>
+
+  <!-- Make the selected tab bold -->
+  <style selector=".OraTabBarSelected A">
+    <property name="font-weight">bold</property>
+  </style>
+
+  <!--
+    Table Styles
+  -->
+
+  <style selector=".OraTableContent">
+    <includeStyle name="VeryDarkAccentBorder"/>  
+    <includeStyle selector=".OraTableBorder1111"/>
+  </style>    
+
+  <!-- 
+    Train Styles
+  -->
+
+  <!-- We override the TrainStation named style to add some
+       padding, and also to display the station indicator
+       using a top border -->
+  <style name="TrainStation">  
+    <property name="border-style">solid</property>
+    <property name="border-width">3px 0px 0px 0px</property>
+    <property name="padding">3pt</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet direction="rtl">
+
+  <style selector=".OraSideBar">
+    <property name="margin">0px 0px 0px 5px</property>
+  </style>
+
+  <style selector=".OraHeaderIcon">
+    <property name="margin-left">3px</property>
+  </style>
+
+  <style selector=".OraSortableHeaderSortIcon">
+    <property name="padding-right">4px</property>
+  </style>
+
+</styleSheet>
+
+<styleSheet browsers="gecko">
+  <style selector=".OraSeparator">
+    <property name="margin"/>
+  </style>
+</styleSheet>
+
+</styleSheetDocument>

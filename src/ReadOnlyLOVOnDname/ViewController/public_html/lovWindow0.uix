@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<page xmlns="http://xmlns.oracle.com/uix/controller"
+      xmlns:ui="http://xmlns.oracle.com/uix/ui"
+      xmlns:ctrl="http://xmlns.oracle.com/uix/controller"
+      xmlns:html="http://www.w3.org/TR/REC-html40"
+      expressionLanguage="el">
+  <content>
+    <dataScope xmlns="http://xmlns.oracle.com/uix/ui">
+      <provider>
+        <!-- Add DataProviders (<data> elements) here -->
+      </provider>
+
+      <contents>
+        <document>
+          <metaContainer>
+            <!-- Set the page title -->
+            <head title=""/>
+          </metaContainer>
+          <contents>
+            <body>
+              <contents>
+                <listOfValues title="Dname">
+                  <contents>
+                    <table model="${bindings.DeptView1}" id="DeptView10">
+                      <contents>
+                        <column>
+                          <columnFormat columnDataFormat="numberFormat"/>
+                          <columnHeader>
+                            <sortableHeader model="${ctrl:createSortableHeaderModel(bindings.DeptView1,'Deptno')}"/>
+                          </columnHeader>
+                          <contents>
+                            <textInput model="${uix.current.Deptno}" columns="10" readOnly="true">
+                              <onSubmitValidater>
+                                <decimal/>
+                              </onSubmitValidater>
+                            </textInput>
+                          </contents>
+                        </column>
+                        <column>
+                          <columnHeader>
+                            <sortableHeader model="${ctrl:createSortableHeaderModel(bindings.DeptView1,'Dname')}"/>
+                          </columnHeader>
+                          <contents>
+                            <textInput model="${uix.current.Dname}" columns="10" readOnly="true"/>
+                          </contents>
+                        </column>
+                        <column>
+                          <columnHeader>
+                            <sortableHeader model="${ctrl:createSortableHeaderModel(bindings.DeptView1,'Loc')}"/>
+                          </columnHeader>
+                          <contents>
+                            <textInput model="${uix.current.Loc}" columns="10" readOnly="true"/>
+                          </contents>
+                        </column>
+                      </contents>
+                      <tableSelection>
+                        <singleSelection model="${bindings.DeptView1Iterator}" text="Select and ">
+                          <primaryClientAction>
+                            <firePartialAction targets="DeptView10" source="DeptView10" event="select"/>
+                          </primaryClientAction>
+                        </singleSelection>
+                      </tableSelection>
+                    </table>
+                  </contents>
+                </listOfValues>
+              </contents>
+            </body>
+          </contents>
+        </document>
+      </contents>
+    </dataScope>
+  </content>
+
+  <handlers>
+    <!-- Add EventHandlers (<event> elements) here  -->
+    <event name="lovFilter">
+      <null/>
+    </event>
+    <event name="lovSelect">
+      <set property="inputValue" value="${bindings.Deptno.inputValue}" target="${data.EditEmpUIModel.Deptno}"/>
+    </event>
+    <event name="goto sort" source="DeptView10">
+      <invoke method="handleTableUiEvent" javaType="oracle.cabo.adf.rt.AdfUtils">
+        <parameters>
+          <parameter javaType="oracle.adf.model.binding.DCIteratorBinding" value="${bindings.DeptView1Iterator}"/>
+          <parameter javaType="oracle.cabo.servlet.expl.ControllerImplicitObject" value="${uix}"/>
+        </parameters>
+      </invoke>
+    </event>
+    <event name="select" source="DeptView10">
+      <set target="${bindings.DeptView1Iterator}" property="currentRowIndexInRange" value="${ui:tableSelectedIndex(uix, 'DeptView10')}"/>
+    </event>
+  </handlers>
+
+</page>
+

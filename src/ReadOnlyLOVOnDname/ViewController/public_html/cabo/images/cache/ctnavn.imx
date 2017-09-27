@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImageMetadata version="2.0" xmlns="http://xmlns.oracle.com/uix/image">
+<colorizedIcon width="14" height="14" direction="ltr" source="tnavn" laf="oracle.cabo.ui.laf.oracle.desktop.BrowserLookAndFeel">
+<surroundingColor red="247" green="247" blue="231"/>
+<darkAccentColor red="204" green="204" blue="153"/>
+</colorizedIcon>
+</ImageMetadata>
