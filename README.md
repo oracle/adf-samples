@@ -170,6 +170,7 @@ Each sample is also available in downloadable form in the zips directory.
 * SimpleEJBExample
 * SmartPanelDemo
 * SocialSecurityNumberFormatter
+* SortableInMemoryStaticViewObject
 
 
 

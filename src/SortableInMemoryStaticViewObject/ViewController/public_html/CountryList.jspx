@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="CountryList">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:messages/>
+        <h:form>
+          <af:table value="#{bindings.CountryList.collectionModel}" var="row"
+                    rows="#{bindings.CountryList.rangeSize}"
+                    first="#{bindings.CountryList.rangeStart}"
+                    emptyText="#{bindings.CountryList.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                    selectionState="#{bindings.CountryList.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.CountryList.collectionModel.makeCurrent}">
+            <af:column sortProperty="CountryCode" sortable="true"
+                       headerText="#{bindings.CountryList.labels.CountryCode}">
+              <af:outputText value="#{row.CountryCode}"/>
+            </af:column>
+            <af:column sortProperty="Description" sortable="true"
+                       headerText="#{bindings.CountryList.labels.Description}">
+              <af:outputText value="#{row.Description}"/>
+            </af:column>
+            <f:facet name="selection">
+              <af:tableSelectOne text="Select and">
+                <af:commandButton text="Submit"/>
+              </af:tableSelectOne>
+            </f:facet>
+          </af:table>
+        </h:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="10.1.3.39.84" id="CountryListPageDef"
+                Package="example.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator id="CountryListIterator" RangeSize="10" Binds="CountryList"
+              DataControl="TestModuleDataControl"/>
+  </executables>
+  <bindings>
+    <table id="CountryList" IterBinding="CountryListIterator">
+      <AttrNames>
+        <Item Value="CountryCode"/>
+        <Item Value="Description"/>
+      </AttrNames>
+    </table>
+  </bindings>
+</pageDefinition>
