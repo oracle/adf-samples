@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="TestModuleLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>hr</JDBCName>
+         <jbo.dofailover>false</jbo.dofailover>
+         <jbo.project>Model</jbo.project>
+         <AppModuleJndiName>test.model.TestModule</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>test.model.TestModule</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="hr">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="localhost"/>
+      <ENTRY name="DeployPassword" value="true"/>
+      <ENTRY name="user" value="hr"/>
+      <ENTRY name="ConnectionName" value="hr"/>
+      <ENTRY name="SID" value="ORCL"/>
+      <ENTRY name="password">
+         <![CDATA[{904}056F417515C4F206E520F9CD4CBF46B4CC]]>
+      </ENTRY>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.driver.OracleDriver"/>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

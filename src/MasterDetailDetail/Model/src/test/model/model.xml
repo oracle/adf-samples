@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Locations"
+      FullName="test.model.Locations"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="Countries"
+      FullName="test.model.Countries"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="LocCIdFkAssoc"
+      FullName="test.model.LocCIdFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Departments"
+      FullName="test.model.Departments"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="DeptLocFkAssoc"
+      FullName="test.model.DeptLocFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Regions"
+      FullName="test.model.Regions"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkAssoc"
+      FullName="test.model.CountrRegFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="CountriesView"
+      FullName="test.model.CountriesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="DepartmentsView"
+      FullName="test.model.DepartmentsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="LocationsView"
+      FullName="test.model.LocationsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RegionsView"
+      FullName="test.model.RegionsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="LocCIdFkLink"
+      FullName="test.model.LocCIdFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="DeptLocFkLink"
+      FullName="test.model.DeptLocFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkLink"
+      FullName="test.model.CountrRegFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="TestModule"
+      FullName="test.model.TestModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>

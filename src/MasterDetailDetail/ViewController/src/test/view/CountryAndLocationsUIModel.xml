@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="CountryAndLocationsUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="CountriesIterator"
+         Binds="TestModuleDataControl.Countries"
+         RangeSize="5" >
+      </DCIterator>
+      <DCIterator
+         id="LocationsIterator"
+         Binds="TestModuleDataControl.Locations"
+         RangeSize="5" >
+      </DCIterator>
+      <DCControl
+         id="Countries"
+         SubType="DCTable"
+         IterBinding="CountriesIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="CountryId" />
+            <Item Value="CountryName" />
+            <Item Value="RegionId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="CountryId"
+         SubType="DCTextField"
+         IterBinding="CountriesIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="CountryId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="CountryName"
+         SubType="DCTextField"
+         IterBinding="CountriesIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="CountryName" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="RegionId"
+         SubType="DCTextField"
+         IterBinding="CountriesIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="RegionId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Locations"
+         SubType="DCTable"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="LocationId" />
+            <Item Value="StreetAddress" />
+            <Item Value="PostalCode" />
+            <Item Value="City" />
+            <Item Value="StateProvince" />
+            <Item Value="CountryId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="ShowLocation"
+         SubType="DCMethodAction"
+         IterBinding="LocationsIterator"
+         Action="999"
+         RequiresUpdateModel="true"
+         DataControl="TestModuleDataControl"
+         InstanceName="LocationsIterator"
+         MethodName="setCurrentRowWithKey"
+         ReturnName="TestModuleDataControl.methodResults.setCurrentRowWithKey"
+         IsLocalObjectReference="true" >
+         <Contents >
+            <NamedData
+               NDName="rowKeyStr"
+               NDType="java.lang.String"
+               NDValue="%null%" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+   </Contents>
+</DCContainer>

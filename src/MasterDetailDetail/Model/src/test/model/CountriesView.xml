@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="CountriesView"
+   SelectList="Countries.COUNTRY_ID, 
+       Countries.COUNTRY_NAME, 
+       Countries.REGION_ID"
+   FromList="COUNTRIES Countries"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   ComponentClass="test.model.CountriesViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="Countries"
+      Entity="test.model.Countries" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="CountryId"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="CountryId"
+      EntityUsage="Countries"
+      AliasName="COUNTRY_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CountryName"
+      PrecisionRule="true"
+      EntityAttrName="CountryName"
+      EntityUsage="Countries"
+      AliasName="COUNTRY_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RegionId"
+      PrecisionRule="true"
+      EntityAttrName="RegionId"
+      EntityUsage="Countries"
+      AliasName="REGION_ID" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="LocationsView"
+      ViewLink="test.model.LocCIdFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

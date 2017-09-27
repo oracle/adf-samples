@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="TestModule"
+   ComponentClass="test.model.TestModuleImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_ejbAppModule" Value="false" />
+   </DesignTime>
+   <ViewUsage
+      Name="Regions"
+      ViewObjectName="test.model.RegionsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Countries"
+      ViewObjectName="test.model.CountriesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Locations"
+      ViewObjectName="test.model.LocationsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="Departments"
+      ViewObjectName="test.model.DepartmentsView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="CountrRegFkLink1"
+      ViewLinkObjectName="test.model.CountrRegFkLink"
+      SrcViewUsageName="test.model.TestModule.Regions"
+      DstViewUsageName="test.model.TestModule.Countries" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="9.0.5.16.0" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="LocCIdFkLink2"
+      ViewLinkObjectName="test.model.LocCIdFkLink"
+      SrcViewUsageName="test.model.TestModule.Countries"
+      DstViewUsageName="test.model.TestModule.Locations" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="9.0.5.16.0" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="DeptLocFkLink2"
+      ViewLinkObjectName="test.model.DeptLocFkLink"
+      SrcViewUsageName="test.model.TestModule.Locations"
+      DstViewUsageName="test.model.TestModule.Departments" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="9.0.5.16.0" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

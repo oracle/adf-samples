@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="LocationAndDepartmentsUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="LocationsIterator"
+         Binds="TestModuleDataControl.Locations"
+         RangeSize="5" >
+      </DCIterator>
+      <DCIterator
+         id="DepartmentsIterator"
+         Binds="TestModuleDataControl.Departments"
+         RangeSize="5" >
+      </DCIterator>
+      <DCControl
+         id="Locations"
+         SubType="DCTable"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="LocationId" />
+            <Item Value="StreetAddress" />
+            <Item Value="PostalCode" />
+            <Item Value="City" />
+            <Item Value="StateProvince" />
+            <Item Value="CountryId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="LocationId"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="LocationId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="StreetAddress"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="StreetAddress" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="PostalCode"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="PostalCode" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="City"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="City" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="StateProvince"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="StateProvince" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="CountryId"
+         SubType="DCTextField"
+         IterBinding="LocationsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="CountryId" />
+         </AttrNames>
+      </DCControl>
+      <DCControl
+         id="Departments"
+         SubType="DCTable"
+         IterBinding="DepartmentsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="DepartmentId" />
+            <Item Value="DepartmentName" />
+            <Item Value="ManagerId" />
+            <Item Value="LocationId" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ModelersMap class="java.util.HashMap">
+   <Item>
+      <Key>794abb4e-00fe-1000-803d-8223673ac367</Key>
+      <Value class="[Ljava.lang.String;">
+         <Item>StrutsPageFlow</Item>
+         <Item>oxd_struts</Item>
+         <Item>Diagram</Item>
+      </Value>
+   </Item>
+</ModelersMap>

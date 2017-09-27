@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="Departments"
+   DBObjectType="table"
+   DBObjectName="DEPARTMENTS"
+   AliasName="Departments"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="test.model.DepartmentsImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+   </DesignTime>
+   <Attribute
+      Name="DepartmentId"
+      IsNotNull="true"
+      Precision="4"
+      Scale="0"
+      ColumnName="DEPARTMENT_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="DEPARTMENTS"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="DepartmentName"
+      IsNotNull="true"
+      Precision="30"
+      ColumnName="DEPARTMENT_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="DEPARTMENTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ManagerId"
+      Precision="6"
+      Scale="0"
+      ColumnName="MANAGER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="DEPARTMENTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LocationId"
+      Precision="4"
+      Scale="0"
+      ColumnName="LOCATION_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="DEPARTMENTS" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <AccessorAttribute
+      Name="Locations"
+      Association="test.model.DeptLocFkAssoc"
+      AssociationEnd="test.model.DeptLocFkAssoc.Locations"
+      AssociationOtherEnd="test.model.DeptLocFkAssoc.Departments"
+      Type="test.model.LocationsImpl" >
+   </AccessorAttribute>
+   <Key
+      Name="DeptIdPk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Departments.DepartmentId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="DEPT_ID_PK" />
+         <Attr Name="_isPrimary" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="DeptNameNn" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Departments.DepartmentName" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="DEPT_NAME_NN" />
+         <Attr Name="_checkCondition" Value="&#34;DEPARTMENT_NAME&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="DeptLocFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Departments.LocationId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="DEPT_LOC_FK" />
+         <Attr Name="_referencedKey" Value="LOC_ID_PK" />
+         <Attr Name="_isForeign" Value="true" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="DeptMgrFk" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.Departments.ManagerId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_DBObjectName" Value="DEPT_MGR_FK" />
+         <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK" />
+         <Attr Name="_isForeign" Value="true" />
+      </DesignTime>
+   </Key>
+</Entity>
