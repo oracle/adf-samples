@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="UploadedFiles"
+   DBObjectType="table"
+   DBObjectName="UPLOADED_FILES"
+   AliasName="UploadedFiles"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="test.model.UploadedFilesImpl"
+   MsgBundleClass="test.model.common.UploadedFilesImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Access|Msg" />
+   </DesignTime>
+   <Attribute
+      Name="Id"
+      IsUpdateable="while_insert"
+      DefaultValue="@0"
+      ColumnName="ID"
+      Domain="oracle.jbo.domain.DBSequence"
+      Type="oracle.jbo.domain.DBSequence"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="UPLOADED_FILES"
+      PrimaryKey="true"
+      RetrievedOnInsert="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Filename"
+      Precision="80"
+      ColumnName="FILENAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="UPLOADED_FILES" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="80" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Content"
+      IsQueriable="false"
+      ColumnName="CONTENT"
+      Type="oracle.jbo.domain.BlobDomain"
+      ColumnType="BLOB"
+      SQLType="BLOB"
+      TableName="UPLOADED_FILES" >
+   </Attribute>
+   <Attribute
+      Name="DateCreated"
+      IsUpdateable="while_insert"
+      ColumnName="DATE_CREATED"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="UPLOADED_FILES"
+      HistoryColumn="DateHistory" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="SysC007587" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.UploadedFiles.Id" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C007587" />
+      </DesignTime>
+   </Key>
+</Entity>

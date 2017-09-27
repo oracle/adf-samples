@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.36.73" />
+   </DesignTime>
+   <Containee
+      Name="ExampleModule"
+      FullName="test.model.ExampleModule"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="LastFiveUploadsList"
+      FullName="test.model.LastFiveUploadsList"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="UploadedFiles"
+      FullName="test.model.UploadedFiles"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="UploadedFilesView"
+      FullName="test.model.UploadedFilesView"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

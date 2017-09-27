@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <afh:html>
+      <afh:head title="UploadFileToBlob">
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+      </afh:head>
+      <afh:body>
+        <af:form usesUpload="true">
+          <af:messages/>
+          <af:inputFile label="Browse to find the file to upload..."
+                        valueChangeListener="#{UploadFileToBlob.onFileUploaded}"
+                        binding="#{UploadFileToBlob.fileInputComponent}"/>
+          <af:commandButton
+                            text="Upload File"
+                            action="#{UploadFileToBlob.onUploadFileButtonClicked}"
+                            id="uploadButton"/>
+          <af:objectSeparator/>
+          <af:panelBox text="Last Five Files Uploaded">
+            <af:table value="#{bindings.LastFiveUploadsList.collectionModel}"
+                      var="row" rows="#{bindings.LastFiveUploadsList.rangeSize}"
+                      first="#{bindings.LastFiveUploadsList.rangeStart}"
+                      emptyText="#{bindings.LastFiveUploadsList.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      partialTriggers="uploadButton">
+              <af:column headerText="#{bindings.LastFiveUploadsList.labels.Filename}"
+                         sortProperty="Filename" sortable="true">
+                <af:outputText value="#{row.Filename}"/>
+              </af:column>
+              <af:column headerText="#{bindings.LastFiveUploadsList.labels.DateCreated}"
+                         sortProperty="DateCreated" sortable="true">
+                <af:outputText value="#{row.DateCreated}">
+                  <f:convertDateTime pattern="#{bindings.LastFiveUploadsList.formats.DateCreated}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.LastFiveUploadsList.labels.Size}"
+                         sortProperty="Size" sortable="true">
+                <af:outputText value="#{row.Size}">
+                  <f:convertNumber groupingUsed="false"
+                                   pattern="#{bindings.LastFiveUploadsList.formats.Size}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:panelBox>
+          <af:objectSpacer width="10" height="10"/>
+          <af:panelTip>
+            <af:outputText value="This example uses a BLOB column in the database and an ADFBC BlobDomain. If instead you would leverage Oracle Intermedia types like ORDDOC and the ADFBC OrdDocDomain support for it, the Oracle Intermedia handles the upload and download of the contents automatically."/>
+          </af:panelTip>
+        </af:form>
+      </afh:body>
+    </afh:html>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:UploadFileToBlob-->
+</jsp:root>

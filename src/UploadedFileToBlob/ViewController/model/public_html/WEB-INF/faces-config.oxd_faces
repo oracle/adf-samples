@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?Oracle-JDeveloper Diagram = '1.1.2'?>
+<?Oracle-JDeveloper DBDiagram = '1.1'?>
+<diagram xmlns="http://xmlns.oracle.com/jdeveloper/modeler/diagram">
+   <!--This is redundant information provided by the diagrammer for the structure pane-->
+   <structure xmlns="">
+      <shape name="/UploadFileToBlob.jspx">
+         <elemRef name="" value="/UploadFileToBlob.jspx" type="JSFPage" class="j:l:String"/>
+      </shape>
+   </structure>
+   <!--This is the information that is used to build up the shapes. Top level shapes can be found by searching for shapeMap elements-->
+   <diagramProperty xmlns="">
+      <boolean name="antialiasText" value="true"/>
+      <integer name="containerLayoutStyle" value="0"/>
+      <integer name="diagramLayoutStyle" value="0"/>
+      <string name="diagramName">faces-config</string>
+      <elemRef name="elementReference" value="eb20c1be-010d-1000-8001-8d9088163804" type="oxd_faces" class="j:l:String"/>
+      <boolean name="enableGrid" value="true"/>
+      <float name="gridSpacing" value="10.0"/>
+      <integer name="layoutDistance" value="40"/>
+      <integer name="layoutStyle" value="0"/>
+      <integer name="maxEntriesShownInList" value="10"/>
+      <integer name="maxWidth" value="200"/>
+      <long name="nextDruid" value="0"/>
+      <point name="pageSize" x="1000.0" y="750.0"/>
+      <point name="pageTL" x="-499.5" y="-374.5"/>
+      <dimension name="pageXY" width="1.0" height="1.0"/>
+      <insets name="paperMargins" top="50.0" left="50.0" bottom="50.0" right="50.0"/>
+      <integer name="paperOrientation" value="0"/>
+      <dimension name="paperSize" width="1100.0" height="850.0"/>
+      <point name="paperTL" x="50.0" y="50.0"/>
+      <null name="printerName"/>
+      <boolean name="showGrid" value="false"/>
+      <boolean name="showPageBreaks" value="true"/>
+      <boolean name="straightenEdges" value="true"/>
+   </diagramProperty>
+   <layer xmlns="">
+      <infoList name="base">
+         <shapeMap>
+            <long name="DrUID" value="4239081065402868696"/>
+            <infoMap name="containedShapes">
+               <infoMap name="MyImage">
+                  <long name="DrUID" value="4531588393360589160"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="ImageShape" type="IMAGE" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="42.666668" height="42.666668"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="58.66667" y="0.11979675"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+               <infoMap name="nameOfShape">
+                  <long name="DrUID" value="5580206527878000346"/>
+                  <infoMap name="containedShapes"/>
+                  <infoMap name="displayPreference"/>
+                  <elemRef name="elementReference" value="TextShape" type="TEXT" class="j:l:String"/>
+                  <infoMap name="graphicalData">
+                     <infoMap name="diagramStateProperties">
+                        <infoMap name="symbolic">
+                           <dimension name="elementSize" width="160.0" height="17.09375"/>
+                        </infoMap>
+                     </infoMap>
+                     <point name="elementPosition" x="0.0" y="42.78647"/>
+                     <string name="shapeState">symbolic</string>
+                     <boolean name="visibility" value="true"/>
+                  </infoMap>
+               </infoMap>
+            </infoMap>
+            <infoMap name="displayData">
+               <string name="nameOfElement">/UploadFileToBlob.jspx</string>
+               <string name="readyState">true</string>
+            </infoMap>
+            <infoMap name="displayPreference"/>
+            <elemRef name="elementReference" value="/UploadFileToBlob.jspx" type="JSFPage" class="j:l:String"/>
+            <infoMap name="graphicalData">
+               <infoMap name="diagramStateProperties">
+                  <infoMap name="symbolic">
+                     <insets name="containerInsets" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                     <dimension name="elementSize" width="160.0" height="60.0"/>
+                     <infoMap name="layoutConstraints">
+                        <float name="MyImage" value="-2.0"/>
+                        <float name="nameOfShape" value="-2.0"/>
+                     </infoMap>
+                     <infoList name="shapesUsed"/>
+                  </infoMap>
+               </infoMap>
+               <point name="elementPosition" x="249.5" y="214.5"/>
+               <graphicalProperties name="graphicalProperties">
+                  <color name="lineColor" rgb="0x0" alpha="0xff"/>
+                  <float name="lineWidth" value="1.0"/>
+                  <integer name="lineStyle" value="0"/>
+                  <color name="fillColor" rgb="0xcccccc" alpha="0xff"/>
+                  <font name="fontType" fontFamily="SansSerif" fontSize="12.0" fontWeight="bold" fontStyle="normal"/>
+                  <color name="fontColor" rgb="0x0" alpha="0xff"/>
+               </graphicalProperties>
+               <string name="shapeState">symbolic</string>
+               <boolean name="visibility" value="true"/>
+            </infoMap>
+         </shapeMap>
+      </infoList>
+   </layer>
+</diagram>
