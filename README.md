@@ -166,6 +166,7 @@ Each sample is also available in downloadable form in the zips directory.
 * SetFirstRowInPageToCurrent
 * ShowEmpViewAttributesInBoundTable
 * SignalRowModifiedByAnotherUserExceptionEvenWhenAMPoolingDisabled
+* SimpleADFBCLOVJSF
 
 
 
