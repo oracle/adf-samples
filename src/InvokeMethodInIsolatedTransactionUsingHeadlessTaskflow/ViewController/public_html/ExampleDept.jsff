@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="pfl1">
+    <af:selectBooleanCheckbox text="Declaratively refresh the iterator on return from performing isolated work?"
+                              value="#{pageFlowScope.refreshIteratorFlag}"
+                              autoSubmit="true"
+                              id="sbc1"/>
+    <af:inputText value="#{bindings.Deptno.inputValue}"
+                  label="#{bindings.Deptno.hints.label}"
+                  required="#{bindings.Deptno.hints.mandatory}"
+                  columns="#{bindings.Deptno.hints.displayWidth}"
+                  maximumLength="#{bindings.Deptno.hints.precision}"
+                  shortDesc="#{bindings.Deptno.hints.tooltip}" id="it1">
+      <f:validator binding="#{bindings.Deptno.validator}"/>
+      <af:convertNumber groupingUsed="false"
+                        pattern="#{bindings.Deptno.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Dname.inputValue}"
+                  label="#{bindings.Dname.hints.label}"
+                  required="#{bindings.Dname.hints.mandatory}"
+                  columns="#{bindings.Dname.hints.displayWidth}"
+                  maximumLength="#{bindings.Dname.hints.precision}"
+                  shortDesc="#{bindings.Dname.hints.tooltip}" id="it3">
+      <f:validator binding="#{bindings.Dname.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.Loc.inputValue}"
+                  label="#{bindings.Loc.hints.label}"
+                  required="#{bindings.Loc.hints.mandatory}"
+                  columns="#{bindings.Loc.hints.displayWidth}"
+                  maximumLength="#{bindings.Loc.hints.precision}"
+                  shortDesc="#{bindings.Loc.hints.tooltip}" id="it2">
+      <f:validator binding="#{bindings.Loc.validator}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:panelGroupLayout layout="horizontal" id="pgl1">
+        <af:commandButton actionListener="#{bindings.First.execute}"
+                          text="First" disabled="#{!bindings.First.enabled}"
+                          partialSubmit="true" id="cb1"/>
+        <af:commandButton actionListener="#{bindings.Previous.execute}"
+                          text="Previous"
+                          disabled="#{!bindings.Previous.enabled}"
+                          partialSubmit="true" id="cb2"/>
+        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                          disabled="#{!bindings.Next.enabled}"
+                          partialSubmit="true" id="cb4"/>
+        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                          disabled="#{!bindings.Last.enabled}"
+                          partialSubmit="true" id="cb3"/>
+        <af:commandButton actionListener="#{bindings.Commit.execute}"
+                          text="Commit"
+                          id="cb5"/>
+        <af:commandButton actionListener="#{bindings.Execute.execute}"
+                          text="Execute"
+                          disabled="#{!bindings.Execute.enabled}" id="cb8"/>
+        <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                          text="Rollback"
+                          immediate="true" id="cb6">
+          <af:resetActionListener/>
+        </af:commandButton>
+        <af:commandButton text="Update Loc Value to Q in Autonomous Transaction" id="cb7"
+                          action="PerformIsolatedWork">
+                                    <af:setPropertyListener type="action" from="#{bindings.Deptno.inputValue.value}"
+                                  to="#{requestScope.deptno}"/>
+          <af:setPropertyListener type="action" from="#{'Q'}"
+                                  to="#{requestScope.locValue}"/>
+        </af:commandButton>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

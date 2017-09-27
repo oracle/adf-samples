@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="example-dept-region">
+    <default-activity id="__1">ExampleDept</default-activity>
+    <exception-handler id="__28">ExampleDept</exception-handler>
+    <view id="ExampleDept">
+      <page>/ExampleDept.jsff</page>
+    </view>
+    <task-flow-call id="perform-isolated-work">
+      <task-flow-reference>
+        <document>/WEB-INF/perform-isolated-work.xml</document>
+        <id>perform-isolated-work</id>
+      </task-flow-reference>
+      <input-parameter id="__7">
+        <name>deptno</name>
+        <value>#{requestScope.deptno}</value>
+      </input-parameter>
+      <input-parameter id="__8">
+        <name>locValue</name>
+        <value>#{requestScope.locValue}</value>
+      </input-parameter>
+    </task-flow-call>
+    <router id="ConditionalRefresh">
+      <case>
+        <expression>#{pageFlowScope.refreshIteratorFlag == true}</expression>
+        <outcome id="__29">Refresh</outcome>
+      </case>
+      <default-outcome>NoRefresh</default-outcome>
+    </router>
+    <method-call id="RefreshDeptViewIterator">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome id="__19">
+        <fixed-outcome>Done</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">ExampleDept</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">PerformIsolatedWork</from-outcome>
+        <to-activity-id id="__4">perform-isolated-work</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id id="__10">perform-isolated-work</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome id="__13">Return</from-outcome>
+        <to-activity-id id="__11">ConditionalRefresh</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id id="__15">ConditionalRefresh</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome id="__18">NoRefresh</from-outcome>
+        <to-activity-id id="__17">ExampleDept</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome id="__22">Refresh</from-outcome>
+        <to-activity-id id="__20">RefreshDeptViewIterator</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">RefreshDeptViewIterator</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome id="__25">Done</from-outcome>
+        <to-activity-id id="__26">ExampleDept</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

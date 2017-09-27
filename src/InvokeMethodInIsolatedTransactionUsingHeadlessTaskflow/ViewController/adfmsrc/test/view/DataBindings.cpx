@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.60.13" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/ExampleDept.jsff" usageId="test_view_ExampleDeptPageDef"/>
+    <page path="/WEB-INF/perform-isolated-work.xml#perform-isolated-work@InvokePerformWorkAMMethod"
+          usageId="test_view_perform_isolated_work_perform_isolated_work_InvokePerformWorkAMMethodPageDef"/>
+    <page path="/WEB-INF/example-dept-region.xml#example-dept-region@RefreshDeptViewIterator"
+          usageId="test_view_example_dept_region_example_dept_region_RefreshIteratorPageDef"/>
+    <page path="/Main.jspx" usageId="test_view_MainPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_ExampleDeptPageDef"
+          path="test.view.pageDefs.ExampleDeptPageDef"/>
+    <page id="test_view_perform_isolated_work_perform_isolated_work_InvokePerformWorkAMMethodPageDef"
+          path="test.view.pageDefs.perform_isolated_work_perform_isolated_work_InvokePerformWorkAMMethodPageDef"/>
+    <page id="test_view_example_dept_region_example_dept_region_RefreshIteratorPageDef"
+          path="test.view.pageDefs.example_dept_region_example_dept_region_RefreshIteratorPageDef"/>
+    <page id="test_view_MainPageDef" path="test.view.pageDefs.MainPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

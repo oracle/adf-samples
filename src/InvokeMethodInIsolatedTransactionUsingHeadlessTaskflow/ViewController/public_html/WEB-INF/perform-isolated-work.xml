@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="perform-isolated-work">
+    <default-activity id="__5">InvokePerformWorkAMMethod</default-activity>
+    <data-control-scope id="__13">
+      <isolated/>
+    </data-control-scope>
+    <input-parameter-definition id="__1">
+      <name id="__2">deptno</name>
+      <value>#{pageFlowScope.deptno}</value>
+      <class>java.lang.Integer</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__4">
+      <name id="__3">locValue</name>
+      <value>#{pageFlowScope.locValue}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <method-call id="InvokePerformWorkAMMethod">
+      <method>#{bindings.performAppModuleLevelWork.execute}</method>
+      <outcome id="__12">
+        <fixed-outcome>Return</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="Return">
+      <outcome id="__6">
+        <name>Return</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">InvokePerformWorkAMMethod</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">Return</from-outcome>
+        <to-activity-id id="__9">Return</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

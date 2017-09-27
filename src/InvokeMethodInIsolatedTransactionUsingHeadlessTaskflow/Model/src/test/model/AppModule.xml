@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="11.1.1.60.13"
+  ClearCacheOnRollback="true"
+  ComponentClass="test.model.AppModuleImpl"
+  ComponentInterface="test.model.common.AppModule"
+  ClientProxyName="test.model.client.AppModuleClient">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="DeptView1"
+    ViewObjectName="test.model.DeptView"/>
+  <ClientInterface>
+    <Method
+      Name="performAppModuleLevelWork">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="deptno"
+        Type="java.lang.Integer"/>
+      <Parameter
+        Name="locValue"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

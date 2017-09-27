@@ -1,0 +1,12 @@
+<adf-config xmlns="http://xmlns.oracle.com/adf/config">
+ 
+    <adfc-controller-config xmlns="http://xmlns.oracle.com/adf/controller/config">
+       <lifecycle>
+         <phase-listener>
+            <listener-id>CalledTaskflowErrorReporterPagePhaseListener</listener-id>
+            <class>test.view.CalledTaskflowErrorReporterPagePhaseListener</class>        
+         </phase-listener>
+      </lifecycle>
+   </adfc-controller-config> 
+
+</adf-config>

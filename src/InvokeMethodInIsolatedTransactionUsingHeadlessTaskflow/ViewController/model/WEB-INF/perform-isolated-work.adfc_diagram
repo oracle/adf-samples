@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">InvokePerformWorkAMMethod</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>InvokePerformWorkAMMethod&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">184.14355</property>
+      <property
+         name="x">201.0</property>
+   </MethodCall>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">Return</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Return&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  Return&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">181.84473</property>
+      <property
+         name="x">453.0</property>
+   </TaskFlowReturn>
+   <note
+      id="note4">
+      <property
+         name="sdm:nodeHeight">120.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font face="Dialog" size="3" color="#000000">This method activity 
+      invokes the performAppModuleLevelWork, passing in the taskflow 
+      parameters as arguments, using a declarative method activity. It was 
+      created by dropping the method from the data control palette onto the 
+      method activity in the diagram. </font>
+    </p>
+  </body>
+</html>
+]]>
+      </property>
+      <property
+         name="y">388.0</property>
+      <property
+         name="sdm:nodeWidth">264.0</property>
+      <property
+         name="x">291.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment5"
+      from="MethodCall2"
+      to="note4">
+      <property
+         name="sdm:polyPoints">B50,201.0,237.79297,291.0,317.5,T50</property>
+   </attachment>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">Return</property>
+      <property
+         name="sdm:polyPoints">R50,242.0,183.79297,412.0,181.49414,L50</property>
+   </ControlFlowCase>
+   <note
+      id="note7">
+      <property
+         name="sdm:nodeHeight">52.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="3" color="#000000">This taskflow has its 
+      DCScope=isolated to the work it performs occurs in a separate 
+      transaction.</font>
+    </p>
+  </body>
+</html>
+]]>
+      </property>
+      <property
+         name="y">73.0</property>
+      <property
+         name="sdm:nodeWidth">564.0</property>
+      <property
+         name="x">437.0</property>
+   </note>
+</SDM>

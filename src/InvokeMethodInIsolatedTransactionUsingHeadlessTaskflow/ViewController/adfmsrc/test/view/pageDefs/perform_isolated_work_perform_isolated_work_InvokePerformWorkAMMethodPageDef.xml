@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13"
+                id="perform_isolated_work_perform_isolated_work_InvokePerformWorkAMMethodPageDef"
+                Package="test.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="performAppModuleLevelWork" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="performAppModuleLevelWork"
+                  IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                  InstanceName="AppModuleDataControl.dataProvider">
+      <NamedData NDName="deptno" NDValue="#{pageFlowScope.deptno}"
+                 NDType="java.lang.Integer"/>
+      <NamedData NDName="locValue" NDValue="#{pageFlowScope.locValue}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>
