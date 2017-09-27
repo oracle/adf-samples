@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DeptView"
+  Version="11.1.1.56.60"
+  SelectList="Dept.DEPTNO, 
+       Dept.DNAME, 
+       Dept.LOC"
+  FromList="DEPT Dept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ListOfValidDnames1"
+    ViewObjectName="test.model.ListOfValidDnames"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ListOfValidLocs1"
+    ViewObjectName="test.model.ListOfValidLocs"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Dname"
+    ListVOName="ListOfValidDnames1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Dname_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Dname"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Loc"
+    ListVOName="ListOfValidLocs1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_Loc_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Loc"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Dept"
+    Entity="test.model.Dept"/>
+  <ViewAttribute
+    Name="Deptno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Deptno"
+    EntityUsage="Dept"
+    AliasName="DEPTNO"/>
+  <ViewAttribute
+    Name="Dname"
+    PrecisionRule="true"
+    EntityAttrName="Dname"
+    EntityUsage="Dept"
+    AliasName="DNAME"
+    LOVName="LOV_Dname">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Loc"
+    PrecisionRule="true"
+    EntityAttrName="Loc"
+    EntityUsage="Dept"
+    AliasName="LOC"
+    LOVName="LOV_Loc">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="DeptViewCriteria"
+    ViewObjectName="test.model.DeptView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Dname"
+        ViewAttribute="Dname"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Loc"
+        ViewAttribute="Loc"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+</ViewObject>

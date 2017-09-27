@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/view1.jspx</page>
+  </view>
+  <managed-bean id="__4">
+    <managed-bean-name id="__1">View1</managed-bean-name>
+    <managed-bean-class id="__3">test.view.backing.View1Bean</managed-bean-class>
+    <managed-bean-scope id="__2">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
