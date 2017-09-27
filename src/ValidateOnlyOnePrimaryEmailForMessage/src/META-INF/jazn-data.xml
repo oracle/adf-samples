@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<jazn-data>
+    <jazn-realm default="jazn.com">
+        <realm>
+            <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>userone</name>
+                    <guid>22355EB1C93B11DEBFA575DD220D4F4C</guid>
+                    <credentials>{903}2wkE/yat+l+O9RGqPhDkTO5paOTdgTp/</credentials>
+                </user>
+                <user>
+                    <name>usertwo</name>
+                    <guid>22355EB2C93B11DEBFA575DD220D4F4C</guid>
+                    <credentials>{903}5lGZBYrPiXkUx0Aj3Y+LCJzgoorx/v8l</credentials>
+                </user>
+            </users>
+        </realm>
+    </jazn-realm>
+    <policy-store>
+    </policy-store>
+    <jazn-policy>
+    </jazn-policy>
+</jazn-data>
+

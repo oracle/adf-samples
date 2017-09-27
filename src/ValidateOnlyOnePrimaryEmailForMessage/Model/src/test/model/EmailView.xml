@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailView"
+  Version="11.1.1.54.7"
+  SelectList="Email.ID, 
+       Email.SENDER_EMAIL, 
+       Email.SUBJECT, 
+       Email.DATE_CREATED, 
+       Email.MESSAGE_TEXT"
+  FromList="EMAIL_MESSAGE Email"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  ComponentClass="test.model.fwkext.CustomViewObjectImpl">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName"
+      Value="test.model.fwkext.CustomViewObjectImpl"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Email"
+    Entity="test.model.Email"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Email"
+    AliasName="ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="SenderEmail"
+    PrecisionRule="true"
+    EntityAttrName="SenderEmail"
+    EntityUsage="Email"
+    AliasName="SENDER_EMAIL"/>
+  <ViewAttribute
+    Name="Subject"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="Email"
+    AliasName="SUBJECT"/>
+  <ViewAttribute
+    Name="DateCreated"
+    PrecisionRule="true"
+    EntityAttrName="DateCreated"
+    EntityUsage="Email"
+    AliasName="DATE_CREATED"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="MessageText"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="MessageText"
+    EntityUsage="Email"
+    AliasName="MESSAGE_TEXT"/>
+  <ViewLinkAccessor
+    Name="EmailRecipientsView"
+    ViewLink="test.model.EmailMessageFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

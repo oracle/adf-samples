@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="NewMailMessagePageDef"
+                Package="test.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmailMessage" RangeSize="25"
+              DataControl="MailServiceDataControl" id="EmailMessageIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="EmailRecipients" RangeSize="25"
+              DataControl="MailServiceDataControl" id="EmailRecipientsIterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmailMessageIterator" id="SenderEmail">
+      <AttrNames>
+        <Item Value="SenderEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmailMessageIterator" id="Subject">
+      <AttrNames>
+        <Item Value="Subject"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmailMessageIterator" id="MessageText">
+      <AttrNames>
+        <Item Value="MessageText"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="EmailRecipientsIterator" id="EmailRecipients">
+      <nodeDefinition DefName="test.model.EmailRecipientsView"
+                      Name="EmailRecipients0">
+        <AttrNames>
+          <Item Value="RecipientType"/>
+          <Item Value="RecipientEmailAddress"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmailRecipientsIterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="EmailRecipientsIterator" id="removeRowWithKey"
+            InstanceName="MailServiceDataControl.EmailRecipients"
+            DataControl="MailServiceDataControl" RequiresUpdateModel="false"
+            Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

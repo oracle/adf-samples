@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.54.7" id="DataBindings" SeparateXMLFiles="false"
+             Package="test.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/flows/create-new-email.xml#create-new-email@InitializeTaskFlow"
+          usageId="test_view_create_new_email_create_new_email_InitializeTaskFlowPageDef"/>
+    <page path="/NewMailMessage.jsff"
+          usageId="test_view_NewMailMessagePageDef"/>
+    <page path="/TestPage.jspx" usageId="test_view_TestPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="test_view_create_new_email_create_new_email_InitializeTaskFlowPageDef"
+          path="flows.create_new_email_create_new_email_InitializeTaskFlowPageDef"/>
+    <page id="test_view_NewMailMessagePageDef"
+          path="test.view.pageDefs.NewMailMessagePageDef"/>
+    <page id="test_view_TestPagePageDef"
+          path="test.view.pageDefs.TestPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="MailServiceDataControl" Package="test.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="MailServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

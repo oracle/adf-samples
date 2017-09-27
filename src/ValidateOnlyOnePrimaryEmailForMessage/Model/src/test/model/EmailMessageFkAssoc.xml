@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailMessageFkAssoc"
+  Version="11.1.1.54.7">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Email"
+    Cardinality="1"
+    Source="true"
+    Owner="test.model.Email"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Email"/>
+      <Attr Name="_foreignKey" Value="test.model.Email.EmailMessagePk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Email.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Recipients"
+    Cardinality="-1"
+    Owner="test.model.EmailRecipient"
+    HasOwner="true">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Recipients"/>
+      <Attr Name="_foreignKey"
+        Value="test.model.EmailRecipient.EmailMessageFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.MessageId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

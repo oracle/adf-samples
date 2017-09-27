@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailMessageFkLink"
+  Version="11.1.1.54.7"
+  EntityAssociation="test.model.EmailMessageFkAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="EmailView"
+    Cardinality="1"
+    Owner="test.model.EmailView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmailView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmailRecipientsView"
+    Cardinality="-1"
+    Owner="test.model.EmailRecipientsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmailRecipientsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipientsView.MessageId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

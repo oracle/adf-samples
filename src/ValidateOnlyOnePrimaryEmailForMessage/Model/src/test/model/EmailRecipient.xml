@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailRecipient"
+  Version="11.1.1.54.7"
+  DBObjectType="table"
+  DBObjectName="EMAIL_MESSAGE_RECIPIENTS"
+  AliasName="EmailRecipients"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="RecipientTypes"
+    ViewObjectName="test.model.RecipientTypes"
+    RowLevelBinds="true"/>
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMAIL_MESSAGE_RECIPIENTS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("email_message_recipients_seq",DBTransaction)).sequenceNumber]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="MessageId"
+    IsNotNull="true"
+    ColumnName="MESSAGE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMAIL_MESSAGE_RECIPIENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RecipientEmailAddress"
+    Precision="40"
+    ColumnName="RECIPIENT_EMAIL_ADDRESS"
+    SQLType="VARCHAR"
+    Type="test.model.common.EmailAddress"
+    ColumnType="VARCHAR2"
+    TableName="EMAIL_MESSAGE_RECIPIENTS"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RecipientType"
+    Precision="1"
+    ColumnName="RECIPIENT_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMAIL_MESSAGE_RECIPIENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[Email.Recipients.count("RecipientType == 'P' ? 1 : null") == 0 ? 'P' : 'C']]></TransientExpression>
+    <validation:ExistsValidationBean
+      Name="RecipientType_Rule_0"
+      ResId="test.model.EmailRecipient.RecipientType_Rule_0"
+      OperandType="VO_USAGE"
+      Target="RecipientTypes">
+      <validation:TargetAttributes>
+        <validation:Item
+          Value="Value"/>
+      </validation:TargetAttributes>
+    </validation:ExistsValidationBean>
+  </Attribute>
+  <AccessorAttribute
+    Name="Email"
+    Association="test.model.EmailMessageFkAssoc"
+    AssociationEnd="test.model.EmailMessageFkAssoc.Email"
+    AssociationOtherEnd="test.model.EmailMessageFkAssoc.Recipients"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EmailMessageRecipientsRecipientEmailAddressCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMAIL_MESSAGE_RECIPIENTS_RECIP"/>
+      <Attr Name="_checkCondition"
+        Value='"RECIPIENT_EMAIL_ADDRESS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.RecipientEmailAddress"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmailRecipientPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMAIL_RECIPIENT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011592">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011592"/>
+      <Attr Name="_checkCondition" Value='"ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0011593">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011593"/>
+      <Attr Name="_checkCondition" Value='"MESSAGE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.MessageId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmailMessageFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMAIL_MESSAGE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMAIL_MESSAGE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.EmailRecipient.MessageId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="test.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

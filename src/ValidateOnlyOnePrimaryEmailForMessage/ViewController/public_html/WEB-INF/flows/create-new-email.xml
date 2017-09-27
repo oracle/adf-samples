@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="create-new-email">
+    <default-activity>InitializeTaskFlow</default-activity>
+    <transaction>
+      <requires-transaction/>
+    </transaction>
+    <method-call id="InitializeTaskFlow">
+      <method>#{bindings.createNewMailAndPrimaryRecipient.execute}</method>
+      <outcome>
+        <fixed-outcome>continue</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="NewMailMessage">
+      <page>/NewMailMessage.jsff</page>
+    </view>
+    <task-flow-return id="Send">
+      <outcome>
+        <name>Send</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome>
+        <name>Cancel</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>InitializeTaskFlow</from-activity-id>
+      <control-flow-case>
+        <from-outcome>continue</from-outcome>
+        <to-activity-id>NewMailMessage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>NewMailMessage</from-activity-id>
+      <control-flow-case>
+        <from-outcome>Cancel</from-outcome>
+        <to-activity-id>Cancel</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>Send</from-outcome>
+        <to-activity-id>Send</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

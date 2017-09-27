@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="panelGroupLayout1" layout="vertical" valign="top">
+      <af:inputText value="#{bindings.SenderEmail.inputValue}" label="From:"
+                    required="#{bindings.SenderEmail.hints.mandatory}"
+                    columns="#{bindings.SenderEmail.hints.displayWidth}"
+                    maximumLength="#{bindings.SenderEmail.hints.precision}"
+                    shortDesc="#{bindings.SenderEmail.hints.tooltip}" id="it1"
+                    readOnly="true">
+        <f:validator binding="#{bindings.SenderEmail.validator}"/>
+      </af:inputText>
+      <af:panelGroupLayout id="pgl1">
+        <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                          text="Add Recipient"
+                          disabled="#{!bindings.CreateInsert.enabled}" id="cb1"
+                          partialTriggers="t1"/>
+        <af:commandButton text="Send" id="cb2" action="Send"/>
+        <af:commandButton text="Cancel" id="cb3" action="Cancel"
+                          immediate="true"/>
+      </af:panelGroupLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout>
+    <af:table value="#{bindings.EmailRecipients.collectionModel}" var="row"
+              varStatus="status"
+              rows="#{bindings.EmailRecipients.rangeSize}"
+              emptyText="#{bindings.EmailRecipients.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.EmailRecipients.rangeSize}"
+              rowBandingInterval="0" id="t1" contentDelivery="immediate"
+              autoHeightRows="10" verticalGridVisible="false"
+              horizontalGridVisible="false" columnStretching="none"
+              inlineStyle="border-style:none; width:80.0%;" width="650">
+      <af:column sortProperty="RecipientType" sortable="false" id="c2"
+                 minimumWidth="100">
+        <af:selectOneChoice value="#{row.bindings.RecipientType.inputValue}"
+                            required="#{bindings.EmailRecipients.hints.RecipientType.mandatory}"
+                            shortDesc="#{bindings.EmailRecipients.hints.RecipientType.tooltip}"
+                            id="soc1" autoSubmit="true">
+          <f:selectItems value="#{row.bindings.RecipientType.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+      <af:column sortProperty="RecipientEmailAddress" sortable="false" id="c1"
+                 width="400">
+        <af:inputText value="#{row.bindings.RecipientEmailAddress.inputValue}"
+                      label="#{bindings.EmailRecipients.hints.RecipientEmailAddress.label}"
+                      showRequired="#{bindings.EmailRecipients.hints.RecipientEmailAddress.mandatory}"
+                      maximumLength="#{bindings.EmailRecipients.hints.RecipientEmailAddress.precision}"
+                      shortDesc="#{bindings.EmailRecipients.hints.RecipientEmailAddress.tooltip}"
+                      id="it4" autoSubmit="true" columns="80">
+          <f:validator binding="#{row.bindings.RecipientEmailAddress.validator}"/>
+          <f:converter converterId="oracle.genericDomain"/>
+        </af:inputText>
+      </af:column>
+      <af:column>
+        <af:commandImageLink rendered="#{status.index != 0}" immediate="true" partialTriggers="c2" actionListener="#{bindings.removeRowWithKey.execute}"
+                             icon="/images/removexicon.jpg"
+                             />
+      </af:column>
+    </af:table>
+    <af:spacer height="10" width="10"/>
+    <af:inputText value="#{bindings.Subject.inputValue}"
+                  label="#{bindings.Subject.hints.label}"
+                  showRequired="#{bindings.Subject.hints.mandatory}"                  
+                  maximumLength="#{bindings.Subject.hints.precision}"
+                  shortDesc="#{bindings.Subject.hints.tooltip}" id="it2"
+                  columns="80">
+      <f:validator binding="#{bindings.Subject.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.MessageText.inputValue}"
+                  required="#{bindings.MessageText.hints.mandatory}"
+                  maximumLength="#{bindings.MessageText.hints.precision}"
+                  shortDesc="#{bindings.MessageText.hints.tooltip}" id="it3"
+                  rows="10" inlineStyle="width:auto;" wrap="soft" columns="80">
+      <f:validator binding="#{bindings.MessageText.validator}"/>
+      <f:converter converterId="oracle.genericDomain"/>
+    </af:inputText>
+  </af:panelGroupLayout>
+
+</jsp:root>

@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">InitializeTaskFlow</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">method-call - InitializeTaskFlow&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">method-call - InitializeTaskFlow</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">163.0</property>
+      <property
+         name="x">98.0</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">NewMailMessage</property>
+      <property
+         name="page">/NewMailMessage.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - NewMailMessage&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - NewMailMessage</property>
+      <property
+         name="y">162.0</property>
+      <property
+         name="x">328.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">continue</property>
+      <property
+         name="sdm:polyPoints">R50,139.0,163.0,287.0,162.0,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">Send</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Send&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Send</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">104.0</property>
+      <property
+         name="x">627.0</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn6">
+      <property
+         name="activityId">Cancel</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - Cancel&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - Cancel</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">217.0</property>
+      <property
+         name="x">617.0</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View3"
+      to="TaskFlowReturn6">
+      <property
+         name="fromOutcome">Cancel</property>
+      <property
+         name="sdm:polyPoints">R54,369.0,165.5,576.0,217.0,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View3"
+      to="TaskFlowReturn5">
+      <property
+         name="fromOutcome">Send</property>
+      <property
+         name="sdm:polyPoints">R46,369.0,158.5,586.0,104.0,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'Cp1252'?>
+<jpsConfig xmlns="http://xmlns.oracle.com/oracleas/schema/11/jps-config-11_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.oracle.com/oracleas/schema/11/jps-config-11_1.xsd">
+   <property value="doasprivileged" name="oracle.security.jps.jaas.mode"/>
+   <propertySets/>
+   <serviceProviders>
+      <serviceProvider class="oracle.security.jps.internal.credstore.ssp.SspCredentialStoreProvider" name="credstore.provider" type="CREDENTIAL_STORE">
+         <description>Credential Store Service Provider</description>
+      </serviceProvider>
+      <serviceProvider class="oracle.security.jps.internal.login.jaas.JaasLoginServiceProvider" name="jaas.login.provider" type="LOGIN">
+         <description>Login Module Service Provider</description>
+      </serviceProvider>
+      <serviceProvider class="oracle.security.jps.internal.idstore.xml.XmlIdentityStoreProvider" name="idstore.xml.provider" type="IDENTITY_STORE">
+         <description>XML-based IdStore Provider</description>
+      </serviceProvider>
+      <serviceProvider class="oracle.security.jps.internal.policystore.xml.XmlPolicyStoreProvider" name="policystore.xml.provider" type="POLICY_STORE">
+         <description>XML-based PolicyStore Provider</description>
+      </serviceProvider>
+      <serviceProvider class="oracle.security.jps.internal.anonymous.idm.IdmAnonymousServiceProvider" name="anonymous.provider" type="ANONYMOUS">
+         <description>Anonymous Service Provider</description>
+      </serviceProvider>
+   </serviceProviders>
+   <serviceInstances>
+      <serviceInstance provider="credstore.provider" name="credstore">
+         <property value="./" name="location"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="saml.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.saml.JpsSAMLLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+         <property value="www.oracle.com" name="name"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="krb5.loginmodule">
+         <property value="com.sun.security.auth.module.Krb5LoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+         <property value="true" name="storeKey"/>
+         <property value="true" name="useKeyTab"/>
+         <property value="true" name="doNotPrompt"/>
+         <property value="./krb5.keytab" name="keyTab"/>
+         <property value="HOST/localhost@EXAMPLE.COM" name="principal"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="oam.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.oam.OAMLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+         <property value="$ACCESS_SDK_HOME" name="access.sdk.install.path"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="admin.tool.loginmodule">
+         <property value="oracle.security.jazn.login.module.RealmLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="digest.authenticator.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.digest.DigestLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="certificate.authenticator.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.x509.X509LoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="jaas.auth.manager.loginmodule">
+         <property value="oracle.security.jazn.login.module.WSSLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="saml.auth.manager.loginmodule">
+         <property value="oracle.security.jazn.login.module.saml.SAMLLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+         <property value="www.oracle.com" name="issuer.name.1"/>
+         <property value="orasign" name="issuer.trustpointalias.1"/>
+         <property value="oracle" name="issuer.keystorepassword.1"/>
+         <property value="config/oraks.jks" name="issuer.keystorepath.1"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="wss.digest.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.digest.WSSDigestLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+      <serviceInstance provider="jaas.login.provider" name="idstore.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.idstore.IdStoreLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+         <property value="false" name="remove.anonymous.role"/>
+      </serviceInstance>
+      <serviceInstance provider="idstore.xml.provider" name="idstore.xml">
+         <property value="./jazn-data.xml" name="location"/>
+         <property value="OBFUSCATE" name="jps.xml.idstore.pwd.encoding"/>
+         <property value="jazn.com" name="subscriber.name"/>
+      </serviceInstance>
+      <serviceInstance provider="policystore.xml.provider" name="policystore.xml">
+         <property value="./jazn-data.xml" name="location"/>
+      </serviceInstance>
+      <serviceInstance provider="anonymous.provider" name="anonymous"/>
+      <serviceInstance provider="jaas.login.provider" name="anonymous.loginmodule">
+         <property value="oracle.security.jps.internal.jaas.module.anonymous.AnonymousLoginModule" name="loginModuleClassName"/>
+         <property value="REQUIRED" name="jaas.login.controlFlag"/>
+         <property value="true" name="debug"/>
+         <property value="true" name="addAllRoles"/>
+      </serviceInstance>
+   </serviceInstances>
+   <jpsContexts default="ValidateOnlyOnePrimaryEmailForMessage">
+      <jpsContext name="ValidateOnlyOnePrimaryEmailForMessage">
+         <serviceInstanceRef ref="idstore.xml"/>
+         <serviceInstanceRef ref="credstore"/>
+         <serviceInstanceRef ref="anonymous"/>
+         <serviceInstanceRef ref="policystore.xml"/>
+         <serviceInstanceRef ref="idstore.loginmodule"/>
+      </jpsContext>
+      <jpsContext name="anonymous">
+         <serviceInstanceRef ref="credstore"/>
+         <serviceInstanceRef ref="anonymous"/>
+         <serviceInstanceRef ref="anonymous.loginmodule"/>
+      </jpsContext>
+   </jpsContexts>
+</jpsConfig>

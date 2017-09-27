@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmailRecipientsView"
+  Version="11.1.1.54.7"
+  SelectList="EmailRecipients.ID, 
+       EmailRecipients.MESSAGE_ID, 
+       EmailRecipients.RECIPIENT_EMAIL_ADDRESS, 
+       EmailRecipients.RECIPIENT_TYPE"
+  FromList="EMAIL_MESSAGE_RECIPIENTS EmailRecipients"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  ComponentClass="test.model.fwkext.CustomViewObjectImpl">
+  <DesignTime>
+    <Attr Name="_objectSuperClassName"
+      Value="test.model.fwkext.CustomViewObjectImpl"/>
+  </DesignTime>
+  <Variable
+    Name="VarMessageId"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number"/>
+  <ViewAccessor
+    Name="RecipientTypes"
+    ViewObjectName="test.model.RecipientTypes"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RecipientType"
+    ListVOName="RecipientTypes"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_RecipientType_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RecipientType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="EmailRecipients"
+    Entity="test.model.EmailRecipient"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="EmailRecipients"
+    AliasName="ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="MessageId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MessageId"
+    EntityUsage="EmailRecipients"
+    AliasName="MESSAGE_ID"/>
+  <ViewAttribute
+    Name="RecipientEmailAddress"
+    PrecisionRule="true"
+    EntityAttrName="RecipientEmailAddress"
+    EntityUsage="EmailRecipients"
+    AliasName="RECIPIENT_EMAIL_ADDRESS"/>
+  <ViewAttribute
+    Name="RecipientType"
+    PrecisionRule="true"
+    EntityAttrName="RecipientType"
+    EntityUsage="EmailRecipients"
+    AliasName="RECIPIENT_TYPE"
+    LOVName="LOV_RecipientType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="PrimaryRecipient"
+    ViewObjectName="test.model.EmailRecipientsView"
+    Conjunction="AND"
+    Mode="3">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow12"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="MessageId"
+        ViewAttribute="MessageId"
+        Operator="="
+        Conjunction="AND"
+        Value=":VarMessageId"
+        GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="RecipientType"
+        ViewAttribute="RecipientType"
+        Operator="="
+        Conjunction="AND"
+        Value="P"
+        UpperColumns="0"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="InsertNewRowsAtEnd"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
+</ViewObject>

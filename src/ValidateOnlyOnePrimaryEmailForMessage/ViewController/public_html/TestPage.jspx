@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:decorativeBox id="db1" theme="medium">
+          <f:facet name="center">
+            <af:panelStretchLayout id="psl1"
+                                 startWidth="5px" endWidth="5px"
+                                   topHeight="5px" bottomHeight="5px">
+                                 <f:facet name="center">
+                                 <af:panelStretchLayout id="psl2" inlineStyle="background-color:White;"
+                                                                  startWidth="5px" endWidth="5px"
+                                   topHeight="5px" bottomHeight="5px"
+                                 >
+              <f:facet name="bottom">
+                <af:spacer width="1" height="1" id="s21"/>
+              </f:facet>
+              <f:facet name="end">
+                <af:spacer width="1" height="1" id="spacer11"/>
+              </f:facet>
+              <f:facet name="start">
+                <af:spacer width="1" height="1" id="spacer21"/>
+              </f:facet>
+              <f:facet name="top">
+                <af:spacer width="1" height="1" id="spacer31"/>
+              </f:facet>
+                                 <f:facet name="center">
+              <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                         partialTriggers="::refreshRegion_r1"
+                         regionNavigationListener="#{TestPage.onRegionNavigated}"
+                         />
+                         </f:facet>
+                         </af:panelStretchLayout>
+</f:facet>
+              <f:facet name="bottom">
+                <af:spacer width="1" height="1" id="s2"/>
+              </f:facet>
+              <f:facet name="end">
+                <af:spacer width="1" height="1" id="spacer1"/>
+              </f:facet>
+              <f:facet name="start">
+                <af:spacer width="1" height="1" id="spacer2"/>
+              </f:facet>
+              <f:facet name="top">
+                <af:spacer width="1" height="1" id="spacer3"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="top"><af:panelGroupLayout id="pgl2"
+                                                   binding="#{TestPage.panelGroupLayoutWrappingSendButton}"
+                                                   layout="horizontal">
+            <af:commandButton text="Create a new message..."
+                              id="refreshRegion_r1"
+                              actionListener="#{TestPage.refreshRegionUsingButtonId}"
+                              action="#{TestPage.onSendNewMessageButtonClicked}"
+                              binding="#{TestPage.sendNewMessageButton}"
+                              immediate="true">
+                <af:setActionListener from="#{true}"
+                                      to="#{requestScope.buttonClicked}"/>
+              </af:commandButton>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:panelGroupLayout id="pgl1">
+                <af:outputText value="NOTE: This application doesn't really send an email, it only populates the EMAIL_MESSAGE and EMAIL_MESSAGE_RECIPIENT tables."
+                               id="ot1"/>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:decorativeBox>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:TestPage-->
+</jsp:root>
