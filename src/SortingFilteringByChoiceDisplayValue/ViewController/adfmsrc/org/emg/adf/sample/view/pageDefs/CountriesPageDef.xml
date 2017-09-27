@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.61.92" id="CountriesPageDef"
+                Package="org.emg.adf.sample.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CountriesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CountriesView1Iterator"/>
+    <searchRegion Binds="CountriesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="CountriesView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CountriesView1Iterator" id="CountriesView1">
+      <nodeDefinition DefName="org.emg.adf.sample.model.CountriesView"
+                      Name="CountriesView10">
+        <AttrNames>
+          <Item Value="CountryId"/>
+          <Item Value="CountryName"/>
+          <Item Value="RegionId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list StaticList="false" Uses="LOV_RegionId"
+                  IterBinding="CountriesView1Iterator" id="RegionId"/>
+  </bindings>
+</pageDefinition>

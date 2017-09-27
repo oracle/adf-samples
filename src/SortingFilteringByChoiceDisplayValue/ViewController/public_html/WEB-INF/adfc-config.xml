@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__3">
+    <managed-bean-name id="__1">TableFilterChoiceList</managed-bean-name>
+    <managed-bean-class id="__4">org.emg.adf.sample.view.TableFilterChoiceList</managed-bean-class>
+    <managed-bean-scope id="__2">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

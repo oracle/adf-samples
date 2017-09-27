@@ -171,6 +171,7 @@ Each sample is also available in downloadable form in the zips directory.
 * SmartPanelDemo
 * SocialSecurityNumberFormatter
 * SortableInMemoryStaticViewObject
+* SortingFilteringByChoiceDisplayValue
 
 
 

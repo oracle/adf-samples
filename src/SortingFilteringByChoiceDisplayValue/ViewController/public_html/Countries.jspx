@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="center">
+            <af:panelCollection id="pc1">
+              <f:facet name="menus"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="statusbar"/>
+              <af:table value="#{bindings.CountriesView1.collectionModel}"
+                        var="row" rows="#{bindings.CountriesView1.rangeSize}"
+                        emptyText="#{bindings.CountriesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.CountriesView1.rangeSize}"
+                        rowBandingInterval="0" columnSelection="single"
+                        filterModel="#{bindings.CountriesView1Query.queryDescriptor}"
+                        queryListener="#{bindings.CountriesView1Query.processQuery}"
+                        filterVisible="true" varStatus="vs"
+                        selectedRowKeys="#{bindings.CountriesView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.CountriesView1.collectionModel.makeCurrent}"
+                        rowSelection="single" id="t1">
+                <af:column sortProperty="CountryId" filterable="true"
+                           sortable="true"
+                           headerText="#{bindings.CountriesView1.hints.CountryId.label}"
+                           id="c1">
+                  <af:inputText value="#{row.bindings.CountryId.inputValue}"
+                                label="#{bindings.CountriesView1.hints.CountryId.label}"
+                                required="#{bindings.CountriesView1.hints.CountryId.mandatory}"
+                                columns="#{bindings.CountriesView1.hints.CountryId.displayWidth}"
+                                maximumLength="#{bindings.CountriesView1.hints.CountryId.precision}"
+                                shortDesc="#{bindings.CountriesView1.hints.CountryId.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{row.bindings.CountryId.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="CountryName" filterable="true"
+                           sortable="true"
+                           headerText="#{bindings.CountriesView1.hints.CountryName.label}"
+                           id="c3">
+                  <af:inputText value="#{row.bindings.CountryName.inputValue}"
+                                label="#{bindings.CountriesView1.hints.CountryName.label}"
+                                required="#{bindings.CountriesView1.hints.CountryName.mandatory}"
+                                columns="#{bindings.CountriesView1.hints.CountryName.displayWidth}"
+                                maximumLength="#{bindings.CountriesView1.hints.CountryName.precision}"
+                                shortDesc="#{bindings.CountriesView1.hints.CountryName.tooltip}"
+                                id="it2">
+                    <f:validator binding="#{row.bindings.CountryName.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="RegionId" filterable="true"
+                           sortable="true" width="150px" headerText="Region"
+                           id="c2">
+                  <f:facet name="filter">
+                    <af:selectOneChoice id="soc0" autoSubmit="true"
+                                        value="#{vs.filterCriteria.RegionId}">
+                      <!-- attention: the RegionId list binding must be created manually in the page definition! -->
+                      <f:selectItems id="si0"
+                                     value="#{viewScope.TableFilterChoiceList[bindings.RegionId]}"/>
+                    </af:selectOneChoice>
+                  </f:facet>
+                  <af:selectOneChoice value="#{row.bindings.RegionId.inputValue}"
+                                      label="#{row.bindings.RegionId.label}"
+                                      required="#{bindings.CountriesView1.hints.RegionId.mandatory}"
+                                      shortDesc="#{bindings.CountriesView1.hints.RegionId.tooltip}"
+                                      id="soc1">
+                    <f:selectItems value="#{row.bindings.RegionId.items}"
+                                   id="si1"/>
+                  </af:selectOneChoice>
+                </af:column>
+              </af:table>
+            </af:panelCollection>
+            <!-- id="af_one_column_stretched"   -->
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
