@@ -4,7 +4,7 @@ Many of these samples where previously hosted on Java.net and will relate to var
 
 ## Layout
 This repository is laid out with each sample expanded in it's own subdirectory under the root /src directory. This allows you to browse the code without downloading.
-Each sample is also available in downloadable form in the zips directory.
+Each sample is also available as a downloadable zip from the releases area
 
 ## List of Samples
 
