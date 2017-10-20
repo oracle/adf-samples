@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.17.96"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="JClient" >
+   <Contents >
+      <DataControl
+         id="CustomerServiceDataControl"
+         SubType="DCJavaBean"
+         SupportsFindMode="false"
+         SupportsTransactions="false"
+         FactoryClass="oracle.adf.model.generic.DataControlFactoryImpl"
+         Definition="test.model.service.CustomerService"
+         BeanClass="test.model.service.CustomerService" >
+      </DataControl>
+      <Containee
+         id="Panel1UIModel"
+         ObjectType="BindingContainerReference"
+         FullName="demo.client.Panel1UIModel" >
+      </Containee>
+   </Contents>
+</JboProject>

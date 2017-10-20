@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JavaBean
+   id="Order"
+   xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+   version="10.1.2.17.96"
+   BeanClass="test.model.beans.Order" >
+   <Contents >
+      <Attribute
+         Name="datePlaced"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="datePlaced"
+         Type="java.util.Date" >
+      </Attribute>
+      <Attribute
+         Name="id"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="id"
+         Type="int" >
+      </Attribute>
+      <Attribute
+         Name="total"
+         IsUpdateable="true"
+         AttrLoad="Each"
+         IsQueriable="false"
+         IsVisible="true"
+         IsPersistent="false"
+         IsUnique="false"
+         IsNotNull="false"
+         PrecisionRule="true"
+         DiscrColumn="false"
+         SourceName="total"
+         Type="float" >
+      </Attribute>
+   </Contents>
+</JavaBean>

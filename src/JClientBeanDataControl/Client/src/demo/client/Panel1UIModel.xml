@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="Panel1UIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="demo.client"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="findAllOrdersByCustomerIter"
+         SubType="DCMethodIterator"
+         Binds="findAllOrdersByCustomer.result"
+         RangeSize="10"
+         DataControl="CustomerServiceDataControl"
+         BeanClass="test.model.beans.Order" >
+      </DCIterator>
+      <DCControl
+         id="findAllOrdersByCustomer"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="false"
+         DataControl="CustomerServiceDataControl"
+         InstanceName="CustomerServiceDataControl.dataProvider"
+         MethodName="findAllOrdersByCustomer"
+         ReturnName="CustomerServiceDataControl.methodResults.CustomerServiceDataControl_dataProvider_findAllOrdersByCustomer_result" >
+         <Contents >
+            <NamedData
+               NDName="Arg0"
+               NDType="test.model.beans.Customer"
+               NDValue="%null%" >
+            </NamedData>
+         </Contents>
+      </DCControl>
+      <DCControl
+         id="findAllOrdersByCustomer1"
+         DefClass="oracle.jbo.uicli.jui.JUTableDef"
+         SubType="DCTable"
+         IterBinding="findAllOrdersByCustomerIter"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="datePlaced" />
+            <Item Value="id" />
+            <Item Value="total" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
