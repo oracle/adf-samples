@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE orion-application PUBLIC "-//Evermind//DTD J2EE Application runtime 1.2//EN" "http://xmlns.oracle.com/ias/dtds/orion-application.dtd">
+<orion-application>
+  <web-module id="XMLPosting" path="D:\jdev\home\mywork\XMLPosting1012\public_html"/>
+  <log>
+    <file path="XMLPosting-oc4j-app.log"/>
+  </log>
+  <jazn provider="XML" location="XMLPosting-jazn-data.xml" default-realm="jazn.com"/>
+  <data-sources path="XMLPosting-data-sources.xml"/>
+</orion-application>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="xml2000demo"
+   SeparateXMLFiles="true"
+   PackageName="xml2000demo" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Dept"
+      FullName="xml2000demo.Dept"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="DeptView"
+      FullName="xml2000demo.DeptView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="Emp"
+      FullName="xml2000demo.Emp"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="WorksInDeptAssoc"
+      FullName="xml2000demo.WorksInDeptAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmpView"
+      FullName="xml2000demo.EmpView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="WorksInDeptLink"
+      FullName="xml2000demo.WorksInDeptLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="Xml2000DemoModule"
+      FullName="xml2000demo.Xml2000DemoModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>

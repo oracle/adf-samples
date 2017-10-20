@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='WINDOWS-1252'?>
+<xsql:action xmlns:xsql="urn:oracle-xsql"
+       handler="oracle.jbo.xsql.ViewObject"
+          name="DeptView"
+    configname="Xml2000DemoModuleLocal"
+    appmodule="xml2000demo.Xml2000DemoModule"
+      max-rows="-1"
+    max-levels="-1">
+    <where>
+      <attribute name="Deptno" value="{@d}"/>
+    </where>
+</xsql:action>

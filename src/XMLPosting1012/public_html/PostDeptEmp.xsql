@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding='WINDOWS-1252'?>
+<page xmlns:xsql="urn:oracle-xsql">
+  <xsql:action handler="oracle.jbo.xsql.UpdateViewObject"
+    name="DeptView"
+    configname="Xml2000DemoModuleLocal"
+    appmodule="xml2000demo.Xml2000DemoModule"
+    transform="DepartmentList-2-DeptView.xsl"
+    max-levels="1">
+  </xsql:action>
+</page>

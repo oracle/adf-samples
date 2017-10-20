@@ -1,0 +1,64 @@
+<HTML>
+<BODY>
+
+<SCRIPT>
+
+  function PostOrder (xmldoc)
+  {
+     var xmlhttp = new ActiveXObject ("Microsoft.XMLHTTP");
+     xmlhttp.open("POST", "PostDeptEmp.xsql",false);
+     xmlhttp.send(xmldoc);
+     return xmlhttp.responseXML;
+  }
+
+function submitInfo(){
+ var xmldoc  = new ActiveXObject ("Microsoft.XMLDOM");
+ xmldoc.async = false;
+ xmldoc.loadXML(xmldocText.value);
+ err = xmldoc.parseError;
+ if (err != 0) {
+   errors.innerHTML = "<hr><b>XML to post is not well-formed!<b><br>"+
+   err.srcText+"<br>"+
+   "Line "+ err.line + ", Pos " + err.linepos + "<br>" +
+   err.reason;   
+ }
+ else {
+   var response = PostOrder(xmldoc);
+   var exceptions = response.selectNodes("//Exception/@message|//xsql-error/message");
+   // alert(response.documentElement.xml);
+   if (exceptions.length > 0) {
+     errlist = "";
+     for ( i = 0; i < exceptions.length ; i++ ) {
+       errlist = errlist+"<hr>"+exceptions.item(i).text;
+     }
+     errors.innerHTML = errlist;
+   }
+   else {
+     errors.innerHTML="<b>Posted XML Processed Successfully</b>";
+     parent.bottom.location = "DeptEmpList.xsql";
+   }
+ }
+}
+</SCRIPT>
+NOTE: This demo only works for the moment with IE 5.5 or greater.
+<b>Type in an XML Document to Post:</b><br>
+<TEXTAREA rows="18" style="font-family:Lucida Console;font-size:100%; width:100%" cols="70" NAME="xmldocText"
+><DepartmentList>
+  <Department>
+    <Id>99</Id>
+    <Name>Special</Name>
+    <Location>San Francisco</Location>
+    <Employees>
+      <Employee>
+        <Id>1225</Id>
+        <Name>STEVE</Name>
+        <Salary>1230</Salary>
+      </Employee>
+    </Employees>
+  </Department>
+</DepartmentList></TEXTAREA>
+<INPUT TYPE=button Value="Post XML Document" onclick="submitInfo()">
+<span id="errors"></span>
+
+</BODY>
+</HTML>

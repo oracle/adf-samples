@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding='WINDOWS-1252'?>
+<?xml-stylesheet type="text/xsl" href="DeptEmpList.xsl"?>
+<xsql:include-xsql href="DeptEmpData.xsql" xmlns:xsql="urn:oracle-xsql"/>
+
+ 

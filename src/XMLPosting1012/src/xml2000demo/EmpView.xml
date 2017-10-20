@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EmpView"
+   SelectList="Emp.EMPNO, 
+       Emp.ENAME, 
+       Emp.JOB, 
+       Emp.SAL, 
+       Emp.DEPTNO"
+   FromList="EMP Emp"
+   OrderBy="sal desc"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   ComponentClass="xml2000demo.EmpViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <Properties>
+      <Property Name ="XML_ELEMENT" Value ="Employees" />
+      <Property Name ="XML_ROW_ELEMENT" Value ="Employee" />
+   </Properties>
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="Emp"
+      Entity="xml2000demo.Emp" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryOrderBy" Value="sal desc" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Empno"
+      PrecisionRule="false"
+      EntityAttrName="Empno"
+      EntityUsage="Emp"
+      AliasName="EMPNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ename"
+      PrecisionRule="false"
+      EntityAttrName="Ename"
+      EntityUsage="Emp"
+      AliasName="ENAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Job"
+      PrecisionRule="false"
+      EntityAttrName="Job"
+      EntityUsage="Emp"
+      AliasName="JOB" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Sal"
+      PrecisionRule="false"
+      EntityAttrName="Sal"
+      EntityUsage="Emp"
+      AliasName="SAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Deptno"
+      PrecisionRule="false"
+      EntityAttrName="Deptno"
+      EntityUsage="Emp"
+      AliasName="DEPTNO" >
+   </ViewAttribute>
+</ViewObject>
