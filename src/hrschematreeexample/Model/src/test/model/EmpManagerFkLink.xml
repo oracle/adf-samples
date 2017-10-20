@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="EmpManagerFkLink"
+   EntityAssociation="test.model.EmpManagerFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="ManagerIdEmployeesView"
+      Cardinality="1"
+      Owner="test.model.EmployeesView"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.EmployeesView.EmployeeId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="EmployeesView"
+      Cardinality="-1"
+      Owner="test.model.EmployeesView" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.EmployeesView.ManagerId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="EmployeesView" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

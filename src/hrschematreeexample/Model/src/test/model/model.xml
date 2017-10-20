@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="model"
+   SeparateXMLFiles="true"
+   PackageName="test.model" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_ejbPackage" Value="false" />
+   </DesignTime>
+   <Containee
+      Name="Countries"
+      FullName="test.model.Countries"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="Departments"
+      FullName="test.model.Departments"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="Employees"
+      FullName="test.model.Employees"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmpManagerFkAssoc"
+      FullName="test.model.EmpManagerFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="DeptMgrFkAssoc"
+      FullName="test.model.DeptMgrFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="EmpDeptFkAssoc"
+      FullName="test.model.EmpDeptFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Jobs"
+      FullName="test.model.Jobs"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="EmpJobFkAssoc"
+      FullName="test.model.EmpJobFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="JobHistory"
+      FullName="test.model.JobHistory"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="JhistDeptFkAssoc"
+      FullName="test.model.JhistDeptFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="JhistEmpFkAssoc"
+      FullName="test.model.JhistEmpFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="JhistJobFkAssoc"
+      FullName="test.model.JhistJobFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Locations"
+      FullName="test.model.Locations"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="DeptLocFkAssoc"
+      FullName="test.model.DeptLocFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="LocCIdFkAssoc"
+      FullName="test.model.LocCIdFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="Regions"
+      FullName="test.model.Regions"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkAssoc"
+      FullName="test.model.CountrRegFkAssoc"
+      ObjectType="Association" >
+   </Containee>
+   <Containee
+      Name="CountriesView"
+      FullName="test.model.CountriesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="DepartmentsView"
+      FullName="test.model.DepartmentsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmployeesView"
+      FullName="test.model.EmployeesView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="JobHistoryView"
+      FullName="test.model.JobHistoryView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="JobsView"
+      FullName="test.model.JobsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="LocationsView"
+      FullName="test.model.LocationsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RegionsView"
+      FullName="test.model.RegionsView"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EmpManagerFkLink"
+      FullName="test.model.EmpManagerFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="DeptMgrFkLink"
+      FullName="test.model.DeptMgrFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpDeptFkLink"
+      FullName="test.model.EmpDeptFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="EmpJobFkLink"
+      FullName="test.model.EmpJobFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="JhistDeptFkLink"
+      FullName="test.model.JhistDeptFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="JhistEmpFkLink"
+      FullName="test.model.JhistEmpFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="JhistJobFkLink"
+      FullName="test.model.JhistJobFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="DeptLocFkLink"
+      FullName="test.model.DeptLocFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="LocCIdFkLink"
+      FullName="test.model.LocCIdFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="CountrRegFkLink"
+      FullName="test.model.CountrRegFkLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="TestModule"
+      FullName="test.model.TestModule"
+      ObjectType="AppModule" >
+   </Containee>
+</JboPackage>

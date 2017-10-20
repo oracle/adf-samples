@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="DepartmentsView"
+   SelectList="Departments.DEPARTMENT_ID, 
+       Departments.DEPARTMENT_NAME, 
+       Departments.MANAGER_ID, 
+       Departments.LOCATION_ID"
+   FromList="DEPARTMENTS Departments"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="test.model.DepartmentsViewRowImpl"
+   ComponentClass="test.model.DepartmentsViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="Departments"
+      Entity="test.model.Departments" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="DepartmentId"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="DepartmentId"
+      EntityUsage="Departments"
+      AliasName="DEPARTMENT_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DepartmentName"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="DepartmentName"
+      EntityUsage="Departments"
+      AliasName="DEPARTMENT_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ManagerId"
+      PrecisionRule="true"
+      EntityAttrName="ManagerId"
+      EntityUsage="Departments"
+      AliasName="MANAGER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocationId"
+      PrecisionRule="true"
+      EntityAttrName="LocationId"
+      EntityUsage="Departments"
+      AliasName="LOCATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DepartmentXML"
+      IsUpdateable="false"
+      IsPersistent="false"
+      PrecisionRule="true"
+      Precision="255"
+      Type="org.w3c.dom.Document"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewLinkAccessor
+      Name="EmployeesView"
+      ViewLink="test.model.EmpDeptFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+   <ViewLinkAccessor
+      Name="JobHistoryView"
+      ViewLink="test.model.JhistDeptFkLink"
+      Type="oracle.jbo.RowIterator"
+      IsUpdateable="false" >
+   </ViewLinkAccessor>
+</ViewObject>

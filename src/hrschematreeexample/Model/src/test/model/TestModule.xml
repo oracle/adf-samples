@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="TestModule"
+   ComponentClass="test.model.TestModuleImpl"
+   ComponentInterface="test.model.common.TestModule"
+   ClientProxyName="test.model.client.TestModuleClient" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.2.17.96" />
+      <Attr Name="_deployType" Value="0" />
+      <Attr Name="_ejbAppModule" Value="false" />
+   </DesignTime>
+   <ViewUsage
+      Name="Departments"
+      ViewObjectName="test.model.DepartmentsView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmployeesInDepartment"
+      ViewObjectName="test.model.EmployeesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EmployeesJobHistory"
+      ViewObjectName="test.model.JobHistoryView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="DirectReports"
+      ViewObjectName="test.model.EmployeesView" >
+   </ViewUsage>
+   <ViewUsage
+      Name="DirectReportJobHistory"
+      ViewObjectName="test.model.JobHistoryView" >
+   </ViewUsage>
+   <ViewLinkUsage
+      Name="EmpDeptFkLink1"
+      ViewLinkObjectName="test.model.EmpDeptFkLink"
+      SrcViewUsageName="test.model.TestModule.Departments"
+      DstViewUsageName="test.model.TestModule.EmployeesInDepartment" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.2.17.96" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="JhistDeptFkLink2"
+      ViewLinkObjectName="test.model.JhistDeptFkLink"
+      SrcViewUsageName="test.model.TestModule.Departments"
+      DstViewUsageName="test.model.TestModule.EmployeesJobHistory" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.2.17.96" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="EmpManagerFkLink1"
+      ViewLinkObjectName="test.model.EmpManagerFkLink"
+      SrcViewUsageName="test.model.TestModule.EmployeesInDepartment"
+      DstViewUsageName="test.model.TestModule.DirectReports" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.2.17.96" />
+      </DesignTime>
+   </ViewLinkUsage>
+   <ViewLinkUsage
+      Name="JhistEmpFkLink1"
+      ViewLinkObjectName="test.model.JhistEmpFkLink"
+      SrcViewUsageName="test.model.TestModule.DirectReports"
+      DstViewUsageName="test.model.TestModule.DirectReportJobHistory" >
+      <DesignTime>
+         <Attr Name="_isCodegen" Value="true" />
+         <Attr Name="_version" Value="10.1.2.17.96" />
+      </DesignTime>
+   </ViewLinkUsage>
+</AppModule>

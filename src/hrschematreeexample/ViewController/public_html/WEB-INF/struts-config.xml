@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="DataForm" type="oracle.adf.controller.struts.forms.BindingContainerActionForm"/>
+  </form-beans>
+  <action-mappings>
+    <action path="/testPage" className="oracle.adf.controller.struts.actions.DataActionMapping" type="test.view.TestPageAction" name="DataForm" parameter="/testPage.jsp">
+      <set-property property="modelReference" value="testPageUIModel"/>
+    </action>
+    <action path="/testPageAllRows" className="oracle.adf.controller.struts.actions.DataActionMapping" type="test.view.TestPageAllRowsAction" name="DataForm" parameter="/testPageAllRows.jsp">
+      <set-property property="modelReference" value="testPageAllRowsUIModel"/>
+    </action>
+    <action path="/testPageThree" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/testPageThree.jsp">
+      <set-property property="modelReference" value="testPageThreeUIModel"/>
+    </action>
+    <action path="/testPageFour" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/testPageFour.jsp">
+      <set-property property="modelReference" value="testPageFourUIModel"/>
+    </action>
+    <action path="/pageThatIncludesTestPage" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/pageThatIncludesTestPage.jsp">
+      <set-property property="modelReference" value="pageThatIncludesTestPageUIModel"/>
+    </action>
+    <action path="/pageThatIncludesPageThatIncludesTestPage" className="oracle.adf.controller.struts.actions.DataActionMapping" type="oracle.adf.controller.struts.actions.DataForwardAction" name="DataForm" parameter="/pageThatIncludesPageThatIncludesTestPage.jsp">
+      <set-property property="modelReference" value="pageThatIncludesPageThatIncludesTestPageUIModel"/>
+    </action>
+  </action-mappings>
+  <message-resources parameter="test.view.ApplicationResources"/>
+</struts-config>

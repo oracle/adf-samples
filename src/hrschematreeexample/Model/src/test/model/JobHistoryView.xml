@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="JobHistoryView"
+   SelectList="JobHistory.EMPLOYEE_ID, 
+       JobHistory.START_DATE, 
+       JobHistory.END_DATE, 
+       JobHistory.JOB_ID, 
+       JobHistory.DEPARTMENT_ID"
+   FromList="JOB_HISTORY JobHistory"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   ComponentClass="test.model.JobHistoryViewImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="9.0.5.16.0" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+      <Attr Name="_isExpertMode" Value="false" />
+   </DesignTime>
+   <EntityUsage
+      Name="JobHistory"
+      Entity="test.model.JobHistory" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="EmployeeId"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="EmployeeId"
+      EntityUsage="JobHistory"
+      AliasName="EMPLOYEE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="StartDate"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="StartDate"
+      EntityUsage="JobHistory"
+      AliasName="START_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EndDate"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="EndDate"
+      EntityUsage="JobHistory"
+      AliasName="END_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="JobId"
+      IsNotNull="true"
+      PrecisionRule="true"
+      EntityAttrName="JobId"
+      EntityUsage="JobHistory"
+      AliasName="JOB_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DepartmentId"
+      PrecisionRule="true"
+      EntityAttrName="DepartmentId"
+      EntityUsage="JobHistory"
+      AliasName="DEPARTMENT_ID" >
+   </ViewAttribute>
+</ViewObject>

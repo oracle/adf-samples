@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="pageThatIncludesPageThatIncludesTestPageUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="DepartmentsIterator"
+         Binds="TestModuleDataControl.Departments"
+         RangeSize="10" >
+      </DCIterator>
+      <DCControl
+         id="Departments"
+         SubType="DCTable"
+         IterBinding="DepartmentsIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="DepartmentId" />
+            <Item Value="DepartmentName" />
+            <Item Value="ManagerId" />
+            <Item Value="LocationId" />
+            <Item Value="DepartmentXML" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>

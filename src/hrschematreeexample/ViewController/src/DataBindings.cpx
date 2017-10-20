@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<JboProject
+   id="DataBindings"
+   xmlns="http://xmlns.oracle.com/adfm/application"
+   version="10.1.2.17.96"
+   SeparateXMLFiles="false"
+   Package=""
+   ClientType="Generic" >
+   <Contents >
+      <DataControl
+         id="TestModuleDataControl"
+         SubType="DCBC4J"
+         SupportsFindMode="true"
+         SupportsTransactions="true"
+         Package="test.model"
+         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+         Configuration="TestModuleLocal" >
+         <Parameters >
+            <Parameter
+               name="Sync"
+               value="Immediate" >
+            </Parameter>
+         </Parameters>
+      </DataControl>
+      <Containee
+         id="testPageAllRowsUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.testPageAllRowsUIModel" >
+      </Containee>
+      <Containee
+         id="testPageThreeUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.testPageThreeUIModel" >
+      </Containee>
+      <Containee
+         id="pageThatIncludesPageThatIncludesTestPageUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.pageThatIncludesPageThatIncludesTestPageUIModel" >
+      </Containee>
+      <Containee
+         id="testPageUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.testPageUIModel" >
+      </Containee>
+      <Containee
+         id="testPageFourUIModel"
+         ObjectType="BindingContainerReference"
+         FullName="test.view.testPageFourUIModel" >
+      </Containee>
+   </Contents>
+</JboProject>

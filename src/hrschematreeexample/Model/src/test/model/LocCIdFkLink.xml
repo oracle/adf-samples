@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+
+<ViewLink
+   Name="LocCIdFkLink"
+   EntityAssociation="test.model.LocCIdFkAssoc" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.5.16.0" />
+   </DesignTime>
+   <ViewLinkDefEnd
+      Name="CountriesView"
+      Cardinality="1"
+      Owner="test.model.CountriesView"
+      Source="true" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.CountriesView.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+   <ViewLinkDefEnd
+      Name="LocationsView"
+      Cardinality="-1"
+      Owner="test.model.LocationsView" >
+      <AttrArray Name="Attributes">
+         <Item Value="test.model.LocationsView.CountryId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isUpdateable" Value="true" />
+         <Attr Name="_finderName" Value="LocationsView" />
+      </DesignTime>
+   </ViewLinkDefEnd>
+</ViewLink>

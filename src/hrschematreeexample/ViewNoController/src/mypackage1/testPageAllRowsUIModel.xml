@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="testPageAllRowsUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="mypackage1"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="DepartmentsIterator"
+         Binds="TestModuleDataControl.Departments" >
+      </DCIterator>
+   </Contents>
+</DCContainer>

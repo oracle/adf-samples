@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="testPageThreeUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="10.1.2.17.96"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCControl
+         id="getXmlDocument"
+         SubType="DCMethodAction"
+         Action="999"
+         RequiresUpdateModel="false"
+         DataControl="TestModuleDataControl"
+         InstanceName="TestModuleDataControl.dataProvider"
+         MethodName="getXmlDocument"
+         ReturnName="TestModuleDataControl.methodResults.TestModuleDataControl_dataProvider_getXmlDocument_result" >
+      </DCControl>
+   </Contents>
+</DCContainer>
