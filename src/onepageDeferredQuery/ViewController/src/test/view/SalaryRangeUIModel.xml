@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<DCContainer
+   id="SalaryRangeUIModel"
+   xmlns="http://xmlns.oracle.com/adfm/uimodel"
+   version="9.0.5.16.0"
+   Package="test.view"
+   FindMode="false"
+   EnableTokenValidation="true" >
+   <Contents >
+      <DCIterator
+         id="EmpsInSalaryRangeIterator"
+         Binds="TestModuleDataControl.EmpsInSalaryRange" >
+      </DCIterator>
+      <DCControl
+         id="EmpsInSalaryRange"
+         SubType="DCTable"
+         IterBinding="EmpsInSalaryRangeIterator"
+         ApplyValidation="false"
+         isDynamic="false" >
+         <AttrNames>
+            <Item Value="Employeeid" />
+            <Item Value="Employeename" />
+            <Item Value="Salary" />
+         </AttrNames>
+      </DCControl>
+   </Contents>
+</DCContainer>
